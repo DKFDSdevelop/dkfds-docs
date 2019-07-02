@@ -4,8 +4,8 @@ window.$ = window.jQuery = $
 const microModal = require("dkfds/src/vendor/micromodal.js");
 const dropdown = require('dkfds/src/js/components/dropdown.js');
 const dt = require( 'datatables.net' ); //Core datatables
-const dt_select =require( 'datatables.net-select' ); //Makes datatable rows selectable
-const dt_responsive =require( 'datatables.net-responsive' ); //Makes datatables responsive
+const dt_select = require( 'datatables.net-select' ); //Makes datatable rows selectable
+const dt_responsive = require( 'datatables.net-responsive' ); //Makes datatables responsive
 
 const jsSelectorDatatable_Example_basic = "#js-datatable-example-basic";
 const jsSelectorDatatable_Example_extra_pagination = "#js-datatable-example-extra_pagination";
