@@ -27,6 +27,7 @@
     "pikaday": "^1.8.0",
     "puppeteer": "^1.12.2",
     "select-woo": "^1.0.1",
+    "simple-jekyll-search": "^1.7.3",
     "tippy.js": "^4.3.4"
   },
   "devDependencies": {

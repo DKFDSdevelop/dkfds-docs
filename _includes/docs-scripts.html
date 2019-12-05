@@ -1,0 +1,33 @@
+{% if page.search %}
+<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+<script>
+    let index = [
+        {% for navs in site.data.nav offset:1 %}
+    {% for nav in navs %}
+    {% for link in nav %}
+    {% if link.href %}
+    {% assign _page = link.href | resolve_permalink %}
+    {% unless _page.exclude_search %}
+    {
+        "url": "{{ link.href }}",
+        "title": "{{ _page.title }}",
+        "category": "{{ _page.category }}",
+        "content" : "{{_page.content | strip_html | strip_newlines | escape }}"
+    },
+    {% endunless %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+    {}];
+    index.pop();
+    document.addEventListener("DOMContentLoaded", function(){
+            var sjs = SimpleJekyllSearch({
+                searchInput: document.getElementById('search-input'),
+                resultsContainer: document.getElementById('results-container'),
+                json: index
+            });
+    });
+
+</script>
+{% endif %}
