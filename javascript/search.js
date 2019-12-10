@@ -1,6 +1,5 @@
 const limit = 10;
 
-
 document.addEventListener("DOMContentLoaded", function() {
     let url_queries = window.location.search.substr(1).split('&');
     if(url_queries.length !== 0) {
@@ -53,8 +52,29 @@ function populateSearch (results, query, start){
 
 function search(query){
     let result = [];
+    // search phrase
     searchIndex.forEach(function(page){
-        if(page.title.indexOf(query) >= 0 || page.lead.indexOf(query) >= 0 || page.content.indexOf(query) >= 0){
+        let phrases = query.split(" ");
+        let matched = false;
+        if(page.title.indexOf(query) >= 0 || page.lead.indexOf(query) >= 0 || page.tags.indexOf(query) >= 0 || page.content.indexOf(query) >= 0){
+            matched = true;
+        } else{
+            let phrasesMatched = [];
+            for (let phrase in phrases){
+                let currentPhrase = phrases[phrase];
+                if(currentPhrase.length > 2) {
+                    if (!matched && (page.title.indexOf(currentPhrase) >= 0 || page.lead.indexOf(currentPhrase) >= 0 || page.tags.indexOf(currentPhrase) >= 0 || page.content.indexOf(currentPhrase) >= 0)) {
+                        matched = true;
+                        phrasesMatched.push(currentPhrase);
+                    }
+                }
+            }
+            if(matched){
+                page.phrasesMatched = phrasesMatched;
+            }
+        }
+
+        if(matched) {
             result.push(page);
         }
     });
@@ -70,6 +90,10 @@ function sort(result, query){
         }
         // priority lead
         if (page.lead.toLowerCase().indexOf(query.toLowerCase()) === -1 ) {
+            score = score+15;
+        }
+        // priority lead
+        if (page.tags.toLowerCase().indexOf(query.toLowerCase()) === -1 ) {
             score = score+15;
         }
         // priority subnav
@@ -93,6 +117,16 @@ function sort(result, query){
             case "Om_designsystemet_category":
                 score = score+6;
                 break;
+        }
+
+        if(page.layout === "demo"){
+            score = score+7;
+        }
+        if(page.phrasesMatched){
+            let addedScore = page.phrasesMatched.length * 2;
+            score = score+addedScore;
+        } else{
+            score = score+20;
         }
 
         // priority matching instances in content
