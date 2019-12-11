@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if(query !== null && query !== "") {
             let results = search(decodeURIComponent(query));
-            console.log('results', results);
-            console.log('query', decodeURIComponent(query));
             populateSearch(results, decodeURIComponent(query), start);
         } else{
             populateSearch([], decodeURIComponent(query), start);

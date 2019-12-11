@@ -4,7 +4,6 @@ layout: styleguide
 title: Komponenter
 category: Komponenter_category
 lead: Designsystemet er din værktøjskasse til at bygge offentlige selvbetjeningsløsninger. Designsystemet gør det let og hurtigt at bygge løsninger, som er konsistente og logiske for brugeren.
-exclude_search: true 
 ---
 <div class="row">
   <div class="col-12 col-md-4">
