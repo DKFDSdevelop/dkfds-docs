@@ -28,6 +28,15 @@
     margin-top: 0;
   }
 }
+// Search
+#search-form{
+  align-self: center;
+}
+.page-result h2 a, .page-result .h4 a{
+  &:visited, &:link, &:hover, &:active {
+    color: $color-link;
+  }
+}
 
 // Icon examples --------------
 

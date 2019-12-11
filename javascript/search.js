@@ -15,10 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 query = loop_query[1];
             }
         }
-        if(query !== null) {
-            let results = search(query);
+        if(query !== null && query !== "") {
+            let results = search(decodeURIComponent(query));
             console.log('results', results);
-            populateSearch(results, query, start);
+            console.log('query', decodeURIComponent(query));
+            populateSearch(results, decodeURIComponent(query), start);
+        } else{
+            populateSearch([], decodeURIComponent(query), start);
         }
     }
 
@@ -27,27 +30,49 @@ document.addEventListener("DOMContentLoaded", function() {
 function populateSearch (results, query, start){
     document.getElementById('search-input').value = query;
     document.getElementById('results-count').innerText = results.length;
-    if(start !== 0){
-        let nextStart = start - limit;
-        document.getElementById('previous-page').href = "?q="+query+"&start="+nextStart;
-        document.getElementById('previous-page').classList.remove('d-none');
-    }
-    if(results.length > limit){
-        let nextStart = start + limit;
-        document.getElementById('next-page').href = "?q="+query+"&start="+nextStart;
-        document.getElementById('next-page').classList.remove('d-none');
-    }
-    let html = "";
-    for (let r = start; r < start+limit; r++) {
-        if(results[r] == undefined) {
-            break;
+    document.getElementById('results-text').innerText = query;
+    if(results.length > 0) {
+        if (start !== 0) {
+            let nextStart = start - limit;
+            document.getElementById('previous-page').href = "?q=" + query + "&start=" + nextStart;
+            document.getElementById('previous-page').classList.remove('d-none');
         }
-        html += '<div class="page-result">';
-        html += '<h3 class="h4"><a href="' + results[r].url + '">' + results[r].title + '</a></h3>';
-        html += '</div>';
+        if (results.length > start + 10) {
+            let nextStart = start + limit;
+            document.getElementById('next-page').href = "?q=" + query + "&start=" + nextStart;
+            document.getElementById('next-page').classList.remove('d-none');
+        }
+        let html = "";
+        for (let r = start; r < start + limit; r++) {
+            if (results[r] == undefined) {
+                break;
+            }
+            let page = results[r];
+            html += '<div class="page-result">';
+            html += '<h2 class="h4 mb-0"><a href="' + page.url + '">' + page.title + '</a></h2>';
+            html += '<p class="text-positive mt-0 mb-0" aria-label="'+page.url+'">'+formatUrl(page.url)+'</p>';
+            html += '<p class="form-hint mt-0">'+page.description+'</p>';
+            html += '</div>';
+        }
+        document.getElementById('results').innerHTML = html;
+    } else{
+        document.getElementById('results').innerHTML = "<p>Vi fandt ingen sider, der matchede din søgning.</p>";
     }
-    document.getElementById('results').innerHTML = html;
+
     document.getElementById('results-container').classList.remove('d-none');
+}
+function formatUrl(url){
+    let aUrl = url.split('/');
+    let html = [""];
+    for (let a in aUrl){
+        let part = aUrl[a];
+        if(part !== "" && part !== "pages"){
+            html.push(part);
+        }
+    }
+
+    return html.join(' › ').substr(1);
+
 }
 
 function search(query){
@@ -56,14 +81,14 @@ function search(query){
     searchIndex.forEach(function(page){
         let phrases = query.split(" ");
         let matched = false;
-        if(page.title.indexOf(query) >= 0 || page.lead.indexOf(query) >= 0 || page.tags.indexOf(query) >= 0 || page.content.indexOf(query) >= 0){
+        if(page.title.toLowerCase().indexOf(query) >= 0 || page.lead.toLowerCase().indexOf(query) >= 0 || page.tags.toLowerCase().indexOf(query.toLowerCase()) >= 0 || page.content.toLowerCase().indexOf(query.toLowerCase()) >= 0){
             matched = true;
         } else{
             let phrasesMatched = [];
             for (let phrase in phrases){
-                let currentPhrase = phrases[phrase];
+                let currentPhrase = phrases[phrase].toLowerCase();
                 if(currentPhrase.length > 2) {
-                    if (!matched && (page.title.indexOf(currentPhrase) >= 0 || page.lead.indexOf(currentPhrase) >= 0 || page.tags.indexOf(currentPhrase) >= 0 || page.content.indexOf(currentPhrase) >= 0)) {
+                    if (!matched && (page.title.toLowerCase().indexOf(currentPhrase) >= 0 || page.lead.toLowerCase().indexOf(currentPhrase) >= 0 || page.tags.toLowerCase().indexOf(currentPhrase) >= 0 || page.content.toLowerCase().indexOf(currentPhrase) >= 0)) {
                         matched = true;
                         phrasesMatched.push(currentPhrase);
                     }

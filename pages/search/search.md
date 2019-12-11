@@ -2,17 +2,10 @@
 permalink: /search/
 layout: styleguide-nosidebar
 search: true
-title: Søg
+title: Søgeresultater
 ---
-<form method="get" action=".">
-    <div class="form-group search">
-        <label for="input-type-text" class="sr-only">Søg efter indhold</label>
-        <input class="form-input input-char-27" id="search-input" name="q" title="Search" type="search">
-        <button class="button button-search" type="submit" id="searchbtn">Søg</button>
-    </div>
-</form>
 <div class="d-none" id="results-container">
-    <h2><span id="results-count"></span> resultater</h2>
+    <p class="mt-0"><span id="results-count"></span> resultater - søgt efter "<span id="results-text"></span>"</p>
     <div id="results">
     </div>
     <div class="page-navigation">
