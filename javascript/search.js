@@ -47,9 +47,13 @@ function populateSearch (results, query, start){
             }
             let page = results[r];
             html += '<div class="page-result">';
-            html += '<h2 class="h4 mb-0"><a href="' + page.url + '">' + page.title + '</a></h2>';
-            html += '<p class="text-positive mt-0 mb-0" aria-label="'+page.url+'">'+formatUrl(page.url)+'</p>';
-            html += '<p class="form-hint mt-0">'+page.description+'</p>';
+            html += '<a href="' + page.url + '"><h2 class="h4 mb-0 d-inline-block page-title">' + page.title + '</h2><br/>';
+            html += '<p class="page-url d-inline-block text-positive mt-0 mb-0" aria-label="'+page.url+'">'+formatUrl(page.url)+'</p></a>';
+            if(page.description.length > 0) {
+                let description = formatDescription(truncateString(page.description, 180, '...'), query);
+
+                html += '<p class="form-hint mt-0 mb-0 page-description">' + description + '</p>';
+            }
             html += '</div>';
         }
         document.getElementById('results').innerHTML = html;
@@ -59,9 +63,71 @@ function populateSearch (results, query, start){
 
     document.getElementById('results-container').classList.remove('d-none');
 }
+function formatDescription(description, query){
+    let text = "";
+    let index = description.toLowerCase().indexOf(query.toLowerCase());
+    if(index === -1){
+        return description;
+    }
+    text += description.substr(0, index);
+    let otherHalf = description.substr(index, description.length - index);
+    let word = otherHalf.split(/[\s, "”\)\(]+/)[0];
+    let startPoint = index+word.length;
+    text += '<span class="weight-semibold">'+word+'</span>'+formatDescription(description.substr(startPoint, description.length-startPoint), query);
+    return text;
+
+}
+
+function getWordAt (str, pos) {
+
+    // Perform type conversions.
+    str = String(str);
+    pos = Number(pos) >>> 0;
+
+    // Search for the word's beginning and end.
+    var left = str.slice(0, pos + 1).search(/\S+$/),
+        right = str.slice(pos).search(/\s/);
+
+    // The last word in the string is a special case.
+    if (right < 0) {
+        return str.slice(left);
+    }
+
+    // Return the word, using the located bounds to extract it from the string.
+    return str.slice(left, right + pos);
+
+}
+
+function truncateString(str, len, append)
+{
+    if(str.length > len) {
+        var newLength;
+        append = append || "";  //Optional: append a string to str after truncating. Defaults to an empty string if no value is given
+
+        if (append.length > 0) {
+            append = " " + append;  //Add a space to the beginning of the appended text
+        }
+        if (str.indexOf(' ') + append.length > len) {
+            return str;   //if the first word + the appended text is too long, the function returns the original String
+        }
+
+        str.length + append.length > len ? newLength = len - append.length : newLength = str.length; // if the length of original string and the appended string is greater than the max length, we need to truncate, otherwise, use the original string
+
+        var tempString = str.substring(0, newLength);  //cut the string at the new length
+        tempString = tempString.replace(/\s+\S*$/, ""); //find the last space that appears before the substringed text
+
+        if (append.length > 0) {
+            tempString = tempString + append;
+        }
+        return tempString;
+    } else {
+        return str;
+    }
+};
+
 function formatUrl(url){
     let aUrl = url.split('/');
-    let html = [""];
+    let html = [];
     for (let a in aUrl){
         let part = aUrl[a];
         if(part !== "" && part !== "pages"){
@@ -69,7 +135,7 @@ function formatUrl(url){
         }
     }
 
-    return html.join(' › ').substr(1);
+    return html.join(' › ');
 
 }
 

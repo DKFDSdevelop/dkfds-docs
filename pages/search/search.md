@@ -1,11 +1,11 @@
 ---
 permalink: /search/
-layout: styleguide-nosidebar
+layout: styleguide-search
 search: true
 title: Søgeresultater
 ---
 <div class="d-none" id="results-container">
-    <p class="mt-0"><span id="results-count"></span> resultater - søgt efter "<span id="results-text"></span>"</p>
+    <p class="mt-0 mb-0"><span id="results-count"></span> resultater - søgt efter "<span id="results-text"></span>"</p>
     <div id="results">
     </div>
     <div class="page-navigation">
