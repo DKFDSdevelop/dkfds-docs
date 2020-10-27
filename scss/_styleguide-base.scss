@@ -13,8 +13,8 @@
 .fds-title {
   font-size: 2.8rem;
   line-height: 3.2rem;
-  font-weight: $font-weight-semibold;
-  color: $color-black;
+  font-weight: font-weight('semibold');
+  color: color('black');
   text-decoration: none;
   display: inline-block;
 
@@ -24,21 +24,21 @@
   }
 
   &:visited, &:hover, &:active{
-    color: $color-black;
+    color: color('black');
   }
 }
 img.inner-border-box{
-  border: $inner-border;
+  border: border(200);
 }
 img.outer-border-box{
-  border: $outer-border;
+  border: border(100);
 }
 // Preview box (e.g. used by header and footer documentation) -------- //
 .preview {
   margin-bottom: 2em;
-  background-color: $color-white;
+  background-color: color('white');
   padding: $site-margins;
-  border: $outer-border; // scss-lint:disable ColorVariable
+  border: border(100); // scss-lint:disable ColorVariable
 
   .background-dark {
     padding-left: 1em;
@@ -67,7 +67,7 @@ header .navbar .search-form{
 }
 
 header #search-form-mobile{
-  border-top: $inner-border;
+  border-top: border(200);
 
   #search-input-mobile{
     width: 100%;
@@ -111,8 +111,8 @@ header #search-form-mobile{
 
 // Typography --------------
 .demo-typesetting{
-  border-top: 2px solid $color-data-violet;
-  color: $color-data-violet;
+  border-top: 2px solid color('violet-5');
+  color: color('violet-5');
   padding-top: 1rem;
   text-align: center;
 }
@@ -121,225 +121,178 @@ header #search-form-mobile{
 
 // Base colors
 .color-white {
-  background-color: $color-white;
+  background-color: color('white');
 }
 
 .color-base {
-  background-color: $color-black;
+  background-color: color('black');
 }
 
 // Gray-scales
 
 .color-gray-dark {
-  background-color: $color-gray-medium-dark;
+  background-color: color("gray-50");
 }
 .color-gray {
-  background-color: $color-gray-medium-dark;
+  background-color: color("gray-50");
 }
 .color-gray-light {
-  background-color: $color-gray-medium-light;
+  background-color: color("gray-40");
 }
 .color-gray-lighter {
-  background-color: $color-gray-medium-light;
+  background-color: color("gray-40");
 }
 .color-gray-lightest {
-  background-color: $color-gray-medium-light;
+  background-color: color("gray-40");
 }
 .color-gray-brightest {
-  background-color: $color-gray-medium-dark;
+  background-color: color("gray-50");
 }
 
 // Text color
 .color-text {
-  background-color: $color-text;
+  background-color: color('ink');
 }
 .color-text-secondary {
-  background-color: $color-text-secondary;
+  background-color: color('gray-50');;
 }
 .color-text-bright {
-  background-color: $color-text-bright;
+  background-color: color('gray-10');
 }
 
 // Links color
 .color-link {
-  background-color: $color-link;
+  background-color: color($theme-link-color);
 }
 .color-link-hover {
-  background-color: $color-link-hover;
+  background-color: color($theme-link-hover-color);
 }
 .color-focus {
-  background-color: $color-focus;
+  background-color: color($theme-link-active-color);
 }
 .color-visited {
-  background-color: $color-link-visited;
+  background-color: color($theme-link-visited-color);
 }
 
 // Neutral color
 .color-neutral {
-  background-color: $color-neutral;
+  background-color: color('gray-60');
 }
 .color-neutral-darker {
-  background-color: $color-neutral-darker;
+  background-color: color('gray-70');
 }
 .color-neutral-darkest {
-  background-color: $color-neutral-darkest;
+  background-color: color('gray-70');
 }
 .color-neutral {
-  background-color: $color-neutral-lightest;
+  background-color: color('gray-40');
 }
 
 // Functional theme colors
 .color-primary {
-  background-color: $color-primary;
+  background-color: color('primary');
 }
 .color-primary-darker {
-  background-color: $color-primary-darker;
+  background-color: color('primary-darker');
 }
 .color-primary-darkest {
-  background-color: $color-primary-darkest;
+  background-color: color('primary-darkest');
 }
 .color-primary-lightest {
-  background-color: $color-primary-lightest;
+  background-color: color('primary-lightest');
 }
 .color-background {
-  background-color: $color-background;
+  background-color: color('gray-10');
 }
 
 .color-text-positive {
-  background-color: $color-text-positive;
+  background-color: color('success');
 }
 .color-text-negative {
-  background-color: $color-text-negative;
+  background-color: color('error');
 }
 
 // Colors used for alert boxes
 .color-error {
-  background-color: $color-error;
+  background-color: color("error");
 }
 .color-success {
-  background-color: $color-success;
+  background-color: color("success");
 }
 .color-warning {
-  background-color: $color-warning;
+  background-color: color("warning");
 }
 
 .color-info {
-  background-color: $color-info;
+  background-color: color("info");
 }
 
 .color-error-background {
-  background-color: $color-error-light;
+  background-color: color("error-light");
 }
 .color-success-background {
-  background-color: $color-success-light;
+  background-color: color("success-light");
 }
 .color-warning-background {
-  background-color: $color-warning-light;
+  background-color: color("warning-light");
 }
 .color-info-background {
-  background-color: $color-info-light;
+  background-color: color("info-light");
 }
 
-// Header, fotter & navigation colors
-.color-header-background {
-  background-color: $color-header-background;
-}
-.color-footer-background {
-  background-color: $color-footer-background;
-}
-.color-topmenu-background {
-  background-color: $color-topmenu-background;
-}
-.color-page {
-  background-color: $color-page;
-}
-
-// Colors for borders
-.color-border {
-  background-color: $color-border;
-}
-.color-border-light {
-  background-color: $color-border-light;
-}
-.color-border-bright {
-  background-color: $color-border-bright;
-}
-.color-border-focus {
-  background-color: $color-border-focus;
-}
-
-// Special colors
-.color-alt-background {
-  background-color: $color-alt-background;
-}
-.color-alt-background-hover {
-  background-color: $color-alt-background-hover;
-}
-.color-alt-table-header {
-  background-color: $color-alt-table-header;
-}
-.color-required {
-  background-color: $color-required;
-}
-.color-shadow {
-  background-color: $color-shadow;
-}
-.color-transparent {
-  background-color: $color-transparent;
-}
 
 .color-container-large {
   height: 108px;
-  border: $outer-border;
+  border: border(100);
 
   //Colors
   &.color-white {
-    background-color: $color-white;
+    background-color: color('white');
   }
   &.color-black {
-    background-color: $color-black;
+    background-color: color('black');
   }
   &.color-gray-dark {
-    background-color: $color-gray-dark;
+    background-color: color("gray-60");
   }
   &.color-gray-medium-dark {
-    background-color: $color-gray-medium-dark;
+    background-color: color("gray-50");
   }
   &.color-gray-medium-light {
-    background-color: $color-gray-medium-light;
+    background-color: color("gray-40");
   }
   &.color-gray-light {
-    background-color: $color-gray-light;
+    background-color: color("gray-30");
   }
   &.color-gray-mediumpale{
-    background-color: $color-gray-mediumpale;
+    background-color: color("gray-20");
   }
   &.color-gray-pale {
-    background-color: $color-gray-pale;
+    background-color: color("gray-10");
   }
   &.color-succes {
-    background-color: $color-success;
+    background-color: color("success");
   }
   &.color-succes-light {
-    background-color: $color-success-light;
+    background-color: color("success-light");
   }
   &.color-warning {
-    background-color: $color-warning;
+    background-color: color("warning");
   }
   &.color-warning-light {
-    background-color: $color-warning-light;
+    background-color: color("warning-light");
   }
   &.color-error {
-    background-color: $color-error;
+    background-color: color("error");
   }
   &.color-error-light {
-    background-color: $color-error-light;
+    background-color: color("error-light");
   }
   &.color-info {
-    background-color: $color-info;
+    background-color: color("info");
   }
   &.color-info-light {
-    background-color: $color-info-light;
+    background-color: color("info-light");
   }
   &.borger-primary {
     background-color: $borger-primary;
@@ -360,93 +313,93 @@ header #search-form-mobile{
     background-color: $virk-dark;
   }
   &.color-positive {
-    background-color: $color-positive;
+    background-color: color('success');
   }
   &.color-negative {
-    background-color: $color-negative;
+    background-color: color('error');
   }
 }
 .color-container-medium {
   height: 64px;
-  border: $outer-border;
+  border: border(100);
 
   &.color-data-turquoise {
-    background-color: $color-data-turquoise;
+    background-color: color('turquoise-5');
   }
   &.color-data-turquoise-high-opacity {
-    background-color: $color-data-turquoise-high-opacity;
+    background-color: color('turquoise-10');
   }
   &.color-data-turquoise-medium-opacity {
-    background-color: $color-data-turquoise-medium-opacity;
+    background-color: color('turquoise-20');
   }
   &.color-data-turquoise-low-opacity {
-    background-color: $color-data-turquoise-low-opacity;
+    background-color: color('turquoise-30');
   }
   &.color-data-teal {
-    background-color: $color-data-teal;
+    background-color: color('teal-5');
   }
   &.color-data-teal-high-opacity {
-    background-color: $color-data-teal-high-opacity;
+    background-color: color('teal-10');
   }
   &.color-data-teal-medium-opacity {
-    background-color: $color-data-teal-medium-opacity;
+    background-color: color('teal-20');
   }
   &.color-data-teal-low-opacity {
-    background-color: $color-data-teal-low-opacity;
+    background-color: color('teal-30');
   }
   &.color-data-orange {
-    background-color: $color-data-orange;
+    background-color: color('orange-warm-5');
   }
   &.color-data-orange-high-opacity {
-    background-color: $color-data-orange-high-opacity;
+    background-color: color('orange-warm-10');
   }
   &.color-data-orange-medium-opacity {
-    background-color: $color-data-orange-medium-opacity;
+    background-color: color('orange-warm-20');
   }
   &.color-data-orange-low-opacity {
-    background-color: $color-data-orange-low-opacity;
+    background-color: color('orange-warm-30');
   }
   &.color-data-magenta {
-    background-color: $color-data-magenta;
+    background-color: color('magenta-5');
   }
   &.color-data-magenta-high-opacity {
-    background-color: $color-data-magenta-high-opacity;
+    background-color: color('magenta-10');
   }
   &.color-data-magenta-medium-opacity {
-    background-color: $color-data-magenta-medium-opacity;
+    background-color: color('magenta-20');
   }
   &.color-data-magenta-low-opacity {
-    background-color: $color-data-magenta-low-opacity;
+    background-color: color('magenta-30');
   }
   &.color-data-purple {
-    background-color: $color-data-purple;
+    background-color: color('purple-10');
   }
   &.color-data-purple-high-opacity {
-    background-color: $color-data-purple-high-opacity;
+    background-color: color('purple-20');
   }
   &.color-data-purple-medium-opacity {
-    background-color: $color-data-purple-medium-opacity;
+    background-color: color('purple-30');
   }
   &.color-data-purple-low-opacity {
-    background-color: $color-data-purple-low-opacity;
+    background-color: color('purple-40');
   }
   &.color-data-violet {
-    background-color: $color-data-violet;
+    background-color: color('violet-5');
   }
   &.color-data-violet-high-opacity {
-    background-color: $color-data-violet-high-opacity;
+    background-color: color('violet-10');
   }
   &.color-data-violet-medium-opacity {
-    background-color: $color-data-violet-medium-opacity;
+    background-color: color('violet-20');
   }
   &.color-data-violet-low-opacity {
-    background-color: $color-data-violet-low-opacity;
+    background-color: color('violet-30');
   }
 }
 .color-gray-pale {
-  background-color: $color-gray-pale;
+  background-color: color("gray-10");
   .form-hint{
-    color: $color-gray-dark;
+    color: color("gray-60");
   }
 }
 
@@ -454,7 +407,7 @@ header #search-form-mobile{
   height: 40px;
   margin-bottom: 0.8rem;
   margin-top: 0.8rem;
-  border: $outer-border;
+  border: border(100);
 
   .color-text-container {
     padding: 7px 15px 7px 15px;
@@ -462,107 +415,107 @@ header #search-form-mobile{
     margin-top: 0rem;
 
     .text-white {
-      color:$color-white;
+      color:color('white');
     }
     .text-black {
-      color:$color-black;
+      color:color('black');
     }
     .text-gray {
-      color:$color-gray-medium-light;
+      color:color("gray-40");
     }
 
     .text-negative {
-      color:$color-negative;
+      color:color('error');
     }
 
     .text-positive {
-      color:$color-positive;
+      color:color('success');
     }
   }
 
   &.color-black {
-    background-color: $color-black;
+    background-color: color('black');
   }
   &.color-gray-medium-dark {
-    background-color: $color-gray-medium-dark;
+    background-color: color("gray-50");
   }
   &.color-gray-light {
-    background-color: $color-gray-light;
+    background-color: color("gray-30");
   }
   &.color-gray-pale {
-    background-color: $color-gray-pale;
+    background-color: color("gray-10");
   }
   &.color-data-violet {
-    background-color: $color-data-violet;
+    background-color: color('violet-5');
   }
   &.color-data-violet-high-opacity {
-    background-color: $color-data-violet-high-opacity;
+    background-color: color('violet-10');
   }
   &.color-data-violet-medium-opacity {
-    background-color: $color-data-violet-medium-opacity;
+    background-color: color('violet-20');
   }
   &.color-data-violet-low-opacity {
-    background-color: $color-data-violet-low-opacity;
+    background-color: color('violet-30');
   }
   &.color-data-purple {
-    background-color: $color-data-purple;
+    background-color: color('purple-5');
   }
   &.color-data-purple-high-opacity {
-    background-color: $color-data-purple-high-opacity;
+    background-color: color('purple-10');
   }
   &.color-data-purple-medium-opacity {
-    background-color: $color-data-purple-medium-opacity;
+    background-color: color('purple-20');
   }
   &.color-data-purple-low-opacity {
-    background-color: $color-data-purple-low-opacity;
+    background-color: color('purple-30');
   }
   &.color-data-magenta {
-    background-color: $color-data-magenta;
+    background-color: color('magenta-5');
   }
   &.color-data-magenta-high-opacity {
-    background-color: $color-data-magenta-high-opacity;
+    background-color: color('magenta-10');
   }
   &.color-data-magenta-medium-opacity {
-    background-color: $color-data-magenta-medium-opacity;
+    background-color: color('magenta-20');
   }
   &.color-data-magenta-low-opacity {
-    background-color: $color-data-magenta-low-opacity;
+    background-color: color('magenta-30');
   }
   &.color-data-orange {
-    background-color: $color-data-orange;
+    background-color: color('orange-warm-5');
   }
   &.color-data-orange-high-opacity {
-    background-color: $color-data-orange-high-opacity;
+    background-color: color('orange-warm-10');
   }
   &.color-data-orange-medium-opacity {
-    background-color: $color-data-orange-medium-opacity;
+    background-color: color('orange-warm-20');
   }
   &.color-data-orange-low-opacity {
-    background-color: $color-data-orange-low-opacity;
+    background-color: color('orange-warm-30');
   }
   &.color-data-teal {
-    background-color: $color-data-teal;
+    background-color: color('teal-5');
   }
   &.color-data-teal-high-opacity {
-    background-color: $color-data-teal-high-opacity;
+    background-color: color('teal-10');
   }
   &.color-data-teal-medium-opacity {
-    background-color: $color-data-teal-medium-opacity;
+    background-color: color('teal-20');
   }
   &.color-data-teal-low-opacity {
-    background-color: $color-data-teal-low-opacity;
+    background-color: color('teal-30');
   }
   &.color-data-turquoise {
-    background-color: $color-data-turquoise;
+    background-color: color('turquoise-5');
   }
   &.color-data-turquoise-high-opacity {
-    background-color: $color-data-turquoise-high-opacity;
+    background-color: color('turquoise-10');
   }
   &.color-data-turquoise-medium-opacity {
-    background-color: $color-data-turquoise-medium-opacity;
+    background-color: color('turquoise-20');
   }
   &.color-data-turquoise-low-opacity {
-    background-color: $color-data-turquoise-low-opacity;
+    background-color: color('turquoise-30');
   }
 }
 
@@ -592,11 +545,11 @@ header #search-form-mobile{
 }
 
 figure.highlight{
-  border: $inner-border;
+  border: border(200);
 }
 
 code{
-  background-color: $color-gray-pale;
+  background-color: color("gray-10");
 }
 
 code,
@@ -628,7 +581,7 @@ code {
 }
 
 .code-highlight {
-  background-color: $color-gray-pale;
+  background-color: color("gray-10");
   padding: 16px;
   pre, code {
     max-width: $text-max-width;
@@ -639,14 +592,14 @@ code {
 .code-color-hex {
   font-family: monospace;
   font-size: 1.6rem;
-  font-weight: $font-weight-bold;
+  font-weight: font-weight('bold');
 }
 
 //Variables for color page
 .code-color-variable {
   font-family: monospace;
   font-size: 1.3rem;
-  font-weight: $font-weight-normal;
+  font-weight: font-weight('normal');
   line-height: 1.4em;
 }
 
@@ -763,7 +716,7 @@ code {
     align-items: center;
     justify-content: center;
     padding: map-get($spacers, 4);
-    background-color: $color-gray-medium-dark;
+    background-color: color("gray-50");
     border-radius: 4px;
 
     &:focus{
@@ -786,7 +739,7 @@ code {
 }
 
 .description-image{ //creates a border around an image.
-  border: $outer-border;
+  border: border(100);
   padding: 8px;
 }
 
@@ -796,27 +749,27 @@ code {
   align-items: center;
   justify-content: center;
   padding: map-get($spacers, 5);
-  background-color: $background-alternative;
+  background-color: color('gray-5');
   img{
     height: 100%;
   }
   &--turquoise{
-    background-color: $color-data-turquoise-high-opacity;
+    background-color: color('turquoise-10');
   }
   &--teal{
-    background-color: $color-data-teal;
+    background-color: color('teal-5');
   }
   &--orange{
-    background-color: $color-data-orange;
+    background-color: color('orange-warm-5');
   }
   &--magenta{
-    background-color: $color-data-magenta;
+    background-color: color('magenta-5');
   }
   &--purple{
-    background-color: $color-data-purple;
+    background-color: color('purple-5');
   }
   &--violet{
-    background-color: $color-data-violet-high-opacity;
+    background-color: color('violet-10');
   }
 }
 
@@ -864,7 +817,7 @@ code {
 }
 
 .demo-footer-title {
-  color: $color-white;
+  color: color('white');
   display: inline-block;
 }
 
@@ -877,7 +830,7 @@ code {
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  border: $outer-border;
+  border: border(100);
 
   .youtube-video {
     position: absolute;
@@ -892,15 +845,15 @@ code {
 /////////////////// component preview //////////////////////
 
 .component-preview {
-  border: $inner-border;
+  border: border(200);
   position: relative;
   margin-bottom: 8px;
 
   .component-link{
-    border-bottom: $inner-inner-border;
+    border-bottom: border(300);
   }
   .component-code-link{
-    border-top: $inner-inner-border;
+    border-top: border(300);
   }
 }
 
@@ -932,8 +885,8 @@ code {
 }
 
 .component-preview-button {
-  background: $color-gray-medium-light;
-  border: 1px solid $color-gray-medium-dark;
+  background: color("gray-40");
+  border: 1px solid color("gray-50");
   outline: none;
   height: $spacing-medium;
   width: $spacing-medium;
@@ -947,21 +900,21 @@ code {
   min-height: inherit;
 
   .icon-color{
-    fill: $color-gray-medium-dark;
+    fill: color("gray-50");
   }
 
   &:hover {
-    background-color: $color-gray-medium-dark;
+    background-color: color("gray-50");
     .icon-color{
-      fill: $color-white;
+      fill: color('white');
     }
   }
 
   &.is-active {
-    background-color: $color-gray-medium-dark;
+    background-color: color("gray-50");
 
     svg * {
-      fill: $color-white;
+      fill: color('white');
     }
   }
 }
@@ -1011,13 +964,13 @@ body[class*="page-grid"][class*="-html"], body.layout-example-contained[class*="
   .row > [class^=col-] {
     padding-top: 16px;
     padding-bottom: 16px;
-    background-color: $color-info-light;
-    border: $outer-border;
+    background-color: color("info-light");
+    border: border(100);
   }
 
   .grid-example-row-flex {
     min-height: 10rem;
-    background-color: $color-data-orange-low-opacity;
+    background-color: color('orange-warm-30');
   }
   &.component-preview-grid-all-breakpoints .row:first-of-type > [class^=col-] {
     background-color: transparent;
@@ -1054,7 +1007,7 @@ body[class*="page-grid"][class*="-html"], body.layout-example-contained[class*="
   .icon-code-name {
     font-family: monospace;
     font-size: 1.3rem;
-    font-weight: $font-weight-normal;
+    font-weight: font-weight('normal');
     line-height: 1.5rem;
     text-align: center;
     margin-top: 4px;
@@ -1068,34 +1021,34 @@ body[class*="page-grid"][class*="-html"], body.layout-example-contained[class*="
   border-top-left-radius:$static-border-radius; //  0
   width: 144px;
   height: 120px;
-  background-color: $color-gray-pale;
-  border-left: $outer-border;
-  border-top: $outer-border;
+  background-color: color("gray-10");
+  border-left: border(100);
+  border-top: border(100);
 }
 
 .interactive-border-radius-example {
   border-top-left-radius: $interactive-border-radius;
   width: 144px;
   height: 120px;
-  background-color: $color-gray-pale;
-  border-left: $outer-border;
-  border-top: $outer-border;
+  background-color: color("gray-10");
+  border-left: border(100);
+  border-top: border(100);
 }
 
 //BORDERS
 .outer-border-example {
-  border-top: $outer-border;
+  border-top: border(100);
 }
 
 .inner-border-example {
-  border-top: $inner-border;
+  border-top: border(200);
 }
 .inner-inner-border-example {
-  border-top: $inner-inner-border;
+  border-top: border(300);
 }
 
 .button-border-example {
-  border-top: $button-border;
+  border-top: $button-border-width solid color($button-border-color);
 }
 
 //SHADOWS
@@ -1103,60 +1056,60 @@ body[class*="page-grid"][class*="-html"], body.layout-example-contained[class*="
   width: 144px;
   height: 104px;
   box-shadow: $box-shadow-heavy;
-  background-color: $color-white;
-  border: $outer-border;
+  background-color: color('white');
+  border: border(100);
 }
 
 .moderately-shadow-example {
   width: 144px;
   height: 104px;
   box-shadow: $box-shadow-moderately;
-  background-color: $color-white;
-  border: $outer-border;
+  background-color: color('white');
+  border: border(100);
 }
 
 .slightly-shadow-example {
   width: 144px;
   height: 104px;
   box-shadow: $box-shadow-slightly;
-  background-color: $color-white;
-  border: $outer-border;
+  background-color: color('white');
+  border: border(100);
 }
 
 /* HOME */
 .bg-turquoise{
-  background-color: $color-data-turquoise-medium-opacity;
+  background-color: color('turquoise-20');
 }
 .bg-alternative{
-  background-color: $background-alternative;
+  background-color: color('gray-10');
 }
 .bg-turquoise-dark{
-  background-color: $color-data-turquoise;
+  background-color: color('turquoise-5');
 }
 /* sideopbygning */
 .bg-darkgrey{
-  background-color: $color-gray-mediumpale;
+  background-color: color("gray-20");
 }
 .bg-darkgrey{
-  background-color: $color-gray-mediumpale;
+  background-color: color("gray-20");
 }
 .bg-teal{
-  background-color: $color-data-teal-medium-opacity;
+  background-color: color('teal-20');
 }
 .bg-magenta{
-  background-color: $color-data-magenta-medium-opacity;
+  background-color: color('magenta-20');
 }
 .bg-violet{
-  background-color: $color-data-violet-medium-opacity;
+  background-color: color('violet-20');
 }
 
 /* BADGE COLORS */
 
 .badge.color-warning {
-  background-color: $color-warning-light;
-  color: $color-black;
+  background-color: color("warning-light");
+  color: color('black');
 }
 .badge.color-info {
-  background-color: $color-info-light;
-  color: $color-black;
+  background-color: color("info-light");
+  color: color('black');
 }
