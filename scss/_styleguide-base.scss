@@ -51,6 +51,49 @@ img.outer-border-box{
   }
 }
 
+// Farberegner
+body.page-farveberegner ul.color-scheme-container{
+  flex-wrap: wrap;
+  max-width: none !important;
+  li{
+    margin-right: -1px;
+    text-align: center;
+  }
+  button{
+    @include button-unstyled;
+    width: 12.4rem;
+    height: 12.4rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: $color-gray-mediumpale;
+    padding-bottom: 8px;
+    &:focus{
+      position: relative;
+      z-index: 4;
+      outline-offset: 0;
+    }
+  }
+  li.main-color button{
+    border: 1px solid $color-black;
+    outline: 1px solid $color-black;
+    position: relative;
+    z-index: 2;
+    &:focus{
+        outline: $focus-outline;
+    } 
+  }
+  &#all-color-scheme{
+   button{
+    width: 5.6rem;
+    height: 5.6rem;
+    padding-bottom: 0px;
+   } 
+  }
+}
+
 // Do's and Don'ts
 .do-dont-container{
 

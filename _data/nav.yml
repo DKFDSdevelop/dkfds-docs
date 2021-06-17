@@ -42,6 +42,7 @@ Til_udviklere_category:
 #Left menu for design-category
 Design_category:
 - href: /design/farver/
+  categorynav: 'Farver_category'
 - href: /design/typografi/
   categorynav: 'Typografi_category'
 - href: /design/borders/
@@ -51,6 +52,9 @@ Design_category:
 - href: /design/layout/
   categorynav: 'Layout_category'
 - href: /design/designressourcer/
+
+Farver_category:
+  - href: /design/farver/farveberegner/
 
 Icon_category:
   - href: /design/ikoner/ikoner-og-deres-betydning/
