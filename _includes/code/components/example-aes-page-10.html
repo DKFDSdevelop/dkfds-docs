@@ -1,4 +1,5 @@
 <header class="header">
+    <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
 
     <!--1A: Portal header -->
     <div class="portal-header portal-header-compact">
@@ -76,7 +77,7 @@
     </nav> <!-- collapsible nav end-->
 </header>
 
-<main class="container page-container">
+<main class="container page-container" id="main-content">
 
     <div class="alert alert alert-success alert--show-icon" role="alert"
         aria-atomic="true" aria-label="success">
@@ -109,20 +110,18 @@
     <h2 class="h4 mt-7">Husk betaling</h2>
     <p class="my-0">Gebyret for udtalelsen skal sættes ind på vores konto i
         Danske Bank:</p>
-    <div class="row">
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3">
-            <table class="table table--borderless table--compact">
-                <tbody>
-                    <tr>
-                        <td class="weight-semibold">Reg.nr.:</td>
-                        <td>0216</td>
-                    </tr>
-                    <tr>
-                        <td class="weight-semibold">Kontonr.:</td>
-                        <td>4069068936</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="w-percent-md-30 mt-4">
+        <div class="row no-gutters row-bordered py-3">
+            <div class="col-12 col-md-4">
+                <h3 class="h5 mt-0 mb-0">Reg.nr.</h3>
+            </div>
+            <div class="col-12 col-md-8">0216</div>
+        </div>
+        <div class="row no-gutters row-bordered py-3">
+            <div class="col-12 col-md-4">
+                <h3 class="h5 mt-0 mb-0">Kontonr.</h3>
+            </div>
+            <div class="col-12 col-md-8">4069068936</div>
         </div>
     </div>
     <p>Gebyr: 6.220 kr. <br> Ved overførslen skal I oplyse skadelidtes CPR-nr.: 1702671913
@@ -167,9 +166,8 @@
             <h2 class="modal-title" id="modal-contact-title">
                 Kontakt
             </h2>
-            <button class="modal-close button button-unstyled"
-                aria-label="Luk"
-                data-modal-close><svg class="icon-svg" focusable="false" aria-hidden="true"><use xlink:href="#close"></use></svg></button>
+            <button class="modal-close function-link"
+                data-modal-close><svg class="icon-svg" focusable="false" aria-hidden="true"><use xlink:href="#close"></use></svg>Luk</button>
         </div>
         <div class="modal-body">
             <div class="alert alert-warning" role="alert">

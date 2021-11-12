@@ -8,12 +8,14 @@ import * as DKFDS from "dkfds";
 require('./sidenav');
 require('./newsletter');
 require('./spinner');
+require('./examples');
 require('./colorcalculator');
 document.addEventListener("DOMContentLoaded", function() {
     languageSwitcher();
-// Handler when the DOM is fully loaded
+    
     DKFDS.init();
     
+    demoReturnToPreviousPage();
 
     let path = window.location.pathname.split('/');
     if(path.indexOf('mastertest') !== -1){
@@ -42,12 +44,46 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+/**
+ * If demo page with demo footer handle link to previous page if defined
+ */
+function demoReturnToPreviousPage(){
+    if(document.getElementById('btn-demo-return') !== null){
+        const queryString = window.location.search;
+        let links = document.getElementsByTagName('a');
+        for(let l = 0; l < links.length; l++){
+            let link = links[l]
+            let href = link.getAttribute('href');
+            if(href !== "" && !href.startsWith("#") && href.indexOf("javascript") === -1 && href.length > 5 && window.location.href.indexOf('?r=/eksempler/selvbetjeningsloesninger/') !== -1){
+                link.setAttribute('href', href + queryString);
+            }
+        }
+        
+        let forms = document.getElementsByTagName('form');
+        for(let f = 0; f < forms.length; f++){
+            let form = forms[f]
+            let action = form.getAttribute('action');
+            if(action !== null && (action !== "" && action !== "#" && action.length > 5 && window.location.href.indexOf('?r=/eksempler/selvbetjeningsloesninger/') !== -1)){
+                form.setAttribute('action', action + queryString);
+            }
+        }
+        
+        const urlParams = new URLSearchParams(queryString);
+        const returnUrl = urlParams.get('r');
+        if (returnUrl !== null){
+            document.getElementById('btn-demo-return').setAttribute('href', returnUrl.replace('%23', '#'));
+        }
+    }
+}
+
 function toastExample(){
     let button = document.getElementById('toast-example-button');
     if(button !== null){
-        let toastContainer = document.createElement('div');
-        toastContainer.classList.add('toast-container');
-        document.body.appendChild(toastContainer);
+        if(document.getElementsByClassName('toast-container').length === 0){
+            let toastContainer = document.createElement('div');
+            toastContainer.classList.add('toast-container');
+            document.getElementById('main-content').prepend(toastContainer);
+        }
 
         button.addEventListener('click', function(){
             let type = ["info", "warning", "error", "success"];

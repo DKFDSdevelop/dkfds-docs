@@ -10,6 +10,7 @@
 
 {% block header %}
   <header class="header">
+    <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     {{ portal_header(portal_header_data) }}
     {{ solution_header(solution_header_data) }}
 
@@ -42,7 +43,7 @@
 {% endblock %}
 
 {% block body %}
-<main class="container page-container pt-4 pt-lg-0">
+<main class="container page-container pt-4 pt-lg-0" id="main-content">
     <div><a href="/pages/eksempler/AES-erstatningssag/aes-1/" class="back-link">Tilbage</a></div>
     {{overflowmenu("Trin 2 af 9","overflow_steps", true, false, "arrow-drop-down" ,"
             <nav><ul class='sidenav-list' role='menu'>
@@ -99,14 +100,15 @@
         ) }}
 
     <h1>Hvis AES har spørgsmål til sagen</h1>
-    {{textinput("id-company-contact", "Virksomhedens kontaktperson", "", "input-width-m", "", "Input til virksomhedens kontaktperson", "", false, false, "", "Svend Pedersen", "", "", "", true)}}
-    <button class="button button-secondary mt-4 d-print-none">{{icon_svg("add")}} Vælg en anden kontaktperson</button>
-    <div class="mt-5">
-        {{textinput("id-company-number", "Telefonnummer til kontaktperson", "", "input-width-xs", "", "Telefonnummer til kontaktperson", "", false, false, "", "")}}
-    </div>
-    <nav class="page-navigation d-print-none">
-        <a href="/pages/eksempler/AES-erstatningssag/aes-3/" class="button button-primary">Næste</a>
-    </nav>
+    <form method="get" action="/pages/eksempler/AES-erstatningssag/aes-3/" novalidate>
+        {{textinput("id-company-contact", "Virksomhedens kontaktperson", "", "input-width-m", "", "Input til virksomhedens kontaktperson", "", false, false, "", "", "Svend Pedersen", "", "", true)}}
+        <button class="button button-secondary mt-4 d-print-none">{{icon_svg("add")}} Vælg en anden kontaktperson</button>
+        <div class="mt-5">
+            {{textinput("id-company-number", "Telefonnummer", "", "input-width-s", "", "telefonnummer-kontaktperson", "", false, false, "", "")}}
+        </div>
+    
+        <button class="button button-primary mt-8 d-print-none">Næste</button>
+    </form>
 </main>
 {% endblock %}
 

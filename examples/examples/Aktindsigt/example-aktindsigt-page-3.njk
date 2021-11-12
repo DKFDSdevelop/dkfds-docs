@@ -10,6 +10,7 @@
 
 {% block header %}
   <header class="header">
+    <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     {{ portal_header(portal_header_data) }}
     {{ solution_header(solution_header_data) }}
 
@@ -34,23 +35,23 @@
 {% endblock %}
 
 {% block body %}
-<main class="container page-container">
-    {{ alert("alert alert-success alert--show-icon", "alert", "Success", "Vi har modtaget dine oplysninger og vil behandle ansøgningen hurtigst muligt", "success" ) }}
+<main class="container page-container" id="main-content">
+    {{ alert("alert alert-success alert--show-icon", "alert", "Vi har modtaget dine oplysninger og vil behandle ansøgningen hurtigst muligt", "", "success" ) }}
 
     <h1 class="mt-5">Kvittering</h1>
-    <label class="form-label">Navn</label>
+   <h2 class="h5">Navn</h2>
     <p class="mt-0">Karen Jensen</p>
     <div class="mt-5">
-      <label class="form-label">Adresse</label>
+      <h2 class="h5">Adresse</h2>
       <p class="mt-0">Vængetstræde 77 <br>
       0081 Købstad</p>
     </div>
     <div class="mt-5">
-      <label class="form-label">Alder</label>
+      <h2 class="h5">Alder</h2>
       <p class="mt-0">39</p>
     </div>
     <div class="mt-5">
-      <label class="form-label">Tidligere ansøgninger</label>
+      <h2 class="h5">Tidligere ansøgninger</h2>
       <p class="mt-0">Nej</p>
     </div>
 

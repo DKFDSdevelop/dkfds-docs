@@ -1,4 +1,5 @@
 <header class="header">
+    <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
 
     <!--1A: Portal header -->
     <div class="portal-header portal-header-compact">
@@ -86,7 +87,7 @@
     </nav> <!-- collapsible nav end-->
 </header>
 
-<main class="container page-container pt-4 pt-lg-0">
+<main class="container page-container pt-4 pt-lg-0" id="main-content">
     <div><a href="/pages/eksempler/AES-erstatningssag/aes-5/"
             class="back-link">Tilbage</a></div>
 
@@ -200,14 +201,16 @@
             <tr>
                 <th>Filnavn</th>
                 <th>Dokumentationstype</th>
-                <th>Sidetal (frivilligt)</th>
+                <th>Sidetal <span class="weight-normal">(frivilligt)</span>
+                </th>
                 <th class="align-text-right">Slet</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="mt-4 mt-lg-0 break-word w-percent-md-40">
-                    <svg class="icon-svg" focusable="false" aria-hidden="true"><use xlink:href="#file"></use></svg>prn1023152_journal.pdf
+                <td
+                    class="mt-4 mt-lg-0 break-word w-percent-md-40 vertical-align-middle">
+                    <svg class="icon-svg" focusable="false" aria-hidden="true"><use xlink:href="#file-pdf"></use></svg>prn1023152_journal.pdf
                 </td>
                 <td class="mt-4 mt-lg-0">
 
@@ -235,14 +238,14 @@
                                 (frivilligt)</span>
                         </label>
 
-                        <input class="form-input input-width-xs"
+                        <input class="form-input input-char-4"
                             id="id-pagenumber" value="" name="Sidetal"
                             type="text">
                     </div>
                 </td>
                 <td class="align-text-md-right mt-4 mt-lg-0">
                     <button class="button button-unstyled">
-                        <svg class="icon-svg " aria-hidden="true" focusable="false"><use xlink:href="#delete"></use></svg>
+                        <svg class="icon-svg " aria-hidden="true" focusable="false"><use xlink:href="#trash-can"></use></svg>
                         <span class="sr-only">Slet</span>
                     </button>
                 </td>
@@ -250,10 +253,10 @@
         </tbody>
     </table>
 
-    <nav class="page-navigation d-print-none">
-        <a href="/pages/eksempler/AES-erstatningssag/aes-7/"
-            class="button button-primary">Næste</a>
-    </nav>
+    <form method="get" action="/pages/eksempler/AES-erstatningssag/aes-7/">
+        <button
+            class="button button-primary mt-8 d-print-none">Næste</button>
+    </form>
 </main>
 
 <footer>
@@ -289,9 +292,8 @@
             <h2 class="modal-title" id="modal-contact-title">
                 Kontakt
             </h2>
-            <button class="modal-close button button-unstyled"
-                aria-label="Luk"
-                data-modal-close><svg class="icon-svg" focusable="false" aria-hidden="true"><use xlink:href="#close"></use></svg></button>
+            <button class="modal-close function-link"
+                data-modal-close><svg class="icon-svg" focusable="false" aria-hidden="true"><use xlink:href="#close"></use></svg>Luk</button>
         </div>
         <div class="modal-body">
             <div class="alert alert-warning" role="alert">

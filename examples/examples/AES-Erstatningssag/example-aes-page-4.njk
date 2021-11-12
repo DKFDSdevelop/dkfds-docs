@@ -10,6 +10,7 @@
 
 {% block header %}
   <header class="header">
+    <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     {{ portal_header(portal_header_data) }}
     {{ solution_header(solution_header_data) }}
 
@@ -41,7 +42,7 @@
 {% endblock %}
 
 {% block body %}
-<main class="container page-container pt-4 pt-lg-0">
+<main class="container page-container pt-4 pt-lg-0" id="main-content">
     <div><a href="/pages/eksempler/AES-erstatningssag/aes-3/" class="back-link">Tilbage</a></div>
     {{overflowmenu("Trin 4 af 9","overflow_steps", true, false, "arrow-drop-down" ,"
         <nav><ul class='sidenav-list' role='menu'>
@@ -137,9 +138,10 @@
         </fieldset>
     </div>
 
-    <nav class="page-navigation d-print-none">
-        <a href="/pages/eksempler/AES-erstatningssag/aes-5/" class="button button-primary">Næste</a>
-    </nav>
+    
+        <form method="get" action="/pages/eksempler/AES-erstatningssag/aes-5/">
+            <button class="button button-primary mt-8 d-print-none">Næste</button>
+        </form>
 </main>
 {% endblock %}
 

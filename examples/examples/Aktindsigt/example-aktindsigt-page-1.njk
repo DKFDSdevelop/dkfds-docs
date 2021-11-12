@@ -11,6 +11,7 @@
 
 {% block header %}
   <header class="header">
+    <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     {{ portal_header(portal_header_data) }}
     {{ solution_header(solution_header_data) }}
 
@@ -35,7 +36,7 @@
 {% endblock %}
 
 {% block body %}
-<main class="container page-container">
+<main class="container page-container" id="main-content">
 
     <form class="form" method="post" action="/pages/eksempler/aktindsigt/aktindsigt-2/">
         <div role="group" aria-labelledby="oplysninger-om-dig">

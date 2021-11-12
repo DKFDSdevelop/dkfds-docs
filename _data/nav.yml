@@ -26,8 +26,6 @@ mobile:
 Krav_category:
 - href: /krav/borgerdk-virk/
 - href: /krav/om-kravene/
-- href: /krav/designtjek/
-- href: /krav/tilgaengelighed/
 
 #Left menu for kom igang-category
 Krav_selvbetjening_category:
@@ -49,15 +47,25 @@ Design_category:
 - href: /design/ikoner/
   categorynav: 'Icon_category'
 - href: /design/logoer/
+- href: /design/datavisualisering-infografik/
+  categorynav: 'Datavisualisering_category'
 - href: /design/layout/
   categorynav: 'Layout_category'
 - href: /design/designressourcer/
+- href: /design/designtjek/
+- href: /design/tilgaengelighed/
 
 Farver_category:
   - href: /design/farver/farveberegner/
 
 Icon_category:
   - href: /design/ikoner/ikoner-og-deres-betydning/
+
+Datavisualisering_category:
+  - href: /design/datavisualisering-infografik/tilgaengelig-grafik/
+  - href: /design/datavisualisering-infografik/datavisualisering/
+  - href: /design/datavisualisering-infografik/infografik/
+
 
 Layout_category:
   - href: /design/layout/grid/
@@ -172,8 +180,12 @@ Kode_Komponenter_category:
 
 Eksempler_category:
   - href: /eksempler/selvbetjeningsloesninger/
-  - href: /eksempler/opsummeringsside/
-  - href: /eksempler/kvittering/
+  - href: /eksempler/patterns/
+    categorynav: 'Patterns_category'
+  - href: /eksempler/templates/
+
+Patterns_category:
+  - href: /eksempler/patterns/angivelse-af-telefonnummer/
 
 Faellesskab_category:
   - href: /faellesskab/samarbejdsforum/

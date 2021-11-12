@@ -38,4 +38,10 @@ Skjul ikke meningsbærende indhold med denne funktionalitet.
 
 Skjult indhold skal fortsat overholde dokumentets outline (overskriftshierarki) og tilgængelighedskrav.
 
+{:.h3 #eksempelloesninger}
+## Se komponenten i eksempelløsninger
+
+{:.nobullet-list}
+- <a href="/pages/eksempler/aes/oversigt/?r={{page.permalink}}%23eksempelloesninger" title="Eksempelløsning Sager os AES åbnes i nyt vindue">Sager hos AES</a>
+
 {% include child-components.html parent='Detaljer' %}
