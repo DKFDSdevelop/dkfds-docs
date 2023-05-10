@@ -18,6 +18,8 @@ subnav:
   href: '#paragrafbredde'
 - text: Luk knap
   href: '#luk-knap'
+- text: Custom Element
+  href: "#custom-element"
 ---
 
 {% include code/preview-box.html component="alert" title="Eksempel på besked komponent" %}
@@ -112,3 +114,63 @@ Defineres med klassen `alert--paragraph`.
 {:#luk-knap}
 ### Luk knap
 {% include code/syntax.html component="alert-close" link=true copybutton=true %}
+
+{:#custom-element}
+## Custom Element
+
+{% include code/preview-box.html component="custom-element-alert" title="Eksempel på besked som custom element" %}
+
+{% include code/syntax.html component="custom-element-alert" copybutton=true %}
+
+### Init
+
+Kald funktionen `DKFDS.initCustomElements();` i din JavaScript-kode. For eksempel:
+
+{% highlight javascript %}
+document.addEventListener("DOMContentLoaded", function() {
+    DKFDS.initCustomElements();
+});
+{% endhighlight %}
+
+### Attributter
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribut</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>variant</td>
+        <td>Afgør beskedens farve og ikon. Skal enten være 'info' (blå), 'success' (grøn), 'warning' (gul) eller 'error' (rød).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Funktioner
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Funktion</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>show()</td>
+        <td>Sørg for at beskeden er synlig for brugeren.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Eksempel på anvendelse i JavaScript:
+{% highlight javascript %}
+document.body.querySelector("fds-alert").show();
+{% endhighlight %}

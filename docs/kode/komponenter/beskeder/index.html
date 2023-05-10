@@ -3588,6 +3588,15 @@
 
     
 
+    
+
+
+<li class=" ">
+<a href="#custom-element" >Custom Element</a>
+</li>
+
+    
+
 </ul>
     
   
@@ -4327,6 +4336,7 @@
           <li><a href="#beskeder-med-ikon">Beskeder med ikon</a></li>
           <li><a href="#paragrafbredde">Paragrafbredde</a></li>
           <li><a href="#luk-knap">Luk knap</a></li>
+          <li><a href="#custom-element">Custom Element</a></li>
           
           </ul>
           
@@ -4684,6 +4694,98 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
     </div>
 </div>
 
+<h2 id="custom-element">Custom Element</h2>
+
+<div class="component-preview  component-preview-custom-element-alert">
+    
+    <div class="component-link px-4 py-4">
+        
+        <a href="/eksempel/custom-element-alert/" class="small-text" target="_blank">Åbn dette eksempel i et nyt vindue<span class="sr-only">: custom-element-alert</span></a>
+        
+    </div>
+    
+    
+    <div class="sr-only">Eksempel på besked som custom element</div>
+    
+    <div class="component-example px-4 py-4">
+        
+        <fds-alert variant="warning" heading="Beskedens titel" headingtype="h3" closeable="">
+    Dette er beskedens indhold.
+</fds-alert>
+        
+    </div>
+    
+</div>
+
+<div class="component-preview component-preview-code  component-code-custom-element-alert">
+    
+    
+    <div class="sr-only">Kodeeksempel</div>
+    
+    <div class="component-code">
+        
+        <div class="button-copy-container">
+            <button class="button button-secondary button-copy">Kopiér kode</button>
+        </div>
+        
+        
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;fds-alert variant=&quot;warning&quot; heading=&quot;Beskedens titel&quot; headingtype=&quot;h3&quot; closeable&gt;
+    Dette er beskedens indhold.
+&lt;/fds-alert&gt;</code></pre></figure>
+
+
+    </div>
+</div>
+
+<h3>Init</h3>
+
+<p>Kald funktionen <code>DKFDS.initCustomElements();</code> i din JavaScript-kode. For eksempel:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+    DKFDS.initCustomElements();
+});</code></pre></figure>
+
+<h3>Attributter</h3>
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribut</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>variant</td>
+        <td>Afgør beskedens farve og ikon. Skal enten være 'info' (blå), 'success' (grøn), 'warning' (gul) eller 'error' (rød).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Funktioner</h3>
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Funktion</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>show()</td>
+        <td>Sørg for at beskeden er synlig for brugeren.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Eksempel på anvendelse i JavaScript:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">document.body.querySelector(&quot;fds-alert&quot;).show();</code></pre></figure>
 
 
           
