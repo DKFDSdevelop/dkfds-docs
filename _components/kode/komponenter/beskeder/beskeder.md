@@ -118,6 +118,14 @@ Defineres med klassen `alert--paragraph`.
 {:#custom-element}
 ## Custom Element
 
+Du kan oprette beskeder ved hjælp af custom elements i stedet for den ovenstående HTML. 
+
+Når du anvender et custom element, vil det meste HTML blive autogenereret. Din kode bliver derfor mere overskuelig og du kan lettere fokusere på indhold frem for HTML-struktur.
+
+Et custom element opdateres automatisk, hvis du ændrer dets attributter og du kan nøjes med at initialisere én gang, hvorefter JavaScripten fungerer i alle komponenter, selvom de tilføjes efter initialisering.
+
+Bemærk, at et custom element dog <em>ikke</em> registrerer ændringer i indhold. For at sikre at indhold opdateres korrekt i forhold til den autogenererede HTML, kan du anvende <a href="#custom-funktioner">funktionen setContent()</a>.
+
 {% include code/preview-box.html component="custom-element-alert" title="Eksempel på besked som custom element" %}
 
 {% include code/syntax.html component="custom-element-alert" copybutton=true %}
@@ -132,7 +140,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 {% endhighlight %}
 
+### Indhold
+
+Indholdet i beskeden angives mellem `<fds-alert>` og `</fds-alert>`. Du kan angive indhold med enten tekst eller HTML. Hvis du ønsker at ændre beskedens indhold efter den autogenererede HTML er oprettet, bør du dog anvende <a href="#custom-funktioner">funktionen setContent()</a> i stedet.
+
+Du bør altid angive indhold for en besked, medmindre du både har en `heading`-attribut samt en `headingtype`-attribut, hvor sidstnævnte skal være sat til værdien `strong`.
+
 ### Attributter
+
+Attributter markeret som 'påkrævet' bør altid medtages.
 
 <div class="table--responsive-scroll">
   <table class="table">
@@ -140,17 +156,40 @@ document.addEventListener("DOMContentLoaded", function() {
       <tr>
         <th scope="col">Attribut</th>
         <th scope="col">Beskrivelse</th>
+        <th scope="col">Påkrævet</th>
+        <th scope="col">Gyldige værdier</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>variant</td>
-        <td>Afgør beskedens farve og ikon. Skal enten være 'info' (blå), 'success' (grøn), 'warning' (gul) eller 'error' (rød).</td>
+        <td>Afgør beskedens farve og ikon.</td>
+        <td>Ja</td>
+        <td><ul class="mt-0 mb-0"><li class="mt-0">'info' (blå)</li><li>'success' (grøn)</li><li>'warning' (gul)</li><li>'error' (rød)</li></ul></td>
+      </tr>
+      <tr>
+        <td>heading</td>
+        <td>Beskedens titel.</td>
+        <td>Nej</td>
+        <td>Vilkårlig string</td>
+      </tr>
+      <tr>
+        <td>headingtype</td>
+        <td>Afgør hvilket HTML-element der skal bruges til beskedens titel.</td>
+        <td>Ja, såfremt <code>heading</code> anvendes.</td>
+        <td><ul class="mt-0 mb-0"><li class="mt-0">'h1'</li><li>'h2'</li><li>'h3'</li><li>'h4'</li><li>'h5'</li><li>'h6'</li><li>'strong'</li></ul></td>
+      </tr>
+      <tr>
+        <td>closeable</td>
+        <td>Afgør om der skal være en luk-knap i beskeden.</td>
+        <td>Nej</td>
+        <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
       </tr>
     </tbody>
   </table>
 </div>
 
+{:#custom-funktioner}
 ### Funktioner
 
 <div class="table--responsive-scroll">
@@ -163,8 +202,20 @@ document.addEventListener("DOMContentLoaded", function() {
     </thead>
     <tbody>
       <tr>
+        <td>hide()</td>
+        <td>Skjul beskeden.</td>
+      </tr>
+      <tr>
         <td>show()</td>
-        <td>Sørg for at beskeden er synlig for brugeren.</td>
+        <td>Vis beskeden.</td>
+      </tr>
+      <tr>
+        <td>getContent()</td>
+        <td>Få beskedens indhold som en string uden elementets autogenererede HTML.</td>
+      </tr>
+      <tr>
+        <td>setContent(content)</td>
+        <td>Sæt beskedens indhold. Den autogenererede HTML tilpasses automatisk.</td>
       </tr>
     </tbody>
   </table>
@@ -172,5 +223,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Eksempel på anvendelse i JavaScript:
 {% highlight javascript %}
-document.body.querySelector("fds-alert").show();
+document.body.querySelector("fds-alert").hide();
 {% endhighlight %}
+
+### Events
+
+Følgende events kan udløses på elementet `<fds-alert>`:
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>fdsalerthide</td>
+        <td>Udløses når beskeden skjules, dvs. når brugeren trykker på luk-knappen eller hvis funktionen <code>hide()</code> bliver kaldt.</td>
+      </tr>
+      <tr>
+        <td>fdsalertshow</td>
+        <td>Udløses når beskeden vises, dvs. når funktionen <code>show()</code> bliver kaldt.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

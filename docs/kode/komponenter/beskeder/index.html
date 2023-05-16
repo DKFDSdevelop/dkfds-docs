@@ -4696,6 +4696,14 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
 
 <h2 id="custom-element">Custom Element</h2>
 
+<p>Du kan oprette beskeder ved hjælp af custom elements i stedet for den ovenstående HTML.</p>
+
+<p>Når du anvender et custom element, vil det meste HTML blive autogenereret. Din kode bliver derfor mere overskuelig og du kan lettere fokusere på indhold frem for HTML-struktur.</p>
+
+<p>Et custom element opdateres automatisk, hvis du ændrer dets attributter og du kan nøjes med at initialisere én gang, hvorefter JavaScripten fungerer i alle komponenter, selvom de tilføjes efter initialisering.</p>
+
+<p>Bemærk, at et custom element dog <em>ikke</em> registrerer ændringer i indhold. For at sikre at indhold opdateres korrekt i forhold til den autogenererede HTML, kan du anvende <a href="#custom-funktioner">funktionen setContent()</a>.</p>
+
 <div class="component-preview  component-preview-custom-element-alert">
     
     <div class="component-link px-4 py-4">
@@ -4745,7 +4753,15 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
     DKFDS.initCustomElements();
 });</code></pre></figure>
 
+<h3>Indhold</h3>
+
+<p>Indholdet i beskeden angives mellem <code>&lt;fds-alert&gt;</code> og <code>&lt;/fds-alert&gt;</code>. Du kan angive indhold med enten tekst eller HTML. Hvis du ønsker at ændre beskedens indhold efter den autogenererede HTML er oprettet, bør du dog anvende <a href="#custom-funktioner">funktionen setContent()</a> i stedet.</p>
+
+<p>Du bør altid angive indhold for en besked, medmindre du både har en <code>heading</code>-attribut samt en <code>headingtype</code>-attribut, hvor sidstnævnte skal være sat til værdien <code>strong</code>.</p>
+
 <h3>Attributter</h3>
+
+<p>Attributter markeret som ‘påkrævet’ bør altid medtages.</p>
 
 <div class="table--responsive-scroll">
   <table class="table">
@@ -4753,18 +4769,40 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
       <tr>
         <th scope="col">Attribut</th>
         <th scope="col">Beskrivelse</th>
+        <th scope="col">Påkrævet</th>
+        <th scope="col">Gyldige værdier</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>variant</td>
-        <td>Afgør beskedens farve og ikon. Skal enten være 'info' (blå), 'success' (grøn), 'warning' (gul) eller 'error' (rød).</td>
+        <td>Afgør beskedens farve og ikon.</td>
+        <td>Ja</td>
+        <td><ul class="mt-0 mb-0"><li class="mt-0">'info' (blå)</li><li>'success' (grøn)</li><li>'warning' (gul)</li><li>'error' (rød)</li></ul></td>
+      </tr>
+      <tr>
+        <td>heading</td>
+        <td>Beskedens titel.</td>
+        <td>Nej</td>
+        <td>Vilkårlig string</td>
+      </tr>
+      <tr>
+        <td>headingtype</td>
+        <td>Afgør hvilket HTML-element der skal bruges til beskedens titel.</td>
+        <td>Ja, såfremt <code>heading</code> anvendes.</td>
+        <td><ul class="mt-0 mb-0"><li class="mt-0">'h1'</li><li>'h2'</li><li>'h3'</li><li>'h4'</li><li>'h5'</li><li>'h6'</li><li>'strong'</li></ul></td>
+      </tr>
+      <tr>
+        <td>closeable</td>
+        <td>Afgør om der skal være en luk-knap i beskeden.</td>
+        <td>Nej</td>
+        <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<h3>Funktioner</h3>
+<h3 id="custom-funktioner">Funktioner</h3>
 
 <div class="table--responsive-scroll">
   <table class="table">
@@ -4776,8 +4814,20 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
     </thead>
     <tbody>
       <tr>
+        <td>hide()</td>
+        <td>Skjul beskeden.</td>
+      </tr>
+      <tr>
         <td>show()</td>
-        <td>Sørg for at beskeden er synlig for brugeren.</td>
+        <td>Vis beskeden.</td>
+      </tr>
+      <tr>
+        <td>getContent()</td>
+        <td>Få beskedens indhold som en string uden elementets autogenererede HTML.</td>
+      </tr>
+      <tr>
+        <td>setContent(content)</td>
+        <td>Sæt beskedens indhold. Den autogenererede HTML tilpasses automatisk.</td>
       </tr>
     </tbody>
   </table>
@@ -4785,7 +4835,32 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
 
 <p>Eksempel på anvendelse i JavaScript:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">document.body.querySelector(&quot;fds-alert&quot;).show();</code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">document.body.querySelector(&quot;fds-alert&quot;).hide();</code></pre></figure>
+
+<h3>Events</h3>
+
+<p>Følgende events kan udløses på elementet <code>&lt;fds-alert&gt;</code>:</p>
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>fdsalerthide</td>
+        <td>Udløses når beskeden skjules, dvs. når brugeren trykker på luk-knappen eller hvis funktionen <code>hide()</code> bliver kaldt.</td>
+      </tr>
+      <tr>
+        <td>fdsalertshow</td>
+        <td>Udløses når beskeden vises, dvs. når funktionen <code>show()</code> bliver kaldt.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
           
