@@ -217,6 +217,14 @@ Attributter markeret som 'påkrævet' bør altid medtages.
         <td>setContent(content)</td>
         <td>Sæt beskedens indhold. Den autogenererede HTML tilpasses automatisk.</td>
       </tr>
+      <tr>
+        <td>updateGlossary(glossary)</td>
+        <td>
+          <p class="mt-0 mb-0">Opdater ord og termer anvendt i den autogenererede HTML. Input skal være en string i JSON-format. Nedenstående eksempel viser format og standardtermer:</p>
+          {% highlight javascript %}
+          alert.updateGlossary('{ "close": "Luk" }');
+          {% endhighlight %}</td>
+      </tr>
     </tbody>
   </table>
 </div>

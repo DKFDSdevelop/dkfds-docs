@@ -4829,6 +4829,14 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
         <td>setContent(content)</td>
         <td>Sæt beskedens indhold. Den autogenererede HTML tilpasses automatisk.</td>
       </tr>
+      <tr>
+        <td>updateGlossary(glossary)</td>
+        <td>
+          <p class="mt-0 mb-0">Opdater ord og termer anvendt i den autogenererede HTML. Input skal være en string i JSON-format. Nedenstående eksempel viser format og standardtermer:</p>
+          
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">alert.updateGlossary(&#39;{ &quot;close&quot;: &quot;Luk&quot; }&#39;);</code></pre></figure>
+</td>
+      </tr>
     </tbody>
   </table>
 </div>
