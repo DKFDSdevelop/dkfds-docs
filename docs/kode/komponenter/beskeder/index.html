@@ -4761,7 +4761,7 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
 
 <h3>Attributter</h3>
 
-<p>Attributter markeret som ‘påkrævet’ bør altid medtages.</p>
+<p>Attributter markeret som ‘påkrævet’ bør altid medtages. Hvis beskeden skal læses højt at skærmlæsere, kan standardattributter som <code>role="alert"</code> anvendes.</p>
 
 <div class="table--responsive-scroll">
   <table class="table">
@@ -4798,9 +4798,25 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
         <td>Nej</td>
         <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
       </tr>
+      <tr>
+        <td>hasicon</td>
+        <td>Afgør om der skal være et ikon, som passer til beskedens variant.</td>
+        <td>Nej</td>
+        <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
+      </tr>
+      <tr>
+        <td>limitwidth</td>
+        <td>Begræns beskedens bredde, så dens maksimale bredde svarer til bredden på en paragraf.</td>
+        <td>Nej</td>
+        <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
+      </tr>
     </tbody>
   </table>
 </div>
+
+<p>Bemærk at ovenstående attributter afspejles i elementets properties. Følgende eksempel viser, hvordan en attribut kan opdateres ved hjælp af JavaScript:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">document.body.querySelector(&quot;fds-alert&quot;).variant = &quot;info&quot;;</code></pre></figure>
 
 <h3 id="custom-funktioner">Funktioner</h3>
 

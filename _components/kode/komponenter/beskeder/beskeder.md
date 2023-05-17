@@ -148,7 +148,7 @@ Du bør altid angive indhold for en besked, medmindre du både har en `heading`-
 
 ### Attributter
 
-Attributter markeret som 'påkrævet' bør altid medtages.
+Attributter markeret som 'påkrævet' bør altid medtages. Hvis beskeden skal læses højt at skærmlæsere, kan standardattributter som `role="alert"` anvendes.
 
 <div class="table--responsive-scroll">
   <table class="table">
@@ -185,9 +185,27 @@ Attributter markeret som 'påkrævet' bør altid medtages.
         <td>Nej</td>
         <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
       </tr>
+      <tr>
+        <td>hasicon</td>
+        <td>Afgør om der skal være et ikon, som passer til beskedens variant.</td>
+        <td>Nej</td>
+        <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
+      </tr>
+      <tr>
+        <td>limitwidth</td>
+        <td>Begræns beskedens bredde, så dens maksimale bredde svarer til bredden på en paragraf.</td>
+        <td>Nej</td>
+        <td>Undlad at angive en værdi. Såfremt attributten er til stede, svarer dette til 'true' og udelades attributten svarer dette til 'false'.</td>
+      </tr>
     </tbody>
   </table>
 </div>
+
+Bemærk at ovenstående attributter afspejles i elementets properties. Følgende eksempel viser, hvordan en attribut kan opdateres ved hjælp af JavaScript:
+
+{% highlight javascript %}
+document.body.querySelector("fds-alert").variant = "info";
+{% endhighlight %}
 
 {:#custom-funktioner}
 ### Funktioner
