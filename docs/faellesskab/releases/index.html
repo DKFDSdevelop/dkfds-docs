@@ -39,7 +39,15 @@
 ================================================== -->
 
 <!-- Preload fonts -->
+<link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-Bold.woff2" as="font" crossorigin>
+<link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-BoldItalic.woff2" as="font" crossorigin>
+<link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-Italic.woff2" as="font" crossorigin>
+<link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-Medium.woff2" as="font" crossorigin>
+<link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-MediumItalic.woff2" as="font" crossorigin>
 <link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff/IBMPlexSans-Regular.woff" as="font" crossorigin>
+<link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-SemiBold.woff2" as="font" crossorigin>
+<link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-SemiBoldItalic.woff2" as="font" crossorigin>
+
 <link rel="preload" href="/assets/style/styleguide_borgerdk.css" as="style">
 <link rel="preload" href="/assets/style/styleguide_virkdk.css" as="style">
 <link rel="preload" href="/assets/js/theme.js" as="script">
@@ -3747,10 +3755,14 @@
 
 <h2 id="version-9-0-1" class="mb-0">Version 9.0.1</h2>
 
-<div><span class="small-text mt-0 d-block">??-04-2023</span></div>
+<div><span class="small-text mt-0 d-block">??-06-2023</span></div>
 
 <ul>
   <li>Rettet fejl, hvor teksten på <a href="/komponenter/knapper/">knapper</a> røg ud over kanten, hvis teksten fyldte flere linjer.</li>
+  <li>Rettet fejl, hvor <a href="/komponenter/cookiemeddelelse/">cookiemeddelelsen</a> ikke kunne læses, når der var zoomet kraftigt ind i browseren.</li>
+  <li>Tilføjet tjek i JavaScript-koden for <a href="/komponenter/modal/">modaler</a>, så man ikke længere får en fejlbesked i browserens konsol, hvis man programmatisk forsøger at lukke en allerede lukket modal.
+<span class="form-hint mt-0">For mere info, se <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues/210" class="icon-link" target="_blank">issue #210 på Github<svg class="icon-svg" focusable="false" aria-hidden="true"><use xlink:href="#open-in-new"></use></svg></a>.</span></li>
+  <li>Rettet fejl i dokumentationen, hvor nogle <a href="/design/farver/">farver</a> stod angivet forkert.</li>
 </ul>
 
 <h2 id="version-9-0-0" class="mb-0">Version 9.0.0</h2>
