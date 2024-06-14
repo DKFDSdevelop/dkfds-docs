@@ -258,3 +258,8 @@ B: Test af faneblade anvendt til sidenavigation
 ## Venstremenu
 
 {% include test/preview-test.html filename="test-venstremenu" description="Venstremenu" %}
+
+{:.h3}
+## Custom elements
+
+{% include test/preview-test.html filename="test-fds-alerts" description="Beskeder" %}
