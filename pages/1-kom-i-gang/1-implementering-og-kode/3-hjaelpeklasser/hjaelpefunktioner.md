@@ -104,6 +104,12 @@ Du kan selv tilføje flere muligheder ved at tilføje dem til `$spacers` variabl
 - <span class="bold">lg</span> - for klasser som sætter `margin` eller `padding` for browserstørrelser over 992px;
 - <span class="bold">xl</span> - for klasser som sætter `margin` eller `padding` for browserstørrelser over 1200px;
 
+<h4 class="h5 mb-0">Eksempel:</h4>
+{% highlight html %}
+<p class="mt-8">Tekst med margin-top for alle skærmstørrelser</p>
+<p class="pl-md-405">Tekst med padding-left for browserstørrelser over 768px</p>
+{% endhighlight %}
+
 ## Display {#{% include create-id.html heading="Display" %}}
 
 Der er opsat en hjælpefunktion som automatisk genererer klasser til display-egenskaben baseret på de definerede breakpoints i `$grid-breakpoints`. Disse hjælpeklasser er inspireret af {% include links/external-link.html linktext="Bootstraps Display Utility" %}.

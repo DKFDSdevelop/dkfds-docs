@@ -262,4 +262,5 @@ B: Test af faneblade anvendt til sidenavigation
 {:.h3}
 ## Custom elements
 
+{% include test/preview-test.html filename="test-fds-icons" description="Ikoner" %}
 {% include test/preview-test.html filename="test-fds-alerts" description="Beskeder" %}

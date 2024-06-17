@@ -22,6 +22,7 @@ var distJekyllComponentPreview = '_preview-components';
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
+var buildCustomElements = ['examples/testfiles/custom-elements/*.njk'];
 var buildFile = ['examples/components/tooltip/*.njk'];
 
 var activeBuild = buildAll;
@@ -171,6 +172,7 @@ var testfiles = [
     "test-step-guide-6",
     "test-step-guide-7",
     "test-venstremenu",
+    "test-fds-icons",
     "test-fds-alerts"
 ];
 
