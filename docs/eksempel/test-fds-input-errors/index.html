@@ -16,8 +16,8 @@
 ================================================== -->
 
 
-<title>Test-fds-alerts | Det Fælles Designsystem</title>
-<meta property="og:title" content="Test-fds-alerts | Det Fælles Designsystem">
+<title>Test-fds-input-errors | Det Fælles Designsystem</title>
+<meta property="og:title" content="Test-fds-input-errors | Det Fælles Designsystem">
 
 
 
@@ -251,15 +251,33 @@
     <main class="container page-container" id="main-content">
     <div class="row">
         <div class="col-12">
-            <h1 class="h2 mt-0 mb-9">Beskeder</h1>
+            <h1 class="h2 mt-0 mb-9">Fejlbeskeder for inputfelter</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <fds-alert variant="warning" heading="Beskedens titel" headingtype="h3" closeable="">
-                Dette er beskedens indhold.
-            </fds-alert>
+    <div class="row mb-9">
+        <div class="col-4">
+            <p>Tjek konsol for fejlbesked. Det er ikke tilladt at have indhold i fds-input.
+            </p>
         </div>
+        <div class="col-8"><fds-input label="En label">Test</fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">
+            <p>Tjek konsol for fejlbesked. Label må ikke være en tom streng.</p>
+        </div>
+        <div class="col-8"><fds-input label=""></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">
+            <p>Tjek konsol for fejlbesked. Label må ikke være tom.</p>
+        </div>
+        <div class="col-8"><fds-input label=""></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">
+            <p>Tjek konsol for fejlbesked. Label må ikke være blanktegn.</p>
+        </div>
+        <div class="col-8"><fds-input label="   "></fds-input></div>
     </div>
 </main>
 
@@ -279,10 +297,8 @@
             </div>
             <div>
                 
-                <a class="function-link mr-4" href="/eksempel/test-fds-icons/">Forrige</a>
+                <a class="function-link mr-4" href="/eksempel/test-fds-input/">Forrige</a>
                 
-                
-                <a class="function-link" href="/eksempel/test-fds-input/">Næste</a>
                 
             </div>
         </div>
