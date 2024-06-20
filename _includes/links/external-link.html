@@ -79,7 +79,8 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
     {%- when "page-structure - headings" -%}
         <a href="https://www.w3.org/WAI/tutorials/page-structure/headings/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
-    {%- when "wcag 2.1 (web content accessibility guidelines)" -%}
+    {%- when "wcag 2.1", 
+             "wcag 2.1 (web content accessibility guidelines)" -%}
         <a href="https://www.w3.org/Translations/WCAG21-da/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
     {%- when "liste over evalueringsværktøjer til webtilgængelighed" -%}
@@ -108,6 +109,9 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
 
     {%- when "aria authoring practices guide (apg): switch pattern" -%}
         <a href="https://www.w3.org/WAI/ARIA/apg/patterns/switch/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
+
+    {%- when "inputformål for brugergrænseflade&shy;komponenter" -%}
+        <a href="https://www.w3.org/Translations/WCAG21-da/#input-purposes" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
 
 

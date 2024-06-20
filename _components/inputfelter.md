@@ -339,8 +339,26 @@ Anvend udelukkende elementets attributter og funktioner til ændringer.
       <tr>
         <td>inputid</td>
         <td>Inputfeltets ID. Hvis udeladt, genereres et tilfældigt ID.</td>
-        <td>Nej, men anbefalet.</td>
+        <td>Nej, men anbefalet</td>
         <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</td>
+        <td>Nej</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>Inputfeltets type. Hvis udeladt, sættes værdien til <code>text</code>. Sørg for at vælge den type, der passer til inputfeltets forventede indhold.</td>
+        <td>Nej</td>
+        <td><code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code> eller <code>url</code></td>
+      </tr>
+      <tr>
+        <td>autocomplete</td>
+        <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
+        <td>Nej</td>
+        <td>Se {% include links/external-link.html linktext="Inputformål for brugergrænseflade&shy;komponenter" classes="d-inline hyphens-manual" %} for værdier nævnt i {% include links/external-link.html linktext="WCAG 2.1" classes="d-inline" %}. Man er selv ansvarlig for korrekt udfyldelse af denne attribut.</td>
       </tr>
     </tbody>
   </table>

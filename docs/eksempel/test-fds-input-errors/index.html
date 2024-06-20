@@ -277,15 +277,23 @@
     </div>
     <div class="row mb-9">
         <div class="col-4">
+            <p>Tjek konsol for fejlbesked. Label må ikke være blanktegn.</p>
+        </div>
+        <div class="col-8"><fds-input label="   " name="test-input"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">
             <p>Tjek konsol for fejlbesked. Label må ikke være tom.</p>
         </div>
         <div class="col-8"><fds-input label="" name="test-input"></fds-input></div>
     </div>
     <div class="row mb-9">
         <div class="col-4">
-            <p>Tjek konsol for fejlbesked. Label må ikke være blanktegn.</p>
+            <p>Tjek konsol for fejlbesked. Type må ikke være abc. Feltet skal have fået
+                default-typen 'text'.</p>
         </div>
-        <div class="col-8"><fds-input label="   " name="test-input"></fds-input></div>
+        <div class="col-8"><fds-input label="Label" name="test-input" type="abc"></fds-input>
+        </div>
     </div>
 </main>
 

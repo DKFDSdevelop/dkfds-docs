@@ -2776,8 +2776,26 @@ form_limit.charactersLeft();</code></pre></figure>
       <tr>
         <td>inputid</td>
         <td>Inputfeltets ID. Hvis udeladt, genereres et tilfældigt ID.</td>
-        <td>Nej, men anbefalet.</td>
+        <td>Nej, men anbefalet</td>
         <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</td>
+        <td>Nej</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>Inputfeltets type. Hvis udeladt, sættes værdien til <code>text</code>. Sørg for at vælge den type, der passer til inputfeltets forventede indhold.</td>
+        <td>Nej</td>
+        <td><code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code> eller <code>url</code></td>
+      </tr>
+      <tr>
+        <td>autocomplete</td>
+        <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
+        <td>Nej</td>
+        <td>Se <a href="https://www.w3.org/Translations/WCAG21-da/#input-purposes" class="icon-link d-inline hyphens-manual" target="_blank">Inputformål for brugergrænseflade&shy;komponenter<svg class="icon-svg" focusable="false" aria-hidden="true" tabindex="-1"><use xlink:href="#open-in-new"></use></svg></a> for værdier nævnt i <a href="https://www.w3.org/Translations/WCAG21-da/" class="icon-link d-inline" target="_blank">WCAG 2.1<svg class="icon-svg" focusable="false" aria-hidden="true" tabindex="-1"><use xlink:href="#open-in-new"></use></svg></a>. Man er selv ansvarlig for korrekt udfyldelse af denne attribut.</td>
       </tr>
     </tbody>
   </table>
