@@ -486,6 +486,9 @@ Inputfelter_Kode:
 - h2: Karakterbegrænsning
 - h2: Feltbredde
 
+Inputfelter_Eksperimentel:
+- h2: Installation
+
 Knapper_Kode:
 - h2: Installation
 - h2: Primær

@@ -41,14 +41,14 @@ tags:
 - suffiks
 - sufix
 - sufiks
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, eksperimentel"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true experimental=true %}
 
 {% include code/preview-box.html component="text-input" title="Eksempel på inputfelt" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" %}
+{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" experimental="Inputfelter_Eksperimentel" classes="hide-experimental" %}
 
 <!--split-->
 
@@ -300,3 +300,76 @@ For at styre bredden på inputfelter efter tegn, skal der i stedet bruges nedens
 - `input-char-27` har en bredde der passer til 27 tegn
 
 For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes klassen `input-char-X`, hvor det nye tal skal erstattes med X.
+
+<!--split-->
+
+## Installation {#{% include create-id.html heading="Installation" append="-eksperimentel" %}}
+
+{% include code/syntax.html component="fds-input-label-name-id" link=true copybutton=true %}
+
+Bemærk, at der ikke må være noget brugerdefineret indhold på forhånd i `<fds-input>`. 
+
+Anvend udelukkende elementets attributter og funktioner til ændringer.
+
+### Attributter
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribut</th>
+        <th scope="col">Beskrivelse</th>
+        <th scope="col">Påkrævet</th>
+        <th scope="col">Gyldige værdier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>label</td>
+        <td>Labeltekst vist over inputfeltet.</td>
+        <td>Ja</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Tekststreng der indsættes i inputfeltets <code>name</code>-attribut. Bruges til at identificere feltet i en <code>&lt;form&gt;</code>.</td>
+        <td>Ja</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>inputid</td>
+        <td>Inputfeltets ID. Hvis udeladt, genereres et tilfældigt ID.</td>
+        <td>Nej, men anbefalet.</td>
+        <td>Tekst</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Funktioner
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Funktion</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>getLabelElement()</td>
+        <td>Returnerer label.</td>
+      </tr>
+      <tr>
+        <td>getInputElement()</td>
+        <td>Returnerer input.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Eksempel på anvendelse af funktion i JavaScript:
+{% highlight javascript %}
+document.querySelector('fds-input').getLabelElement();
+{% endhighlight %}

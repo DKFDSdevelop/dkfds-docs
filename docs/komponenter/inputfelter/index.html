@@ -1729,6 +1729,9 @@
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
             <span id="kode" hidden=""></span>
+        </li><li>
+            <a href="#eksperimentel" id="experimental-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Eksperimentel kode</span></a>
+            <span id="eksperimentel" hidden=""></span>
         </li></ul>
 </nav>
 
@@ -1755,7 +1758,7 @@
     
 </div>
 
-<nav class="anchorbox" aria-labelledby="anchorlinks">
+<nav class="anchorbox hide-experimental" aria-labelledby="anchorlinks">
     <h2 class="anchortitle" id="anchorlinks">Indhold på siden</h2>
     <ul class="anchorlist">
         
@@ -1772,6 +1775,8 @@
         <li class="anchorlink-code"><a href="#prefix-og-suffix-kode">Prefix og suffix</a></li>
         <li class="anchorlink-code"><a href="#karakterbegraensning-kode">Karakterbegrænsning</a></li>
         <li class="anchorlink-code"><a href="#feltbredde-kode">Feltbredde</a></li>
+        
+        <li class="anchorlink-experimental"><a href="#installation-eksperimentel">Installation</a></li>
         
     </ul>
 </nav>
@@ -2705,6 +2710,105 @@ form_limit.charactersLeft();</code></pre></figure>
 </ul>
 
 <p>For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes klassen <code>input-char-X</code>, hvor det nye tal skal erstattes med X.</p>
+
+
+                        </div>
+                        <div id="experimental-section">
+                            
+
+<h2 id="installation-eksperimentel">Installation</h2>
+
+<div class="component-preview component-preview-code  component-code-fds-input-label-name-id">
+    
+    <div class="component-link px-4 py-4">
+        
+        <a href="/eksempel/fds-input-label-name-id/" class="small-text" target="_blank">Vis dette eksempel i et nyt vindue<span class="sr-only">: fds-input-label-name-id</span></a>
+        
+    </div>
+    
+    
+    <div class="sr-only">Kodeeksempel</div>
+    
+    <div class="component-code">
+        
+        <div class="button-copy-container">
+            <button class="button button-secondary button-copy">Kopiér kode</button>
+        </div>
+        
+        
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;fds-input label=&quot;Inputfelt med label&quot; name=&quot;input-text&quot;
+    inputid=&quot;input-text-custom&quot;&gt;&lt;/fds-input&gt;</code></pre></figure>
+
+
+    </div>
+    
+</div>
+
+<p>Bemærk, at der ikke må være noget brugerdefineret indhold på forhånd i <code>&lt;fds-input&gt;</code>.</p>
+
+<p>Anvend udelukkende elementets attributter og funktioner til ændringer.</p>
+
+<h3>Attributter</h3>
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribut</th>
+        <th scope="col">Beskrivelse</th>
+        <th scope="col">Påkrævet</th>
+        <th scope="col">Gyldige værdier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>label</td>
+        <td>Labeltekst vist over inputfeltet.</td>
+        <td>Ja</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Tekststreng der indsættes i inputfeltets <code>name</code>-attribut. Bruges til at identificere feltet i en <code>&lt;form&gt;</code>.</td>
+        <td>Ja</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>inputid</td>
+        <td>Inputfeltets ID. Hvis udeladt, genereres et tilfældigt ID.</td>
+        <td>Nej, men anbefalet.</td>
+        <td>Tekst</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Funktioner</h3>
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Funktion</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>getLabelElement()</td>
+        <td>Returnerer label.</td>
+      </tr>
+      <tr>
+        <td>getInputElement()</td>
+        <td>Returnerer input.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Eksempel på anvendelse af funktion i JavaScript:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">document.querySelector(&#39;fds-input&#39;).getLabelElement();</code></pre></figure>
 
                         </div>
 

@@ -51,6 +51,18 @@ layout: default
                         <div id="code-section">
                             {{ pageContent[2] }}
                         </div>
+                        {%- elsif page.tabs == "Retningslinjer, kode, eksperimentel" -%}
+                        {%- assign pageContent = content | split: site.excerpt_separator -%}
+                        {{ pageContent[0] }}
+                        <div id="guidelines-section">
+                            {{ pageContent[1] }}
+                        </div>
+                        <div id="code-section">
+                            {{ pageContent[2] }}
+                        </div>
+                        <div id="experimental-section">
+                            {{ pageContent[3] }}
+                        </div>
                     {%- else -%}
                         {{ content }}
                     {%- endif %}
