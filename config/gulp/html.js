@@ -22,7 +22,7 @@ var distJekyllComponentPreview = '_preview-components';
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildCustomElements = ['examples/testfiles/custom-elements/*.njk'];
+var buildCustomElements = ['examples/testfiles/custom-elements/**/*.njk'];
 var buildFile = ['examples/components/tooltip/*.njk'];
 
 var activeBuild = buildAll;
@@ -175,7 +175,8 @@ var testfiles = [
     "test-fds-icons",
     "test-fds-alerts",
     "test-fds-input",
-    "test-fds-input-errors"
+    "test-fds-input-label",
+    "test-fds-input-value"
 ];
 
 function getPath (dirname){

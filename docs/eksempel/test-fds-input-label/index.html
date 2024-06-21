@@ -16,8 +16,8 @@
 ================================================== -->
 
 
-<title>Test-fds-input | Det Fælles Designsystem</title>
-<meta property="og:title" content="Test-fds-input | Det Fælles Designsystem">
+<title>Test-fds-input-label | Det Fælles Designsystem</title>
+<meta property="og:title" content="Test-fds-input-label | Det Fælles Designsystem">
 
 
 
@@ -251,25 +251,49 @@
     <main class="container page-container" id="main-content">
     <div class="row">
         <div class="col-12">
-            <h1 class="h2 mt-0 mb-9">Inputfelter</h1>
+            <h1 class="h2 mt-0 mb-9">Inputfelter, label</h1>
         </div>
     </div>
     <div class="row mb-9">
-        <div class="col-4">
-            <p>Tjek konsol for fejlbesked. Det er ikke tilladt at undlade attributter i
-                fds-input.</p>
-        </div>
-        <div class="col-8"><fds-input></fds-input></div>
+        <div class="col-4" id="test-html-result"></div>
+        <div class="col-8" id="test-html"><fds-input label="En label" name="test-name" inputid="test-id"></fds-input></div>
     </div>
     <div class="row mb-9">
-        <div class="col-4">
-            <p>Tjek konsol for fejlbesked. Det er ikke tilladt at have indhold i fds-input.
-            </p>
-        </div>
-        <div class="col-8"><fds-input label="En label" name="test-input">Test</fds-input>
-        </div>
+        <div class="col-4">Label ændres programmatisk fra 'Oprindelig' til 'Ændret'</div>
+        <div class="col-8" id="test-getter"><fds-input label="Oprindelig" name="test-name"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Tjek konsol for fejlbesked. Label mangler.</div>
+        <div class="col-8"><fds-input name="test-name"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Tjek konsol for fejlbesked. Label er ugyldig.</div>
+        <div class="col-8"><fds-input label="" name="test-name"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Label-attribut fjernet programmatisk - label skal fortsat være
+            synlig.</div>
+        <div class="col-8" id="test-remove"><fds-input label="En label" name="test-name"></fds-input></div>
     </div>
 </main>
+
+<script>
+    window.addEventListener('load', (event) => {
+        // Test HTML
+        let testHTML =
+            '<div class="form-group"><label class="form-label" for="test-id">En label</label><input class="form-input" name="test-name" id="test-id" type="text"></div>';
+        document.getElementById('test-html-result').innerHTML =
+            'HTML genereret korrekt: <strong>' + (document.getElementById('test-html')
+                .querySelector('fds-input').innerHTML === testHTML) + '</strong>';
+        // Test getter
+        document.getElementById('test-getter').querySelector('fds-input').label =
+            'Ændret';
+        // Test sletning af attribut
+        document.getElementById('test-remove').querySelector('fds-input')
+            .removeAttribute('label');
+    });
+</script>
+
 
     <footer class="test-footer d-flex align-items-center">
     <div class="container">
@@ -287,10 +311,10 @@
             </div>
             <div>
                 
-                <a class="function-link mr-4" href="/eksempel/test-fds-alerts/">Forrige</a>
+                <a class="function-link mr-4" href="/eksempel/test-fds-input/">Forrige</a>
                 
                 
-                <a class="function-link" href="/eksempel/test-fds-input-label/">Næste</a>
+                <a class="function-link" href="/eksempel/test-fds-input-value/">Næste</a>
                 
             </div>
         </div>
