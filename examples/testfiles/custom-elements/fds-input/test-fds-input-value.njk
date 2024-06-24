@@ -17,12 +17,16 @@
         <div class="col-8"><fds-input label="En label" name="test-name"></fds-input></div>
     </div>
     <div class="row mb-9">
-        <div class="col-4">Tjek konsol for fejlbesked. Value er ugyldig.</div>
+        <div class="col-4">Tom value-attribut.</div>
         <div class="col-8"><fds-input label="En label" name="test-name" value=""></fds-input></div>
     </div>
     <div class="row mb-9">
         <div class="col-4">Value-attribut fjernet programmatisk.</div>
-        <div class="col-8" id="test-remove"><fds-input label="En label" name="test-name" value="Indhold i inputfeltet"></fds-input></div>
+        <div class="col-8" id="test-remove"><fds-input label="En label" name="test-name" value="Denne tekst skal ikke ses"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4" id="test-match-result">Value-attribut skal matche teksten i inputfeltet.</div>
+        <div class="col-8" id="test-match"><fds-input label="En label" name="test-name"></fds-input></div>
     </div>
 </main>
 
@@ -37,5 +41,10 @@
 
         // Test sletning af attribut
         document.getElementById('test-remove').querySelector('fds-input').removeAttribute('value');
+
+        // Test value-attribut returnerer tekst i inputfeltet
+        let valueTest = 'Tekst indsat i inputfeltet';
+        document.getElementById('test-match').querySelector('fds-input').getInputElement().value = valueTest;
+        document.getElementById('test-match-result').innerHTML = 'value-attribut returnerer indhold i inputfeltet: <strong>' + (document.getElementById('test-match').querySelector('fds-input').value === valueTest) + '</strong>';
     });
 </script>

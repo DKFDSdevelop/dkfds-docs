@@ -344,7 +344,7 @@ Anvend udelukkende elementets attributter og funktioner til ændringer.
       </tr>
       <tr>
         <td>value</td>
-        <td>Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</td>
+        <td><p class="mt-0">Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</p><p>Bemærk, at <code>value</code> matcher hvordan value-attributten normalt opfører sig for inputfelter. Dvs. hvis man ændrer attributten, så opdaterer man attributten for inputfeltet, mens fx <code>document.querySelector('fds-input').value</code>, returnerer den faktiske værdi i inputfeltet.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
@@ -359,6 +359,12 @@ Anvend udelukkende elementets attributter og funktioner til ændringer.
         <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
         <td>Nej</td>
         <td>Se {% include links/external-link.html linktext="Inputformål for brugergrænseflade&shy;komponenter" classes="d-inline hyphens-manual" %} for værdier nævnt i {% include links/external-link.html linktext="WCAG 2.1" classes="d-inline" %}. Man er selv ansvarlig for korrekt udfyldelse af denne attribut.</td>
+      </tr>
+      <tr>
+        <td>error</td>
+        <td>Fejlmeddelelse, der skal vises over inputfeltet. Hvis sat, antages det at feltets indhold er ugyldigt.</td>
+        <td>Nej</td>
+        <td>Tekst</td>
       </tr>
     </tbody>
   </table>
@@ -382,6 +388,14 @@ Anvend udelukkende elementets attributter og funktioner til ændringer.
       <tr>
         <td>getInputElement()</td>
         <td>Returnerer input.</td>
+      </tr>
+      <tr>
+        <td>updateGlossary(glossary)</td>
+        <td><p class="mt-0">Opdatér ord anvendt i elementet, fx hvis du skal anvende komponenten på et andet sprog end dansk.</p><p><code>glossary</code> skal være angivet som JavaScript Object Literal.</p><p>Eksempel der viser samtlige standardværdier, der kan overskrives:
+<pre class="background-gray-100 p-4"><code>document.querySelector('fds-input').updateGlossary({
+    'errorText': 'Fejl'
+})</code></pre>
+        </p></td>
       </tr>
     </tbody>
   </table>

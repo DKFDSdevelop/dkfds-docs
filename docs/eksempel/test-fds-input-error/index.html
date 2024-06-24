@@ -16,8 +16,8 @@
 ================================================== -->
 
 
-<title>Test-fds-input-value | Det Fælles Designsystem</title>
-<meta property="og:title" content="Test-fds-input-value | Det Fælles Designsystem">
+<title>Test-fds-input-error | Det Fælles Designsystem</title>
+<meta property="og:title" content="Test-fds-input-error | Det Fælles Designsystem">
 
 
 
@@ -251,62 +251,14 @@
     <main class="container page-container" id="main-content">
     <div class="row">
         <div class="col-12">
-            <h1 class="h2 mt-0 mb-9">Inputfelter, value</h1>
+            <h1 class="h2 mt-0 mb-9">Inputfelter, error</h1>
         </div>
     </div>
     <div class="row mb-9">
-        <div class="col-4" id="test-html-result"></div>
-        <div class="col-8" id="test-html"><fds-input label="En label" name="test-name" inputid="test-id" value="Indhold i inputfeltet"></fds-input></div>
-    </div>
-    <div class="row mb-9">
-        <div class="col-4">Value ændres programmatisk fra 'Oprindelig' til 'Ændret'</div>
-        <div class="col-8" id="test-getter"><fds-input label="En label" name="test-name" value="Oprindelig"></fds-input></div>
-    </div>
-    <div class="row mb-9">
-        <div class="col-4">Ingen value-attribut.</div>
-        <div class="col-8"><fds-input label="En label" name="test-name"></fds-input></div>
-    </div>
-    <div class="row mb-9">
-        <div class="col-4">Tom value-attribut.</div>
-        <div class="col-8"><fds-input label="En label" name="test-name" value=""></fds-input>
-        </div>
-    </div>
-    <div class="row mb-9">
-        <div class="col-4">Value-attribut fjernet programmatisk.</div>
-        <div class="col-8" id="test-remove"><fds-input label="En label" name="test-name" value="Denne tekst skal ikke ses"></fds-input></div>
-    </div>
-    <div class="row mb-9">
-        <div class="col-4" id="test-match-result">Value-attribut skal matche teksten i
-            inputfeltet.</div>
-        <div class="col-8" id="test-match"><fds-input label="En label" name="test-name"></fds-input></div>
+        <div class="col-4">Label, når der vises en fejlbesked</div>
+        <div class="col-8"><fds-input label="En label" name="test-name" error="Dette er en fejlbesked"></fds-input></div>
     </div>
 </main>
-
-<script>
-    window.addEventListener('load', (event) => {
-        // Test HTML
-        let testHTML =
-            '<div class="form-group"><label class="form-label" for="test-id">En label</label><input class="form-input" name="test-name" id="test-id" value="Indhold i inputfeltet" type="text"></div>';
-        document.getElementById('test-html-result').innerHTML =
-            'HTML genereret korrekt: <strong>' + (document.getElementById('test-html')
-                .querySelector('fds-input').innerHTML === testHTML) + '</strong>';
-        // Test getter
-        document.getElementById('test-getter').querySelector('fds-input').value =
-            'Ændret';
-        // Test sletning af attribut
-        document.getElementById('test-remove').querySelector('fds-input')
-            .removeAttribute('value');
-        // Test value-attribut returnerer tekst i inputfeltet
-        let valueTest = 'Tekst indsat i inputfeltet';
-        document.getElementById('test-match').querySelector('fds-input')
-            .getInputElement().value = valueTest;
-        document.getElementById('test-match-result').innerHTML =
-            'value-attribut returnerer indhold i inputfeltet: <strong>' + (document
-                .getElementById('test-match').querySelector('fds-input').value ===
-                valueTest) + '</strong>';
-    });
-</script>
-
 
     <footer class="test-footer d-flex align-items-center">
     <div class="container">
@@ -324,10 +276,8 @@
             </div>
             <div>
                 
-                <a class="function-link mr-4" href="/eksempel/test-fds-input-label/">Forrige</a>
+                <a class="function-link mr-4" href="/eksempel/test-fds-input-value/">Forrige</a>
                 
-                
-                <a class="function-link" href="/eksempel/test-fds-input-error/">Næste</a>
                 
             </div>
         </div>

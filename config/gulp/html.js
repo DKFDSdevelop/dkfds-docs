@@ -176,7 +176,8 @@ var testfiles = [
     "test-fds-alerts",
     "test-fds-input",
     "test-fds-input-label",
-    "test-fds-input-value"
+    "test-fds-input-value",
+    "test-fds-input-error"
 ];
 
 function getPath (dirname){
