@@ -313,6 +313,10 @@ Anvend udelukkende elementets attributter og funktioner til ændringer.
 
 ### Attributter
 
+#### Standard attributter
+
+I tabellen nedenunder finder du de attributter for elementet, som generelt er forventelige for et HTML-inputfelt.
+
 <div class="table--responsive-scroll">
   <table class="table">
     <thead>
@@ -359,6 +363,31 @@ Anvend udelukkende elementets attributter og funktioner til ændringer.
         <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
         <td>Nej</td>
         <td>Se {% include links/external-link.html linktext="Inputformål for brugergrænseflade&shy;komponenter" classes="d-inline hyphens-manual" %} for værdier nævnt i {% include links/external-link.html linktext="WCAG 2.1" classes="d-inline" %}. Man er selv ansvarlig for korrekt udfyldelse af denne attribut.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Specielle attributter
+
+I tabellen nedenunder finder du de attributter for elementet, der er specielle for inputfelter i Det Fælles Designsystem.
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribut</th>
+        <th scope="col">Beskrivelse</th>
+        <th scope="col">Påkrævet</th>
+        <th scope="col">Gyldige værdier</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>helptext</td>
+        <td>Indsætter en hjælpetekst over inputfeltet.</td>
+        <td>Nej</td>
+        <td>Tekst</td>
       </tr>
       <tr>
         <td>error</td>

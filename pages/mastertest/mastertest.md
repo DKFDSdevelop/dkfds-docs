@@ -270,3 +270,4 @@ B: Test af faneblade anvendt til sidenavigation
 {% include test/preview-test.html filename="test-fds-input-label" description="Inputfelter, label" %}
 {% include test/preview-test.html filename="test-fds-input-value" description="Inputfelter, value" %}
 {% include test/preview-test.html filename="test-fds-input-error" description="Inputfelter, error" %}
+{% include test/preview-test.html filename="test-fds-input-helptext" description="Inputfelter, helptext" %}
