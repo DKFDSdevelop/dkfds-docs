@@ -16,8 +16,8 @@
 ================================================== -->
 
 
-<title>Test-fds-input-disabled | Det Fælles Designsystem</title>
-<meta property="og:title" content="Test-fds-input-disabled | Det Fælles Designsystem">
+<title>Test-fds-input-prefix-suffix | Det Fælles Designsystem</title>
+<meta property="og:title" content="Test-fds-input-prefix-suffix | Det Fælles Designsystem">
 
 
 
@@ -251,18 +251,20 @@
     <main class="container page-container" id="main-content">
     <div class="row">
         <div class="col-12">
-            <h1 class="h2 mt-0 mb-9">Inputfelter, disabled</h1>
+            <h1 class="h2 mt-0 mb-9">Inputfelter, prefix og suffix</h1>
         </div>
     </div>
     <div class="row mb-9">
-        <div class="col-4">Disabled inputfelt</div>
-        <div class="col-8"><fds-input label="En label" name="test-name" disabled=""></fds-input>
-        </div>
+        <div class="col-4">Inputfelt med præfiks</div>
+        <div class="col-8"><fds-input label="Skriv et spørgsmål" name="test-name" prefix="spm."></fds-input></div>
     </div>
     <div class="row mb-9">
-        <div class="col-4">Tjek konsol for fejlbesked. disabled er ikke tilladt på felter med
-            fejl.</div>
-        <div class="col-8"><fds-input label="En label" name="test-name" error="Fejlbesked" disabled=""></fds-input></div>
+        <div class="col-4">Inputfelt med suffiks</div>
+        <div class="col-8"><fds-input label="Skriv et spørgsmål" name="test-name" suffix="?"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Inputfelt med præfiks og suffiks</div>
+        <div class="col-8"><fds-input label="Skriv et spørgsmål" name="test-name" prefix="spm." suffix="?"></fds-input></div>
     </div>
 </main>
 
@@ -282,10 +284,8 @@
             </div>
             <div>
                 
-                <a class="function-link mr-4" href="/eksempel/test-fds-input-helptext/">Forrige</a>
+                <a class="function-link mr-4" href="/eksempel/test-fds-input-disabled/">Forrige</a>
                 
-                
-                <a class="function-link" href="/eksempel/test-fds-input-prefix-suffix/">Næste</a>
                 
             </div>
         </div>

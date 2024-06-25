@@ -1730,7 +1730,12 @@
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
             <span id="kode" hidden=""></span>
         </li><li>
-            <a href="#eksperimentel" id="experimental-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Eksperimentel kode</span></a>
+            <a href="#eksperimentel" id="experimental-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M11 14.175L9.6 15.6L6 12L9.6 8.4L11 9.825L8.825 12L11 14.175Z" />
+                <path d="M18 12L14.4 15.6L13 14.175L15.175 12L13 9.825L14.4 8.4L18 12Z" />
+                <path d="M3.5875 20.4125C3.97917 20.8042 4.45 21 5 21H13V19H5V5H19V12H21V5C21 4.45 20.8042 3.97917 20.4125 3.5875C20.0208 3.19583 19.55 3 19 3H5C4.45 3 3.97917 3.19583 3.5875 3.5875C3.19583 3.97917 3 4.45 3 5V19C3 19.55 3.19583 20.0208 3.5875 20.4125Z" />
+                <path d="M14 22V18.925L19.525 13.425C19.675 13.275 19.8417 13.1667 20.025 13.1C20.2083 13.0333 20.3917 13 20.575 13C20.775 13 20.9667 13.0375 21.15 13.1125C21.3333 13.1875 21.5 13.3 21.65 13.45L22.575 14.375C22.7083 14.525 22.8125 14.6917 22.8875 14.875C22.9625 15.0583 23 15.2417 23 15.425C23 15.6083 22.9667 15.7958 22.9 15.9875C22.8333 16.1792 22.725 16.35 22.575 16.5L17.075 22H14ZM15.5 20.5H16.45L19.475 17.45L19.025 16.975L18.55 16.525L15.5 19.55V20.5ZM19.025 16.975L18.55 16.525L19.475 17.45L19.025 16.975Z" />
+                </svg><span>Eksperimentel kode</span></a>
             <span id="eksperimentel" hidden=""></span>
         </li></ul>
 </nav>
@@ -2750,7 +2755,7 @@ form_limit.charactersLeft();</code></pre></figure>
 
 <h3>Attributter</h3>
 
-<h4>Standard attributter</h4>
+<h4>Standard-attributter</h4>
 
 <p>I tabellen nedenunder finder du de attributter for elementet, som generelt er forventelige for et HTML-inputfelt.</p>
 
@@ -2835,6 +2840,18 @@ form_limit.charactersLeft();</code></pre></figure>
       <tr>
         <td>error</td>
         <td>Fejlmeddelelse, der skal vises over inputfeltet. Hvis sat, antages det at feltets indhold er ugyldigt.</td>
+        <td>Nej</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>prefix</td>
+        <td><p class="mt-0">Indsætter en præfikstekst i inputfeltet.</p><p class="mb-0">Husk at præfiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
+        <td>Nej</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>suffix</td>
+        <td><p class="mt-0">Indsætter en suffikstekst i inputfeltet.</p><p class="mb-0">Husk at suffiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>

@@ -313,7 +313,7 @@ Anvend udelukkende elementets attributter og funktioner til ændringer.
 
 ### Attributter
 
-#### Standard attributter
+#### Standard-attributter
 
 I tabellen nedenunder finder du de attributter for elementet, som generelt er forventelige for et HTML-inputfelt.
 
@@ -398,6 +398,18 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
       <tr>
         <td>error</td>
         <td>Fejlmeddelelse, der skal vises over inputfeltet. Hvis sat, antages det at feltets indhold er ugyldigt.</td>
+        <td>Nej</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>prefix</td>
+        <td><p class="mt-0">Indsætter en præfikstekst i inputfeltet.</p><p class="mb-0">Husk at præfiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
+        <td>Nej</td>
+        <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>suffix</td>
+        <td><p class="mt-0">Indsætter en suffikstekst i inputfeltet.</p><p class="mb-0">Husk at suffiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
