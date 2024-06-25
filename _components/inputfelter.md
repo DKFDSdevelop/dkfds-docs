@@ -359,6 +359,12 @@ I tabellen nedenunder finder du de attributter for elementet, som generelt er fo
         <td><code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code> eller <code>url</code></td>
       </tr>
       <tr>
+        <td>disabled</td>
+        <td>Deaktiverer inputfeltet. Kan ikke anvendes sammen med error-attributten.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
+      </tr>
+      <tr>
         <td>autocomplete</td>
         <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
         <td>Nej</td>
@@ -383,7 +389,7 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
       </tr>
     </thead>
     <tbody>
-    <tr>
+      <tr>
         <td>helptext</td>
         <td>Indsætter en hjælpetekst over inputfeltet.</td>
         <td>Nej</td>
@@ -420,7 +426,7 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
       </tr>
       <tr>
         <td>updateGlossary(glossary)</td>
-        <td><p class="mt-0">Opdatér ord anvendt i elementet, fx hvis du skal anvende komponenten på et andet sprog end dansk.</p><p><code>glossary</code> skal være angivet som JavaScript Object Literal.</p><p>Eksempel der viser samtlige standardværdier, der kan overskrives:
+        <td><p class="mt-0">Opdatér ord anvendt i elementet, fx hvis du skal anvende komponenten på et andet sprog end dansk.</p><p><code>glossary</code> skal være angivet som JavaScript Object Literal.</p><p>Eksempel der viser samtlige standardværdier, som kan overskrives:
 <pre class="background-gray-100 p-4"><code>document.querySelector('fds-input').updateGlossary({
     'errorText': 'Fejl'
 })</code></pre>
