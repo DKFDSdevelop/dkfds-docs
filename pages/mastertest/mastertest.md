@@ -273,3 +273,4 @@ B: Test af faneblade anvendt til sidenavigation
 {% include test/preview-test.html filename="test-fds-input-helptext" description="Inputfelter, helptext" %}
 {% include test/preview-test.html filename="test-fds-input-disabled" description="Inputfelter, disabled" %}
 {% include test/preview-test.html filename="test-fds-input-prefix-suffix" description="Inputfelter, prefix og suffix" %}
+{% include test/preview-test.html filename="test-fds-input-editbutton" description="Inputfelter, editbutton" %}

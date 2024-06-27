@@ -1,0 +1,51 @@
+<main class="container page-container" id="main-content">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="h2 mt-0 mb-9">Inputfelter, editbutton</h1>
+        </div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Readonly med redigerknap</div>
+        <div class="col-8"><fds-input label="En label" name="test-name" readonly
+                editbutton></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Readonly uden redigerknap</div>
+        <div class="col-8"><fds-input label="En anden label" name="test-name"
+                readonly></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Redigerknap uden readonly</div>
+        <div class="col-8"><fds-input label="En label" name="test-name"
+                editbutton></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Readonly med redigerknap, prefix og suffix</div>
+        <div class="col-8"><fds-input label="En label" name="test-name" readonly editbutton
+                prefix="P" suffix="S"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Hjælpetekst vises permanent</div>
+        <div class="col-8"><fds-input label="En label" name="test-name"
+                helptext="Denne hjælpetekst vises permanent" readonly editbutton></fds-input>
+        </div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">Hjælpetekst fjernes ved tryk på rediger</div>
+        <div class="col-8" id="test-event"><fds-input label="En label" name="test-name"
+                helptext="Denne hjælpetekst fjernes ved redigering" readonly
+                editbutton></fds-input></div>
+    </div>
+</main>
+
+<script>
+    window.addEventListener('load', (event) => {
+        document.getElementById('test-event').querySelector('fds-input')
+            .addEventListener('fds-edit-clicked', function() {
+                document.getElementById('test-event').querySelector('fds-input')
+                    .removeAttribute('helptext');
+                document.getElementById('test-event').querySelector('fds-input')
+                    .getInputElement().focus();
+            });
+    });
+</script>

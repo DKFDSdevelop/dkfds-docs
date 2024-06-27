@@ -365,6 +365,12 @@ I tabellen nedenunder finder du de attributter for elementet, som generelt er fo
         <td>Tom streng</td>
       </tr>
       <tr>
+        <td>readonly</td>
+        <td>Sætter <code>readonly</code> på inputfeltet. Kan ikke anvendes sammen med error-attributten.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
+      </tr>
+      <tr>
         <td>autocomplete</td>
         <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
         <td>Nej</td>
@@ -412,6 +418,12 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td><p class="mt-0">Indsætter en suffikstekst i inputfeltet.</p><p class="mb-0">Husk at suffiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
+      </tr>
+      <tr>
+        <td>editbutton</td>
+        <td>Indsætter en redigerknap ved siden af inputfeltet, hvis <code>readonly</code>-attributten også er sat. Gør det muligt for en bruger at fjerne readonly.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
       </tr>
     </tbody>
   </table>

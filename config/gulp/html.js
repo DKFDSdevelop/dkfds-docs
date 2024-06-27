@@ -180,7 +180,8 @@ var testfiles = [
     "test-fds-input-error",
     "test-fds-input-helptext",
     "test-fds-input-disabled",
-    "test-fds-input-prefix-suffix"
+    "test-fds-input-prefix-suffix",
+    "test-fds-input-editbutton"
 ];
 
 function getPath (dirname){
