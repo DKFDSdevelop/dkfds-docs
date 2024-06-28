@@ -347,10 +347,28 @@ I tabellen nedenunder finder du de attributter for elementet, som generelt er fo
         <td>Tekst</td>
       </tr>
       <tr>
-        <td>value</td>
-        <td><p class="mt-0">Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</p><p>Bemærk, at <code>value</code> matcher hvordan value-attributten normalt opfører sig for inputfelter. Dvs. hvis man ændrer attributten, så opdaterer man attributten for inputfeltet, mens fx <code>document.querySelector('fds-input').value</code>, returnerer den faktiske værdi i inputfeltet.</p></td>
+        <td>autocomplete</td>
+        <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
         <td>Nej</td>
-        <td>Tekst</td>
+        <td>Se {% include links/external-link.html linktext="Inputformål for brugergrænseflade&shy;komponenter" classes="d-inline hyphens-manual" %} for værdier nævnt i {% include links/external-link.html linktext="WCAG 2.1" classes="d-inline" %}. Man er selv ansvarlig for korrekt udfyldelse af denne attribut.</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>Deaktiverer inputfeltet. Kan ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
+      </tr>
+      <tr>
+        <td>readonly</td>
+        <td>Sætter <code>readonly</code> på inputfeltet. Kan ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
+      </tr>
+      <tr>
+        <td>required</td>
+        <td>Anvend altid, hvis feltet er påkrævet. Kan ikke anvendes sammen med <code>readonly</code> og <code>disabled</code>.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
       </tr>
       <tr>
         <td>type</td>
@@ -359,22 +377,10 @@ I tabellen nedenunder finder du de attributter for elementet, som generelt er fo
         <td><code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code> eller <code>url</code></td>
       </tr>
       <tr>
-        <td>disabled</td>
-        <td>Deaktiverer inputfeltet. Kan ikke anvendes sammen med error-attributten.</td>
+        <td>value</td>
+        <td><p class="mt-0">Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</p><p>Bemærk, at <code>value</code> matcher hvordan value-attributten normalt opfører sig for inputfelter. Dvs. hvis man ændrer attributten, så opdaterer man attributten for inputfeltet, mens fx <code>document.querySelector('fds-input').value</code>, returnerer den faktiske værdi i inputfeltet.</p></td>
         <td>Nej</td>
-        <td>Tom streng</td>
-      </tr>
-      <tr>
-        <td>readonly</td>
-        <td>Sætter <code>readonly</code> på inputfeltet. Kan ikke anvendes sammen med error-attributten.</td>
-        <td>Nej</td>
-        <td>Tom streng</td>
-      </tr>
-      <tr>
-        <td>autocomplete</td>
-        <td>Gør det muligt for browseren i visse tilfælde at hjælpe brugeren med at udfylde inputfeltet eller afklare, hvilken form for input der forventes af brugeren.</td>
-        <td>Nej</td>
-        <td>Se {% include links/external-link.html linktext="Inputformål for brugergrænseflade&shy;komponenter" classes="d-inline hyphens-manual" %} for værdier nævnt i {% include links/external-link.html linktext="WCAG 2.1" classes="d-inline" %}. Man er selv ansvarlig for korrekt udfyldelse af denne attribut.</td>
+        <td>Tekst</td>
       </tr>
     </tbody>
   </table>
@@ -396,14 +402,20 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
     </thead>
     <tbody>
       <tr>
-        <td>helptext</td>
-        <td>Indsætter en hjælpetekst over inputfeltet.</td>
+        <td>editbutton</td>
+        <td>Indsætter en redigerknap ved siden af inputfeltet, hvis <code>readonly</code>-attributten også er sat. Gør det muligt for en bruger at fjerne readonly.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
+      </tr>
+      <tr>
+        <td>error</td>
+        <td>Fejlmeddelelse, der skal vises over inputfeltet. Hvis sat, antages det at feltets indhold er ugyldigt. Kan ikke anvendes sammen med <code>readonly</code> og <code>disabled</code>.</td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
       <tr>
-        <td>error</td>
-        <td>Fejlmeddelelse, der skal vises over inputfeltet. Hvis sat, antages det at feltets indhold er ugyldigt.</td>
+        <td>helptext</td>
+        <td>Indsætter en hjælpetekst over inputfeltet.</td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
@@ -418,12 +430,6 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td><p class="mt-0">Indsætter en suffikstekst i inputfeltet.</p><p class="mb-0">Husk at suffiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
-      </tr>
-      <tr>
-        <td>editbutton</td>
-        <td>Indsætter en redigerknap ved siden af inputfeltet, hvis <code>readonly</code>-attributten også er sat. Gør det muligt for en bruger at fjerne readonly.</td>
-        <td>Nej</td>
-        <td>Tom streng</td>
       </tr>
     </tbody>
   </table>
@@ -452,7 +458,8 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td>updateGlossary(glossary)</td>
         <td><p class="mt-0">Opdatér ord anvendt i elementet, fx hvis du skal anvende komponenten på et andet sprog end dansk.</p><p><code>glossary</code> skal være angivet som JavaScript Object Literal.</p><p>Eksempel der viser samtlige standardværdier, som kan overskrives:
 <pre class="background-gray-100 p-4"><code>document.querySelector('fds-input').updateGlossary({
-    'errorText': 'Fejl'
+    'errorText': 'Fejl',
+    'editText': 'Rediger'
 })</code></pre>
         </p></td>
       </tr>
