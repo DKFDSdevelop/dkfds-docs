@@ -421,13 +421,25 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
       </tr>
       <tr>
         <td>prefix</td>
-        <td><p class="mt-0">Indsætter en præfikstekst i inputfeltet.</p><p class="mb-0">Husk at præfiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
+        <td><p class="mt-0">Indsætter en præfikstekst i inputfeltet.</p><p class="mb-0">Husk at præfiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p><p>Hold altid præfiks kort - benyt aldrig lange ord eller sætninger. Ved brug af præfiks er det særligt nødvendigt at afprøve løsningen på små skærme samt ved 200% zoom for at sikre, at der fortsat er plads nok til at indtaste oplysninger i feltet.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
       <tr>
+        <td>showoptional</td>
+        <td>Viser en besked til brugeren om, at feltet er frivilligt. Skal kun anvendes, hvis de fleste inputfelter er påkrævede.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
+      </tr>
+      <tr>
+        <td>showrequired</td>
+        <td>Viser en besked til brugeren om, at feltet er påkrævet. Skal kun anvendes, hvis de fleste inputfelter er frivillige.</td>
+        <td>Nej</td>
+        <td>Tom streng</td>
+      </tr>
+      <tr>
         <td>suffix</td>
-        <td><p class="mt-0">Indsætter en suffikstekst i inputfeltet.</p><p class="mb-0">Husk at suffiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p></td>
+        <td><p class="mt-0">Indsætter en suffikstekst i inputfeltet.</p><p class="mb-0">Husk at suffiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p><p>Hold altid suffiks kort - benyt aldrig lange ord eller sætninger. Ved brug af suffiks er det særligt nødvendigt at afprøve løsningen på små skærme samt ved 200% zoom for at sikre, at der fortsat er plads nok til at indtaste oplysninger i feltet.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
