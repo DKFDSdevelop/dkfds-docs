@@ -356,19 +356,19 @@ I tabellen nedenunder finder du de attributter for elementet, som generelt er fo
         <td>disabled</td>
         <td>Deaktiverer inputfeltet. Kan ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
         <td>Nej</td>
-        <td>Tom streng</td>
+        <td>Boolean</td>
       </tr>
       <tr>
         <td>readonly</td>
         <td>Sætter <code>readonly</code> på inputfeltet. Kan ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
         <td>Nej</td>
-        <td>Tom streng</td>
+        <td>Boolean</td>
       </tr>
       <tr>
         <td>required</td>
         <td>Anvend altid, hvis feltet er påkrævet. Kan ikke anvendes sammen med <code>readonly</code> og <code>disabled</code>.</td>
         <td>Nej</td>
-        <td>Tom streng</td>
+        <td>Boolean</td>
       </tr>
       <tr>
         <td>type</td>
@@ -405,7 +405,7 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td>editbutton</td>
         <td>Indsætter en redigerknap ved siden af inputfeltet, hvis <code>readonly</code>-attributten også er sat. Gør det muligt for en bruger at fjerne readonly.</td>
         <td>Nej</td>
-        <td>Tom streng</td>
+        <td>Boolean</td>
       </tr>
       <tr>
         <td>error</td>
@@ -420,6 +420,12 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td>Tekst</td>
       </tr>
       <tr>
+        <td>maxchar</td>
+        <td>Viser en besked om karakterbegrænsning under inputfeltet. Hvis brugeren overskrider det maksimale antal tegn, vises en advarsel under feltet.</td>
+        <td>Nej</td>
+        <td>Tal</td>
+      </tr>
+      <tr>
         <td>prefix</td>
         <td><p class="mt-0">Indsætter en præfikstekst i inputfeltet.</p><p class="mb-0">Husk at præfiks aldrig må være den eneste indikator for, hvordan et felt skal udfyldes, eftersom det ikke læses højt af skærmlæsere. Brug label eller hjælpetekst til at indikere dette.</p><p>Hold altid præfiks kort - benyt aldrig lange ord eller sætninger. Ved brug af præfiks er det særligt nødvendigt at afprøve løsningen på små skærme samt ved 200% zoom for at sikre, at der fortsat er plads nok til at indtaste oplysninger i feltet.</p></td>
         <td>Nej</td>
@@ -429,13 +435,13 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td>showoptional</td>
         <td>Viser en besked til brugeren om, at feltet er frivilligt. Skal kun anvendes, hvis de fleste inputfelter er påkrævede.</td>
         <td>Nej</td>
-        <td>Tom streng</td>
+        <td>Boolean</td>
       </tr>
       <tr>
         <td>showrequired</td>
         <td>Viser en besked til brugeren om, at feltet er påkrævet. Skal kun anvendes, hvis de fleste inputfelter er frivillige.</td>
         <td>Nej</td>
-        <td>Tom streng</td>
+        <td>Boolean</td>
       </tr>
       <tr>
         <td>suffix</td>
@@ -471,7 +477,14 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td><p class="mt-0">Opdatér ord anvendt i elementet, fx hvis du skal anvende komponenten på et andet sprog end dansk.</p><p><code>glossary</code> skal være angivet som JavaScript Object Literal.</p><p>Eksempel der viser samtlige standardværdier, som kan overskrives:
 <pre class="background-gray-100 p-4"><code>document.querySelector('fds-input').updateGlossary({
     'errorText': 'Fejl',
-    'editText': 'Rediger'
+    'editText': 'Rediger',
+    'requiredText': 'skal udfyldes',
+    'optionalText': 'frivilligt',
+    'oneCharacterLeftText': 'Du har {value} tegn tilbage',
+    'manyCharactersLeftText': 'Du har {value} tegn tilbage',
+    'oneCharacterExceededText': 'Du har {value} tegn for meget',
+    'manyCharactersExceededText': 'Du har {value} tegn for meget',
+    'maxCharactersText': 'Du kan indtaste op til {value} tegn'
 })</code></pre>
         </p></td>
       </tr>
@@ -483,3 +496,23 @@ Eksempel på anvendelse af funktion i JavaScript:
 {% highlight javascript %}
 document.querySelector('fds-input').getLabelElement();
 {% endhighlight %}
+
+### Events
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>fds-edit-clicked</td>
+        <td>Brugeren har trykket på Rediger-knappen fra attributten <code>editbutton</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
