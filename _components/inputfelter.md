@@ -455,6 +455,12 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
+      <tr>
+        <td>tooltip</td>
+        <td>Indsætter et tooltip over inputfeltet.</td>
+        <td>Nej</td>
+        <td>Tekst</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -490,7 +496,8 @@ I tabellen nedenunder finder du de attributter for elementet, der er specielle f
     'manyCharactersLeftText': 'Du har {value} tegn tilbage',
     'oneCharacterExceededText': 'Du har {value} tegn for meget',
     'manyCharactersExceededText': 'Du har {value} tegn for meget',
-    'maxCharactersText': 'Du kan indtaste op til {value} tegn'
+    'maxCharactersText': 'Du kan indtaste op til {value} tegn',
+    'tooltipIconText': 'Læs mere'
 })</code></pre>
         </p></td>
       </tr>
