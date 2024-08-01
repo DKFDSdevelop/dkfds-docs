@@ -264,8 +264,6 @@ B: Test af faneblade anvendt til sidenavigation
 
 {% include test/preview-test.html filename="test-fds-icons" description="Ikoner" %}
 
-{% include test/preview-test.html filename="test-fds-alerts" description="Beskeder" %}
-
 {% include test/preview-test.html filename="test-fds-input" description="Inputfelter" %}
 {% include test/preview-test.html filename="test-fds-input-label" description="Inputfelter, label" %}
 {% include test/preview-test.html filename="test-fds-input-value" description="Inputfelter, value" %}
