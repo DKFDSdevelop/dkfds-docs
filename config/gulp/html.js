@@ -23,7 +23,7 @@ var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
 var buildCustomElements = ['examples/testfiles/custom-elements/**/*.njk'];
-var buildFile = ['examples/components/tooltip/*.njk'];
+var buildFile = ['examples/testfiles/custom-elements/fds-input/test-fds-input-script.njk'];
 
 var activeBuild = buildAll;
 
@@ -182,7 +182,8 @@ var testfiles = [
     "test-fds-input-prefix-suffix",
     "test-fds-input-editbutton",
     "test-fds-input-maxchar",
-    "test-fds-input-tooltip"
+    "test-fds-input-tooltip",
+    "test-fds-input-script"
 ];
 
 function getPath (dirname){

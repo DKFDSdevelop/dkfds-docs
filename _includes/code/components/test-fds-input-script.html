@@ -1,0 +1,60 @@
+<main class="container page-container" id="main-content">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="h2 mt-0 mb-9">fds-input tests</h1>
+        </div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-12" id="testarea"></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-12" id="results"></div>
+    </div>
+</main>
+
+<script>
+    let errorMessage = '';
+    const listener = event => {
+        event.preventDefault();
+        errorMessage = event.error.message;
+    };
+    window.addEventListener('error', listener);
+
+    function testNoAttributes() {
+        errorMessage = '';
+        let inputEl = document.createElement('fds-input');
+        try {
+            document.getElementById('testarea').appendChild(inputEl);
+        } finally {
+            document.getElementById('testarea').removeChild(inputEl);
+        }
+        let success = (errorMessage ===
+            `Custom element 'fds-input' not created. Element must always have the attributes 'label' and 'name'.`
+            );
+        document.getElementById('results').innerHTML +=
+            `<p class="test-${success}">No attributes at creation causes error: ${success}</p>`;
+    }
+
+    function testNoContent() {
+        errorMessage = '';
+        let inputEl = document.createElement('fds-input');
+        inputEl.label = 'Label';
+        inputEl.name = 'name';
+        inputEl.innerHTML = 'Content';
+        try {
+            document.getElementById('testarea').appendChild(inputEl);
+        } finally {
+            document.getElementById('testarea').removeChild(inputEl);
+        }
+        let success = (errorMessage ===
+            `Custom element 'fds-input' not created. Element must not contain content at element creation.`
+            );
+        document.getElementById('results').innerHTML +=
+            `<p class="test-${success}">Content at creation causes error: ${success}</p>`;
+    }
+    window.addEventListener('load', (event) => {
+        testNoAttributes();
+        testNoContent();
+        window.removeEventListener('error', listener);
+    });
+</script>
