@@ -3,6 +3,7 @@
     $image-path:        '/assets/img/',
     $icons-folder-path: '/assets/svg/'
 );
+@use '../node_modules/dkfds/src/stylesheets/custom-elements/fds-input';
 
 // Normalization file
 @use '../node_modules/dkfds/src/stylesheets/core/base';

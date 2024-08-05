@@ -172,7 +172,6 @@ var testfiles = [
     "test-step-guide-6",
     "test-step-guide-7",
     "test-venstremenu",
-    "test-fds-icons",
     "test-fds-input",
     "test-fds-input-label",
     "test-fds-input-value",
