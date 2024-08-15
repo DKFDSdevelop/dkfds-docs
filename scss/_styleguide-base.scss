@@ -650,8 +650,9 @@ code {
 
   .code-name {
     margin-bottom: units(405);
-    margin-top: units(2);
+    margin-top: units(3);
     word-wrap: break-word;
+    font-size: font-size("xs");
   }
 }
 
@@ -1048,6 +1049,9 @@ body[class*="page-grid"][class*="-html"]
 }
 
 //BORDERS
+.focus-border {
+  border-top: $theme-focus-width $theme-focus-style color("focus");
+}
 .outer-border-example {
   border-top: border(10);
 }
