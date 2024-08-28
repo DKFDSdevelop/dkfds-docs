@@ -128,6 +128,7 @@ var testfiles = [
     "test-radiobuttons-3",
     "test-radiobuttons-4",
     "test-radiobuttons-5",
+    "test-search",
     "test-structured-list-1",
     "test-structured-list-2",
     "test-structured-list-3",

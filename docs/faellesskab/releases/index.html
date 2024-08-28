@@ -48,9 +48,9 @@
 <link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-SemiBold.woff2" as="font" crossorigin>
 <link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-SemiBoldItalic.woff2" as="font" crossorigin>
 
-<link rel="preload" href="/assets/style/styleguide_borgerdk.css?v=10.0.0" as="style">
-<link rel="preload" href="/assets/style/styleguide_virkdk.css?v=10.0.0" as="style">
-<link rel="preload" href="/assets/js/theme.js?v=10.0.0" as="script">
+<link rel="preload" href="/assets/style/styleguide_borgerdk.css?v=10.0.1" as="style">
+<link rel="preload" href="/assets/style/styleguide_virkdk.css?v=10.0.1" as="style">
+<link rel="preload" href="/assets/js/theme.js?v=10.0.1" as="script">
 
 <style>
   body {
@@ -58,10 +58,10 @@
   }
 </style>
 
-<link type="text/css" rel="stylesheet" href="/assets/style/styleguide_display.css?v=10.0.0">
+<link type="text/css" rel="stylesheet" href="/assets/style/styleguide_display.css?v=10.0.1">
 
 <noscript>
-  <link type="text/css" rel="stylesheet" href="/assets/style/styleguide_virkdk.css?v=10.0.0">
+  <link type="text/css" rel="stylesheet" href="/assets/style/styleguide_virkdk.css?v=10.0.1">
 </noscript>
 
   </head>
@@ -683,7 +683,7 @@
 
         
         <li>
-            <a href="/komponenter/beskeder/" class="nav-link"><span>Beskeder (Alerts)</span></a>
+            <a href="/komponenter/beskeder/" class="nav-link"><span>Beskeder <span class="d-inline" lang="en">(Alerts)</span></span></a>
         </li>
         
 
@@ -747,7 +747,8 @@
 
         
         <li>
-            <a href="/komponenter/faneblade/" class="nav-link"><span>Faneblade (Tabs)</span></a>
+            <a href="/komponenter/faneblade/" class="nav-link">
+                <span>Faneblade <span class="d-inline" lang="en">(Tabs)</span></span></a>
         </li>
         
 
@@ -811,7 +812,8 @@
 
         
         <li>
-            <a href="/komponenter/knapper/" class="nav-link"><span>Knapper (Buttons)</span></a>
+            <a href="/komponenter/knapper/" class="nav-link">
+                <span>Knapper <span class="d-inline" lang="en">(Buttons)</span></span></a>
         </li>
         
 
@@ -851,7 +853,8 @@
 
         
         <li>
-            <a href="/komponenter/radioknap/" class="nav-link"><span>Radioknap (Radio button)</span></a>
+            <a href="/komponenter/radioknap/" class="nav-link">
+                <span>Radioknap <span class="d-inline" lang="en">(Radio button)</span></span></a>
         </li>
         
 
@@ -891,7 +894,8 @@
 
         
         <li>
-            <a href="/komponenter/tekstomraade/" class="nav-link"><span>Tekstområde (Textarea)</span></a>
+            <a href="/komponenter/tekstomraade/" class="nav-link">
+                <span>Tekstområde <span class="d-inline" lang="en">(Textarea)</span></span></a>
         </li>
         
 
@@ -915,7 +919,8 @@
 
         
         <li>
-            <a href="/komponenter/tjekboks/" class="nav-link"><span>Tjekboks (Checkbox)</span></a>
+            <a href="/komponenter/tjekboks/" class="nav-link">
+                <span>Tjekboks <span class="d-inline" lang="en">(Checkbox)</span></span></a>
         </li>
         
 
@@ -1155,8 +1160,6 @@
 
 
 
-
-
 <li>
 
   <a href="/faellesskab/samarbejdsforum/" class="nav-link">
@@ -1164,8 +1167,6 @@
   </a>
 
 </li>
-
-
 
 
 
@@ -1183,8 +1184,6 @@
 
 
 
-
-
 <li>
 
   <a href="/faellesskab/nyhedsmail/" class="nav-link">
@@ -1192,8 +1191,6 @@
   </a>
 
 </li>
-
-
 
 
 
@@ -1211,8 +1208,6 @@
 
 
 
-
-
 <li>
 
   <a href="/faellesskab/roadmap/" class="nav-link">
@@ -1220,8 +1215,6 @@
   </a>
 
 </li>
-
-
 
 
 
@@ -1264,6 +1257,7 @@
     <h2 class="anchortitle" id="anchorlinks">Indhold på siden</h2>
     <ul class="anchorlist">
         <li><a href="#versionering-og-release-proces">Versionering og release-proces</a></li>
+        <li><a href="#version-10-0-to">Version 10.0.2</a></li>
         <li><a href="#version-10-0-1">Version 10.0.1</a></li>
         <li><a href="#version-10-0-0">Version 10.0.0</a></li>
         <li><a href="#version-9-1-0">Version 9.1.0</a></li>
@@ -1308,15 +1302,31 @@
   <li><strong class="badge badge-info badge-small mr-2">Change</strong> Tilføjet klasser til inputfelters præfiks og suffiks, så de kan tilpasses felter, der er read-only eller disabled.</li>
 </ul>
 
-<h2 id="version-10-0-1" class="mb-0">Version 10.0.1</h2>
+<h2 id="version-10-0-to" class="mb-0">Version 10.0.2</h2>
 
 <div><span class="small-text mt-0 d-block">xx-08-2024</span></div>
+
+<ul>
+  <li>Fjernet visse browseres modificeringer af <a href="/komponenter/search/">søgefeltet</a>, der kunne indsætte knapper til sletning af søgning, søgehistorik eller ekstra padding.
+<span class="form-hint mt-0">For mere info, se <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues/237" class="icon-link" target="_blank">issue #237 på GitHub<svg class="icon-svg" focusable="false" aria-hidden="true" tabindex="-1"><use xlink:href="#open-in-new"></use></svg></a>.</span></li>
+  <li>Tilføjet <a href="/styleguide/ikoner/">ikonerne</a> <code>chevron-double-left</code>, <code>chevron-double-right</code> og <code>file-upload</code> til filen ‘all-svg-icons.svg’.
+<span class="form-hint mt-0">For mere info, se <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues/243" class="icon-link" target="_blank">issue #243 på GitHub<svg class="icon-svg" focusable="false" aria-hidden="true" tabindex="-1"><use xlink:href="#open-in-new"></use></svg></a>.</span></li>
+  <li>Rettet fejl i <a href="/komponenter/header/">headeren</a>, hvor variablerne <code>$header-portal-logo-width</code> og <code>$header-portal-logo-height</code> ikke blev anvendt.
+<span class="form-hint mt-0">For mere info, se <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues/245" class="icon-link" target="_blank">issue #245 på GitHub<svg class="icon-svg" focusable="false" aria-hidden="true" tabindex="-1"><use xlink:href="#open-in-new"></use></svg></a>.</span></li>
+  <li>Rettet fejl, hvor pilen i <a href="/komponenter/detaljer/">detaljekomponenten</a> kun var delvist synlig ved tekstforstørrelse.</li>
+</ul>
+
+<h2 id="version-10-0-1" class="mb-0">Version 10.0.1</h2>
+
+<div><span class="small-text mt-0 d-block">21-08-2024</span></div>
 
 <ul>
   <li>Ændret baggrundsfarven på fokuserede <a href="/komponenter/accordions/">accordions</a> fra gennemsigtig til grå.</li>
   <li>Rettet fejl, hvor teksten i <a href="/komponenter/sprogvaelger/#sprogvaelger-med-tooltip">sprogvælger med tooltip</a> stod skævt.</li>
   <li>Rettet fejl, hvor <a href="/komponenter/inputfelter/#read-only">readonly-inputfelter</a> ikke blev vist korrekt, hvis de havde en anden type end <code>text</code>.</li>
-  <li>Tilføjet eksempler for ‘<a href="/eksempler/templates/#siden-kunne-ikke-findes">siden kunne ikke findes</a>’ (fejl 404).</li>
+  <li>Tilføjet eksempler for ‘<a href="/eksempler/templates/#siden-kunne-ikke-findes-404-side">siden kunne ikke findes</a>’ (fejl 404).</li>
+  <li>Tilføjet manglende teksttykkelse (<code>font-weight</code>) på billedtekst og subheadings.</li>
+  <li>Opdateret flere af dokumentationsidens eksempler og retningslinjer, så de er mere retvisende og anvendelige.</li>
 </ul>
 
 <h2 id="version-10-0-0" class="mb-0">Version 10.0.0</h2>
@@ -2207,8 +2217,8 @@
 </footer>
 
 
-    <script src="/assets/js/theme.js?v=10.0.0"></script>
-<script src="/assets/js/styleguide.js?v=10.0.0"></script>
+    <script src="/assets/js/theme.js?v=10.0.1"></script>
+<script src="/assets/js/styleguide.js?v=10.0.1"></script>
 
 
   </body>

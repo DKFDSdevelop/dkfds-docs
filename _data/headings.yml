@@ -88,7 +88,8 @@ Felt_og_tabeloverskrifter:
 Tekst:
 - h2: Manchet
 - h2: Brødtekst
-- h2: Hjælpetekst og fejlmeddelelser
+- h2: Hjælpetekst
+- h2: Fejlmeddelelser
 - h2: Billedtekst
 - h2: Stor tekst
 - h2: Linjelængde
@@ -97,7 +98,8 @@ Tekst:
 Tekst_Kode:
 - h2: Manchet
 - h2: Brødtekst
-- h2: Hjælpetekst og fejlmeddelelser
+- h2: Hjælpetekst
+- h2: Fejlmeddelelser
 - h2: Billedtekst
 - h2: Stor tekst
 
@@ -628,7 +630,7 @@ Templates:
 - h2: Opsummering
 - h2: Kvittering
 - h2: Fejl
-- h2: Siden kunne ikke findes
+- h2: Siden kunne ikke findes (404-side)
 
 # Fællesskab
 
@@ -656,6 +658,7 @@ Roadmap:
 
 Releases:
 - h2: Versionering og release-proces
+- h2: Version 10.0.2
 - h2: Version 10.0.1
 - h2: Version 10.0.0
 - h2: Version 9.1.0
