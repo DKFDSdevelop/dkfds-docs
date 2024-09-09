@@ -106,12 +106,6 @@ Sass-variablen `$spacer` er som standard sat til 8px.
 <p class="my-xl-1"> Tekst med margin på 2px over og under elementet på skærme over 1200px </p>
 {% endhighlight %}
 
-<h4 class="h5 mb-0">Eksempel:</h4>
-{% highlight html %}
-<p class="mt-8">Tekst med margin-top for alle skærmstørrelser</p>
-<p class="pl-md-405">Tekst med padding-left for browserstørrelser over 768px</p>
-{% endhighlight %}
-
 ## Display {#{% include create-id.html heading="Display" %}}
 
 Disse hjælpeklasser bruges til at styre CSS-egenskaben `display` på et element (inspireret af {% include links/external-link.html linktext="Bootstraps Display Utility" %}).
