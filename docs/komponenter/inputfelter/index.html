@@ -2762,7 +2762,7 @@ form_limit.charactersLeft();</code></pre></figure>
       <tr>
         <td>name</td>
         <td>Tekststreng der indsættes i inputfeltets <code>name</code>-attribut. Bruges til at identificere feltet i en <code>&lt;form&gt;</code>.</td>
-        <td>Ja</td>
+        <td>Ja, hvis inputfeltet er en del af en form</td>
         <td>Tekst</td>
       </tr>
       <tr>
@@ -2779,31 +2779,31 @@ form_limit.charactersLeft();</code></pre></figure>
       </tr>
       <tr>
         <td>disabled</td>
-        <td>Deaktiverer inputfeltet. Kan ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
+        <td>Deaktiverer inputfeltet. Må ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
         <td>Nej</td>
-        <td>Boolean</td>
+        <td>Boolean attribut (dog vil værdien "false" ikke sætte attributten)</td>
       </tr>
       <tr>
         <td>readonly</td>
-        <td>Sætter <code>readonly</code> på inputfeltet. Kan ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
+        <td>Sætter <code>readonly</code> på inputfeltet. Må ikke anvendes sammen med <code>error</code> og <code>required</code>.</td>
         <td>Nej</td>
-        <td>Boolean</td>
+        <td>Boolean attribut (dog vil værdien "false" ikke sætte attributten)</td>
       </tr>
       <tr>
         <td>required</td>
-        <td>Anvend altid, hvis feltet er påkrævet. Kan ikke anvendes sammen med <code>readonly</code> og <code>disabled</code>.</td>
+        <td>Anvend altid, hvis feltet er påkrævet. Må ikke anvendes sammen med <code>readonly</code> og <code>disabled</code>.</td>
         <td>Nej</td>
-        <td>Boolean</td>
+        <td>Boolean attribut (dog vil værdien "false" ikke sætte attributten)</td>
       </tr>
       <tr>
         <td>type</td>
-        <td>Inputfeltets type. Hvis udeladt, sættes værdien til <code>text</code>. Sørg for at vælge den type, der passer til inputfeltets forventede indhold.</td>
+        <td>Inputfeltets type. Hvis udeladt eller ugyldig, sættes værdien til <code>text</code>. Sørg for at vælge den type, der passer til inputfeltets forventede indhold.</td>
         <td>Nej</td>
         <td><code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code> eller <code>url</code></td>
       </tr>
       <tr>
         <td>value</td>
-        <td><p class="mt-0">Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</p><p>Bemærk, at <code>value</code> matcher hvordan value-attributten normalt opfører sig for inputfelter. Dvs. hvis man ændrer attributten, så opdaterer man attributten for inputfeltet, mens fx <code>document.querySelector('fds-input').value</code>, returnerer den faktiske værdi i inputfeltet.</p></td>
+        <td><p class="mt-0">Inputfeltets tekst. Hvis udeladt, er inputfeltet tomt.</p><p>Bemærk, at <code>value</code> opfører sig på samme måde som den normale value-attribut for inputfelter.</p></td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
@@ -2830,11 +2830,11 @@ form_limit.charactersLeft();</code></pre></figure>
         <td>editbutton</td>
         <td>Indsætter en redigerknap ved siden af inputfeltet, hvis <code>readonly</code>-attributten også er sat. Gør det muligt for en bruger at fjerne readonly.</td>
         <td>Nej</td>
-        <td>Boolean</td>
+        <td>Boolean attribut (dog vil værdien "false" ikke sætte attributten)</td>
       </tr>
       <tr>
         <td>error</td>
-        <td>Fejlmeddelelse, der skal vises over inputfeltet. Hvis sat, antages det at feltets indhold er ugyldigt. Kan ikke anvendes sammen med <code>readonly</code> og <code>disabled</code>.</td>
+        <td>Fejlmeddelelse, der skal vises over inputfeltet. Hvis sat, antages det at feltets indhold er ugyldigt. Må ikke anvendes sammen med <code>readonly</code> og <code>disabled</code>.</td>
         <td>Nej</td>
         <td>Tekst</td>
       </tr>
@@ -2866,13 +2866,13 @@ form_limit.charactersLeft();</code></pre></figure>
         <td>showoptional</td>
         <td>Viser en besked til brugeren om, at feltet er frivilligt. Skal kun anvendes, hvis de fleste inputfelter er påkrævede.</td>
         <td>Nej</td>
-        <td>Boolean</td>
+        <td>Boolean attribut (dog vil værdien "false" ikke sætte attributten)</td>
       </tr>
       <tr>
         <td>showrequired</td>
         <td>Viser en besked til brugeren om, at feltet er påkrævet. Skal kun anvendes, hvis de fleste inputfelter er frivillige.</td>
         <td>Nej</td>
-        <td>Boolean</td>
+        <td>Boolean attribut (dog vil værdien "false" ikke sætte attributten)</td>
       </tr>
       <tr>
         <td>suffix</td>
