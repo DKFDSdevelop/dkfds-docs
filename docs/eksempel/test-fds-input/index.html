@@ -256,18 +256,33 @@
     </div>
     <div class="row mb-9">
         <div class="col-4">
-            <p>Tjek konsol for fejlbesked. Det er ikke tilladt at undlade attributter i
-                fds-input.</p>
+            <p>fds-input uden attributter</p>
         </div>
         <div class="col-8"><fds-input></fds-input></div>
     </div>
     <div class="row mb-9">
         <div class="col-4">
-            <p>Tjek konsol for fejlbesked. Det er ikke tilladt at have indhold i fds-input.
-            </p>
+            <p>fds-input med indhold ved oprettelse</p>
         </div>
-        <div class="col-8"><fds-input label="En label" name="test-input">Test</fds-input>
+        <div class="col-8"><fds-input label="Element havde indhold ved oprettelse" name="test-input">Test</fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">
+            <p>fds-input kun med name-attribut</p>
         </div>
+        <div class="col-8"><fds-input name="name-only"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">
+            <p>fds-input kun med label-attribut</p>
+        </div>
+        <div class="col-8"><fds-input label="Kun label"></fds-input></div>
+    </div>
+    <div class="row mb-9">
+        <div class="col-4">
+            <p>fds-input med tom label-attribut</p>
+        </div>
+        <div class="col-8"><fds-input label=""></fds-input></div>
     </div>
 </main>
 

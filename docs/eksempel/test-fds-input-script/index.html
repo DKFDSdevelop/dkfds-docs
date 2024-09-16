@@ -263,49 +263,30 @@
 </main>
 
 <script>
-    let errorMessage = '';
-    const listener = event => {
-        event.preventDefault();
-        errorMessage = event.error.message;
-    };
-    window.addEventListener('error', listener);
-
     function testNoAttributes() {
-        errorMessage = '';
-        let inputEl = document.createElement('fds-input');
-        try {
-            document.getElementById('testarea').appendChild(inputEl);
-        } finally {
-            document.getElementById('testarea').removeChild(inputEl);
-        }
-        let success = (errorMessage ===
-            `Custom element 'fds-input' not created. Element must always have the attributes 'label' and 'name'.`
-            );
+        let test = 'No input or label added to DOM when fds-input has no attributes';
+        let customEl = document.createElement('fds-input');
+        document.getElementById('testarea').appendChild(customEl);
+        let result = (document.querySelector('fds-input input') === null && document
+            .querySelector('fds-input label') === null);
         document.getElementById('results').innerHTML +=
-            `<p class="test-${success}">No attributes at creation causes error: ${success}</p>`;
+            `<p class="test-${result}">${test}: ${result}</p>`;
+        document.getElementById('testarea').removeChild(customEl);
     }
 
     function testNoContent() {
-        errorMessage = '';
-        let inputEl = document.createElement('fds-input');
-        inputEl.label = 'Label';
-        inputEl.name = 'name';
-        inputEl.innerHTML = 'Content';
-        try {
-            document.getElementById('testarea').appendChild(inputEl);
-        } finally {
-            document.getElementById('testarea').removeChild(inputEl);
-        }
-        let success = (errorMessage ===
-            `Custom element 'fds-input' not created. Element must not contain content at element creation.`
-            );
+        let test = 'Content is removed on element creation';
+        let customEl = document.createElement('fds-input');
+        customEl.innerHTML = '<em>Content</em>';
+        document.getElementById('testarea').appendChild(customEl);
+        let result = (document.querySelector('fds-input em') === null);
         document.getElementById('results').innerHTML +=
-            `<p class="test-${success}">Content at creation causes error: ${success}</p>`;
+            `<p class="test-${result}">${test}: ${result}</p>`;
+        document.getElementById('testarea').removeChild(customEl);
     }
-    window.addEventListener('load', (event) => {
+    window.addEventListener('load', () => {
         testNoAttributes();
         testNoContent();
-        window.removeEventListener('error', listener);
     });
 </script>
 
