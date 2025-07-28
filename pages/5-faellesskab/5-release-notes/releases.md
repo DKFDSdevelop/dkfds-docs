@@ -107,6 +107,15 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 
 
 
+## Version 12.0.0 {#{% include create-id.html heading="Version 12.0.0" %}}
+{:.mb-0}
+
+<div><span class="small-text mt-0 d-block">xx-xx-2025</span></div>
+
+- <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Fjernet support af attributten `aria-checked="mixed"` for tjekbokse. Se evt. release notes til <a href="#version-11-0-1">version 11.0.1</a>.
+
+
+
 ## Version 11.1.0 {#{% include create-id.html heading="Version 11.1.0" %}}
 {:.mb-0}
 
