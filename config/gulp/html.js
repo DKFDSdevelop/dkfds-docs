@@ -19,7 +19,7 @@ var titles = require('./example-titles').default;
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildFile = ['examples/testfiles/loading-spinner/*.njk'];
+var buildFile = ['examples/testfiles/datepicker/*.njk'];
 
 var activeBuild = buildAll;
 
@@ -50,6 +50,7 @@ var testfiles = [
     "test-date-input-4",
     "test-date-input-5",
     "test-date-input-6",
+    "test-new-datepicker",
     "test-datepicker-1",
     "test-datepicker-2",
     "test-datepicker-3",

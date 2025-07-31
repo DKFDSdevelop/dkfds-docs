@@ -64,6 +64,7 @@ title: Test
 {:.h3}
 ## Datovælger
 
+{% include test/preview-test.html filename="test-new-datepicker" description="Ny datovælger" %}
 {% include test/preview-test.html filename="test-datepicker-1" description="Datovælger 1" %}
 {% include test/preview-test.html filename="test-datepicker-2" description="Datovælger 2" %}
 {% include test/preview-test.html filename="test-datepicker-3" description="Datovælger 3" %}
