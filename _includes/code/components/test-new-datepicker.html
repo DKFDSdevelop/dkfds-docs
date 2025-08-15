@@ -16,15 +16,33 @@
     </div>
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Datovælger uden inputfelt</h2>
+            <h2 class="h3 mt-0">Datovælger med inputfelt</h2>
         </div>
         <div class="col-12">
-            <div class="new-datepicker-wrapper"></div>
+            <div class="form-group new-datepicker">
+                <label class="form-label" for="input-text">Datovælger</label>
+                <div class="d-flex pt-3">
+                    <input type="text" id="input-text" name="input-text"
+                        class="form-input input-width-xs mt-0 mr-2" required>
+                    <button class="button button-icon-only" aria-haspopup="dialog">
+                        <svg class="icon-svg" focusable="false" aria-hidden="true">
+                            <use href="#calendar-month"></use>
+                        </svg>
+                        <span class="sr-only">Åbn datovælger</span>
+                    </button>
+                </div>
+                <div class="new-datepicker-wrapper"></div>
+            </div>
         </div>
     </div>
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Datovælger med inputfelt</h2>
+            <h2 class="h3 mt-0">Datovælger uden inputfelt</h2>
+        </div>
+        <div class="col-12">
+            <div class="form-group new-datepicker">
+                <div class="new-datepicker-wrapper"></div>
+            </div>
         </div>
     </div>
 </main>
