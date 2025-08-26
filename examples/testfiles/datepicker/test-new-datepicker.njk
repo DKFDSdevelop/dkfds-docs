@@ -9,7 +9,6 @@
     <div class="row mb-905">
         <div class="col-12">
             <p>Test date picker i modal</p>
-            <p>Escape til at lukke dropdown skal ikke lukke datovælger</p>
         </div>
     </div>
     <div class="row mb-905">
@@ -31,18 +30,18 @@
             <h2 class="h3 mt-0">Datovælger med valgt dato</h2>
         </div>
         <div class="col-12">
-            <div class="form-group new-date-picker" data-selected-date="2025-08-07">
-                <label class="form-label" for="input-text-date-selected">Datovælger</label>
-                <div class="d-flex pt-3">
-                    <input type="text" id="input-text-date-selected" name="input-text-date-selected" class="form-input input-width-xs mt-0 mr-2"
-                        required>
-                    <button class="button button-icon-only" aria-haspopup="dialog">
-                        <svg class="icon-svg" focusable="false" aria-hidden="true">
-                            <use href="#calendar-month"></use>
-                        </svg>
-                        <span class="sr-only">Åbn datovælger</span>
-                    </button>
-                </div>
+            {{ 
+                datepicker({
+                    "id": "input-text-date-selected",
+                    "name": "input-text-date-selected",
+                    "label": "Datovælger",
+                    "value": "07-08-2025"
+                }) 
+            }}
+        </div>
+        <div class="col-12">
+            <div class="form-group new-date-picker mt-7" data-selected-date="2025-08-07">
+                <div class="new-date-picker-wrapper"></div>
             </div>
         </div>
     </div>
@@ -87,6 +86,26 @@
                     "format": "DD-MM-YYYY"
                 }) 
             }}
+        </div>
+    </div>
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Datovælger med default dato</h2>
+        </div>
+        <div class="col-12">
+            {{ 
+                datepicker({
+                    "id": "date-picker-default",
+                    "name": "date-picker-default",
+                    "label": "Datovælger",
+                    "defaultDate": "2021-05-08"
+                }) 
+            }}
+        </div>
+        <div class="col-12">
+            <div class="form-group new-date-picker mt-7" data-default-date="2021-05-08">
+                <div class="new-date-picker-wrapper"></div>
+            </div>
         </div>
     </div>
     <div class="row mb-905">
