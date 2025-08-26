@@ -1,3 +1,5 @@
+{% from "components/form/controls/new-date-picker.njk" import datepicker as datepicker %}
+
 <main class="container page-container" id="main-content">
     <div class="row mb-905">
         <div class="col-12">
@@ -7,9 +9,6 @@
     <div class="row mb-905">
         <div class="col-12">
             <p>Test date picker i modal</p>
-            <p>Når date picker er åbn skal øvrigt indhold være inert - tjek om den fjerner inert for modaler ved uheld
-            </p>
-            <p>Brug aria-modal</p>
             <p>Escape til at lukke dropdown skal ikke lukke datovælger</p>
         </div>
     </div>
@@ -18,19 +17,13 @@
             <h2 class="h3 mt-0">Datovælger med inputfelt</h2>
         </div>
         <div class="col-12">
-            <div class="form-group new-date-picker">
-                <label class="form-label" for="input-text">Datovælger</label>
-                <div class="d-flex pt-3">
-                    <input type="text" id="input-text" name="input-text" class="form-input input-width-xs mt-0 mr-2"
-                        required>
-                    <button class="button button-icon-only" aria-haspopup="dialog">
-                        <svg class="icon-svg" focusable="false" aria-hidden="true">
-                            <use href="#calendar-month"></use>
-                        </svg>
-                        <span class="sr-only">Åbn datovælger</span>
-                    </button>
-                </div>
-            </div>
+            {{ 
+                datepicker({
+                    "id": "input-text",
+                    "name": "input-text",
+                    "label": "Datovælger"
+                }) 
+            }}
         </div>
     </div>
     <div class="row mb-905">
@@ -58,32 +51,42 @@
             <h2 class="h3 mt-0">Datovælger med begrænset datovalg</h2>
         </div>
         <div class="col-12">
-            <div class="form-group new-date-picker" data-min-date="2024-08-07" data-max-date="2026-01-17">
-                <label class="form-label" for="input-text-date-limited">Datovælger med begrænset datovalg</label>
-                <div class="d-flex pt-3">
-                    <input type="text" id="input-text-date-limited" name="input-text-date-limited" class="form-input input-width-xs mt-0 mr-2"
-                        required>
-                    <button class="button button-icon-only" aria-haspopup="dialog">
-                        <svg class="icon-svg" focusable="false" aria-hidden="true">
-                            <use href="#calendar-month"></use>
-                        </svg>
-                        <span class="sr-only">Åbn datovælger</span>
-                    </button>
-                </div>
-            </div>
-            <div class="form-group new-date-picker" data-min-date="2024-08-07" data-max-date="2024-08-24">
-                <label class="form-label" for="input-text-date-limited-2">Datovælger med begrænset datovalg</label>
-                <div class="d-flex pt-3">
-                    <input type="text" id="input-text-date-limited-2" name="input-text-date-limited-2" class="form-input input-width-xs mt-0 mr-2"
-                        required>
-                    <button class="button button-icon-only" aria-haspopup="dialog">
-                        <svg class="icon-svg" focusable="false" aria-hidden="true">
-                            <use href="#calendar-month"></use>
-                        </svg>
-                        <span class="sr-only">Åbn datovælger</span>
-                    </button>
-                </div>
-            </div>
+            {{ 
+                datepicker({
+                    "id": "input-text-date-limited",
+                    "name": "input-text-date-limited",
+                    "label": "Datovælger med begrænset datovalg",
+                    "helptext": "Vælg mellem 7. august 2024 og 17. januar 2026",
+                    "minDate": "2024-08-07",
+                    "maxDate": "2026-01-17"
+                }) 
+            }}
+            {{ 
+                datepicker({
+                    "id": "input-text-date-limited-2",
+                    "name": "input-text-date-limited-2",
+                    "label": "Datovælger med begrænset datovalg",
+                    "helptext": "Vælg mellem 7. august 2024 og 24. august 2024",
+                    "minDate": "2024-08-07",
+                    "maxDate": "2024-08-24"
+                }) 
+            }}
+        </div>
+    </div>
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Datovælger med andet format</h2>
+        </div>
+        <div class="col-12">
+            {{ 
+                datepicker({
+                    "id": "date-picker-format",
+                    "name": "date-picker-format",
+                    "label": "Datovælger",
+                    "helptext": "Formatet er DD-MM-YYYY",
+                    "format": "DD-MM-YYYY"
+                }) 
+            }}
         </div>
     </div>
     <div class="row mb-905">
