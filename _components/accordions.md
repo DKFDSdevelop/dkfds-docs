@@ -132,11 +132,4 @@ new DKFDS.Accordion(document.getElementById('ACCORDION-UL-GROUP-ID'), {
 
 <!--split-->
 
-<div class="component-preview intro-example component-preview-accordion">
-  <div class="component-link px-4 py-4">
-    <a class="small-text">Åbn dette eksempel i et nyt vindue</a>
-  </div>  
-  <div class="component-example px-4 py-4">
-    <fds-accordion></fds-accordion>
-  </div>
-</div>
+{% include code/show-example.html example="fds-accordion-example" headingLevel=2 heading="Accordion lavet med custom element" %}

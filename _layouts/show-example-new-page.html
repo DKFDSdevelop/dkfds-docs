@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta name="robots" content="noindex">
+    {% include head.html %}
+</head>
+
+<body class="page-{{ page.filename | slugify }} layout-{{ page.layout }}">
+    {% include code/components/fds-base-svg.html %}
+    <header>
+        <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
+    </header>
+    <main class="container page-container" id="main-content">
+        {{ content }}
+    </main>
+    {% include scripts.html %}
+</body>
+
+</html>

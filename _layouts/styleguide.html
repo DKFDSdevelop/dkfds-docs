@@ -62,7 +62,9 @@ layout: default
                         </div>
                         <div id="code-section">
                             {{ pageContent[2] }}
-                        </div>{%- elsif page.tabs == "Retningslinjer, kode, custom" -%}{%- assign pageContent = content | split: site.excerpt_separator -%}
+                        </div>
+                    {%- elsif page.tabs == "Retningslinjer, kode, custom" -%}
+                        {%- assign pageContent = content | split: site.excerpt_separator -%}
                         {{ pageContent[0] }}
                         <div id="guidelines-section">
                             {{ pageContent[1] }}
@@ -72,7 +74,8 @@ layout: default
                         </div>
                         <div id="custom-section">
                             {{ pageContent[3] }}
-                        </div>{%- else -%}
+                        </div>
+                    {%- else -%}
                         {{ content }}
                     {%- endif %}
                 {%- else -%}

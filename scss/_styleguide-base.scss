@@ -1361,3 +1361,48 @@ Styling for loading spinner examples
         height: 100%;
     }
 }
+
+/*
+-----------------------------------------------------
+Styling for examples
+-----------------------------------------------------
+*/
+.show-example-heading {
+  display: flex;
+  margin-bottom: 8px;
+  flex-direction: column;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: units(405);
+    font-weight: 700;
+    width: 80%;
+  }
+
+  a {
+    margin-top: units(2);
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    align-items: end;
+
+    a {
+      text-align: end;
+      margin-left: auto;
+      margin-top: 0;
+    }
+
+  }
+}
+
+.show-example-box {
+  border: 1px solid color('gray-200');
+  padding: units(4);
+}
