@@ -14,14 +14,14 @@ description: Accordions er interaktive overskrifter, der anvendes til at skjule 
 tags:
 - accordion
 - accordions
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="accordion" title="Eksempel på accordion" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Accordions" code="Accordions_Kode" %}
+{% include anchorlinks.html guidelines="Accordions" code="Accordions_Kode" custom="Accordions_Custom" classes="hide-custom" %}
 
 <!--split-->
 
@@ -129,3 +129,14 @@ new DKFDS.Accordion(document.getElementById('ACCORDION-UL-GROUP-ID'), {
 ## Med succesbeskeder {#{% include create-id.html heading="Med succesbeskeder" append="-kode" %}}
 
 {% include code/syntax.html component="accordion-success" link=true copybutton=true guidelines="/komponenter/accordions/#med-succesbeskeder" %}
+
+<!--split-->
+
+<div class="component-preview intro-example component-preview-accordion">
+  <div class="component-link px-4 py-4">
+    <a class="small-text">Åbn dette eksempel i et nyt vindue</a>
+  </div>  
+  <div class="component-example px-4 py-4">
+    <fds-accordion></fds-accordion>
+  </div>
+</div>

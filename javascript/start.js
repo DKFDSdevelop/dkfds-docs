@@ -1,14 +1,17 @@
 'use strict';
 import $ from "jquery";
 var Cookies = require('./vendor/js-cookie'); // Node.js: Load js-cookie.js
-import {CookiePrompter, PiwikProTracker, CookieMgr } from "./vendor/CookiePrompter";
+import { CookiePrompter, PiwikProTracker, CookieMgr } from "./vendor/CookiePrompter";
 import * as DKFDS from "dkfds";
 
 require('./sidenav'); // Node.js: Load sidenav.js
 require('./scroll-top');
 require('./copy-code-button');
-document.addEventListener("DOMContentLoaded", function() {
-    
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Init custom elements
+    DKFDS.initCustomElements();
+
     // If this is a page with a back-to-top button example, ensure that only the 'real' back-to-top button's JavaScript works
     // Without this code, the back-to-top button example would not be visible due to the JavaScript hiding it
     let bodytag = document.getElementsByTagName('body')[0];
@@ -25,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     let searchForm = document.getElementById('search-form');
-    if(searchForm !== null){
+    if (searchForm !== null) {
         let form = searchForm.getElementsByTagName('form')[0];
-        form.addEventListener('submit', function(e){
-            if(document.getElementById('search-input').value === ""){
+        form.addEventListener('submit', function (e) {
+            if (document.getElementById('search-input').value === "") {
                 e.preventDefault();
                 return false;
             } else {
@@ -37,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, false);
     }
 
-    if(document.getElementsByClassName('component-preview-error-summary-page').length > 0){
+    if (document.getElementsByClassName('component-preview-error-summary-page').length > 0) {
         new DKFDS.ErrorSummary(document.getElementsByClassName('component-preview-error-summary-page')[0].querySelector('.alert[data-module="error-summary"]')).init();
     }
 
@@ -52,12 +55,12 @@ document.addEventListener("DOMContentLoaded", function() {
    an anchor link has been clicked. This eventListener ensures that the
    correct element is displayed in view. */
 window.addEventListener("load", (event) => {
-    if(location.hash !== '') {
-        let elementID = location.hash.replace('#','');
+    if (location.hash !== '') {
+        let elementID = location.hash.replace('#', '');
         let element = document.getElementById(elementID);
-        if(element) {
+        if (element) {
             element.scrollIntoView(true);
-        } 
+        }
     }
 });
 
@@ -95,7 +98,7 @@ $(document).ready(function () {
         });
     }
 
-    $('.layout-demo form').submit(function(e){
+    $('.layout-demo form').submit(function (e) {
         e.preventDefault();
         window.location.href = window.location.origin + $(this).attr('action');
     });
@@ -104,7 +107,7 @@ $(document).ready(function () {
      * If the "cookie radio buttons" are present (i.e. user is on the page "privatlivspolitik"),
      * ensure that they show the correct cookie status and add functionality to the form.
      */
-    if($('#cookieForm').length !== 0) {
+    if ($('#cookieForm').length !== 0) {
 
         if (CookieMgr.readCookie('cookieOptOut') === "n") {
             $('#statCookiesNo').prop("checked", true);
@@ -138,10 +141,10 @@ $(document).ready(function () {
             $('#cookieYesAlert').addClass('d-none');
         });
 
-        $('#cookieCancel').click(function(){
-            if($('#originalValue').val() === "1"){
+        $('#cookieCancel').click(function () {
+            if ($('#originalValue').val() === "1") {
                 $('#statCookiesYes').prop("checked", true);
-            } else{
+            } else {
                 $('#statCookiesNo').prop("checked", true);
             }
 
@@ -151,10 +154,10 @@ $(document).ready(function () {
 
 
     var inFormOrLink = false;
-    $('.layout-demo a, .layout-demo button').click(function(e){
+    $('.layout-demo a, .layout-demo button').click(function (e) {
         inFormOrLink = true;
 
-        if($(this).hasClass('alert-leave')){
+        if ($(this).hasClass('alert-leave')) {
             var r = confirm("Du er ved at forlade selvbetjeningsløsningen. Data, der ikke er gemt vil gå tabt. Vil du fortsætte?");
             if (r == true) {
                 inFormOrLink = true;
@@ -168,7 +171,7 @@ $(document).ready(function () {
 
 
 
-        if($(this).hasClass('alert-leave2')){
+        if ($(this).hasClass('alert-leave2')) {
             var r = confirm("Du er ved at forlade siden. Evt. indtastninger der ikke er gemt vil gå tabt. Vil du fortsætte?");
             if (r == true) {
                 inFormOrLink = true;
@@ -181,7 +184,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.layout-iframed .icon-link, .layout-demo .icon-link').click(function(e){
+    $('.layout-iframed .icon-link, .layout-demo .icon-link').click(function (e) {
 
         var r = confirm("Du er ved at forlade selvbetjeningsløsningen. Data, der ikke er gemt vil gå tabt. Vil du fortsætte?");
         if (r == true) {
@@ -195,13 +198,12 @@ $(document).ready(function () {
 
     });
 
-
     // alert upon closing page
     window.onbeforeunload = function (e) {
         // do not show popup if destination is within the same solution flow
-        if(document.getElementsByClassName('layout-demo').length > 0 && window.themeChangeProcess === undefined){
+        if (document.getElementsByClassName('layout-demo').length > 0 && window.themeChangeProcess === undefined) {
             var showPopup = true;
-            if(document.activeElement.href !== null && document.activeElement.href !== undefined && window.location.href !== null && window.location.href !== undefined) {
+            if (document.activeElement.href !== null && document.activeElement.href !== undefined && window.location.href !== null && window.location.href !== undefined) {
                 var targetUrl = document.activeElement.href.split('/');
                 var currentUrl = window.location.href.split('/');
                 if (targetUrl.length != 0) {
@@ -210,8 +212,8 @@ $(document).ready(function () {
                     }
                 }
             }
-            if(showPopup) {
-                if(!inFormOrLink) {
+            if (showPopup) {
+                if (!inFormOrLink) {
                     e = e || window.event;
 
                     // For IE and Firefox prior to version 4
