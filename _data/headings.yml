@@ -395,7 +395,10 @@ Accordions_Kode:
 - h2: Med succesbeskeder
 
 Accordions_Custom:
-- h2: Installation
+- h2: Om custom elements
+- h2: Eksempel - Accordion lavet med custom element
+- h2: fds-accordion-group
+- h2: fds-accordion
 
 Anchorlinks_Kode:
 - h2: Installation

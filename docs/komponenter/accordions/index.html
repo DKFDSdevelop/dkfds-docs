@@ -1731,7 +1731,7 @@
     
 </div>
 
-<nav class="anchorbox hide-custom" aria-labelledby="anchorlinks">
+<nav class="anchorbox" aria-labelledby="anchorlinks">
     <h2 class="anchortitle" id="anchorlinks">Indhold på siden</h2>
     <ul class="anchorlist">
         
@@ -1743,7 +1743,10 @@
         <li class="anchorlink-code"><a href="#aabn-luk-alle-kode">Åbn/luk alle</a></li>
         <li class="anchorlink-code"><a href="#med-fejl-kode">Med fejl</a></li>
         <li class="anchorlink-code"><a href="#med-succesbeskeder-kode">Med succesbeskeder</a></li>
-        <li class="anchorlink-custom"><a href="#installation-custom">Installation</a></li>
+        <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
+        <li class="anchorlink-custom"><a href="#eksempel---accordion-lavet-med-custom-element-custom">Eksempel - Accordion lavet med custom element</a></li>
+        <li class="anchorlink-custom"><a href="#fds-accordion-group-custom">fds-accordion-group</a></li>
+        <li class="anchorlink-custom"><a href="#fds-accordion-custom">fds-accordion</a></li>
         
     </ul>
 </nav>
@@ -2457,11 +2460,17 @@
                         <div id="custom-section">
                             
 
-<div class="show-example-heading">
-    <h2>Eksempel: Accordion lavet med custom element</h2>
+<h2 id="om-custom-elements-custom">Om custom elements</h2>
+
+<p>Accordions har to custom elementer tilknyttet: <code>fds-accordion</code> og <code>fds-accordion-group</code>.</p>
+
+<p>Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accordions.</p>
+
+<h2 id="eksempel---accordion-lavet-med-custom-element-custom">Eksempel: Accordion lavet med custom element</h2>
+
+<div class="d-flex justify-content-end mb-3">
     <a href="/eksempel/fds-accordion-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
-
 <div class="show-example-box">
     <fds-accordion-group heading-level="h3">
     <fds-accordion heading="Dette er en accordion">
@@ -2486,6 +2495,133 @@
 </fds-accordion-group>
 </div>
 
+<div class="component-preview component-preview-code mt-4  component-code-fds-accordion-example">
+    <div class="component-code">
+        <div class="button-copy-container">
+            <button class="button button-secondary button-copy">Kopiér kode</button>
+        </div>
+        
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;custom-ID&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion med overskrift h4&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h4&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Dette er indholdet under h4.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span></code></pre></figure>
+
+
+    </div>
+</div>
+
+<h2 id="fds-accordion-group-custom">fds-accordion-group</h2>
+
+<h3>Attributter</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading-level</td>
+      <td>Sæt overskriftsniveau for alle accordions i gruppen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="fds-accordion-custom">fds-accordion</h2>
+
+<h3>Attributter</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading</td>
+      <td>Overskriften i accordionen.</td>
+    </tr>
+    <tr>
+      <td>heading-level</td>
+      <td>Overskriftsniveauet i accordionen (overskrives ved oprettelse, når heading-level i <code>&lt;fds-accordion-group&gt;</code> er sat). Standardværdi er <code>"h3"</code>.</td>
+    </tr>
+    <tr>
+      <td>expanded</td>
+      <td>Sæt til <code>"true"</code>, hvis accordionen skal være åben, når siden indlæses. Standardværdi er <code>"false"</code>.</td>
+    </tr>
+    <tr>
+      <td>content-id</td>
+      <td>Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Funktioner</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>expandAccordion()</td>
+      <td>Fold en accordion ud.</td>
+    </tr>
+    <tr>
+      <td>collapseAccordion()</td>
+      <td>Fold en accordion sammen.</td>
+    </tr>
+    <tr>
+      <td>toggleAccordion()</td>
+      <td>Hvis en accordion er foldet ud, så foldes den sammen. Er den foldet sammen, foldes den ud.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Events</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fds-accordion-expanded</td>
+      <td>Udløses når accordionen foldes ud.</td>
+    </tr>
+    <tr>
+      <td>fds-accordion-collapsed</td>
+      <td>Udløses når accordionen foldes sammen.</td>
+    </tr>
+  </tbody>
+</table>
 
                         </div>
             </section>

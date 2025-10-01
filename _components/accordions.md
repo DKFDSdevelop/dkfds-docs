@@ -21,7 +21,7 @@ tabs: "Retningslinjer, kode, custom"
 
 {% include code/preview-box.html component="accordion" title="Eksempel på accordion" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Accordions" code="Accordions_Kode" custom="Accordions_Custom" classes="hide-custom" %}
+{% include anchorlinks.html guidelines="Accordions" code="Accordions_Kode" custom="Accordions_Custom" %}
 
 <!--split-->
 
@@ -132,4 +132,52 @@ new DKFDS.Accordion(document.getElementById('ACCORDION-UL-GROUP-ID'), {
 
 <!--split-->
 
-{% include code/show-example.html example="fds-accordion-example" headingLevel=2 heading="Accordion lavet med custom element" %}
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+Accordions har to custom elementer tilknyttet: `fds-accordion` og `fds-accordion-group`.
+
+Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accordions.
+
+## Eksempel: Accordion lavet med custom element {#{% include create-id.html heading="Eksempel - Accordion lavet med custom element" append="-custom" %}}
+
+{% include code/show-example.html example="fds-accordion-example" %}
+
+{% include code/show-example-code.html example="fds-accordion-example" %}
+
+## fds-accordion-group {#{% include create-id.html heading="fds-accordion-group" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut      | Beskrivelse                                          |
+|---------------|------------------------------------------------------|
+| heading-level | Sæt overskriftsniveau for alle accordions i gruppen. |
+
+## fds-accordion {#{% include create-id.html heading="fds-accordion" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut      | Beskrivelse                                                                                                                                  |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| heading       | Overskriften i accordionen.                                                                                                                  |
+| heading-level | Overskriftsniveauet i accordionen (overskrives ved oprettelse, når heading-level i `<fds-accordion-group>` er sat). Standardværdi er `"h3"`. |
+| expanded      | Sæt til `"true"`, hvis accordionen skal være åben, når siden indlæses. Standardværdi er `"false"`.                                           |
+| content-id    | Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret.                                                         |
+
+### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion            | Beskrivelse                                                                                |
+|---------------------|--------------------------------------------------------------------------------------------|
+| expandAccordion()   | Fold en accordion ud.                                                                      |
+| collapseAccordion() | Fold en accordion sammen.                                                                  |
+| toggleAccordion()   | Hvis en accordion er foldet ud, så foldes den sammen. Er den foldet sammen, foldes den ud. |
+
+### Events
+
+{:.table .table--responsive-headers}
+| Event                   | Beskrivelse                            |
+|-------------------------|----------------------------------------|
+| fds-accordion-expanded  | Udløses når accordionen foldes ud.     |
+| fds-accordion-collapsed | Udløses når accordionen foldes sammen. |

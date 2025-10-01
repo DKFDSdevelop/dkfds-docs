@@ -1,10 +1,7 @@
 {% if include.example and include.example != '' %}
-{% if include.headingLevel %}
-<div class="show-example-heading">
-    <h{{ include.headingLevel }}>Eksempel: {{ include.heading }}</h{{ include.headingLevel }}>
+<div class="d-flex justify-content-end mb-3">
     <a href="/eksempel/{{ include.example }}/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
-{% endif %}
 <div class="show-example-box">
     {% include code-examples/{{ include.example }}.html %}
 </div>
