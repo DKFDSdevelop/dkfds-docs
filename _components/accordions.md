@@ -144,6 +144,12 @@ Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accor
 
 {% include code/show-example-code.html example="fds-accordion-example" %}
 
+## Eksempel: Varianter {#{% include create-id.html heading="Eksempel - Varianter" append="-custom" %}}
+
+{% include code/show-example.html example="fds-accordion-variants" %}
+
+{% include code/show-example-code.html example="fds-accordion-variants" %}
+
 ## fds-accordion-group {#{% include create-id.html heading="fds-accordion-group" append="-custom" %}}
 
 ### Attributter
@@ -157,13 +163,48 @@ Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accor
 
 ### Attributter
 
-{:.table .table--responsive-headers}
-| Attribut      | Beskrivelse                                                                                                                                  |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| heading       | Overskriften i accordionen.                                                                                                                  |
-| heading-level | Overskriftsniveauet i accordionen (overskrives ved oprettelse, når heading-level i `<fds-accordion-group>` er sat). Standardværdi er `"h3"`. |
-| expanded      | Sæt til `"true"`, hvis accordionen skal være åben, når siden indlæses. Standardværdi er `"false"`.                                           |
-| content-id    | Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret.                                                         |
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribut</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>heading</td>
+        <td>Overskriften i accordionen.</td>
+      </tr>
+      <tr>
+        <td>heading-level</td><td>Overskriftsniveauet i accordionen (overskrives ved oprettelse, når heading-level i <code>fds-accordion-group</code> er sat). Standardværdi er <code>"h3"</code>.</td>
+      </tr>
+      <tr>
+        <td>expanded</td>
+        <td>Sæt til <code>"true"</code>, hvis accordionen skal være åben, når siden indlæses. Standardværdi er <code>"false"</code>.</td>
+      </tr>
+      <tr>
+        <td>content-id</td>
+        <td>Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret.</td>
+      </tr>
+      <tr>
+        <td>has-error</td>
+        <td>Sæt til <code>"true"</code> for at give accordionen en rød kant. Sørg for altid at give en passende fejlbesked, når denne attribut bruges.</td>
+      </tr>
+      <tr>
+        <td>variant-text<br>variant-icon</td>
+        <td>Sæt en tilhørende besked og ikon på accordionen. Sørg altid for at anvende begge attributter samtidigt. Anbefalinger til kombinationer:<br>
+        <ul>
+          <li><code>variant-text="Information"</code> og <code>variant-icon="info"</code></li>
+          <li><code>variant-text="Succes"</code> og <code>variant-icon="success"</code></li>
+          <li><code>variant-text="Advarsel"</code> og <code>variant-icon="warning"</code></li>
+          <li><code>variant-text="Fejl"</code> og <code>variant-icon="error"</code> og <code>has-error="true"</code></li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ### Funktioner
 
