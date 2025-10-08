@@ -13,7 +13,7 @@ const BEAUTIFY_OPTIONS = {
 };
 
 const srcDir = '_includes/code-examples';
-const destDir = '_includes/code-examples-html';
+const destDir = '_includes/code-examples-generated-html';
 
 const dom = new JSDOM(`<!DOCTYPE html><head></head><body></body>`);
 const window = dom.window;
