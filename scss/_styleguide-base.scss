@@ -1367,8 +1367,65 @@ Styling for loading spinner examples
 Styling for examples
 -----------------------------------------------------
 */
+.tab-panel.code-tab {
+  overflow: hidden;
+  padding: 0 units(2) units(2) units(2);
+  background-color: color('black');
+  border-color: color('black');
 
-.show-example-box {
-  border: 1px solid color('gray-300');
-  padding: units(4);
+  .button-copy-container {
+    background-color: color('black');
+
+    button {
+      &:focus {
+        outline-color: color('gray-100');
+      }
+    }
+  }
+
+  .code-figure {
+    margin: 0;
+    overflow: auto;
+
+    pre {
+      margin: 0;
+      overflow: visible;
+
+      code {
+        overflow: hidden;
+        display: inline-block;
+        padding: units(2) units(4) units(3) units(4);
+        color: color('gray-100');
+      }
+    }
+
+    &:focus {
+      @include focus;
+      outline-color: color('gray-100');
+    }
+
+    .hljs-tag {
+      color: color('gray-300');
+    }
+
+    .hljs-name {
+      color: color('data-blue-500');
+    }
+
+    .hljs-string {
+      color: color('data-blue-400');
+    }
+
+    .hljs-attr {
+      color: color('data-yellow-red-500');
+    }
+
+    .hljs-comment {
+      color: color('data-yellow-red-500');
+    }
+
+    .hljs-symbol {
+      color: color('gray-300');
+    }
+  }
 }

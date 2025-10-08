@@ -48,7 +48,7 @@ function highlightCode(str) {
     return highlightedCode;
 }
 
-log(colors.white('Started syntax highlighting...'));
+log(colors.white('Started example syntax highlighting...'));
 
 fs.readdirSync('_includes/code-examples/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/code-examples/'}/${file}`, 'utf8');
@@ -62,4 +62,4 @@ fs.readdirSync('_includes/code-examples-generated-html/').forEach(file => {
     fs.writeFileSync(`${'_includes/code-highlighted-examples-generated-html/'}/${file}`, highlightedContent);
 });
 
-log(colors.green('Syntax highlighting done.'));
+log(colors.green('Example syntax highlighting done.'));

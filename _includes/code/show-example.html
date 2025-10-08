@@ -8,34 +8,26 @@
     <div class="tab-panel" role="tabpanel" tabindex="0" id="{{ include.tabId }}-tabpanel1" aria-labelledby="{{ include.tabId }}-tab1">
         {% include code-examples/{{ include.example }}.html %}
     </div>
-    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="{{ include.tabId }}-tabpanel2" aria-labelledby="{{ include.tabId }}-tab2" hidden>
-        <div class="component-preview component-preview-code mt-4 {{ include.classes }} component-code-{{ include.example | slugify }}">
+    <div class="tab-panel code-tab" role="tabpanel" id="{{ include.tabId }}-tabpanel2" aria-labelledby="{{ include.tabId }}-tab2" hidden>
+        <div>
             <div class="component-code">
                 <div class="button-copy-container">
-                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
-                <figure class="highlight">
-                    <pre>
-                        <code class="language-html" data-lang="html">
-{% include code-highlighted-examples/{{ include.example }}.html %}
-                        </code>
-                    </pre>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html">{% include code-highlighted-examples/{{ include.example }}.html %}</code></pre>
                 </figure>
             </div>
         </div>
     </div>
-    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="{{ include.tabId }}-tabpanel3" aria-labelledby="{{ include.tabId }}-tab3" hidden>
-        <div class="component-preview component-preview-code mt-4 {{ include.classes }} component-code-{{ include.example | slugify }}">
+    <div class="tab-panel code-tab" role="tabpanel" id="{{ include.tabId }}-tabpanel3" aria-labelledby="{{ include.tabId }}-tab3" hidden>
+        <div>
             <div class="component-code">
                 <div class="button-copy-container">
-                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
-                <figure class="highlight">
-                    <pre>
-                        <code class="language-html" data-lang="html">
-{% include code-highlighted-examples-generated-html/{{ include.example }}.html %}
-                        </code>
-                    </pre>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html">{% include code-highlighted-examples-generated-html/{{ include.example }}.html %}</code></pre>
                 </figure>
             </div>
         </div>
