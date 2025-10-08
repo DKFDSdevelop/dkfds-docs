@@ -1,8 +1,47 @@
 {% if include.example and include.example != '' %}
-<div class="d-flex justify-content-end mb-3">
-    <a href="/eksempel/{{ include.example }}/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel1" aria-selected="true" id="{{ include.tabId }}-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel2" aria-selected="false" id="{{ include.tabId }}-tab2"><span>Custom Element</span></button>
+        <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel3" aria-selected="false" id="{{ include.tabId }}-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" tabindex="0" id="{{ include.tabId }}-tabpanel1" aria-labelledby="{{ include.tabId }}-tab1">
+        {% include code-examples/{{ include.example }}.html %}
+    </div>
+    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="{{ include.tabId }}-tabpanel2" aria-labelledby="{{ include.tabId }}-tab2" hidden>
+        <div class="component-preview component-preview-code mt-4 {{ include.classes }} component-code-{{ include.example | slugify }}">
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                </div>
+                <figure class="highlight">
+                    <pre>
+                        <code class="language-html" data-lang="html">
+{% include code-highlighted-examples/{{ include.example }}.html %}
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="{{ include.tabId }}-tabpanel3" aria-labelledby="{{ include.tabId }}-tab3" hidden>
+        <div class="component-preview component-preview-code mt-4 {{ include.classes }} component-code-{{ include.example | slugify }}">
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                </div>
+                <figure class="highlight">
+                    <pre>
+                        <code class="language-html" data-lang="html">
+{% include code-highlighted-examples-generated-html/{{ include.example }}.html %}
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="show-example-box">
-    {% include code-examples/{{ include.example }}.html %}
+<div class="mt-3 mb-8">
+    <a href="/eksempel/{{ include.example }}/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
 {% endif %}

@@ -138,17 +138,15 @@ Accordions har to custom elementer tilknyttet: `fds-accordion` og `fds-accordion
 
 Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accordions.
 
-## Eksempel: Accordion lavet med custom element {#{% include create-id.html heading="Eksempel - Accordion lavet med custom element" append="-custom" %}}
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example.html example="fds-accordion-example" %}
+### Accordion lavet med custom element
 
-{% include code/show-example-code.html example="fds-accordion-example" %}
+{% include code/show-example.html example="fds-accordion-example" tabId="example-1-acc" %}
 
-## Eksempel: Varianter {#{% include create-id.html heading="Eksempel - Varianter" append="-custom" %}}
+### Varianter
 
-{% include code/show-example.html example="fds-accordion-variants" %}
-
-{% include code/show-example-code.html example="fds-accordion-variants" %}
+{% include code/show-example.html example="fds-accordion-variants" tabId="example-2-acc" %}
 
 ## fds-accordion-group {#{% include create-id.html heading="fds-accordion-group" append="-custom" %}}
 

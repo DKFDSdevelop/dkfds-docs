@@ -16,7 +16,7 @@
     "build-docs": "node config\\build-docs.js",
     "build-site-dev": "bundle exec jekyll build --config _config.yml,_config.dev.yml",
     "highlight-code": "node config\\highlight-code.js",
-    "gen-html": "node config\\generate-html.js",
+    "gen-html": "node config\\generate-html.js && node config\\highlight-examples.js",
     "gen-images": "node config\\puppeteer\\gen-images.js",
     "gen-thumbnails": "node config\\puppeteer\\gen-thumbnails.js",
     "gen-pdf-screenshots": "node config\\puppeteer\\gen-pdf-screenshots.js"

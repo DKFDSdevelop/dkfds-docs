@@ -1744,8 +1744,7 @@
         <li class="anchorlink-code"><a href="#med-fejl-kode">Med fejl</a></li>
         <li class="anchorlink-code"><a href="#med-succesbeskeder-kode">Med succesbeskeder</a></li>
         <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
-        <li class="anchorlink-custom"><a href="#eksempel---accordion-lavet-med-custom-element-custom">Eksempel - Accordion lavet med custom element</a></li>
-        <li class="anchorlink-custom"><a href="#eksempel---varianter-custom">Eksempel - Varianter</a></li>
+        <li class="anchorlink-custom"><a href="#eksempler-custom">Eksempler</a></li>
         <li class="anchorlink-custom"><a href="#fds-accordion-group-custom">fds-accordion-group</a></li>
         <li class="anchorlink-custom"><a href="#fds-accordion-custom">fds-accordion</a></li>
         
@@ -2467,134 +2466,317 @@
 
 <p>Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accordions.</p>
 
-<h2 id="eksempel---accordion-lavet-med-custom-element-custom">Eksempel: Accordion lavet med custom element</h2>
+<h2 id="eksempler-custom">Eksempler</h2>
 
-<div class="d-flex justify-content-end mb-3">
-    <a href="/eksempel/fds-accordion-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="show-example-box">
-    <fds-accordion-group heading-level="h3">
+<h3>Accordion lavet med custom element</h3>
 
-    <fds-accordion heading="Dette er en accordion">
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel1" aria-selected="true" id="example-1-acc-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel2" aria-selected="false" id="example-1-acc-tab2"><span>Custom Element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel3" aria-selected="false" id="example-1-acc-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" tabindex="0" id="example-1-acc-tabpanel1" aria-labelledby="example-1-acc-tab1">
+        <fds-accordion-group heading-level="h3">
+
+    <fds-accordion heading="Dette er en accordion" content-id="acce01138131">
         <p>Her er en paragraf inde i accordionen.</p>
     </fds-accordion>
 
-    <fds-accordion heading="Dette er endnu en accordion" expanded="false">
+    <fds-accordion heading="Dette er endnu en accordion" content-id="acce01138132" expanded="false">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat.</p>
     </fds-accordion>
 
-    <fds-accordion heading="Dette er endnu en accordion" expanded="true" content-id="custom-ID">
+    <fds-accordion heading="Dette er endnu en accordion" content-id="acce01138133" expanded="true">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat.</p>
     </fds-accordion>
 
-    <fds-accordion heading="Dette er en accordion med overskrift h4" heading-level="h4">
+    <fds-accordion heading="Dette er en accordion med overskrift h4" content-id="acce01138134" heading-level="h4">
         <p>Dette er indholdet under h4.</p>
     </fds-accordion>
-    
+
 </fds-accordion-group>
-</div>
+    </div>
+    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="example-1-acc-tabpanel2" aria-labelledby="example-1-acc-tab2" hidden="">
+        <div class="component-preview component-preview-code mt-4  component-code-fds-accordion-example">
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                </div>
+                <figure class="highlight">
+                    <pre>
+                        <code class="language-html" data-lang="html">
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
 
-<div class="component-preview component-preview-code mt-4  component-code-fds-accordion-example">
-    <div class="component-code">
-        <div class="button-copy-container">
-            <button class="button button-secondary button-copy">Kopiér kode</button>
-        </div>
-        
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138131&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138132&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;custom-ID&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138133&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion med overskrift h4&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion med overskrift h4&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138134&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h4&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Dette er indholdet under h4.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
-    
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span></code></pre></figure>
 
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span>
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="example-1-acc-tabpanel3" aria-labelledby="example-1-acc-tab3" hidden="">
+        <div class="component-preview component-preview-code mt-4  component-code-fds-accordion-example">
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                </div>
+                <figure class="highlight">
+                    <pre>
+                        <code class="language-html" data-lang="html">
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
 
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138131&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce01138131&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Dette er en accordion<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce01138131&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138132&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce01138132&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Dette er endnu en accordion<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce01138132&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er endnu en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138133&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce01138133&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Dette er endnu en accordion<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce01138133&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion med overskrift h4&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce01138134&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce01138134&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Dette er en accordion med overskrift h4<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce01138134&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Dette er indholdet under h4.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span>
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+        </div>
     </div>
 </div>
-
-<h2 id="eksempel---varianter-custom">Eksempel: Varianter</h2>
-
-<div class="d-flex justify-content-end mb-3">
-    <a href="/eksempel/fds-accordion-variants/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-accordion-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
-<div class="show-example-box">
-    <fds-accordion-group heading-level="h3">
 
-    <fds-accordion heading="Variant" variant-text="Information" variant-icon="info">
+<h3>Varianter</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel1" aria-selected="true" id="example-2-acc-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel2" aria-selected="false" id="example-2-acc-tab2"><span>Custom Element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel3" aria-selected="false" id="example-2-acc-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" tabindex="0" id="example-2-acc-tabpanel1" aria-labelledby="example-2-acc-tab1">
+        <fds-accordion-group heading-level="h3">
+
+    <fds-accordion heading="Variant" content-id="acce08131" variant-text="Information" variant-icon="info">
         <p>Her er en paragraf inde i accordionen.</p>
     </fds-accordion>
 
-    <fds-accordion heading="Variant" variant-text="Succes" variant-icon="success">
+    <fds-accordion heading="Variant" content-id="acce08132" variant-text="Succes" variant-icon="success">
         <p>Her er en paragraf inde i accordionen.</p>
     </fds-accordion>
 
-    <fds-accordion heading="Variant" variant-text="Advarsel" variant-icon="warning">
+    <fds-accordion heading="Variant" content-id="acce08133" variant-text="Advarsel" variant-icon="warning">
         <p>Her er en paragraf inde i accordionen.</p>
     </fds-accordion>
 
-    <fds-accordion heading="Variant" variant-text="Fejl" variant-icon="error" has-error="true">
+    <fds-accordion heading="Variant" content-id="acce08134" variant-text="Fejl" variant-icon="error" has-error="true">
         <p>Her er en paragraf inde i accordionen.</p>
     </fds-accordion>
 
-    <fds-accordion heading="Variant" variant-text="Tilgængelighed" variant-icon="accessibility-new">
+    <fds-accordion heading="Variant" content-id="acce08135" variant-text="Tilgængelighed" variant-icon="accessibility-new">
         <p>Her er en paragraf inde i accordionen.</p>
     </fds-accordion>
 
 </fds-accordion-group>
-</div>
-
-<div class="component-preview component-preview-code mt-4  component-code-fds-accordion-variants">
-    <div class="component-code">
-        <div class="button-copy-container">
-            <button class="button button-secondary button-copy">Kopiér kode</button>
-        </div>
-        
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Information&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Succes&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;success&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Advarsel&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;warning&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;error&quot;</span> <span class="hljs-attr">has-error</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Tilgængelighed&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;accessibility-new&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span></code></pre></figure>
-
-
     </div>
+    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="example-2-acc-tabpanel2" aria-labelledby="example-2-acc-tab2" hidden="">
+        <div class="component-preview component-preview-code mt-4  component-code-fds-accordion-variants">
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                </div>
+                <figure class="highlight">
+                    <pre>
+                        <code class="language-html" data-lang="html">
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08131&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Information&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08132&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Succes&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;success&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08133&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Advarsel&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;warning&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08134&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;error&quot;</span> <span class="hljs-attr">has-error</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08135&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Tilgængelighed&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;accessibility-new&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span>
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel p-0" role="tabpanel" tabindex="0" id="example-2-acc-tabpanel3" aria-labelledby="example-2-acc-tab3" hidden="">
+        <div class="component-preview component-preview-code mt-4  component-code-fds-accordion-variants">
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-secondary button-copy">Kopiér kode</button>
+                </div>
+                <figure class="highlight">
+                    <pre>
+                        <code class="language-html" data-lang="html">
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08131&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Information&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;info&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce08131&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Variant<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-icon&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon_text&quot;</span>&gt;</span>Information<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#info&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce08131&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08132&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Succes&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;success&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce08132&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Variant<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-icon&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon_text&quot;</span>&gt;</span>Succes<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#success&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce08132&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08133&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Advarsel&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;warning&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce08133&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Variant<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-icon&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon_text&quot;</span>&gt;</span>Advarsel<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#warning&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce08133&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08134&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;error&quot;</span> <span class="hljs-attr">has-error</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce08134&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Variant<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-icon&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon_text&quot;</span>&gt;</span>Fejl<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce08134&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08135&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Tilgængelighed&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;accessibility-new&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce08135&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Variant<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-icon&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon_text&quot;</span>&gt;</span>Tilgængelighed<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#accessibility-new&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;acce08135&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span>
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-accordion-variants/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
 
 <h2 id="fds-accordion-group-custom">fds-accordion-group</h2>
