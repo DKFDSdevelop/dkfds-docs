@@ -138,6 +138,12 @@ Accordions har to custom elementer tilknyttet: `fds-accordion` og `fds-accordion
 
 Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accordions.
 
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-accordion>` med `<div class="fds-accordion">` og `<fds-accordion-group>` med `<div class="fds-accordion-group">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
 ### Accordion lavet med custom element

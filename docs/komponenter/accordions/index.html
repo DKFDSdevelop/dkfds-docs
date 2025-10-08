@@ -1653,7 +1653,7 @@
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
         </li><li>
-            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom Element</span></a>
+            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom element</span></a>
             <span id="custom" hidden=""></span>
         </li></ul>
 </nav>
@@ -2466,6 +2466,12 @@
 
 <p>Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accordions.</p>
 
+<h3>HTML-muligheder</h3>
+
+<p>Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.</p>
+
+<p>Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. <code>&lt;fds-accordion&gt;</code> med <code>&lt;div class="fds-accordion"&gt;</code> og <code>&lt;fds-accordion-group&gt;</code> med <code>&lt;div class="fds-accordion-group"&gt;</code>. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.</p>
+
 <h2 id="eksempler-custom">Eksempler</h2>
 
 <h3>Accordion lavet med custom element</h3>
@@ -2473,7 +2479,7 @@
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
         <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel1" aria-selected="true" id="example-1-acc-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel2" aria-selected="false" id="example-1-acc-tab2"><span>Custom Element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel2" aria-selected="false" id="example-1-acc-tab2"><span>Custom element</span></button>
         <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel3" aria-selected="false" id="example-1-acc-tab3"><span>Genereret HTML</span></button>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-1-acc-tabpanel1" aria-labelledby="example-1-acc-tab1">
@@ -2607,7 +2613,7 @@
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
         <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel1" aria-selected="true" id="example-2-acc-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel2" aria-selected="false" id="example-2-acc-tab2"><span>Custom Element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel2" aria-selected="false" id="example-2-acc-tab2"><span>Custom element</span></button>
         <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel3" aria-selected="false" id="example-2-acc-tab3"><span>Genereret HTML</span></button>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-2-acc-tabpanel1" aria-labelledby="example-2-acc-tab1">
