@@ -19,7 +19,6 @@ const dom = new JSDOM(`<!DOCTYPE html><head></head><body></body>`);
 const window = dom.window;
 const document = window.document;
 const body = document.body;
-const { HTMLElement } = window;
 
 global.HTMLElement = window.HTMLElement;
 global.document = window.document;
