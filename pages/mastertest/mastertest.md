@@ -7,6 +7,10 @@ title: Test
 {:.h2 .mt-0}
 # Testside
 
+## Tom side til automatiske tests
+
+{% include test/preview-test.html filename="test-empty-page" description="Tom side til automatiske tests" %}
+
 {:.h3}
 ## HTML-elementer
 

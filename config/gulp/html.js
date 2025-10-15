@@ -24,6 +24,7 @@ var buildFile = ['examples/testfiles/loading-spinner/*.njk'];
 var activeBuild = buildAll;
 
 var testfiles = [
+    "test-empty-page",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
