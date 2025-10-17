@@ -264,8 +264,21 @@
             <h2 class="h3 mt-0">Accordion med indhold og alle attributter</h2>
         </div>
         <div class="col-12">
-            <fds-accordion heading="Accordiontitel" heading-level="h3">
+            <fds-accordion heading="Accordiontitel" heading-level="h3" expanded="true" content-id="gcghdrzdhgthj" variant-text="Tilgængelighed" variant-icon="accessibility-new">
                 <p>Dette er indhold i accordionen</p>
+            </fds-accordion>
+        </div>
+    </div>
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Accordion i accordion</h2>
+        </div>
+        <div class="col-12">
+            <fds-accordion heading="Accordion yderst">
+                <p>Dette er indhold i yderste accordion</p>
+                <fds-accordion heading="Accordion inderst">
+                    <p>Dette er indhold i inderste accordion</p>
+                </fds-accordion>
             </fds-accordion>
         </div>
     </div>

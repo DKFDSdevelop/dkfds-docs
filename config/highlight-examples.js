@@ -53,13 +53,13 @@ log(colors.white('Started example syntax highlighting...'));
 fs.readdirSync('_includes/code-examples/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/code-examples/'}/${file}`, 'utf8');
     const highlightedContent = highlightCode(content);
-    fs.writeFileSync(`${'_includes/code-highlighted-examples/'}/${file}`, highlightedContent);
+    fs.writeFileSync(`${'_includes/output-files-from-build/highlighted-examples/'}/${file}`, highlightedContent);
 });
 
-fs.readdirSync('_includes/code-examples-generated-html/').forEach(file => {
-    const content = fs.readFileSync(`${'_includes/code-examples-generated-html/'}/${file}`, 'utf8');
+fs.readdirSync('_includes/output-files-from-build/code-examples-generated-html/').forEach(file => {
+    const content = fs.readFileSync(`${'_includes/output-files-from-build/code-examples-generated-html/'}/${file}`, 'utf8');
     const highlightedContent = highlightCode(content);
-    fs.writeFileSync(`${'_includes/code-highlighted-examples-generated-html/'}/${file}`, highlightedContent);
+    fs.writeFileSync(`${'_includes/output-files-from-build/highlighted-examples-generated-html/'}/${file}`, highlightedContent);
 });
 
 log(colors.green('Example syntax highlighting done.'));
