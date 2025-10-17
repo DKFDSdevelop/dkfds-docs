@@ -12,6 +12,11 @@ title: Test
 {% include test/preview-test.html filename="test-empty-page" description="Tom side til automatiske tests" %}
 
 {:.h3}
+## Custom elements
+
+{% include test/preview-test.html filename="test-fds-accordion" description="Custom element accordions" %}
+
+{:.h3}
 ## HTML-elementer
 
 {% include test/preview-test.html filename="test-html-elements" description="HTML-elementer" %}

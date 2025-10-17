@@ -19,12 +19,13 @@ var titles = require('./example-titles').default;
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildFile = ['examples/testfiles/loading-spinner/*.njk'];
+var buildFile = ['examples/testfiles/custom-elements/*.njk'];
 
-var activeBuild = buildAll;
+var activeBuild = buildFile;
 
 var testfiles = [
     "test-empty-page",
+    "test-fds-accordion",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",

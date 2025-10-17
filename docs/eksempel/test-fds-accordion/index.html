@@ -16,8 +16,8 @@
 ================================================== -->
 
 
-<title>Testfil | test-empty-page | Det Fælles Designsystem</title>
-<meta property="og:title" content="Testfil | test-empty-page | Det Fælles Designsystem">
+<title>Testfil | test-fds-accordion | Det Fælles Designsystem</title>
+<meta property="og:title" content="Testfil | test-fds-accordion | Det Fælles Designsystem">
 
 
 
@@ -248,16 +248,26 @@
     <main class="container page-container" id="main-content">
     <div class="row mb-905">
         <div class="col-12">
-            <h1 class="h2 mt-0">Tom side til automatiske tests</h1>
+            <h1 class="h2 mt-0">Accordions</h1>
         </div>
     </div>
     <div class="row mb-905">
         <div class="col-12">
-            <p>Denne side er efterladt tom til kørsel af automatiske tests.</p>
+            <h2 class="h3 mt-0">Accordion uden indhold eller attributter</h2>
+        </div>
+        <div class="col-12">
+            <fds-accordion></fds-accordion>
         </div>
     </div>
     <div class="row mb-905">
-        <div class="col-12" id="row-content"></div>
+        <div class="col-12">
+            <h2 class="h3 mt-0">Accordion med indhold og alle attributter</h2>
+        </div>
+        <div class="col-12">
+            <fds-accordion heading="Accordiontitel" heading-level="h3">
+                <p>Dette er indhold i accordionen</p>
+            </fds-accordion>
+        </div>
     </div>
 </main>
 
@@ -280,8 +290,10 @@
             </div>
             <div>
                 
+                <a class="function-link mr-4" href="/eksempel/test-empty-page/">Forrige</a>
                 
-                <a class="function-link" href="/eksempel/test-fds-accordion/">Næste</a>
+                
+                <a class="function-link" href="/eksempel/test-html-elements/">Næste</a>
                 
             </div>
         </div>
