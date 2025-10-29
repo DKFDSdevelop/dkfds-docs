@@ -27,7 +27,7 @@ global.customElements = dom.window.customElements;
 global.Event = window.Event;
 
 const DKFDS = require('dkfds');
-DKFDS.initCustomElements();
+DKFDS.registerCustomElements();
 
 fs.readdirSync(srcDir).forEach(file => {
     const content = fs.readFileSync(`${srcDir}/${file}`, 'utf8');
