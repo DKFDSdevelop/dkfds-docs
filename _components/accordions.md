@@ -159,9 +159,19 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 ### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut      | Beskrivelse                                          |
-|---------------|------------------------------------------------------|
-| heading-level | Sæt overskriftsniveau for alle accordions i gruppen. |
+| Attribut        | Beskrivelse                                                                          |
+|-----------------|--------------------------------------------------------------------------------------|
+| heading-level   | Sæt overskriftsniveau for alle accordions i gruppen.                                 |
+| has-bulk-button | Sæt til `true` for at tilføje en knap til gruppen, der åbner/lukker alle accordions. |
+| open-all-text   | Erstat teksten 'Åbn alle' på åbn/luk-knappen.                                        |
+| close-all-text  | Erstat teksten 'Luk alle' på åbn/luk-knappen.                                        |
+
+### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| toggleAllAccordions() | Hvis alle accordions er foldet ud, foldes de sammen. Hvis mindst én accordion er foldet sammen, foldes alle ud. |
 
 ## fds-accordion {#{% include create-id.html heading="fds-accordion" append="-custom" %}}
 

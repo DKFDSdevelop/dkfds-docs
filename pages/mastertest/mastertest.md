@@ -14,7 +14,8 @@ title: Test
 {:.h3}
 ## Custom elements
 
-{% include test/preview-test.html filename="test-fds-accordion" description="Custom element accordions" %}
+{% include test/preview-test.html filename="test-fds-accordion" description="Accordions" %}
+{% include test/preview-test.html filename="test-fds-accordion-group" description="Accordiongruppe" %}
 
 {:.h3}
 ## HTML-elementer
