@@ -21,11 +21,13 @@ var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
 var buildFile = ['examples/testfiles/custom-elements/*.njk'];
 
-var activeBuild = buildFile;
+var activeBuild = buildAll;
 
 var testfiles = [
     "test-empty-page",
     "test-fds-accordion",
+    "test-fds-accordion-group",
+    "test-fds-help-text",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
