@@ -307,6 +307,18 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 ### HTML-muligheder
 
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input-wrapper>` med `<div class="input-wrapper">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
+### Inputfelt med label lavet med custom element
 
+{% include code/show-example.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
+
+## Varianter
+
+### Hjælpetekst
+
+{% include code/show-example.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
