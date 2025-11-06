@@ -499,6 +499,10 @@ Inputfelter_Kode:
 - h2: Karakterbegrænsning
 - h2: Feltbredde
 
+Inputfelter_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+
 Knapper_Kode:
 - h2: Installation
 - h2: Primær

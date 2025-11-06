@@ -41,14 +41,14 @@ tags:
 - suffiks
 - sufix
 - sufiks
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="text-input" title="Eksempel på inputfelt" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" %}
+{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" custom="Inputfelter_Custom" %}
 
 <!--split-->
 
@@ -300,3 +300,13 @@ For at styre bredden på inputfelter efter tegn, skal der i stedet bruges nedens
 - `input-char-27` har en bredde der passer til 27 tegn
 
 For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes klassen `input-char-X`, hvor det nye tal skal erstattes med X.
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+### HTML-muligheder
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+
