@@ -55,4 +55,40 @@
         </div>
     </div>
 
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Readonly inputfelt med suffix og prefix</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-readonly prefix="Beløb" suffix="kr.">
+                <label>Skriv et beløb i hele kroner</label>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Inputfelt med frivillig-label og disabled</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-optional input-disabled>
+                <label>Et disabled felt</label>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Inputfelt med påkrævet-label og suffix</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-required suffix="kr.">
+                <label>Skriv et beløb i hele kroner</label>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
 </main>
