@@ -17,6 +17,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-accordion" description="Accordions" %}
 {% include test/preview-test.html filename="test-fds-accordion-group" description="Accordiongruppe" %}
 {% include test/preview-test.html filename="test-fds-help-text" description="Hjælpetekst" %}
+{% include test/preview-test.html filename="test-fds-input" description="Inputfelter" %}
 
 {:.h3}
 ## HTML-elementer
