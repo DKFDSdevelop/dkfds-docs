@@ -338,3 +338,22 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 ### Prefix og suffix
 
 {% include code/show-example.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut       | Beskrivelse                                                                                                                                          |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| input-required | Viser en indikator i labelteksten for obligatoriske felter (tilføjer “(*skal udfyldes)” som standard) og tilføjer automatisk `required`-attributten. |
+| input-optional | Viser en indikator i labelteksten, der angiver at feltet er frivilligt (tilføjer “(frivilligt)” som standard).                                       |
+| input-readonly | Gør feltet skrivebeskyttet. Ved anden værdi end "false" tilføjes readonly og klassen readonly.                                                       |
+| input-disabled | Deaktiverer inputfeltet. Hvis værdien er sat til andet end `"false"`, tilføjes `disabled`-attributten til inputfeltet.                               |
+| prefix         | Viser et visuelt præfix-element (tekst før inputfeltet). Præfixet vises i et element med klassen `form-input-prefix` og `aria-hidden="true"`.        |
+| suffix         | Viser et visuelt suffiks-element (tekst efter inputfeltet). Suffikset vises i et element med klassen `form-input-suffix` og `aria-hidden="true"`.    |
+
+### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| updateIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og eventuelle hjælpetekster.                              |
