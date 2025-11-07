@@ -322,3 +322,19 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 ### Hjælpetekst
 
 {% include code/show-example.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
+
+### Obligatoriske og frivillige inputfelter
+
+{% include code/show-example.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
+
+### Read-only
+
+{% include code/show-example.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
+
+### Deaktiveret
+
+{% include code/show-example.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
+
+### Prefix og suffix
+
+{% include code/show-example.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
