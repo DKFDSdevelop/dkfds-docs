@@ -226,11 +226,12 @@
         <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     </header>
     <main class="container page-container" id="main-content">
-        <fds-input>
-    <label class="form-label">Postnummer</label>
-    <fds-help-text>Information</fds-help-text>
-    <input type="text" name="postnr" class="form-input" autocomplete="postal-code" />
-</fds-input>
+        <fds-input-wrapper>
+    <label class="form-label" for="input-type-help-text">Inputfelt med label og
+        hjælpetekst</label>
+    <fds-help-text>Fx 12345678</fds-help-text>
+    <input type="text" id="input-type-help-text" name="input-type-help-text" class="form-input" aria-describedby="input-type-help-text-hint" required="" />
+</fds-input-wrapper>
 
     </main>
     <script src="/assets/js/theme.js?v=11.1.0"></script>
