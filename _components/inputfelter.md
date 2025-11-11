@@ -339,6 +339,10 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include code/show-example.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
 
+### Feltbredde
+
+{% include code/show-example.html example="fds-input-wrapper-width" tabId="example-7-acc" %}
+
 ### Attributter
 
 {:.table .table--responsive-headers}
@@ -350,6 +354,12 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 | input-disabled | Deaktiverer inputfeltet. Hvis værdien er sat til andet end `"false"`, tilføjes `disabled`-attributten til inputfeltet.                               |
 | prefix         | Viser et visuelt præfix-element (tekst før inputfeltet). Præfixet vises i et element med klassen `form-input-prefix` og `aria-hidden="true"`.        |
 | suffix         | Viser et visuelt suffiks-element (tekst efter inputfeltet). Suffikset vises i et element med klassen `form-input-suffix` og `aria-hidden="true"`.    |
+| input-width-xxs| Bredde på 8rem                                                                                                                                       |
+| input-width-xs | Bredde på 16rem                                                                                                                                      |
+| input-width-s  | Bredde på 24rem                                                                                                                                      |
+| input-width-m  | Bredde på 32rem                                                                                                                                      |
+| input-width-l  | Bredde på 40rem                                                                                                                                      |
+| input-width-xl | Bredde på 48rem                                                                                                                                      |
 
 ### Funktioner
 

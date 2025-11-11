@@ -178,13 +178,13 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 ### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut | Beskrivelse |
-|-----------|-------------|
-| heading | Overskriften i accordionen. |
-| heading-level | Overskriftsniveauet i accordionen (overskrives ved oprettelse, når `heading-level` i `fds-accordion-group` er sat). Standardværdi er `"h3"`. |
-| expanded | Sæt til `"true"`, hvis accordionen skal være åben, når siden indlæses. Standardværdi er `"false"`. |
-| content-id | Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret. |
-| has-error | Sæt til `"true"` for at give accordionen en rød kant. Sørg for altid at give en passende fejlbesked, når denne attribut bruges. |
+| Attribut | Beskrivelse                                                                                                                                        |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| heading       | Overskriften i accordionen.                                                                                                                   |
+| heading-level | Overskriftsniveauet i accordionen (overskrives ved oprettelse, når `heading-level` i `fds-accordion-group` er sat). Standardværdi er `"h3"`.  |
+| expanded      | Sæt til `"true"`, hvis accordionen skal være åben, når siden indlæses. Standardværdi er `"false"`.                                            |
+| content-id    | Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret.                                                          |
+| has-error     | Sæt til `"true"` for at give accordionen en rød kant. Sørg for altid at give en passende fejlbesked, når denne attribut bruges.               |
 | variant-text / variant-icon | Sæt en tilhørende besked og ikon på accordionen. Sørg altid for at anvende begge attributter samtidigt. Anbefalinger til kombinationer:<br><br>&bull; <code>variant-text="Information"</code> og <code>variant-icon="info"</code><br>&bull; <code>variant-text="Succes"</code> og <code>variant-icon="success"</code><br>&bull; <code>variant-text="Advarsel"</code> og <code>variant-icon="warning"</code><br>&bull; <code>variant-text="Fejl"</code> og <code>variant-icon="error"</code> og <code>has-error="true"</code> |
 
 
