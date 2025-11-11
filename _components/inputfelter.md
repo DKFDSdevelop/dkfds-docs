@@ -341,7 +341,13 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Feltbredde
 
-{% include code/show-example.html example="fds-input-wrapper-width" tabId="example-7-acc" %}
+#### Input bredde med rem
+
+{% include code/show-example.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
+
+#### Input bredde med tegn
+
+{% include code/show-example.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
 
 ### Attributter
 
@@ -354,12 +360,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 | input-disabled | Deaktiverer inputfeltet. Hvis værdien er sat til andet end `"false"`, tilføjes `disabled`-attributten til inputfeltet.                               |
 | prefix         | Viser et visuelt præfix-element (tekst før inputfeltet). Præfixet vises i et element med klassen `form-input-prefix` og `aria-hidden="true"`.        |
 | suffix         | Viser et visuelt suffiks-element (tekst efter inputfeltet). Suffikset vises i et element med klassen `form-input-suffix` og `aria-hidden="true"`.    |
-| input-width-xxs| Bredde på 8rem                                                                                                                                       |
-| input-width-xs | Bredde på 16rem                                                                                                                                      |
-| input-width-s  | Bredde på 24rem                                                                                                                                      |
-| input-width-m  | Bredde på 32rem                                                                                                                                      |
-| input-width-l  | Bredde på 40rem                                                                                                                                      |
-| input-width-xl | Bredde på 48rem                                                                                                                                      |
+| maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl)                 |
 
 ### Funktioner
 
