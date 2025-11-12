@@ -307,6 +307,64 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 ### HTML-muligheder
 
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input-wrapper>` med `<div class="input-wrapper">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
+### Inputfelt med label lavet med custom element
 
+{% include code/show-example.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
+
+## Varianter
+
+### Hjælpetekst
+
+{% include code/show-example.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
+
+### Obligatoriske og frivillige inputfelter
+
+{% include code/show-example.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
+
+### Read-only
+
+{% include code/show-example.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
+
+### Deaktiveret
+
+{% include code/show-example.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
+
+### Prefix og suffix
+
+{% include code/show-example.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
+
+### Feltbredde
+
+#### Input bredde med rem
+
+{% include code/show-example.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
+
+#### Input bredde med tegn
+
+{% include code/show-example.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut       | Beskrivelse                                                                                                                                          |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| input-required | Viser en indikator i labelteksten for obligatoriske felter (tilføjer “(*skal udfyldes)” som standard) og tilføjer automatisk `required`-attributten. |
+| input-optional | Viser en indikator i labelteksten, der angiver at feltet er frivilligt (tilføjer “(frivilligt)” som standard).                                       |
+| input-readonly | Gør feltet skrivebeskyttet. Ved anden værdi end "false" tilføjes readonly og klassen readonly.                                                       |
+| input-disabled | Deaktiverer inputfeltet. Hvis værdien er sat til andet end `"false"`, tilføjes `disabled`-attributten til inputfeltet.                               |
+| prefix         | Viser et visuelt præfix-element (tekst før inputfeltet). Præfixet vises i et element med klassen `form-input-prefix` og `aria-hidden="true"`.        |
+| suffix         | Viser et visuelt suffiks-element (tekst efter inputfeltet). Suffikset vises i et element med klassen `form-input-suffix` og `aria-hidden="true"`.    |
+| maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl)                 |
+
+### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| updateIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og eventuelle hjælpetekster.                              |
