@@ -148,11 +148,11 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Accordion lavet med custom element
 
-{% include code/show-example.html example="fds-accordion-example" tabId="example-1-acc" %}
+{% include code/show-example-with-tabs.html example="fds-accordion-example" tabId="example-1-acc" %}
 
 ### Varianter
 
-{% include code/show-example.html example="fds-accordion-variants" tabId="example-2-acc" %}
+{% include code/show-example-with-tabs.html example="fds-accordion-variants" tabId="example-2-acc" %}
 
 ## fds-accordion-group {#{% include create-id.html heading="fds-accordion-group" append="-custom" %}}
 

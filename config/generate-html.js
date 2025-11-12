@@ -4,7 +4,7 @@ const { JSDOM } = jsdom;
 const beautify = require('js-beautify').html;
 
 // https://www.npmjs.com/package/js-beautify#css--html
-const BEAUTIFY_OPTIONS = { 
+const BEAUTIFY_OPTIONS = {
     indent_size: 4,
     unformatted: [],
     preserve_newlines: true,
@@ -30,12 +30,14 @@ const DKFDS = require('dkfds');
 DKFDS.registerCustomElements();
 
 fs.readdirSync(srcDir).forEach(file => {
-    const content = fs.readFileSync(`${srcDir}/${file}`, 'utf8');
-    body.innerHTML = content;
-    const beautifiedContent = beautify(body.innerHTML, BEAUTIFY_OPTIONS);
-    fs.writeFileSync(`${destDir}/${file}`, beautifiedContent);
+    if (file !== 'fds-input-wrapper-simple.html') {
+        const content = fs.readFileSync(`${srcDir}/${file}`, 'utf8');
+        body.innerHTML = content;
+        const beautifiedContent = beautify(body.innerHTML, BEAUTIFY_OPTIONS);
+        fs.writeFileSync(`${destDir}/${file}`, beautifiedContent);
+    }
 });
 
 process.on('exit', () => {
-  console.log(`Files created in ${destDir}`);
+    console.log(`Files created in ${destDir}`);
 });

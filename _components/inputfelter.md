@@ -315,39 +315,42 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Inputfelt med label lavet med custom element
 
-{% include code/show-example.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
+
+Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-input-wrapper-simple" %}
 
 ## Varianter
 
 ### Hjælpetekst
 
-{% include code/show-example.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
 
 ### Obligatoriske og frivillige inputfelter
 
-{% include code/show-example.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
 
 ### Read-only
 
-{% include code/show-example.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
 
 ### Deaktiveret
 
-{% include code/show-example.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
 
 ### Prefix og suffix
 
-{% include code/show-example.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
 
 ### Feltbredde
 
 #### Input bredde med rem
 
-{% include code/show-example.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
 
 #### Input bredde med tegn
 
-{% include code/show-example.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
 
 ### Attributter
 
@@ -356,11 +359,11 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | input-required | Viser en indikator i labelteksten for obligatoriske felter (tilføjer “(*skal udfyldes)” som standard) og tilføjer automatisk `required`-attributten. |
 | input-optional | Viser en indikator i labelteksten, der angiver at feltet er frivilligt (tilføjer “(frivilligt)” som standard).                                       |
-| input-readonly | Gør feltet skrivebeskyttet. Ved anden værdi end "false" tilføjes readonly og klassen readonly.                                                       |
-| input-disabled | Deaktiverer inputfeltet. Hvis værdien er sat til andet end `"false"`, tilføjes `disabled`-attributten til inputfeltet.                               |
-| prefix         | Viser et visuelt præfix-element (tekst før inputfeltet). Præfixet vises i et element med klassen `form-input-prefix` og `aria-hidden="true"`.        |
-| suffix         | Viser et visuelt suffiks-element (tekst efter inputfeltet). Suffikset vises i et element med klassen `form-input-suffix` og `aria-hidden="true"`.    |
-| maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl)                 |
+| input-readonly | Gør feltet readonly. Ved anden værdi end `false` tilføjes readonly og klassen readonly.                                                              |
+| input-disabled | Deaktiverer inputfeltet. Hvis værdien er sat til andet end `false`, tilføjes `disabled`-attributten til inputfeltet og klassen `disabled` til label. |
+| prefix         | Viser et visuelt præfix-element (tekst før inputfeltet).                                                                                             |
+| suffix         | Viser et visuelt suffiks-element (tekst efter inputfeltet).                                                                                          |
+| maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl).                |
 
 ### Funktioner
 
@@ -368,3 +371,4 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 | Funktion              | Beskrivelse                                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
 | updateIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og eventuelle hjælpetekster.                              |
+| setClasses()          | Sætter de nødvendige klasser på inputfelt og label.                                                             |
