@@ -342,6 +342,10 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
 
+## Karakterbegrænsning
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
+
 ### Feltbredde
 
 #### Input bredde med rem
