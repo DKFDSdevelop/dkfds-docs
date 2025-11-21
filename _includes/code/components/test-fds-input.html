@@ -92,4 +92,63 @@
         </div>
     </div>
 
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Wrapper med label, input og tooltip</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper>
+                <label>Inputfelt med label</label>
+                <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip"
+                    data-tooltip-id="input-text-tooltipbutton" data-position="above"
+                    data-trigger="click">
+                    <button class="button button-unstyled tooltip-target" type="button"
+                        aria-label="Læs mere">
+                        <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true">
+                            <use href="#help"></use>
+                        </svg>
+                    </button>
+                </span>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+
+        <div class="col-12 mt-5">
+            <fds-input-wrapper>
+                <label>Inputfelt med label</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" name="input-text">
+                    <span class="tooltip-wrapper ml-3 mt-3" data-tooltip="Dette er et tooltip"
+                        data-tooltip-id="input-text-tooltipbutton" data-position="above"
+                        data-trigger="click">
+                        <button class="button button-unstyled tooltip-target" type="button"
+                            aria-label="Læs mere">
+                            <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true">
+                                <use href="#help"></use>
+                            </svg>
+                        </button>
+                    </span>
+                </div>
+            </fds-input-wrapper>
+        </div>
+
+        <div class="col-12 mt-5">
+            <fds-input-wrapper>
+                <label>Inputfelt med label</label>
+                <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip"
+                    data-tooltip-id="input-text-tooltipbutton" data-position="above"
+                    data-trigger="click">
+                    <button class="button button-unstyled tooltip-target" type="button"
+                        aria-label="Læs mere">
+                        <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true">
+                            <use href="#help"></use>
+                        </svg>
+                    </button>
+                </span>
+                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
 </main>
