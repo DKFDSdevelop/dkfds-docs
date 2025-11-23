@@ -29,6 +29,7 @@ var testfiles = [
     "test-fds-accordion-group",
     "test-fds-help-text",
     "test-fds-input",
+    "test-fds-error-message",
     "test-fds-character-limit",
     "test-html-elements",
     "test-headings-no-sections",

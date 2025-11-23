@@ -18,6 +18,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-accordion-group" description="Accordiongruppe" %}
 {% include test/preview-test.html filename="test-fds-help-text" description="Hjælpetekst" %}
 {% include test/preview-test.html filename="test-fds-input" description="Inputfelter" %}
+{% include test/preview-test.html filename="test-fds-error-message" description="Fejlmeddelelser" %}
 {% include test/preview-test.html filename="test-fds-character-limit" description="Karakterbegrænsning" %}
 
 {:.h3}
