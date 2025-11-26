@@ -1263,11 +1263,10 @@
         <input type="hidden" value="" id="newsletter_language" />
         <input type="hidden" name="failure_url" value="" id="failure_url" />
         <input type="hidden" name="success_url" value="" id="success_url" />
-        <div class="form-group" id="newsletter-emailaddress">
-            <label class="form-label" for="i_newsform_email">Tilmeld e-mailadresse</label>
-            <span class="form-error-message d-none" id="i_newsform_email-error"></span>
-            <input type="email" class="form-input" id="i_newsform_email" autocomplete="email" required="" />
-        </div>
+        <fds-input-wrapper id="newsletter-emailaddress">
+            <label>Tilmeld e-mailadresse</label>
+            <input type="email" id="i_newsform_email" autocomplete="email" required="" />
+        </fds-input-wrapper>
         <div class="form-group" id="samtykke-group">
             <span class="form-error-message d-none" id="samtykke-check-error"></span>
             <div class="form-group-checkbox mt-3">

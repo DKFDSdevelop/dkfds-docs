@@ -47,12 +47,14 @@ Det har ingen indflydelse på en formulars flow, om brugeren vælger at redigere
 let editButton = document.getElementById("hentetdata-rediger");
 
 editButton.addEventListener('click', function (e) {
-    let textfield = document.getElementById("hentetdata-redigerbar");
-    let hinttext = document.getElementById("hentetdata-redigerbar-hint");
+    const hentetDataEksempel = document.getElementById('hentetnavn-eksempel');
+    const textfield = hentetDataEksempel.querySelector('input');
+
     this.setAttribute('hidden', '');
-    hinttext.setAttribute('hidden', '');
-    textfield.removeAttribute('readonly');
-    textfield.removeAttribute("aria-describedby");
+
+    hentetDataEksempel.querySelector('fds-help-text').remove();
+    hentetDataEksempel.removeAttribute('input-readonly');
+
     textfield.setAttribute('required', '');
     textfield.setAttribute('autocomplete', 'name');
     textfield.classList.remove('mr-3');

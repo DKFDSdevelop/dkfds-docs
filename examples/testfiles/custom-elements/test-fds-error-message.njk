@@ -30,13 +30,12 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">ID og skærmlæsertekst sat som attributter</h2>
+            <h2 class="h3 mt-0">Skærmlæsertekst sat som attribut</h2>
         </div>
         <div class="col-12">
             <fds-input-wrapper>
                 <label>Inputfelt med label</label>
-                <fds-error-message error-message-id="my-custom-error-id" sr-text="Error">Dette er en
-                    fejl</fds-error-message>
+                <fds-error-message sr-text="Error">Dette er en fejl</fds-error-message>
                 <input type="text" name="input-text">
             </fds-input-wrapper>
         </div>
@@ -49,10 +48,9 @@
         <div class="col-12">
             <fds-input-wrapper>
                 <label class="form-label" for="html-generated-example-id">Inputfelt med label</label>
-                <fds-error-message>
-                    <span class="form-error-message" id="html-generated-example-error-id">
-                        <span class="sr-only">Fejl: </span>Dette er en fejl
-                    </span>
+                <fds-error-message id="html-generated-example-error-id">
+                    <span class="sr-only">Fejl: </span>
+                    <span class="visible-message">Dette er en fejl</span>
                 </fds-error-message>
                 <input type="text" name="input-text" class="form-input" id="html-generated-example-id" aria-describedby="html-generated-example-error-id" aria-invalid="true">
             </fds-input-wrapper>

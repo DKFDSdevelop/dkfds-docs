@@ -91,8 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let errors = "";
             let emailSection = document.getElementById('newsletter-emailaddress');
-            let emailAddress = document.getElementById('i_newsform_email').value;
-            let emailError = emailSection.querySelector('.form-error-message');
+            let emailAddress = emailSection.querySelector('input').value;
 
             /* Hide and clear any previous alert message */
             clearAlertMessage(alert);
@@ -102,19 +101,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 let errormessage = "E-mailadressen er ikke gyldig";
 
                 /* Show error message for email field */
-                emailSection.classList.add('form-error');
-                emailError.innerHTML = '<span class="sr-only">Fejl: </span>' + errormessage;
-                emailSection.querySelector('.form-input').setAttribute('aria-describedby', 'i_newsform_email-error');
-                emailError.classList.remove('d-none');
+                if (emailSection.querySelector('fds-error-message')) {
+                    emailSection.querySelector('fds-error-message .visible-message').textContent = errormessage;
+                }
+                else {
+                    const errorElement = document.createElement('fds-error-message');
+                    errorElement.textContent = errormessage;
+                    emailSection.querySelector('label').after(errorElement);
+                }
 
                 /* Add error message to error summary */
                 errors += '<li><a class="function-link" href="#i_newsform_email">' + errormessage + '</a></li>';
             }
             else {
                 /* If email is valid, ensure no error message is displayed next to the field */
-                emailSection.classList.remove('form-error');
-                emailError.innerHTML = '';
-                emailError.classList.add('d-none');
+                emailSection.querySelector('fds-error-message')?.remove();
             }
 
             /* Only the subscription page contains a confirmation checkbox */
@@ -172,9 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearAlertMessage(alertSummary);
 
                 /* Clear previous email error, if any */
-                emailSection.classList.remove('form-error');
-                emailError.innerHTML = '';
-                emailError.classList.add('d-none');
+                emailSection.querySelector('fds-error-message')?.remove();
 
                 /* Clear previous checkbox error, if any */
                 if (subscriptionPage) {

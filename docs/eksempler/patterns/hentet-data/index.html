@@ -1272,24 +1272,22 @@
     
     <div class="component-example px-4 py-4">
         
-        <div class="form-group">
-    <label class="form-label" for="hentetdata">Fornavn og efternavn</label>
+        <fds-input-wrapper input-readonly="true">
+    <label>Fornavn og efternavn</label>
+    <fds-help-text>Data hentet fra CVR.dk</fds-help-text>
+    <input type="text" name="navn" value="Keld Hedagaardsen" />
+</fds-input-wrapper>
 
-    <span class="form-hint" id="hentetdata-hint">Data hentet fra CVR.dk</span>
-
-    <input type="text" id="hentetdata" name="navn" class="form-input" value="Keld Hedagaardsen" aria-describedby="hentetdata-hint " readonly="" />
-</div>
-
-<div class="form-group">
-    <label class="form-label" for="hentetdata-redigerbar">Fornavn og efternavn</label>
-
-    <span class="form-hint" id="hentetdata-redigerbar-hint">Data hentet fra CVR.dk</span>
-
+<fds-input-wrapper id="hentetnavn-eksempel" input-readonly="true">
+    <label for="hentetdata-redigerbar">Fornavn og efternavn</label>
+    <fds-help-text>Data hentet fra CVR.dk</fds-help-text>
     <div class="d-block d-sm-flex flex-sm-row align-items-sm-center">
-        <input type="text" id="hentetdata-redigerbar" name="navn-redigerbar" class="form-input mr-sm-3" value="Keld Hedagaardsen" aria-describedby="hentetdata-redigerbar-hint " readonly="" />
-        <button type="button" class="function-link mt-3" id="hentetdata-rediger"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#edit"></use></svg>Rediger<span class="sr-only"> fornavn og efternavn</span></button>
+        <input type="text" id="hentetdata-redigerbar" name="navn-redigerbar" value="Keld Hedagaardsen" class="mr-sm-3" />
+        <button type="button" class="function-link mt-3" id="hentetdata-rediger">
+            <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#edit"></use></svg>Rediger<span class="sr-only"> fornavn og efternavn</span>
+        </button>
     </div>
-</div>
+</fds-input-wrapper>
         
     </div>
     
@@ -1298,29 +1296,24 @@
     <summary class="details-summary">Vis HTML<span class="sr-only"> for eksempel på inputfelt med hentet data</span></summary>
     <div class="details-text">
         
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hentetdata&quot;</span>&gt;</span>Fornavn og efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-readonly</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Fornavn og efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span>&gt;</span>Data hentet fra CVR.dk<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;navn&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Keld Hedagaardsen&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-hint&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hentetdata-hint&quot;</span>&gt;</span>Data hentet fra CVR.dk<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hentetdata&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;navn&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>
-        <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Keld Hedagaardsen&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;hentetdata-hint &quot;</span> <span class="hljs-attr">readonly</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hentetdata-redigerbar&quot;</span>&gt;</span>Fornavn og efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-hint&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hentetdata-redigerbar-hint&quot;</span>&gt;</span>Data hentet fra CVR.dk<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hentetnavn-eksempel&quot;</span> <span class="hljs-attr">input-readonly</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hentetdata-redigerbar&quot;</span>&gt;</span>Fornavn og efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span>&gt;</span>Data hentet fra CVR.dk<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-block d-sm-flex flex-sm-row align-items-sm-center&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hentetdata-redigerbar&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;navn-redigerbar&quot;</span>
-            <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input mr-sm-3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Keld Hedagaardsen&quot;</span>
-            <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;hentetdata-redigerbar-hint &quot;</span> <span class="hljs-attr">readonly</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link mt-3&quot;</span>
-            <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hentetdata-rediger&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#edit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>Rediger<span class="hljs-tag">&lt;<span class="hljs-name">span</span>
-                <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span>&gt;</span> fornavn og efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Keld Hedagaardsen&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mr-sm-3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link mt-3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hentetdata-rediger&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#edit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>Rediger<span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+                <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span>&gt;</span> fornavn og efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></figure>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre></figure>
 
 
     </div>
@@ -1491,12 +1484,14 @@
 let editButton = document.getElementById("hentetdata-rediger");
 
 editButton.addEventListener('click', function (e) {
-    let textfield = document.getElementById("hentetdata-redigerbar");
-    let hinttext = document.getElementById("hentetdata-redigerbar-hint");
+    const hentetDataEksempel = document.getElementById('hentetnavn-eksempel');
+    const textfield = hentetDataEksempel.querySelector('input');
+
     this.setAttribute('hidden', '');
-    hinttext.setAttribute('hidden', '');
-    textfield.removeAttribute('readonly');
-    textfield.removeAttribute("aria-describedby");
+
+    hentetDataEksempel.querySelector('fds-help-text').remove();
+    hentetDataEksempel.removeAttribute('input-readonly');
+
     textfield.setAttribute('required', '');
     textfield.setAttribute('autocomplete', 'name');
     textfield.classList.remove('mr-3');
