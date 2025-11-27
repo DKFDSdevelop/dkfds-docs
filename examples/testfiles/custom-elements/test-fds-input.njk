@@ -29,12 +29,23 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Wrapper med label, input og hjælpetekst</h2>
+            <h2 class="h3 mt-0">Wrapper med label og input - præfabrikeret HTML</h2>
         </div>
         <div class="col-12">
             <fds-input-wrapper>
+                <label class="form-label" for="generated-HTML-plain">Inputfelt med label</label>
+                <input type="text" name="input-text" class="form-input" id="generated-HTML-plain">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">input-required</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-required="true">
                 <label>Inputfelt med label</label>
-                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
                 <input type="text" name="input-text">
             </fds-input-wrapper>
         </div>
@@ -42,26 +53,123 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Wrapper med konstrueret HTML</h2>
+            <h2 class="h3 mt-0">input-required - præfabrikeret HTML</h2>
         </div>
         <div class="col-12">
             <fds-input-wrapper>
-                <label class="form-label" for="inputfield">Inputfelt med label</label>
-                <fds-help-text help-text-id="helptextid">
-                    <span class="help-text" id="helptextid">Dette er en hjælpetekst</span>
-                </fds-help-text>
-                <input type="text" name="input-text" class="form-input" id="inputfield" aria-describedby="helptextid">
+                <label class="form-label" for="generated-HTML-required">Inputfelt med label<span class="weight-normal"> (*skal udfyldes)</span></label>
+                <input type="text" name="input-text" required="" class="form-input" id="generated-HTML-required">
             </fds-input-wrapper>
         </div>
     </div>
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Readonly inputfelt med suffix og prefix</h2>
+            <h2 class="h3 mt-0">input-optional</h2>
         </div>
         <div class="col-12">
-            <fds-input-wrapper input-readonly prefix="Beløb" suffix="kr.">
+            <fds-input-wrapper input-optional="true">
+                <label>Inputfelt med label</label>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">input-optional - præfabrikeret HTML</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper>
+                <label class="form-label" for="inp4ab68739">Inputfelt med label<span class="weight-normal"> (frivilligt)</span></label>
+                <input type="text" name="input-text" class="form-input" id="inp4ab68739">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">input-readonly</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-readonly="true">
+                <label>Inputfelt med label</label>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">input-readonly - præfabrikeret HTML</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper>
+                <label class="form-label" for="inp3d511bac">Inputfelt med label</label>
+                <input type="text" name="input-text" readonly="" class="form-input" id="inp3d511bac">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">input-disabled</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-disabled="true">
+                <label>Inputfelt med label</label>
+                <input type="text" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">input-disabled - præfabrikeret HTML</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper>
+                <label class="disabled form-label" for="inp5ef73a23">Inputfelt med label</label>
+                <input type="text" name="input-text" disabled="" class="form-input" id="inp5ef73a23">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Prefix og suffix</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-prefix="Beløb" input-suffix="kr.">
                 <label>Skriv et beløb i hele kroner</label>
+                <input type="number" name="input-text">
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Prefix og suffix - præfabrikeret HTML</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper>
+                <label class="form-label" for="inpcbd94c56">Skriv et beløb i hele kroner</label>
+                <div class="form-input-wrapper form-input-wrapper--prefix form-input-wrapper--suffix">
+                    <div class="form-input-prefix" aria-hidden="true">Beløb</div>
+                    <input type="number" name="input-text" class="form-input" id="inpcbd94c56">
+                    <div class="form-input-suffix" aria-hidden="true">kr.</div>
+                </div>
+            </fds-input-wrapper>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">input-maxwidth</h2>
+        </div>
+        <div class="col-12">
+            <fds-input-wrapper input-maxwidth="4">
+                <label>Inputfelt med label</label>
                 <input type="text" name="input-text">
             </fds-input-wrapper>
         </div>
@@ -69,24 +177,12 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Inputfelt med frivillig-label og disabled</h2>
+            <h2 class="h3 mt-0">input-maxwidth - præfabrikeret HTML</h2>
         </div>
         <div class="col-12">
-            <fds-input-wrapper input-optional input-disabled>
-                <label>Et disabled felt</label>
-                <input type="text" name="input-text">
-            </fds-input-wrapper>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Inputfelt med påkrævet-label og suffix</h2>
-        </div>
-        <div class="col-12">
-            <fds-input-wrapper input-required suffix="kr.">
-                <label>Skriv et beløb i hele kroner</label>
-                <input type="text" name="input-text">
+            <fds-input-wrapper>
+                <label class="form-label" for="inp9a1fb0cc">Inputfelt med label</label>
+                <input type="text" name="input-text" class="form-input input-char-4" id="inp9a1fb0cc">
             </fds-input-wrapper>
         </div>
     </div>

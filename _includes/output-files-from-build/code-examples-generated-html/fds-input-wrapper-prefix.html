@@ -1,14 +1,23 @@
-<fds-input-wrapper prefix="stk.">
+<fds-input-wrapper input-prefix="stk.">
     <label class="form-label" for="input-wrapper-antal">Antal styk</label>
-    <input type="number" id="input-wrapper-antal" name="input-wrapper-antal" class="form-input" value="56" required="">
+    <div class="form-input-wrapper form-input-wrapper--prefix">
+        <div class="form-input-prefix" aria-hidden="true">stk.</div>
+        <input type="number" id="input-wrapper-antal" name="input-wrapper-antal" class="form-input" value="56" required="">
+    </div>
 </fds-input-wrapper>
 
-<fds-input-wrapper suffix="000 kr.">
+<fds-input-wrapper input-suffix="000 kr.">
     <label class="form-label" for="input-wrapper-pris">Pris i 1000 kr.</label>
-    <input type="number" id="input-wrapper-pris" name="input-wrapper-pris" class="form-input" value="123" required="">
+    <div class="form-input-wrapper form-input-wrapper--suffix">
+        <input type="number" id="input-wrapper-pris" name="input-wrapper-pris" class="form-input" value="123" required="">
+        <div class="form-input-suffix" aria-hidden="true">000 kr.</div>
+    </div>
 </fds-input-wrapper>
 
-<fds-input-wrapper prefix="€">
+<fds-input-wrapper input-prefix="€">
     <label class="form-label" for="input-wrapper-beloeb">Beløb i €</label>
-    <input type="number" id="input-wrapper-beloeb" name="input-wrapper-beloeb" class="form-input" value="1.234" required="">
+    <div class="form-input-wrapper form-input-wrapper--prefix">
+        <div class="form-input-prefix" aria-hidden="true">€</div>
+        <input type="number" id="input-wrapper-beloeb" name="input-wrapper-beloeb" class="form-input" value="1.234" required="">
+    </div>
 </fds-input-wrapper>
