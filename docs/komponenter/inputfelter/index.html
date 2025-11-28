@@ -2719,7 +2719,7 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-1-acc-tabpanel1" aria-labelledby="example-1-acc-tab1">
         <fds-input-wrapper>
-    <label for="custom-element-input-example">Inputfelt med label</label>
+    <label>Inputfelt med label</label>
     <input type="text" name="input-example" id="custom-element-input-example" />
 </fds-input-wrapper>
     </div>
@@ -2731,7 +2731,7 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-input-example&quot;</span>&gt;</span>Inputfelt med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-example&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-input-example&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
@@ -2746,7 +2746,7 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-input-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Inputfelt med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-input-example&quot;</span>&gt;</span>Inputfelt med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-example&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-input-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
@@ -2778,6 +2778,61 @@ form_limit.charactersLeft();</code></pre></figure>
 
 <h2>Varianter</h2>
 
+<h3>Fejl</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="tab-example-input-error-tabpanel1" aria-selected="true" id="tab-example-input-error-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="tab-example-input-error-tabpanel2" aria-selected="false" id="tab-example-input-error-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="tab-example-input-error-tabpanel3" aria-selected="false" id="tab-example-input-error-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" tabindex="0" id="tab-example-input-error-tabpanel1" aria-labelledby="tab-example-input-error-tab1">
+        <fds-input-wrapper>
+    <label>Inputfelt med label</label>
+    <fds-error-message>Feltet er ikke udfyldt</fds-error-message>
+    <input type="text" id="input-wrapper-error" name="input-text" required="" />
+</fds-input-wrapper>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="tab-example-input-error-tabpanel2" aria-labelledby="tab-example-input-error-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span>&gt;</span>Feltet er ikke udfyldt<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-error&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="tab-example-input-error-tabpanel3" aria-labelledby="tab-example-input-error-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-error&quot;</span>&gt;</span>Inputfelt med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error142f414b&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span>&gt;</span>Fejl: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Feltet er ikke udfyldt<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-error&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;error142f414b&quot;</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-input-wrapper-error/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
 <h3>Hjælpetekst</h3>
 
 <div class="tab-container mt-5">
@@ -2788,9 +2843,9 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-2-acc-tabpanel1" aria-labelledby="example-2-acc-tab1">
         <fds-input-wrapper>
-    <label class="form-label" for="input-wrapper-help-text">Inputfelt med label og hjælpetekst</label>
+    <label>Inputfelt med label og hjælpetekst</label>
     <fds-help-text help-text-id="helpTextId">Fx 12345678</fds-help-text>
-    <input type="text" id="input-wrapper-help-text" name="input-wrapper-help-text" class="form-input" aria-describedby="input-type-help-text-hint" required="" />
+    <input type="text" id="input-wrapper-help-text" name="input-wrapper-help-text" required="" />
 </fds-input-wrapper>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-2-acc-tabpanel2" aria-labelledby="example-2-acc-tab2" hidden="">
@@ -2801,9 +2856,9 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span>&gt;</span>Inputfelt med label og hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med label og hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">help-text-id</span>=<span class="hljs-string">&quot;helpTextId&quot;</span>&gt;</span>Fx 12345678<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;input-type-help-text-hint&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2821,7 +2876,7 @@ form_limit.charactersLeft();</code></pre></figure>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">help-text-id</span>=<span class="hljs-string">&quot;helpTextId&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;helpTextId&quot;</span>&gt;</span>Fx 12345678<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;helpTextId&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;helpTextId&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2841,24 +2896,24 @@ form_limit.charactersLeft();</code></pre></figure>
         <button class="tab-button" role="tab" aria-controls="example-3-acc-tabpanel3" aria-selected="false" id="example-3-acc-tab3"><span>Genereret HTML</span></button>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-3-acc-tabpanel1" aria-labelledby="example-3-acc-tab1">
-        <fds-input-wrapper input-required="">
-    <label class="form-label" for="input-wrapper-mandatory1">Label</label>
-    <input type="text" id="input-wrapper-mandatory1" name="input-wrapper-mandatory1" class="form-input" />
+        <fds-input-wrapper input-indicator="">
+    <label>Label</label>
+    <input type="text" id="input-wrapper-mandatory1" name="input-wrapper-mandatory1" required="" />
 </fds-input-wrapper>
 
-<fds-input-wrapper input-optional="">
-    <label class="form-label" for="input-wrapper-optional1">Label</label>
-    <input type="text" id="input-wrapper-optional1" name="input-wrapper-optional1" class="form-input" />
+<fds-input-wrapper input-indicator="">
+    <label>Label</label>
+    <input type="text" id="input-wrapper-optional1" name="input-wrapper-optional1" />
 </fds-input-wrapper>
 
-<fds-input-wrapper input-required="Custom required label">
-    <label class="form-label" for="input-wrapper-mandatory2">Label</label>
-    <input type="text" id="input-wrapper-mandatory2" name="input-wrapper-mandatory2" class="form-input" />
+<fds-input-wrapper input-indicator="Custom required label">
+    <label>Label</label>
+    <input type="text" id="input-wrapper-mandatory2" name="input-wrapper-mandatory2" required="" />
 </fds-input-wrapper>
 
-<fds-input-wrapper input-optional="Custom optional label">
-    <label class="form-label" for="input-wrapper-optional2">Label</label>
-    <input type="text" id="input-wrapper-optional2" name="input-wrapper-optional2" class="form-input" />
+<fds-input-wrapper input-indicator="Custom optional label">
+    <label>Label</label>
+    <input type="text" id="input-wrapper-optional2" name="input-wrapper-optional2" />
 </fds-input-wrapper>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-3-acc-tabpanel2" aria-labelledby="example-3-acc-tab2" hidden="">
@@ -2868,24 +2923,24 @@ form_limit.charactersLeft();</code></pre></figure>
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-required</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-optional</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-required</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-optional</span>=<span class="hljs-string">&quot;Custom optional label&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>=<span class="hljs-string">&quot;Custom optional label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2898,25 +2953,25 @@ form_limit.charactersLeft();</code></pre></figure>
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*skal udfyldes)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-optional</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (frivilligt)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-required</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (Custom required label)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*Custom required label)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-optional</span>=<span class="hljs-string">&quot;Custom optional label&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-indicator</span>=<span class="hljs-string">&quot;Custom optional label&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (Custom optional label)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
@@ -2940,8 +2995,8 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-4-acc-tabpanel1" aria-labelledby="example-4-acc-tab1">
         <fds-input-wrapper input-readonly="">
-    <label class="form-label" for="input-wrapper-readonly">Inputfelt som er readonly</label>
-    <input type="text" id="input-wrapper-readonly" name="input-wrapper-readonly" class="form-input" value="012345-6789" />
+    <label>Inputfelt som er readonly</label>
+    <input type="text" id="input-wrapper-readonly" name="input-wrapper-readonly" value="012345-6789" />
 </fds-input-wrapper>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-4-acc-tabpanel2" aria-labelledby="example-4-acc-tab2" hidden="">
@@ -2952,8 +3007,8 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-readonly</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span>&gt;</span>Inputfelt som er readonly<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;012345-6789&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt som er readonly<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;012345-6789&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2968,7 +3023,7 @@ form_limit.charactersLeft();</code></pre></figure>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-readonly</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span>&gt;</span>Inputfelt som er readonly<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;012345-6789&quot;</span> <span class="hljs-attr">readonly</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-readonly&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;012345-6789&quot;</span> <span class="hljs-attr">readonly</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2989,8 +3044,8 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-5-acc-tabpanel1" aria-labelledby="example-5-acc-tab1">
         <fds-input-wrapper input-disabled="">
-    <label class="form-label disabled" for="input-wrapper-disabled">Inputfelt som er låst</label>
-    <input type="text" id="input-wrapper-disabled" name="input-wrapper-disabled" class="form-input" value="Låst indhold" />
+    <label>Inputfelt som er låst</label>
+    <input type="text" id="input-wrapper-disabled" name="input-wrapper-disabled" value="Låst indhold" />
 </fds-input-wrapper>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-5-acc-tabpanel2" aria-labelledby="example-5-acc-tab2" hidden="">
@@ -3001,8 +3056,8 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-disabled</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label disabled&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span>&gt;</span>Inputfelt som er låst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt som er låst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3016,8 +3071,8 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label disabled&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span>&gt;</span>Inputfelt som er låst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;disabled form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span>&gt;</span>Inputfelt som er låst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3038,18 +3093,18 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-6-acc-tabpanel1" aria-labelledby="example-6-acc-tab1">
         <fds-input-wrapper input-prefix="stk.">
-    <label class="form-label" for="input-wrapper-antal">Antal styk</label>
-    <input type="number" id="input-wrapper-antal" name="input-wrapper-antal" class="form-input input-char-8" value="56" required="" />
+    <label>Antal styk</label>
+    <input type="number" id="input-wrapper-antal" name="input-wrapper-antal" class="input-char-8" value="56" required="" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-suffix="000 kr.">
     <label class="form-label" for="input-wrapper-pris">Pris i 1000 kr.</label>
-    <input type="number" id="input-wrapper-pris" name="input-wrapper-pris" class="form-input input-char-11" value="123" required="" />
+    <input type="number" id="input-wrapper-pris" name="input-wrapper-pris" class="input-char-11" value="123" required="" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-prefix="€">
     <label class="form-label" for="input-wrapper-beloeb">Beløb i €</label>
-    <input type="number" id="input-wrapper-beloeb" name="input-wrapper-beloeb" class="form-input input-width-xs" value="1.234" required="" />
+    <input type="number" id="input-wrapper-beloeb" name="input-wrapper-beloeb" class="input-width-xs" value="1.234" required="" />
 </fds-input-wrapper>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-6-acc-tabpanel2" aria-labelledby="example-6-acc-tab2" hidden="">
@@ -3060,18 +3115,18 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;stk.&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span>&gt;</span>Antal styk<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input input-char-8&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Antal styk<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-8&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-suffix</span>=<span class="hljs-string">&quot;000 kr.&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span>&gt;</span>Pris i 1000 kr.<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input input-char-11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;€&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span>&gt;</span>Beløb i €<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input input-width-xs&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1.234&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-width-xs&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1.234&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3088,14 +3143,14 @@ form_limit.charactersLeft();</code></pre></figure>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span>&gt;</span>Antal styk<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-wrapper form-input-wrapper--prefix&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-prefix&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>stk.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-8 form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-suffix</span>=<span class="hljs-string">&quot;000 kr.&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span>&gt;</span>Pris i 1000 kr.<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-wrapper form-input-wrapper--suffix&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-11 form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-suffix&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>000 kr.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
@@ -3104,7 +3159,7 @@ form_limit.charactersLeft();</code></pre></figure>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span>&gt;</span>Beløb i €<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-wrapper form-input-wrapper--prefix&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-prefix&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>€<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1.234&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-width-xs form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1.234&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
@@ -3116,7 +3171,7 @@ form_limit.charactersLeft();</code></pre></figure>
     <a href="/eksempel/fds-input-wrapper-prefix/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
 
-<h2>Karakterbegrænsning</h2>
+<h3>Karakterbegrænsning</h3>
 
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
@@ -3155,10 +3210,10 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inpd417b216&quot;</span>&gt;</span>Inputfelt med karakterbegrænsning<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-character-limit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inpd417b216&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;lim1235b03c&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inpe04678a7&quot;</span>&gt;</span>Inputfelt med karakterbegrænsning<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-character-limit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inpe04678a7&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;lim2dba357e&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-character-limit</span> <span class="hljs-attr">limit</span>=<span class="hljs-string">&quot;40&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;lim1235b03c&quot;</span>&gt;</span>Du kan indtaste op til 40 tegn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;lim2dba357e&quot;</span>&gt;</span>Du kan indtaste op til 40 tegn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;polite&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visual-message&quot;</span>&gt;</span>Du har 40 tegn tilbage<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-character-limit</span>&gt;</span>
@@ -3184,33 +3239,33 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-7-acc-tabpanel1" aria-labelledby="example-7-acc-tab1">
         <fds-input-wrapper input-maxwidth="xxs">
-    <label class="form-label" for="input-wrapper-text-xxs">Inputfelt med attributten maxwidth="xxs" (8rem)</label>
-    <input type="text" id="input-wrapper-text-xxs" name="input-wrapper-text-xxs" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="xxs" (8rem)</label>
+    <input type="text" id="input-wrapper-text-xxs" name="input-wrapper-text-xxs" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="xs">
-    <label class="form-label" for="input-wrapper-text-xs">Inputfelt med attributten maxwidth="xs" (16rem)</label>
-    <input type="text" id="input-wrapper-text-xs" name="input-wrapper-text-xs" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="xs" (16rem)</label>
+    <input type="text" id="input-wrapper-text-xs" name="input-wrapper-text-xs" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="s">
-    <label class="form-label" for="input-wrapper-text-s">Inputfelt med attributten maxwidth="s" (24rem)</label>
-    <input type="text" id="input-wrapper-text-s" name="input-wrapper-text-s" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="s" (24rem)</label>
+    <input type="text" id="input-wrapper-text-s" name="input-wrapper-text-s" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="m">
-    <label class="form-label" for="input-wrapper-text-m">Inputfelt med attributten maxwidth="m" (32rem)</label>
-    <input type="text" id="input-wrapper-text-m" name="input-wrapper-text-m" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="m" (32rem)</label>
+    <input type="text" id="input-wrapper-text-m" name="input-wrapper-text-m" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="l">
-    <label class="form-label" for="input-wrapper-text-l">Inputfelt med attributten maxwidth="l" (40rem)</label>
-    <input type="text" id="input-wrapper-text-l" name="input-wrapper-text-l" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="l" (40rem)</label>
+    <input type="text" id="input-wrapper-text-l" name="input-wrapper-text-l" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="xl">
-    <label class="form-label" for="input-wrapper-text-xl">Inputfelt med attributten maxwidth="xl" (48rem)</label>
-    <input type="text" id="input-wrapper-text-xl" name="input-wrapper-text-xl" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="xl" (48rem)</label>
+    <input type="text" id="input-wrapper-text-xl" name="input-wrapper-text-xl" />
 </fds-input-wrapper>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-7-acc-tabpanel2" aria-labelledby="example-7-acc-tab2" hidden="">
@@ -3221,33 +3276,33 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;xxs&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-xxs&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;xxs&quot; (8rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-xxs&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-xxs&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;xxs&quot; (8rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-xxs&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-xxs&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;xs&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-xs&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;xs&quot; (16rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-xs&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-xs&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;xs&quot; (16rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-xs&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-xs&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;s&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-s&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;s&quot; (24rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-s&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-s&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;s&quot; (24rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-s&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-s&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;m&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-m&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;m&quot; (32rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-m&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-m&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;m&quot; (32rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-m&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-m&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;l&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-l&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;l&quot; (40rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-l&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-l&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;l&quot; (40rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-l&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-l&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;xl&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-xl&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;xl&quot; (48rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-xl&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-xl&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;xl&quot; (48rem)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-xl&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-xl&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3308,23 +3363,23 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="tab-panel" role="tabpanel" tabindex="0" id="example-8-acc-tabpanel1" aria-labelledby="example-8-acc-tab1">
         <fds-input-wrapper input-maxwidth="4">
-    <label class="form-label" for="input-wrapper-text-4">Inputfelt med attributten maxwidth="4" (4 tegn)</label>
-    <input type="text" id="input-wrapper-text-4" name="input-wrapper-text-4" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="4" (4 tegn)</label>
+    <input type="text" id="input-wrapper-text-4" name="input-wrapper-text-4" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="8">
-    <label class="form-label" for="input-wrapper-text-8">Inputfelt med attributten maxwidth="8" (8 tegn)</label>
-    <input type="text" id="input-wrapper-text-8" name="input-wrapper-text-8" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="8" (8 tegn)</label>
+    <input type="text" id="input-wrapper-text-8" name="input-wrapper-text-8" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="11">
-    <label class="form-label" for="input-wrapper-text-11">Inputfelt med attributten maxwidth="11" (11 tegn)</label>
-    <input type="text" id="input-wrapper-text-11" name="input-wrapper-text-11" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="11" (11 tegn)</label>
+    <input type="text" id="input-wrapper-text-11" name="input-wrapper-text-11" />
 </fds-input-wrapper>
 
 <fds-input-wrapper input-maxwidth="27">
-    <label class="form-label" for="input-wrapper-text-27">Inputfelt med attributten maxwidth="27" (27 tegn)</label>
-    <input type="text" id="input-wrapper-text-27" name="input-wrapper-text-27" class="form-input" />
+    <label>Inputfelt med attributten maxwidth="27" (27 tegn)</label>
+    <input type="text" id="input-wrapper-text-27" name="input-wrapper-text-27" />
 </fds-input-wrapper>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-8-acc-tabpanel2" aria-labelledby="example-8-acc-tab2" hidden="">
@@ -3335,23 +3390,23 @@ form_limit.charactersLeft();</code></pre></figure>
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;4&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-4&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;4&quot; (4 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-4&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-4&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;4&quot; (4 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-4&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-4&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-8&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;8&quot; (8 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-8&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-8&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;8&quot; (8 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-8&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-8&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;11&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-11&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;11&quot; (11 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-11&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-11&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;11&quot; (11 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-11&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-11&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span> <span class="hljs-attr">input-maxwidth</span>=<span class="hljs-string">&quot;27&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-text-27&quot;</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;27&quot; (27 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-27&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-27&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt med attributten maxwidth=&quot;27&quot; (27 tegn)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-text-27&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-text-27&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3403,12 +3458,8 @@ form_limit.charactersLeft();</code></pre></figure>
   </thead>
   <tbody>
     <tr>
-      <td>input-required</td>
-      <td>Viser en indikator i labelteksten for obligatoriske felter (tilføjer “(*skal udfyldes)” som standard) og tilføjer automatisk <code>required</code>-attributten.</td>
-    </tr>
-    <tr>
-      <td>input-optional</td>
-      <td>Viser en indikator i labelteksten, der angiver at feltet er frivilligt (tilføjer “(frivilligt)” som standard).</td>
+      <td>input-indicator</td>
+      <td>Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
     </tr>
     <tr>
       <td>input-readonly</td>
@@ -3419,15 +3470,15 @@ form_limit.charactersLeft();</code></pre></figure>
       <td>Deaktiverer inputfeltet. Hvis værdien er sat til andet end <code>false</code>, tilføjes <code>disabled</code>-attributten til inputfeltet og klassen <code>disabled</code> til label.</td>
     </tr>
     <tr>
-      <td>prefix</td>
+      <td>input-prefix</td>
       <td>Viser et visuelt præfix-element (tekst før inputfeltet).</td>
     </tr>
     <tr>
-      <td>suffix</td>
+      <td>input-suffix</td>
       <td>Viser et visuelt suffiks-element (tekst efter inputfeltet).</td>
     </tr>
     <tr>
-      <td>maxwidth</td>
+      <td>input-maxwidth</td>
       <td>Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl).</td>
     </tr>
   </tbody>
@@ -3445,7 +3496,7 @@ form_limit.charactersLeft();</code></pre></figure>
   <tbody>
     <tr>
       <td>updateIdReferences()</td>
-      <td>Funktionen sikrer korrekt kobling mellem label, input og eventuelle hjælpetekster.</td>
+      <td>Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.</td>
     </tr>
     <tr>
       <td>setClasses()</td>
