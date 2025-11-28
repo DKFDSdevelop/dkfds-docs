@@ -9,14 +9,14 @@ title: Tjekboks (Checkbox)
 lead: Tjekbokse lader brugeren vælge en eller flere muligheder.
 description: "Tjekbokse giver brugeren mulighed for at vælge en eller flere værdier ud fra en synlig liste."
 tags:
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="checkbox-large" title="Eksempel på tjekbokse" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tjekboks" code="Tjekboks_Kode" %}
+{% include anchorlinks.html guidelines="Tjekboks" code="Tjekboks_Kode" custom="Tjekboks_Custom" %}
 
 <!--split-->
 
@@ -177,3 +177,16 @@ Det element som skal collapses/expandes skal have følgende:
 - `id="id-of-target-to-collapse"`
 - `aria-hidden="true/false"`
 
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+### Funktioner

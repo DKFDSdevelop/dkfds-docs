@@ -320,7 +320,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
 {% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-input-wrapper-simple" %}
 
-## Varianter
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Fejl
 
@@ -359,6 +359,8 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 #### Input bredde med tegn
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
 ### Attributter
 

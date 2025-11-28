@@ -502,6 +502,8 @@ Inputfelter_Kode:
 Inputfelter_Custom:
 - h2: Om custom elements
 - h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Knapper_Kode:
 - h2: Installation
@@ -575,6 +577,12 @@ Tjekboks_Kode:
 - h2: Installation
 - h2: Hjælpetekst
 - h2: Skjult indhold (collapse)
+
+Tjekboks_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Toastbesked_Kode:
 - h2: Installation
