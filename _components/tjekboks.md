@@ -181,12 +181,77 @@ Det element som skal collapses/expandes skal have følgende:
 
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
 
+Tjekbokse har to custom elementer tilknyttet: fds-checkbox og fds-checkbox-group. 
+
+Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-checkbox>` med `<div class="fds-checkbox">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+### Tjekbox med label lavet med custom element
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-example" tabId="example-1-acc" %}
+
+Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-checkbox-simple" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
+### Fejl
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-error" tabId="example-input-error" %}
+
+### Hjælpetekst
+
+#### Hjælpetekst til enkelte tjekbokse
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-help-text" tabId="example-checkbox-helptext" %}
+
+#### Tjekboksgruppe med hjælpetekst
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-group-help-text" tabId="example-checkbox-group-helptext" %}
+
+### Obligatoriske og frivillige tjekbokse
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-required" tabId="example-3-acc" %}
+
+### Skjult indhold (Collapse)
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-collapse" tabId="example-4-acc" %}
+
+### Deaktiveret
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-disabled" tabId="example-5-acc" %}
+
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### Attributter
+### fds-checkbox
 
-### Funktioner
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut        | Beskrivelse                                                                                                                                          |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| input-indicator | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.                              |
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| updateIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.                                      |
+| setClasses()          | Sætter de nødvendige klasser på inputfelt og label.                                                             |
+
+### fds-checkbox-group
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut        | Beskrivelse                                                                                                                                          |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| group-label | Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.                             |

@@ -31,6 +31,7 @@ var testfiles = [
     "test-fds-input",
     "test-fds-error-message",
     "test-fds-character-limit",
+    "test-fds-checkbox",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
