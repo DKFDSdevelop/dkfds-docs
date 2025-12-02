@@ -5,7 +5,7 @@
         <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel2" aria-selected="false" id="{{ include.tabId }}-tab2"><span>Custom element</span></button>
         <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel3" aria-selected="false" id="{{ include.tabId }}-tab3"><span>Genereret HTML</span></button>
     </div>
-    <div class="tab-panel" role="tabpanel" tabindex="0" id="{{ include.tabId }}-tabpanel1" aria-labelledby="{{ include.tabId }}-tab1">
+    <div class="tab-panel" role="tabpanel"{% if include.focusable %} tabindex="0"{% endif %} id="{{ include.tabId }}-tabpanel1" aria-labelledby="{{ include.tabId }}-tab1">
         {% include code-examples/{{ include.example }}.html %}
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="{{ include.tabId }}-tabpanel2" aria-labelledby="{{ include.tabId }}-tab2" hidden>

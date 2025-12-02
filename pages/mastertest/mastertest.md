@@ -20,6 +20,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-input" description="Inputfelter" %}
 {% include test/preview-test.html filename="test-fds-error-message" description="Fejlmeddelelser" %}
 {% include test/preview-test.html filename="test-fds-character-limit" description="Karakterbegrænsning" %}
+{% include test/preview-test.html filename="test-fds-checkbox" description="Tjekbokse" %}
 
 {:.h3}
 ## HTML-elementer

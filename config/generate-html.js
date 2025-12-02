@@ -5,11 +5,12 @@ const beautify = require('js-beautify').html;
 
 // https://www.npmjs.com/package/js-beautify#css--html
 const BEAUTIFY_OPTIONS = {
-    indent_size: 4,
-    unformatted: [],
-    preserve_newlines: true,
-    indent_inner_html: true,
-    inline: ['use']
+    "indent_size": 4,
+    "unformatted": [],
+    "preserve_newlines": true,
+    "indent_inner_html": true,
+    "inline": ['use'],
+    "inline_custom_elements": false
 };
 
 const srcDir = '_includes/code-examples';
