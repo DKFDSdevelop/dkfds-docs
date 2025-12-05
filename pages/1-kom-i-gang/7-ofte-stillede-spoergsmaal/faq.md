@@ -32,5 +32,32 @@ lead: Nogle gange er der spørgsmål til FDS-teamet, der går igen. Før du tage
     </fds-accordion>
 </fds-accordion-group>
 
+<fds-checkbox-group group-label="Group label" checkbox-disabled>
+    <fds-checkbox>
+        <input type="checkbox" name="checkbox-example" value="v3">
+        <label>Checkbox with expandable content</label>
+        <div class="checkbox-content">
+            <fds-checkbox>
+                <input type="checkbox" name="checkbox-example" value="v1">
+                <label>Checkbox 1</label>
+            </fds-checkbox>
+        </div>
+    </fds-checkbox>
+    <fds-checkbox>
+        <input type="checkbox" />
+        <label>Show advanced settings</label>
+        <div class="checkbox-content">
+            <fds-input-wrapper>
+                <label class="form-label">Inputfield label</label>
+                <input type="text" name="input-wrapper-help-text" class="form-input">
+                <fds-error-message id="segtsegaetg">Error message</fds-error-message>
+            </fds-input-wrapper>
+        </div>
+    </fds-checkbox>
+    <fds-help-text id="myCustomHelpID">Helptext for the group</fds-help-text>
+    <fds-error-message id="segtaetg">Error message</fds-error-message>
+</fds-checkbox-group>
+
+
 <h2 class="h5 mt-7">Fik du ikke svar på dit spørgsmål?</h2>
 Så kan du kontakte os ved at {% include links/internal-link.html linktext="sende en e-mail" %} eller {% include links/external-link.html linktext='oprette et issue på GitHub' %}.

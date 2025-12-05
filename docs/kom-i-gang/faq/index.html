@@ -1285,6 +1285,32 @@
     </fds-accordion>
 </fds-accordion-group>
 
+<fds-checkbox-group group-label="Group label" checkbox-disabled="">
+    <fds-checkbox>
+        <input type="checkbox" name="checkbox-example" value="v3" />
+        <label>Checkbox with expandable content</label>
+        <div class="checkbox-content">
+            <fds-checkbox>
+                <input type="checkbox" name="checkbox-example" value="v1" />
+                <label>Checkbox 1</label>
+            </fds-checkbox>
+        </div>
+    </fds-checkbox>
+    <fds-checkbox>
+        <input type="checkbox" />
+        <label>Show advanced settings</label>
+        <div class="checkbox-content">
+            <fds-input-wrapper>
+                <label class="form-label">Inputfield label</label>
+                <input type="text" name="input-wrapper-help-text" class="form-input" />
+                <fds-error-message id="segtsegaetg">Error message</fds-error-message>
+            </fds-input-wrapper>
+        </div>
+    </fds-checkbox>
+    <fds-help-text id="myCustomHelpID">Helptext for the group</fds-help-text>
+    <fds-error-message id="segtaetg">Error message</fds-error-message>
+</fds-checkbox-group>
+
 <h2 class="h5 mt-7">Fik du ikke svar på dit spørgsmål?</h2>
 <p>Så kan du kontakte os ved at <a href="mailto:fds@erst.dk">sende en e-mail</a> eller <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</p>
 
