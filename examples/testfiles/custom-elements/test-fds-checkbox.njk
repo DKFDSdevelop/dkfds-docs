@@ -46,6 +46,40 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <h2 class="h3 mt-0">Deaktiveret tjekboks</h2>
+        </div>
+        <div class="col-12">
+            <fds-checkbox>
+                <input type="checkbox" name="checkbox-example" disabled>
+                <label>Deaktiveret tjekbox med label</label>
+            </fds-checkbox>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Deaktiveret tjekboksgruppe</h2>
+        </div>
+        <div class="col-12">
+            <fds-checkbox-group group-disabled>
+                <fds-checkbox>
+                    <input type="checkbox" name="checkbox-example" value="v1">
+                    <label>Første tjekboks</label>
+                </fds-checkbox>
+                <fds-checkbox>
+                    <input type="checkbox" name="checkbox-example2" value="v2" />
+                    <label>Anden tjekboks</label>
+                </fds-checkbox>
+                <fds-checkbox>
+                    <input type="checkbox" name="checkbox-example3" value="v3" />
+                    <label>Tredje tjekboks</label>
+                </fds-checkbox>
+            </fds-checkbox-group>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <h2 class="h3 mt-0">Fejl på gruppen</h2>
         </div>
         <div class="col-12">
@@ -84,6 +118,52 @@
                 <input type="checkbox" name="checkbox-example">
                 <label>Tjekbox med label</label>
             </fds-checkbox>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Tjekbox med skjult indhold</h2>
+        </div>
+        <div class="col-12">
+            <fds-checkbox>
+                <input type="checkbox" />
+                <label>Vis skjult indhold</label>
+                <div class="checkbox-content">
+                    <p>This section is shown when checked.</p>
+                </div>
+            </fds-checkbox>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Tjekboksgruppe med skjult indhold</h2>
+        </div>
+        <div class="col-12">
+            <fds-checkbox-group group-label="Group label">
+                <fds-checkbox>
+                    <input type="checkbox" name="checkbox-example" value="v3">
+                    <label>Tjekboks med skjult indhold</label>
+                    <div class="checkbox-content">
+                        <fds-checkbox>
+                            <input type="checkbox" name="checkbox-example" value="v1">
+                            <label>Checkbox 1</label>
+                        </fds-checkbox>
+                    </div>
+                </fds-checkbox>
+                <fds-checkbox>
+                    <input type="checkbox" />
+                    <label>Vis indhold</label>
+                    <div class="checkbox-content">
+                        <fds-input-wrapper>
+                            <label class="form-label">Inputfield med error</label>
+                            <input type="text" name="input-wrapper-help-text" class="form-input">
+                            <fds-error-message>Error message</fds-error-message>
+                        </fds-input-wrapper>
+                    </div>
+                </fds-checkbox>
+            </fds-checkbox-group>
         </div>
     </div>
 
