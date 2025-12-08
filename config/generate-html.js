@@ -7,7 +7,7 @@ const beautify = require('js-beautify').html;
 const BEAUTIFY_OPTIONS = {
     "indent_size": 4,
     "unformatted": [],
-    "preserve_newlines": true,
+    "preserve_newlines": false,
     "indent_inner_html": true,
     "inline": ['use'],
     "inline_custom_elements": false

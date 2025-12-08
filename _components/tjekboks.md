@@ -226,7 +226,13 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Deaktiveret
 
+#### Deaktiveret enkelte tjekbokse
+
 {% include code/show-example-with-tabs.html example="fds-checkbox-disabled" tabId="example-5-acc" %}
+
+#### Deaktiveret tjekboksgruppe
+
+{% include code/show-example-with-tabs.html example="fds-checkbox-group-disabled" tabId="example-6-acc" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -235,9 +241,9 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                                                          |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| input-indicator | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.                              |
+| Attribut        | Beskrivelse                                                                                                                        |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------|
+| input-indicator | Viser om tjekbox er obligatorisk eller frivilligt. For at gøre en checkbox obligatorisk tilføj required attributten på input html elementet. Indsæt en tekst i attributten for at overskrive default-teksten. default-teksten.|
 
 #### Funktioner
 
@@ -252,6 +258,7 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                                                          |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| group-label | Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.                             |
+| Attribut        | Beskrivelse                                                                                                                       |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| group-label | Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.                                          |
+| group-disabled | Deaktiverer tjekbox. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.                        |

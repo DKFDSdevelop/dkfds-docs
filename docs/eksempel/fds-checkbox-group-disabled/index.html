@@ -18,8 +18,8 @@
 ================================================== -->
 
 
-<title>Obligatoriske og frivillige tjekbokse | Det Fælles Designsystem</title>
-<meta property="og:title" content="Obligatoriske og frivillige tjekbokse | Det Fælles Designsystem">
+<title>Eksempel på deaktiveret tjekbox gruppe | Det Fælles Designsystem</title>
+<meta property="og:title" content="Eksempel på deaktiveret tjekbox gruppe | Det Fælles Designsystem">
 
 
 
@@ -226,25 +226,20 @@
         <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     </header>
     <main class="container page-container" id="main-content">
-        <fds-checkbox checkbox-indicator="">
-    <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-required" required="" />
-    <label>Tjekbox label</label>
-</fds-checkbox>
-
-<fds-checkbox checkbox-indicator="">
-    <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-optional" />
-    <label>Tjekbox label</label>
-</fds-checkbox>
-
-<fds-checkbox checkbox-indicator="Custom required label">
-    <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-required1" required="" />
-    <label>Tjekbox label</label>
-</fds-checkbox>
-
-<fds-checkbox checkbox-indicator="Custom optional label">
-    <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-optional1" />
-    <label>Tjekbox label</label>
-</fds-checkbox>
+        <fds-checkbox-group group-disabled="">
+    <fds-checkbox>
+        <input type="checkbox" name="checkbox-example" value="v1" />
+        <label>Første tjekboks</label>
+    </fds-checkbox>
+    <fds-checkbox>
+        <input type="checkbox" name="checkbox-example2" value="v2" />
+        <label>Anden tjekboks</label>
+    </fds-checkbox>
+    <fds-checkbox>
+        <input type="checkbox" name="checkbox-example3" value="v3" />
+        <label>Tredje tjekboks</label>
+    </fds-checkbox>
+</fds-checkbox-group>
 
     </main>
     <script src="/assets/js/theme.js?v=11.1.0"></script>
