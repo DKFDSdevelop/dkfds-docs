@@ -121,27 +121,21 @@ document.addEventListener("DOMContentLoaded", function () {
             /* Only the subscription page contains a confirmation checkbox */
             if (subscriptionPage) {
 
-                let confirmSection = document.getElementById('samtykke-group');
                 let confirmCheckbox = document.getElementById('samtykke-check');
+                let checkboxError = document.getElementById('samtykke-check-error');
 
                 if (!confirmCheckbox.checked) {
                     let errormessage = "Giv os venligst dit samtykke, så vi må opbevare din e-mailadresse. Uden dit samtykke kan vi ikke sende dig nyhedsbrevet.";
 
                     /* Show error message for checkbox */
-                    confirmSection.classList.add('form-error');
-                    confirmSection.querySelector('.form-error-message').innerHTML = '<span class="sr-only">Fejl: </span>' + errormessage;
-                    document.getElementById('samtykke-check').setAttribute('aria-describedby', 'samtykke-check-error');
-
-                    confirmSection.querySelector('.form-error-message').classList.remove('d-none');
+                    checkboxError.removeAttribute('hidden');
 
                     /* Add error message to error summary */
                     errors += '<li><a class="function-link" href="#samtykke-check">' + errormessage + '</a></li>';
                 }
                 else {
                     /* If checkbox is checked, ensure no error message is displayed */
-                    confirmSection.classList.remove('form-error');
-                    confirmSection.querySelector('.form-error-message').innerHTML = '';
-                    confirmSection.querySelector('.form-error-message').classList.add('d-none');
+                    checkboxError.setAttribute('hidden', '');
                 }
             }
 

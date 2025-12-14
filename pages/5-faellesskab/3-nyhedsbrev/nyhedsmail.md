@@ -44,13 +44,11 @@ Nyhedsbrevene indeholder information om {% include links/internal-link.html link
             <label>Tilmeld e-mailadresse</label>
             <input type="email" id="i_newsform_email" autocomplete="email" required>
         </fds-input-wrapper>
-        <div class="form-group" id="samtykke-group">
-            <span class="form-error-message d-none" id="samtykke-check-error"></span>
-            <div class="form-group-checkbox mt-3">
-                <input id="samtykke-check" type="checkbox" value="" class="form-checkbox checkbox-large" required />
-                <label for="samtykke-check">Jeg giver hermed samtykke til, at Erhvervsstyrelsen må opbevare min <span class='nowrap'>e-mailadresse</span>, indtil jeg selv afmelder mig nyhedsbrevet</label>
-            </div>
-        </div>
+        <fds-checkbox id="samtykke-group" class="mt-5">
+            <fds-error-message hidden id="samtykke-check-error" class="mb-3">Giv os venligst dit samtykke, så vi må opbevare din e-mailadresse. Uden dit samtykke kan vi ikke sende dig nyhedsbrevet.</fds-error-message>
+            <input type="checkbox" id="samtykke-check" value="" required>
+            <label>Jeg giver hermed samtykke til, at Erhvervsstyrelsen må opbevare min <span class='nowrap'>e-mailadresse</span>, indtil jeg selv afmelder mig nyhedsbrevet</label>
+        </fds-checkbox>
         <p>Læs om vores behandling af dine personoplysninger og dine rettigheder under {% include links/internal-link.html linktext="Privatlivspolitik og cookies" %}.</p>
         <input type="submit" class="button button-primary mt-5" value="Tilmeld" id="newsletter-submit">
     </form>
