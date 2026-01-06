@@ -1,10 +1,6 @@
 <fds-checkbox-group group-label="Group label">
     <fieldset aria-describedby="error9c8e8ffc">
         <legend class="form-label">Group label</legend>
-        <fds-error-message id="error9c8e8ffc">
-            <span class="sr-only">Fejl: </span>
-            <span class="visible-message">Fejl text</span>
-        </fds-error-message>
         <fds-checkbox>
             <div class="form-group-checkbox">
                 <input type="checkbox" name="checkbox1-example" value="v1" id="chk95b7e42c" class="form-checkbox">
@@ -17,5 +13,10 @@
                 <label class="form-label" for="chkac82adda">Anden tjekboks</label>
             </div>
         </fds-checkbox>
+        <fds-error-message id="error9c8e8ffc">
+            <span class="sr-only">Fejl: </span>
+            <svg class="icon-svg alert-icon" aria-label="Fejl" focusable="false"><use href="#error"></use></svg>
+            <span class="visible-message">Fejl text</span>
+        </fds-error-message>
     </fieldset>
 </fds-checkbox-group>
