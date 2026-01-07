@@ -260,5 +260,12 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 {:.table .table--responsive-headers}
 | Attribut        | Beskrivelse                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| group-label | Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.                                          |
-| group-disabled | Deaktiverer tjekbox. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.                        |
+| group-label | Brug attributten "group-label" på fds-radio-button-group til at sætte en label for hele gruppen.                                      |
+| group-disabled | Deaktiverer radioknapgruppen. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.               |
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| handleIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.                                      |

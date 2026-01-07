@@ -10,14 +10,14 @@ title: Radioknap (Radio button)
 lead: Radioknapper lader brugeren vælge én blandt flere muligheder.
 description: "Radioknapper giver brugeren mulighed for at vælge en enkelt værdi ud fra en synlig liste."
 tags:
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true  custom=true %}
 
 {% include code/preview-box.html component="radiobutton" title="Eksempel på radioknapper" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Radioknap" code="Radioknap_Kode" %}
+{% include anchorlinks.html guidelines="Radioknap" code="Radioknap_Kode" custom="Radioknap_Custom" %}
 
 <!--split-->
 
@@ -167,3 +167,69 @@ Det element som skal collapses/expandes skal have følgende:
 
 - `id="id-of-target-to-collapse"`
 - `aria-hidden="false"` hvis indholdet vises og `aria-hidden="true"` hvis indholdet skjules
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+Radioknap har to custom elementer tilknyttet: fds-radio-button og fds-radio-button-group. Bemærk venligst, at fds-radio-button ikke er beregnet til at blive brugt alene, men kun inden for en gruppe.
+
+Brug attributten "group-label" på fds-radio-button-group til at sætte en label for hele gruppen.
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-radio-button-group>` med `<div class="fds-radio-button-group">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+### Radioknapgruppe med label lavet med custom element
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-example" tabId="example-1-acc" %}
+
+Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-radio-button-group-simple" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-error" tabId="example-radio-button-group-error" %}
+
+### Hjælpetekst
+
+#### Hjælpetekst til enkelte radioknap
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-helptext" tabId="example-radio-button-helptext" %}
+
+#### Radioknapgruppe med hjælpetekst
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-helptext" tabId="example-radio-button-group-helptext" %}
+
+### Skjult indhold (Collapse)
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-collapse" tabId="example-radio-button-group-collapse" %}
+
+#### Deaktiveret radioknapgruppe
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-disabled" tabId="example-radio-button-group-disabled" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### fds-radio-button-group
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut        | Beskrivelse                                                                                                                       |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| group-label | Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.                                          |
+| group-disabled | Deaktiverer tjekbox. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.                        |
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| handleIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.                                      |

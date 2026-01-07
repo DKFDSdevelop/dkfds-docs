@@ -538,6 +538,12 @@ Radioknap_Kode:
 - h2: Hjælpetekst
 - h2: Skjult indhold (Collapse)
 
+Radioknap_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 Sprogvaelger_Kode:
 - h2: Installation
 - h2: Sprogvælger med tooltip
