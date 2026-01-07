@@ -22,8 +22,8 @@
         <div class="col-12">
             <fds-input-wrapper>
                 <label>Inputfelt med label</label>
-                <fds-error-message>Dette er en fejl</fds-error-message>
                 <input type="text" name="input-text">
+                <fds-error-message>Dette er en fejl</fds-error-message>
             </fds-input-wrapper>
         </div>
     </div>
@@ -35,8 +35,8 @@
         <div class="col-12">
             <fds-input-wrapper>
                 <label>Inputfelt med label</label>
-                <fds-error-message sr-text="Error">Dette er en fejl</fds-error-message>
                 <input type="text" name="input-text">
+                <fds-error-message icon-text="Error">Dette er en fejl</fds-error-message>
             </fds-input-wrapper>
         </div>
     </div>
@@ -49,13 +49,13 @@
             <fds-input-wrapper>
                 <label class="form-label" for="html-generated-example-id">Inputfelt med
                     label</label>
-                <fds-error-message id="html-generated-example-error-id">
-                    <span class="sr-only">Fejl: </span>
-                    <span class="visible-message">Dette er en fejl</span>
-                </fds-error-message>
                 <input type="text" name="input-text" class="form-input"
                     id="html-generated-example-id"
                     aria-describedby="html-generated-example-error-id" aria-invalid="true">
+                <fds-error-message id="html-generated-example-error-id">
+                    <svg class="icon-svg alert-icon" aria-label="Fejl" focusable="false"><use href="#error"></use></svg>
+                    <span class="visible-message">Dette er en fejl</span>
+                </fds-error-message>
             </fds-input-wrapper>
         </div>
     </div>

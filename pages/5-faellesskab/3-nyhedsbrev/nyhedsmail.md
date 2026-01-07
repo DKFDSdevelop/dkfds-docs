@@ -45,9 +45,9 @@ Nyhedsbrevene indeholder information om {% include links/internal-link.html link
             <input type="email" id="i_newsform_email" autocomplete="email" required>
         </fds-input-wrapper>
         <fds-checkbox id="samtykke-group" class="mt-5">
-            <fds-error-message hidden id="samtykke-check-error" class="mb-3">Giv os venligst dit samtykke, så vi må opbevare din e-mailadresse. Uden dit samtykke kan vi ikke sende dig nyhedsbrevet.</fds-error-message>
             <input type="checkbox" id="samtykke-check" value="" required>
             <label>Jeg giver hermed samtykke til, at Erhvervsstyrelsen må opbevare min <span class='nowrap'>e-mailadresse</span>, indtil jeg selv afmelder mig nyhedsbrevet</label>
+            <fds-error-message hidden id="samtykke-check-error" class="mb-3">Giv os venligst dit samtykke, så vi må opbevare din e-mailadresse. Uden dit samtykke kan vi ikke sende dig nyhedsbrevet.</fds-error-message>
         </fds-checkbox>
         <p>Læs om vores behandling af dine personoplysninger og dine rettigheder under {% include links/internal-link.html linktext="Privatlivspolitik og cookies" %}.</p>
         <input type="submit" class="button button-primary mt-5" value="Tilmeld" id="newsletter-submit">

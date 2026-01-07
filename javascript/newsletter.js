@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 else {
                     const errorElement = document.createElement('fds-error-message');
                     errorElement.textContent = errormessage;
-                    emailSection.querySelector('label').after(errorElement);
+                    emailSection.querySelector('input').after(errorElement);
                 }
 
                 /* Add error message to error summary */
