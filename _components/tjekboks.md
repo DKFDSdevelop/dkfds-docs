@@ -204,7 +204,11 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Fejl
 
+{% include code-examples/fds-error-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-checkbox-error" tabId="example-input-error" %}
+
+{% include code-examples/fds-error-tables.html%}
 
 ### Hjælpetekst
 
