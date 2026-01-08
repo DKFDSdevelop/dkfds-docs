@@ -113,19 +113,16 @@ Når vi gennemfører brugerundersøgelser på FDS, anvender vi cookies, dels til
 For at undgå at der bliver sat statistikcookies fra Piwik PRO, skal du nedenunder vælge "nej" og efterfølgende trykke på knappen "gem".
 
 <form id="cookieForm" method="post" action="/">
-    <div class="form-group">
-        <fieldset>
-            <legend class="form-label">Må vi indsamle statistik om din brug af Det Fælles Designsystem (FDS)?</legend>
-            <div class="form-group-radio">
-                <input id="statCookiesYes" type="radio" name="statCookies" value="1" class="form-radio radio-large">
-                <label class="form-label" for="statCookiesYes">Ja, accepter cookies</label>
-            </div>
-            <div class="form-group-radio">
-                <input id="statCookiesNo" type="radio" name="statCookies" value="0" class="form-radio radio-large"/>
-                <label class="form-label" for="statCookiesNo">Nej</label>
-            </div>
-        </fieldset>
-    </div>
+    <fds-radio-button-group group-label="Må vi indsamle statistik om din brug af Det Fælles Designsystem (FDS)?">
+        <fds-radio-button>
+            <input type="radio" name="statCookies" value="1" id="statCookiesYes">
+            <label>Ja, accepter cookies</label>
+        </fds-radio-button>
+        <fds-radio-button>
+            <input type="radio" name="statCookies" value="0" id="statCookiesNo">
+            <label>Nej</label>
+        </fds-radio-button>
+    </fds-radio-button-group>
     <div id="cookieButtons" class="mt-6 d-none">
         <input type="hidden" id="originalValue" value="" />
         <button type="submit" class="button button-primary" id="cookieSave">Gem</button>
