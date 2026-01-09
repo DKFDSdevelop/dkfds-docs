@@ -195,13 +195,21 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Fejl
 
+{% include code-examples/fds-error-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-radio-button-group-error" tabId="example-radio-button-group-error" %}
 
+{% include code-examples/fds-error-tables.html%}
+
 ### Hjælpetekst
+
+{% include code-examples/fds-helptext-intro-text.html%}
 
 #### Hjælpetekst til enkelte radioknap
 
 {% include code/show-example-with-tabs.html example="fds-radio-button-helptext" tabId="example-radio-button-helptext" %}
+
+{% include code-examples/fds-help-text-tables.html%}
 
 #### Radioknapgruppe med hjælpetekst
 

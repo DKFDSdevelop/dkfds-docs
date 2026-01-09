@@ -204,9 +204,15 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Fejl
 
+{% include code-examples/fds-error-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-checkbox-error" tabId="example-input-error" %}
 
+{% include code-examples/fds-error-tables.html%}
+
 ### Hjælpetekst
+
+{% include code-examples/fds-helptext-intro-text.html%}
 
 #### Hjælpetekst til enkelte tjekbokse
 
@@ -215,6 +221,8 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 #### Tjekboksgruppe med hjælpetekst
 
 {% include code/show-example-with-tabs.html example="fds-checkbox-group-help-text" tabId="example-checkbox-group-helptext" %}
+
+{% include code-examples/fds-help-text-tables.html%}
 
 ### Obligatoriske og frivillige tjekbokse
 

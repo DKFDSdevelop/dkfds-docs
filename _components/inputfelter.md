@@ -324,11 +324,19 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Fejl
 
+{% include code-examples/fds-error-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-error" tabId="tab-example-input-error" %}
+
+{% include code-examples/fds-error-tables.html%}
 
 ### Hjælpetekst
 
+{% include code-examples/fds-helptext-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
+
+{% include code-examples/fds-help-text-tables.html%}
 
 ### Obligatoriske og frivillige inputfelter
 
@@ -348,7 +356,11 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Karakterbegrænsning
 
+{% include code-examples/fds-character-limit-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
+
+{% include code-examples/fds-character-limit-tables.html%}
 
 ### Feltbredde
 

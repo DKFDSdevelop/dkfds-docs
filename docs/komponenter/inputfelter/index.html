@@ -2782,6 +2782,8 @@ form_limit.charactersLeft();</code></pre></figure>
 
 <h3>Fejl</h3>
 
+<p><code>&lt;fds-error-message&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input-wrapper&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code> og <code>&lt;fds-radio-button-group&gt;</code>. Dette custom-element tilføjer automatisk et fejlikon og strukturerer indholdet, inkluderer korrekte ARIA-attributter og skjulte tilstande samt underretter forælderkomponenten om ændringer i synlighed.</p>
+
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
         <button class="tab-button" role="tab" aria-controls="tab-example-input-error-tabpanel1" aria-selected="true" id="tab-example-input-error-tab1"><span>Eksempel</span></button>
@@ -2835,7 +2837,59 @@ form_limit.charactersLeft();</code></pre></figure>
     <a href="/eksempel/fds-input-wrapper-error/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
 
+<h4>Attributter til <code>&lt;fds-error-message&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Hvis ikke angivet, genereres der automatisk et id.</td>
+      </tr>
+      <tr>
+        <td>icon-text</td>
+        <td>Sæt en anden tekst på fejlikonet.</td>
+      </tr>
+      <tr>
+        <td>hidden</td>
+        <td>Styrer synligheden af fejlmeddelelsen.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Events fra <code>&lt;fds-error-message&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>error-message-visibility-changed</td>
+        <td>Afsender en hændelse til forælderkomponenter, når synligheden ændres.</td>
+      </tr>
+      <tr>
+        <td>error-message-callback</td>
+        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <h3>Hjælpetekst</h3>
+
+<p><code>&lt;fds-help-text&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input-wrapper&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code>, <code>&lt;fds-radio-button&gt;</code> og <code>&lt;fds-radio-button-group&gt;</code>.</p>
 
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
@@ -2885,6 +2939,48 @@ form_limit.charactersLeft();</code></pre></figure>
 </div>
 <div class="mt-3 mb-8">
     <a href="/eksempel/fds-input-wrapper-help-text/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h4>Attributter til <code>&lt;fds-help-text&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Hvis ikke angivet, genereres der automatisk et id.</td>
+      </tr>
+      <tr>
+        <td>hidden</td>
+        <td>Styrer synligheden af hjælpeteksten.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Events fra <code>&lt;fds-help-text&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>help-text-callback</td>
+        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <h3>Obligatoriske og frivillige inputfelter</h3>
@@ -3168,6 +3264,9 @@ form_limit.charactersLeft();</code></pre></figure>
 
 <h3>Karakterbegrænsning</h3>
 
+<p><code>&lt;fds-charcter-limit&gt;</code> viser feedback i realtid om, hvor mange tegn en bruger har tilbage, eller hvor mange tegn en bruger har overskredet den valgte grænse.
+Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til skærmlæsere og integrerer med <code>&lt;fds-input-wrapper&gt;</code> for at sikre tilgængelig og ensartet tegntællingsadfærd på tværs af designsystemet.</p>
+
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
         <button class="tab-button" role="tab" aria-controls="example-input-limit-tabpanel1" aria-selected="true" id="example-input-limit-tab1"><span>Eksempel</span></button>
@@ -3206,9 +3305,9 @@ form_limit.charactersLeft();</code></pre></figure>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inp54a9b8c6&quot;</span>&gt;</span>Inputfelt med karakterbegrænsning<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-character-limit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inp54a9b8c6&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;lim764b09&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-character-limit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inp54a9b8c6&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;lim6b3dbd41&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-character-limit</span> <span class="hljs-attr">limit</span>=<span class="hljs-string">&quot;40&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;lim764b09&quot;</span>&gt;</span>Du kan indtaste op til 40 tegn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;lim6b3dbd41&quot;</span>&gt;</span>Du kan indtaste op til 40 tegn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;polite&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visual-message&quot;</span>&gt;</span>Du har 40 tegn tilbage<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-character-limit</span>&gt;</span>
@@ -3220,6 +3319,68 @@ form_limit.charactersLeft();</code></pre></figure>
 </div>
 <div class="mt-3 mb-8">
     <a href="/eksempel/fds-input-wrapper-character-limit/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h4>Attributter til <code>&lt;fds-character-limit&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>limit</td>
+        <td>	Sæt max antal tegn på inputfeltet.</td>
+      </tr>
+      <tr>
+        <td>one-character-remaining-text</td>
+        <td>Sæt en anden tekst, når der er 1 tegn tilbage. Default er "Du har {value} tegn tilbage".</td>
+      </tr>
+      <tr>
+        <td>several-characters-remaining-text</td>
+        <td>Sæt en anden tekst, når der er flere end 1 tegn tilbage. Default er "Du har {value} tegn tilbage".</td>
+      </tr>
+      <tr>
+        <td>one-character-too-many-text</td>
+        <td>Sæt en anden tekst, når grænsen er overskredet med 1 tegn. Default er "Du har {value} tegn for meget".</td>
+      </tr>
+      <tr>
+        <td>several-characters-too-many-text</td>
+        <td>Sæt en anden tekst, når grænsen er overskredet med flere tegn. Default er "Du har {value} tegn for meget".</td>
+      </tr>
+      <tr>
+        <td>max-limit-text</td>
+        <td>Sæt en anden tekst for max. antal tegn, der kan indtastes. Default er "Du kan indtaste op til {value} tegn".</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Events fra <code>&lt;fds-character-limit&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>character-limit-connection</td>
+        <td>Afsendes, når fds-character-limit er forbundet til DOM'en og har fundet sin nærmeste forælder.</td>
+      </tr>
+      <tr>
+        <td>character-limit-callback</td>
+        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <h3>Feltbredde</h3>

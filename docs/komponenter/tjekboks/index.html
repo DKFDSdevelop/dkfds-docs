@@ -2417,6 +2417,8 @@
 
 <h3>Fejl</h3>
 
+<p><code>&lt;fds-error-message&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input-wrapper&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code> og <code>&lt;fds-radio-button-group&gt;</code>. Dette custom-element tilføjer automatisk et fejlikon og strukturerer indholdet, inkluderer korrekte ARIA-attributter og skjulte tilstande samt underretter forælderkomponenten om ændringer i synlighed.</p>
+
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
         <button class="tab-button" role="tab" aria-controls="example-input-error-tabpanel1" aria-selected="true" id="example-input-error-tab1"><span>Eksempel</span></button>
@@ -2495,7 +2497,59 @@
     <a href="/eksempel/fds-checkbox-error/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
 
+<h4>Attributter til <code>&lt;fds-error-message&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Hvis ikke angivet, genereres der automatisk et id.</td>
+      </tr>
+      <tr>
+        <td>icon-text</td>
+        <td>Sæt en anden tekst på fejlikonet.</td>
+      </tr>
+      <tr>
+        <td>hidden</td>
+        <td>Styrer synligheden af fejlmeddelelsen.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Events fra <code>&lt;fds-error-message&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>error-message-visibility-changed</td>
+        <td>Afsender en hændelse til forælderkomponenter, når synligheden ændres.</td>
+      </tr>
+      <tr>
+        <td>error-message-callback</td>
+        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <h3>Hjælpetekst</h3>
+
+<p><code>&lt;fds-help-text&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input-wrapper&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code>, <code>&lt;fds-radio-button&gt;</code> og <code>&lt;fds-radio-button-group&gt;</code>.</p>
 
 <h4>Hjælpetekst til enkelte tjekbokse</h4>
 
@@ -2642,6 +2696,48 @@
 </div>
 <div class="mt-3 mb-8">
     <a href="/eksempel/fds-checkbox-group-help-text/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h4>Attributter til <code>&lt;fds-help-text&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Hvis ikke angivet, genereres der automatisk et id.</td>
+      </tr>
+      <tr>
+        <td>hidden</td>
+        <td>Styrer synligheden af hjælpeteksten.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Events fra <code>&lt;fds-help-text&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>help-text-callback</td>
+        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <h3>Obligatoriske og frivillige tjekbokse</h3>
