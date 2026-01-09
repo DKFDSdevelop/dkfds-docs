@@ -1,0 +1,61 @@
+<h4>Attributter til <code>&lt;fds-character-limit&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>limit</td>
+        <td>	Sæt max antal tegn på inputfeltet.</td>
+      </tr>
+      <tr>
+        <td>one-character-remaining-text</td>
+        <td>Sæt en anden tekst, når der er 1 tegn tilbage. Default er "Du har {value} tegn tilbage".</td>
+      </tr>
+      <tr>
+        <td>several-characters-remaining-text</td>
+        <td>Sæt en anden tekst, når der er flere end 1 tegn tilbage. Default er "Du har {value} tegn tilbage".</td>
+      </tr>
+      <tr>
+        <td>one-character-too-many-text</td>
+        <td>Sæt en anden tekst, når grænsen er overskredet med 1 tegn. Default er "Du har {value} tegn for meget".</td>
+      </tr>
+      <tr>
+        <td>several-characters-too-many-text</td>
+        <td>Sæt en anden tekst, når grænsen er overskredet med flere tegn. Default er "Du har {value} tegn for meget".</td>
+      </tr>
+      <tr>
+        <td>max-limit-text</td>
+        <td>Sæt en anden tekst for max. antal tegn, der kan indtastes. Default er "Du kan indtaste op til {value} tegn".</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Events fra <code>&lt;fds-character-limit&gt;</code></h4>
+
+<div class="table--responsive-scroll">
+  <table class="table table--responsive-headers">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>character-limit-connection</td>
+        <td>Afsendes, når fds-character-limit er forbundet til DOM'en og har fundet sin nærmeste forælder.</td>
+      </tr>
+      <tr>
+        <td>character-limit-callback</td>
+        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
