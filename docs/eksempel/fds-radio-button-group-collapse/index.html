@@ -2,6 +2,7 @@
 <html lang="da">
 
 <head>
+    <meta name="robots" content="noindex">
     <!-- Basic Page Needs
 ================================================== -->
 <meta charset="utf-8">
@@ -10,14 +11,15 @@
 ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
+
 <meta name="robots" content="noindex">
 
 <!-- Title and meta description
 ================================================== -->
 
 
-<title>Testfil | test-fds-checkbox | Det Fælles Designsystem</title>
-<meta property="og:title" content="Testfil | test-fds-checkbox | Det Fælles Designsystem">
+<title>Eksempel på radioknapgruppe med skjult indhold | Det Fælles Designsystem</title>
+<meta property="og:title" content="Eksempel på radioknapgruppe med skjult indhold | Det Fælles Designsystem">
 
 
 
@@ -46,24 +48,25 @@
 <link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-SemiBold.woff2" as="font" crossorigin>
 <link rel="preload" href="/assets/fonts/IBMPlexSans/complete/woff2/IBMPlexSans-SemiBoldItalic.woff2" as="font" crossorigin>
 
-<link rel="preload" href="/assets/style/test_borger.css" as="style">
-<link rel="preload" href="/assets/style/test_virk.css" as="style">
-<link rel="preload" href="/assets/style/test_neutral.css" as="style">
-<link rel="preload" href="/assets/js/theme.js" as="script">
+<link rel="preload" href="/assets/style/styleguide_borgerdk.css?v=11.1.0" as="style">
+<link rel="preload" href="/assets/style/styleguide_virkdk.css?v=11.1.0" as="style">
+<link rel="preload" href="/assets/js/theme.js?v=11.1.0" as="script">
 
 <style>
-    body {
-      opacity: 0; /*hide page until theme is downloaded by js.*/
-    }
+  body {
+    opacity: 0; /*hide page until theme is downloaded by js.*/
+  }
 </style>
 
+<link type="text/css" rel="stylesheet" href="/assets/style/styleguide_display.css?v=11.1.0">
+
 <noscript>
-  <link type="text/css" rel="stylesheet" href="/assets/style/test_virk.css">
+  <link type="text/css" rel="stylesheet" href="/assets/style/styleguide_virkdk.css?v=11.1.0">
 </noscript>
 
 </head>
 
-<body class="layout-test-example">
+<body class="layout-show-example-new-page">
     <div class="hide-base-svg">
     <svg xmlns="http://www.w3.org/2000/svg">
         <symbol id="accessibility-new" viewBox="0 -960 960 960"><path d="M480-720q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720ZM360-80v-520q-60-5-122-15t-118-25l20-80q78 21 166 30.5t174 9.5q86 0 174-9.5T820-720l20 80q-56 15-118 25t-122 15v520h-80v-240h-80v240h-80Z"/></symbol>
@@ -219,341 +222,35 @@
         <symbol id="zoom-out" viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400ZM280-540v-80h200v80H280Z"/></symbol>
     </svg>
 </div>
-    <div class="test-header d-flex align-items-center">
-    <div class="container">
-        <button type="button" class="function-link" data-module="modal" data-target="test-warning" aria-haspopup="dialog"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#info"></use></svg>Denne side er kun til test</button>
-    </div>
-</div>
-<div class="fds-modal-container">
-    <div class="fds-modal" id="test-warning" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="test-warning-heading">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="test-warning-heading">
-                    Denne side er kun til test
-                </h2>
-                <button class="modal-close function-link"
-                    data-modal-close><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#close"></use></svg>Luk</button>
-            </div>
-            <div class="modal-body">
-                <p>Denne side er opsat til teknisk test. Vær opmærksom på, at siden ikke skal ses som eksempel på "best practice", og den bør derfor ikke anvendes som inspiration eller skabelon til andre løsninger. Vi henviser i stedet til <a href="/eksempler/">eksempelsiderne</a> og <a href="/komponenter/">komponenterne</a>.</p>
-            </div>
-            <div class="modal-footer">
-                <button class="button button-secondary" data-modal-close>
-                    Luk
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+    <header>
+        <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
+    </header>
     <main class="container page-container" id="main-content">
+        <fds-radio-button-group group-label="Radioknapgruppe med skjult indhold">
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v1" id="radio-button-collapse1" />
+        <label>Vis indhold 1</label>
+        <div class="radio-content">
+            <fds-input-wrapper>
+                <label class="form-label">Skjult inputfelt</label>
+                <input type="text" name="input-wrapper-collapse" />
+            </fds-input-wrapper>
+        </div>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v2" id="radio-button-collapse2" />
+        <label>Vis indhold 2</label>
+        <div class="radio-content">
+            <span>Skjult tekst</span>
+        </div>
+    </fds-radio-button>
+</fds-radio-button-group>
 
-    <div class="row mb-905">
-        <div class="col-12">
-            <h1 class="h2 mt-0">Tjekbokse</h1>
-        </div>
-    </div>
+    </main>
+    <script src="/assets/js/theme.js?v=11.1.0"></script>
+<script src="/assets/js/styleguide.js?v=11.1.0"></script>
 
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Simpel tjekboks</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox>
-                <input type="checkbox" name="checkbox-example" />
-                <label>Tjekbox med label</label>
-            </fds-checkbox>
-        </div>
-    </div>
 
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Hjælpetekst</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox-group group-label="Tjekboksgruppe">
-                <fds-help-text>Dette er en hjælpetekst for gruppen</fds-help-text>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="v1" />
-                    <label>Første tjekboks</label>
-                    <fds-help-text>Dette er en hjælpetekst første tjekboks</fds-help-text>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example2" value="v2" />
-                    <fds-help-text>Dette er en hjælpetekst anden tjekboks</fds-help-text>
-                    <label>Anden tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <fds-help-text>Dette er en hjælpetekst tredje tjekboks</fds-help-text>
-                    <input type="checkbox" name="checkbox-example3" value="v3" />
-                    <label>Tredje tjekboks</label>
-                </fds-checkbox>
-            </fds-checkbox-group>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Deaktiveret tjekboks</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox>
-                <input type="checkbox" name="checkbox-example" disabled="" />
-                <label>Deaktiveret tjekbox med label</label>
-            </fds-checkbox>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Deaktiveret tjekboksgruppe</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox-group group-disabled="">
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="v1" />
-                    <label>Første tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example2" value="v2" />
-                    <label>Anden tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example3" value="v3" />
-                    <label>Tredje tjekboks</label>
-                </fds-checkbox>
-            </fds-checkbox-group>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Fejl på gruppen</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox-group group-label="Tjekboksgruppe">
-                <fds-error-message>Dette er en fejl</fds-error-message>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="v1" />
-                    <label>Første tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example2" value="v2" />
-                    <label>Anden tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example3" value="v3" />
-                    <label>Tredje tjekboks</label>
-                </fds-checkbox>
-            </fds-checkbox-group>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Fejl på en tjekboks</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox>
-                <input type="checkbox" name="checkbox-example" />
-                <label>Tjekbox med label</label>
-                <fds-error-message>Dette er en fejl</fds-error-message>
-            </fds-checkbox>
-        </div>
-        <div class="col-12 mt-6">
-            <fds-checkbox>
-                <fds-error-message>Dette er en fejl</fds-error-message>
-                <input type="checkbox" name="checkbox-example" />
-                <label>Tjekbox med label</label>
-            </fds-checkbox>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Tjekbox med skjult indhold</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox>
-                <input type="checkbox" />
-                <label>Vis skjult indhold</label>
-                <div class="checkbox-content">
-                    <p>This section is shown when checked.</p>
-                </div>
-            </fds-checkbox>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Tjekboksgruppe med skjult indhold</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox-group group-label="Group label">
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="v3" />
-                    <label>Tjekboks med skjult indhold</label>
-                    <div class="checkbox-content">
-                        <fds-checkbox>
-                            <input type="checkbox" name="checkbox-example" value="v1" />
-                            <label>Checkbox 1</label>
-                        </fds-checkbox>
-                    </div>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" />
-                    <label>Vis indhold</label>
-                    <div class="checkbox-content">
-                        <fds-input-wrapper>
-                            <label class="form-label">Inputfield med error</label>
-                            <input type="text" name="input-wrapper-help-text" class="form-input" />
-                            <fds-error-message>Error message</fds-error-message>
-                        </fds-input-wrapper>
-                    </div>
-                </fds-checkbox>
-            </fds-checkbox-group>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Tjekbokse med tooltip</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox>
-                <input type="checkbox" name="checkbox-example" value="v3" />
-                <label>Indhold</label>
-                <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip" data-tooltip-id="radiogroup-tooltip" data-position="above" data-trigger="click"><button class="button button-unstyled tooltip-target" type="button" aria-label="Læs mere">
-                        <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true">
-                            <use href="#help"></use>
-                        </svg></button>
-                </span>
-            </fds-checkbox>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Tjekboks inde i tjekboks inde i tjekboks</h2>
-        </div>
-        <div class="col-12">
-            <fds-checkbox>
-                <input type="checkbox" />
-                <label>Vis indhold</label>
-                <div class="checkbox-content">
-                    <fds-checkbox>
-                        <input type="checkbox" />
-                        <label>indhold 1</label>
-                        <div class="checkbox-content">
-                            <fds-checkbox>
-                                <input type="checkbox" />
-                                <label>indhold 2</label>
-                                <div class="checkbox-content">
-                                    <fds-checkbox>
-                                        <input type="checkbox" />
-                                        <label>indhold 3</label>
-                                        <fds-error-message>Error message</fds-error-message>
-                                    </fds-checkbox>
-                                </div>
-                            </fds-checkbox>
-                        </div>
-                    </fds-checkbox>
-                </div>
-            </fds-checkbox>
-        </div>
-    </div>
-
-</main>
-
-    <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/styleguide.js"></script>
-    <aside class="test-footer d-flex align-items-center">
-    <div class="container">
-        <div class="test-footer-content d-flex align-items-start align-items-sm-center flex-column flex-sm-row">
-            <div class="d-flex flex-wrap mr-8">
-                <button class="function-link mr-4" id="changeDemoTheme"><svg class="icon-svg" focusable="false" aria-hidden="true">
-                    <use href="#palette"></use></svg><span id="changeDemoThemeText" class="sr-only"></span><span id="themeTextTestVersion" class="d-none d-sm-inline"></span>
-                </button>
-                <button id="theme-neutral" class="function-link mr-4"><span>Neutral</span>
-                </button>
-                <button id="theme-borger" class="function-link mr-4"><span>Borger</span>
-                </button>
-                <button id="theme-virk" class="function-link mr-8"><span>Virk</span>
-                </button>
-                <button id="font-size-200" class="function-link">200% tekststørrelse</button>
-            </div>
-            <div>
-                
-                <a class="function-link mr-4" href="/eksempel/test-fds-character-limit/">Forrige</a>
-                
-                
-                <a class="function-link" href="/eksempel/test-html-elements/">Næste</a>
-                
-            </div>
-        </div>
-    </div>
-</aside>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let createLink = function(style) {
-            var lnk = document.createElement('link');
-            lnk.type='text/css';
-            lnk.rel='stylesheet';
-            switch (style) {
-                case "neutral":
-                    lnk.href= '/assets/style/test_neutral.css';
-                    break;
-                case "borger":
-                    lnk.href= '/assets/style/test_borger.css';
-                    break;
-                case "virk":
-                    lnk.href= '/assets/style/test_virk.css';
-                    break;
-                case 'normalization':
-                    lnk.href= '/assets/style/test_normalization.css';
-                    break;
-            }
-            document.getElementsByTagName('head')[0].appendChild(lnk);
-        }
-
-        let setNeutralStylesheet = function() {
-            document.querySelectorAll('head link[rel="stylesheet"]')[0].href = '/assets/style/test_neutral.css';
-        };
-
-        let setBorgerStylesheet = function() {
-            document.querySelectorAll('head link[rel="stylesheet"]')[0].href = '/assets/style/test_borger.css';
-        };
-
-        let setVirkStylesheet = function() {
-            document.querySelectorAll('head link[rel="stylesheet"]')[0].href = '/assets/style/test_virk.css';
-        };
-
-        document.getElementById('theme-neutral').addEventListener('click', setNeutralStylesheet);
-        document.getElementById('theme-borger').addEventListener('click', setBorgerStylesheet);
-        document.getElementById('theme-virk').addEventListener('click', setVirkStylesheet);
-
-        let normalize = false;
-        if (document.querySelectorAll('main h1').length > 0) {
-            if (document.querySelector('main h1').textContent == 'HTML-elementer') {
-                normalize = true;
-                createLink("normalization");
-            }
-        }
-        if (document.cookie.includes('theme=borger') && !normalize) {
-            createLink("borger");
-            document.getElementById('themeTextTestVersion').textContent = "Cookie: Borger";
-        }
-        else if (document.cookie.includes('theme=virk') && !normalize) {
-            createLink("virk");
-            document.getElementById('themeTextTestVersion').textContent = "Cookie: Virk";
-        }
-
-        document.getElementById('font-size-200').addEventListener('click', function () {
-            document.querySelector('html').style.fontSize = 'calc(62.5% * 2)';
-        });
-    });
-</script>
-    <script src="/assets/js/test.js"></script>
 </body>
 
 </html>
