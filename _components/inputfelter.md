@@ -332,7 +332,11 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Hjælpetekst
 
+{% include code-examples/fds-helptext-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
+
+{% include code-examples/fds-help-text-tables.html%}
 
 ### Obligatoriske og frivillige inputfelter
 
