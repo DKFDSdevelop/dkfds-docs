@@ -356,7 +356,11 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Karakterbegrænsning
 
+{% include code-examples/fds-character-limit-intro-text.html%}
+
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
+
+{% include code-examples/fds-character-limit-tables.html%}
 
 ### Feltbredde
 
