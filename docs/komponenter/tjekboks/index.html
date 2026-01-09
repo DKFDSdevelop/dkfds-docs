@@ -2405,7 +2405,7 @@
             </div>
             <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chka09935bb&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;checkbox-input-id&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tjekbox med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
             </figure>
@@ -3065,11 +3065,28 @@
   <tbody>
     <tr>
       <td>group-label</td>
-      <td>Brug attributten “group-label” på fds-checkbox-group til at sætte en label for hele gruppen.</td>
+      <td>Brug attributten “group-label” til at sætte en label for hele gruppen.</td>
     </tr>
     <tr>
       <td>group-disabled</td>
-      <td>Deaktiverer tjekbox. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.</td>
+      <td>Deaktiverer tjekbokskgruppen. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>handleIdReferences()</td>
+      <td>Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.</td>
     </tr>
   </tbody>
 </table>

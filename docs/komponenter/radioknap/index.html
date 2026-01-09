@@ -1652,6 +1652,9 @@
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
+        </li><li>
+            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom element</span></a>
+            <span id="custom" hidden=""></span>
         </li></ul>
 </nav>
 <div id="retningslinjer" hidden=""></div>
@@ -1711,6 +1714,10 @@
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
         <li class="anchorlink-code"><a href="#hjaelpetekst-kode">Hjælpetekst</a></li>
         <li class="anchorlink-code"><a href="#skjult-indhold-collapse-kode">Skjult indhold (Collapse)</a></li>
+        <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
+        <li class="anchorlink-custom"><a href="#eksempler-custom">Eksempler</a></li>
+        <li class="anchorlink-custom"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-custom"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2378,6 +2385,652 @@
   <li><code>id="id-of-target-to-collapse"</code></li>
   <li><code>aria-hidden="false"</code> hvis indholdet vises og <code>aria-hidden="true"</code> hvis indholdet skjules</li>
 </ul>
+
+
+                        </div>
+                        <div id="custom-section">
+                            
+
+<h2 id="om-custom-elements-custom">Om custom elements</h2>
+
+<p>Radioknap har to custom elementer tilknyttet: fds-radio-button og fds-radio-button-group. Bemærk venligst, at fds-radio-button ikke er beregnet til at blive brugt alene, men kun inden for en gruppe.</p>
+
+<p>Brug attributten “group-label” på fds-radio-button-group til at sætte en label for hele gruppen.</p>
+
+<h3>HTML-muligheder</h3>
+
+<p>Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.</p>
+
+<p>Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. <code>&lt;fds-radio-button-group&gt;</code> med <code>&lt;div class="fds-radio-button-group"&gt;</code>. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.</p>
+
+<h2 id="eksempler-custom">Eksempler</h2>
+
+<h3>Radioknapgruppe med label lavet med custom element</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel1" aria-selected="true" id="example-1-acc-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel2" aria-selected="false" id="example-1-acc-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel3" aria-selected="false" id="example-1-acc-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-1-acc-tabpanel1" aria-labelledby="example-1-acc-tab1">
+        <fds-radio-button-group group-label="Simpel radioknapgruppe">
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v1" id="radio-button1-example" />
+        <label>Radioknap 1</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v2" id="radio-button2-example" />
+        <label>Radioknap 2</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v3" id="radio-button3-example" />
+        <label>Radioknap 3</label>
+    </fds-radio-button>
+</fds-radio-button-group>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-1-acc-tabpanel2" aria-labelledby="example-1-acc-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Simpel radioknapgruppe&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button1-example&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button2-example&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button3-example&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-1-acc-tabpanel3" aria-labelledby="example-1-acc-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Simpel radioknapgruppe&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;leg1206ff36&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;leg1206ff36&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Simpel radioknapgruppe<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button1-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button1-example&quot;</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button2-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button2-example&quot;</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button3-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button3-example&quot;</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-radio-button-group-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<p>Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:</p>
+
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Simpel radioknapgruppe&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<h2 id="varianter-custom">Varianter</h2>
+
+<h3>Fejl</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-error-tabpanel1" aria-selected="true" id="example-radio-button-group-error-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-error-tabpanel2" aria-selected="false" id="example-radio-button-group-error-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-error-tabpanel3" aria-selected="false" id="example-radio-button-group-error-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-radio-button-group-error-tabpanel1" aria-labelledby="example-radio-button-group-error-tab1">
+        <fds-radio-button-group group-label="Radioknapgruppe med fejl">
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v1" id="radio-button-fejl1" />
+        <label>Radioknap 1</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v2" id="radio-button-fejl2" />
+        <label>Radioknap 2</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v3" id="radio-button-fejl3" />
+        <label>Radioknap 3</label>
+    </fds-radio-button>
+    <fds-error-message>Fejl besked</fds-error-message>
+</fds-radio-button-group>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-error-tabpanel2" aria-labelledby="example-radio-button-group-error-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Radioknapgruppe med fejl&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-fejl1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-fejl2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-fejl3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span>&gt;</span>Fejl besked<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-error-tabpanel3" aria-labelledby="example-radio-button-group-error-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Radioknapgruppe med fejl&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;leg12eeaeaa&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;errora99fcced&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;leg12eeaeaa&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Radioknapgruppe med fejl<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-fejl1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-fejl1&quot;</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-fejl2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-fejl2&quot;</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-fejl3&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-fejl3&quot;</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;errora99fcced&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg alert-icon&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Fejl besked<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-radio-button-group-error/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Hjælpetekst</h3>
+
+<h4>Hjælpetekst til enkelte radioknap</h4>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-helptext-tabpanel1" aria-selected="true" id="example-radio-button-helptext-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-helptext-tabpanel2" aria-selected="false" id="example-radio-button-helptext-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-helptext-tabpanel3" aria-selected="false" id="example-radio-button-helptext-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-radio-button-helptext-tabpanel1" aria-labelledby="example-radio-button-helptext-tab1">
+        <fds-radio-button-group group-label="Radioknapgruppe label">
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v1" id="radio-button-example1" />
+        <label>Radioknap 1</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v2" id="radio-button-example2" />
+        <label>Radioknap 2</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v3" id="radio-button-example3" />
+        <label>Radioknap 3</label>
+        <fds-help-text>Hjælpetekst til enkelte radioknap</fds-help-text>
+    </fds-radio-button>
+</fds-radio-button-group>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-helptext-tabpanel2" aria-labelledby="example-radio-button-helptext-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Radioknapgruppe label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-example1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-example2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-example3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span>&gt;</span>Hjælpetekst til enkelte radioknap<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-helptext-tabpanel3" aria-labelledby="example-radio-button-helptext-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Radioknapgruppe label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;leg49b1781&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;leg49b1781&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Radioknapgruppe label<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-example1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-example1&quot;</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-example2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-example2&quot;</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-example3&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;help7391fee6&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-example3&quot;</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help7391fee6&quot;</span>&gt;</span>Hjælpetekst til enkelte radioknap<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-radio-button-helptext/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h4>Radioknapgruppe med hjælpetekst</h4>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-helptext-tabpanel1" aria-selected="true" id="example-radio-button-group-helptext-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-helptext-tabpanel2" aria-selected="false" id="example-radio-button-group-helptext-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-helptext-tabpanel3" aria-selected="false" id="example-radio-button-group-helptext-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-radio-button-group-helptext-tabpanel1" aria-labelledby="example-radio-button-group-helptext-tab1">
+        <fds-radio-button-group group-label="Simpel radioknapgruppe">
+    <fds-help-text>Hjælpetekst til radioknapgruppen</fds-help-text>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v1" id="radio-button1-helptext" />
+        <label>Radioknap 1</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v2" id="radio-button2-helptext" />
+        <label>Radioknap 2</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v3" id="radio-button3-helptext" />
+        <label>Radioknap 3</label>
+    </fds-radio-button>
+</fds-radio-button-group>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-helptext-tabpanel2" aria-labelledby="example-radio-button-group-helptext-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Simpel radioknapgruppe&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span>&gt;</span>Hjælpetekst til radioknapgruppen<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button1-helptext&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button2-helptext&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button3-helptext&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-helptext-tabpanel3" aria-labelledby="example-radio-button-group-helptext-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Simpel radioknapgruppe&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;leg4d1973bf&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;help1e33948a&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;leg4d1973bf&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Simpel radioknapgruppe<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help1e33948a&quot;</span>&gt;</span>Hjælpetekst til radioknapgruppen<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button1-helptext&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button1-helptext&quot;</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button2-helptext&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button2-helptext&quot;</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button3-helptext&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button3-helptext&quot;</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-radio-button-group-helptext/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Skjult indhold (Collapse)</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-collapse-tabpanel1" aria-selected="true" id="example-radio-button-group-collapse-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-collapse-tabpanel2" aria-selected="false" id="example-radio-button-group-collapse-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-collapse-tabpanel3" aria-selected="false" id="example-radio-button-group-collapse-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-radio-button-group-collapse-tabpanel1" aria-labelledby="example-radio-button-group-collapse-tab1">
+        <fds-radio-button-group group-label="Radioknapgruppe med skjult indhold">
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v1" id="radio-button-collapse1" />
+        <label>Vis indhold 1</label>
+        <div class="radio-content">
+            <fds-input-wrapper>
+                <label class="form-label">Skjult inputfelt</label>
+                <input type="text" name="input-wrapper-collapse" />
+            </fds-input-wrapper>
+        </div>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v2" id="radio-button-collapse2" />
+        <label>Vis indhold 2</label>
+        <div class="radio-content">
+            <span>Skjult tekst</span>
+        </div>
+    </fds-radio-button>
+</fds-radio-button-group>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-collapse-tabpanel2" aria-labelledby="example-radio-button-group-collapse-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Radioknapgruppe med skjult indhold&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-collapse1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Vis indhold 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;radio-content&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Skjult inputfelt<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-collapse&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-collapse2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Vis indhold 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;radio-content&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Skjult tekst<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-collapse-tabpanel3" aria-labelledby="example-radio-button-group-collapse-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Radioknapgruppe med skjult indhold&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;leg79134a63&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;leg79134a63&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Radioknapgruppe med skjult indhold<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-collapse1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span> <span class="hljs-attr">data-aria-controls</span>=<span class="hljs-string">&quot;expd2581f6&quot;</span> <span class="hljs-attr">data-aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-collapse1&quot;</span>&gt;</span>Vis indhold 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;radio-content collapsed&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;expd2581f6&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inpfc011a54&quot;</span>&gt;</span>Skjult inputfelt<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-collapse&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inpfc011a54&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-collapse2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span> <span class="hljs-attr">data-aria-controls</span>=<span class="hljs-string">&quot;expaeca348b&quot;</span> <span class="hljs-attr">data-aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-collapse2&quot;</span>&gt;</span>Vis indhold 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;radio-content collapsed&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;expaeca348b&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Skjult tekst<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-radio-button-group-collapse/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h4>Deaktiveret radioknapgruppe</h4>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-disabled-tabpanel1" aria-selected="true" id="example-radio-button-group-disabled-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-disabled-tabpanel2" aria-selected="false" id="example-radio-button-group-disabled-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-radio-button-group-disabled-tabpanel3" aria-selected="false" id="example-radio-button-group-disabled-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-radio-button-group-disabled-tabpanel1" aria-labelledby="example-radio-button-group-disabled-tab1">
+        <fds-radio-button-group group-label="Deactivated radioknapgruppe" group-disabled="">
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v1" id="radio-button-disabled1" />
+        <label>Radioknap 1</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v2" id="radio-button-disabled2" />
+        <label>Radioknap 2</label>
+    </fds-radio-button>
+    <fds-radio-button>
+        <input type="radio" name="radio-example" value="v3" id="radio-button-disabled3" />
+        <label>Radioknap 3</label>
+    </fds-radio-button>
+</fds-radio-button-group>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-disabled-tabpanel2" aria-labelledby="example-radio-button-group-disabled-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Deactivated radioknapgruppe&quot;</span> <span class="hljs-attr">group-disabled</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-disabled1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-disabled2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-disabled3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-radio-button-group-disabled-tabpanel3" aria-labelledby="example-radio-button-group-disabled-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Deactivated radioknapgruppe&quot;</span> <span class="hljs-attr">group-disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;disabled&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;leg7eae329f&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;leg7eae329f&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Deactivated radioknapgruppe<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-disabled1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-disabled1&quot;</span>&gt;</span>Radioknap 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-disabled2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-disabled2&quot;</span>&gt;</span>Radioknap 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio-button-disabled3&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio-button-disabled3&quot;</span>&gt;</span>Radioknap 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-radio-button-group-disabled/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3>fds-radio-button-group</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>group-label</td>
+      <td>Brug attributten “group-label” på fds-checkbox-group til at sætte en label for hele gruppen.</td>
+    </tr>
+    <tr>
+      <td>group-disabled</td>
+      <td>Deaktiverer tjekbox. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>handleIdReferences()</td>
+      <td>Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.</td>
+    </tr>
+  </tbody>
+</table>
 
                         </div>
             </section>

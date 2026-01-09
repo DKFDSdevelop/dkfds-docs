@@ -32,6 +32,7 @@ var testfiles = [
     "test-fds-error-message",
     "test-fds-character-limit",
     "test-fds-checkbox",
+    "test-fds-radio-button",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
