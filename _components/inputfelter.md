@@ -324,19 +324,19 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Fejl
 
-{% include code-examples/fds-error-intro-text.html%}
+{% include custom-element-shared-text/fds-error-intro-text.html %}
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-error" tabId="tab-example-input-error" %}
 
-{% include code-examples/fds-error-tables.html%}
+{% include custom-element-shared-text/fds-error-tables.html %}
 
 ### Hjælpetekst
 
-{% include code-examples/fds-helptext-intro-text.html%}
+{% include custom-element-shared-text/fds-helptext-intro-text.html %}
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
 
-{% include code-examples/fds-help-text-tables.html%}
+{% include custom-element-shared-text/fds-help-text-tables.html %}
 
 ### Obligatoriske og frivillige inputfelter
 
@@ -356,11 +356,11 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ### Karakterbegrænsning
 
-{% include code-examples/fds-character-limit-intro-text.html%}
+{% include custom-element-shared-text/fds-character-limit-intro-text.html %}
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
 
-{% include code-examples/fds-character-limit-tables.html%}
+{% include custom-element-shared-text/fds-character-limit-tables.html %}
 
 ### Feltbredde
 
@@ -377,19 +377,19 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 ### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                                                          |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| input-indicator | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.                              |
-| input-readonly  | Gør feltet readonly. Ved anden værdi end `false` tilføjes readonly og klassen readonly.                                                              |
-| input-disabled  | Deaktiverer inputfeltet. Hvis værdien er sat til andet end `false`, tilføjes `disabled`-attributten til inputfeltet og klassen `disabled` til label. |
-| input-prefix    | Viser et visuelt præfix-element (tekst før inputfeltet).                                                                                             |
-| input-suffix    | Viser et visuelt suffiks-element (tekst efter inputfeltet).                                                                                          |
-| input-maxwidth  | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl).                |
+| Attribut        | Beskrivelse                                                                                                                           |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| input-indicator | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
+| input-readonly  | Gør feltet readonly. Sæt til en anden værdi end `false`.                                                                              |
+| input-disabled  | Deaktiverer inputfeltet. Sæt til en anden værdi end `false`.                                                                          |
+| input-prefix    | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
+| input-suffix    | Indsæt et suffiks-element (tekst efter inputfeltet).                                                                                  |
+| input-maxwidth  | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
 
 ### Funktioner
 
 {:.table .table--responsive-headers}
-| Funktion              | Beskrivelse                                                                                                     |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| updateIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.                                      |
-| setClasses()          | Sætter de nødvendige klasser på inputfelt og label.                                                             |
+| Funktion              | Beskrivelse                                                                     |
+|-----------------------|---------------------------------------------------------------------------------|
+| updateIdReferences()  | Sikrer korrekt kobling mellem label, input og øvrige elementer. Kald ved behov. |
+| setClasses()          | Sætter de nødvendige klasser på inputfelt og label. Kald ved behov.             |

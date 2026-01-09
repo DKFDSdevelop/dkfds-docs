@@ -150,7 +150,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include code/show-example-with-tabs.html example="fds-accordion-example" tabId="example-1-acc" %}
 
-### Accordion gruppe lavet med custom element
+### Accordiongruppe lavet med custom element
 
 {% include code/show-example-with-tabs.html example="fds-accordion-group-example" tabId="fds-accordion-group-example" %}
 

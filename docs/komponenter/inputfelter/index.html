@@ -3264,7 +3264,7 @@ form_limit.charactersLeft();</code></pre></figure>
 
 <h3>Karakterbegrænsning</h3>
 
-<p><code>&lt;fds-charcter-limit&gt;</code> viser feedback i realtid om, hvor mange tegn en bruger har tilbage, eller hvor mange tegn en bruger har overskredet den valgte grænse.
+<p><code>&lt;fds-character-limit&gt;</code> viser feedback i realtid om, hvor mange tegn en bruger har tilbage, eller hvor mange tegn en bruger har overskredet den valgte grænse.
 Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til skærmlæsere og integrerer med <code>&lt;fds-input-wrapper&gt;</code> for at sikre tilgængelig og ensartet tegntællingsadfærd på tværs af designsystemet.</p>
 
 <div class="tab-container mt-5">
@@ -3305,9 +3305,9 @@ Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til s
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inp54a9b8c6&quot;</span>&gt;</span>Inputfelt med karakterbegrænsning<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-character-limit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inp54a9b8c6&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;lim6b3dbd41&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-character-limit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inp54a9b8c6&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;lim40dcf43d&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-character-limit</span> <span class="hljs-attr">limit</span>=<span class="hljs-string">&quot;40&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;lim6b3dbd41&quot;</span>&gt;</span>Du kan indtaste op til 40 tegn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;lim40dcf43d&quot;</span>&gt;</span>Du kan indtaste op til 40 tegn<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;polite&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visual-message&quot;</span>&gt;</span>Du har 40 tegn tilbage<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-character-limit</span>&gt;</span>
@@ -3334,7 +3334,7 @@ Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til s
     <tbody>
       <tr>
         <td>limit</td>
-        <td>	Sæt max antal tegn på inputfeltet.</td>
+        <td>Sæt max antal tegn på inputfeltet.</td>
       </tr>
       <tr>
         <td>one-character-remaining-text</td>
@@ -3613,19 +3613,19 @@ Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til s
     </tr>
     <tr>
       <td>input-readonly</td>
-      <td>Gør feltet readonly. Ved anden værdi end <code>false</code> tilføjes readonly og klassen readonly.</td>
+      <td>Gør feltet readonly. Sæt til en anden værdi end <code>false</code>.</td>
     </tr>
     <tr>
       <td>input-disabled</td>
-      <td>Deaktiverer inputfeltet. Hvis værdien er sat til andet end <code>false</code>, tilføjes <code>disabled</code>-attributten til inputfeltet og klassen <code>disabled</code> til label.</td>
+      <td>Deaktiverer inputfeltet. Sæt til en anden værdi end <code>false</code>.</td>
     </tr>
     <tr>
       <td>input-prefix</td>
-      <td>Viser et visuelt præfix-element (tekst før inputfeltet).</td>
+      <td>Indsæt et præfix-element (tekst før inputfeltet).</td>
     </tr>
     <tr>
       <td>input-suffix</td>
-      <td>Viser et visuelt suffiks-element (tekst efter inputfeltet).</td>
+      <td>Indsæt et suffiks-element (tekst efter inputfeltet).</td>
     </tr>
     <tr>
       <td>input-maxwidth</td>
@@ -3646,11 +3646,11 @@ Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til s
   <tbody>
     <tr>
       <td>updateIdReferences()</td>
-      <td>Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.</td>
+      <td>Sikrer korrekt kobling mellem label, input og øvrige elementer. Kald ved behov.</td>
     </tr>
     <tr>
       <td>setClasses()</td>
-      <td>Sætter de nødvendige klasser på inputfelt og label.</td>
+      <td>Sætter de nødvendige klasser på inputfelt og label. Kald ved behov.</td>
     </tr>
   </tbody>
 </table>
