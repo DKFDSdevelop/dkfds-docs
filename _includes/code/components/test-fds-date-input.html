@@ -1,0 +1,223 @@
+<main class="container page-container" id="main-content">
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Radioknap</h1>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Simpel datofelter med label</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-input label="Date input label">
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Datofelter med hjælpetekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-input label="Date input label">
+                <fds-help-text>Some help text</fds-help-text>
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Datofelter med fejl på hele elementet</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-input label="Date input label">
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+                <fds-error-message>Error message</fds-error-message>
+            </fds-date-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Datofelter med målrettet fejl</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-input label="Date input label">
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+                <fds-error-message targets="day, year">Error message for day and
+                    year</fds-error-message>
+            </fds-date-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Datofelter med tooltip</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-input label="Date input label">
+                <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip"
+                    data-tooltip-id="radiogrsdfoup-tooltip" data-position="above"
+                    data-trigger="click"><button class="button button-unstyled tooltip-target"
+                        type="button" aria-label="Læs mere">
+                        <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true">
+                            <use href="#help"></use>
+                        </svg></button>
+                </span>
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Deaktiveret datofelter</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-input label="Date input label" input-disabled>
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Darofelter med forskellige required states</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-input label="Required date input with default label" input-required
+                input-indicator>
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+
+            <fds-date-input label="Optional date input with default label" input-indicator>
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+
+            <fds-date-input label="Required date input with custom label" input-required
+                input-indicator="Custom required label">
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+
+            <fds-date-input label="Optional date input with custom label"
+                input-indicator="Custom optional label">
+                <div class="form-group form-group-day" data-attribute="day">
+                    <label>Dag</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-month" data-attribute="month">
+                    <label>Måned</label>
+                    <input type="number">
+                </div>
+                <div class="form-group form-group-year" data-attribute="year">
+                    <label>År</label>
+                    <input type="number">
+                </div>
+            </fds-date-input>
+        </div>
+    </div>
+
+</main>
