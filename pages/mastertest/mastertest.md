@@ -22,6 +22,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-character-limit" description="Karakterbegrænsning" %}
 {% include test/preview-test.html filename="test-fds-checkbox" description="Tjekbokse" %}
 {% include test/preview-test.html filename="test-fds-radio-button" description="Radioknap" %}
+{% include test/preview-test.html filename="test-fds-date-input" description="Datofelter" %}
 
 {:.h3}
 ## HTML-elementer
