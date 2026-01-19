@@ -1,0 +1,90 @@
+<main class="container page-container" id="main-content">
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Dropdowns / selects</h1>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Select uden indhold eller attributter</h2>
+        </div>
+        <div class="col-12">
+            <fds-select></fds-select>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Label og select</h2>
+        </div>
+        <div class="col-12">
+            <fds-select>
+                <label>Label</label>
+                <select name="dgfgfdgs">
+                    <option value="">Vælg region</option>
+                    <option value="option1">Mulighed 1</option>
+                    <option value="option2">Mulighed 2</option>
+                    <option value="option3">Mulighed 3</option>
+                </select>
+            </fds-select>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Label, select og fejl</h2>
+        </div>
+        <div class="col-12">
+            <fds-select>
+                <label>Label</label>
+                <select name="dgfgfdgs">
+                    <option value="">Vælg region</option>
+                    <option value="option1">Mulighed 1</option>
+                    <option value="option2">Mulighed 2</option>
+                    <option value="option3">Mulighed 3</option>
+                </select>
+                <fds-error-message>Dette er en fejl</fds-error-message>
+            </fds-select>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Label, select og 2 fejl</h2>
+        </div>
+        <div class="col-12">
+            <fds-select>
+                <label>Label</label>
+                <select name="dgfgfdgs">
+                    <option value="">Vælg region</option>
+                    <option value="option1">Mulighed 1</option>
+                    <option value="option2">Mulighed 2</option>
+                    <option value="option3">Mulighed 3</option>
+                </select>
+                <fds-error-message>Dette er en fejl</fds-error-message>
+                <fds-error-message>Dette er en anden fejl</fds-error-message>
+            </fds-select>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Label, select og hjælpetekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-select>
+                <label>Label</label>
+                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
+                <select name="dgfgfdgs">
+                    <option value="">Vælg region</option>
+                    <option value="option1">Mulighed 1</option>
+                    <option value="option2">Mulighed 2</option>
+                    <option value="option3">Mulighed 3</option>
+                </select>
+            </fds-select>
+        </div>
+    </div>
+
+</main>

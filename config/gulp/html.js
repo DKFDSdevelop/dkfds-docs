@@ -21,7 +21,7 @@ var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
 var buildFile = ['examples/testfiles/custom-elements/*.njk'];
 
-var activeBuild = buildAll;
+var activeBuild = buildFile;
 
 var testfiles = [
     "test-empty-page",
@@ -29,10 +29,12 @@ var testfiles = [
     "test-fds-accordion-group",
     "test-fds-help-text",
     "test-fds-input",
+    "test-fds-select",
     "test-fds-error-message",
     "test-fds-character-limit",
     "test-fds-checkbox",
     "test-fds-radio-button",
+    "test-fds-date-input",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
