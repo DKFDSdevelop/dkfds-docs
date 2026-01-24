@@ -11,14 +11,14 @@ title: Datofelter
 lead: Tre separate felter for dato, måned og år er den nemmeste måde for brugeren at indskrive en dato.
 description: Brug datofelter for datoer, der er velkendte for brugeren (fx fødselsdato).
 tags: 
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="date-input" title="Eksempel på datofelter" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Datofelter" code="Datofelter_Kode" %}
+{% include anchorlinks.html guidelines="Datofelter" code="Datofelter_Kode" custom="Datofelter_Custom" %}
 
 <!--split-->
 
@@ -81,3 +81,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-guidel
 Læs mere om korrekt brug af {% include links/component-guideline-link.html linktext="fejlmeddelelser" %} og {% include links/component-code-link.html linktext="fejlmeddelelser's implementering med datofelter." %}
 
 Når der vises en fejlmeddelelse, vis da også {% include links/component-code-link.html linktext="en fejlopsummering" %}.
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}

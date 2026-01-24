@@ -11,14 +11,14 @@ title: Dropdown
 lead: Dropdown lader brugeren vælge én blandt flere muligheder i en udfoldet liste.
 description: Dropdown kan bruges i tilfælde, hvor brugeren skal vælge mellem 5 og 15 værdier på en begrænset plads.
 tags:
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="select" title="Eksempel på dropdown" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Dropdown" code="Dropdown_Kode" %}
+{% include anchorlinks.html guidelines="Dropdown" code="Dropdown_Kode" custom="Dropdown_Custom" %}
 
 <!--split-->
 
@@ -92,3 +92,52 @@ Brug dropdown i begrænset omfang. Værdierne i en dropdown er ikke umiddelbart 
 ## Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-kode" %}}
 
 {% include code/syntax.html component="select-disabled" link=true copybutton=true guidelines="/komponenter/dropdown/#deaktiveret" %}
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-select>` med `<div class="fds-select">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-select" tabId="example-1-sel" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include custom-element-shared-text/fds-error-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-select-error" tabId="example-2-sel" %}
+
+{% include custom-element-shared-text/fds-error-tables.html %}
+
+### Hjælpetekst
+
+{% include custom-element-shared-text/fds-helptext-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-select-help" tabId="example-3-sel" %}
+
+{% include custom-element-shared-text/fds-help-text-tables.html %}
+
+### Obligatoriske og frivillige inputfelter
+
+{% include code/show-example-with-tabs.html example="fds-select-required" tabId="example-4-sel" %}
+
+### Deaktiveret
+
+{% include code/show-example-with-tabs.html example="fds-select-disabled" tabId="example-5-sel" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                      |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.          |

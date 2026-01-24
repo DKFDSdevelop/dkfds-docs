@@ -432,6 +432,9 @@ Datofelter_Kode:
 - h2: Installation
 - h2: Fejlmeddelelse
 
+Datofelter_Custom:
+- h2: Om custom elements
+
 Datovaelger_Kode:
 - h2: Installation
 - h2: Begræns mulige datoer
@@ -446,6 +449,12 @@ Detaljer_Kode:
 Dropdown_Kode:
 - h2: Installation
 - h2: Deaktiveret
+
+Dropdown_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Faneblade_Kode:
 - h2: Installation
