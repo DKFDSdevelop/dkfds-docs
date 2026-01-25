@@ -1,0 +1,46 @@
+<fds-date-input label="Indtast dato">
+    <fieldset aria-describedby="errore8d9ef0e">
+        <legend class="form-label">Indtast dato</legend>
+        <div class="date-group mt-3">
+            <div class="form-group form-group-day" data-attribute="day">
+                <label class="form-label" for="dat-day-450e93ab">Dag</label>
+                <input type="number" name="day" class="form-input" id="dat-day-450e93ab">
+            </div>
+            <div class="form-group form-group-month" data-attribute="month">
+                <label class="form-label" for="dat-month-bc1fc9e8">Måned</label>
+                <input type="number" name="month" class="form-input" id="dat-month-bc1fc9e8">
+            </div>
+            <div class="form-group form-group-year" data-attribute="year">
+                <label class="form-label" for="dat-year-4783fc19">År</label>
+                <input type="number" name="year" class="form-input" id="dat-year-4783fc19">
+            </div>
+        </div>
+        <fds-error-message id="errore8d9ef0e">
+            <svg class="icon-svg alert-icon" aria-label="Fejl" focusable="false"><use href="#error"></use></svg>
+            <span class="visible-message">Der er sket en general fejl</span>
+        </fds-error-message>
+    </fieldset>
+</fds-date-input>
+<fds-date-input label="Indtast dato">
+    <fieldset>
+        <legend class="form-label">Indtast dato</legend>
+        <div class="date-group mt-3">
+            <div class="form-group form-group-day" data-attribute="day">
+                <label class="form-label" for="dat-day-1ab610af">Dag</label>
+                <input type="number" name="day" class="form-input" id="dat-day-1ab610af" aria-describedby="errorcafee2aa" aria-invalid="true">
+            </div>
+            <div class="form-group form-group-month" data-attribute="month">
+                <label class="form-label" for="dat-month-2b9149d1">Måned</label>
+                <input type="number" name="month" class="form-input" id="dat-month-2b9149d1">
+            </div>
+            <div class="form-group form-group-year" data-attribute="year">
+                <label class="form-label" for="dat-year-5572ff30">År</label>
+                <input type="number" name="year" class="form-input" id="dat-year-5572ff30" aria-describedby="errorcafee2aa" aria-invalid="true">
+            </div>
+        </div>
+        <fds-error-message targets="day, year" id="errorcafee2aa">
+            <svg class="icon-svg alert-icon" aria-label="Fejl" focusable="false"><use href="#error"></use></svg>
+            <span class="visible-message">Fejl i dag og årstal</span>
+        </fds-error-message>
+    </fieldset>
+</fds-date-input>

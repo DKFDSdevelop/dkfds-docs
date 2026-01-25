@@ -85,3 +85,50 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 <!--split-->
 
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-date-input>` med `<div class="fds-date-input">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-date-input" tabId="example-1-dat" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include custom-element-shared-text/fds-error-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-date-input-error" tabId="example-2-dat" %}
+
+{% include custom-element-shared-text/fds-error-tables.html %}
+
+### Hjælpetekst
+
+{% include custom-element-shared-text/fds-helptext-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-date-input-help" tabId="example-3-dat" %}
+
+{% include custom-element-shared-text/fds-help-text-tables.html %}
+
+### Obligatoriske og frivillige inputfelter
+
+{% include code/show-example-with-tabs.html example="fds-date-input-required" tabId="example-4-dat" %}
+
+### Deaktiveret
+
+{% include code/show-example-with-tabs.html example="fds-date-input-disabled" tabId="example-5-dat" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                          |
+|----------------------|----------------------------------------------------------------------------------------------------------------------|
+| input-disabled  | Deaktiverer datofelterne. Sæt til en anden værdi end `false`.                                                             |
+| input-required  | Sætter alle datofelter til 'påkrævet'.                                                                                    |
+| input-indicator | Viser om datofelterne er obligatoriske eller frivillige. Indsæt en tekst i attributten for at overskrive default-teksten. |
