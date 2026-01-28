@@ -16,7 +16,7 @@ tabs: "Retningslinjer, kode"
 ---
 
 {% include tabs.html guidelines=true code=true %}
-
+ 
 {% include code/preview-image.html component="language-switcher" title="Eksempel på sprogvælger" classes="intro-example" %}
 
 {% include anchorlinks.html guidelines="Sprogvaelger" code="Sprogvaelger_Kode" %}
