@@ -26,6 +26,7 @@ global.document = window.document;
 global.window = window;
 global.customElements = dom.window.customElements;
 global.Event = window.Event;
+global.CustomEvent = window.CustomEvent;
 global.MutationObserver = window.MutationObserver;
 
 const DKFDS = require('dkfds');
