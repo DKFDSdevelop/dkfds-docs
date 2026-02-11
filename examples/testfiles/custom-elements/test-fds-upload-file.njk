@@ -1,0 +1,70 @@
+<main class="container page-container" id="main-content">
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Vedhæft fil / Darg and drop upload file</h1>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Med custom label</h2>
+        </div>
+        <div class="col-12">
+            <fds-upload-file upload-label="Some label"></fds-upload-file>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Med custom label og custom tekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-upload-file upload-label="Upload file" dropzone-prefix="Drag and drop files or" dropzone-link="click here" dropzone-suffix="some more text after the link if necessary"></fds-upload-file>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Med meget lang tekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-upload-file 
+                upload-label="Upload file"
+                dropzone-prefix="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum">
+            </fds-upload-file>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Med hjælp tekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-upload-file>
+                <fds-help-text>Only PDF files under 10MB</fds-help-text>
+            </fds-upload-file>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Deaktiveret vedhæft fil</h2>
+        </div>
+        <div class="col-12">
+            <fds-upload-file>
+                <fds-error-message>Please select at least one file</fds-error-message>
+            </fds-upload-file>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Deaktiveret vedhæft fil</h2>
+        </div>
+        <div class="col-12">
+            <fds-upload-file upload-disabled></fds-upload-file>
+        </div>
+    </div>
+
+</main>
