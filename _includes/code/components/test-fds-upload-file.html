@@ -17,12 +17,15 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Med custom label og custom tekst</h2>
+            <h2 class="h3 mt-0">Med custom label og custom tekster</h2>
         </div>
         <div class="col-12">
             <fds-upload-file upload-label="Upload file"
                 dropzone-prefix="Drag and drop files or" dropzone-link="click here"
-                dropzone-suffix="some more text after the link if necessary"></fds-upload-file>
+                dropzone-suffix="some more text after the link if necessary"
+                file-list-header="Uploaded files" file-list-more="Add more"
+                remove-text="Delete">
+            </fds-upload-file>
         </div>
     </div>
 
@@ -50,7 +53,7 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Deaktiveret vedhæft fil</h2>
+            <h2 class="h3 mt-0">Vedhæft fil med fejl</h2>
         </div>
         <div class="col-12">
             <fds-upload-file>
