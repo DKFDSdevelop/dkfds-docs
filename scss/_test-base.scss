@@ -6,19 +6,11 @@
 body.layout-test-example,
 body.layout-mastertest {
   margin-top: units(6, 'rem');
-  margin-bottom: units(9, 'rem');
+  margin-bottom: 10rem;
 
   .mobile-drawer {
     margin-top: units(6, 'rem');
     margin-bottom: units(9, 'rem');
-  }
-
-  @include media-breakpoint-up(sm) {
-    margin-bottom: units(6, 'rem');
-
-    .mobile-drawer {
-      margin-bottom: units(6, 'rem');
-    }
   }
 }
 
