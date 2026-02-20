@@ -57,8 +57,29 @@
         </div>
         <div class="col-12">
             <fds-upload-file>
+                <fds-error-message>The selected file is too big</fds-error-message>
+            </fds-upload-file>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Vedhæft fil med fejl på en enkelt fil</h2>
+        </div>
+        <div class="col-12">
+            <fds-upload-file id="file-error-test">
                 <fds-error-message>Please select at least one file</fds-error-message>
             </fds-upload-file>
+            <!-- Test buttons for specific file error -->
+            <div class="mt-3">
+                <button type="button" class="btn btn-primary addError-button">Add Error to
+                    First File</button>
+                <button type="button" class="btn btn-secondary removeError-button ml-2">Remove
+                    File Error</button>
+                <p class="mt-2 text-muted">
+                    <small>Upload some files first, then click "Add Error to First File" to see how errors look on individual files.</small>
+                </p>
+            </div>
         </div>
     </div>
 
@@ -72,3 +93,53 @@
     </div>
 
 </main>
+
+<script>
+    const uploadElement = document.querySelector('#file-error-test');
+    let currentFileError = null;
+    let generalError = null;
+    // Get reference to the existing general error message specifically within this upload element
+    generalError = uploadElement.querySelector('fds-error-message:not([targets])');
+    // Listen for file changes on the upload element
+    uploadElement.addEventListener('change', (event) => {
+        // Check if files were added and remove general error
+        const files = uploadElement.getFiles();
+        if (generalError && files.length > 0) {
+            uploadElement.removeError(generalError);
+            generalError = null;
+            console.log(
+                'General error "Please select at least one file" removed automatically'
+                );
+        }
+    });
+    const addButton = document.querySelector('.addError-button');
+    addButton.addEventListener('click', (event) => {
+        // Get the first file from the upload element
+        const files = uploadElement.getFiles();
+        if (files.length === 0) {
+            alert('Please upload some files first!');
+            return;
+        }
+        const firstFile = files[0];
+        const firstFileId = firstFile.id;
+        // Remove existing file-specific error if any
+        if (currentFileError) {
+            uploadElement.removeError(currentFileError);
+        }
+        // Add error to the first file
+        currentFileError = uploadElement.addError('This file is too large (max 10MB)',
+            firstFileId);
+        console.log('Error added to file:', firstFile.file.name, 'with ID:',
+            firstFileId);
+    });
+    const removeButton = document.querySelector('.removeError-button');
+    removeButton.addEventListener('click', (event) => {
+        if (currentFileError) {
+            uploadElement.removeError(currentFileError);
+            currentFileError = null;
+            console.log('File error removed');
+        } else {
+            console.log('No file error to remove');
+        }
+    });
+</script>
