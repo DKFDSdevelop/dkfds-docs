@@ -24,6 +24,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-checkbox" description="Tjekbokse" %}
 {% include test/preview-test.html filename="test-fds-radio-button" description="Radioknap" %}
 {% include test/preview-test.html filename="test-fds-date-input" description="Datofelter" %}
+{% include test/preview-test.html filename="test-fds-date-picker" description="Datovælger" %}
 
 {:.h3}
 ## HTML-elementer

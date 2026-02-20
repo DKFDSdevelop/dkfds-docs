@@ -1,0 +1,55 @@
+<main class="container page-container" id="main-content">
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Datovælger</h1>
+            <h2 class="h3">Funktioner</h2>
+            <ul>
+                <li><strong>Venstre:</strong> Gå til forrige dag</li>
+                <li><strong>Højre:</strong> Gå til næste dage</li>
+                <li><strong>Op:</strong> Gå til forrige uge</li>
+                <li><strong>Ned:</strong> Gå til næste uge</li>
+                <li><strong>Enter / Space / Klik:</strong> Vælg dato</li>
+                <li><strong>Page up:</strong> Gå til forrige måned</li>
+                <li><strong>Page down:</strong> Gå til næste måned</li>
+                <li><strong>Shift + Page up:</strong> Gå til forrige år</li>
+                <li><strong>Shift + Page down:</strong> Gå til næste år</li>
+                <li><strong>Home:</strong> Gå til ugens første dag</li>
+                <li><strong>End:</strong> Gå til ugens sidste dag</li>
+                <li><strong>Control + Home:</strong> Gå til månedens første dag</li>
+                <li><strong>Control + End:</strong> Gå til månedens sidste dag</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Datovælger</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-picker>
+                <label>Datovælger</label>
+                <input type="text" name="input-text">
+            </fds-date-picker>
+        </div>
+    </div>
+    
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Kun grid</h2>
+        </div>
+        <div class="col-12">
+            <fds-date-picker-grid aria-label="Datovælger"></fds-date-picker-grid>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker-grid aria-label="Datovælger" min-date="2026-02-03" max-date="2026-02-22"></fds-date-picker-grid>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker-grid aria-label="Datovælger" selected-date="1988-09-05"></fds-date-picker-grid>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker-grid aria-label="Datovælger" default-date="1988-09-05"></fds-date-picker-grid>
+        </div>
+    </div>
+
+</main>
