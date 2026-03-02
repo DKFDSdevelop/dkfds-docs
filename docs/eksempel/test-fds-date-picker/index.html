@@ -275,8 +275,57 @@
         </div>
         <div class="col-12">
             <fds-date-picker>
-                <label>Datovælger</label>
+                <label>Datovælger, der selv laver sit grid</label>
                 <input type="text" name="input-text" />
+            </fds-date-picker>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker>
+                <label>Datovælger, der allerede har et grid</label>
+                <input type="text" name="input-text" />
+                <fds-date-picker-grid></fds-date-picker-grid>
+            </fds-date-picker>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker>
+                <label>Datovælger med defaultdato</label>
+                <input type="text" name="input-text" />
+                <fds-date-picker-grid default-date="1988-09-05"></fds-date-picker-grid>
+            </fds-date-picker>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker>
+                <label>Datovælger med valgt dato</label>
+                <input type="text" name="input-text" />
+                <fds-date-picker-grid selected-date="1988-09-05" min-date="1900-01-01" max-date="2100-12-31"></fds-date-picker-grid>
+            </fds-date-picker>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker format="DD-MM-YYYY">
+                <label>Datovælger med nyt format</label>
+                <fds-help-text>Format sat til dd-mm-yyyy</fds-help-text>
+                <input type="text" name="input-text" />
+            </fds-date-picker>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker>
+                <label>Datovælger fra år 1 til år 10</label>
+                <input type="text" name="input-text" />
+                <fds-date-picker-grid min-date="0001-01-01" max-date="0010-12-31"></fds-date-picker-grid>
+            </fds-date-picker>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker>
+                <label>Datovælger fra år 1900 til år 2100</label>
+                <input type="text" name="input-text" />
+                <fds-date-picker-grid min-date="1900-01-01" max-date="2100-12-31"></fds-date-picker-grid>
+            </fds-date-picker>
+        </div>
+        <div class="col-12 mt-8">
+            <fds-date-picker text-months="January February March April May June July August September October November December" text-open="Open date picker" text-selecteddate="selected date is MONTH DAY, YEAR">
+                <label>Date picker in English</label>
+                <input type="text" name="input-text" />
+                <fds-date-picker-grid text-days="Monday Tuesday Wednesday Thursday Friday Saturday Sunday" text-prevbutton="Previous" text-nextbutton="Next" text-date-announcement="MONTH DAY, YEAR" text-mindate="earliest selectable date" text-maxdate="latest selectable date"></fds-date-picker-grid>
             </fds-date-picker>
         </div>
     </div>
@@ -292,14 +341,49 @@
             <fds-date-picker-grid aria-label="Datovælger" min-date="2026-02-03" max-date="2026-02-22"></fds-date-picker-grid>
         </div>
         <div class="col-12 mt-8">
-            <fds-date-picker-grid aria-label="Datovælger" selected-date="1988-09-05"></fds-date-picker-grid>
+            <fds-date-picker-grid aria-label="Datovælger" selected-date="1988-09-05" min-date="1900-01-01" max-date="2100-12-31"></fds-date-picker-grid>
         </div>
         <div class="col-12 mt-8">
             <fds-date-picker-grid aria-label="Datovælger" default-date="1988-09-05"></fds-date-picker-grid>
         </div>
+        <div class="col-12 mt-8">
+            <p>Både default-date (2024-11-04) og selected-date (2022-10-02) er sat. Den viste
+                dato skal være selected-date.</p>
+            <fds-date-picker-grid aria-label="Datovælger" selected-date="2022-10-02" default-date="2024-11-04" min-date="1900-01-01" max-date="2100-12-31"></fds-date-picker-grid>
+        </div>
+    </div>
+
+    <div>
+        <div class="col-12">
+            <h2 class="h3 mt-0">I modal</h2>
+        </div>
+        <div class="col-12">
+            <button class="button button-tertiary" data-module="modal" data-target="modal-example-1" aria-haspopup="dialog">
+                Åbn simpel modal
+            </button>
+        </div>
     </div>
 
 </main>
+
+<div class="fds-modal-container">
+
+    <div class="fds-modal" id="modal-example-1" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-example-1-heading">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-example-1-heading">
+                    Simpel modal
+                </h2>
+                <button class="modal-close function-link" data-modal-close=""><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#close"></use></svg>Luk</button>
+            </div>
+            <div class="modal-body">
+                <fds-date-picker><label>Datovælger i modal</label><input type="text" name="input-text" /></fds-date-picker>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/styleguide.js"></script>
