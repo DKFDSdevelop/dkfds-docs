@@ -131,13 +131,13 @@
                 <label>Startdato</label>
                 <input type="text" name="input-text">
                 <fds-date-picker-grid id="startdate-date-picker"
-                    end-date-grid="enddate-date-picker"></fds-date-picker-grid>
+                    start-date-id="start-end-example1"></fds-date-picker-grid>
             </fds-date-picker>
             <fds-date-picker class="mt-0">
                 <label>Slutdato</label>
                 <input type="text" name="input-text">
                 <fds-date-picker-grid id="enddate-date-picker"
-                    start-date-grid="startdate-date-picker"></fds-date-picker-grid>
+                    end-date-id="start-end-example1"></fds-date-picker-grid>
             </fds-date-picker>
         </div>
         <div class="col-12">
@@ -147,7 +147,7 @@
         </div>
         <div class="col-12 d-flex" id="date-picker-timing-test">
             <fds-date-picker-grid class="mr-4" id="startdate-grid"
-                end-date-grid="enddate-grid"></fds-date-picker-grid>
+                start-date-id="start-end-example2"></fds-date-picker-grid>
         </div>
     </div>
 
@@ -191,7 +191,7 @@
     setTimeout(() => {
         const secondGrid = document.createElement('fds-date-picker-grid');
         secondGrid.id = 'enddate-grid';
-        secondGrid.setAttribute('start-date-grid', 'startdate-grid');
+        secondGrid.setAttribute('end-date-id', 'start-end-example2');
         document.getElementById('date-picker-timing-test').appendChild(secondGrid);
     }, 5000);
 </script>
