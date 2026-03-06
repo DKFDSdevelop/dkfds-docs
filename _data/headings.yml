@@ -443,6 +443,12 @@ Datovaelger_Kode:
 - h2: Fejlmeddelelse
 - h2: Deaktiveret
 
+Datovaelger_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 Detaljer_Kode:
 - h2: Installation
 

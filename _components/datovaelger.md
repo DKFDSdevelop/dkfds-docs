@@ -9,14 +9,14 @@ title: Datovælger
 lead: Ét felt med knap, hvor man kan vælge en dato.
 description: Brug datovælger til at vælge en bestemt dato i nærmeste fortid eller fremtid
 tags:
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="date-picker" title="Eksempel på datovælger" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Datovaelger" code="Datovaelger_Kode" %}
+{% include anchorlinks.html guidelines="Datovaelger" code="Datovaelger_Kode" custom="Datovaelger_Custom" %}
 
 <!--split-->
 
@@ -197,3 +197,58 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 ## Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-kode" %}}
 
 {% include code/syntax.html component="date-picker-disabled" link=true copybutton=true guidelines="/komponenter/datovaelger/#deaktiveret" %}
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-date-picker" tabId="example-1-datep" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include custom-element-shared-text/fds-error-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-date-picker-error" tabId="example-2-datep" %}
+
+{% include custom-element-shared-text/fds-error-tables.html %}
+
+### Hjælpetekst
+
+{% include custom-element-shared-text/fds-helptext-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-date-picker-helptext" tabId="example-3-datep" %}
+
+{% include custom-element-shared-text/fds-help-text-tables.html %}
+
+### Begræns mulige datoer
+
+{% include code/show-example-with-tabs.html example="fds-date-picker-minmax" tabId="example-4-datep" %}
+
+### Fast værdi
+
+{% include code/show-example-with-tabs.html example="fds-date-picker-default" tabId="example-5-datep" %}
+
+### Datoformat
+
+### Deaktiveret
+
+### Start- og slutdato
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                      |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.          |
