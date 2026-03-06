@@ -26,6 +26,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-date-input" description="Datofelter" %}
 {% include test/preview-test.html filename="test-fds-upload-file" description="Vedhæft fil" %}
 {% include test/preview-test.html filename="test-fds-date-picker" description="Datovælger" %}
+{% include test/preview-test.html filename="test-fds-textarea" description="Tekstområde" %}
 
 {:.h3}
 ## HTML-elementer

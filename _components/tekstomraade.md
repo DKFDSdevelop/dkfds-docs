@@ -16,14 +16,14 @@ tags:
 - textarea
 - karakterbegrænsning
 - karakterbegraensning
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="text-area" title="Eksempel på tekstområde" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tekstomraade" code="Tekstomraade_Kode" %}
+{% include anchorlinks.html guidelines="Tekstomraade" code="Tekstomraade_Kode" custom="Tekstomraade_Custom"%}
 
 <!--split-->
 
@@ -178,3 +178,60 @@ new DKFDS.CharacterLimit(document.getElementById('FORM-LIMIT-ID'), {
 {% include code/syntax.html component="text-area-disabled" link=true copybutton=true guidelines="/komponenter/tekstomraade/#deaktiveret" %}
 
 Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af skærmlæsere til at give info og status på indtastningen til brugeren.
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-textarea>` med `<div class="fds-textarea">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-textarea-example" tabId="example-1-sel" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include custom-element-shared-text/fds-error-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-textarea-error" tabId="example-2-sel" %}
+
+{% include custom-element-shared-text/fds-error-tables.html %}
+
+### Hjælpetekst
+
+{% include custom-element-shared-text/fds-helptext-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-textarea-helptext" tabId="example-3-sel" %}
+
+{% include custom-element-shared-text/fds-help-text-tables.html %}
+
+### Karakterbegrænsning
+
+{% include custom-element-shared-text/fds-character-limit-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-textarea-limit" tabId="example-input-limit" %}
+
+{% include custom-element-shared-text/fds-character-limit-tables.html %}
+
+### Obligatoriske og frivillige inputfelter
+
+{% include code/show-example-with-tabs.html example="fds-textarea-required" tabId="example-4-sel" %}
+
+### Deaktiveret
+
+{% include code/show-example-with-tabs.html example="fds-textarea-disabled" tabId="example-5-sel" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                      |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.          |
