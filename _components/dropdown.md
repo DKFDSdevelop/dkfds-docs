@@ -125,7 +125,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-help-text-tables.html %}
 
-### Obligatoriske og frivillige inputfelter
+### Obligatoriske og frivillige dropdown
 
 {% include code/show-example-with-tabs.html example="fds-select-required" tabId="example-4-sel" %}
 
