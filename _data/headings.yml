@@ -583,6 +583,12 @@ Tekstomraade_Kode:
 - h2: Karakterbegrænsning
 - h2: Deaktiveret
 
+Tekstomraade_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 TilbageLink_Kode:
 - h2: Installation
 
