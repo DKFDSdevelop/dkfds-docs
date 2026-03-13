@@ -21,6 +21,12 @@ const window = dom.window;
 const document = window.document;
 const body = document.body;
 
+const SKIP_FILES = [
+    'blazor-app.html',
+    'blazor-component.html',
+    'fds-input-wrapper-simple.html'
+];
+
 global.HTMLElement = window.HTMLElement;
 global.document = window.document;
 global.window = window;
@@ -33,7 +39,7 @@ const DKFDS = require('dkfds');
 DKFDS.registerCustomElements();
 
 fs.readdirSync(srcDir).forEach(file => {
-    if (file !== 'fds-input-wrapper-simple.html') {
+    if (!SKIP_FILES.includes(file)) {
         const content = fs.readFileSync(`${srcDir}/${file}`, 'utf8');
         body.innerHTML = content;
         const beautifiedContent = beautify(body.innerHTML, BEAUTIFY_OPTIONS);

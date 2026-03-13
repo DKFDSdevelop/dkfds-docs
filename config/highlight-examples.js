@@ -14,6 +14,12 @@ function restoreCode(str) {
         .replaceAll('<span class="hljs-tag">', '')
         .replaceAll('<span class="hljs-comment">', '')
         .replaceAll('<span class="hljs-symbol">', '')
+        .replaceAll('<span class="hljs-keyword">', '')
+        .replaceAll('<span class="hljs-literal">', '')
+        .replaceAll('<span class="hljs-built_in">', '')
+        .replaceAll('<span class="hljs-title">', '')
+        .replaceAll('<span class="hljs-params">', '')
+        .replaceAll('<span class="hljs-function">', '')
         .replaceAll('</span>', '')
         .replaceAll('&#x27;', '&#39;')
         .replaceAll('&lt;', '<')
@@ -23,11 +29,11 @@ function restoreCode(str) {
         .replaceAll('&amp;', '&');
 }
 
-function highlightCode(str) {
+function highlightCode(str, lang) {
     let unexpectedCode = false;
 
     // Use highlight.js to add syntax highlighting.
-    let highlightedCode = hljs.highlight(str, { language: 'xml' }).value;
+    let highlightedCode = hljs.highlight(str, { language: lang }).value;
 
     // Replace apostrophe as hexadecimal code with decimal code
     highlightedCode = highlightedCode.replaceAll('&#x27;', '&#39;');
@@ -52,13 +58,19 @@ log(colors.white('Started example syntax highlighting...'));
 
 fs.readdirSync('_includes/code-examples/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/code-examples/'}/${file}`, 'utf8');
-    const highlightedContent = highlightCode(content);
+    let highlightedContent = highlightCode(content, 'xml');
+    if (file === 'blazor-component.html') {
+        highlightedContent = highlightCode(content, 'csharp');
+    }
     fs.writeFileSync(`${'_includes/output-files-from-build/highlighted-examples/'}/${file}`, highlightedContent);
 });
 
 fs.readdirSync('_includes/output-files-from-build/code-examples-generated-html/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/output-files-from-build/code-examples-generated-html/'}/${file}`, 'utf8');
-    const highlightedContent = highlightCode(content);
+    let highlightedContent = highlightCode(content, 'xml');
+    if (file === 'blazor-component.html') {
+        highlightedContent = highlightCode(content, 'csharp');
+    }
     fs.writeFileSync(`${'_includes/output-files-from-build/highlighted-examples-generated-html/'}/${file}`, highlightedContent);
 });
 

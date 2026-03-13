@@ -1347,7 +1347,18 @@
                 <h1 id="frameworks">Frameworks</h1>
                 
 
-                <h2 id="javascript">JavaScript</h2>
+                <nav class="anchorbox" aria-labelledby="anchorlinks">
+    <h2 class="anchortitle" id="anchorlinks">Indhold på siden</h2>
+    <ul class="anchorlist">
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#kodefrihed-under-ansvar">Kodefrihed under ansvar</a></li>
+        
+        
+        
+    </ul>
+</nav>
+
+<h2 id="javascript">JavaScript</h2>
 
 <p>Det Fælles Designsystem anvender Vanilla JavaScript (også kendt som VanillaJS eller Plain JS) uden JavaScript-biblioteker, som fx jQuery, for at undgå afhængighed til tredjepartsleverandører og deres eventuelle tekniske gæld.</p>
 
@@ -1356,6 +1367,67 @@
 <p>Vi har bestræbt os på at lave et designsystem, der er let at anvende og kode med, men vi vil ikke tvinge nogen væk fra deres favorit (JavaScript) framework. Så længe det visuelle design (CSS) er som beskrevet i designsystemet, er du velkommen til at udnytte de teknologier, du finder bedst, men giv vores kode et kig, den er lige til at gå til.</p>
 
 <p>Du skal altid kode selvbetjeningsløsningens brugergrænseflade i valid HTML5, som det er defineret i <a href="https://whatwg.org/" class="icon-link" target="_blank">WHATWG<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>. Hvis du afviger fra koden i designsystemet anbefaler vi, at du sikrer din kodes validitet, fx med <a href="https://validator.w3.org/" class="icon-link" target="_blank">W3C Markup Validation Service (HTML)<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="https://jigsaw.w3.org/css-validator/" class="icon-link" target="_blank">W3C CSS Validation Service (CSS)<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</p>
+
+<h2>Eksempler på anvendelse</h2>
+
+<p>Nedenstående eksempler viser, hvordan man kan anvende koden i udvalgte frameworks.</p>
+
+<h3>Blazor</h3>
+
+<p>Opdatér den fil, hvor du definerer dit HTML-layout og anvender scripts (fx App.razor i nyrere versioner af .NET).</p>
+
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Routes</span> /&gt;</span>
+    <span class="hljs-comment">&lt;!-- Scripts --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;dkfds.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+        DKFDS.registerCustomElements();
+    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<p>Hvis du anvender Blazor-komponenter inde i custom elements, skal du selv sørge for at HTML’en ikke initialiserer for tidligt. Du kan styre dette ved at bruge <code>ready</code>-attributten, som er skrevet ind i alle FDS’ custom elements.</p>
+
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html">@rendermode InteractiveServer
+
+&lt;fds-accordion ready=<span class="hljs-string">&quot;@(isReady ? &quot;</span><span class="hljs-literal">true</span><span class="hljs-string">&quot; : &quot;</span><span class="hljs-literal">false</span><span class="hljs-string">&quot;)&quot;</span>&gt;
+    &lt;MyBlazorComponent /&gt;
+&lt;/fds-accordion&gt;
+
+@code {
+    <span class="hljs-keyword">private</span> <span class="hljs-built_in">bool</span> isReady = <span class="hljs-literal">false</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnAfterRender</span>(<span class="hljs-params"><span class="hljs-built_in">bool</span> firstRender</span>)</span>
+    {
+        <span class="hljs-keyword">if</span> (firstRender)
+        {
+            isReady = <span class="hljs-literal">true</span>;
+            StateHasChanged();
+        }
+    }
+}</code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+
 
             </section>
         </main>

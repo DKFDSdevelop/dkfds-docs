@@ -1,0 +1,18 @@
+@rendermode InteractiveServer
+
+&lt;fds-accordion ready=<span class="hljs-string">&quot;@(isReady ? &quot;</span><span class="hljs-literal">true</span><span class="hljs-string">&quot; : &quot;</span><span class="hljs-literal">false</span><span class="hljs-string">&quot;)&quot;</span>&gt;
+    &lt;MyBlazorComponent /&gt;
+&lt;/fds-accordion&gt;
+
+@code {
+    <span class="hljs-keyword">private</span> <span class="hljs-built_in">bool</span> isReady = <span class="hljs-literal">false</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnAfterRender</span>(<span class="hljs-params"><span class="hljs-built_in">bool</span> firstRender</span>)</span>
+    {
+        <span class="hljs-keyword">if</span> (firstRender)
+        {
+            isReady = <span class="hljs-literal">true</span>;
+            StateHasChanged();
+        }
+    }
+}

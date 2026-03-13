@@ -1,0 +1,18 @@
+@rendermode InteractiveServer
+
+<fds-accordion ready="@(isReady ? "true" : "false")">
+    <MyBlazorComponent />
+</fds-accordion>
+
+@code {
+    private bool isReady = false;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            isReady = true;
+            StateHasChanged();
+        }
+    }
+}
