@@ -1352,6 +1352,7 @@
     <ul class="anchorlist">
         <li><a href="#javascript">JavaScript</a></li>
         <li><a href="#kodefrihed-under-ansvar">Kodefrihed under ansvar</a></li>
+        <li><a href="#eksempler-paa-anvendelse">Eksempler på anvendelse</a></li>
         
         
         
@@ -1368,7 +1369,7 @@
 
 <p>Du skal altid kode selvbetjeningsløsningens brugergrænseflade i valid HTML5, som det er defineret i <a href="https://whatwg.org/" class="icon-link" target="_blank">WHATWG<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>. Hvis du afviger fra koden i designsystemet anbefaler vi, at du sikrer din kodes validitet, fx med <a href="https://validator.w3.org/" class="icon-link" target="_blank">W3C Markup Validation Service (HTML)<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="https://jigsaw.w3.org/css-validator/" class="icon-link" target="_blank">W3C CSS Validation Service (CSS)<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</p>
 
-<h2>Eksempler på anvendelse</h2>
+<h2 id="eksempler-paa-anvendelse">Eksempler på anvendelse</h2>
 
 <p>Nedenstående eksempler viser, hvordan man kan anvende koden i udvalgte frameworks.</p>
 
@@ -1383,9 +1384,15 @@
                 <button class="button button-tertiary button-copy">Kopiér kode</button>
             </div>
             <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;@Assets[&quot;</span><span class="hljs-attr">dkfds.css</span>&quot;]&quot; /&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Routes</span> /&gt;</span>
-    <span class="hljs-comment">&lt;!-- Scripts --&gt;</span>
+    ...
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;dkfds.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
         DKFDS.registerCustomElements();

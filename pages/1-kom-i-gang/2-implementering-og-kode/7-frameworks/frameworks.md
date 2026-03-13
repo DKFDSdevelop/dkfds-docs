@@ -31,7 +31,7 @@ Vi har bestræbt os på at lave et designsystem, der er let at anvende og kode m
 
 Du skal altid kode selvbetjeningsløsningens brugergrænseflade i valid HTML5, som det er defineret i {% include links/external-link.html linktext="WHATWG" %}. Hvis du afviger fra koden i designsystemet anbefaler vi, at du sikrer din kodes validitet, fx med {% include links/external-link.html linktext="W3C Markup Validation Service (HTML)" %} eller {% include links/external-link.html linktext="W3C CSS Validation Service (CSS)" %}.
 
-## Eksempler på anvendelse
+## Eksempler på anvendelse {#{% include create-id.html heading="Eksempler på anvendelse" %}}
 
 Nedenstående eksempler viser, hvordan man kan anvende koden i udvalgte frameworks.
 
