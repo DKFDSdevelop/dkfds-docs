@@ -37,6 +37,11 @@ Frameworks:
 - h2: Kodefrihed under ansvar
 - h2: Eksempler på anvendelse
 
+Custom_elements:
+- h2: Om custom elements
+- h2: Forskellen på custom elements og web components
+- h2: Sådan kan du bruge custom elements
+
 Design_og_ressourcer:
 - h2: Grundprincipper
 - h2: Dit ansvar som designer
