@@ -9,9 +9,6 @@ require('./scroll-top');
 require('./copy-code-button');
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Init custom elements
-    DKFDS.registerCustomElements();
-
     // If this is a page with a back-to-top button example, ensure that only the 'real' back-to-top button's JavaScript works
     // Without this code, the back-to-top button example would not be visible due to the JavaScript hiding it
     let bodytag = document.getElementsByTagName('body')[0];

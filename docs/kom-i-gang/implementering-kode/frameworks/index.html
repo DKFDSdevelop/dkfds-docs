@@ -1394,9 +1394,6 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">Routes</span> /&gt;</span>
     ...
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;dkfds.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
-        DKFDS.registerCustomElements();
-    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
             </figure>
         </div>
@@ -1414,7 +1411,7 @@
             <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html">@rendermode InteractiveServer
 
-&lt;fds-accordion ready=<span class="hljs-string">&quot;@(isReady ? &quot;</span><span class="hljs-literal">true</span><span class="hljs-string">&quot; : &quot;</span><span class="hljs-literal">false</span><span class="hljs-string">&quot;)&quot;</span>&gt;
+&lt;fds-accordion heading=<span class="hljs-string">&quot;Min accordion&quot;</span> ready=<span class="hljs-string">&quot;@(isReady ? &quot;</span><span class="hljs-literal">true</span><span class="hljs-string">&quot; : &quot;</span><span class="hljs-literal">false</span><span class="hljs-string">&quot;)&quot;</span>&gt;
     &lt;MyBlazorComponent /&gt;
 &lt;/fds-accordion&gt;
 
