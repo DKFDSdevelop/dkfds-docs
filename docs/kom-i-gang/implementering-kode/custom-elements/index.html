@@ -1402,7 +1402,6 @@ Web Components er en samling af flere browserteknologier:</p>
   <li>Custom Elements</li>
   <li>Shadow DOM</li>
   <li>HTML Templates</li>
-  <li>ES Modules</li>
 </ul>
 
 <p>Et custom element er kun én del af Web Components.I Fælles Design System anvender vi primært custom elements uden Shadow DOM.</p>
@@ -1423,28 +1422,9 @@ Custom elements giver os komponenter i HTML uden at skjule markup eller styling 
 
 <p>Komponenterne i design systemet kan bruges på tre forskellige måder afhængigt af behov.</p>
 
-<h3>1. Simpel brug – kun komponenttag</h3>
+<h3>1. Simpel brug – konfiguration via attributter</h3>
 
-<p>Den enkleste måde er blot at bruge komponentens tag.</p>
-
-<div class="tab-panel code-tab">
-    <div>
-        <div class="component-code">
-            <div class="button-copy-container">
-                <button class="button button-tertiary button-copy">Kopiér kode</button>
-            </div>
-            <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span></code></pre>
-            </figure>
-        </div>
-    </div>
-</div>
-
-<h3>2. Konfiguration via attributter</h3>
-
-<p>Du kan også styre komponentens opførsel via HTML-attributter. Custom elementet sørger for at synkronisere attributterne med DOM.
+<p>Du kan styre komponentens opførsel via HTML-attributter. Custom elementet sørger for at synkronisere attributterne med DOM.
 Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig. Du kan finde hvilke attributter hvert custom element har på dets respektive komponent-side.</p>
 
 <div class="tab-panel code-tab">
@@ -1454,25 +1434,40 @@ Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig
                 <button class="button button-tertiary button-copy">Kopiér kode</button>
             </div>
             <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span>
-    <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Overskrift&quot;</span>
-    <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>
-    <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;true&quot;</span>
-    <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>
-    <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;warning&quot;</span>
-    <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Advarsel&quot;</span>&gt;</span>
-    
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Overskrift&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;warning&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Advarsel&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Indhold i accordionen<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span></code></pre>
             </figure>
         </div>
     </div>
 </div>
 
-<h3>3. Hydrering af eksisterende markup</h3>
+<h3>2. Brug med eksisterende markup (hydrering)</h3>
 
-<p>Hydrering af eksisterende markup</p>
+<p>Du kan også selv levere hele HTML-strukturen på forhånd. I dette tilfælde overtager custom elementet ikke opbygningen af DOM’en, men tilføjer i stedet funktionalitet ovenpå den eksisterende markup.</p>
+
+<p>Når custom elementet initialiseres, gennemgår det den eksisterende struktur og forventer, at den følger det aftalte markup-mønster (fx korrekt placering af heading, button og content).</p>
+
+<p>Hvis strukturen er gyldig, vil komponenten:</p>
+
+<ul>
+  <li>tilføje nødvendig funktionalitet (fx event listeners)</li>
+  <li>sikre at relevante attributter (fx aria-expanded, aria-controls) er sat korrekt</li>
+  <li>tilføje eller normalisere nødvendige klasser</li>
+  <li>synkronisere med eventuelle attributter på custom elementet</li>
+</ul>
+
+<p>Komponenten ændrer altså ikke strukturen, men forbedrer (hydrerer) den, så den opfører sig som en fuldt funktionel komponent.</p>
+
+<p>Dette er især nyttigt når:</p>
+
+<ul>
+  <li>markup genereres på serveren (SSR)</li>
+  <li>du bruger et framework, der allerede renderer HTML</li>
+  <li>du ønsker fuld kontrol over markup (fx til SEO eller performance)</li>
+</ul>
+
+<p>Hvis den forventede struktur ikke er til stede, kan komponenten ikke initialiseres korrekt.</p>
 
 <div class="tab-panel code-tab">
     <div>
@@ -1481,14 +1476,14 @@ Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig
                 <button class="button button-tertiary button-copy">Kopiér kode</button>
             </div>
             <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id1&quot;</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Dette er en accordion<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Dette er en accordion<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-content&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Indhold i accordionen<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span></code></pre>
             </figure>
@@ -1496,17 +1491,6 @@ Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig
     </div>
 </div>
 
-<p>I dette tilfælde genererer komponenten ikke markup, men “hydrerer” i stedet den eksisterende struktur.</p>
-
-<p>Det betyder at den:</p>
-
-<ul>
-  <li>tilføjer event listeners</li>
-  <li>synkroniserer attributter</li>
-  <li>sikrer korrekt ARIA-tilstand</li>
-</ul>
-
-<p>Dette er nyttigt hvis markup genereres fra en server eller et framework.</p>
 
             </section>
         </main>

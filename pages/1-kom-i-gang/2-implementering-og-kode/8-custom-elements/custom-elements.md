@@ -34,7 +34,6 @@ Web Components er en samling af flere browserteknologier:
 - Custom Elements
 - Shadow DOM
 - HTML Templates
-- ES Modules
 
 Et custom element er kun én del af Web Components.I Fælles Design System anvender vi primært custom elements uden Shadow DOM.
 
@@ -52,31 +51,34 @@ Custom elements giver os komponenter i HTML uden at skjule markup eller styling 
 
 Komponenterne i design systemet kan bruges på tre forskellige måder afhængigt af behov.
 
-### 1. Simpel brug – kun komponenttag
+### 1. Simpel brug – konfiguration via attributter
 
-Den enkleste måde er blot at bruge komponentens tag.
+Du kan styre komponentens opførsel via HTML-attributter. Custom elementet sørger for at synkronisere attributterne med DOM.
+Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig. Du kan finde hvilke attributter hvert custom element har på dets respektive komponent-side.
 
 {% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-simple" %}
 
-### 2. Konfiguration via attributter
+### 2. Brug med eksisterende markup (hydrering)
 
-Du kan også styre komponentens opførsel via HTML-attributter. Custom elementet sørger for at synkronisere attributterne med DOM.
-Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig. Du kan finde hvilke attributter hvert custom element har på dets respektive komponent-side.
+Du kan også selv levere hele HTML-strukturen på forhånd. I dette tilfælde overtager custom elementet ikke opbygningen af DOM’en, men tilføjer i stedet funktionalitet ovenpå den eksisterende markup.
 
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-attr" %}
+Når custom elementet initialiseres, gennemgår det den eksisterende struktur og forventer, at den følger det aftalte markup-mønster (fx korrekt placering af heading, button og content).
 
-### 3. Hydrering af eksisterende markup
+Hvis strukturen er gyldig, vil komponenten:
 
-Hydrering af eksisterende markup
+- tilføje nødvendig funktionalitet (fx event listeners)
+- sikre at relevante attributter (fx aria-expanded, aria-controls) er sat korrekt
+- tilføje eller normalisere nødvendige klasser
+- synkronisere med eventuelle attributter på custom elementet
 
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-markup" %}
+Komponenten ændrer altså ikke strukturen, men forbedrer (hydrerer) den, så den opfører sig som en fuldt funktionel komponent.
 
-I dette tilfælde genererer komponenten ikke markup, men "hydrerer" i stedet den eksisterende struktur.
+Dette er især nyttigt når:
 
-Det betyder at den:
+- markup genereres på serveren (SSR)
+- du bruger et framework, der allerede renderer HTML
+- du ønsker fuld kontrol over markup (fx til SEO eller performance)
 
-- tilføjer event listeners
-- synkroniserer attributter
-- sikrer korrekt ARIA-tilstand
+Hvis den forventede struktur ikke er til stede, kan komponenten ikke initialiseres korrekt.
 
-Dette er nyttigt hvis markup genereres fra en server eller et framework.
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-full" %}
