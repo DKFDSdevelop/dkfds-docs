@@ -67,4 +67,11 @@ tags:
         content="Du kan frit vælge, hvilket framework du vil bruge, når du anvender Det Fælles Designsystem." 
         %}
     </li>
+    <li>
+        {% include cards/navcard-long.html headingLevel="h2"
+        href="/kom-i-gang/implementering-kode/custom-elements/"
+        heading="Custom elements" 
+        content="Læs om, hvad custom elements er, og hvordan de bruges i Det Fælles Designsystem." 
+        %}
+    </li>
 </ul>

@@ -258,17 +258,8 @@
         <div class="col-12">
             <h2 class="h3 mt-0">Select uden indhold eller attributter</h2>
         </div>
-        <div class="col-12" id="select-empty">
-            <fds-select></fds-select>
-        </div>
-    </div>
-
-    <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Select uden indhold med attributter</h2>
-        </div>
-        <div class="col-12" id="select-attributes-only">
-            <fds-select label="Dette er en label"></fds-select>
+            <fds-select></fds-select>
         </div>
     </div>
 
@@ -276,11 +267,11 @@
         <div class="col-12">
             <h2 class="h3 mt-0">Label og select</h2>
         </div>
-        <div class="col-12" id="select-default">
+        <div class="col-12">
             <fds-select>
                 <label>Label</label>
-                <select name="default">
-                    <option value="">Vælg mulighed</option>
+                <select name="select1">
+                    <option value="">Vælg region</option>
                     <option value="option1">Mulighed 1</option>
                     <option value="option2">Mulighed 2</option>
                     <option value="option3">Mulighed 3</option>
@@ -293,11 +284,11 @@
         <div class="col-12">
             <h2 class="h3 mt-0">Label, select og fejl</h2>
         </div>
-        <div class="col-12" id="select-error">
+        <div class="col-12">
             <fds-select>
                 <label>Label</label>
-                <select name="error">
-                    <option value="">Vælg mulighed</option>
+                <select name="select2">
+                    <option value="">Vælg region</option>
                     <option value="option1">Mulighed 1</option>
                     <option value="option2">Mulighed 2</option>
                     <option value="option3">Mulighed 3</option>
@@ -309,19 +300,19 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Label, select og to fejl</h2>
+            <h2 class="h3 mt-0">Label, select og 2 fejl</h2>
         </div>
-        <div class="col-12" id="select-two-errors">
+        <div class="col-12">
             <fds-select>
                 <label>Label</label>
-                <select name="two-errors">
-                    <option value="">Vælg mulighed</option>
+                <select name="select3">
+                    <option value="">Vælg region</option>
                     <option value="option1">Mulighed 1</option>
                     <option value="option2">Mulighed 2</option>
                     <option value="option3">Mulighed 3</option>
                 </select>
-                <fds-error-message>Dette er fejl nr. 1</fds-error-message>
-                <fds-error-message>Dette er fejl nr. 2</fds-error-message>
+                <fds-error-message>Dette er en fejl</fds-error-message>
+                <fds-error-message>Dette er en anden fejl</fds-error-message>
             </fds-select>
         </div>
     </div>
@@ -330,71 +321,16 @@
         <div class="col-12">
             <h2 class="h3 mt-0">Label, select og hjælpetekst</h2>
         </div>
-        <div class="col-12" id="select-helptext">
+        <div class="col-12">
             <fds-select>
                 <label>Label</label>
                 <fds-help-text>Dette er en hjælpetekst</fds-help-text>
-                <select name="helptext">
-                    <option value="">Vælg mulighed</option>
+                <select name="select4">
+                    <option value="">Vælg region</option>
                     <option value="option1">Mulighed 1</option>
                     <option value="option2">Mulighed 2</option>
                     <option value="option3">Mulighed 3</option>
                 </select>
-            </fds-select>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Label, select og skjult hjælpetekst</h2>
-        </div>
-        <div class="col-12" id="select-hidden-helptext">
-            <fds-select>
-                <label>Label</label>
-                <fds-help-text hidden="">Dette er en skjult hjælpetekst</fds-help-text>
-                <select name="hidden-helptext">
-                    <option value="">Vælg mulighed</option>
-                    <option value="option1">Mulighed 1</option>
-                    <option value="option2">Mulighed 2</option>
-                    <option value="option3">Mulighed 3</option>
-                </select>
-            </fds-select>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Label, select og skjult fejl</h2>
-        </div>
-        <div class="col-12" id="select-hidden-error">
-            <fds-select>
-                <label>Label</label>
-                <select name="hidden-error">
-                    <option value="">Vælg mulighed</option>
-                    <option value="option1">Mulighed 1</option>
-                    <option value="option2">Mulighed 2</option>
-                    <option value="option3">Mulighed 3</option>
-                </select>
-                <fds-error-message class="d-none">Dette er en fejl</fds-error-message>
-            </fds-select>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Label, select, hjælpetekst og fejl</h2>
-        </div>
-        <div class="col-12" id="select-helptext-error">
-            <fds-select>
-                <label>Label</label>
-                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
-                <select name="helptext-error">
-                    <option value="">Vælg mulighed</option>
-                    <option value="option1">Mulighed 1</option>
-                    <option value="option2">Mulighed 2</option>
-                    <option value="option3">Mulighed 3</option>
-                </select>
-                <fds-error-message>Dette er en fejl</fds-error-message>
             </fds-select>
         </div>
     </div>
@@ -403,11 +339,11 @@
         <div class="col-12">
             <h2 class="h3 mt-0">Disabled select</h2>
         </div>
-        <div class="col-12" id="select-disabled">
+        <div class="col-12">
             <fds-select>
                 <label>Label</label>
-                <select name="disabled" disabled="">
-                    <option value="">Vælg mulighed</option>
+                <select name="select5" disabled="">
+                    <option value="">Vælg region</option>
                     <option value="option1">Mulighed 1</option>
                     <option value="option2">Mulighed 2</option>
                     <option value="option3">Mulighed 3</option>
@@ -420,33 +356,15 @@
         <div class="col-12">
             <h2 class="h3 mt-0">Label med frivillig/påkrævet</h2>
         </div>
-        <div class="col-12" id="select-required-status">
+        <div class="col-12">
             <fds-select show-required-status="">
                 <label>Label</label>
-                <select name="required-status">
-                    <option value="">Vælg mulighed</option>
+                <select name="select6">
+                    <option value="">Vælg region</option>
                     <option value="option1">Mulighed 1</option>
                     <option value="option2">Mulighed 2</option>
                     <option value="option3">Mulighed 3</option>
                 </select>
-            </fds-select>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Ikke initialiseret</h2>
-        </div>
-        <div class="col-12" id="select-my-ready-id">
-            <fds-select ready="false">
-                <label for="my-ready-id">Label</label>
-                <select name="ready" id="my-ready-id">
-                    <option value="">Vælg mulighed</option>
-                    <option value="option1">Mulighed 1</option>
-                    <option value="option2">Mulighed 2</option>
-                    <option value="option3">Mulighed 3</option>
-                </select>
-                <fds-error-message>Dette er en fejl</fds-error-message>
             </fds-select>
         </div>
     </div>
