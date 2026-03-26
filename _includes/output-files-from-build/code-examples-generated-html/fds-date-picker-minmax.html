@@ -11,25 +11,37 @@
             <div class="grid-container" tabindex="-1">
                 <div class="date-picker-header">
                     <span class="sr-only" aria-live="polite"></span>
-                    <button class="previous-month" aria-disabled="true">Forrige</button>
-                    <select name="month" aria-label="Måned" class="selected-month">
-                        <option value="0" disabled="">Januar</option>
-                        <option value="1">Februar</option>
-                        <option value="2" disabled="">Marts</option>
-                        <option value="3" disabled="">April</option>
-                        <option value="4" disabled="">Maj</option>
-                        <option value="5" disabled="">Juni</option>
-                        <option value="6" disabled="">Juli</option>
-                        <option value="7" disabled="">August</option>
-                        <option value="8" disabled="">September</option>
-                        <option value="9" disabled="">Oktober</option>
-                        <option value="10" disabled="">November</option>
-                        <option value="11" disabled="">December</option>
-                    </select>
-                    <select name="year" aria-label="År" class="selected-year">
-                        <option value="2000">2000</option>
-                    </select>
-                    <button class="next-month" aria-disabled="true">Næste</button>
+                    <button class="button button-icon-only previous-month" aria-disabled="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
+                            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"></path>
+                        </svg>
+                        <span class="sr-only">Forrige</span>
+                    </button>
+                    <div class="month-year-wrapper">
+                        <select name="month" aria-label="Måned" class="selected-month">
+                            <option value="0" disabled="">Januar</option>
+                            <option value="1">Februar</option>
+                            <option value="2" disabled="">Marts</option>
+                            <option value="3" disabled="">April</option>
+                            <option value="4" disabled="">Maj</option>
+                            <option value="5" disabled="">Juni</option>
+                            <option value="6" disabled="">Juli</option>
+                            <option value="7" disabled="">August</option>
+                            <option value="8" disabled="">September</option>
+                            <option value="9" disabled="">Oktober</option>
+                            <option value="10" disabled="">November</option>
+                            <option value="11" disabled="">December</option>
+                        </select>
+                        <select name="year" aria-label="År" class="selected-year">
+                            <option value="2000">2000</option>
+                        </select>
+                    </div>
+                    <button class="button button-icon-only next-month" aria-disabled="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
+                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"></path>
+                        </svg>
+                        <span class="sr-only">Næste</span>
+                    </button>
                 </div>
                 <table role="grid" class="date-picker-grid">
                     <thead>
@@ -124,7 +136,11 @@
             </div>
         </fds-date-picker-grid>
         <div tabindex="-1">
-            <button class="close-button">Luk</button>
+            <button class="close-button function-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path>
+                </svg>Luk
+            </button>
         </div>
     </div>
 </fds-date-picker>

@@ -15,35 +15,47 @@
             <div class="grid-container" tabindex="-1">
                 <div class="date-picker-header">
                     <span class="sr-only" aria-live="polite"></span>
-                    <button class="previous-month" aria-disabled="true">Forrige</button>
-                    <select name="month" aria-label="Måned" class="selected-month">
-                        <option value="0" disabled="">Januar</option>
-                        <option value="1" disabled="">Februar</option>
-                        <option value="2">Marts</option>
-                        <option value="3">April</option>
-                        <option value="4">Maj</option>
-                        <option value="5">Juni</option>
-                        <option value="6">Juli</option>
-                        <option value="7">August</option>
-                        <option value="8">September</option>
-                        <option value="9">Oktober</option>
-                        <option value="10">November</option>
-                        <option value="11">December</option>
-                    </select>
-                    <select name="year" aria-label="År" class="selected-year">
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                        <option value="2029">2029</option>
-                        <option value="2030">2030</option>
-                        <option value="2031">2031</option>
-                        <option value="2032">2032</option>
-                        <option value="2033">2033</option>
-                        <option value="2034">2034</option>
-                        <option value="2035">2035</option>
-                        <option value="2036">2036</option>
-                    </select>
-                    <button class="next-month">Næste</button>
+                    <button class="button button-icon-only previous-month" aria-disabled="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
+                            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"></path>
+                        </svg>
+                        <span class="sr-only">Forrige</span>
+                    </button>
+                    <div class="month-year-wrapper">
+                        <select name="month" aria-label="Måned" class="selected-month">
+                            <option value="0" disabled="">Januar</option>
+                            <option value="1" disabled="">Februar</option>
+                            <option value="2">Marts</option>
+                            <option value="3">April</option>
+                            <option value="4">Maj</option>
+                            <option value="5">Juni</option>
+                            <option value="6">Juli</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">Oktober</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
+                        </select>
+                        <select name="year" aria-label="År" class="selected-year">
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                            <option value="2033">2033</option>
+                            <option value="2034">2034</option>
+                            <option value="2035">2035</option>
+                            <option value="2036">2036</option>
+                        </select>
+                    </div>
+                    <button class="button button-icon-only next-month">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
+                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"></path>
+                        </svg>
+                        <span class="sr-only">Næste</span>
+                    </button>
                 </div>
                 <table role="grid" class="date-picker-grid">
                     <thead>
@@ -117,10 +129,10 @@
                         </tr>
                         <tr>
                             <td data-date="2026-03-23" aria-label="23. marts 2026" aria-disabled="true">23</td>
-                            <td data-date="2026-03-24" aria-label="24. marts 2026, tidligste valgbare dato" aria-selected="false" tabindex="0">24</td>
-                            <td data-date="2026-03-25" aria-label="25. marts 2026" aria-selected="false" tabindex="-1">25</td>
-                            <td data-date="2026-03-26" aria-label="26. marts 2026" aria-selected="false" tabindex="-1">26</td>
-                            <td data-date="2026-03-27" aria-label="27. marts 2026" aria-selected="false" tabindex="-1">27</td>
+                            <td data-date="2026-03-24" aria-label="24. marts 2026" aria-disabled="true">24</td>
+                            <td data-date="2026-03-25" aria-label="25. marts 2026" aria-disabled="true">25</td>
+                            <td data-date="2026-03-26" aria-label="26. marts 2026" aria-disabled="true">26</td>
+                            <td data-date="2026-03-27" aria-label="27. marts 2026, tidligste valgbare dato" aria-selected="false" tabindex="0">27</td>
                             <td data-date="2026-03-28" aria-label="28. marts 2026" aria-selected="false" tabindex="-1">28</td>
                             <td data-date="2026-03-29" aria-label="29. marts 2026" aria-selected="false" tabindex="-1">29</td>
                         </tr>
@@ -138,7 +150,11 @@
             </div>
         </fds-date-picker-grid>
         <div tabindex="-1">
-            <button class="close-button">Luk</button>
+            <button class="close-button function-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path>
+                </svg>Luk
+            </button>
         </div>
     </div>
 </fds-date-picker>
