@@ -138,6 +138,8 @@ Accordions har to custom elementer tilknyttet: `fds-accordion` og `fds-accordion
 
 Brug en fds-accordion-group til at sætte samme overskriftsniveau på alle accordions.
 
+Placer det ønskede indhold i en `<div>` direkte inde i `<fds-accordion>` – denne div fungerer som accordionens indholdscontainer.
+
 ### HTML-muligheder
 
 Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
@@ -155,6 +157,8 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 {% include code/show-example-with-tabs.html example="fds-accordion-group-example" tabId="fds-accordion-group-example" %}
 
 ### Varianter
+
+Begge attributter skal angives samtidig for at varianten aktiveres. Hvis kun én af dem er sat, vises ingen variant. Når begge er til stede, tilføjes et ikon-element i knappen med den angivne tekst (variant-text) og et SVG-ikon refereret via ikonets ID (variant-icon).
 
 {% include code/show-example-with-tabs.html example="fds-accordion-variants" tabId="example-2-acc" %}
 
