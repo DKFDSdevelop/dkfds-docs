@@ -28,6 +28,8 @@ title: Test
 {% include test/preview-test.html filename="test-fds-upload-file" description="Vedhæft fil" %}
 {% include test/preview-test.html filename="test-fds-date-picker" description="Datovælger" %}
 {% include test/preview-test.html filename="test-fds-textarea" description="Tekstområde" %}
+{% include test/preview-test.html filename="test-fds-error-summary-manual" description="Fejlopsummering - manual indsættelse fejl" %}
+{% include test/preview-test.html filename="test-fds-error-summary-auto" description="Fejlopsummering - automatisk opsamling af fejl" %}
 
 {:.h3}
 ## HTML-elementer
