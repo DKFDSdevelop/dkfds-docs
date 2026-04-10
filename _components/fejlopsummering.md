@@ -90,4 +90,27 @@ new DKFDS.ErrorSummary(document.getElementById('ALERT-ID')).init();
 
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
 
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.
+
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-error-summary" tabId="example-1-errorsum" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Auto
+
+{% include code/show-example-with-tabs.html example="fds-error-summary-auto" tabId="example-2-errorsum" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut   | Beskrivelse                                                          |
+|------------|----------------------------------------------------------------------|
+| heading    | Sæt en anden overskrift end standardoverskriften "Der er problemer". |
