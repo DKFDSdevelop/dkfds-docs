@@ -38,6 +38,8 @@ var testfiles = [
     "test-fds-upload-file",
     "test-fds-date-picker",
     "test-fds-textarea",
+    "test-fds-error-summary-manual",
+    "test-fds-error-summary-auto",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",

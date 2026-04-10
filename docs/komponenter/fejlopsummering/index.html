@@ -1325,7 +1325,7 @@
 <li class="active current">
 
   <a href="/komponenter/fejlopsummering/" class="nav-link" aria-current="page">
-    <span>Fejlopsummering</span>
+      <span>Fejlopsummering <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
   </a>
 
 </li>
@@ -1457,7 +1457,7 @@
 <li>
 
   <a href="/komponenter/radioknap/" class="nav-link">
-      <span>Radioknap <span class="d-inline" lang="en">(Radio button)</span><svg class="icon-svg ml-2 mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
+      <span>Radioknap <span class="d-inline" lang="en">(Radio button)</span> <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
   </a>
 
 </li>
@@ -1517,7 +1517,7 @@
 <li>
 
   <a href="/komponenter/tekstomraade/" class="nav-link">
-      <span>Tekstområde <span class="d-inline" lang="en">(Textarea)</span><svg class="icon-svg ml-2 mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
+      <span>Tekstområde <span class="d-inline" lang="en">(Textarea)</span> <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
   </a>
 
 </li>
@@ -1553,7 +1553,7 @@
 <li>
 
   <a href="/komponenter/tjekboks/" class="nav-link">
-      <span>Tjekboks <span class="d-inline" lang="en">(Checkbox)</span><svg class="icon-svg ml-2 mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
+      <span>Tjekboks <span class="d-inline" lang="en">(Checkbox)</span> <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
   </a>
 
 </li>
@@ -1662,6 +1662,9 @@
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
+        </li><li>
+            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom element</span></a>
+            <span id="custom" hidden=""></span>
         </li></ul>
 </nav>
 <div id="retningslinjer" hidden=""></div>
@@ -1709,6 +1712,10 @@
         <li class="anchorlink-guidelines"><a href="#referencer">Referencer</a></li>
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
+        <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
+        <li class="anchorlink-custom"><a href="#eksempler-custom">Eksempler</a></li>
+        <li class="anchorlink-custom"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-custom"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -1984,6 +1991,160 @@
 <p>Fejlopsummering kræver JavaScript samt attributten <code>data-module="error-summary"</code> for at fungere korrekt. Dermed vil et klik på et link i opsummeringen betyde, at brugeren scroller ned til feltet med fejl uden at scrolle forbi feltets label. Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten manuelt med nedenstående:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">new DKFDS.ErrorSummary(document.getElementById(&#39;ALERT-ID&#39;)).init();</code></pre></figure>
+
+
+                        </div>
+                        <div id="custom-section">
+                            
+
+<h2 id="om-custom-elements-custom">Om custom elements</h2>
+
+<h3>HTML-muligheder</h3>
+
+<p>Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.</p>
+
+<p>Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.</p>
+
+<h2 id="eksempler-custom">Eksempler</h2>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-1-errorsum-tabpanel1" aria-selected="true" id="example-1-errorsum-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-errorsum-tabpanel2" aria-selected="false" id="example-1-errorsum-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-errorsum-tabpanel3" aria-selected="false" id="example-1-errorsum-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-1-errorsum-tabpanel1" aria-labelledby="example-1-errorsum-tab1">
+        <fds-error-summary></fds-error-summary>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-1-errorsum-tabpanel2" aria-labelledby="example-1-errorsum-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-1-errorsum-tabpanel3" aria-labelledby="example-1-errorsum-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-error-summary/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h2 id="varianter-custom">Varianter</h2>
+
+<h3>Auto</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-2-errorsum-tabpanel1" aria-selected="true" id="example-2-errorsum-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-2-errorsum-tabpanel2" aria-selected="false" id="example-2-errorsum-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-2-errorsum-tabpanel3" aria-selected="false" id="example-2-errorsum-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-2-errorsum-tabpanel1" aria-labelledby="example-2-errorsum-tab1">
+        <fds-error-summary auto="true"></fds-error-summary>
+
+<fds-input-wrapper>
+    <label>Fornavn</label>
+    <input type="text" id="input-wrapper-error1" name="input-text1" required="" />
+    <fds-error-message id="error77d50f12">Fornavn ikke indtastet</fds-error-message>
+</fds-input-wrapper>
+
+<fds-input-wrapper>
+    <label>Efternavn</label>
+    <input type="text" id="input-wrapper-error2" name="input-text2" required="" />
+    <fds-error-message id="error77d50f13">Efternavn ikke indtastet</fds-error-message>
+</fds-input-wrapper>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-2-errorsum-tabpanel2" aria-labelledby="example-2-errorsum-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Fornavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-error1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text1&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-error2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text2&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error77d50f13&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-2-errorsum-tabpanel3" aria-labelledby="example-2-errorsum-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-error1&quot;</span>&gt;</span>Fornavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-error1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text1&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg alert-icon&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-error2&quot;</span>&gt;</span>Efternavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-error2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text2&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;error77d50f13&quot;</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error77d50f13&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg alert-icon&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-wrapper</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-error-summary-auto/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3>Attributter</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading</td>
+      <td>Sæt en anden overskrift end standardoverskriften “Der er problemer”.</td>
+    </tr>
+  </tbody>
+</table>
 
                         </div>
             </section>
