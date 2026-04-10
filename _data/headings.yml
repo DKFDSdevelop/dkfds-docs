@@ -489,6 +489,10 @@ Fejlmeddelelser_Kode:
 Fejlopsummering_Kode:
 - h2: Installation
 
+Fejlopsummering_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+
 Footer_Kode:
 - h2: Installation
 - h2: Tre kolonner

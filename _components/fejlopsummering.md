@@ -9,14 +9,14 @@ title: Fejlopsummering
 lead: Fejlopsummeringer bruges til at give overblik over fejl eller mangler, der skal rettes på en side eller et trin, før brugeren kan komme videre.
 description: 
 tags: 
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="error-summary" title="Eksempel på fejlopsummering" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Fejlopsummering" code="Fejlopsummering_Kode" classes="hide-code" %}
+{% include anchorlinks.html guidelines="Fejlopsummering" code="Fejlopsummering_Kode" custom="Fejlopsummering_Custom" classes="hide-code" %}
 
 <!--split-->
 
@@ -85,3 +85,9 @@ Fejlopsummering kræver JavaScript samt attributten `data-module="error-summary"
 {% highlight javascript %}
 new DKFDS.ErrorSummary(document.getElementById('ALERT-ID')).init();
 {% endhighlight %}
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
