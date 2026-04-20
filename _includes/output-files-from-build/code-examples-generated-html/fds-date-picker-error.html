@@ -1,9 +1,5 @@
 <fds-date-picker>
     <label for="ce-datepicker-example-error">Datovælger med fejl</label>
-    <fds-error-message id="error1">
-        <svg class="icon-svg alert-icon" aria-label="Fejl" focusable="false"><use href="#error"></use></svg>
-        <span class="visible-message">Dette er en fejl</span>
-    </fds-error-message>
     <div class="input-wrapper">
         <input type="text" name="input-text" id="ce-datepicker-example-error" aria-describedby="error1" aria-invalid="true">
         <button aria-haspopup="dialog" class="button button-icon-only date-button" aria-label="Åbn datovælger">
@@ -20,4 +16,8 @@
             </button>
         </div>
     </div>
+    <fds-error-message id="error1">
+        <svg class="icon-svg alert-icon" aria-label="Fejl" focusable="false"><use href="#error"></use></svg>
+        <span class="visible-message">Dette er en fejl</span>
+    </fds-error-message>
 </fds-date-picker>
