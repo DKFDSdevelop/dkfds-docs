@@ -3,154 +3,19 @@
     <div class="input-wrapper">
         <input type="text" name="input-text" id="ce-datepicker-example-default">
         <button aria-haspopup="dialog" class="button button-icon-only date-button" aria-label="Åbn datovælger">
-            <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#calendar-month"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" focusable="false" aria-hidden="true" class="icon-svg">
+                <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"></path>
+            </svg>
         </button>
-    </div>
-    <div class="ce-date-picker d-none" role="dialog" aria-modal="false">
-        <fds-date-picker-grid>
-            <div class="grid-container" tabindex="-1">
-                <div class="date-picker-header">
-                    <span class="sr-only" aria-live="polite"></span>
-                    <button class="button button-icon-only previous-month" aria-disabled="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
-                            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"></path>
-                        </svg>
-                        <span class="sr-only">Forrige</span>
-                    </button>
-                    <div class="month-year-wrapper">
-                        <select name="month" aria-label="Måned" class="selected-month">
-                            <option value="0" disabled="">Januar</option>
-                            <option value="1" disabled="">Februar</option>
-                            <option value="2" disabled="">Marts</option>
-                            <option value="3">April</option>
-                            <option value="4">Maj</option>
-                            <option value="5">Juni</option>
-                            <option value="6">Juli</option>
-                            <option value="7">August</option>
-                            <option value="8">September</option>
-                            <option value="9">Oktober</option>
-                            <option value="10">November</option>
-                            <option value="11">December</option>
-                        </select>
-                        <select name="year" aria-label="År" class="selected-year">
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                            <option value="2030">2030</option>
-                            <option value="2031">2031</option>
-                            <option value="2032">2032</option>
-                            <option value="2033">2033</option>
-                            <option value="2034">2034</option>
-                            <option value="2035">2035</option>
-                            <option value="2036">2036</option>
-                        </select>
-                    </div>
-                    <button class="button button-icon-only next-month">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
-                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"></path>
-                        </svg>
-                        <span class="sr-only">Næste</span>
-                    </button>
-                </div>
-                <table role="grid" class="date-picker-grid">
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                <span aria-hidden="true">Ma</span>
-                                <span class="sr-only">Mandag</span>
-                            </th>
-                            <th scope="col">
-                                <span aria-hidden="true">Ti</span>
-                                <span class="sr-only">Tirsdag</span>
-                            </th>
-                            <th scope="col">
-                                <span aria-hidden="true">On</span>
-                                <span class="sr-only">Onsdag</span>
-                            </th>
-                            <th scope="col">
-                                <span aria-hidden="true">To</span>
-                                <span class="sr-only">Torsdag</span>
-                            </th>
-                            <th scope="col">
-                                <span aria-hidden="true">Fr</span>
-                                <span class="sr-only">Fredag</span>
-                            </th>
-                            <th scope="col">
-                                <span aria-hidden="true">Lø</span>
-                                <span class="sr-only">Lørdag</span>
-                            </th>
-                            <th scope="col">
-                                <span aria-hidden="true">Sø</span>
-                                <span class="sr-only">Søndag</span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td data-date="2026-04-01" aria-label="1. april 2026" aria-disabled="true">1</td>
-                            <td data-date="2026-04-02" aria-label="2. april 2026" aria-disabled="true">2</td>
-                            <td data-date="2026-04-03" aria-label="3. april 2026" aria-disabled="true">3</td>
-                            <td data-date="2026-04-04" aria-label="4. april 2026" aria-disabled="true">4</td>
-                            <td data-date="2026-04-05" aria-label="5. april 2026" aria-disabled="true">5</td>
-                        </tr>
-                        <tr>
-                            <td data-date="2026-04-06" aria-label="6. april 2026" aria-disabled="true">6</td>
-                            <td data-date="2026-04-07" aria-label="7. april 2026" aria-disabled="true">7</td>
-                            <td data-date="2026-04-08" aria-label="8. april 2026" aria-disabled="true">8</td>
-                            <td data-date="2026-04-09" aria-label="9. april 2026" aria-disabled="true">9</td>
-                            <td data-date="2026-04-10" aria-label="10. april 2026" aria-disabled="true">10</td>
-                            <td data-date="2026-04-11" aria-label="11. april 2026" aria-disabled="true">11</td>
-                            <td data-date="2026-04-12" aria-label="12. april 2026" aria-disabled="true">12</td>
-                        </tr>
-                        <tr>
-                            <td data-date="2026-04-13" aria-label="13. april 2026" aria-disabled="true">13</td>
-                            <td data-date="2026-04-14" aria-label="14. april 2026" aria-disabled="true">14</td>
-                            <td data-date="2026-04-15" aria-label="15. april 2026" aria-disabled="true">15</td>
-                            <td data-date="2026-04-16" aria-label="16. april 2026" aria-disabled="true">16</td>
-                            <td data-date="2026-04-17" aria-label="17. april 2026" aria-disabled="true">17</td>
-                            <td data-date="2026-04-18" aria-label="18. april 2026" aria-disabled="true">18</td>
-                            <td data-date="2026-04-19" aria-label="19. april 2026" aria-disabled="true">19</td>
-                        </tr>
-                        <tr>
-                            <td data-date="2026-04-20" aria-label="20. april 2026" aria-disabled="true">20</td>
-                            <td data-date="2026-04-21" aria-label="21. april 2026, tidligste valgbare dato" aria-selected="false" tabindex="0">21</td>
-                            <td data-date="2026-04-22" aria-label="22. april 2026" aria-selected="false" tabindex="-1">22</td>
-                            <td data-date="2026-04-23" aria-label="23. april 2026" aria-selected="false" tabindex="-1">23</td>
-                            <td data-date="2026-04-24" aria-label="24. april 2026" aria-selected="false" tabindex="-1">24</td>
-                            <td data-date="2026-04-25" aria-label="25. april 2026" aria-selected="false" tabindex="-1">25</td>
-                            <td data-date="2026-04-26" aria-label="26. april 2026" aria-selected="false" tabindex="-1">26</td>
-                        </tr>
-                        <tr>
-                            <td data-date="2026-04-27" aria-label="27. april 2026" aria-selected="false" tabindex="-1">27</td>
-                            <td data-date="2026-04-28" aria-label="28. april 2026" aria-selected="false" tabindex="-1">28</td>
-                            <td data-date="2026-04-29" aria-label="29. april 2026" aria-selected="false" tabindex="-1">29</td>
-                            <td data-date="2026-04-30" aria-label="30. april 2026" aria-selected="false" tabindex="-1">30</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="ce-date-picker d-none" role="dialog" aria-modal="false">
+            <fds-date-picker-grid></fds-date-picker-grid>
+            <div tabindex="-1">
+                <button class="close-button function-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" focusable="false" aria-hidden="true" class="icon-svg">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path>
+                    </svg>Luk
+                </button>
             </div>
-        </fds-date-picker-grid>
-        <div tabindex="-1">
-            <button class="close-button function-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true" class="icon-svg">
-                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path>
-                </svg>Luk
-            </button>
         </div>
     </div>
 </fds-date-picker>
