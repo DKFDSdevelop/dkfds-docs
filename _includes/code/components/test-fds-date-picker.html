@@ -29,56 +29,71 @@
         <div class="col-12">
             <fds-date-picker>
                 <label>Datovælger</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
         </div>
         <div class="col-12 mt-8">
             <fds-date-picker>
                 <label>Datovælger med defaultdato</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid default-date="2028-09-05"></fds-date-picker-grid>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid
+                            default-date="2028-09-05"></fds-date-picker-grid></div>
                 </div>
             </fds-date-picker>
         </div>
         <div class="col-12 mt-8">
             <fds-date-picker>
                 <label>Datovælger med valgt dato</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid selected-date="1988-09-05" min-date="1900-01-01"
-                        max-date="2100-12-31"></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid selected-date="1988-09-05"
+                            min-date="1900-01-01"
+                            max-date="2100-12-31"></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
         </div>
         <div class="col-12 mt-8">
             <fds-date-picker>
                 <label>Datovælger med begrænset dato</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid min-date="2026-02-03"
-                        max-date="2026-02-22"></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid min-date="2026-02-03"
+                            max-date="2026-02-22"></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
         </div>
         <div class="col-12 mt-8">
             <fds-date-picker format="DD-MM-YYYY">
                 <label>Datovælger med nyt format</label>
                 <fds-help-text>Format sat til dd-mm-yyyy</fds-help-text>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
         </div>
         <div class="col-12 mt-8">
             <fds-date-picker>
                 <label>Datovælger fra år 1 til år 10</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid min-date="0001-01-01"
-                        max-date="0010-12-31"></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid min-date="0001-01-01"
+                            max-date="0010-12-31"></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
         </div>
         <div class="col-12 mt-8">
             <fds-date-picker>
                 <label>Datovælger fra år 1900 til år 2100</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid min-date="1900-01-01"
-                        max-date="2100-12-31"></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid min-date="1900-01-01"
+                            max-date="2100-12-31"></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
         </div>
         <div class="col-12 mt-8">
@@ -87,14 +102,16 @@
                 text-open="Open date picker"
                 text-selecteddate="selected date is MONTH DAY, YEAR">
                 <label>Date picker in English</label>
-                <div><input type="text" name="input-text"></div>
                 <div>
-                    <fds-date-picker-grid
-                        text-days="Monday Tuesday Wednesday Thursday Friday Saturday Sunday"
-                        text-prevbutton="Previous" text-nextbutton="Next"
-                        text-date-announcement="MONTH DAY, YEAR"
-                        text-mindate="earliest selectable date"
-                        text-maxdate="latest selectable date"></fds-date-picker-grid>
+                    <input type="text" name="input-text">
+                    <div>
+                        <fds-date-picker-grid
+                            text-days="Monday Tuesday Wednesday Thursday Friday Saturday Sunday"
+                            text-prevbutton="Previous" text-nextbutton="Next"
+                            text-date-announcement="MONTH DAY, YEAR"
+                            text-mindate="earliest selectable date"
+                            text-maxdate="latest selectable date"></fds-date-picker-grid>
+                    </div>
                 </div>
             </fds-date-picker>
         </div>
@@ -135,15 +152,19 @@
         <div class="col-12 d-block d-sm-flex mb-905">
             <fds-date-picker class="mr-sm-4">
                 <label>Startdato</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid id="startdate-date-picker"
-                        start-date-id="start-end-example1"></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid id="startdate-date-picker"
+                            start-date-id="start-end-example1"></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
             <fds-date-picker class="mt-sm-0">
                 <label>Slutdato</label>
-                <div><input type="text" name="input-text"></div>
-                <div><fds-date-picker-grid id="enddate-date-picker"
-                        end-date-id="start-end-example1"></fds-date-picker-grid></div>
+                <div>
+                    <input type="text" name="input-text">
+                    <div><fds-date-picker-grid id="enddate-date-picker"
+                            end-date-id="start-end-example1"></fds-date-picker-grid></div>
+                </div>
             </fds-date-picker>
         </div>
         <div class="col-12">
@@ -185,8 +206,9 @@
             </div>
             <div class="modal-body">
                 <fds-date-picker><label>Datovælger i modal</label>
-                    <div><input type='text' name='input-text'></div>
-                    <div><fds-date-picker-grid></fds-date-picker-grid></div>
+                    <div><input type='text' name='input-text'>
+                        <div><fds-date-picker-grid></fds-date-picker-grid></div>
+                    </div>
                 </fds-date-picker>
             </div>
 
