@@ -34,6 +34,8 @@ global.customElements = dom.window.customElements;
 global.Event = window.Event;
 global.CustomEvent = window.CustomEvent;
 global.MutationObserver = window.MutationObserver;
+global.CSSStyleSheet = window.CSSStyleSheet;
+global.Node = window.Node;
 
 const DKFDS = require('dkfds');
 DKFDS.registerCustomElements();
