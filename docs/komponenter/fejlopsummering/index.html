@@ -1999,6 +1999,13 @@
 
 <h2 id="om-custom-elements-custom">Om custom elements</h2>
 
+<p><code>fds-error-summary</code> kan anvendes på to måder:</p>
+
+<ul>
+  <li>uden attributten <code>auto</code>, hvor udvikleren selv er ansvarlig for at tilføje fejl til oversigten og styre, hvornår komponenten skal vises</li>
+  <li>med attributten <code>auto</code>, hvor komponenten automatisk samler alle synlige fejlmeddelelser på siden, som ligger i et understøttet inputelement, og selv viser eller skjuler oversigten afhængigt af, om der er fejl</li>
+</ul>
+
 <h3>HTML-muligheder</h3>
 
 <p>Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.</p>
@@ -2006,6 +2013,8 @@
 <p>Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.</p>
 
 <h2 id="eksempler-custom">Eksempler</h2>
+
+<h3>Fejlopsummering med custom element</h3>
 
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
@@ -2036,9 +2045,9 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-heading6af39901&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-headingc8c610d2&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-heading6af39901&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-headingc8c610d2&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
@@ -2054,6 +2063,8 @@
 <h2 id="varianter-custom">Varianter</h2>
 
 <h3>Auto</h3>
+
+<p>Med attributten <code>auto</code> opdateres fejloversigten automatisk ud fra synlige <code>fds-error-message</code> i understøttede wrappers. Hvis en fejl er standalone eller befinder sig i en ikke-understøttet parent wrapper, bliver den ikke automatisk føjet til fejloversigten.</p>
 
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
@@ -2108,15 +2119,15 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-headingb696c11c&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-heading22502e8d&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-headingb696c11c&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-heading22502e8d&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error77d50f12&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#input-wrapper-error1&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f13&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error77d50f13&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#input-wrapper-error2&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
@@ -2146,6 +2157,28 @@
     <a href="/eksempel/fds-error-summary-auto/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
 
+<h3>Understøttede wrappers</h3>
+
+<p><code>fds-error-summary</code> understøtter fejlmeddelelser i følgende wrappers:</p>
+
+<ul>
+  <li><code>fds-input-wrapper</code></li>
+  <li><code>fds-checkbox</code></li>
+  <li><code>fds-checkbox-group</code></li>
+  <li><code>fds-radio-button-group</code></li>
+  <li><code>fds-date-input</code></li>
+  <li><code>fds-textarea</code></li>
+  <li><code>fds-select</code></li>
+  <li><code>fds-upload-file</code></li>
+  <li><code>fds-date-picker</code></li>
+</ul>
+
+<p>Fejlmeddelelsen skal være angivet som et <code>fds-error-message</code> inde i wrapperen.</p>
+
+<p>Når der klikkes på et link i fejloversigten, flyttes fokus til det første fokusbare element i den wrapper, som fejlmeddelelsen tilhører, fx et <code>input</code>, <code>select</code>, <code>textarea</code> eller <code>button</code>.</p>
+
+<p>Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhørende fejlmeddelelse heller ikke er skjult.</p>
+
 <h2 id="konfiguration-custom">Konfiguration</h2>
 
 <h3>Attributter</h3>
@@ -2160,7 +2193,15 @@
   <tbody>
     <tr>
       <td>heading</td>
-      <td>Sæt en anden overskrift end standardoverskriften “Der er problemer”.</td>
+      <td>Sæt en anden overskrift end standardoverskriften <code>"Der er problemer"</code>.</td>
+    </tr>
+    <tr>
+      <td>heading-level</td>
+      <td>Angiver hvilket overskriftsniveau der anvendes til overskriften. Gyldige værdier er <code>h1</code> til <code>h6</code>. Standard er <code>h2</code>.</td>
+    </tr>
+    <tr>
+      <td>auto</td>
+      <td>Gør komponenten automatisk og holder fejloversigten synkroniseret med <code>fds-error-message</code> i understøttede wrappers.</td>
     </tr>
   </tbody>
 </table>
