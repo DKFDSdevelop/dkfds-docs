@@ -1,0 +1,10 @@
+import { useEffect, useRef } from 'react'; function Example() { const ref = useRef(null); useEffect(() =&gt; { const el = ref.current; if (!el) return; const handleFilesAdded = (event) =&gt; { console.log(event.detail); }; el.addEventListener('files-added', handleFilesAdded); return () =&gt; { el.removeEventListener('files-added', handleFilesAdded); }; }, []); return <fds-upload-file ref="{ref}">
+    <label class="fds-upload-label" for="file-inputcad7f1cc">Vedhæft filer</label>; }<div class="fds-upload-dropzone">
+        <input type="file" multiple="" id="file-inputcad7f1cc" class="fds-upload-input" aria-describedby="dropzone-file-inputcad7f1cc">
+        <div class="fds-upload-dropzone-content" id="dropzone-file-inputcad7f1cc">
+            <svg class="icon-svg" aria-hidden="true"><use href="#plus-circle"></use></svg>
+            <p>Træk dine filer herhen eller <span class="fds-upload-choose">vælg filer</span>
+            </p>
+        </div>
+    </div>
+</fds-upload-file>

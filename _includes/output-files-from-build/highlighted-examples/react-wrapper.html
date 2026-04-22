@@ -1,0 +1,33 @@
+import { useEffect, useRef, useState } from &#39;react&#39;;
+
+function UploadFileWrapper() {
+  const ref = useRef(null);
+  const [files, setFiles] = useState([]);
+
+  useEffect(() =&gt; {
+    const el = ref.current;
+    if (!el) return;
+
+    const syncFiles = () =&gt; setFiles(el.getFiles() || []);
+
+    el.addEventListener(&#39;files-added&#39;, syncFiles);
+    el.addEventListener(&#39;files-removed&#39;, syncFiles);
+
+    return () =&gt; {
+      el.removeEventListener(&#39;files-added&#39;, syncFiles);
+      el.removeEventListener(&#39;files-removed&#39;, syncFiles);
+    };
+  }, []);
+
+  return (
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span>&gt;</span>
+      {files.map((f) =&gt; (
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{f.id}</span> <span class="hljs-attr">id</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">error-</span>${<span class="hljs-attr">f.id</span>}`} <span class="hljs-attr">hidden</span>=<span class="hljs-string">{f.file.size</span> &lt;= <span class="hljs-string">1024</span> * <span class="hljs-attr">1024</span>}&gt;</span>
+          Filen &quot;{f.file.name}&quot; er større end 1 MB
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+      ))}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-upload-file</span>&gt;</span>
+  );
+}
+
+export default UploadFileWrapper;

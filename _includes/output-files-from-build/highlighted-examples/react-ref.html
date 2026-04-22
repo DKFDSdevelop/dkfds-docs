@@ -1,0 +1,22 @@
+import { useEffect, useRef } from &#39;react&#39;;
+
+function Example() {
+  const ref = useRef(null);
+
+  useEffect(() =&gt; {
+    const el = ref.current;
+    if (!el) return;
+
+    const handleFilesAdded = (event) =&gt; {
+      console.log(event.detail);
+    };
+
+    el.addEventListener(&#39;files-added&#39;, handleFilesAdded);
+
+    return () =&gt; {
+      el.removeEventListener(&#39;files-added&#39;, handleFilesAdded);
+    };
+  }, []);
+
+  return <span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span>;
+}

@@ -1,0 +1,14 @@
+import { useEffect, useRef, useState } from 'react'; function UploadFileWrapper() { const ref = useRef(null); const [files, setFiles] = useState([]); useEffect(() =&gt; { const el = ref.current; if (!el) return; const syncFiles = () =&gt; setFiles(el.getFiles() || []); el.addEventListener('files-added', syncFiles); el.addEventListener('files-removed', syncFiles); return () =&gt; { el.removeEventListener('files-added', syncFiles); el.removeEventListener('files-removed', syncFiles); }; }, []); return ( <fds-upload-file ref="{ref}">
+    <label class="fds-upload-label" for="file-inputd8743e95">Vedhæft filer</label> {files.map((f) =&gt; ( ))} <div class="fds-upload-dropzone">
+        <input type="file" multiple="" id="file-inputd8743e95" class="fds-upload-input" aria-describedby="dropzone-file-inputd8743e95">
+        <div class="fds-upload-dropzone-content" id="dropzone-file-inputd8743e95">
+            <svg class="icon-svg" aria-hidden="true"><use href="#plus-circle"></use></svg>
+            <p>Træk dine filer herhen eller <span class="fds-upload-choose">vælg filer</span>
+            </p>
+        </div>
+    </div>
+    <fds-error-message key="{f.id}" id="{`error-${f.id}`}" hidden="{f.file.size" <="1024" *="" 1024}="">
+        <svg class="icon-svg alert-icon" aria-label="Fejl" focusable="false"><use href="#error"></use></svg>
+        <span class="visible-message"> Filen "{f.file.name}" er større end 1 MB </span>
+    </fds-error-message>
+</fds-upload-file> ); } export default UploadFileWrapper;
