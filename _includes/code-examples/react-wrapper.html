@@ -1,0 +1,33 @@
+import { useEffect, useRef, useState } from 'react';
+
+function UploadFileWrapper() {
+  const ref = useRef(null);
+  const [files, setFiles] = useState([]);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const syncFiles = () => setFiles(el.getFiles() || []);
+
+    el.addEventListener('files-added', syncFiles);
+    el.addEventListener('files-removed', syncFiles);
+
+    return () => {
+      el.removeEventListener('files-added', syncFiles);
+      el.removeEventListener('files-removed', syncFiles);
+    };
+  }, []);
+
+  return (
+    <fds-upload-file ref={ref}>
+      {files.map((f) => (
+        <fds-error-message key={f.id} id={`error-${f.id}`} hidden={f.file.size <= 1024 * 1024}>
+          Filen "{f.file.name}" er større end 1 MB
+        </fds-error-message>
+      ))}
+    </fds-upload-file>
+  );
+}
+
+export default UploadFileWrapper;

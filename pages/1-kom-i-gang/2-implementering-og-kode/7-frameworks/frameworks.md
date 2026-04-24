@@ -35,6 +35,32 @@ Du skal altid kode selvbetjeningsløsningens brugergrænseflade i valid HTML5, s
 
 Nedenstående eksempler viser, hvordan man kan anvende koden i udvalgte frameworks.
 
+### React
+
+#### Registrering
+
+FDS custom elements kan bruges direkte i React, når Designsystemets JavaScript er indlæst. dkfds.js registrerer alle custom elements globalt, så React-udviklere behøver ikke at registrere hvert enkelt element manuelt.
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-script" %}
+
+Derefter kan elementerne bruges direkte i JSX:
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-upload-file-example" %}
+
+Hvis du bruger FDS via npm-pakken, skal du sikre dig, at pakkens JavaScript bliver importeret, så de custom elements er registreret, før de bruges.
+
+#### Attributer, funktioner og custom events 
+
+Brug FDS custom elements direkte i React via JSX-attributter. Hvis en komponent eksponerer funktioner eller custom events, skal du tilgå elementet via en ref.
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-ref" %}
+
+#### Server-side rendering
+
+FDS custom elements kan bruges med server-renderet HTML, hvor den fulde markup gengives på serveren og hydreres på klienten. Komponenternes funktionalitet initialiseres, når Designsystemets JavaScript indlæses i browseren.
+
+#### React wrappers
+
+En wrapper giver især mening i React, når du har brug for ref, offentlige metoder eller custom event listeners. Hvis en komponent allerede fungerer enkelt og naturligt direkte i JSX, vil en wrapper ofte ikke tilføre nok værdi.
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-wrapper" %}
+
 ### Blazor
 
 Opdatér den fil, hvor du definerer dit HTML-layout og anvender scripts (fx App.razor i nyrere versioner af .NET).
