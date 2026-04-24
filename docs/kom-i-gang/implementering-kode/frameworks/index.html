@@ -1406,7 +1406,7 @@
                 <button class="button button-tertiary button-copy">Kopiér kode</button>
             </div>
             <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;dkfds.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="language-html" data-lang="html">&lt;script src=<span class="hljs-string">&quot;dkfds.js&quot;</span>&gt;&lt;/script&gt;</code></pre>
             </figure>
         </div>
     </div>
@@ -1440,27 +1440,27 @@
                 <button class="button button-tertiary button-copy">Kopiér kode</button>
             </div>
             <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html">import { useEffect, useRef } from &#39;react&#39;;
+<pre><code class="language-html" data-lang="html"><span class="hljs-keyword">import</span> { useEffect, useRef } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;react&#39;</span>;
 
-function Example() {
-  const ref = useRef(null);
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">Example</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> ref = <span class="hljs-title function_">useRef</span>(<span class="hljs-literal">null</span>);
 
-  useEffect(() =&gt; {
-    const el = ref.current;
-    if (!el) return;
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> el = ref.<span class="hljs-property">current</span>;
+    <span class="hljs-keyword">if</span> (!el) <span class="hljs-keyword">return</span>;
 
-    const handleFilesAdded = (event) =&gt; {
-      console.log(event.detail);
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">handleFilesAdded</span> = (<span class="hljs-params">event</span>) =&gt; {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(event.<span class="hljs-property">detail</span>);
     };
 
-    el.addEventListener(&#39;files-added&#39;, handleFilesAdded);
+    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, handleFilesAdded);
 
-    return () =&gt; {
-      el.removeEventListener(&#39;files-added&#39;, handleFilesAdded);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> {
+      el.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, handleFilesAdded);
     };
   }, []);
 
-  return <span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span>;
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span></span>;
 }</code></pre>
             </figure>
         </div>
@@ -1482,39 +1482,39 @@ function Example() {
                 <button class="button button-tertiary button-copy">Kopiér kode</button>
             </div>
             <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html">import { useEffect, useRef, useState } from &#39;react&#39;;
+<pre><code class="language-html" data-lang="html"><span class="hljs-keyword">import</span> { useEffect, useRef, useState } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;react&#39;</span>;
 
-function UploadFileWrapper() {
-  const ref = useRef(null);
-  const [files, setFiles] = useState([]);
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">UploadFileWrapper</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> ref = <span class="hljs-title function_">useRef</span>(<span class="hljs-literal">null</span>);
+  <span class="hljs-keyword">const</span> [files, setFiles] = <span class="hljs-title function_">useState</span>([]);
 
-  useEffect(() =&gt; {
-    const el = ref.current;
-    if (!el) return;
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> el = ref.<span class="hljs-property">current</span>;
+    <span class="hljs-keyword">if</span> (!el) <span class="hljs-keyword">return</span>;
 
-    const syncFiles = () =&gt; setFiles(el.getFiles() || []);
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">syncFiles</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-title function_">setFiles</span>(el.<span class="hljs-title function_">getFiles</span>() || []);
 
-    el.addEventListener(&#39;files-added&#39;, syncFiles);
-    el.addEventListener(&#39;files-removed&#39;, syncFiles);
+    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, syncFiles);
+    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;files-removed&#39;</span>, syncFiles);
 
-    return () =&gt; {
-      el.removeEventListener(&#39;files-added&#39;, syncFiles);
-      el.removeEventListener(&#39;files-removed&#39;, syncFiles);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> {
+      el.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, syncFiles);
+      el.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#39;files-removed&#39;</span>, syncFiles);
     };
   }, []);
 
-  return (
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span>&gt;</span>
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span>&gt;</span>
       {files.map((f) =&gt; (
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{f.id}</span> <span class="hljs-attr">id</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">error-</span>${<span class="hljs-attr">f.id</span>}`} <span class="hljs-attr">hidden</span>=<span class="hljs-string">{f.file.size</span> &lt;= <span class="hljs-string">1024</span> * <span class="hljs-attr">1024</span>}&gt;</span>
           Filen &quot;{f.file.name}&quot; er større end 1 MB
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
       ))}
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-upload-file</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-upload-file</span>&gt;</span></span>
   );
 }
 
-export default UploadFileWrapper;</code></pre>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">UploadFileWrapper</span>;</code></pre>
             </figure>
         </div>
     </div>

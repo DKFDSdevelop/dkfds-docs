@@ -24,7 +24,9 @@ const body = document.body;
 const SKIP_FILES = [
     'blazor-app.html',
     'blazor-component.html',
-    'fds-input-wrapper-simple.html'
+    'fds-input-wrapper-simple.html',
+    'fds-ref.html',
+    'react-wrapper.html'
 ];
 
 global.HTMLElement = window.HTMLElement;

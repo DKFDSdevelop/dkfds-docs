@@ -20,6 +20,11 @@ function restoreCode(str) {
         .replaceAll('<span class="hljs-title">', '')
         .replaceAll('<span class="hljs-params">', '')
         .replaceAll('<span class="hljs-function">', '')
+        .replaceAll('<span class="hljs-title function_">', '')
+        .replaceAll('<span class="hljs-property">', '')
+        .replaceAll('<span class="hljs-variable language_">', '')
+        .replaceAll('<span class="language-xml">', '')
+        .replaceAll('<span class="hljs-title class_">', '')
         .replaceAll('</span>', '')
         .replaceAll('&#x27;', '&#39;')
         .replaceAll('&lt;', '<')
@@ -61,6 +66,9 @@ fs.readdirSync('_includes/code-examples/').forEach(file => {
     let highlightedContent = highlightCode(content, 'xml');
     if (file === 'blazor-component.html') {
         highlightedContent = highlightCode(content, 'csharp');
+    }
+    if (file.includes('react')) {
+        highlightedContent = highlightCode(content, 'jsx');
     }
     fs.writeFileSync(`${'_includes/output-files-from-build/highlighted-examples/'}/${file}`, highlightedContent);
 });

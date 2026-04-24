@@ -1,22 +1,22 @@
-import { useEffect, useRef } from &#39;react&#39;;
+<span class="hljs-keyword">import</span> { useEffect, useRef } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;react&#39;</span>;
 
-function Example() {
-  const ref = useRef(null);
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">Example</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> ref = <span class="hljs-title function_">useRef</span>(<span class="hljs-literal">null</span>);
 
-  useEffect(() =&gt; {
-    const el = ref.current;
-    if (!el) return;
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> el = ref.<span class="hljs-property">current</span>;
+    <span class="hljs-keyword">if</span> (!el) <span class="hljs-keyword">return</span>;
 
-    const handleFilesAdded = (event) =&gt; {
-      console.log(event.detail);
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">handleFilesAdded</span> = (<span class="hljs-params">event</span>) =&gt; {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(event.<span class="hljs-property">detail</span>);
     };
 
-    el.addEventListener(&#39;files-added&#39;, handleFilesAdded);
+    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, handleFilesAdded);
 
-    return () =&gt; {
-      el.removeEventListener(&#39;files-added&#39;, handleFilesAdded);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> {
+      el.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, handleFilesAdded);
     };
   }, []);
 
-  return <span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span>;
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span></span>;
 }
