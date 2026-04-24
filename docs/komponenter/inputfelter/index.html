@@ -3146,9 +3146,9 @@ form_limit.charactersLeft();</code></pre></figure>
         <button class="tab-button" role="tab" aria-controls="example-5-acc-tabpanel3" aria-selected="false" id="example-5-acc-tab3"><span>Genereret HTML</span></button>
     </div>
     <div class="tab-panel" role="tabpanel" id="example-5-acc-tabpanel1" aria-labelledby="example-5-acc-tab1">
-        <fds-input input-disabled="">
+        <fds-input>
     <label>Inputfelt som er låst</label>
-    <input type="text" id="input-wrapper-disabled" name="input-wrapper-disabled" value="Låst indhold" />
+    <input type="text" id="input-wrapper-disabled" name="input-wrapper-disabled" value="Låst indhold" disabled="" />
 </fds-input>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-5-acc-tabpanel2" aria-labelledby="example-5-acc-tab2" hidden="">
@@ -3158,9 +3158,9 @@ form_limit.charactersLeft();</code></pre></figure>
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-disabled</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt som er låst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3173,9 +3173,9 @@ form_limit.charactersLeft();</code></pre></figure>
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label disabled&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span>&gt;</span>Inputfelt som er låst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span>&gt;</span>Inputfelt som er låst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-disabled&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Låst indhold&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3628,10 +3628,6 @@ Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til s
     <tr>
       <td>input-readonly</td>
       <td>Gør feltet readonly. Sæt til en anden værdi end <code>false</code>.</td>
-    </tr>
-    <tr>
-      <td>input-disabled</td>
-      <td>Deaktiverer inputfeltet. Sæt til en anden værdi end <code>false</code>.</td>
     </tr>
     <tr>
       <td>input-prefix</td>
