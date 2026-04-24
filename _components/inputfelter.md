@@ -377,14 +377,14 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 ### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                                           |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| input-indicator | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
-| input-readonly  | Gør feltet readonly. Sæt til en anden værdi end `false`.                                                                              |
-| input-disabled  | Deaktiverer inputfeltet. Sæt til en anden værdi end `false`.                                                                          |
-| input-prefix    | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
-| input-suffix    | Indsæt et suffiks-element (tekst efter inputfeltet).                                                                                  |
-| input-maxwidth  | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
+| Attribut             | Beskrivelse                                                                                                                           |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
+| input-readonly       | Gør feltet readonly. Sæt til en anden værdi end `false`.                                                                              |
+| input-disabled       | Deaktiverer inputfeltet. Sæt til en anden værdi end `false`.                                                                          |
+| input-prefix         | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
+| input-suffix         | Indsæt et suffiks-element (tekst efter inputfeltet).                                                                                  |
+| input-maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
 
 ### Funktioner
 
