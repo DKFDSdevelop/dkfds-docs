@@ -143,5 +143,6 @@ Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhø
 | Attribut      | Beskrivelse                                                                                                          |
 |---------------|----------------------------------------------------------------------------------------------------------------------|
 | heading       | Sæt en anden overskrift end standardoverskriften `"Der er problemer"`.                                               |
+| heading-id    | Sætter id på overskriftselementet, så fejlopsummeringen kan referere til overskriften via aria-labelledby.           |
 | heading-level | Angiver hvilket overskriftsniveau der anvendes til overskriften. Gyldige værdier er `h1` til `h6`. Standard er `h2`. |
 | auto          | Gør komponenten automatisk og holder fejloversigten synkroniseret med `fds-error-message` i understøttede wrappers.  |
