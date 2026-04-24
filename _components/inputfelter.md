@@ -309,7 +309,7 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
 
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input-wrapper>` med `<div class="input-wrapper">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input>` med `<div class="fds-input">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
