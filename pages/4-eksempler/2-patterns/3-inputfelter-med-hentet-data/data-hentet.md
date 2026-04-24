@@ -53,7 +53,7 @@ editButton.addEventListener('click', function (e) {
     this.setAttribute('hidden', '');
 
     hentetDataEksempel.querySelector('fds-help-text').remove();
-    hentetDataEksempel.removeAttribute('input-readonly');
+    textfield.removeAttribute('readonly');
 
     textfield.setAttribute('required', '');
     textfield.setAttribute('autocomplete', 'name');
