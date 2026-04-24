@@ -1393,6 +1393,133 @@
 
 <p>Nedenstående eksempler viser, hvordan man kan anvende koden i udvalgte frameworks.</p>
 
+<h3>React</h3>
+
+<h4>Registrering</h4>
+
+<p>FDS custom elements kan bruges direkte i React, når Designsystemets JavaScript er indlæst. dkfds.js registrerer alle custom elements globalt, så React-udviklere behøver ikke at registrere hvert enkelt element manuelt.</p>
+
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html">&lt;script src=<span class="hljs-string">&quot;dkfds.js&quot;</span>&gt;&lt;/script&gt;</code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<p>Derefter kan elementerne bruges direkte i JSX:</p>
+
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">upload-id</span>=<span class="hljs-string">&quot;upload-id&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-upload-file</span>&gt;</span></code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<p>Hvis du bruger FDS via npm-pakken, skal du sikre dig, at pakkens JavaScript bliver importeret, så de custom elements er registreret, før de bruges.</p>
+
+<h4>Attributer, funktioner og custom events</h4>
+
+<p>Brug FDS custom elements direkte i React via JSX-attributter. Hvis en komponent eksponerer funktioner eller custom events, skal du tilgå elementet via en ref.</p>
+
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-keyword">import</span> { useEffect, useRef } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;react&#39;</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">Example</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> ref = <span class="hljs-title function_">useRef</span>(<span class="hljs-literal">null</span>);
+
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> el = ref.<span class="hljs-property">current</span>;
+    <span class="hljs-keyword">if</span> (!el) <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">handleFilesAdded</span> = (<span class="hljs-params">event</span>) =&gt; {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(event.<span class="hljs-property">detail</span>);
+    };
+
+    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, handleFilesAdded);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> {
+      el.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, handleFilesAdded);
+    };
+  }, []);
+
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span></span>;
+}</code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<h4>Server-side rendering</h4>
+
+<p>FDS custom elements kan bruges med server-renderet HTML, hvor den fulde markup gengives på serveren og hydreres på klienten. Komponenternes funktionalitet initialiseres, når Designsystemets JavaScript indlæses i browseren.</p>
+
+<h4>React wrappers</h4>
+
+<p>En wrapper giver især mening i React, når du har brug for ref, offentlige metoder eller custom event listeners. Hvis en komponent allerede fungerer enkelt og naturligt direkte i JSX, vil en wrapper ofte ikke tilføre nok værdi.</p>
+
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-keyword">import</span> { useEffect, useRef, useState } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;react&#39;</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">UploadFileWrapper</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> ref = <span class="hljs-title function_">useRef</span>(<span class="hljs-literal">null</span>);
+  <span class="hljs-keyword">const</span> [files, setFiles] = <span class="hljs-title function_">useState</span>([]);
+
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> el = ref.<span class="hljs-property">current</span>;
+    <span class="hljs-keyword">if</span> (!el) <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">syncFiles</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-title function_">setFiles</span>(el.<span class="hljs-title function_">getFiles</span>() || []);
+
+    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, syncFiles);
+    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;files-removed&#39;</span>, syncFiles);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> {
+      el.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#39;files-added&#39;</span>, syncFiles);
+      el.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#39;files-removed&#39;</span>, syncFiles);
+    };
+  }, []);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">fds-upload-file</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span>&gt;</span>
+      {files.map((f) =&gt; (
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{f.id}</span> <span class="hljs-attr">id</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">error-</span>${<span class="hljs-attr">f.id</span>}`} <span class="hljs-attr">hidden</span>=<span class="hljs-string">{f.file.size</span> &lt;= <span class="hljs-string">1024</span> * <span class="hljs-attr">1024</span>}&gt;</span>
+          Filen &quot;{f.file.name}&quot; er større end 1 MB
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+      ))}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-upload-file</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">UploadFileWrapper</span>;</code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+
 <h3>Blazor</h3>
 
 <p>Opdatér den fil, hvor du definerer dit HTML-layout og anvender scripts (fx App.razor i nyrere versioner af .NET).</p>
