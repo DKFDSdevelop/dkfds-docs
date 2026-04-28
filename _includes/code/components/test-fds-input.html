@@ -8,20 +8,37 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Wrapper uden indhold</h2>
+            <h2 class="h3 mt-0">Label og input</h2>
         </div>
         <div class="col-12">
-            <fds-input></fds-input>
+            <fds-input>
+                <label>Label</label>
+                <input type="text" name="input-text">
+            </fds-input>
         </div>
     </div>
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Wrapper med label og input</h2>
+            <h2 class="h3 mt-0">Input med fejl</h2>
         </div>
         <div class="col-12">
             <fds-input>
                 <label>Label</label>
+                <input type="text" name="input-text">
+                <fds-error-message>Dette er en fejl</fds-error-message>
+            </fds-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Input med fejl, der sidder over feltet</h2>
+        </div>
+        <div class="col-12">
+            <fds-input>
+                <label>Label</label>
+                <fds-error-message>Dette er en fejl</fds-error-message>
                 <input type="text" name="input-text">
             </fds-input>
         </div>
@@ -80,9 +97,11 @@
             <h2 class="h3 mt-0">Prefix og suffix</h2>
         </div>
         <div class="col-12">
-            <fds-input input-prefix="Beløb" input-suffix="kr.">
+            <fds-input>
                 <label>Label</label>
-                <input type="number" name="input-text">
+                <fds-input-affix input-prefix="Beløb" input-suffix="kr.">
+                    <input type="number" name="input-text">
+                </fds-input-affix>
             </fds-input>
         </div>
     </div>
@@ -92,9 +111,11 @@
             <h2 class="h3 mt-0">Prefix og suffix med disabled input</h2>
         </div>
         <div class="col-12">
-            <fds-input input-prefix="Beløb" input-suffix="kr.">
+            <fds-input>
                 <label>Label</label>
-                <input type="number" name="input-text" disabled>
+                <fds-input-affix input-prefix="Beløb" input-suffix="kr.">
+                    <input type="number" name="input-text" disabled>
+                </fds-input-affix>
             </fds-input>
         </div>
     </div>
@@ -104,9 +125,26 @@
             <h2 class="h3 mt-0">Prefix og suffix med readonly input</h2>
         </div>
         <div class="col-12">
-            <fds-input input-prefix="Beløb" input-suffix="kr.">
+            <fds-input>
                 <label>Label</label>
-                <input type="number" name="input-text" readonly>
+                <fds-input-affix input-prefix="Beløb" input-suffix="kr.">
+                    <input type="number" name="input-text" readonly>
+                </fds-input-affix>
+            </fds-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Prefix og suffix med fejl</h2>
+        </div>
+        <div class="col-12">
+            <fds-input>
+                <label>Label</label>
+                <fds-input-affix input-prefix="Beløb" input-suffix="kr.">
+                    <input type="number" name="input-text">
+                </fds-input-affix>
+                <fds-error-message>Dette er en fejl</fds-error-message>
             </fds-input>
         </div>
     </div>
@@ -125,7 +163,7 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Wrapper med label, input og tooltip</h2>
+            <h2 class="h3 mt-0">Label, input og tooltip</h2>
         </div>
         <div class="col-12">
             <fds-input>

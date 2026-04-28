@@ -3186,7 +3186,9 @@ form_limit.charactersLeft();</code></pre></figure>
     <a href="/eksempel/fds-input-wrapper-disabled/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
 </div>
 
-<h3>Prefix og suffix</h3>
+<h3>Præfiks og suffiks</h3>
+
+<p>Præfiks og suffiks kræver, at man lægger inputfeltet i et custom element kaldet <code>&lt;fds-input-affix&gt;</code>. Dette element kan tage to attributter: <code>input-prefix</code> og <code>input-suffix</code>.</p>
 
 <div class="tab-container mt-5">
     <div class="tab-list" role="tablist">
@@ -3195,19 +3197,25 @@ form_limit.charactersLeft();</code></pre></figure>
         <button class="tab-button" role="tab" aria-controls="example-6-acc-tabpanel3" aria-selected="false" id="example-6-acc-tab3"><span>Genereret HTML</span></button>
     </div>
     <div class="tab-panel" role="tabpanel" id="example-6-acc-tabpanel1" aria-labelledby="example-6-acc-tab1">
-        <fds-input input-prefix="stk.">
+        <fds-input>
     <label>Antal styk</label>
-    <input type="number" id="input-wrapper-antal" name="input-wrapper-antal" class="input-char-8" value="56" required="" />
+    <fds-input-affix input-prefix="stk.">
+        <input type="number" id="input-wrapper-antal" name="input-wrapper-antal" class="input-char-8" value="56" required="" />
+    </fds-input-affix>
 </fds-input>
 
-<fds-input input-suffix="000 kr.">
+<fds-input>
     <label class="form-label" for="input-wrapper-pris">Pris i 1000 kr.</label>
-    <input type="number" id="input-wrapper-pris" name="input-wrapper-pris" class="input-char-11" value="123" required="" />
+    <fds-input-affix input-suffix="000 kr.">
+        <input type="number" id="input-wrapper-pris" name="input-wrapper-pris" class="input-char-11" value="123" required="" />
+    </fds-input-affix>
 </fds-input>
 
-<fds-input input-prefix="€">
+<fds-input>
     <label class="form-label" for="input-wrapper-beloeb">Beløb i €</label>
-    <input type="number" id="input-wrapper-beloeb" name="input-wrapper-beloeb" class="input-width-xs" value="1.234" required="" />
+    <fds-input-affix input-prefix="€">
+        <input type="number" id="input-wrapper-beloeb" name="input-wrapper-beloeb" class="input-width-xs" value="1.234" required="" />
+    </fds-input-affix>
 </fds-input>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-6-acc-tabpanel2" aria-labelledby="example-6-acc-tab2" hidden="">
@@ -3217,19 +3225,25 @@ form_limit.charactersLeft();</code></pre></figure>
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;stk.&quot;</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Antal styk<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-8&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-affix</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;stk.&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-8&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-affix</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-suffix</span>=<span class="hljs-string">&quot;000 kr.&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span>&gt;</span>Pris i 1000 kr.<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-affix</span> <span class="hljs-attr">input-suffix</span>=<span class="hljs-string">&quot;000 kr.&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-affix</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;€&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span>&gt;</span>Beløb i €<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-width-xs&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1.234&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-affix</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;€&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-width-xs&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1.234&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-affix</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3242,26 +3256,26 @@ form_limit.charactersLeft();</code></pre></figure>
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;stk.&quot;</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span>&gt;</span>Antal styk<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-wrapper form-input-wrapper--prefix&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-affix</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;stk.&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-prefix&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>stk.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-antal&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-8 form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-affix</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-suffix</span>=<span class="hljs-string">&quot;000 kr.&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span>&gt;</span>Pris i 1000 kr.<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-wrapper form-input-wrapper--suffix&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-affix</span> <span class="hljs-attr">input-suffix</span>=<span class="hljs-string">&quot;000 kr.&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-pris&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-char-11 form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-suffix&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>000 kr.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-affix</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;€&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span>&gt;</span>Beløb i €<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-wrapper form-input-wrapper--prefix&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-affix</span> <span class="hljs-attr">input-prefix</span>=<span class="hljs-string">&quot;€&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input-prefix&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>€<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-beloeb&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-width-xs form-input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1.234&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input-affix</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3631,7 +3645,7 @@ Den understøtter brugerdefinerede meddelelser, opdaterer både visuelt og til s
     </tr>
     <tr>
       <td>input-suffix</td>
-      <td>Indsæt et suffiks-element (tekst efter inputfeltet).</td>
+      <td>Indsæt et suffiks-element (tekst efter inputfeltet). Kræver at inputfeltet ligger i en <code>form-input-wrapper</code>.</td>
     </tr>
     <tr>
       <td>input-maxwidth</td>

@@ -350,7 +350,9 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
 
-### Prefix og suffix
+### Præfiks og suffiks
+
+Præfiks og suffiks kræver, at man lægger inputfeltet i et custom element kaldet `<fds-input-affix>`. Dette element kan tage to attributter: `input-prefix` og `input-suffix`.
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
 
@@ -381,7 +383,7 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
 | input-prefix         | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
-| input-suffix         | Indsæt et suffiks-element (tekst efter inputfeltet).                                                                                  |
+| input-suffix         | Indsæt et suffiks-element (tekst efter inputfeltet). Kræver at inputfeltet ligger i en `form-input-wrapper`.                          |
 | input-maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
 
 ### Funktioner
