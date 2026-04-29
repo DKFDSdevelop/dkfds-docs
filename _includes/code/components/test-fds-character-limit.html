@@ -47,25 +47,6 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">HTML indsat på forhånd</h2>
-        </div>
-        <div class="col-12">
-            <fds-input>
-                <label>Inputfelt med label</label>
-                <input type="text" name="input-text">
-                <fds-character-limit limit="40">
-                    <span class="sr-only" id="my-custom-limit-id">Du kan indtaste op til 40
-                        tegn</span>
-                    <span class="sr-only" aria-live="polite">Du har 40 tegn tilbage</span>
-                    <span aria-hidden="true" class="visual-message">Du har 40 tegn
-                        tilbage</span>
-                </fds-character-limit>
-            </fds-input>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
             <h2 class="h3 mt-0">Med hjælpetekst</h2>
         </div>
         <div class="col-12">
@@ -74,6 +55,21 @@
                 <fds-help-text>Dette er en hjælpetekst</fds-help-text>
                 <input type="text" name="input-text">
                 <fds-character-limit limit="25"></fds-character-limit>
+            </fds-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Med fejl og hjælpetekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-input>
+                <label>Inputfelt med label</label>
+                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
+                <input type="text" name="input-text">
+                <fds-character-limit limit="25"></fds-character-limit>
+                <fds-error-message>Dette er en fejl</fds-error-message>
             </fds-input>
         </div>
     </div>

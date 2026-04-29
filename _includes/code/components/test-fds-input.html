@@ -20,11 +20,36 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <h2 class="h3 mt-0">Input med aria-label</h2>
+        </div>
+        <div class="col-12">
+            <fds-input>
+                <input type="text" name="input-text" aria-label="Inputfelt uden synlig label">
+            </fds-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <h2 class="h3 mt-0">Input med fejl</h2>
         </div>
         <div class="col-12">
             <fds-input>
                 <label>Label</label>
+                <input type="text" name="input-text">
+                <fds-error-message>Dette er en fejl</fds-error-message>
+            </fds-input>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Input med fejl og hjælpetekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-input>
+                <label>Label</label>
+                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
                 <input type="text" name="input-text">
                 <fds-error-message>Dette er en fejl</fds-error-message>
             </fds-input>
