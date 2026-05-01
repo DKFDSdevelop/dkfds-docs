@@ -2342,9 +2342,11 @@
 
 <h2 id="om-custom-elements-custom">Om custom elements</h2>
 
-<p>Tjekbokse har to custom elementer tilknyttet: fds-checkbox og fds-checkbox-group.</p>
+<p>Tjekbokse har to custom elementer tilknyttet: <code>&lt;fds-checkbox&gt;</code> og <code>&lt;fds-checkbox-group&gt;</code>.</p>
 
-<p>Brug attributten “group-label” på fds-checkbox-group til at sætte en label for hele gruppen.</p>
+<p>Begge komponenter forventer, at de nødvendige HTML-elementer er til stede. Den enkelte checkbox kræver et input- og et label-element. Checkbox-gruppen kræver et fieldset, der omslutter gruppens legend og de enkelte checkboxes. Ved initialisering tilføjer custom elementet de nødvendige klasser, attributter og event listeners.</p>
+
+<p>Hvis den forventede HTML mangler, forsøger komponenten at initialisere det, der er muligt, uden at flytte rundt på eksisterende elementer.</p>
 
 <h3>HTML-muligheder</h3>
 
@@ -2391,10 +2393,8 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tjekbox med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-checkbox-example&quot;</span>&gt;</span>Tjekbox med label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2478,25 +2478,18 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Group label&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;error9c8e8ffc&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Group label<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox1-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk95b7e42c&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox2-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkac82adda&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error9c8e8ffc&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg alert-icon&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Fejl text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox1-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk95b7e42c&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chk95b7e42c&quot;</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox2-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkac82adda&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chkac82adda&quot;</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error9c8e8ffc&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg alert-icon&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Fejl text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox-group</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2600,11 +2593,9 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox1-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk27ec55bc&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tjekboks label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help39fe3d34&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span>&gt;</span>Hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox1-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk27ec55bc&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;help39fe3d34&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chk27ec55bc&quot;</span>&gt;</span>Tjekboks label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help39fe3d34&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span>&gt;</span>Hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2625,19 +2616,22 @@
     </div>
     <div class="tab-panel" role="tabpanel" id="example-checkbox-group-helptext-tabpanel1" aria-labelledby="example-checkbox-group-helptext-tab1">
         <fds-checkbox-group group-label="Group label">
-    <fds-help-text id="helpf6a3703d">Dette er en hjælpetekst</fds-help-text>
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox-example" value="v1" id="chkfdefc029" />
-        <label>Første tjekboks</label>
-    </fds-checkbox>
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox-example2" value="v2" id="chkddba828e" />
-        <label>Anden tjekboks</label>
-    </fds-checkbox>
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox-example3" value="v3" id="chkd4bab6c" />
-        <label>Tredje tjekboks</label>
-    </fds-checkbox>
+    <fieldset>
+        <legend>Tjekboks gruppe med hjælptekst</legend>
+        <fds-help-text id="helpf6a3703d">Dette er en hjælpetekst</fds-help-text>
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox-example" value="v1" id="chkfdefc029" />
+            <label>Første tjekboks</label>
+        </fds-checkbox>
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox-example2" value="v2" id="chkddba828e" />
+            <label>Anden tjekboks</label>
+        </fds-checkbox>
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox-example3" value="v3" id="chkd4bab6c" />
+            <label>Tredje tjekboks</label>
+        </fds-checkbox>
+    </fieldset>
 </fds-checkbox-group>
 
     </div>
@@ -2649,19 +2643,22 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Group label&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;helpf6a3703d&quot;</span>&gt;</span>Dette er en hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkfdefc029&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkddba828e&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkd4bab6c&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Tjekboks gruppe med hjælptekst<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;helpf6a3703d&quot;</span>&gt;</span>Dette er en hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkfdefc029&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkddba828e&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkd4bab6c&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox-group</span>&gt;</span>
 </code></pre>
                 </figure>
@@ -2677,25 +2674,19 @@
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox-group</span> <span class="hljs-attr">group-label</span>=<span class="hljs-string">&quot;Group label&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;helpf6a3703d&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Group label<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tjekboks gruppe med hjælptekst<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;helpf6a3703d&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span>&gt;</span>Dette er en hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkfdefc029&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkfdefc029&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chkfdefc029&quot;</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkddba828e&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkddba828e&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chkddba828e&quot;</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkd4bab6c&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkd4bab6c&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chkd4bab6c&quot;</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox-group</span>&gt;</span></code></pre>
@@ -2759,22 +2750,22 @@
         <button class="tab-button" role="tab" aria-controls="example-3-acc-tabpanel3" aria-selected="false" id="example-3-acc-tab3"><span>Genereret HTML</span></button>
     </div>
     <div class="tab-panel" role="tabpanel" id="example-3-acc-tabpanel1" aria-labelledby="example-3-acc-tab1">
-        <fds-checkbox checkbox-indicator="">
+        <fds-checkbox show-required-status="">
     <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-required" required="" />
     <label>Tjekbox label</label>
 </fds-checkbox>
 
-<fds-checkbox checkbox-indicator="">
+<fds-checkbox show-required-status="">
     <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-optional" />
     <label>Tjekbox label</label>
 </fds-checkbox>
 
-<fds-checkbox checkbox-indicator="Custom required label">
+<fds-checkbox show-required-status="Custom required label">
     <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-required1" required="" />
     <label>Tjekbox label</label>
 </fds-checkbox>
 
-<fds-checkbox checkbox-indicator="Custom optional label">
+<fds-checkbox show-required-status="Custom frivilligt label">
     <input type="checkbox" name="checkbox-required-example1" id="custom-element-checkbox-optional1" />
     <label>Tjekbox label</label>
 </fds-checkbox>
@@ -2786,22 +2777,22 @@
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-required&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-required1&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>=<span class="hljs-string">&quot;Custom optional label&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Custom frivilligt label&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional1&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
@@ -2816,29 +2807,25 @@
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-required&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-required&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-checkbox-required&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*skal udfyldes)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (frivilligt)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-required1&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Custom required label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-required1&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-checkbox-required1&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*Custom required label)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">checkbox-indicator</span>=<span class="hljs-string">&quot;Custom optional label&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Custom frivilligt label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-required-example1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-checkbox-optional1&quot;</span>&gt;</span>Tjekbox label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (Custom frivilligt label)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2898,11 +2885,9 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk22373264&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Vis inputfelt<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;checkbox-content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;exp74ba52c3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk22373264&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span> <span class="hljs-attr">data-aria-controls</span>=<span class="hljs-string">&quot;exp74ba52c3&quot;</span> <span class="hljs-attr">data-aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chk22373264&quot;</span>&gt;</span>Vis inputfelt<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;checkbox-content collapsed&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;exp74ba52c3&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-input-wrapper</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inpa866ac0&quot;</span>&gt;</span>Inputfelt label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-help-text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-input&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inpa866ac0&quot;</span>&gt;</span>
@@ -2957,10 +2942,8 @@
                 </div>
                 <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;group-disabled&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-disabled&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Deaktiveret tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;group-disabled&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom-element-checkbox-disabled&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label disabled&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;custom-element-checkbox-disabled&quot;</span>&gt;</span>Deaktiveret tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -2980,19 +2963,22 @@
         <button class="tab-button" role="tab" aria-controls="example-6-acc-tabpanel3" aria-selected="false" id="example-6-acc-tab3"><span>Genereret HTML</span></button>
     </div>
     <div class="tab-panel" role="tabpanel" id="example-6-acc-tabpanel1" aria-labelledby="example-6-acc-tab1">
-        <fds-checkbox-group group-disabled="">
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox-example" value="v1" id="chk68398f14" />
-        <label>Første tjekboks</label>
-    </fds-checkbox>
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox-example2" value="v2" id="chkdd8a37d7" />
-        <label>Anden tjekboks</label>
-    </fds-checkbox>
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox-example3" value="v3" id="chk9d53e73a" />
-        <label>Tredje tjekboks</label>
-    </fds-checkbox>
+        <fds-checkbox-group>
+    <fieldset disabled="">
+        <legend>Deaktiveret tjekboks gruppe</legend>
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox-example" value="v1" id="chk68398f14" />
+            <label>Første tjekboks</label>
+        </fds-checkbox>
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox-example2" value="v2" id="chkdd8a37d7" />
+            <label>Anden tjekboks</label>
+        </fds-checkbox>
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox-example3" value="v3" id="chk9d53e73a" />
+            <label>Tredje tjekboks</label>
+        </fds-checkbox>
+    </fieldset>
 </fds-checkbox-group>
     </div>
     <div class="tab-panel code-tab" role="tabpanel" id="example-6-acc-tabpanel2" aria-labelledby="example-6-acc-tab2" hidden="">
@@ -3002,19 +2988,22 @@
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox-group</span> <span class="hljs-attr">group-disabled</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk68398f14&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkdd8a37d7&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk9d53e73a&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox-group</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">disabled</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Deaktiveret tjekboks gruppe<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk68398f14&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkdd8a37d7&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk9d53e73a&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox-group</span>&gt;</span></code></pre>
                 </figure>
             </div>
@@ -3027,26 +3016,20 @@
                     <button class="button button-tertiary button-copy">Kopiér kode</button>
                 </div>
                 <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox-group</span> <span class="hljs-attr">group-disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox-group</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;disabled&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Deaktiveret tjekboks gruppe<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk68398f14&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk68398f14&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chk68398f14&quot;</span>&gt;</span>Første tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkdd8a37d7&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkdd8a37d7&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chkdd8a37d7&quot;</span>&gt;</span>Anden tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk9d53e73a&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v3&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chk9d53e73a&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chk9d53e73a&quot;</span>&gt;</span>Tredje tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox-group</span>&gt;</span></code></pre>
@@ -3074,8 +3057,12 @@
   </thead>
   <tbody>
     <tr>
-      <td>input-indicator</td>
+      <td>show-required-status</td>
       <td>Viser om tjekboksen er obligatorisk eller frivillig. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
+    </tr>
+    <tr>
+      <td>ready</td>
+      <td>Kan bruges til at udskyde automatisk initialisering. Sæt ready=”false” for at forhindre initialisering ved tilføjelse til DOM’en, og fjern attributten eller sæt ready=”true” for at initialisere komponenten.</td>
     </tr>
   </tbody>
 </table>
@@ -3091,39 +3078,14 @@
   </thead>
   <tbody>
     <tr>
-      <td>updateIdReferences()</td>
-      <td>Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.</td>
-    </tr>
-    <tr>
-      <td>setClasses()</td>
-      <td>Sætter de nødvendige klasser på inputfelt og label.</td>
+      <td>init()</td>
+      <td>Initialiserer komponenten manuelt, fx hvis komponenten har ready=”false”, eller hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.</td>
     </tr>
   </tbody>
 </table>
 
 <h3>fds-checkbox-group</h3>
 
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>group-label</td>
-      <td>Brug attributten “group-label” til at sætte en label for hele gruppen.</td>
-    </tr>
-    <tr>
-      <td>group-disabled</td>
-      <td>Deaktiverer tjekbokskgruppen. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.</td>
-    </tr>
-  </tbody>
-</table>
-
 <h4>Funktioner</h4>
 
 <table class="table table--responsive-headers">
@@ -3135,8 +3097,8 @@
   </thead>
   <tbody>
     <tr>
-      <td>handleIdReferences()</td>
-      <td>Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.</td>
+      <td>init()</td>
+      <td>Initialiserer komponenten manuelt, fx hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.</td>
     </tr>
   </tbody>
 </table>
