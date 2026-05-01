@@ -250,7 +250,7 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h1 class="h2 mt-0">Vedhæft fil / Darg and drop upload file</h1>
+            <h1 class="h2 mt-0">Vedhæft fil / Drag and drop upload file</h1>
         </div>
     </div>
 
@@ -259,16 +259,9 @@
             <h2 class="h3 mt-0">Med custom label</h2>
         </div>
         <div class="col-12">
-            <fds-upload-file upload-label="Some label"></fds-upload-file>
-        </div>
-    </div>
-
-    <div class="row mb-905">
-        <div class="col-12">
-            <h2 class="h3 mt-0">Med custom label og custom tekster</h2>
-        </div>
-        <div class="col-12">
-            <fds-upload-file upload-label="Upload file" dropzone-prefix="Drag and drop files or" dropzone-link="click here" dropzone-suffix="some more text after the link if necessary" file-list-header="Uploaded files" file-list-more="Add more" remove-text="Delete">
+            <fds-upload-file>
+                <label>Some label</label>
+                <input type="file" name="documentation" required="" multiple="" id="id1" />
             </fds-upload-file>
         </div>
     </div>
@@ -278,7 +271,9 @@
             <h2 class="h3 mt-0">Med meget lang tekst</h2>
         </div>
         <div class="col-12">
-            <fds-upload-file upload-label="Upload file" dropzone-prefix="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum">
+            <fds-upload-file dropzone-prefix="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum">
+                <label>Some label</label>
+                <input type="file" name="documentation" required="" multiple="" id="id2" />
             </fds-upload-file>
         </div>
     </div>
@@ -289,7 +284,9 @@
         </div>
         <div class="col-12">
             <fds-upload-file>
+                <label>Dropzone with hepltext</label>
                 <fds-help-text>Only PDF files under 10MB</fds-help-text>
+                <input type="file" name="documentation" required="" multiple="" id="id3" />
             </fds-upload-file>
         </div>
     </div>
@@ -300,6 +297,8 @@
         </div>
         <div class="col-12">
             <fds-upload-file>
+                <label>Dropzone with error</label>
+                <input type="file" name="documentation" required="" multiple="" id="id4" />
                 <fds-error-message>Some error</fds-error-message>
             </fds-upload-file>
         </div>
@@ -311,6 +310,8 @@
         </div>
         <div class="col-12">
             <fds-upload-file id="file-error-test">
+                <label>Dropzone with error</label>
+                <input type="file" name="documentation" required="" multiple="" id="id5" />
                 <fds-error-message>Please select at least one file</fds-error-message>
             </fds-upload-file>
             <!-- Test buttons for specific file error -->
@@ -330,7 +331,10 @@
             <h2 class="h3 mt-0">Deaktiveret vedhæft fil</h2>
         </div>
         <div class="col-12">
-            <fds-upload-file upload-disabled=""></fds-upload-file>
+            <fds-upload-file>
+                <label>Deaktivated</label>
+                <input type="file" name="documentation" required="" multiple="" id="id5" disabled="" />
+            </fds-upload-file>
         </div>
     </div>
 
