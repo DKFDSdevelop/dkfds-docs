@@ -309,7 +309,7 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
 
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input-wrapper>` med `<div class="input-wrapper">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input>` med `<div class="fds-input">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
@@ -350,7 +350,9 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
 
-### Prefix og suffix
+### Præfiks og suffiks
+
+Præfiks og suffiks kræver, at man lægger inputfeltet i et custom element kaldet `<fds-input-affix>`. Dette element kan tage to attributter: `input-prefix` og `input-suffix`.
 
 {% include code/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
 
@@ -377,14 +379,12 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 ### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                                           |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| input-indicator | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
-| input-readonly  | Gør feltet readonly. Sæt til en anden værdi end `false`.                                                                              |
-| input-disabled  | Deaktiverer inputfeltet. Sæt til en anden værdi end `false`.                                                                          |
-| input-prefix    | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
-| input-suffix    | Indsæt et suffiks-element (tekst efter inputfeltet).                                                                                  |
-| input-maxwidth  | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
+| Attribut             | Beskrivelse                                                                                                                           |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
+| input-prefix         | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
+| input-suffix         | Indsæt et suffiks-element (tekst efter inputfeltet). Kræver at inputfeltet ligger i en `form-input-wrapper`.                          |
+| input-maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
 
 ### Funktioner
 

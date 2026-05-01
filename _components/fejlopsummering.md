@@ -119,7 +119,7 @@ Med attributten `auto` opdateres fejloversigten automatisk ud fra synlige `fds-e
 
 `fds-error-summary` understøtter fejlmeddelelser i følgende wrappers:
 
-- `fds-input-wrapper`
+- `fds-input`
 - `fds-checkbox`
 - `fds-checkbox-group`
 - `fds-radio-button-group`
