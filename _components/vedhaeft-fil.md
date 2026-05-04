@@ -123,11 +123,9 @@ For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som 
 {:.table .table--responsive-headers}
 | Attribut        | Beskrivelse                                                                                                           |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------|
-| upload-label    | Definerer teksten for upload-komponenten's hovedlabel. Indsæt en tekst i attributten for at overskrive default-teksten "Vedhæft filer". |
 | dropzone-prefix | Definerer den indledende tekst i dropzone-området før linkteksten. Indsæt en tekst i attributten for at overskrive default-teksten "Træk dine filer herhen eller".|
 | dropzone-suffix | Definerer teksten der vises efter linkteksten i dropzone-området. Attributten er tom som standard, men kan bruges til at tilføje yderligere instruktioner eller information. |
 | dropzone-link   | Definerer teksten for det klikkable link i dropzone-området. Indsæt en tekst i attributten for at overskrive default-teksten "vælg filer". |
-| upload-disabled | Deaktiverer upload-funktionaliteten når attributten er til stede. Sæt til "true" eller lad attributten være tom for at deaktivere komponenten. |
 | file-list-header| Definerer overskriften der vises over listen af valgte filer. Indsæt en tekst i attributten for at overskrive default-teksten "Valgte filer". |
 | file-list-more  | Definerer teksten på knappen til at vælge flere filer. Indsæt en tekst i attributten for at overskrive default-teksten "Vælg flere filer". |
 | remove-text     | Definerer teksten på fjern-knappen for hver fil i listen. Indsæt en tekst i attributten for at overskrive default-teksten "Fjern". |

@@ -40,10 +40,10 @@ Nyhedsbrevene indeholder information om {% include links/internal-link.html link
         <input type="hidden" value="" id="newsletter_language">
         <input type="hidden" name="failure_url" value="" id="failure_url">
         <input type="hidden" name="success_url" value="" id="success_url">
-        <fds-input-wrapper id="newsletter-emailaddress">
+        <fds-input id="newsletter-emailaddress">
             <label>Tilmeld e-mailadresse</label>
             <input type="email" id="i_newsform_email" autocomplete="email" required>
-        </fds-input-wrapper>
+        </fds-input>
         <fds-checkbox id="samtykke-group" class="mt-5">
             <input type="checkbox" id="samtykke-check" value="" required>
             <label>Jeg giver hermed samtykke til, at Erhvervsstyrelsen må opbevare min <span class='nowrap'>e-mailadresse</span>, indtil jeg selv afmelder mig nyhedsbrevet</label>

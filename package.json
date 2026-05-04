@@ -48,7 +48,7 @@
     "mini-css-extract-plugin": "2.10.2",
     "postcss-discard-comments": "7.0.6",
     "postcss-loader": "8.2.1",
-    "puppeteer": "23.11.1",
+    "puppeteer": "24.42.0",
     "sass": "1.92.0",
     "sass-loader": "16.0.5",
     "terser-webpack-plugin": "5.4.0",

@@ -34,10 +34,10 @@ tags:
         <input type="hidden" value="" id="newsletter_language">
         <input type="hidden" name="failure_url" value="" id="failure_url">
         <input type="hidden" name="success_url" value="" id="success_url">
-        <fds-input-wrapper id="newsletter-emailaddress">
+        <fds-input id="newsletter-emailaddress">
             <label>Afmeld e-mailadresse</label>
             <input type="email" id="i_newsform_email" autocomplete="email" required>
-        </fds-input-wrapper>
+        </fds-input>
         <input type="submit" class="button button-primary mt-5" value="Afmeld" id="newsletter-submit">
     </form>
     <p class="mt-9 pt-0 mb-9">
