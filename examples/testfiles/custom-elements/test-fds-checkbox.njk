@@ -23,23 +23,21 @@
             <h2 class="h3 mt-0">Hjælpetekst</h2>
         </div>
         <div class="col-12">
-            <fds-checkbox-group group-label="Tjekboksgruppe">
-                <fds-help-text>Dette er en hjælpetekst for gruppen</fds-help-text>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="v1">
-                    <label>Første tjekboks</label>
-                    <fds-help-text>Dette er en hjælpetekst første tjekboks</fds-help-text>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example2" value="v2" />
-                    <fds-help-text>Dette er en hjælpetekst anden tjekboks</fds-help-text>
-                    <label>Anden tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <fds-help-text>Dette er en hjælpetekst tredje tjekboks</fds-help-text>
-                    <input type="checkbox" name="checkbox-example3" value="v3" />
-                    <label>Tredje tjekboks</label>
-                </fds-checkbox>
+            <fds-checkbox-group>
+                <fieldset>
+                    <legend>Group med hjælptekst</legend>
+                    <fds-help-text>Dette er en hjælpetekst for gruppen</fds-help-text>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example" value="v1">
+                        <label>Første tjekboks</label>
+                        <fds-help-text>Dette er en hjælpetekst første tjekboks</fds-help-text>
+                    </fds-checkbox>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example2" value="v2" />
+                        <label>Anden tjekboks</label>
+                        <fds-help-text>Dette er en hjælpetekst anden tjekboks</fds-help-text>
+                    </fds-checkbox>
+                </fieldset>
             </fds-checkbox-group>
         </div>
     </div>
@@ -61,19 +59,22 @@
             <h2 class="h3 mt-0">Deaktiveret tjekboksgruppe</h2>
         </div>
         <div class="col-12">
-            <fds-checkbox-group group-disabled>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="v1">
-                    <label>Første tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example2" value="v2" />
-                    <label>Anden tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example3" value="v3" />
-                    <label>Tredje tjekboks</label>
-                </fds-checkbox>
+            <fds-checkbox-group>
+                <fieldset disabled>
+                    <legend>Group med hjælptekst</legend>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example" value="v1">
+                        <label>Første tjekboks</label>
+                    </fds-checkbox>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example2" value="v2" />
+                        <label>Anden tjekboks</label>
+                    </fds-checkbox>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example3" value="v3" />
+                        <label>Tredje tjekboks</label>
+                    </fds-checkbox>
+                </fieldset>
             </fds-checkbox-group>
         </div>
     </div>
@@ -83,20 +84,23 @@
             <h2 class="h3 mt-0">Fejl på gruppen</h2>
         </div>
         <div class="col-12">
-            <fds-checkbox-group group-label="Tjekboksgruppe">
-                <fds-error-message>Dette er en fejl</fds-error-message>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="v1">
-                    <label>Første tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example2" value="v2" />
-                    <label>Anden tjekboks</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example3" value="v3" />
-                    <label>Tredje tjekboks</label>
-                </fds-checkbox>
+            <fds-checkbox-group>
+                <fieldset>
+                    <legend>Group med fejl</legend>
+                    <fds-error-message>Dette er en fejl</fds-error-message>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example" value="v1">
+                        <label>Første tjekboks</label>
+                    </fds-checkbox>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example2" value="v2" />
+                        <label>Anden tjekboks</label>
+                    </fds-checkbox>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example3" value="v3" />
+                        <label>Tredje tjekboks</label>
+                    </fds-checkbox>
+                </fieldset>
             </fds-checkbox-group>
         </div>
     </div>
@@ -110,13 +114,6 @@
                 <input type="checkbox" name="checkbox-example">
                 <label>Tjekbox med label</label>
                 <fds-error-message>Dette er en fejl</fds-error-message>
-            </fds-checkbox>
-        </div>
-        <div class="col-12 mt-6">
-            <fds-checkbox>
-                <fds-error-message>Dette er en fejl</fds-error-message>
-                <input type="checkbox" name="checkbox-example">
-                <label>Tjekbox med label</label>
             </fds-checkbox>
         </div>
     </div>
@@ -141,7 +138,9 @@
             <h2 class="h3 mt-0">Tjekboksgruppe med skjult indhold</h2>
         </div>
         <div class="col-12">
-            <fds-checkbox-group group-label="Group label">
+            <fds-checkbox-group>
+                <fieldset>
+                    <legend>Group label</legend>
                 <fds-checkbox>
                     <input type="checkbox" name="checkbox-example" value="v3">
                     <label>Tjekboks med skjult indhold</label>
@@ -163,6 +162,7 @@
                         </fds-input>
                     </div>
                 </fds-checkbox>
+                </fieldset>
             </fds-checkbox-group>
         </div>
     </div>
@@ -191,22 +191,27 @@
             <h2 class="h3 mt-0">Tjekboksgruppe med tooltip</h2>
         </div>
         <div class="col-12">
-            <fds-checkbox-group group-label="Group med tooltip">
-                <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip" data-tooltip-id="checkboxgroup-tooltip"
-                    data-position="above" data-trigger="click"><button class="button button-unstyled tooltip-target"
-                        type="button" aria-label="Læs mere">
-                        <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true">
-                            <use href="#help"></use>
-                        </svg></button>
-                </span>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="1">
-                    <label>Indhold</label>
-                </fds-checkbox>
-                <fds-checkbox>
-                    <input type="checkbox" name="checkbox-example" value="2">
-                    <label>Indhold 2</label>
-                </fds-checkbox>
+            <fds-checkbox-group>
+                <fieldset>
+                    <legend>
+                        Tjekboksgruppe med tooltip
+                        <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip" data-tooltip-id="checkboxgroup-tooltip"
+                        data-position="above" data-trigger="click"><button class="button button-unstyled tooltip-target"
+                            type="button" aria-label="Læs mere">
+                            <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true">
+                                <use href="#help"></use>
+                            </svg></button>
+                        </span>
+                    </legend>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example" value="1">
+                        <label>Something</label>
+                    </fds-checkbox>
+                    <fds-checkbox>
+                        <input type="checkbox" name="checkbox-example" value="2">
+                        <label>Something else</label>
+                    </fds-checkbox>
+                </fieldset>
             </fds-checkbox-group>
         </div>
     </div>

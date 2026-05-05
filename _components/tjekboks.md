@@ -181,9 +181,11 @@ Det element som skal collapses/expandes skal have følgende:
 
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
 
-Tjekbokse har to custom elementer tilknyttet: fds-checkbox og fds-checkbox-group. 
+Tjekbokse har to custom elementer tilknyttet: `<fds-checkbox>` og `<fds-checkbox-group>`. 
 
-Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.
+Begge komponenter forventer, at de nødvendige HTML-elementer er til stede. Den enkelte checkbox kræver et input- og et label-element. Checkbox-gruppen kræver et fieldset, der omslutter gruppens legend og de enkelte checkboxes. Ved initialisering tilføjer custom elementet de nødvendige klasser, attributter og event listeners. 
+
+Hvis den forventede HTML mangler, forsøger komponenten at initialisere det, der er muligt, uden at flytte rundt på eksisterende elementer.
 
 ### HTML-muligheder
 
@@ -249,31 +251,23 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                           |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------|
-| input-indicator | Viser om tjekboksen er obligatorisk eller frivillig. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| Attribut             | Beskrivelse                                                                                                           |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om tjekboksen er obligatorisk eller frivillig. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| ready                | Kan bruges til at udskyde automatisk initialisering. Sæt ready="false" for at forhindre initialisering ved tilføjelse til DOM’en, og fjern attributten eller sæt ready="true" for at initialisere komponenten. |
 
 #### Funktioner
 
 {:.table .table--responsive-headers}
 | Funktion              | Beskrivelse                                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| updateIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.                                      |
-| setClasses()          | Sætter de nødvendige klasser på inputfelt og label.                                                             |
+| init()                | Initialiserer komponenten manuelt, fx hvis komponenten har ready="false", eller hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|
 
 ### fds-checkbox-group
 
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                                       |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| group-label | Brug attributten "group-label" til at sætte en label for hele gruppen.                                      |
-| group-disabled | Deaktiverer tjekbokskgruppen. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.               |
-
 #### Funktioner
 
 {:.table .table--responsive-headers}
-| Funktion              | Beskrivelse                                                                                                     |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| handleIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.                                      |
+| Funktion              | Beskrivelse                                                                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| init()                | Initialiserer komponenten manuelt, fx hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|

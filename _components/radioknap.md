@@ -172,9 +172,11 @@ Det element som skal collapses/expandes skal have følgende:
 
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
 
-Radioknap har to custom elementer tilknyttet: fds-radio-button og fds-radio-button-group. Bemærk venligst, at fds-radio-button ikke er beregnet til at blive brugt alene, men kun inden for en gruppe.
+Radioknap har to custom elementer tilknyttet: `<fds-radio-button>` og `<fds-radio-button-group>`. Bemærk venligst, at `<fds-radio-button>` ikke er beregnet til at blive brugt alene, men kun inden for en gruppe.
 
-Brug attributten "group-label" på fds-radio-button-group til at sætte en label for hele gruppen.
+Begge komponenter forventer, at de nødvendige HTML-elementer er til stede. Den enkelte checkbox kræver et input- og et label-element. Radioknap-gruppen kræver et fieldset, der omslutter gruppens legend og de enkelte radioknapper. Ved initialisering tilføjer custom elementet de nødvendige klasser, attributter og event listeners. 
+
+Hvis den forventede HTML mangler, forsøger komponenten at initialisere det, der er muligt, uden at flytte rundt på eksisterende elementer.
 
 ### HTML-muligheder
 
@@ -225,19 +227,27 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-radio-button-group
+### fds-radio-button
 
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                                                                       |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| group-label | Brug attributten "group-label" på fds-checkbox-group til at sætte en label for hele gruppen.                                          |
-| group-disabled | Deaktiverer tjekbox. Hvis værdien er sat til andet end false, tilføjes disabled-attributten til fieldsetet.                        |
+| Attribut             | Beskrivelse                                                                                                           |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om tjekboksen er obligatorisk eller frivillig. Indsæt en tekst i attributten for at overskrive default-teksten. |
 
 #### Funktioner
 
 {:.table .table--responsive-headers}
 | Funktion              | Beskrivelse                                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| handleIdReferences()  | Funktionen sikrer korrekt kobling mellem label, input og øvrige elementer.                                      |
+| init()                | Initialiserer komponenten manuelt, fx hvis komponenten har ready="false", eller hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|
+
+### fds-radio-button-group
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| init()                | Initialiserer komponenten manuelt, fx hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|
