@@ -39,6 +39,7 @@ global.CustomEvent = window.CustomEvent;
 global.MutationObserver = window.MutationObserver;
 global.CSSStyleSheet = window.CSSStyleSheet;
 global.Node = window.Node;
+global.HTMLFieldSetElement = window.HTMLFieldSetElement;
 
 const DKFDS = require('dkfds');
 DKFDS.registerCustomElements();
