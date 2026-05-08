@@ -1,14 +1,19 @@
-<fds-date-input label="Indtast dato">
-    <div class="form-group form-group-day" data-attribute="day">
-        <label for="dat-day-fdfbbdec">Dag</label>
-        <input type="number" name="day" id="dat-day-fdfbbdec">
-    </div>
-    <div class="form-group form-group-month" data-attribute="month">
-        <label for="dat-month-1be579c9">Måned</label>
-        <input type="number" name="month" id="dat-month-1be579c9">
-    </div>
-    <div class="form-group form-group-year" data-attribute="year">
-        <label for="dat-year-f31c34cb">År</label>
-        <input type="number" name="year" id="dat-year-f31c34cb">
-    </div>
+<fds-date-input>
+    <fieldset>
+        <legend>Indtast dato</legend>
+        <div>
+            <div data-attribute="day">
+                <label for="dat-day-fdfbbdec">Dag</label>
+                <input name="day" id="dat-day-fdfbbdec" type="number">
+            </div>
+            <div data-attribute="month">
+                <label for="dat-month-1be579c9">Måned</label>
+                <input name="month" id="dat-month-1be579c9" type="number">
+            </div>
+            <div data-attribute="year">
+                <label for="dat-year-f31c34cb">År</label>
+                <input name="year" id="dat-year-f31c34cb" type="number">
+            </div>
+        </div>
+    </fieldset>
 </fds-date-input>

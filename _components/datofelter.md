@@ -127,8 +127,9 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 ### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                          |
-|----------------------|----------------------------------------------------------------------------------------------------------------------|
-| input-disabled  | Deaktiverer datofelterne. Sæt til en anden værdi end `false`.                                                             |
-| input-required  | Sætter alle datofelter til 'påkrævet'.                                                                                    |
-| input-indicator | Viser om datofelterne er obligatoriske eller frivillige. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| Attribut             | Beskrivelse                                                                                                               |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------|
+| input-readonly       | Sætter `readonly` på datofelterne. Sæt til en anden værdi end `false`.                                                    |
+| input-required       | Sætter alle datofelter til 'påkrævet'.                                                                                    |
+| show-required-status | Viser om datofelterne er obligatoriske eller frivillige. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| legend               | Generér og indsæt legend i `fieldset`. Bør ikke anvendes, hvis HTML'en på forhånd er genereret.                           |
