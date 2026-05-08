@@ -227,19 +227,24 @@
         <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     </header>
     <main class="container page-container" id="main-content">
-        <fds-date-input label="Indtast dato">
-    <div class="form-group form-group-day" data-attribute="day">
-        <label>Dag</label>
-        <input type="number" name="day" id="dat-day-fdfbbdec" />
-    </div>
-    <div class="form-group form-group-month" data-attribute="month">
-        <label>Måned</label>
-        <input type="number" name="month" id="dat-month-1be579c9" />
-    </div>
-    <div class="form-group form-group-year" data-attribute="year">
-        <label>År</label>
-        <input type="number" name="year" id="dat-year-f31c34cb" />
-    </div>
+        <fds-date-input>
+    <fieldset>
+        <legend>Indtast dato</legend>
+        <div>
+            <div data-attribute="day">
+                <label>Dag</label>
+                <input name="day" id="dat-day-fdfbbdec" />
+            </div>
+            <div data-attribute="month">
+                <label>Måned</label>
+                <input name="month" id="dat-month-1be579c9" />
+            </div>
+            <div data-attribute="year">
+                <label>År</label>
+                <input name="year" id="dat-year-f31c34cb" />
+            </div>
+        </div>
+    </fieldset>
 </fds-date-input>
 
     </main>
