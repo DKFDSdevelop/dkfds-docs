@@ -259,16 +259,30 @@
             <h2 class="h3 mt-0">Simpel mobilmenu</h2>
         </div>
         <div class="col-12">
-            <fds-drawer-button drawer="my-menu">
-                <button type="button">
-                    <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#menu"></use></svg><span>Custom
-                        menu</span>
-                </button>
-            </fds-drawer-button>
+            <fds-drawer-button drawer="menu1"></fds-drawer-button>
 
-            <fds-drawer id="my-menu">
+            <fds-drawer id="menu1">
                 <div>
-                    <h2 id="menu-heading">Menu</h2>
+                    <h2 id="menu-heading1">Menu</h2>
+                    <button type="button">Luk</button>
+                </div>
+                <div>
+                    <p>Something</p>
+                </div>
+            </fds-drawer>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Mobilmenu med anden tekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-drawer-button button-text="Åbn menu" drawer="menu2"></fds-drawer-button>
+
+            <fds-drawer id="menu2">
+                <div>
+                    <h2 id="menu-heading2">Menu</h2>
                     <button type="button">Luk</button>
                 </div>
                 <div>
