@@ -40,6 +40,7 @@ var testfiles = [
     "test-fds-textarea",
     "test-fds-error-summary-manual",
     "test-fds-error-summary-auto",
+    "test-fds-drawer",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
