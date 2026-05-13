@@ -260,35 +260,27 @@
         </div>
         <div class="col-12">
             <fds-drawer-button drawer="menu1"></fds-drawer-button>
-
-            <fds-drawer id="menu1">
-                <div>
-                    <h2 id="menu-heading1">Menu</h2>
-                    <button type="button">Luk</button>
-                </div>
-                <div>
-                    <p>Something</p>
-                </div>
-            </fds-drawer>
+            <fds-drawer id="menu1"></fds-drawer>
         </div>
     </div>
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Mobilmenu med anden tekst</h2>
+            <h2 class="h3 mt-0">Mobilmenu med andre tekster</h2>
         </div>
         <div class="col-12">
             <fds-drawer-button button-text="Åbn menu" drawer="menu2"></fds-drawer-button>
+            <fds-drawer id="menu2" heading="Dette er menuen" close-button-text="Quit"></fds-drawer>
+        </div>
+    </div>
 
-            <fds-drawer id="menu2">
-                <div>
-                    <h2 id="menu-heading2">Menu</h2>
-                    <button type="button">Luk</button>
-                </div>
-                <div>
-                    <p>Something</p>
-                </div>
-            </fds-drawer>
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Mobilmenu med ready</h2>
+        </div>
+        <div class="col-12">
+            <fds-drawer-button drawer="menu3"></fds-drawer-button>
+            <fds-drawer id="menu3" ready="false"></fds-drawer>
         </div>
     </div>
 
