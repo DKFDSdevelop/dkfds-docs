@@ -1,0 +1,93 @@
+<main class="container page-container" id="main-content">
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Mobilmenu</h1>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Simpel mobilmenu</h2>
+        </div>
+        <div class="col-12">
+            <fds-drawer-button drawer="menu1"></fds-drawer-button>
+            <fds-drawer id="menu1"></fds-drawer>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Mobilmenu med andre tekster</h2>
+        </div>
+        <div class="col-12">
+            <fds-drawer-button button-text="Åbn menu" drawer="menu2"></fds-drawer-button>
+            <fds-drawer id="menu2" heading="Dette er menuen"
+                close-button-text="Quit"></fds-drawer>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Mobilmenu med ready</h2>
+        </div>
+        <div class="col-12">
+            <fds-drawer-button drawer="menu3"></fds-drawer-button>
+            <fds-drawer id="menu3" ready="false"></fds-drawer>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Mobilmenu med links og modal</h2>
+        </div>
+        <div class="col-12">
+            <fds-drawer-button drawer="menu4"></fds-drawer-button>
+            <fds-drawer id="menu4">
+                <div class="mobile-drawer">
+                    <p class="mx-5">Trykkes der på et link i mobilmenuen skal denne lukke, da
+                        det antages, at brugeren
+                        ønsker at blive navigeret væk.</p>
+                    <a href="#" class="mx-5">Dette er et link</a>
+                    <div class="mt-6 mx-5">
+                        <button class="button button-secondary" data-module="modal"
+                            data-target="modal-example" aria-haspopup="dialog">
+                            Åbn modal
+                        </button>
+                    </div>
+                </div>
+            </fds-drawer>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Mobilmenu kun synlig på små skærme</h2>
+        </div>
+        <div class="col-12">
+            <fds-drawer-button drawer="menu5" class="d-block d-md-none"></fds-drawer-button>
+            <fds-drawer id="menu5" class="d-block d-md-none"></fds-drawer>
+        </div>
+    </div>
+
+</main>
+
+<div class="fds-modal-container">
+    <div class="fds-modal" id="modal-example" aria-hidden="true" role="dialog"
+        aria-modal="true" aria-labelledby="modal-example-heading">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-example-heading">Lorem ipsum</h2>
+                <button class="modal-close function-link" data-modal-close>
+                    <svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <use href="#close"></use>
+                    </svg>Luk</button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales
+                    turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis
+                    fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
+            </div>
+        </div>
+    </div>
+</div>
