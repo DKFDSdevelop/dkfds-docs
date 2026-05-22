@@ -1,0 +1,31 @@
+<header class="header">
+    <fds-portal-info>
+        <a slot="logo" href="#"
+            target="_blank"><img id="example-header-logo" src="/assets/img/logo_virk.svg" alt="Portalnavn"></a>
+        <fds-drawer-button slot="drawer-button" drawer="menu1"
+            class="d-block d-lg-none"></fds-drawer-button>
+        <button
+            slot="log-off-button"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#lock"></use></svg>Log
+            af</button>
+        <p slot="user">Anders Andersen, Forsikringens Forsikringsfirma</p>
+    </fds-portal-info>
+    <fds-drawer id="menu1" class="d-block d-lg-none">
+        <div class="mobile-drawer">
+            <fds-portal-info>
+                <button
+                    slot="log-off-button"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#lock"></use></svg>Log
+                    af</button>
+                <p slot="user"><span class="mb-3">Anders Andersen</span><span>Forsikringens
+                        Forsikringsfirma</span></p>
+            </fds-portal-info>
+        </div>
+    </fds-drawer>
+</header>
+
+<main class="container page-container" id="main-content">
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Portalinfo</h1>
+        </div>
+    </div>
+</main>

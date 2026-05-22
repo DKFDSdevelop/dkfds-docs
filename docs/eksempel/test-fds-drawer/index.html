@@ -359,7 +359,7 @@
                 <a class="function-link mr-4" href="/eksempel/test-fds-error-summary-auto/">Forrige</a>
                 
                 
-                <a class="function-link" href="/eksempel/test-html-elements/">Næste</a>
+                <a class="function-link" href="/eksempel/test-fds-portal-info/">Næste</a>
                 
             </div>
         </div>
@@ -389,16 +389,21 @@
             document.getElementsByTagName('head')[0].appendChild(lnk);
         }
 
+        const logo = document.getElementById('example-header-logo');
+
         let setNeutralStylesheet = function() {
             document.querySelectorAll('head link[rel="stylesheet"]')[0].href = '/assets/style/test_neutral.css';
+            if (logo) { logo.setAttribute('src', '/assets/img/logo-header-placeholder.png'); }
         };
 
         let setBorgerStylesheet = function() {
             document.querySelectorAll('head link[rel="stylesheet"]')[0].href = '/assets/style/test_borger.css';
+            if (logo) { logo.setAttribute('src', '/assets/img/logo-borgerdk.svg'); }
         };
 
         let setVirkStylesheet = function() {
             document.querySelectorAll('head link[rel="stylesheet"]')[0].href = '/assets/style/test_virk.css';
+            if (logo) { logo.setAttribute('src', '/assets/img/logo_virk.svg'); }
         };
 
         document.getElementById('theme-neutral').addEventListener('click', setNeutralStylesheet);

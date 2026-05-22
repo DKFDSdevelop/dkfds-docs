@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
         setScreenshots();
 
+        setExampleLogo();
+
         setDoDontImages();
 
         setHomepageIllustration();
@@ -307,6 +309,23 @@ let setScreenshots = function(){
         }
     }
 };
+
+let setExampleLogo = function() {
+    const logo = document.getElementById('example-header-logo');
+    const cookie = getThemeCookie();
+
+    if (logo) {
+        if (cookie === 'borgerdk') {
+            logo.setAttribute('src', '/assets/img/logo-borgerdk.svg');
+        }
+        else if (cookie === 'virk') {
+            logo.setAttribute('src', '/assets/img/logo_virk.svg');
+        }
+        else {
+            logo.setAttribute('src', '/assets/img/logo-header-placeholder.png');
+        }
+    }
+}
 
 let setDoDontImages = function() {
     let dodonts = document.querySelectorAll('.do-dont-container');

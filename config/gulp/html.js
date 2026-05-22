@@ -41,6 +41,7 @@ var testfiles = [
     "test-fds-error-summary-manual",
     "test-fds-error-summary-auto",
     "test-fds-drawer",
+    "test-fds-portal-info",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
