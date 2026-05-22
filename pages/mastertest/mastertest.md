@@ -32,6 +32,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-error-summary-auto" description="Fejlopsummering - automatisk opsamling af fejl" %}
 {% include test/preview-test.html filename="test-fds-drawer" description="Mobilmenu" %}
 {% include test/preview-test.html filename="test-fds-portal-info" description="Portalinfo" %}
+{% include test/preview-test.html filename="test-fds-solution-info" description="Løsningsinfo" %}
 
 {:.h3}
 ## HTML-elementer
