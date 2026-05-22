@@ -247,10 +247,18 @@
     </div>
 </div>
     <header class="header">
-    <fds-solution-info></fds-solution-info>
+    <fds-solution-info>
+        <a slot="solution-heading" href="#">Løsningstitel</a>
+        <div slot="additional-info" class="additional-info d-print-none">
+            <p><strong class="authority-name">Myndighedsnavn</strong></p>
+            <p>Support: 12 34 56 78</p>
+        </div>
+    </fds-solution-info>
     <fds-drawer id="menu1" class="d-block d-lg-none">
         <div class="mobile-drawer">
-            <fds-solution-info></fds-solution-info>
+            <fds-solution-info>
+
+            </fds-solution-info>
         </div>
     </fds-drawer>
 </header>
