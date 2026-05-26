@@ -249,15 +249,19 @@
     <header class="header">
     <fds-solution-info>
         <a slot="solution-heading" href="#">Løsningstitel</a>
-        <div slot="additional-info" class="additional-info d-print-none">
+        <div slot="additional-info" class="d-none d-lg-block">
             <p><strong class="authority-name">Myndighedsnavn</strong></p>
             <p>Support: 12 34 56 78</p>
         </div>
+        <fds-drawer-button slot="drawer-button" drawer="menu1" class="d-block d-lg-none"></fds-drawer-button>
     </fds-solution-info>
     <fds-drawer id="menu1" class="d-block d-lg-none">
         <div class="mobile-drawer">
             <fds-solution-info>
-
+                <div slot="additional-info">
+                    <p><strong class="authority-name">Myndighedsnavn</strong></p>
+                    <p>Support: 12 34 56 78</p>
+                </div>
             </fds-solution-info>
         </div>
     </fds-drawer>
