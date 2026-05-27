@@ -41,7 +41,7 @@ global.CSSStyleSheet = window.CSSStyleSheet;
 global.Node = window.Node;
 global.HTMLFieldSetElement = window.HTMLFieldSetElement;
 
-const DKFDS = require('dkfds');
+const DKFDS = require('dkfds/new-dkfds');
 DKFDS.registerCustomElements();
 
 fs.readdirSync(srcDir).forEach(file => {
