@@ -43,6 +43,8 @@ var testfiles = [
     "test-fds-drawer",
     "test-fds-portal-info",
     "test-fds-solution-info",
+    "test-fds-header-from-components",
+    "test-fds-header-hardcoded",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",

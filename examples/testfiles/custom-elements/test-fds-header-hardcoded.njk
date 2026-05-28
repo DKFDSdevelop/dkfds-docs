@@ -1,0 +1,80 @@
+<header class="header">
+
+    <div class="fds-portal-info">
+        <div class="portal-info-inner">
+            <div class="logo">
+                <a href="#" target="_blank"><img id="example-header-logo" src="/assets/img/logo_virk.svg" alt="Portalnavn"></a>
+            </div>
+            <fds-drawer-button drawer="menu1" class="d-block d-lg-none ml-auto">
+                <button type="button" aria-haspopup="dialog">
+                    <svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <use href="#menu"></use>
+                    </svg><span>Menu</span>
+                </button>
+            </fds-drawer-button>
+            <div class="portal-user">
+                <p class="user">Anders Andersen, Forsikringens Forsikringsfirma</p>
+                <button class="function-link d-print-none log-off">
+                    <svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <use href="#lock"></use>
+                    </svg>Log af
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fds-solution-info">
+        <div class="solution-info-inner">
+            <a href="#" class="solution-heading">Løsningstitel</a>
+            <p class="additional-info d-none d-lg-block">
+                <strong class="authority-name">Myndighedsnavn</strong>
+                <span>Support: 12 34 56 78</span>
+            </p>
+        </div>
+    </div>
+
+    <fds-drawer id="menu1" class="d-block d-lg-none">
+        <div class="overlay"></div>
+        <div class="mobile-drawer">
+
+            <div class="menu-top">
+                <h2 class="menu-heading" id="hea3307ac86">Menu</h2>
+                <button class="function-link button-menu-close" aria-label="Luk menu">
+                    <svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <use href="#close"></use>
+                    </svg><span>Luk</span>
+                </button>
+            </div>
+
+            <div class="fds-solution-info">
+                <section>
+                    <p slot="additional-info">
+                        <strong class="authority-name">Myndighedsnavn</strong>
+                        <span>Support: 12 34 56 78</span>
+                    </p>
+                </section>
+            </div>
+
+            <div class="fds-portal-info">
+                <section class="portal-info-mobile">
+                    <p class="user"><span class="mb-3">Anders Andersen</span><span>Forsikringens Forsikringsfirma</span></p>
+                    <button class="function-link d-print-none log-off">
+                        <svg class="icon-svg" focusable="false" aria-hidden="true">
+                            <use href="#lock"></use>
+                        </svg>Log af
+                    </button>
+                </section>
+            </div>
+
+        </div>
+    </fds-drawer>
+
+</header>
+
+<main class="container page-container" id="main-content">
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Hardcoded header</h1>
+        </div>
+    </div>
+</main>

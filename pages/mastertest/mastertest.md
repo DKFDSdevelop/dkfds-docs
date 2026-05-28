@@ -33,6 +33,8 @@ title: Test
 {% include test/preview-test.html filename="test-fds-drawer" description="Mobilmenu" %}
 {% include test/preview-test.html filename="test-fds-portal-info" description="Portalinfo" %}
 {% include test/preview-test.html filename="test-fds-solution-info" description="Løsningsinfo" %}
+{% include test/preview-test.html filename="test-fds-header-from-components" description="Header lavet med komponenter" %}
+{% include test/preview-test.html filename="test-fds-header-hardcoded" description="Hardcoded header" %}
 
 {:.h3}
 ## HTML-elementer
