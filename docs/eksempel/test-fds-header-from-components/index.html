@@ -262,6 +262,45 @@
         </p>
     </fds-solution-info>
 
+    <div class="fds-main-menu">
+        <div class="main-menu-inner">
+            <nav aria-label="Hovedmenu">
+                <ul>
+                    <li><a href="#"><span>Første menupunkt</span></a></li>
+                    <li>
+                        <fds-dropdown-menu expanded="false">
+                            <button><span>Andet menupunkt</span></button>
+                            <div>
+                                <ul>
+                                    <li><a href="#"><span>Undermenu 2.1</span></a></li>
+                                    <li><a href="#"><span>Undermenu 2.2</span></a></li>
+                                    <li><a href="#"><span>Undermenu 2.3</span></a></li>
+                                    <li><a href="#"><span>Undermenu 2.4</span></a></li>
+                                </ul>
+                            </div>
+                        </fds-dropdown-menu>
+                    </li>
+                    <li><a href="#"><span>Tredje menupunkt</span></a></li>
+                    <li><a href="#"><span>Fjerde menupunkt</span></a></li>
+                    <li>
+                        <fds-dropdown-menu expanded="false">
+                            <button><span>Femte menupunkt</span></button>
+                            <div>
+                                <ul>
+                                    <li><a href="#"><span>Undermenu 5.1</span></a></li>
+                                    <li><a href="#" aria-current="page"><span>Undermenu 5.2
+                                                med flere undermenuer kun synlige på
+                                                mobil</span></a></li>
+                                    <li><a href="#"><span>Undermenu 5.3</span></a></li>
+                                </ul>
+                            </div>
+                        </fds-dropdown-menu>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <fds-drawer id="menu1" class="d-block d-lg-none">
         <div class="mobile-drawer">
 

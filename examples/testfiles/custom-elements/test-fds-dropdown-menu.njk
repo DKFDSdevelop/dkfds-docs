@@ -1,57 +1,10 @@
 <header class="header">
-    <!-- Hardcoded navigation menu -->
-    <div class="navigation-menu">
-        <div class="navigation-menu-inner container">
-
-            <nav class="nav" aria-label="Hovedmenu">
-                <ul class="mainmenu">
-                    <li><a href="#" class="nav-link"><span>Første menupunkt</span></a></li>
-                    <li>
-                        <div class="submenu">
-                            <button class="button-overflow-menu js-dropdown" data-js-target="desktopmenu-2" aria-expanded="false"
-                                aria-controls="desktopmenu-2">
-                                <span>Andet menupunkt</span>
-                            </button>
-                            <div class="overflow-menu-inner collapsed" id="desktopmenu-2">
-                                <ul class="overflow-list">
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.1</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.2</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.3</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.4</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="#" class="nav-link"><span>Tredje menupunkt</span></a></li>
-                    <li><a href="#" class="nav-link"><span>Fjerde menupunkt</span></a></li>
-                    <li class="active">
-                        <div class="submenu">
-                            <button class="button-overflow-menu js-dropdown" data-js-target="desktopmenu-5" aria-expanded="false"
-                                aria-controls="desktopmenu-5">
-                                <span>Femte menupunkt</span>
-                            </button>
-                            <div class="overflow-menu-inner collapsed" id="desktopmenu-5">
-                                <ul class="overflow-list">
-                                    <li><a href="#" class="nav-link"><span>Undermenu 5.1</span></a></li>
-                                    <li class="active current"><a href="#" class="nav-link" aria-current="page"><span>Undermenu 5.2 med flere
-                                                undermenuer kun synlige på mobil</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 5.3</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-        </div>
-    </div>
     <!-- Custom elements navigation menu -->
-    <div class="navigation-menu">
-        <div class="navigation-menu-inner container">
-
-            <nav class="nav" aria-label="Hovedmenu">
-                <ul class="mainmenu">
-                    <li><a href="#" class="nav-link"><span>Første menupunkt</span></a></li>
+    <div class="fds-main-menu">
+        <div class="main-menu-inner">
+            <nav aria-label="Hovedmenu">
+                <ul>
+                    <li><a href="#"><span>Første menupunkt</span></a></li>
                     <li>
                         <fds-dropdown-menu expanded="false">
                             <button><span>Andet menupunkt</span></button>
@@ -65,8 +18,8 @@
                             </div>
                         </fds-dropdown-menu>
                     </li>
-                    <li><a href="#" class="nav-link"><span>Tredje menupunkt</span></a></li>
-                    <li><a href="#" class="nav-link"><span>Fjerde menupunkt</span></a></li>
+                    <li><a href="#"><span>Tredje menupunkt</span></a></li>
+                    <li><a href="#"><span>Fjerde menupunkt</span></a></li>
                     <li>
                         <fds-dropdown-menu expanded="false">
                             <button><span>Femte menupunkt</span></button>
@@ -81,127 +34,59 @@
                     </li>
                 </ul>
             </nav>
-
         </div>
     </div>
-    <!-- Hardcoded mobile navigation menu -->
-    <fds-drawer id="fdsdrawerhardcoded">
-        <div class="mobile-drawer">
-            <nav class="navigation-menu-mobile" aria-label="Hovedmenu og undermenuer">
-                <ul class="mainmenu">
-                    <li><a href="#" class="nav-link"><span>Første menupunkt</span></a></li>
-                    <li>
-                        <div class="submenu">
-                            <button class="button-overflow-menu js-dropdown" data-js-target="desktopmenu-2" aria-expanded="false"
-                                aria-controls="desktopmenu-2">
-                                <span>Andet menupunkt</span>
-                            </button>
-                            <div class="overflow-menu-inner collapsed" id="desktopmenu-2">
-                                <ul class="overflow-list">
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.1</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.2</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.3</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.4</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="#" class="nav-link"><span>Tredje menupunkt</span></a></li>
-                    <li><a href="#" class="nav-link"><span>Fjerde menupunkt</span></a></li>
-                    <li class="active">
-                        <div class="submenu">
-                            <button class="button-mobile-menu js-menudropdown" data-js-target="mobilemenu-5" aria-expanded="true"
-                                aria-controls="mobilemenu-5"><span>Femte menupunkt</span></button>
-                            <div class="overflow-menu-inner" id="mobilemenu-5">
-                                <ul class="overflow-list">
-                                    <li><a href="#" class="nav-link"><span>Undermenu 5.1</span></a></li>
-                                    <li class="active">
-                                        <div class="submenu">
-                                            <button class="button-mobile-menu js-menudropdown" data-js-target="mobilemenu-5-2" aria-expanded="true"
-                                                aria-controls="mobilemenu-5-2">
-                                                <span>Undermenu 5.2 med flere undermenuer kun synlige på mobil</span>
-                                            </button>
-                                            <div class="overflow-menu-inner" id="mobilemenu-5-2">
-                                                <ul class="overflow-list">
-                                                    <li class="active current"><a href="#" class="nav-link" aria-current="page"><span>Undermenu 5.2
-                                                                med flere undermenuer kun synlige på mobil<span
-                                                                    class="helptext d-inline">(overblik)</span></span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.1</span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.2</span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.3</span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.4</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 5.3</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </fds-drawer>
     <!-- Custom elements mobile navigation menu -->
     <fds-drawer id="fdsdrawerce">
         <div class="mobile-drawer">
-            <nav class="navigation-menu-mobile" aria-label="Hovedmenu og undermenuer">
-                <ul class="mainmenu">
-                    <li><a href="#" class="nav-link"><span>Første menupunkt</span></a></li>
-                    <li>
-                        <div class="submenu">
-                            <button class="button-overflow-menu js-dropdown" data-js-target="desktopmenu-2" aria-expanded="false"
-                                aria-controls="desktopmenu-2">
-                                <span>Andet menupunkt</span>
-                            </button>
-                            <div class="overflow-menu-inner collapsed" id="desktopmenu-2">
-                                <ul class="overflow-list">
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.1</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.2</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.3</span></a></li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 2.4</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="#" class="nav-link"><span>Tredje menupunkt</span></a></li>
-                    <li><a href="#" class="nav-link"><span>Fjerde menupunkt</span></a></li>
-                    <li class="active">
-                        <div class="submenu">
-                            <button class="button-mobile-menu js-menudropdown" data-js-target="mobilemenu-5" aria-expanded="true"
-                                aria-controls="mobilemenu-5"><span>Femte menupunkt</span></button>
-                            <div class="overflow-menu-inner" id="mobilemenu-5">
-                                <ul class="overflow-list">
-                                    <li><a href="#" class="nav-link"><span>Undermenu 5.1</span></a></li>
-                                    <li class="active">
-                                        <div class="submenu">
-                                            <button class="button-mobile-menu js-menudropdown" data-js-target="mobilemenu-5-2" aria-expanded="true"
-                                                aria-controls="mobilemenu-5-2">
-                                                <span>Undermenu 5.2 med flere undermenuer kun synlige på mobil</span>
-                                            </button>
-                                            <div class="overflow-menu-inner" id="mobilemenu-5-2">
-                                                <ul class="overflow-list">
-                                                    <li class="active current"><a href="#" class="nav-link" aria-current="page"><span>Undermenu 5.2
-                                                                med flere undermenuer kun synlige på mobil<span
-                                                                    class="helptext d-inline">(overblik)</span></span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.1</span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.2</span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.3</span></a></li>
-                                                    <li><a href="#" class="nav-link"><span>Undermenu 5.2.4</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    <li><a href="#" class="nav-link"><span>Undermenu 5.3</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+            <div class="fds-main-menu">
+                <nav aria-label="Hovedmenu og undermenuer">
+                    <ul>
+                        <li><a href="#"><span>Første menupunkt</span></a></li>
+                        <li>
+                            <fds-dropdown-menu expanded="false">
+                                <button><span>Andet menupunkt</span></button>
+                                <div>
+                                    <ul>
+                                        <li><a href="#"><span>Undermenu 2.1</span></a></li>
+                                        <li><a href="#"><span>Undermenu 2.2</span></a></li>
+                                        <li><a href="#"><span>Undermenu 2.3</span></a></li>
+                                        <li><a href="#"><span>Undermenu 2.4</span></a></li>
+                                    </ul>
+                                </div>
+                            </fds-dropdown-menu>
+                        </li>
+                        <li><a href="#"><span>Tredje menupunkt</span></a></li>
+                        <li><a href="#"><span>Fjerde menupunkt</span></a></li>
+                        <li>
+                            <fds-dropdown-menu expanded="false">
+                                <button><span>Femte menupunkt</span></button>
+                                <div>
+                                    <ul>
+                                        <li><a href="#"><span>Undermenu 5.1</span></a></li>
+                                        <li>
+                                            <fds-dropdown-menu expanded="false">
+                                                <button><span>Undermenu 5.2 med flere undermenuer kun synlige på mobil</span></button>
+                                                <div>
+                                                    <ul>
+                                                        <li><a href="#" aria-current="page"><span>Undermenu 5.2 med flere undermenuer kun synlige på
+                                                                    mobil<span class="helptext d-inline">(overblik)</span></span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.1</span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.2</span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.3</span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.4</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </fds-dropdown-menu>
+                                        </li>
+                                        <li><a href="#"><span>Undermenu 5.3</span></a></li>
+                                    </ul>
+                                </div>
+                            </fds-dropdown-menu>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </fds-drawer>
 </header>
@@ -214,8 +99,7 @@
     </div>
     <div class="row mb-905">
         <div class="col-12">
-            <fds-drawer-button drawer="fdsdrawerhardcoded" button-text="Mobilmenu med genereret HTML"></fds-drawer-button>
-            <fds-drawer-button drawer="fdsdrawerce" button-text="Mobilmenu med custom elements"></fds-drawer-button>
+            <fds-drawer-button drawer="fdsdrawerce"></fds-drawer-button>
         </div>
     </div>
 </main>
