@@ -45,6 +45,7 @@ var testfiles = [
     "test-fds-solution-info",
     "test-fds-header-from-components",
     "test-fds-header-hardcoded",
+    "test-fds-dropdown-menu",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",

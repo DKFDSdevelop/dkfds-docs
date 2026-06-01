@@ -1,0 +1,105 @@
+<header class="header">
+    <!-- Custom elements navigation menu -->
+    <div class="fds-main-menu">
+        <div class="main-menu-inner">
+            <nav aria-label="Hovedmenu">
+                <ul>
+                    <li><a href="#"><span>Første menupunkt</span></a></li>
+                    <li>
+                        <fds-dropdown-menu expanded="false">
+                            <button><span>Andet menupunkt</span></button>
+                            <div>
+                                <ul>
+                                    <li><a href="#"><span>Undermenu 2.1</span></a></li>
+                                    <li><a href="#"><span>Undermenu 2.2</span></a></li>
+                                    <li><a href="#"><span>Undermenu 2.3</span></a></li>
+                                    <li><a href="#"><span>Undermenu 2.4</span></a></li>
+                                </ul>
+                            </div>
+                        </fds-dropdown-menu>
+                    </li>
+                    <li><a href="#"><span>Tredje menupunkt</span></a></li>
+                    <li><a href="#"><span>Fjerde menupunkt</span></a></li>
+                    <li>
+                        <fds-dropdown-menu expanded="false">
+                            <button><span>Femte menupunkt</span></button>
+                            <div>
+                                <ul>
+                                    <li><a href="#"><span>Undermenu 5.1</span></a></li>
+                                    <li><a href="#" aria-current="page"><span>Undermenu 5.2 med flere undermenuer kun synlige på mobil</span></a></li>
+                                    <li><a href="#"><span>Undermenu 5.3</span></a></li>
+                                </ul>
+                            </div>
+                        </fds-dropdown-menu>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Custom elements mobile navigation menu -->
+    <fds-drawer id="fdsdrawerce">
+        <div class="mobile-drawer">
+            <div class="fds-main-menu">
+                <nav aria-label="Hovedmenu og undermenuer">
+                    <ul>
+                        <li><a href="#"><span>Første menupunkt</span></a></li>
+                        <li>
+                            <fds-dropdown-menu expanded="false">
+                                <button><span>Andet menupunkt</span></button>
+                                <div>
+                                    <ul>
+                                        <li><a href="#"><span>Undermenu 2.1</span></a></li>
+                                        <li><a href="#"><span>Undermenu 2.2</span></a></li>
+                                        <li><a href="#"><span>Undermenu 2.3</span></a></li>
+                                        <li><a href="#"><span>Undermenu 2.4</span></a></li>
+                                    </ul>
+                                </div>
+                            </fds-dropdown-menu>
+                        </li>
+                        <li><a href="#"><span>Tredje menupunkt</span></a></li>
+                        <li><a href="#"><span>Fjerde menupunkt</span></a></li>
+                        <li>
+                            <fds-dropdown-menu expanded="false">
+                                <button><span>Femte menupunkt</span></button>
+                                <div>
+                                    <ul>
+                                        <li><a href="#"><span>Undermenu 5.1</span></a></li>
+                                        <li>
+                                            <fds-dropdown-menu expanded="false">
+                                                <button><span>Undermenu 5.2 med flere undermenuer kun synlige på mobil</span></button>
+                                                <div>
+                                                    <ul>
+                                                        <li><a href="#" aria-current="page"><span>Undermenu 5.2 med flere undermenuer kun synlige på
+                                                                    mobil<span class="helptext d-inline">(overblik)</span></span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.1</span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.2</span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.3</span></a></li>
+                                                        <li><a href="#"><span>Undermenu 5.2.4</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </fds-dropdown-menu>
+                                        </li>
+                                        <li><a href="#"><span>Undermenu 5.3</span></a></li>
+                                    </ul>
+                                </div>
+                            </fds-dropdown-menu>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </fds-drawer>
+</header>
+
+<main class="container page-container" id="main-content">
+    <div class="row mb-905">
+        <div class="col-12">
+            <h1 class="h2 mt-0">Submenu til navigation</h1>
+        </div>
+    </div>
+    <div class="row mb-905">
+        <div class="col-12">
+            <fds-drawer-button drawer="fdsdrawerce"></fds-drawer-button>
+        </div>
+    </div>
+</main>
