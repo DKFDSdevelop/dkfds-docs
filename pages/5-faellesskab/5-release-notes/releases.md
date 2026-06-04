@@ -107,6 +107,12 @@ Har du et nyt forslag til en feature eller et bug fix? Så må du meget gerne {%
 
 Har du brug for at se en version af dokumentationen på designsystem.dk, som stemmer overens med en tidligere release, så er du velkommen til at {% include links/internal-link.html linktext="kontakte os" %}.
 
+## Version 11.3.0 {#{% include create-id.html heading="Version 11.3.0" %}}
+{:.mb-0}
+
+<div><span class="small-text mt-0 d-block">XX-XX-XXXX</span></div>
+
+- fix {% include links/github-link.html number="290" afternumber=" på GitHub" %} 
 
 ## Version 11.2.0 {#{% include create-id.html heading="Version 11.2.0" %}}
 {:.mb-0}
