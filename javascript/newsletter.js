@@ -15,8 +15,8 @@ function clearAlertMessage(alertMessage) {
     alertMessage.classList.remove('alert-success');
     alertMessage.classList.remove('alert-warning');
     alertMessage.classList.remove('alert-error');
-    alertMessage.querySelector('.alert-heading').innerHTML = "";
-    alertMessage.querySelector('.alert-text').innerHTML = "";
+    alertMessage.querySelector('.alert-heading').textContent = '';
+    alertMessage.querySelector('.alert-text').textContent = '';
     if (document.querySelector('body').classList.contains('page-nyhedsbrev')) {
         document.getElementById('samtykke-check').removeAttribute('aria-describedby');
     }
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
         });
 
-        /* If the url contains an error message, display it to the user in an alert 
+        /* If the url contains an error message, display it to the user in an alert
         Error message references: https://kb.ubivox.com/api/latest/html/post_handler.html#error-handling */
         if (window.location.search !== '') {
             const urlParams = new URLSearchParams(window.location.search);
@@ -71,20 +71,81 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if (errorCodes.includes('11') && subscriptionPage) {
-                alert.querySelector('.alert-text').innerHTML = '<p>Den indtastede adresse er allerede tilmeldt nyhedsbrevet.</p><p class="mb-0">Du er velkommen til at <a href="mailto:FDS@erst.dk">sende en e-mail til FDS-teamet</a>, hvis du har spørgsmål.</p>';
+                const alertText = alert.querySelector('.alert-text');
+
+                const p1 = document.createElement('p');
+                const p2 = document.createElement('p');
+                p2.classList.add('mb-0');
+
+                const link = document.createElement('a');
+                link.href = 'mailto:FDS@erst.dk';
+                link.textContent = 'sende en e-mail til FDS-teamet';
+
+                p1.textContent = 'Den indtastede adresse er allerede tilmeldt nyhedsbrevet.';
+                p2.append('Du er velkommen til at ', link, ', hvis du har spørgsmål.');
+
+                alertText.replaceChildren(p1, p2);
             }
             else if (errorCodes.includes('14') && unsubscriptionPage) {
-                alert.querySelector('.alert-text').innerHTML = '<p>Den indtastede adresse er ikke tilmeldt nyhedsbrevet og kan derfor ikke afmeldes.</p><p class="mb-0">Du er velkommen til at <a href="mailto:FDS@erst.dk">sende en e-mail til FDS-teamet</a>, hvis du har spørgsmål.</p>';
+                const alertText = alert.querySelector('.alert-text');
+
+                const p1 = document.createElement('p');
+                const p2 = document.createElement('p');
+                p2.classList.add('mb-0');
+
+                const link = document.createElement('a');
+                link.href = 'mailto:FDS@erst.dk';
+                link.textContent = 'sende en e-mail til FDS-teamet';
+
+                p1.textContent = 'Den indtastede adresse er ikke tilmeldt nyhedsbrevet og kan derfor ikke afmeldes.';
+                p2.append('Du er velkommen til at ', link, ', hvis du har spørgsmål.');
+
+                alertText.replaceChildren(p1, p2);
+
             }
             else if (subscriptionPage) {
-                alert.querySelector('.alert-text').innerHTML =
-                    '<p>Det var ikke muligt at tilmelde den indtastede e-mailadresse. Tjek at du har indtastet den korrekte e-mailadresse og prøv at tilmelde igen.</p><p class="mb-0">Hvis problemet fortsætter, så <a href="mailto:FDS@erst.dk">send en e-mail til FDS-teamet</a> og oplys fejlkoden <strong class="error-code"></strong> samt den <strong>e-mailadresse, du forsøgte at tilmelde</strong>. Vi beklager ulejligheden.</p>';
-                alert.querySelector('.alert-text .error-code').textContent = `error_codes_${errorCodes.toString()}`;
+                const alertText = alert.querySelector('.alert-text');
+
+                const p1 = document.createElement('p');
+                const p2 = document.createElement('p');
+                p2.classList.add('mb-0');
+
+                const link = document.createElement('a');
+                link.href = 'mailto:FDS@erst.dk';
+                link.textContent = 'send en e-mail til FDS-teamet';
+
+                const strongCode = document.createElement('strong');
+                strongCode.textContent = `error_codes_${errorCodes.toString()}`;
+
+                const strongAction = document.createElement('strong');
+                strongAction.textContent = 'e-mailadresse, du forsøgte at tilmelde';
+
+                p1.textContent = 'Det var ikke muligt at tilmelde den indtastede e-mailadresse. Tjek at du har indtastet den korrekte e-mailadresse og prøv at tilmelde igen.';
+                p2.append('Hvis problemet fortsætter, så ', link, ' og oplys fejlkoden ', strongCode, ' samt den ', strongAction, '. Vi beklager ulejligheden.');
+
+                alertText.replaceChildren(p1, p2);
             }
             else if (unsubscriptionPage) {
-                alert.querySelector('.alert-text').innerHTML =
-                    '<p>Det var ikke muligt at afmelde den indtastede e-mailadresse. Tjek at du har indtastet den korrekte e-mailadresse og prøv at afmelde igen.</p><p class="mb-0">Hvis problemet fortsætter, så <a href="mailto:FDS@erst.dk">send en e-mail til FDS-teamet</a> og oplys fejlkoden <strong class="error-code"></strong> samt den <strong>e-mailadresse, du forsøgte at afmelde</strong>. Vi beklager ulejligheden.</p>';
-                alert.querySelector('.alert-text .error-code').textContent = `error_codes_${errorCodes.toString()}`;
+                const alertText = alert.querySelector('.alert-text');
+
+                const p1 = document.createElement('p');
+                const p2 = document.createElement('p');
+                p2.classList.add('mb-0');
+
+                const link = document.createElement('a');
+                link.href = 'mailto:FDS@erst.dk';
+                link.textContent = 'send en e-mail til FDS-teamet';
+
+                const strongCode = document.createElement('strong');
+                strongCode.textContent = `error_codes_${errorCodes.toString()}`;
+
+                const strongAction = document.createElement('strong');
+                strongAction.textContent = 'e-mailadresse, du forsøgte at afmelde';
+
+                p1.textContent = 'Det var ikke muligt at afmelde den indtastede e-mailadresse. Tjek at du har indtastet den korrekte e-mailadresse og prøv at afmelde igen.';
+                p2.append('Hvis problemet fortsætter, så ', link, ' og oplys fejlkoden ', strongCode, ' samt den ', strongAction, '. Vi beklager ulejligheden.');
+
+                alertText.replaceChildren(p1, p2);
             }
 
             alert.removeAttribute('hidden');
@@ -92,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("newsletter-submit").addEventListener("click", function (e) {
 
-            let errors = "";
+            let errors = [];
             let emailSection = document.getElementById('newsletter-emailaddress');
             let emailAddress = emailSection.querySelector('input').value;
 
@@ -114,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 /* Add error message to error summary */
-                errors += '<li><a class="function-link" href="#i_newsform_email">' + errormessage + '</a></li>';
+                errors.push({ href: '#i_newsform_email', text: errormessage });
             }
             else {
                 /* If email is valid, ensure no error message is displayed next to the field */
@@ -134,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     checkboxError.removeAttribute('hidden');
 
                     /* Add error message to error summary */
-                    errors += '<li><a class="function-link" href="#samtykke-check">' + errormessage + '</a></li>';
+                    errors.push({ href: '#samtykke-check', text: errormessage });
                 }
                 else {
                     /* If checkbox is checked, ensure no error message is displayed */
@@ -142,10 +203,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            if (errors !== '') {
+            if (errors.length > 0) {
                 alertSummary.classList.add('alert-error');
-                alertSummary.querySelector('.alert-heading').innerHTML = "Der er problemer";
-                alertSummary.querySelector('.alert-text').innerHTML = '<ul class="nobullet-list mt-0 mb-0">' + errors + '</ul>';
+                alertSummary.querySelector('.alert-heading').textContent = "Der er problemer";
+
+                const ul = document.createElement('ul');
+                ul.classList.add('nobullet-list', 'mt-0', 'mb-0');
+
+                errors.forEach(({ href, text }) => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.classList.add('function-link');
+                    a.href = href;
+                    a.textContent = text;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+
+                alertSummary.querySelector('.alert-text').textContent = '';
+                alertSummary.querySelector('.alert-text').appendChild(ul);
+
                 alertSummary.parentNode.removeAttribute('hidden');
                 if (!isValidEmailAddress(emailAddress)) {
                     document.getElementById('i_newsform_email').focus();

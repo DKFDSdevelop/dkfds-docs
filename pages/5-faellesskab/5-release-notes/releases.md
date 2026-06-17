@@ -83,6 +83,7 @@ tags:
 - 11.0.1
 - 11.1.0
 - 11.2.0
+- 11.3.0
 ---
 
 {% include anchorlinks.html headings="Releases" %}
@@ -106,6 +107,19 @@ Har du et nyt forslag til en feature eller et bug fix? Så må du meget gerne {%
 ### Tidligere versioner af dokumentationen
 
 Har du brug for at se en version af dokumentationen på designsystem.dk, som stemmer overens med en tidligere release, så er du velkommen til at {% include links/internal-link.html linktext="kontakte os" %}.
+
+
+
+## Version 11.3.0 {#{% include create-id.html heading="Version 11.3.0" %}}
+{:.mb-0}
+
+<div><span class="small-text mt-0 d-block">xx-xx-2026</span></div>
+
+- <strong class="badge badge-info badge-small mr-2">Change</strong> Fjernet `aria-labelledby` fra Nunjucks-macro og eksempler med {% include links/component-guideline-link.html linktext="radioknapper" %}, hvor brugen er overflødig. `aria-labelledby` anvendes stadig for {% include links/component-guideline-link.html linktext="radioknap med tooltip" %}.
+{% include links/github-link.html number="282" afternumber=" på GitHub" %}
+- Rettet fejl, hvor links i {% include links/component-guideline-link.html linktext="overflowmenuen" %} ikke havde rundede hjørner på hover.
+{% include links/github-link.html number="290" afternumber=" på GitHub" %}
+
 
 
 ## Version 11.2.0 {#{% include create-id.html heading="Version 11.2.0" %}}
