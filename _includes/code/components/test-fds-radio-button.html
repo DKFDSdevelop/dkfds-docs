@@ -13,7 +13,7 @@
         <div class="col-12">
             <fds-radio-button-group>
                 <fieldset>
-                    <legend class="form-label">Simpel radioknapgruppe</legend>
+                    <legend>Simpel radioknapgruppe</legend>
                     <fds-radio-button>
                         <input type="radio" name="radio-example" value="v1">
                         <label>Radio button 1</label>
@@ -38,7 +38,7 @@
         <div class="col-12">
             <fds-radio-button-group>
                 <fieldset>
-                    <legend class="form-label">Helptext radio group</legend>
+                    <legend>Helptext radio group</legend>
                     <fds-help-text>Helptext for the group</fds-help-text>
                     <fds-radio-button>
                         <input type="radio" name="radio-example" value="v1">
@@ -65,7 +65,7 @@
         <div class="col-12">
             <fds-radio-button-group>
                 <fieldset>
-                    <legend class="form-label">Error radio group</legend>
+                    <legend>Error radio group</legend>
                     <fds-error-message>Error message</fds-error-message>
                     <fds-radio-button>
                         <input type="radio" name="radio-example" value="v1">
@@ -91,7 +91,7 @@
         <div class="col-12">
             <fds-radio-button-group>
                 <fieldset disabled>
-                    <legend class="form-label">Deactivated radio group</legend>
+                    <legend>Deactivated radio group</legend>
                     <fds-radio-button>
                         <input type="radio" name="radio-example" value="v1">
                         <label>Radio button 1</label>
@@ -116,7 +116,7 @@
         <div class="col-12">
             <fds-radio-button-group>
                 <fieldset>
-                    <legend class="form-label">Radio group with hidden content</legend>
+                    <legend>Radio group with hidden content</legend>
                     <fds-radio-button>
                         <input type="radio" name="radio-example" value="v1">
                         <label>Show hidden content 1</label>
@@ -160,10 +160,10 @@
             <h2 class="h3 mt-0">Radioknapgruppe med tooltip</h2>
         </div>
         <div class="col-12">
-            <fds-radio-button-group group-label="New radio group">
-                <fieldset>
-                    <legend class="form-label">
-                        Radioknapgruppe med tooltip
+            <fds-radio-button-group>
+                <fieldset aria-labelledby="tyuityui">
+                    <legend>
+                        <span id="tyuityui">Radioknapgruppe med tooltip</span>
                         <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip"
                             data-tooltip-id="radiogroup-tooltip1" data-position="above"
                             data-trigger="click"><button
@@ -190,9 +190,9 @@
             <h2 class="h3 mt-0">Radioknapgruppe with everything</h2>
         </div>
         <div class="col-12">
-            <fds-radio-button-group group-label="New radio group">
+            <fds-radio-button-group>
                 <fieldset aria-labelledby="asdfadf">
-                    <legend class="form-label">
+                    <legend>
                         <span id="asdfadf">Radioknapgruppe with everything</span>
                         <span class="tooltip-wrapper" data-tooltip="Dette er et tooltip"
                             data-tooltip-id="radiogroup-tooltip2" data-position="above"
