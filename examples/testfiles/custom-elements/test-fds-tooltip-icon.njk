@@ -17,6 +17,15 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <h2 class="h3 mt-0">Ikon med lang tooltiptekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-tooltip-icon tooltip-text="Dette er en alt for lang tekst til et tooltip, men den er god at teste med. Tooltips bliver for lange, når de fylder mere end 4 linjer. fgdgdgfdsgfsdgfsdgsfdgerstsgfsgsgfgsfdgsdtertsgfgfdgsfgsgsdfgrtgrfgsfgsfdgsdfgsdrterargfsgsdfgsertg" sr-label="Læs mere"></fds-tooltip-icon>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <h2 class="h3 mt-0">Inputfelt med tooltip</h2>
         </div>
         <div class="col-12">
@@ -28,4 +37,37 @@
         </div>
     </div>
 
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Ikon i modal</h2>
+        </div>
+        <div class="col-12">
+            <button class="button button-tertiary" data-module="modal" data-target="modal-example" aria-haspopup="dialog" aria-describedby="tooltip-modal" id="modal-opener-1615">Åbn modal</button>
+        </div>
+    </div>
+
 </main>
+
+<div class="fds-modal-container">
+    <div class="fds-modal" id="modal-example" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-example-heading" data-modal-opener="modal-opener-1615">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-example-heading">Modal med handlinger</h2>
+                <button class="modal-close function-link" data-modal-close="">
+                    <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#close"></use></svg>Luk
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex align-items-center justify-content-between">
+                    <fds-tooltip-icon tooltip-text="Dette er et tooltip i en modal" sr-label="Læs mere"></fds-tooltip-icon>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" data-modal-close="">
+                    Luk
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
