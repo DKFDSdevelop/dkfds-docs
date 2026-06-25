@@ -1291,6 +1291,19 @@
 
 <p>Har du brug for at se en version af dokumentationen på designsystem.dk, som stemmer overens med en tidligere release, så er du velkommen til at <a href="/faellesskab/kontakt-support/">kontakte os</a>.</p>
 
+<h2 id="version-x-0-0">Version x.0.0</h2>
+
+<ul>
+  <li><strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet custom elements og web components.</li>
+  <li><strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet ikonet <code>plus-circle</code>.</li>
+  <li><strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Hjælpefunktioner til at generere unikke ID’er er omskrevet.</li>
+  <li><strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Attributten <code>hidden="false"</code> på et element vil ikke længere skjule elementet.</li>
+  <li><strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Stylingen, der satte max-bredde for lister, er ændret. Lister har som udgangspunkt ikke længere en automatisk max-bredde på 66 tegn, men dette kan sættes ved at bruge klassen <code>paragraph</code>.</li>
+  <li>Modalevents <code>fds.modal.hidden</code> og <code>fds.modal.shown</code> er blevet ændret til at boble op i DOM’en (<code>bubbles: true</code>), så det ikke længere er nødvendigt at sætte event listeners direkte på en modal.</li>
+  <li>Modaler lukkes nu ved <code>keydown</code> i stedet for <code>keyup</code>.</li>
+  <li>Visse font-formater i stylingen er blevet fjernet.</li>
+</ul>
+
 <h2 id="version-11-tre-0" class="mb-0">Version 11.3.0</h2>
 
 <div><span class="small-text mt-0 d-block">xx-xx-2026</span></div>
