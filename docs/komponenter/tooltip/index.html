@@ -1589,7 +1589,7 @@
 <li class="active current">
 
   <a href="/komponenter/tooltip/" class="nav-link" aria-current="page">
-    <span>Tooltip</span>
+      <span>Tooltip <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
   </a>
 
 </li>
@@ -1662,6 +1662,9 @@
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
+        </li><li>
+            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom element</span></a>
+            <span id="custom" hidden=""></span>
         </li></ul>
 </nav>
 <div id="retningslinjer" hidden=""></div>
@@ -1704,6 +1707,10 @@
         <li class="anchorlink-code"><a href="#ikoner-med-hover-tooltip-kode">Ikoner med hover-tooltip</a></li>
         <li class="anchorlink-code"><a href="#knap-med-hover-tooltip-kode">Knap med hover-tooltip</a></li>
         <li class="anchorlink-code"><a href="#referencer-kode">Referencer</a></li>
+        <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
+        <li class="anchorlink-custom"><a href="#eksempler-custom">Eksempler</a></li>
+        <li class="anchorlink-custom"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-custom"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2389,6 +2396,561 @@
 <ul class="nobullet-list">
   <li><a href="https://inclusive-components.design/tooltips-toggletips/" class="icon-link" target="_blank">Heydon Pickering: Tooltips &amp; Toggletips - Inclusive Components (2017)<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a></li>
 </ul>
+
+
+                        </div>
+                        <div id="custom-section">
+                            
+
+<h2 id="om-custom-elements-custom">Om custom elements</h2>
+
+<h3>HTML-muligheder</h3>
+
+<h2 id="eksempler-custom">Eksempler</h2>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-1-tooltip-tabpanel1" aria-selected="true" id="example-1-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-tooltip-tabpanel2" aria-selected="false" id="example-1-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-1-tooltip-tabpanel3" aria-selected="false" id="example-1-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-1-tooltip-tabpanel1" aria-labelledby="example-1-tooltip-tab1">
+        <fds-tooltip-icon tooltip-text="Dette er et tooltip" sr-label="Læs mere"></fds-tooltip-icon>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-1-tooltip-tabpanel2" aria-labelledby="example-1-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-1-tooltip-tabpanel3" aria-labelledby="example-1-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tooltip-40eb33a&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;assertive&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-40eb33a&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-icon-default/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h2 id="varianter-custom">Varianter</h2>
+
+<h3>Placering</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-2-tooltip-tabpanel1" aria-selected="true" id="example-2-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-2-tooltip-tabpanel2" aria-selected="false" id="example-2-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-2-tooltip-tabpanel3" aria-selected="false" id="example-2-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-2-tooltip-tabpanel1" aria-labelledby="example-2-tooltip-tab1">
+        <p class="mt-0">Den her tekst har et tooltip, der er placeret over hjælpeikonet <fds-tooltip-icon tooltip-text="Dette er et tooltip" sr-label="Læs mere" placement="above"></fds-tooltip-icon></p>
+<p class="mb-0">Her er tooltip placeret under hjælpeikonet <fds-tooltip-icon tooltip-text="Dette er et tooltip" sr-label="Læs mere" placement="below"></fds-tooltip-icon></p>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-2-tooltip-tabpanel2" aria-labelledby="example-2-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>Den her tekst har et tooltip, der er placeret over hjælpeikonet <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">&quot;above&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mb-0&quot;</span>&gt;</span>Her er tooltip placeret under hjælpeikonet <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">&quot;below&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-2-tooltip-tabpanel3" aria-labelledby="example-2-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>Den her tekst har et tooltip, der er placeret over hjælpeikonet <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">&quot;above&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tooltip-86e4e876&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;assertive&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-86e4e876&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mb-0&quot;</span>&gt;</span>Her er tooltip placeret under hjælpeikonet <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">&quot;below&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tooltip-a9b4a93e&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;assertive&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-a9b4a93e&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-icon-placement/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Radioknap med tooltip</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-3-tooltip-tabpanel1" aria-selected="true" id="example-3-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-3-tooltip-tabpanel2" aria-selected="false" id="example-3-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-3-tooltip-tabpanel3" aria-selected="false" id="example-3-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-3-tooltip-tabpanel1" aria-labelledby="example-3-tooltip-tab1">
+        <fds-radio-button-group>
+    <fieldset aria-labelledby="legend-span-id">
+        <legend>
+            <span id="legend-span-id">Radioknapper </span>
+            <fds-tooltip-icon tooltip-text="Dette er et tooltip" sr-label="Læs mere"></fds-tooltip-icon>
+        </legend>
+        <fds-radio-button>
+            <input type="radio" name="radio-example" value="v1" />
+            <label>Valg 1</label>
+        </fds-radio-button>
+        <fds-radio-button>
+            <input type="radio" name="radio-example" value="v2" />
+            <label>Valg 2</label>
+        </fds-radio-button>
+    </fieldset>
+</fds-radio-button-group>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-3-tooltip-tabpanel2" aria-labelledby="example-3-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;legend-span-id&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;legend-span-id&quot;</span>&gt;</span>Radioknapper <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Valg 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Valg 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-3-tooltip-tabpanel3" aria-labelledby="example-3-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button-group</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;legend-span-id&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;legend-span-id&quot;</span>&gt;</span>Radioknapper <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tooltip-739780d1&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;assertive&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-739780d1&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;rad217a7e9f&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;rad217a7e9f&quot;</span>&gt;</span>Valg 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-radio-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;rad4e8271fd&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;rad4e8271fd&quot;</span>&gt;</span>Valg 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-radio-button-group</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-icon-radio-buttons/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Tjekboks med tooltip</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-4-tooltip-tabpanel1" aria-selected="true" id="example-4-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-4-tooltip-tabpanel2" aria-selected="false" id="example-4-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-4-tooltip-tabpanel3" aria-selected="false" id="example-4-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-4-tooltip-tabpanel1" aria-labelledby="example-4-tooltip-tab1">
+        <fds-checkbox>
+    <input type="checkbox" name="checkbox-example" checked="" />
+    <label>Udfyldt tjekboks</label>
+    <fds-tooltip-icon tooltip-text="Dette er et tooltip" sr-label="Læs mere"></fds-tooltip-icon>
+</fds-checkbox>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-4-tooltip-tabpanel2" aria-labelledby="example-4-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">checked</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Udfyldt tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-4-tooltip-tabpanel3" aria-labelledby="example-4-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkbox-example&quot;</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chkd68cb5a5&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-label&quot;</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;chkd68cb5a5&quot;</span>&gt;</span>Udfyldt tjekboks<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tooltip-4ac28f1c&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;assertive&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-4ac28f1c&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-checkbox</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-icon-checkbox/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Inputfelt med tooltip</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-5-tooltip-tabpanel1" aria-selected="true" id="example-5-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-5-tooltip-tabpanel2" aria-selected="false" id="example-5-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-5-tooltip-tabpanel3" aria-selected="false" id="example-5-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-5-tooltip-tabpanel1" aria-labelledby="example-5-tooltip-tab1">
+        <fds-input>
+    <label>Inputfelt</label>
+    <fds-tooltip-icon tooltip-text="Dette er et tooltip" sr-label="Læs mere"></fds-tooltip-icon>
+    <input type="text" name="input-text" />
+</fds-input>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-5-tooltip-tabpanel2" aria-labelledby="example-5-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Inputfelt<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-5-tooltip-tabpanel3" aria-labelledby="example-5-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inpda34eab3&quot;</span>&gt;</span>Inputfelt<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tooltip-2a4ff92b&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Læs mere&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;assertive&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-2a4ff92b&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inpda34eab3&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-icon-input-field/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Brødtekst med tooltip</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-6-tooltip-tabpanel1" aria-selected="true" id="example-6-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-6-tooltip-tabpanel2" aria-selected="false" id="example-6-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-6-tooltip-tabpanel3" aria-selected="false" id="example-6-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-6-tooltip-tabpanel1" aria-labelledby="example-6-tooltip-tab1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+    <strong>dolore magna</strong><fds-tooltip-icon class="small" tooltip-text="Dette er et tooltip" sr-label="Hvad betyder dolore magna"></fds-tooltip-icon> aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-6-tooltip-tabpanel2" aria-labelledby="example-6-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>dolore magna<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;small&quot;</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Hvad betyder dolore magna&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span> aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-6-tooltip-tabpanel3" aria-labelledby="example-6-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>dolore magna<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;small&quot;</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span> <span class="hljs-attr">sr-label</span>=<span class="hljs-string">&quot;Hvad betyder dolore magna&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tooltip-75fb493c&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Hvad betyder dolore magna&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">&quot;assertive&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-75fb493c&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip-icon</span>&gt;</span> aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-icon-text/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Ikoner med hover-tooltip</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-7-tooltip-tabpanel1" aria-selected="true" id="example-7-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-7-tooltip-tabpanel2" aria-selected="false" id="example-7-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-7-tooltip-tabpanel3" aria-selected="false" id="example-7-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-7-tooltip-tabpanel1" aria-labelledby="example-7-tooltip-tab1">
+        <fds-tooltip tooltip-text="Slet" purpose="label">
+    <button class="button button-unstyled">
+        <svg class="icon-svg mr-0 mt-0" focusable="false" aria-hidden="true"><use href="#delete"></use></svg>
+    </button>
+</fds-tooltip>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-7-tooltip-tabpanel2" aria-labelledby="example-7-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Slet&quot;</span> <span class="hljs-attr">purpose</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg mr-0 mt-0&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#delete&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-7-tooltip-tabpanel3" aria-labelledby="example-7-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Slet&quot;</span> <span class="hljs-attr">purpose</span>=<span class="hljs-string">&quot;label&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-unstyled&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;tooltip-34cc316b&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg mr-0 mt-0&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#delete&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-34cc316b&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span>Slet<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-hover/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h3>Knap med hover-tooltip</h3>
+
+<div class="tab-container mt-5">
+    <div class="tab-list" role="tablist">
+        <button class="tab-button" role="tab" aria-controls="example-8-tooltip-tabpanel1" aria-selected="true" id="example-8-tooltip-tab1"><span>Eksempel</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-8-tooltip-tabpanel2" aria-selected="false" id="example-8-tooltip-tab2"><span>Custom element</span></button>
+        <button class="tab-button" role="tab" aria-controls="example-8-tooltip-tabpanel3" aria-selected="false" id="example-8-tooltip-tab3"><span>Genereret HTML</span></button>
+    </div>
+    <div class="tab-panel" role="tabpanel" id="example-8-tooltip-tabpanel1" aria-labelledby="example-8-tooltip-tab1">
+        <fds-tooltip tooltip-text="Dette er et tooltip">
+    <button class="button button-primary">Default</button>
+</fds-tooltip>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-8-tooltip-tabpanel2" aria-labelledby="example-8-tooltip-tab2" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel code-tab" role="tabpanel" id="example-8-tooltip-tabpanel3" aria-labelledby="example-8-tooltip-tab3" hidden="">
+        <div>
+            <div class="component-code">
+                <div class="button-copy-container">
+                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                </div>
+                <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-tooltip</span> <span class="hljs-attr">tooltip-text</span>=<span class="hljs-string">&quot;Dette er et tooltip&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;tooltip-29fd97b7&quot;</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tooltip-29fd97b7&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span>Dette er et tooltip<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tooltip-arrow&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-tooltip</span>&gt;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-8">
+    <a href="/eksempel/fds-tooltip-hover-button/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3>Attributter for fds-tooltip-icon</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tooltip-text</td>
+      <td>Teksten der skal vises i tooltippet.</td>
+    </tr>
+    <tr>
+      <td>sr-label</td>
+      <td>Skærmlæsertekst til ikonet.</td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td>Accepterer værdierne “below” og “above” (default).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Attributter for fds-tooltip</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tooltip-text</td>
+      <td>Teksten der skal vises i tooltippet.</td>
+    </tr>
+    <tr>
+      <td>purpose</td>
+      <td>Accepterer værdierne “label” og “hint” (default). Hvis “label” anvendes, vil tooltippet fungere som tilgængeligt navn for trigger-elementet.</td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td>Accepterer værdierne “below” og “above” (default).</td>
+    </tr>
+  </tbody>
+</table>
 
                         </div>
             </section>

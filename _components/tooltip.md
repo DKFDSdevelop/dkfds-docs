@@ -9,14 +9,14 @@ title: "Tooltip"
 lead: Tooltips giver brugeren kort, forklarende information om specifikke elementer på siden. Tooltip vises ved klik på et hjælpeikon.
 description: "Tooltips giver brugeren kort, forklarende information om specifikke elementer på siden. Tooltip vises ved klik på et hjælpeikon."
 tags: 
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="tooltip-helpicon" title="Eksempel på ikon med tooltip" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tooltip" code="Tooltip_Kode" %}
+{% include anchorlinks.html guidelines="Tooltip" code="Tooltip_Kode" custom="Tooltip_Custom" %}
 
 <!--split-->
 
@@ -179,3 +179,63 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 
 {:.nobullet-list}
 - {% include links/external-link.html linktext="Heydon Pickering: Tooltips & Toggletips - Inclusive Components (2017)" %}
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+### HTML-muligheder
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-icon-default" tabId="example-1-tooltip" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Placering
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-icon-placement" tabId="example-2-tooltip" %}
+
+### Radioknap med tooltip
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-icon-radio-buttons" tabId="example-3-tooltip" %}
+
+### Tjekboks med tooltip
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-icon-checkbox" tabId="example-4-tooltip" %}
+
+### Inputfelt med tooltip
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-icon-input-field" tabId="example-5-tooltip" %}
+
+### Brødtekst med tooltip
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-icon-text" tabId="example-6-tooltip" %}
+
+### Ikoner med hover-tooltip
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-hover" tabId="example-7-tooltip" %}
+
+### Knap med hover-tooltip
+
+{% include code/show-example-with-tabs.html example="fds-tooltip-hover-button" tabId="example-8-tooltip" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter for fds-tooltip-icon
+
+{:.table .table--responsive-headers}
+| Attribut     | Beskrivelse                                        |
+|--------------|----------------------------------------------------|
+| tooltip-text | Teksten der skal vises i tooltippet.               |
+| sr-label     | Skærmlæsertekst til ikonet.                        |
+| placement    | Accepterer værdierne "below" og "above" (default). |
+
+### Attributter for fds-tooltip
+
+{:.table .table--responsive-headers}
+| Attribut     | Beskrivelse                                                                                                                                  |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| tooltip-text | Teksten der skal vises i tooltippet.                                                                                                         |
+| purpose      | Accepterer værdierne "label" og "hint" (default). Hvis "label" anvendes, vil tooltippet fungere som tilgængeligt navn for trigger-elementet. |
+| placement    | Accepterer værdierne "below" og "above" (default).                                                                                           |
