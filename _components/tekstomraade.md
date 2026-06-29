@@ -23,7 +23,7 @@ tabs: "Retningslinjer, kode, custom"
 
 {% include code/preview-box.html component="text-area" title="Eksempel på tekstområde" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tekstomraade" code="Tekstomraade_Kode" custom="Tekstomraade_Custom"%}
+{% include anchorlinks.html guidelines="Tekstomraade" code="Tekstomraade_Kode" custom="Tekstomraade_Custom" %}
 
 <!--split-->
 

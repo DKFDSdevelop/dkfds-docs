@@ -644,6 +644,12 @@ Tooltip_Kode:
 - h2: Knap med hover-tooltip
 - h2: Referencer
 
+Tooltip_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 Trinindikator_Kode:
 - h2: Installation
 - h2: Alle trin klikbare
