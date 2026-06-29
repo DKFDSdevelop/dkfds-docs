@@ -45,7 +45,7 @@
     "highlight.js": "11.11.1",
     "jquery": "3.7.1",
     "js-beautify": "1.15.4",
-    "jsdom": "29.0.1",
+    "jsdom": "29.1.1",
     "mini-css-extract-plugin": "2.10.2",
     "postcss-discard-comments": "7.0.6",
     "postcss-loader": "8.2.1",
