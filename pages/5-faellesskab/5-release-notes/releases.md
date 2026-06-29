@@ -119,6 +119,7 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 {% include links/github-link.html number="282" afternumber=" på GitHub" %}
 - Rettet fejl, hvor links i {% include links/component-guideline-link.html linktext="overflowmenuen" %} ikke havde rundede hjørner på hover.
 {% include links/github-link.html number="290" afternumber=" på GitHub" %}
+- Rettet stylingfejl, hvor lange labels i {% include links/component-guideline-link.html linktext="datofelter" %} kunne overlappe hinanden.
 
 
 
