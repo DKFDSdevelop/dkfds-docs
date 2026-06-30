@@ -1933,13 +1933,11 @@
 
 <h2 id="eksempler-custom">Eksempler</h2>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="example-1-dat-tabpanel1" aria-selected="true" id="example-1-dat-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-1-dat-tabpanel2" aria-selected="false" id="example-1-dat-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-1-dat-tabpanel3" aria-selected="false" id="example-1-dat-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="example-1-dat-tabpanel1" aria-labelledby="example-1-dat-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-date-input/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-date-input>
     <fieldset>
         <legend>Indtast dato</legend>
@@ -1960,14 +1958,20 @@
     </fieldset>
 </fds-date-input>
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-1-dat-tabpanel2" aria-labelledby="example-1-dat-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-date-input">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-1-dat-tabpanel2" aria-selected="true" id="example-1-dat-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-1-dat-tabpanel3" aria-selected="false" id="example-1-dat-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-dat-tabpanel2" aria-labelledby="example-1-dat-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -1986,18 +1990,18 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-1-dat-tabpanel3" aria-labelledby="example-1-dat-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-dat-tabpanel3" aria-labelledby="example-1-dat-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2016,13 +2020,12 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-date-input/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h2 id="varianter-custom">Varianter</h2>
@@ -2031,13 +2034,11 @@
 
 <p><code>&lt;fds-error-message&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code>, <code>&lt;fds-radio-button-group&gt;</code>, <code>&lt;fds-date-input&gt;</code>, <code>&lt;fds-upload-file&gt;</code>, <code>&lt;fds-date-picker&gt;</code> og <code>&lt;fds-textarea&gt;</code>. Dette custom-element tilføjer automatisk et fejlikon og strukturerer indholdet, inkluderer korrekte ARIA-attributter og skjulte tilstande samt underretter forælderkomponenten om ændringer i synlighed.</p>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="example-2-dat-tabpanel1" aria-selected="true" id="example-2-dat-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-2-dat-tabpanel2" aria-selected="false" id="example-2-dat-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-2-dat-tabpanel3" aria-selected="false" id="example-2-dat-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="example-2-dat-tabpanel1" aria-labelledby="example-2-dat-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-date-input-error/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-date-input>
     <fieldset>
         <legend>Indtast dato</legend>
@@ -2080,14 +2081,20 @@
     </fieldset>
 </fds-date-input>
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-2-dat-tabpanel2" aria-labelledby="example-2-dat-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-date-input-error">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-2-dat-tabpanel2" aria-selected="true" id="example-2-dat-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-2-dat-tabpanel3" aria-selected="false" id="example-2-dat-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-2-dat-tabpanel2" aria-labelledby="example-2-dat-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2128,18 +2135,18 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">targets</span>=<span class="hljs-string">&quot;day, year&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;errorcafee2aa&quot;</span>&gt;</span>Fejl i indtastet dag og år<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-2-dat-tabpanel3" aria-labelledby="example-2-dat-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-2-dat-tabpanel3" aria-labelledby="example-2-dat-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;errore8d9ef0e&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2185,13 +2192,12 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-date-input-error/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h4>Attributter til <code>&lt;fds-error-message&gt;</code></h4>
@@ -2248,13 +2254,11 @@
 
 <p><code>&lt;fds-help-text&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code>, <code>&lt;fds-radio-button&gt;</code>, <code>&lt;fds-radio-button-group&gt;</code> <code>&lt;fds-date-input&gt;</code>, <code>&lt;fds-upload-file&gt;</code>, <code>&lt;fds-date-picker&gt;</code> og <code>&lt;fds-textarea&gt;</code>.</p>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="example-3-dat-tabpanel1" aria-selected="true" id="example-3-dat-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-3-dat-tabpanel2" aria-selected="false" id="example-3-dat-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-3-dat-tabpanel3" aria-selected="false" id="example-3-dat-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="example-3-dat-tabpanel1" aria-labelledby="example-3-dat-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-date-input-help/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-date-input>
     <fieldset>
         <legend>Indtast dato</legend>
@@ -2276,14 +2280,20 @@
     </fieldset>
 </fds-date-input>
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-3-dat-tabpanel2" aria-labelledby="example-3-dat-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-date-input-help">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-3-dat-tabpanel2" aria-selected="true" id="example-3-dat-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-3-dat-tabpanel3" aria-selected="false" id="example-3-dat-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-3-dat-tabpanel2" aria-labelledby="example-3-dat-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help9c6e2d9d&quot;</span>&gt;</span>Dette er en hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
@@ -2303,18 +2313,18 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-3-dat-tabpanel3" aria-labelledby="example-3-dat-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-3-dat-tabpanel3" aria-labelledby="example-3-dat-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;help9c6e2d9d&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help9c6e2d9d&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span>&gt;</span>Dette er en hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
@@ -2334,13 +2344,12 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-date-input-help/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h4>Attributter til <code>&lt;fds-help-text&gt;</code></h4>
@@ -2387,13 +2396,11 @@
 
 <h3>Obligatoriske og frivillige inputfelter</h3>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="example-4-dat-tabpanel1" aria-selected="true" id="example-4-dat-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-4-dat-tabpanel2" aria-selected="false" id="example-4-dat-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-4-dat-tabpanel3" aria-selected="false" id="example-4-dat-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="example-4-dat-tabpanel1" aria-labelledby="example-4-dat-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-date-input-required/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-date-input input-required="" show-required-status="">
     <fieldset>
         <legend>Indtast dato</legend>
@@ -2474,14 +2481,20 @@
     </fieldset>
 </fds-date-input>
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-4-dat-tabpanel2" aria-labelledby="example-4-dat-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span> <span class="hljs-attr">input-required</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-date-input-required">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-4-dat-tabpanel2" aria-selected="true" id="example-4-dat-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-4-dat-tabpanel3" aria-selected="false" id="example-4-dat-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-4-dat-tabpanel2" aria-labelledby="example-4-dat-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span> <span class="hljs-attr">input-required</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2560,18 +2573,18 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-4-dat-tabpanel3" aria-labelledby="example-4-dat-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span> <span class="hljs-attr">input-required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-4-dat-tabpanel3" aria-labelledby="example-4-dat-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span> <span class="hljs-attr">input-required</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (frivilligt)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
@@ -2651,24 +2664,21 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-date-input-required/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h3>Deaktiveret</h3>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="example-5-dat-tabpanel1" aria-selected="true" id="example-5-dat-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-5-dat-tabpanel2" aria-selected="false" id="example-5-dat-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-5-dat-tabpanel3" aria-selected="false" id="example-5-dat-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="example-5-dat-tabpanel1" aria-labelledby="example-5-dat-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-date-input-disabled/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-date-input>
     <fieldset disabled="">
         <legend>Indtast dato</legend>
@@ -2689,14 +2699,20 @@
     </fieldset>
 </fds-date-input>
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-5-dat-tabpanel2" aria-labelledby="example-5-dat-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-date-input-disabled">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-5-dat-tabpanel2" aria-selected="true" id="example-5-dat-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-5-dat-tabpanel3" aria-selected="false" id="example-5-dat-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-5-dat-tabpanel2" aria-labelledby="example-5-dat-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">disabled</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2715,18 +2731,18 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-5-dat-tabpanel3" aria-labelledby="example-5-dat-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-5-dat-tabpanel3" aria-labelledby="example-5-dat-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Indtast dato<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2745,13 +2761,12 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-input</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-date-input-disabled/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h2 id="konfiguration-custom">Konfiguration</h2>

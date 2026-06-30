@@ -1,39 +1,44 @@
 {% if include.example and include.example != '' %}
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel1" aria-selected="true" id="{{ include.tabId }}-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel2" aria-selected="false" id="{{ include.tabId }}-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel3" aria-selected="false" id="{{ include.tabId }}-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel"{% if include.focusable %} tabindex="0"{% endif %} id="{{ include.tabId }}-tabpanel1" aria-labelledby="{{ include.tabId }}-tab1"{% if include.overflowVisible %} style="overflow: visible;"{% endif %}>
+<div class="mt-3 mb-3">
+    <a href="/eksempel/{{ include.example }}/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         {% include code-examples/{{ include.example }}.html %}
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="{{ include.tabId }}-tabpanel2" aria-labelledby="{{ include.tabId }}-tab2" hidden>
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+    <fds-accordion heading="Se koden" content-id="example-box-{{ include.example }}">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel2" aria-selected="true"
+                    id="{{ include.tabId }}-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="{{ include.tabId }}-tabpanel3" aria-selected="false"
+                    id="{{ include.tabId }}-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="{{ include.tabId }}-tabpanel2" aria-labelledby="{{ include.tabId }}-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
-                </figure>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="{{ include.tabId }}-tabpanel3" aria-labelledby="{{ include.tabId }}-tab3" hidden>
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples-generated-html/{{ include.example }}.html %}</code></pre>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="{{ include.tabId }}-tabpanel3" aria-labelledby="{{ include.tabId }}-tab3" hidden>
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples-generated-html/{{ include.example }}.html %}</code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/{{ include.example }}/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 {% endif %}
