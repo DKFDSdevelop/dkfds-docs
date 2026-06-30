@@ -2488,13 +2488,11 @@
 
 <h3>Accordion lavet med custom element</h3>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel1" aria-selected="true" id="example-1-acc-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel2" aria-selected="false" id="example-1-acc-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel3" aria-selected="false" id="example-1-acc-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="example-1-acc-tabpanel1" aria-labelledby="example-1-acc-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-accordion-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-accordion heading="Dette er en accordion" content-id="accordion-custom-id">
     <div>
         <p>Indhold i accordionen</p>
@@ -2513,14 +2511,20 @@
 </fds-accordion>
 
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-1-acc-tabpanel2" aria-labelledby="example-1-acc-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-accordion-example">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel2" aria-selected="true" id="example-1-acc-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-1-acc-tabpanel3" aria-selected="false" id="example-1-acc-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-acc-tabpanel2" aria-labelledby="example-1-acc-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Indhold i accordionen<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2537,18 +2541,18 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 </code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-1-acc-tabpanel3" aria-labelledby="example-1-acc-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-acc-tabpanel3" aria-labelledby="example-1-acc-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Dette er en accordion&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-title&quot;</span>&gt;</span>Dette er en accordion<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -2568,24 +2572,21 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-accordion-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h3>Accordiongruppe lavet med custom element</h3>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="fds-accordion-group-example-tabpanel1" aria-selected="true" id="fds-accordion-group-example-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="fds-accordion-group-example-tabpanel2" aria-selected="false" id="fds-accordion-group-example-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="fds-accordion-group-example-tabpanel3" aria-selected="false" id="fds-accordion-group-example-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="fds-accordion-group-example-tabpanel1" aria-labelledby="fds-accordion-group-example-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-accordion-group-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-accordion-group has-bulk-button="">
     <fds-accordion heading="Accordion 1" content-id="accordion-1">
         <div>
@@ -2605,14 +2606,20 @@
 </fds-accordion-group>
 
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="fds-accordion-group-example-tabpanel2" aria-labelledby="fds-accordion-group-example-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">has-bulk-button</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-accordion-group-example">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="fds-accordion-group-example-tabpanel2" aria-selected="true" id="fds-accordion-group-example-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="fds-accordion-group-example-tabpanel3" aria-selected="false" id="fds-accordion-group-example-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="fds-accordion-group-example-tabpanel2" aria-labelledby="fds-accordion-group-example-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">has-bulk-button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Accordion 1&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-1&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Her er en paragraf inde i accordionen.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -2630,18 +2637,18 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span>
 </code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="fds-accordion-group-example-tabpanel3" aria-labelledby="fds-accordion-group-example-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">has-bulk-button</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="fds-accordion-group-example-tabpanel3" aria-labelledby="fds-accordion-group-example-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">has-bulk-button</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bulk-button&quot;</span>&gt;</span>Åbn alle<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Accordion 1&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-1&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
@@ -2674,26 +2681,23 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-accordion-group-example/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h3>Varianter</h3>
 
 <p>Begge attributter skal angives samtidig for at varianten aktiveres. Hvis kun én af dem er sat, vises ingen variant. Når begge er til stede, tilføjes et ikon-element i knappen med den angivne tekst (variant-text) og et SVG-ikon refereret via ikonets ID (variant-icon).</p>
 
-<div class="tab-container mt-5">
-    <div class="tab-list" role="tablist">
-        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel1" aria-selected="true" id="example-2-acc-tab1"><span>Eksempel</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel2" aria-selected="false" id="example-2-acc-tab2"><span>Custom element</span></button>
-        <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel3" aria-selected="false" id="example-2-acc-tab3"><span>Genereret HTML</span></button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="example-2-acc-tabpanel1" aria-labelledby="example-2-acc-tab1">
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-accordion-variants/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
         <fds-accordion-group heading-level="h3">
 
     <fds-accordion heading="Variant" content-id="acce08131" variant-text="Information" variant-icon="info">
@@ -2722,14 +2726,20 @@
 
 </fds-accordion-group>
     </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-2-acc-tabpanel2" aria-labelledby="example-2-acc-tab2" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
-                </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-accordion-variants">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel2" aria-selected="true" id="example-2-acc-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-2-acc-tabpanel3" aria-selected="false" id="example-2-acc-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-2-acc-tabpanel2" aria-labelledby="example-2-acc-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08131&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Information&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2756,18 +2766,18 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span></code></pre>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="tab-panel code-tab" role="tabpanel" id="example-2-acc-tabpanel3" aria-labelledby="example-2-acc-tab3" hidden="">
-        <div>
-            <div class="component-code">
-                <div class="button-copy-container">
-                    <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </figure>
+                    </div>
                 </div>
-                <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-2-acc-tabpanel3" aria-labelledby="example-2-acc-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion-group</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Variant&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;acce08131&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Information&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;info&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h3&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;accordion-button&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;acce08131&quot;</span>&gt;</span>
@@ -2825,13 +2835,12 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion-group</span>&gt;</span></code></pre>
-                </figure>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="mt-3 mb-8">
-    <a href="/eksempel/fds-accordion-variants/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+    </fds-accordion>
 </div>
 
 <h2 id="fds-accordion-group-custom">fds-accordion-group</h2>

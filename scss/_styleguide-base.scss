@@ -1471,6 +1471,31 @@ Styling for loading spinner examples
 Styling for examples
 -----------------------------------------------------
 */
+.example-box {
+    border: 1px solid #8e8e8e;
+    padding: 16px 16px 8px 16px;
+
+    fds-accordion[content-id*="example-box-"] {
+        margin-bottom: 0;
+        margin-top: 28px;
+
+        .accordion-button,
+        .accordion-content {
+            background-color: #FFFFFF !important;
+            padding-left: 3.6rem !important;
+        }
+
+        .accordion-button {
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+
+            &::before {
+                left: 0;
+            }
+        }
+    }
+}
+
 .tab-panel.code-tab {
     overflow: hidden;
     padding: 0 units(2) units(2) units(2);
