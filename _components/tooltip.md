@@ -225,11 +225,12 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 ### Attributter for fds-tooltip-icon
 
 {:.table .table--responsive-headers}
-| Attribut     | Beskrivelse                                        |
-|--------------|----------------------------------------------------|
-| tooltip-text | Teksten der skal vises i tooltippet.               |
-| sr-label     | Skærmlæsertekst til ikonet.                        |
-| placement    | Accepterer værdierne "below" og "above" (default). |
+| Attribut     | Beskrivelse                                                                           |
+|--------------|---------------------------------------------------------------------------------------|
+| tooltip-text | Teksten der skal vises i tooltippet.                                                  |
+| tooltip-id   | ID der skal bruges til tooltippet. Hvis denne er udeladt, genereres et tilfældigt ID. |
+| placement    | Accepterer værdierne "below" og "above" (default).                                    |
+| sr-label     | Skærmlæsertekst til ikonet.                                                           |
 
 ### Attributter for fds-tooltip
 
@@ -237,5 +238,6 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 | Attribut     | Beskrivelse                                                                                                                                  |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | tooltip-text | Teksten der skal vises i tooltippet.                                                                                                         |
-| purpose      | Accepterer værdierne "label" og "hint" (default). Hvis "label" anvendes, vil tooltippet fungere som tilgængeligt navn for trigger-elementet. |
+| tooltip-id   | ID der skal bruges til tooltippet. Hvis denne er udeladt, genereres et tilfældigt ID.                                                        |
 | placement    | Accepterer værdierne "below" og "above" (default).                                                                                           |
+| purpose      | Accepterer værdierne "label" og "hint" (default). Hvis "label" anvendes, vil tooltippet fungere som tilgængeligt navn for trigger-elementet. |
