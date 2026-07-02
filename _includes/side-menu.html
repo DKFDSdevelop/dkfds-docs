@@ -1,5 +1,12 @@
 {%- assign pageCategory = site.data.nav[page.category] -%}
 
+{%- comment -%}
+----------------------------------------------------------------------------------------------------
+| page  | The page you visited and for which the aside is built                                    |
+| _page | The page currently handled in the for loop                                               |
+----------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
 <aside class="col-12 col-lg-3">
     <nav class="fds-side-menu d-none d-lg-block mb-4 mb-md-0" id="docs-sidenav" aria-label="Sidemenu">
         {% if pageCategory %}
@@ -9,8 +16,7 @@
             {%- assign _page = nil -%}
 
             {%- if link.href -%}
-            {%- assign _page = link.href | resolve_permalink %} {% comment %} ---- Get the page information for the link using resolve_permalink()
-            ---- {% endcomment %}
+            {%- assign _page = link.href | resolve_permalink -%}
             {%- endif %}
 
             {%- if _page -%}
@@ -34,32 +40,19 @@
                 {%- assign _sublinks = site.data.nav[link.submenu] %}
 
                 {%- comment %}
-                ------------------------------------------------------------------
-                | If the currently selected page has a submenu, show the submenu |
-                ------------------------------------------------------------------
+                ---------------------------------------------------------------
+                | Show submenu if current page is the parent or a child of it |
+                ---------------------------------------------------------------
                 {%- endcomment %}
 
-                {%- if _current and _sublinks -%}
-                <ul>
-                    {%- include nav/sidenavigation/list.html links=_sublinks %}
-                </ul>
-                {%- endif %}
-
-                {%- comment %}
-                ----------------------------------------------------------------------------------------------------
-                | If the currently selected page is part of a submenu (i.e. it has a parentlink), show the submenu |
-                ----------------------------------------------------------------------------------------------------
-                {%- endcomment %}
-
-                {% if page.parentlink == _page.url and _sublinks %}
+                {% if (_current or page.parentlink == _page.url) and _sublinks %}
                 <ul>
                     {%- for sublink in _sublinks -%}
 
                     {%- assign _subpage = nil -%}
 
                     {%- if sublink.href -%}
-                    {%- assign _subpage = sublink.href | resolve_permalink %} {% comment %} ---- Get the page information for the link using
-                    resolve_permalink() ---- {% endcomment %}
+                    {%- assign _subpage = sublink.href | resolve_permalink %}
                     {%- endif %}
 
                     {%- if _subpage -%}
