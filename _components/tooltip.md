@@ -3,13 +3,14 @@ permalink: "/komponenter/tooltip/"
 redirect_from:
 - "/kode/komponenter/tooltip/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: "Tooltip"
 lead: Tooltips giver brugeren kort, forklarende information om specifikke elementer på siden. Tooltip vises ved klik på et hjælpeikon.
 description: "Tooltips giver brugeren kort, forklarende information om specifikke elementer på siden. Tooltip vises ved klik på et hjælpeikon."
 tags: 
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

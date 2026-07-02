@@ -3,7 +3,7 @@ permalink: /eksempler/patterns/
 redirect_from:
 - /eksempler/patterns/forlad-siden/
 layout: styleguide
-category: Eksempler_category
+category: eksempler_menu
 subcategory: Eksempler
 title: Patterns
 lead: Patterns er best practice designløsninger til specifikke brugerfokuserede opgaver. De bruger ofte en eller flere komponenter og forklarer, hvordan man tilpasser dem til konteksten.

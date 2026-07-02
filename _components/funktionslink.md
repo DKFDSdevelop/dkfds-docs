@@ -3,7 +3,7 @@ permalink: "/komponenter/funktionslink/"
 redirect_from:
 - "/kode/komponenter/funktionslink/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Funktionslink
 lead: Funktionslink lader brugeren udføre forskellige systemfunktionaliteter.

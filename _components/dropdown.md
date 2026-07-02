@@ -5,13 +5,14 @@ redirect_from:
 - "/kode/komponenter/drop-down/"
 - "/kode/komponenter/dropdown/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Dropdown
 lead: Dropdown lader brugeren vælge én blandt flere muligheder i en udfoldet liste.
 description: Dropdown kan bruges i tilfælde, hvor brugeren skal vælge mellem 5 og 15 værdier på en begrænset plads.
 tags:
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

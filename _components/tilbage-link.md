@@ -3,7 +3,7 @@ permalink: "/komponenter/tilbage-link/"
 redirect_from:
 - "/kode/komponenter/tilbage-link/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Tilbage-link
 lead: "Tilbage-linket gør brugeren i stand til at gå tilbage til forrige trin eller side i en selvbetjeningsløsning."

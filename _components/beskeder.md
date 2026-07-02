@@ -3,9 +3,10 @@ permalink: "/komponenter/beskeder/"
 redirect_from:
 - "/kode/komponenter/beskeder/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
-title: Beskeder (Alerts)
+title: Beskeder
+title_en: Alerts
 lead: Beskeder anvendes til at fremhæve aktuel information, som er vigtig for brugeren.
 description: Beskeder (Alerts) er farvede bokse, du kan bruge til at give brugeren vigtig og aktuel information om fx status, fejl, opdateringer, o.l.
 tags:

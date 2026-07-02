@@ -3,7 +3,7 @@ permalink: "/komponenter/cookiemeddelelse/"
 redirect_from:
 - "/kode/komponenter/cookiemeddelelse/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Cookiemeddelelse
 lead: Anvender din selvbetjeningsløsning cookies til andet end teknisk nødvendige

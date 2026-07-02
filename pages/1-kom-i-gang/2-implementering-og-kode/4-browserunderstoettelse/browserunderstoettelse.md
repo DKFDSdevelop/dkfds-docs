@@ -4,7 +4,7 @@ parentlink: "/kom-i-gang/implementering-kode/"
 redirect_from:
 - "/kode/browserunderstoettelse/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Browserunderstøttelse
 description: Liste med browsers, som FDS understøtter

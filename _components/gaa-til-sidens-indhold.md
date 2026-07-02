@@ -3,7 +3,7 @@ permalink: "/komponenter/skip-link/"
 redirect_from:
 - "/kode/komponenter/skip-link/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Gå til sidens indhold (Skip-link)
 lead: "Skip-links anvendes til at give brugere, der navigerer med tastatur, en bedre oplevelse. Brugerens første tryk på tab-tasten vil få et skjult link til at komme frem, der lader brugeren skippe menuen og gå direkte til sidens indhold."

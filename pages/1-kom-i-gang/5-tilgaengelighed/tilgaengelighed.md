@@ -5,7 +5,7 @@ redirect_from:
 - "/design/tilgaengelighed/"
 - "/krav/tilgaengelighed/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Tilgængelighed
 lead: Webtilgængelighed handler om de principper og teknikker, du skal følge, for

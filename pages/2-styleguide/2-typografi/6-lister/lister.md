@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/typografi/lister/"
 - "/design/typografi/lister/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Lister
 lead: Lister bruges til at organisere information, så det giver brugeren overblik.

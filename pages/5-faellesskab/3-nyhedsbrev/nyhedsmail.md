@@ -3,7 +3,7 @@ permalink: "/faellesskab/nyhedsmail/"
 redirect_from:
 - "/omdesignsystemet/nyhedsmail/"
 layout: styleguide
-category: Faellesskab_category
+category: faellesskab_menu
 subcategory: Fællesskab
 title: Nyhedsbrev
 lead: Tilmeld dig nyhedsbrevet og følg med i arbejdet med Det Fælles Designsystem.

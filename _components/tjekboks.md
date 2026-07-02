@@ -3,13 +3,15 @@ permalink: "/komponenter/tjekboks/"
 redirect_from:
 - "/kode/komponenter/tjekboks/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
-title: Tjekboks (Checkbox)
+title: Tjekboks
+title_en: Checkbox
 lead: Tjekbokse lader brugeren vælge en eller flere muligheder.
 description: "Tjekbokse giver brugeren mulighed for at vælge en eller flere værdier ud fra en synlig liste."
 tags:
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

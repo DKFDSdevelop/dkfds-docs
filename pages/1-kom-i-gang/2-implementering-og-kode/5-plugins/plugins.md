@@ -5,7 +5,7 @@ redirect_from:
 - "/udvidelser/"
 - "/kode/plugins/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Plugins
 lead: 'Plugins er komponenter som er lavet af en tredjepart. De er for store og specialiserede

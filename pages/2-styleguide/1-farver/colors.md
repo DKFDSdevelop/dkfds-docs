@@ -4,7 +4,7 @@ redirect_from:
 - "/farver/"
 - "/design/farver/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Farver
 lead: Da designsystemet er fælles for både borger.dk og Virk er der farver til hver

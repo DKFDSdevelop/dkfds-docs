@@ -3,7 +3,7 @@ permalink: "/komponenter/"
 redirect_from:
 - "/kode/komponenter/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 title: Komponenter
 lead: Komponenterne i designsystemet er genanvendelige enheder, der kan sættes sammen på mange forskellige måder, i forskellige mønstre, for at bygge de selvbetjeningsløsninger, dine brugere har brug for.
 description:

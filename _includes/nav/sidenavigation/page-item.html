@@ -1,5 +1,4 @@
 {% assign _current = false %}
-{% assign _active = false %}
 
 {% comment %} 
 ------------------------------------------------------------------
@@ -12,29 +11,22 @@
   {%- assign _current = true %}
 {%- endif %}
 
-{%- if include.categorynav and page.parentlink == include.page.url -%}
-  {%- assign _active = true %}
-{%- endif %}
+<li>
 
-{%- if _current %}
-  {%- assign _active = true %}
-{%- endif %}
+  <a href="{{ include.page.url | relative_url }}"{% if _current %} aria-current="page"{% endif %}>
 
-<li{% if _active or _current %} class="{% if _active %}active{% endif %}{% if _current %} current{% endif %}"{% endif %}>
-
-  <a href="{{ include.page.url | relative_url }}" class="nav-link"{% if _current %} aria-current="page"{% endif %}>
-    {%- if include.page.title == 'Beskeder (Alerts)' %}
+    {%- if include.page.title == 'Beskeder' %}
       <span>Beskeder <span class="d-inline" lang="en">(Alerts)</span></span>
-    {%- elsif include.page.title == 'Faneblade (Tabs)' %}
+    {%- elsif include.page.title == 'Faneblade' %}
       <span>Faneblade <span class="d-inline" lang="en">(Tabs)</span></span>
-    {%- elsif include.page.title == 'Knapper (Buttons)' %}
+    {%- elsif include.page.title == 'Knapper' %}
       <span>Knapper <span class="d-inline" lang="en">(Buttons)</span></span>
 
-    {%- elsif include.page.title == 'Radioknap (Radio button)' %}
+    {%- elsif include.page.title == 'Radioknap' %}
       <span>Radioknap <span class="d-inline" lang="en">(Radio button)</span> <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
-    {%- elsif include.page.title == 'Tekstområde (Textarea)' %}
+    {%- elsif include.page.title == 'Tekstområde' %}
       <span>Tekstområde <span class="d-inline" lang="en">(Textarea)</span> <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
-    {%- elsif include.page.title == 'Tjekboks (Checkbox)' %}
+    {%- elsif include.page.title == 'Tjekboks' %}
       <span>Tjekboks <span class="d-inline" lang="en">(Checkbox)</span> <svg class="icon-svg mb-1" focusable="false" aria-hidden="true"><use href="#check"></use></svg></span>
 
     {%- elsif include.page.title == 'Accordions' %}

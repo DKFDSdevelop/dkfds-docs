@@ -7,7 +7,7 @@ redirect_from:
 - "/design/designtjek/"
 - "/design/tjekliste/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: "Tjekliste"
 lead: "Gå igennem tjeklisten for at sikre, at din løsning følger Det Fælles Designsystem."

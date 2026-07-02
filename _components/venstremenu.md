@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/komponenter/sidenav/"
 - "/kode/komponenter/venstremenu/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Venstremenu
 lead: Venstremenuen strukturerer et navigationshierarki med op til tre niveauer i en vertikal liste.

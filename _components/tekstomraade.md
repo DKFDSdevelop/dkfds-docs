@@ -5,9 +5,10 @@ redirect_from:
 - "/kode/komponenter/textarea/"
 - "/kode/komponenter/tekstomraade/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
-title: Tekstområde (Textarea)
+title: Tekstområde
+title_en: Textarea
 lead: Tekstområder lader brugeren indtaste en længere tekst på flere linjer.
 description: "Felt til indtastning af information på flere linjer i form af bogstaver, tal og en kombination af begge."
 tags:
@@ -17,6 +18,7 @@ tags:
 - karakterbegrænsning
 - karakterbegraensning
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

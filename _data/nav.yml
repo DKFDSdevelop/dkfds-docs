@@ -1,16 +1,16 @@
-primary:
+main_menu:
   - href: /kom-i-gang/
-    categorynav: 'Kom_i_gang_category'
+    categorynav: 'kom_i_gang_menu'
   - href: /styleguide/
-    categorynav: 'Styleguide_category'
+    categorynav: 'styleguide_menu'
   - href: /komponenter/
-    categorynav: 'Komponenter_category'
+    categorynav: 'komponenter_menu'
   - href: /eksempler/
-    categorynav: 'Eksempler_category'
+    categorynav: 'eksempler_menu'
   - href: /faellesskab/
-    categorynav: 'Faellesskab_category'
+    categorynav: 'faellesskab_menu'
 
-Kom_i_gang_category:
+kom_i_gang_menu:
   - href: /kom-i-gang/om-designsystemet/
   - href: /kom-i-gang/implementering-kode/
     categorynav: 'Implementering_kode_category'
@@ -30,7 +30,7 @@ Implementering_kode_category:
   - href: /kom-i-gang/implementering-kode/frameworks/
   - href: /kom-i-gang/implementering-kode/custom-elements/
 
-Styleguide_category:
+styleguide_menu:
   - href: /styleguide/farver/
   - href: /styleguide/typografi/
     categorynav: 'Typografi_category'
@@ -55,7 +55,7 @@ Datavisualisering_category:
   - href: /styleguide/datavisualisering-infografik/datavisualisering/
   - href: /styleguide/datavisualisering-infografik/infografik/  
 
-Komponenter_category:
+komponenter_menu:
   - href: /komponenter/accordions/
   - href: /komponenter/anchorlinks/
   - href: /komponenter/badges/
@@ -96,7 +96,7 @@ Komponenter_category:
   - href: /komponenter/fil-upload/
   - href: /komponenter/venstremenu/
 
-Eksempler_category:
+eksempler_menu:
   - href: /eksempler/selvbetjeningsloesninger/
   - href: /eksempler/patterns/
     categorynav: 'Patterns_category'
@@ -108,7 +108,7 @@ Patterns_category:
   - href: /eksempler/patterns/hentet-data/
   - href: /eksempler/patterns/session-udloeber/
 
-Faellesskab_category:
+faellesskab_menu:
 - href: /faellesskab/samarbejdsforum/
 - href: /faellesskab/governance/
 - href: /faellesskab/nyhedsmail/

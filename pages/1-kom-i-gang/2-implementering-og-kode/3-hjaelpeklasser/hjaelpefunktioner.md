@@ -7,7 +7,7 @@ redirect_from:
 - /kode/utilities/
 layout: styleguide
 type: component
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Hjælpeklasser
 description: Du kan bruge hjælpeklasser til at skræddersy dit indhold i forhold til placering, afstande, farver, bredde og visning

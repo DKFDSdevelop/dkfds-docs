@@ -1,7 +1,7 @@
 ---
 permalink: "/komponenter/anchorlinks/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Anchorlinks
 lead: Anchorlinks linker til bestemte steder på samme side. De vises på den enkelte side under overskrift og eventuel manchet.

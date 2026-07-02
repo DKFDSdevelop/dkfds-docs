@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/typografi/links/"
 - "/design/typografi/links/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Links
 description: Se hvordan du skal anvende links i Det Fælles Designsystem

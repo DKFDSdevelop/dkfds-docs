@@ -8,7 +8,7 @@ redirect_from:
 - /kode/anbefalinger-vaerktoejer/
 - /kode/eksempler-implementering/
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Frameworks
 description: I denne sektion findes al dokumentation henvendt specifikt til udvikling.

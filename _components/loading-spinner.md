@@ -3,7 +3,7 @@ permalink: "/komponenter/spinner/"
 redirect_from:
 - "/kode/komponenter/spinner/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Loading spinner
 lead: "En spinner er et visuelt aktivt og synligt signal til brugeren om, at indlæsningen af et element er undervejs."
