@@ -7,7 +7,7 @@
   {%- endif %}
 
   {%- if _page -%}
-    {%- include nav/sidenavigation/page-item.html page=_page categorynav=link.categorynav %}
+    {%- include nav/sidenavigation/page-item.html page=_page submenu=link.submenu %}
   {%- endif %}
   
 {%- endfor %}

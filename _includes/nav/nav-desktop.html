@@ -27,8 +27,8 @@
         ----------------------------------------------------------------------- 
         {%- endcomment -%}
 
-        {%- if link.categorynav -%}
-            {%- if page.category == link.categorynav -%}
+        {%- if link.submenu -%}
+            {%- if page.category == link.submenu -%}
                 {%- assign _active = true -%}
             {%- endif -%}
         {%- endif -%}

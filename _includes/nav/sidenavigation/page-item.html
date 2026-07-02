@@ -53,9 +53,9 @@
     {%- endif %}
   </a>
 
-  {%- if include.categorynav -%}
+  {%- if include.submenu -%}
 
-    {%- assign _sublinks = site.data.nav[include.categorynav] %}
+    {%- assign _sublinks = site.data.nav[include.submenu] %}
 
     {%- comment %} 
     ------------------------------------------------------------------
