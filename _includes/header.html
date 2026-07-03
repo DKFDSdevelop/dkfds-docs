@@ -1,19 +1,19 @@
 <header class="header">
     <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
-    <div class="solution-info">
-        <div class="solution-info-inner container">
-            <div class="solution-heading d-flex flex-wrap align-items-center">
-                <a href="/"{% if site.environment == "development" %} class="mr-4"{% endif %}>Det Fælles Designsystem</a>{% if site.environment == "development" %}<strong class="badge badge-error">Develop</strong>{% endif %}
-            </div>
-            <button class="function-link button-menu-open js-menu-open ml-auto d-print-none" aria-haspopup="dialog"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#menu"></use></svg>Menu</button>
+
+    <fds-solution-info>
+        <div slot="solution-heading" class="d-flex flex-wrap align-items-center">
+            <a href="/" {% if site.environment=="development" %} class="mr-4" {% endif %}>Det Fælles Designsystem</a>{% if site.environment ==
+            "development" %}<strong class="badge badge-error">Develop</strong>{% endif %}
         </div>
-    </div>
+        <fds-drawer-button slot="drawer-button" drawer="mobile-menu" class="d-block d-lg-none"></fds-drawer-button>
+    </fds-solution-info>
 
     <!-- Desktop main menu-->
-    <div class="navigation-menu{% unless page.search %} contains-search{% endunless %}">
-        <div class="navigation-menu-inner container">
-            <nav class="nav" aria-label="Hovedmenu">
-                <ul class="mainmenu">
+    <fds-main-menu>
+        <div class="main-menu-inner d-block d-lg-flex">
+            <nav aria-label="Hovedmenu" class="d-none d-lg-block">
+                <ul>
                     {%
                     include nav/nav-desktop.html
                     links=site.data.nav.main_menu
@@ -24,31 +24,27 @@
             <div class="search-form">
                 <form method="get" action="/search/" id="menuSearchForm" role="search">
                     <div class="form-group search">
-                        <input class="form-input input-char-27" id="search-input" name="q" type="search" required
-                            aria-label="Søg">
+                        <input class="form-input input-char-27" id="search-input" name="q" type="search" required aria-label="Søg">
                         <button class="button button-search" type="submit" id="searchbtn">Søg</button>
                     </div>
                 </form>
             </div>
             {% endunless %}
         </div>
-    </div>
+    </fds-main-menu>
 
-    <div class="overlay"></div>
-
-    <!-- Mobile main menu-->
-    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-labelledby="menu-heading">
-        <div class="menu-top">
-            <h2 id="menu-heading" class="menu-heading">Menu</h2>
-            <button class="function-link button-menu-close js-menu-close" aria-label="Luk menu"><svg class="icon-svg" aria-hidden="true" focusable="false" tabindex="-1"><use href="#close"></use></svg>Luk</button>
+    <fds-drawer id="mobile-menu" class="d-block d-lg-none">
+        <div class="mobile-drawer">
+            <fds-main-menu>
+                <nav aria-label="Hovedmenu og undermenuer">
+                    <ul>
+                        {%
+                        include nav/nav-mobile.html
+                        links=site.data.nav.main_menu
+                        %}
+                    </ul>
+                </nav>
+            </fds-main-menu>
         </div>
-        <nav class="navigation-menu-mobile" aria-label="Hovedmenu og undermenuer">
-            <ul class="mainmenu">
-                {%
-                include nav/nav-mobile.html
-                links=site.data.nav.main_menu
-                %}
-            </ul>
-        </nav>
-    </div>
+    </fds-drawer>
 </header>
