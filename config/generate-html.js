@@ -41,6 +41,13 @@ global.CSSStyleSheet = window.CSSStyleSheet;
 global.Node = window.Node;
 global.HTMLFieldSetElement = window.HTMLFieldSetElement;
 
+// Mock ResizeObserver since jsdom doesn't support it
+global.ResizeObserver = class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+};
+
 const DKFDS = require('dkfds/new-dkfds');
 DKFDS.registerCustomElements();
 
