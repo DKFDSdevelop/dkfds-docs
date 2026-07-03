@@ -3,7 +3,7 @@ permalink: "/komponenter/fejlmeddelelser/"
 redirect_from:
 - "/kode/komponenter/fejlmeddelelser/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Fejlmeddelelser
 lead: Fejlmeddelelser hjælper brugeren til at udfylde enkelte formularelementer korrekt.
@@ -23,6 +23,7 @@ tags:
 - fejlmeddellelser
 - fejlmedellelser
 tabs: "Retningslinjer, kode"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true %}

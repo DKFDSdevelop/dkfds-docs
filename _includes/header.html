@@ -1,0 +1,50 @@
+<header class="header">
+    <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
+
+    <fds-solution-info>
+        <div slot="solution-heading" class="d-flex flex-wrap align-items-center">
+            <a href="/" {% if site.environment=="development" %} class="mr-4" {% endif %}>Det Fælles Designsystem</a>{% if site.environment ==
+            "development" %}<strong class="badge badge-error">Develop</strong>{% endif %}
+        </div>
+        <fds-drawer-button slot="drawer-button" drawer="mobile-menu" class="d-block d-lg-none"></fds-drawer-button>
+    </fds-solution-info>
+
+    <!-- Desktop main menu-->
+    <fds-main-menu>
+        <div class="main-menu-inner d-block d-lg-flex">
+            <nav aria-label="Hovedmenu" class="d-none d-lg-block">
+                <ul>
+                    {%
+                    include nav/nav-desktop.html
+                    links=site.data.nav.main_menu
+                    %}
+                </ul>
+            </nav>
+            {% unless page.search %}
+            <div class="search-form">
+                <form method="get" action="/search/" id="menuSearchForm" role="search">
+                    <div class="form-group search">
+                        <input class="form-input input-char-27" id="search-input" name="q" type="search" required aria-label="Søg">
+                        <button class="button button-search" type="submit" id="searchbtn">Søg</button>
+                    </div>
+                </form>
+            </div>
+            {% endunless %}
+        </div>
+    </fds-main-menu>
+
+    <fds-drawer id="mobile-menu" class="d-block d-lg-none">
+        <div class="mobile-drawer">
+            <fds-main-menu>
+                <nav aria-label="Hovedmenu og undermenuer">
+                    <ul>
+                        {%
+                        include nav/nav-mobile.html
+                        links=site.data.nav.main_menu
+                        %}
+                    </ul>
+                </nav>
+            </fds-main-menu>
+        </div>
+    </fds-drawer>
+</header>

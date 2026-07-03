@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/implementering/"
 - "/kode/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Implementering og kode
 lead: I denne sektion findes al dokumentation henvendt specifikt til udvikling og brug af designsystemets kode.

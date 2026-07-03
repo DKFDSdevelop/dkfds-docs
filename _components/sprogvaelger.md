@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/komponenter/sprogvaegler/"
 - "/kode/komponenter/sprogvaelger/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Sprogvælger
 lead: En sprogvælger bruges hvis løsningen udbydes på mere end et sprog. Den giver

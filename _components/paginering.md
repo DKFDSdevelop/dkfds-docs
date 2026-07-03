@@ -3,7 +3,7 @@ permalink: "/komponenter/paginering/"
 redirect_from:
 - "/kode/komponenter/paginering/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Paginering
 lead: Paginering bruges til at lade brugeren navigere mellem indhold, der er opdelt på flere sider. Brugeren navigerer ved at gå fra side til side, eller til første eller sidste side på listen.

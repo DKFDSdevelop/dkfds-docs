@@ -15,13 +15,14 @@ title: Test
 {:.h3}
 ## Custom elements
 
-{% include test/preview-test.html filename="test-fds-accordion" description="Accordions" %}
-{% include test/preview-test.html filename="test-fds-accordion-group" description="Accordiongruppe" %}
 {% include test/preview-test.html filename="test-fds-help-text" description="Hjælpetekst" %}
-{% include test/preview-test.html filename="test-fds-input" description="Inputfelter" %}
-{% include test/preview-test.html filename="test-fds-select" description="Dropdowns" %}
 {% include test/preview-test.html filename="test-fds-error-message" description="Fejlmeddelelser" %}
 {% include test/preview-test.html filename="test-fds-character-limit" description="Karakterbegrænsning" %}
+
+{% include test/preview-test.html filename="test-fds-accordion" description="Accordions" %}
+{% include test/preview-test.html filename="test-fds-accordion-group" description="Accordiongruppe" %}
+{% include test/preview-test.html filename="test-fds-input" description="Inputfelter" %}
+{% include test/preview-test.html filename="test-fds-select" description="Dropdowns" %}
 {% include test/preview-test.html filename="test-fds-checkbox" description="Tjekbokse" %}
 {% include test/preview-test.html filename="test-fds-radio-button" description="Radioknap" %}
 {% include test/preview-test.html filename="test-fds-date-input" description="Datofelter" %}
@@ -38,6 +39,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-dropdown-menu" description="Submenu til navigation" %}
 {% include test/preview-test.html filename="test-fds-tooltip-icon" description="Tooltip-ikon" %}
 {% include test/preview-test.html filename="test-fds-tooltip" description="Tooltip" %}
+{% include test/preview-test.html filename="test-fds-side-menu" description="Venstremenu" %}
 
 {:.h3}
 ## HTML-elementer

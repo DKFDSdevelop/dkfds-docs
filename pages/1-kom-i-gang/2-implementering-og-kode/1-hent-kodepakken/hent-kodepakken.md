@@ -6,7 +6,7 @@ redirect_from:
 - "/kode/implementering/"
 - "/kode/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Hent kodepakken
 lead: Kodepakken kan installeres ved brug af NPM-pakken eller via GitHub som zip-fil.

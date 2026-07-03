@@ -5,7 +5,7 @@ redirect_from:
 - "/design/print/"
 - "/kode/print/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Print
 lead: Sider kan struktureres, så de også fungerer godt ved print.

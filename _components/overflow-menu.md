@@ -3,7 +3,7 @@ permalink: "/komponenter/overflowmenu/"
 redirect_from:
 - "/kode/komponenter/overflowmenu/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Overflow menu
 lead: Du kan bruge overflow menuer til at vise eller skjule en liste af links eller knapper. Når brugeren klikker på menulinjen, folder listen sig ud.

@@ -4,7 +4,7 @@ parentlink: "/styleguide/datavisualisering-infografik/"
 redirect_from:
 - "/design/datavisualisering-infografik/infografik/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Infografik
 lead: Infografik kan indeholde datavisualiseringer, men kan også være en illustration af et fysisk objekt eller en proces.

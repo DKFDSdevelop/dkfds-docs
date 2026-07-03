@@ -3,7 +3,7 @@ permalink: "/komponenter/toggle/"
 redirect_from:
 - "/kode/komponenter/toggle/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Toggle switch
 lead: "En toggle switch er en digital tænd/sluk-knap. Til forskel fra en radioknap eller tjekboks træder valget i kraft i det øjeblik brugerne interagerer med komponenten."

@@ -3,7 +3,7 @@ permalink: "/kom-i-gang/implementering-kode/custom-elements/"
 parentlink: "/kom-i-gang/implementering-kode/"
 redirect_from:
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Custom elements
 description: I denne sektion findes al dokumentation henvendt specifikt til udvikling.

@@ -3,7 +3,7 @@ permalink: "/komponenter/cards/"
 redirect_from:
 - "/kode/komponenter/cards/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Cards
 lead: Cards anvendes som en visuel afgrænsning af indhold eller interaktionselementer, der omhandler samme emne. De kan også anvendes til navigation.

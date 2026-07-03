@@ -5,20 +5,21 @@ redirect_from:
 - "/kode/komponenter/headers/"
 - "/kode/komponenter/header/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Header
 lead: Headeren identificerer portalen, den ansvarlige myndighed og brugeren, der er logget ind med NemLog-in. Den fungerer også til navigation og overordnet styring af selvbetjeningsløsningen.
 description: "Tydelige headers er med til at skabe en let navigation for brugeren og hjælper dermed brugeren med at finde vej."
 tags: 
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-image.html component="header-with-navigation" title="Eksempel på header" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Header" code="Header_Kode" %}
+{% include anchorlinks.html guidelines="Header" code="Header_Kode" custom="Header_Custom" %}
 
 <!--split-->
 
@@ -205,3 +206,67 @@ Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvæl
 
 {:.nobullet-list}
 - {% include links/external-link.html linktext="ARIA Authoring Practices Guide (APG): Disclosure (Show/Hide) Pattern" %}
+
+<!--split-->
+
+## Eksempler {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-header-default" tabId="example-1-hea" %}
+
+Brug `<div class="main-menu-inner">` i `<fds-main-menu>` i desktop-versionen. Udelad wrapper og klasse, når menuen placeres i en `<fds-drawer>`.
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### fds-drawer-button
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut    | Beskrivelse                                           |
+|-------------|-------------------------------------------------------|
+| drawer      | ID på den drawer, der skal åbnes ved tryk på knappen. |
+| button-text | Tekst på knappen.                                     |
+
+### fds-drawer
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut          | Beskrivelse                                                                                           |
+|-------------------|-------------------------------------------------------------------------------------------------------|
+| open              | Hvis til stede, vil menuen være åben.                                                                 |
+| heading           | Tekst der skal vises øverst i menuen. Default er 'Menu'.                                              |
+| close-button-text | Tekst på luk-knappen i menuen. Default er 'Luk'.                                                      |
+| ready             | Sæt til 'false' hvis initialisering af menuen skal ske manuelt i stedet for ved indlæsning af DOM'en. |
+
+### fds-main-menu
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion          | Beskrivelse                                                                |
+|-------------------|----------------------------------------------------------------------------|
+| rebuildMoreMenu() | Genbyg mere-menuen såfremt behovet opstår (kun muligt ved desktop-visning) |
+
+### fds-portal-info
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot           | Beskrivelse                                                                                                        |
+|----------------|--------------------------------------------------------------------------------------------------------------------|
+| user           | Brugeroplysninger. Placeres til venstre for log af-knappen.                                                        |
+| log-off-button | Log af-knap. VIl blive placeret i højre side af portallinjen.                                                      |
+| logo           | Logo. Placeres i venstre side af portallinjen.                                                                     |
+| drawer-button  | Placeres samme sted som log af-knappen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |
+
+### fds-solution-info
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot           | Beskrivelse                                                                                                                                            |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| solution-heading | Løsningens navn. Vises i venstre side.                                                                                                               |
+| additional-info  | Information vist i højre side af løsningslinjen.                                                                                                     |
+| drawer-button    | Bør kun anvendes, hvis det ikke er muligt at vise knappen i portallinjen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |

@@ -1,7 +1,7 @@
 ---
 permalink: "/kom-i-gang/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 title: Kom i gang
 lead: Find alt, du skal bruge, for at komme godt i gang med at bruge Det Fælles Designsystem til din myndigheds selvbetjeningsløsninger.
 description:

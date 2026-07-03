@@ -5,13 +5,14 @@ redirect_from:
 - "/kode/komponenter/dato-felt/"
 - "/kode/komponenter/datofelter/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Datofelter
 lead: Tre separate felter for dato, måned og år er den nemmeste måde for brugeren at indskrive en dato.
 description: Brug datofelter for datoer, der er velkendte for brugeren (fx fødselsdato).
 tags: 
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

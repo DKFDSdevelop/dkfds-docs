@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/typografi/overskrifter/"
 - "/design/typografi/overskrifter/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Overskrifter
 lead: Overskrifter strukturerer siden, giver overblik og hjælper brugeren og skærmlæseren

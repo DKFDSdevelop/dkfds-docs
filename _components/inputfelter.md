@@ -7,7 +7,7 @@ redirect_from:
 - "/kode/komponenter/tekstfelter/"
 - "/kode/komponenter/inputfelter/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Inputfelter
 lead: Inputfelter lader brugeren indtaste kort information.
@@ -42,6 +42,7 @@ tags:
 - sufix
 - sufiks
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

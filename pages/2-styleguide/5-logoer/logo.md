@@ -3,7 +3,7 @@ permalink: "/styleguide/logoer/"
 redirect_from:
 - "/design/logoer/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Logoer
 lead: Din selvbetjeningsløsning er del af en større helhed på borger.dk og Virk, dette

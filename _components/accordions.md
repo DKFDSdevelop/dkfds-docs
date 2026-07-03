@@ -3,7 +3,7 @@ permalink: "/komponenter/accordions/"
 redirect_from:
 - "/kode/komponenter/accordions/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Accordions
 lead: En accordion er et grafisk element, som du kan bruge til at skjule og vise indhold
@@ -15,6 +15,7 @@ tags:
 - accordion
 - accordions
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

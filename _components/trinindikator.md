@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/komponenter/trinindikatorer/"
 - "/kode/komponenter/trinindikator/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Trinindikator
 lead: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."

@@ -4,7 +4,7 @@ parentlink: "/eksempler/patterns/"
 layout: styleguide
 title: Inputfelter med hentet data
 lead: En formular kan i visse situationer indeholde felter, der er udfyldt på forhånd med automatisk hentet data. Denne data skal nogen gange kunne ændres.
-category: Eksempler_category
+category: eksempler_menu
 subcategory: Eksempler
 description: En formular med automatisk hentet data.
 ---

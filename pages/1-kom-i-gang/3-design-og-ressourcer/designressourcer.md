@@ -6,7 +6,7 @@ redirect_from:
 - "/komigang/tildesignere/design-selvbetjeningsloesninger/"
 - "/design/designressourcer/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Design og ressourcer
 lead: Ved at følge designsystemet er du med til at skabe sammenhæng i og mellem de mange offentlige selvbetjeningsløsninger du ikke selv designer, til gavn for alle brugere.

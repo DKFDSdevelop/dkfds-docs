@@ -6,7 +6,7 @@ redirect_from:
 - "/komigang/tildesignere/sideopbygning/"
 - "/komigang/regler-principper-layout/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Layout
 lead: Et godt layout er harmonisk, ensartet, logisk opbygget og understøtter brugerens handlinger. Det er således både behageligt for øjet og let for brugeren at anvende.

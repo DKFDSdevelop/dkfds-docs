@@ -3,13 +3,14 @@ permalink: "/komponenter/fejlopsummering/"
 redirect_from:
 - "/kode/komponenter/fejlopsummering/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Fejlopsummering
 lead: Fejlopsummeringer bruges til at give overblik over fejl eller mangler, der skal rettes på en side eller et trin, før brugeren kan komme videre.
 description: 
 tags: 
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

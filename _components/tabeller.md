@@ -6,7 +6,7 @@ redirect_from:
 - "/kode/komponenter/strukturerede-lister/"
 - "/kode/komponenter/tables/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Tabeller
 lead: Tabeller er en systematisk opstilling af data i kolonner og rækker.

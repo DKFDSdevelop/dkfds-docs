@@ -4,7 +4,7 @@ parentlink: "/styleguide/typografi/"
 redirect_from:
 - "/design/typografi/felt-tabel-overskrifter/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Felt- og tabeloverskrifter
 description: Læs om retningslinjerne for felt- og tabeloverskrifter

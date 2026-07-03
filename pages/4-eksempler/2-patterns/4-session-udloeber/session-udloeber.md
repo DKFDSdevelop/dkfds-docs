@@ -2,7 +2,7 @@
 permalink: /eksempler/patterns/session-udloeber/
 parentlink: "/eksempler/patterns/"
 layout: styleguide
-category: Eksempler_category
+category: eksempler_menu
 subcategory: Eksempler
 title: Session udløber
 lead: Session udløber vises, inden brugeren automatisk logges af en løsning. Dialogen giver brugeren mulighed for at tage stilling til, om de vil logge af eller forblive i løsningen. 

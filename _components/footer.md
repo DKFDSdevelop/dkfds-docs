@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/komponenter/footers/"
 - "/kode/komponenter/footer/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Footer
 lead: Footeren markerer enden på siden og indeholder informationer, som guider brugeren videre.

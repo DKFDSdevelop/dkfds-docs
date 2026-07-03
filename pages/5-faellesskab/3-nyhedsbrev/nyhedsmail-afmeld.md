@@ -4,7 +4,7 @@ parentlink: "/faellesskab/nyhedsmail/"
 redirect_from:
 - "/omdesignsystemet/nyhedsmail/afmeld/"
 layout: styleguide
-category: Faellesskab_category
+category: faellesskab_menu
 subcategory: Fællesskab
 title: Afmeld nyhedsbrev
 description: Afmeld nyhedsbrev fra Det Fælles Designsystem

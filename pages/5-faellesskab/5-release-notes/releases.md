@@ -1,7 +1,7 @@
 ---
 permalink: "/faellesskab/releases/"
 layout: styleguide
-category: Faellesskab_category
+category: faellesskab_menu
 subcategory: Fællesskab
 title: Release notes
 lead: Nedenfor vises release notes — en opsummering af bug fixes, nye features og andre opdateringer.

@@ -223,22 +223,21 @@
     <div id="top"></div>
     <header class="header">
     <a class="skipnav" href="#main-content">Gå til sidens indhold</a>
-    <div class="solution-info">
-        <div class="solution-info-inner container">
-            <div class="solution-heading d-flex flex-wrap align-items-center">
-                <a href="/" class="mr-4">Det Fælles Designsystem</a><strong class="badge badge-error">Develop</strong>
-            </div>
-            <button class="function-link button-menu-open js-menu-open ml-auto d-print-none" aria-haspopup="dialog"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#menu"></use></svg>Menu</button>
+
+    <fds-solution-info>
+        <div slot="solution-heading" class="d-flex flex-wrap align-items-center">
+            <a href="/"  class="mr-4" >Det Fælles Designsystem</a><strong class="badge badge-error">Develop</strong>
         </div>
-    </div>
+        <fds-drawer-button slot="drawer-button" drawer="mobile-menu" class="d-block d-lg-none"></fds-drawer-button>
+    </fds-solution-info>
 
     <!-- Desktop main menu-->
-    <div class="navigation-menu">
-        <div class="navigation-menu-inner container">
-            <nav class="nav" aria-label="Hovedmenu">
-                <ul class="mainmenu">
+    <fds-main-menu>
+        <div class="main-menu-inner d-block d-lg-flex">
+            <nav aria-label="Hovedmenu" class="d-none d-lg-block">
+                <ul>
                     <li>
-            <a href="/kom-i-gang/" class="nav-link">
+            <a href="/kom-i-gang/">
                 <span>Kom i gang</span>
             </a>
         </li>
@@ -246,7 +245,7 @@
     
   
 <li>
-            <a href="/styleguide/" class="nav-link">
+            <a href="/styleguide/">
                 <span>Styleguide</span>
             </a>
         </li>
@@ -254,7 +253,7 @@
     
   
 <li>
-            <a href="/komponenter/" class="nav-link">
+            <a href="/komponenter/">
                 <span>Komponenter</span>
             </a>
         </li>
@@ -262,7 +261,7 @@
     
   
 <li>
-            <a href="/eksempler/" class="nav-link">
+            <a href="/eksempler/">
                 <span>Eksempler</span>
             </a>
         </li>
@@ -270,7 +269,7 @@
     
   
 <li>
-            <a href="/faellesskab/" class="nav-link">
+            <a href="/faellesskab/">
                 <span>Fællesskab</span>
             </a>
         </li>
@@ -282,39 +281,34 @@
             </nav>
             
         </div>
-    </div>
+    </fds-main-menu>
 
-    <div class="overlay"></div>
-
-    <!-- Mobile main menu-->
-    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-labelledby="menu-heading">
-        <div class="menu-top">
-            <h2 id="menu-heading" class="menu-heading">Menu</h2>
-            <button class="function-link button-menu-close js-menu-close" aria-label="Luk menu"><svg class="icon-svg" aria-hidden="true" focusable="false" tabindex="-1"><use href="#close"></use></svg>Luk</button>
-        </div>
-        <nav class="navigation-menu-mobile" aria-label="Hovedmenu og undermenuer">
-            <ul class="mainmenu">
-                 
+    <fds-drawer id="mobile-menu" class="d-block d-lg-none">
+        <div class="mobile-drawer">
+            <fds-main-menu>
+                <nav aria-label="Hovedmenu og undermenuer">
+                    <ul>
+                         
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="kom_i_gang_category" aria-expanded="false">
-                    <span>Kom i gang</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="kom_i_gang_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Kom i gang</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/kom-i-gang/" class="nav-link">
+                            <a href="/kom-i-gang/">
                                 <span>Kom i gang <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/kom-i-gang/om-designsystemet/" class="nav-link"><span>Om Det Fælles Designsystem</span></a>
+            <a href="/kom-i-gang/om-designsystemet/">
+                <span>Om Det Fælles Designsystem</span>
+            </a>
         </li>
         
 
@@ -322,23 +316,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="implementering_kode_category" aria-expanded="false">
-                    <span>Implementering og kode</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="implementering_kode_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Implementering og kode</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/kom-i-gang/implementering-kode/" class="nav-link">
+                            <a href="/kom-i-gang/implementering-kode/">
                                 <span>Implementering og kode <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/hent-kodepakken/" class="nav-link"><span>Hent kodepakken</span></a>
+            <a href="/kom-i-gang/implementering-kode/hent-kodepakken/">
+                <span>Hent kodepakken</span>
+            </a>
         </li>
         
 
@@ -346,7 +340,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/justering/" class="nav-link"><span>Justering af tema og stylesheets</span></a>
+            <a href="/kom-i-gang/implementering-kode/justering/">
+                <span>Justering af tema og stylesheets</span>
+            </a>
         </li>
         
 
@@ -354,7 +350,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/hjaelpeklasser/" class="nav-link"><span>Hjælpeklasser</span></a>
+            <a href="/kom-i-gang/implementering-kode/hjaelpeklasser/">
+                <span>Hjælpeklasser</span>
+            </a>
         </li>
         
 
@@ -362,7 +360,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/browserunderstoettelse/" class="nav-link"><span>Browserunderstøttelse</span></a>
+            <a href="/kom-i-gang/implementering-kode/browserunderstoettelse/">
+                <span>Browserunderstøttelse</span>
+            </a>
         </li>
         
 
@@ -370,7 +370,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/plugins/" class="nav-link"><span>Plugins</span></a>
+            <a href="/kom-i-gang/implementering-kode/plugins/">
+                <span>Plugins</span>
+            </a>
         </li>
         
 
@@ -378,7 +380,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/print/" class="nav-link"><span>Print</span></a>
+            <a href="/kom-i-gang/implementering-kode/print/">
+                <span>Print</span>
+            </a>
         </li>
         
 
@@ -386,7 +390,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/frameworks/" class="nav-link"><span>Frameworks</span></a>
+            <a href="/kom-i-gang/implementering-kode/frameworks/">
+                <span>Frameworks</span>
+            </a>
         </li>
         
 
@@ -394,14 +400,16 @@
 
         
         <li>
-            <a href="/kom-i-gang/implementering-kode/custom-elements/" class="nav-link"><span>Custom elements</span></a>
+            <a href="/kom-i-gang/implementering-kode/custom-elements/">
+                <span>Custom elements</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -409,7 +417,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/designressourcer/" class="nav-link"><span>Design og ressourcer</span></a>
+            <a href="/kom-i-gang/designressourcer/">
+                <span>Design og ressourcer</span>
+            </a>
         </li>
         
 
@@ -417,7 +427,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/tjekliste/" class="nav-link"><span>Tjekliste</span></a>
+            <a href="/kom-i-gang/tjekliste/">
+                <span>Tjekliste</span>
+            </a>
         </li>
         
 
@@ -425,7 +437,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/tilgaengelighed/" class="nav-link"><span>Tilgængelighed</span></a>
+            <a href="/kom-i-gang/tilgaengelighed/">
+                <span>Tilgængelighed</span>
+            </a>
         </li>
         
 
@@ -433,7 +447,9 @@
 
         
         <li>
-            <a href="/kom-i-gang/brugerinddragelse/" class="nav-link"><span>Brugerinddragelse</span></a>
+            <a href="/kom-i-gang/brugerinddragelse/">
+                <span>Brugerinddragelse</span>
+            </a>
         </li>
         
 
@@ -441,14 +457,16 @@
 
         
         <li>
-            <a href="/kom-i-gang/faq/" class="nav-link"><span>Ofte stillede spørgsmål</span></a>
+            <a href="/kom-i-gang/faq/">
+                <span>Ofte stillede spørgsmål</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -456,23 +474,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="styleguide_category" aria-expanded="false">
-                    <span>Styleguide</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="styleguide_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Styleguide</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/styleguide/" class="nav-link">
+                            <a href="/styleguide/">
                                 <span>Styleguide <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/styleguide/farver/" class="nav-link"><span>Farver</span></a>
+            <a href="/styleguide/farver/">
+                <span>Farver</span>
+            </a>
         </li>
         
 
@@ -480,23 +498,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="typografi_category" aria-expanded="false">
-                    <span>Typografi</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="typografi_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Typografi</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/styleguide/typografi/" class="nav-link">
+                            <a href="/styleguide/typografi/">
                                 <span>Typografi <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/styleguide/typografi/fonte/" class="nav-link"><span>Fonte</span></a>
+            <a href="/styleguide/typografi/fonte/">
+                <span>Fonte</span>
+            </a>
         </li>
         
 
@@ -504,7 +522,9 @@
 
         
         <li>
-            <a href="/styleguide/typografi/overskrifter/" class="nav-link"><span>Overskrifter</span></a>
+            <a href="/styleguide/typografi/overskrifter/">
+                <span>Overskrifter</span>
+            </a>
         </li>
         
 
@@ -512,7 +532,9 @@
 
         
         <li>
-            <a href="/styleguide/typografi/felt-tabel-overskrifter/" class="nav-link"><span>Felt- og tabeloverskrifter</span></a>
+            <a href="/styleguide/typografi/felt-tabel-overskrifter/">
+                <span>Felt- og tabeloverskrifter</span>
+            </a>
         </li>
         
 
@@ -520,7 +542,9 @@
 
         
         <li>
-            <a href="/styleguide/typografi/tekst/" class="nav-link"><span>Tekst</span></a>
+            <a href="/styleguide/typografi/tekst/">
+                <span>Tekst</span>
+            </a>
         </li>
         
 
@@ -528,7 +552,9 @@
 
         
         <li>
-            <a href="/styleguide/typografi/links/" class="nav-link"><span>Links</span></a>
+            <a href="/styleguide/typografi/links/">
+                <span>Links</span>
+            </a>
         </li>
         
 
@@ -536,14 +562,16 @@
 
         
         <li>
-            <a href="/styleguide/typografi/lister/" class="nav-link"><span>Lister</span></a>
+            <a href="/styleguide/typografi/lister/">
+                <span>Lister</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -551,7 +579,9 @@
 
         
         <li>
-            <a href="/styleguide/borders/" class="nav-link"><span>Hjørner, streger, skygger</span></a>
+            <a href="/styleguide/borders/">
+                <span>Hjørner, streger, skygger</span>
+            </a>
         </li>
         
 
@@ -559,7 +589,9 @@
 
         
         <li>
-            <a href="/styleguide/ikoner/" class="nav-link"><span>Ikoner</span></a>
+            <a href="/styleguide/ikoner/">
+                <span>Ikoner</span>
+            </a>
         </li>
         
 
@@ -567,7 +599,9 @@
 
         
         <li>
-            <a href="/styleguide/logoer/" class="nav-link"><span>Logoer</span></a>
+            <a href="/styleguide/logoer/">
+                <span>Logoer</span>
+            </a>
         </li>
         
 
@@ -575,23 +609,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="datavisualisering_category" aria-expanded="false">
-                    <span>Datavisualisering og infografik</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="datavisualisering_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Datavisualisering og infografik</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/styleguide/datavisualisering-infografik/" class="nav-link">
+                            <a href="/styleguide/datavisualisering-infografik/">
                                 <span>Datavisualisering og infografik <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/styleguide/datavisualisering-infografik/tilgaengelig-grafik/" class="nav-link"><span>Tilgængelig grafik</span></a>
+            <a href="/styleguide/datavisualisering-infografik/tilgaengelig-grafik/">
+                <span>Tilgængelig grafik</span>
+            </a>
         </li>
         
 
@@ -599,7 +633,9 @@
 
         
         <li>
-            <a href="/styleguide/datavisualisering-infografik/datavisualisering/" class="nav-link"><span>Datavisualisering</span></a>
+            <a href="/styleguide/datavisualisering-infografik/datavisualisering/">
+                <span>Datavisualisering</span>
+            </a>
         </li>
         
 
@@ -607,14 +643,16 @@
 
         
         <li>
-            <a href="/styleguide/datavisualisering-infografik/infografik/" class="nav-link"><span>Infografik</span></a>
+            <a href="/styleguide/datavisualisering-infografik/infografik/">
+                <span>Infografik</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -622,7 +660,9 @@
 
         
         <li>
-            <a href="/styleguide/layout/" class="nav-link"><span>Layout</span></a>
+            <a href="/styleguide/layout/">
+                <span>Layout</span>
+            </a>
         </li>
         
 
@@ -630,14 +670,16 @@
 
         
         <li>
-            <a href="/styleguide/grid/" class="nav-link"><span>Grid og baseline grid</span></a>
+            <a href="/styleguide/grid/">
+                <span>Grid og baseline grid</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -645,23 +687,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="komponenter_category" aria-expanded="false">
-                    <span>Komponenter</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="komponenter_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Komponenter</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/komponenter/" class="nav-link">
+                            <a href="/komponenter/">
                                 <span>Komponenter <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/komponenter/accordions/" class="nav-link"><span>Accordions</span></a>
+            <a href="/komponenter/accordions/">
+                <span>Accordions</span>
+            </a>
         </li>
         
 
@@ -669,7 +711,9 @@
 
         
         <li>
-            <a href="/komponenter/anchorlinks/" class="nav-link"><span>Anchorlinks</span></a>
+            <a href="/komponenter/anchorlinks/">
+                <span>Anchorlinks</span>
+            </a>
         </li>
         
 
@@ -677,7 +721,9 @@
 
         
         <li>
-            <a href="/komponenter/badges/" class="nav-link"><span>Badges</span></a>
+            <a href="/komponenter/badges/">
+                <span>Badges</span>
+            </a>
         </li>
         
 
@@ -685,7 +731,9 @@
 
         
         <li>
-            <a href="/komponenter/beskeder/" class="nav-link"><span>Beskeder <span class="d-inline" lang="en">(Alerts)</span></span></a>
+            <a href="/komponenter/beskeder/">
+                <span>Beskeder <span class="d-inline" lang="en">(Alerts)</span></span>
+            </a>
         </li>
         
 
@@ -693,7 +741,9 @@
 
         
         <li>
-            <a href="/komponenter/broedkrumme/" class="nav-link"><span>Brødkrumme</span></a>
+            <a href="/komponenter/broedkrumme/">
+                <span>Brødkrumme</span>
+            </a>
         </li>
         
 
@@ -701,7 +751,9 @@
 
         
         <li>
-            <a href="/komponenter/cards/" class="nav-link"><span>Cards</span></a>
+            <a href="/komponenter/cards/">
+                <span>Cards</span>
+            </a>
         </li>
         
 
@@ -709,7 +761,9 @@
 
         
         <li>
-            <a href="/komponenter/cookiemeddelelse/" class="nav-link"><span>Cookiemeddelelse</span></a>
+            <a href="/komponenter/cookiemeddelelse/">
+                <span>Cookiemeddelelse</span>
+            </a>
         </li>
         
 
@@ -717,7 +771,9 @@
 
         
         <li>
-            <a href="/komponenter/datofelter/" class="nav-link"><span>Datofelter</span></a>
+            <a href="/komponenter/datofelter/">
+                <span>Datofelter</span>
+            </a>
         </li>
         
 
@@ -725,7 +781,9 @@
 
         
         <li>
-            <a href="/komponenter/datovaelger/" class="nav-link"><span>Datovælger</span></a>
+            <a href="/komponenter/datovaelger/">
+                <span>Datovælger</span>
+            </a>
         </li>
         
 
@@ -733,7 +791,9 @@
 
         
         <li>
-            <a href="/komponenter/detaljer/" class="nav-link"><span>Detaljer</span></a>
+            <a href="/komponenter/detaljer/">
+                <span>Detaljer</span>
+            </a>
         </li>
         
 
@@ -741,7 +801,9 @@
 
         
         <li>
-            <a href="/komponenter/dropdown/" class="nav-link"><span>Dropdown</span></a>
+            <a href="/komponenter/dropdown/">
+                <span>Dropdown</span>
+            </a>
         </li>
         
 
@@ -749,8 +811,9 @@
 
         
         <li>
-            <a href="/komponenter/faneblade/" class="nav-link">
-                <span>Faneblade <span class="d-inline" lang="en">(Tabs)</span></span></a>
+            <a href="/komponenter/faneblade/">
+                <span>Faneblade <span class="d-inline" lang="en">(Tabs)</span></span>
+            </a>
         </li>
         
 
@@ -758,7 +821,9 @@
 
         
         <li>
-            <a href="/komponenter/fejlmeddelelser/" class="nav-link"><span>Fejlmeddelelser</span></a>
+            <a href="/komponenter/fejlmeddelelser/">
+                <span>Fejlmeddelelser</span>
+            </a>
         </li>
         
 
@@ -766,7 +831,9 @@
 
         
         <li>
-            <a href="/komponenter/fejlopsummering/" class="nav-link"><span>Fejlopsummering</span></a>
+            <a href="/komponenter/fejlopsummering/">
+                <span>Fejlopsummering</span>
+            </a>
         </li>
         
 
@@ -774,7 +841,9 @@
 
         
         <li>
-            <a href="/komponenter/footer/" class="nav-link"><span>Footer</span></a>
+            <a href="/komponenter/footer/">
+                <span>Footer</span>
+            </a>
         </li>
         
 
@@ -782,7 +851,9 @@
 
         
         <li>
-            <a href="/komponenter/funktionslink/" class="nav-link"><span>Funktionslink</span></a>
+            <a href="/komponenter/funktionslink/">
+                <span>Funktionslink</span>
+            </a>
         </li>
         
 
@@ -790,7 +861,9 @@
 
         
         <li>
-            <a href="/komponenter/skip-link/" class="nav-link"><span>Gå til sidens indhold (Skip-link)</span></a>
+            <a href="/komponenter/skip-link/">
+                <span>Gå til sidens indhold (Skip-link)</span>
+            </a>
         </li>
         
 
@@ -798,7 +871,9 @@
 
         
         <li>
-            <a href="/komponenter/header/" class="nav-link"><span>Header</span></a>
+            <a href="/komponenter/header/">
+                <span>Header</span>
+            </a>
         </li>
         
 
@@ -806,7 +881,9 @@
 
         
         <li>
-            <a href="/komponenter/inputfelter/" class="nav-link"><span>Inputfelter</span></a>
+            <a href="/komponenter/inputfelter/">
+                <span>Inputfelter</span>
+            </a>
         </li>
         
 
@@ -814,8 +891,9 @@
 
         
         <li>
-            <a href="/komponenter/knapper/" class="nav-link">
-                <span>Knapper <span class="d-inline" lang="en">(Buttons)</span></span></a>
+            <a href="/komponenter/knapper/">
+                <span>Knapper <span class="d-inline" lang="en">(Buttons)</span></span>
+            </a>
         </li>
         
 
@@ -823,7 +901,9 @@
 
         
         <li>
-            <a href="/komponenter/spinner/" class="nav-link"><span>Loading spinner</span></a>
+            <a href="/komponenter/spinner/">
+                <span>Loading spinner</span>
+            </a>
         </li>
         
 
@@ -831,7 +911,9 @@
 
         
         <li>
-            <a href="/komponenter/modal/" class="nav-link"><span>Modal</span></a>
+            <a href="/komponenter/modal/">
+                <span>Modal</span>
+            </a>
         </li>
         
 
@@ -839,7 +921,9 @@
 
         
         <li>
-            <a href="/komponenter/overflowmenu/" class="nav-link"><span>Overflow menu</span></a>
+            <a href="/komponenter/overflowmenu/">
+                <span>Overflow menu</span>
+            </a>
         </li>
         
 
@@ -847,7 +931,9 @@
 
         
         <li>
-            <a href="/komponenter/paginering/" class="nav-link"><span>Paginering</span></a>
+            <a href="/komponenter/paginering/">
+                <span>Paginering</span>
+            </a>
         </li>
         
 
@@ -855,8 +941,9 @@
 
         
         <li>
-            <a href="/komponenter/radioknap/" class="nav-link">
-                <span>Radioknap <span class="d-inline" lang="en">(Radio button)</span></span></a>
+            <a href="/komponenter/radioknap/">
+                <span>Radioknap <span class="d-inline" lang="en">(Radio button)</span></span>
+            </a>
         </li>
         
 
@@ -864,7 +951,9 @@
 
         
         <li>
-            <a href="/komponenter/sprogvaelger/" class="nav-link"><span>Sprogvælger</span></a>
+            <a href="/komponenter/sprogvaelger/">
+                <span>Sprogvælger</span>
+            </a>
         </li>
         
 
@@ -872,7 +961,9 @@
 
         
         <li>
-            <a href="/komponenter/search/" class="nav-link"><span>Søgefelt</span></a>
+            <a href="/komponenter/search/">
+                <span>Søgefelt</span>
+            </a>
         </li>
         
 
@@ -880,7 +971,9 @@
 
         
         <li>
-            <a href="/komponenter/tables/" class="nav-link"><span>Tabeller</span></a>
+            <a href="/komponenter/tables/">
+                <span>Tabeller</span>
+            </a>
         </li>
         
 
@@ -888,7 +981,9 @@
 
         
         <li>
-            <a href="/komponenter/tags/" class="nav-link"><span>Tags</span></a>
+            <a href="/komponenter/tags/">
+                <span>Tags</span>
+            </a>
         </li>
         
 
@@ -896,8 +991,9 @@
 
         
         <li>
-            <a href="/komponenter/tekstomraade/" class="nav-link">
-                <span>Tekstområde <span class="d-inline" lang="en">(Textarea)</span></span></a>
+            <a href="/komponenter/tekstomraade/">
+                <span>Tekstområde <span class="d-inline" lang="en">(Textarea)</span></span>
+            </a>
         </li>
         
 
@@ -905,7 +1001,9 @@
 
         
         <li>
-            <a href="/komponenter/tilbage-link/" class="nav-link"><span>Tilbage-link</span></a>
+            <a href="/komponenter/tilbage-link/">
+                <span>Tilbage-link</span>
+            </a>
         </li>
         
 
@@ -913,7 +1011,9 @@
 
         
         <li>
-            <a href="/komponenter/tilbage-til-top/" class="nav-link"><span>Tilbage til toppen</span></a>
+            <a href="/komponenter/tilbage-til-top/">
+                <span>Tilbage til toppen</span>
+            </a>
         </li>
         
 
@@ -921,8 +1021,9 @@
 
         
         <li>
-            <a href="/komponenter/tjekboks/" class="nav-link">
-                <span>Tjekboks <span class="d-inline" lang="en">(Checkbox)</span></span></a>
+            <a href="/komponenter/tjekboks/">
+                <span>Tjekboks <span class="d-inline" lang="en">(Checkbox)</span></span>
+            </a>
         </li>
         
 
@@ -930,7 +1031,9 @@
 
         
         <li>
-            <a href="/komponenter/toastbesked/" class="nav-link"><span>Toastbesked</span></a>
+            <a href="/komponenter/toastbesked/">
+                <span>Toastbesked</span>
+            </a>
         </li>
         
 
@@ -938,7 +1041,9 @@
 
         
         <li>
-            <a href="/komponenter/toggle/" class="nav-link"><span>Toggle switch</span></a>
+            <a href="/komponenter/toggle/">
+                <span>Toggle switch</span>
+            </a>
         </li>
         
 
@@ -946,7 +1051,9 @@
 
         
         <li>
-            <a href="/komponenter/tooltip/" class="nav-link"><span>Tooltip</span></a>
+            <a href="/komponenter/tooltip/">
+                <span>Tooltip</span>
+            </a>
         </li>
         
 
@@ -954,7 +1061,9 @@
 
         
         <li>
-            <a href="/komponenter/trinindikator/" class="nav-link"><span>Trinindikator</span></a>
+            <a href="/komponenter/trinindikator/">
+                <span>Trinindikator</span>
+            </a>
         </li>
         
 
@@ -962,7 +1071,9 @@
 
         
         <li>
-            <a href="/komponenter/fil-upload/" class="nav-link"><span>Vedhæft fil</span></a>
+            <a href="/komponenter/fil-upload/">
+                <span>Vedhæft fil</span>
+            </a>
         </li>
         
 
@@ -970,14 +1081,16 @@
 
         
         <li>
-            <a href="/komponenter/venstremenu/" class="nav-link"><span>Venstremenu</span></a>
+            <a href="/komponenter/venstremenu/">
+                <span>Venstremenu</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -985,23 +1098,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="eksempler_category" aria-expanded="false">
-                    <span>Eksempler</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="eksempler_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Eksempler</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/eksempler/" class="nav-link">
+                            <a href="/eksempler/">
                                 <span>Eksempler <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/eksempler/selvbetjeningsloesninger/" class="nav-link"><span>Selvbetjeningsløsninger</span></a>
+            <a href="/eksempler/selvbetjeningsloesninger/">
+                <span>Selvbetjeningsløsninger</span>
+            </a>
         </li>
         
 
@@ -1009,23 +1122,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="patterns_category" aria-expanded="false">
-                    <span>Patterns</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="patterns_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Patterns</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/eksempler/patterns/" class="nav-link">
+                            <a href="/eksempler/patterns/">
                                 <span>Patterns <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/eksempler/patterns/angivelse-af-telefonnummer/" class="nav-link"><span>Angivelse af telefonnummer</span></a>
+            <a href="/eksempler/patterns/angivelse-af-telefonnummer/">
+                <span>Angivelse af telefonnummer</span>
+            </a>
         </li>
         
 
@@ -1033,7 +1146,9 @@
 
         
         <li>
-            <a href="/eksempler/patterns/formular/" class="nav-link"><span>Formular</span></a>
+            <a href="/eksempler/patterns/formular/">
+                <span>Formular</span>
+            </a>
         </li>
         
 
@@ -1041,7 +1156,9 @@
 
         
         <li>
-            <a href="/eksempler/patterns/hentet-data/" class="nav-link"><span>Inputfelter med hentet data</span></a>
+            <a href="/eksempler/patterns/hentet-data/">
+                <span>Inputfelter med hentet data</span>
+            </a>
         </li>
         
 
@@ -1049,14 +1166,16 @@
 
         
         <li>
-            <a href="/eksempler/patterns/session-udloeber/" class="nav-link"><span>Session udløber</span></a>
+            <a href="/eksempler/patterns/session-udloeber/">
+                <span>Session udløber</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -1064,14 +1183,16 @@
 
         
         <li>
-            <a href="/eksempler/templates/" class="nav-link"><span>Templates</span></a>
+            <a href="/eksempler/templates/">
+                <span>Templates</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
@@ -1079,23 +1200,23 @@
 
         
         <li>
-            <div class="submenu">
-                <button class="button-mobile-menu js-menudropdown" data-js-target="faellesskab_category" aria-expanded="false">
-                    <span>Fællesskab</span>
-                </button>
-                
-                <div class="overflow-menu-inner collapsed" id="faellesskab_category">
-                    <ul class="overflow-list">
+            <fds-dropdown-menu expanded="false">
+                <button><span>Fællesskab</span></button>
+                <div>
+                    <ul>
                         <li>
-                            <a href="/faellesskab/" class="nav-link">
+                            <a href="/faellesskab/">
                                 <span>Fællesskab <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
+                        
                          
 
         
         <li>
-            <a href="/faellesskab/samarbejdsforum/" class="nav-link"><span>Samarbejdsforum</span></a>
+            <a href="/faellesskab/samarbejdsforum/">
+                <span>Samarbejdsforum</span>
+            </a>
         </li>
         
 
@@ -1103,7 +1224,9 @@
 
         
         <li>
-            <a href="/faellesskab/governance/" class="nav-link"><span>Governance</span></a>
+            <a href="/faellesskab/governance/">
+                <span>Governance</span>
+            </a>
         </li>
         
 
@@ -1111,7 +1234,9 @@
 
         
         <li>
-            <a href="/faellesskab/nyhedsmail/" class="nav-link"><span>Nyhedsbrev</span></a>
+            <a href="/faellesskab/nyhedsmail/">
+                <span>Nyhedsbrev</span>
+            </a>
         </li>
         
 
@@ -1119,7 +1244,9 @@
 
         
         <li>
-            <a href="/faellesskab/kontakt-support/" class="nav-link"><span>Kontakt og support</span></a>
+            <a href="/faellesskab/kontakt-support/">
+                <span>Kontakt og support</span>
+            </a>
         </li>
         
 
@@ -1127,21 +1254,25 @@
 
         
         <li>
-            <a href="/faellesskab/releases/" class="nav-link"><span>Release notes</span></a>
+            <a href="/faellesskab/releases/">
+                <span>Release notes</span>
+            </a>
         </li>
         
 
 
                     </ul>
                 </div>
-            </div>
+            </fds-dropdown-menu>
         </li>
         
 
 
-            </ul>
-        </nav>
-    </div>
+                    </ul>
+                </nav>
+            </fds-main-menu>
+        </div>
+    </fds-drawer>
 </header>
 
 <main class="container page-container" id="main-content">
@@ -1252,7 +1383,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/",
 "title": "Kom i gang",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "",
 "lead": "Find alt, du skal bruge, for at komme godt i gang med at bruge Det Fælles Designsystem til din myndigheds selvbetjeningsløsninger.",
 "tags": [''],
@@ -1270,7 +1401,7 @@ let searchIndex = [
 {
 "url": "/styleguide/",
 "title": "Styleguide",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "",
 "lead": "Designet er målrettet selvbetjeningsløsninger der skal på borger.dk og Virk. Det visuelle udtryk skal understøtte brugervenlighed i selvbetjeningsløsninger.",
 "tags": [''],
@@ -1288,7 +1419,7 @@ let searchIndex = [
 {
 "url": "/komponenter/",
 "title": "Komponenter",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "",
 "lead": "Komponenterne i designsystemet er genanvendelige enheder, der kan sættes sammen på mange forskellige måder, i forskellige mønstre, for at bygge de selvbetjeningsløsninger, dine brugere har brug for.",
 "tags": [''],
@@ -1306,7 +1437,7 @@ let searchIndex = [
 {
 "url": "/eksempler/",
 "title": "Eksempler",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "",
 "lead": "Eksemplerne viser, hvordan forskellige typer af selvbetjeningsløsninger kan sættes op i layout og flow.",
 "tags": [''],
@@ -1324,7 +1455,7 @@ let searchIndex = [
 {
 "url": "/faellesskab/",
 "title": "Fællesskab",
-"category": "Faellesskab_category",
+"category": "faellesskab_menu",
 "subcategory": "",
 "lead": "Designsystemet er open source og baseret på en filosofi om samarbejde. Både i forhold til samarbejde om kode og kodekvalitet, deling af brugerindsigter, samt direkte indflydelse på indholdet via Samarbejdsforum.",
 "tags": [''],
@@ -1350,7 +1481,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/om-designsystemet/",
 "title": "Om Det Fælles Designsystem",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Det Fælles Designsystem er udviklet for at sikre ensartet funktionalitet og design i selvbetjeningsløsninger på tværs af offentlige myndigheder. Det skaber genkendelse for brugerne på tværs af løsninger og gør det nemmere for dem at foretage selvbetjening. Alle komponenter er testet og tilgængelige.",
 "tags": ['krav','Virk','borger.dk'],
@@ -1368,7 +1499,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/",
 "title": "Implementering og kode",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "I denne sektion findes al dokumentation henvendt specifikt til udvikling og brug af designsystemets kode.",
 "tags": ['installation','implementering'],
@@ -1386,7 +1517,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/designressourcer/",
 "title": "Design og ressourcer",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Ved at følge designsystemet er du med til at skabe sammenhæng i og mellem de mange offentlige selvbetjeningsløsninger du ikke selv designer, til gavn for alle brugere.",
 "tags": ['figma','prototype','svg'],
@@ -1404,7 +1535,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/tjekliste/",
 "title": "Tjekliste",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Gå igennem tjeklisten for at sikre, at din løsning følger Det Fælles Designsystem.",
 "tags": [''],
@@ -1422,7 +1553,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/tilgaengelighed/",
 "title": "Tilgængelighed",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Webtilgængelighed handler om de principper og teknikker, du skal følge, for at alle kan anvende dine websteder og indholdet derpå, herunder også brugere med funktionsnedsættelser eller handicap.",
 "tags": ['tilgængelighed','accessibility','aria','vcag','wcag','2.1'],
@@ -1440,7 +1571,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/brugerinddragelse/",
 "title": "Brugerinddragelse",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Når du bruger Det Fælles Designsystem, er det stadig vigtigt at inddrage brugerne og brugerteste den enkelte løsning for at sikre den gode brugeroplevelse.",
 "tags": [''],
@@ -1458,7 +1589,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/faq/",
 "title": "Ofte stillede spørgsmål",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Nogle gange er der spørgsmål til FDS-teamet, der går igen. Før du tager kontakt til FDS-teamet kan du se her, om dit spørgsmål allerede er besvaret.",
 "tags": [''],
@@ -1484,7 +1615,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/hent-kodepakken/",
 "title": "Hent kodepakken",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Kodepakken kan installeres ved brug af NPM-pakken eller via GitHub som zip-fil.",
 "tags": ['installation','implementering','DKFDS','DKFDS.init','DKFDS.init()','init','init()','scope'],
@@ -1502,7 +1633,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/justering/",
 "title": "Justering af tema og stylesheets",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "",
 "tags": ['CSS','SCSS','SASS','JS','JavaScript'],
@@ -1520,7 +1651,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/hjaelpeklasser/",
 "title": "Hjælpeklasser",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "",
 "tags": ['text-align','center','text-align:center'],
@@ -1538,7 +1669,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/browserunderstoettelse/",
 "title": "Browserunderstøttelse",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "",
 "tags": [''],
@@ -1556,7 +1687,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/plugins/",
 "title": "Plugins",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Plugins er komponenter som er lavet af en tredjepart. De er for store og specialiserede til, at de kan blive en del af designsystemet. Det er op til dig om du vil bruge plugins i din selvbetjeningsløsning.",
 "tags": [''],
@@ -1574,7 +1705,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/print/",
 "title": "Print",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "Sider kan struktureres, så de også fungerer godt ved print.",
 "tags": [''],
@@ -1592,7 +1723,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/frameworks/",
 "title": "Frameworks",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "",
 "tags": ['JavaScript','framework','frameworks','Vanilla'],
@@ -1610,7 +1741,7 @@ let searchIndex = [
 {
 "url": "/kom-i-gang/implementering-kode/custom-elements/",
 "title": "Custom elements",
-"category": "Kom_i_gang_category",
+"category": "kom_i_gang_menu",
 "subcategory": "Kom i gang",
 "lead": "",
 "tags": ['JavaScript','customelements'],
@@ -1636,7 +1767,7 @@ let searchIndex = [
 {
 "url": "/styleguide/farver/",
 "title": "Farver",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Da designsystemet er fælles for både borger.dk og Virk er der farver til hver portal og samtidig en generel palette, der anvendes uanset, hvilken portal din selvbetjeningsløsning skal på.",
 "tags": ['color','Portalfarver','Gråtoner','Besked-farver','Link-farver','Fokusfarve','Baggrundsfarver','Positiv og negativ farver','Datavisualiseringsfarver','farve','farver','Grå','Sort','grøn','blå','rød','gul','lyseblå','link-blå','virk-farve','borger.dk-farve'],
@@ -1654,7 +1785,7 @@ let searchIndex = [
 {
 "url": "/styleguide/typografi/",
 "title": "Typografi",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Selvbetjeningsløsninger har brug for tydelige og konsistente overskrifter, klare læsbare tekstafsnit og beskeder, samt feltoverskrifter, der giver overblik, links og lister, der understøtter brugerens gennemførsel af selvbetjeningsløsningen.",
 "tags": ['IBM','typography','font','fonte'],
@@ -1672,7 +1803,7 @@ let searchIndex = [
 {
 "url": "/styleguide/borders/",
 "title": "Hjørner, streger, skygger",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "",
 "tags": ['hjørner','streger','kanter','border-radius','border','kanter','rammer'],
@@ -1690,7 +1821,7 @@ let searchIndex = [
 {
 "url": "/styleguide/ikoner/",
 "title": "Ikoner",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Ikoner benyttes til visuelt at understrege en handling eller en information. Ikoner kan underbygge et budskab og gøre det lettere at afkode en side. Ikoner kan dog sjældent erstatte tekst.",
 "tags": ['icon','svg','svg use','inline svg'],
@@ -1708,7 +1839,7 @@ let searchIndex = [
 {
 "url": "/styleguide/logoer/",
 "title": "Logoer",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Din selvbetjeningsløsning er del af en større helhed på borger.dk og Virk, dette kommunikeres bl.a. via portalens logo i headeren.",
 "tags": ['billede','header'],
@@ -1726,7 +1857,7 @@ let searchIndex = [
 {
 "url": "/styleguide/datavisualisering-infografik/",
 "title": "Datavisualisering og infografik",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Datavisualiseringer og infografikker kan formidle data eller informationer på en hurtig, klar og virkningsfuld måde og ofte vise hvordan data eller informationer fordeler sig.",
 "tags": ['data','datavisualisering','grafik','diagrammer','diagram','graf','infografik'],
@@ -1744,7 +1875,7 @@ let searchIndex = [
 {
 "url": "/styleguide/layout/",
 "title": "Layout",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Et godt layout er harmonisk, ensartet, logisk opbygget og understøtter brugerens handlinger. Det er således både behageligt for øjet og let for brugeren at anvende.",
 "tags": ['Header'],
@@ -1762,7 +1893,7 @@ let searchIndex = [
 {
 "url": "/styleguide/grid/",
 "title": "Grid og baseline grid",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Brug et grid til at placere komponenterne i dit layout horisontalt, og brug baseline grid til at skabe en vertikal rytme på siden.",
 "tags": ['grid','grids','kolonner','opdeling','spalter'],
@@ -1788,7 +1919,7 @@ let searchIndex = [
 {
 "url": "/styleguide/typografi/fonte/",
 "title": "Fonte",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "",
 "tags": ['IBM Plex Sans','IBM','plex','sans','font','skrifttype','system','typography','font','fonte'],
@@ -1806,7 +1937,7 @@ let searchIndex = [
 {
 "url": "/styleguide/typografi/overskrifter/",
 "title": "Overskrifter",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Overskrifter strukturerer siden, giver overblik og hjælper brugeren og skærmlæseren til at kunne overskue sidens logik og opbygning.",
 "tags": ['h1','h2','h3','h4','h5','h6'],
@@ -1824,7 +1955,7 @@ let searchIndex = [
 {
 "url": "/styleguide/typografi/felt-tabel-overskrifter/",
 "title": "Felt- og tabeloverskrifter",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "",
 "tags": [''],
@@ -1842,7 +1973,7 @@ let searchIndex = [
 {
 "url": "/styleguide/typografi/tekst/",
 "title": "Tekst",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "",
 "tags": ['stor tekst','manchet','manchet tekst','brødtekst','hjælpetekst','fejlbesked','fejlmeddelelse','Linje','længde','Linjelængde','Linjeafstand','afstand','linjehøjde','facit','facitstreg','result','resultat'],
@@ -1860,7 +1991,7 @@ let searchIndex = [
 {
 "url": "/styleguide/typografi/links/",
 "title": "Links",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "",
 "tags": ['ekstern','ekstern link','footer link','footerlink'],
@@ -1878,7 +2009,7 @@ let searchIndex = [
 {
 "url": "/styleguide/typografi/lister/",
 "title": "Lister",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Lister bruges til at organisere information, så det giver brugeren overblik.",
 "tags": [''],
@@ -1904,7 +2035,7 @@ let searchIndex = [
 {
 "url": "/styleguide/datavisualisering-infografik/tilgaengelig-grafik/",
 "title": "Tilgængelig grafik",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Grafik kommunikerer data visuelt frem for udelukkende med tekst og tal. Det er derfor særligt vigtigt at arbejde med tilgængelighed her, f.eks. for at tilgodese farveblinde brugere.",
 "tags": ['data','datavisualisering','grafik','diagrammer','diagram','graf','infografik'],
@@ -1922,7 +2053,7 @@ let searchIndex = [
 {
 "url": "/styleguide/datavisualisering-infografik/datavisualisering/",
 "title": "Datavisualisering",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Datavisualisering er en grafisk repræsentation af et datasæt som fx et diagram, en graf eller et kort.",
 "tags": ['data','datavisualisering','grafik','diagrammer','diagram','graf','infografik'],
@@ -1940,7 +2071,7 @@ let searchIndex = [
 {
 "url": "/styleguide/datavisualisering-infografik/infografik/",
 "title": "Infografik",
-"category": "Styleguide_category",
+"category": "styleguide_menu",
 "subcategory": "Styleguide",
 "lead": "Infografik kan indeholde datavisualiseringer, men kan også være en illustration af et fysisk objekt eller en proces.",
 "tags": ['grafik','billeder','infografik'],
@@ -1966,7 +2097,7 @@ let searchIndex = [
 {
 "url": "/komponenter/accordions/",
 "title": "Accordions",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "En accordion er et grafisk element, som du kan bruge til at skjule og vise indhold med. Vær opmærksom på, at skjult indhold risikerer at blive set i mindre grad af brugerne, end det som er umiddelbart synligt på siden.",
 "tags": ['accordion','accordions'],
@@ -1984,7 +2115,7 @@ let searchIndex = [
 {
 "url": "/komponenter/anchorlinks/",
 "title": "Anchorlinks",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Anchorlinks linker til bestemte steder på samme side. De vises på den enkelte side under overskrift og eventuel manchet.",
 "tags": ['anchorlinks','anchor','ankerlinks','anker','subnav'],
@@ -2002,7 +2133,7 @@ let searchIndex = [
 {
 "url": "/komponenter/badges/",
 "title": "Badges",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Badges er grafiske markører, som du kan bruge til at gøre opmærksom på nyt eller vigtigt indhold.",
 "tags": [''],
@@ -2019,8 +2150,8 @@ let searchIndex = [
 
 {
 "url": "/komponenter/beskeder/",
-"title": "Beskeder (Alerts)",
-"category": "Komponenter_category",
+"title": "Beskeder",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Beskeder anvendes til at fremhæve aktuel information, som er vigtig for brugeren.",
 "tags": ['fejlbesked'],
@@ -2038,7 +2169,7 @@ let searchIndex = [
 {
 "url": "/komponenter/broedkrumme/",
 "title": "Brødkrumme",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "En brødkrumme bruges til at vise brugerne, hvor i løsningen de befinder sig, samtidig med at den gør det muligt for brugerne at navigere tilbage igennem løsningens niveauer.",
 "tags": [''],
@@ -2056,7 +2187,7 @@ let searchIndex = [
 {
 "url": "/komponenter/cards/",
 "title": "Cards",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Cards anvendes som en visuel afgrænsning af indhold eller interaktionselementer, der omhandler samme emne. De kan også anvendes til navigation.",
 "tags": [''],
@@ -2074,7 +2205,7 @@ let searchIndex = [
 {
 "url": "/komponenter/cookiemeddelelse/",
 "title": "Cookiemeddelelse",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Anvender din selvbetjeningsløsning cookies til andet end teknisk nødvendige formål, skal brugeren vises en cookiemeddelelse.",
 "tags": [''],
@@ -2092,7 +2223,7 @@ let searchIndex = [
 {
 "url": "/komponenter/datofelter/",
 "title": "Datofelter",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Tre separate felter for dato, måned og år er den nemmeste måde for brugeren at indskrive en dato.",
 "tags": [''],
@@ -2110,7 +2241,7 @@ let searchIndex = [
 {
 "url": "/komponenter/datovaelger/",
 "title": "Datovælger",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Ét felt med knap, hvor man kan vælge en dato.",
 "tags": [''],
@@ -2128,7 +2259,7 @@ let searchIndex = [
 {
 "url": "/komponenter/detaljer/",
 "title": "Detaljer",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Detaljekomponenten holder indhold skjult, indtil brugeren selv vælger at folde den ud.",
 "tags": [''],
@@ -2146,7 +2277,7 @@ let searchIndex = [
 {
 "url": "/komponenter/dropdown/",
 "title": "Dropdown",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Dropdown lader brugeren vælge én blandt flere muligheder i en udfoldet liste.",
 "tags": [''],
@@ -2163,8 +2294,8 @@ let searchIndex = [
 
 {
 "url": "/komponenter/faneblade/",
-"title": "Faneblade (Tabs)",
-"category": "Komponenter_category",
+"title": "Faneblade",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Faneblade gør det muligt for brugerne at bladre imellem relaterede sektioner af indhold og kun få vist en sektion af gangen. Vær opmærksom på om dine brugere ser de skjulte sektioner, når du anvender faneblade.",
 "tags": [''],
@@ -2182,7 +2313,7 @@ let searchIndex = [
 {
 "url": "/komponenter/fejlmeddelelser/",
 "title": "Fejlmeddelelser",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Fejlmeddelelser hjælper brugeren til at udfylde enkelte formularelementer korrekt.",
 "tags": ['fejlbesked','fejlmeddelelse','meddelelser','fejl','fejlmeddelelser','fejlbeskeder','fejlnotifikationer','medelelser','meddellelser','medellelser','fejlmedelelser','fejlmeddellelser','fejlmedellelser'],
@@ -2200,7 +2331,7 @@ let searchIndex = [
 {
 "url": "/komponenter/fejlopsummering/",
 "title": "Fejlopsummering",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Fejlopsummeringer bruges til at give overblik over fejl eller mangler, der skal rettes på en side eller et trin, før brugeren kan komme videre.",
 "tags": [''],
@@ -2218,7 +2349,7 @@ let searchIndex = [
 {
 "url": "/komponenter/footer/",
 "title": "Footer",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Footeren markerer enden på siden og indeholder informationer, som guider brugeren videre.",
 "tags": [''],
@@ -2236,7 +2367,7 @@ let searchIndex = [
 {
 "url": "/komponenter/funktionslink/",
 "title": "Funktionslink",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Funktionslink lader brugeren udføre forskellige systemfunktionaliteter.",
 "tags": [''],
@@ -2254,7 +2385,7 @@ let searchIndex = [
 {
 "url": "/komponenter/skip-link/",
 "title": "Gå til sidens indhold (Skip-link)",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Skip-links anvendes til at give brugere, der navigerer med tastatur, en bedre oplevelse. Brugerens første tryk på tab-tasten vil få et skjult link til at komme frem, der lader brugeren skippe menuen og gå direkte til sidens indhold.",
 "tags": [''],
@@ -2272,12 +2403,12 @@ let searchIndex = [
 {
 "url": "/komponenter/header/",
 "title": "Header",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Headeren identificerer portalen, den ansvarlige myndighed og brugeren, der er logget ind med NemLog-in. Den fungerer også til navigation og overordnet styring af selvbetjeningsløsningen.",
 "tags": [''],
 "layout": "styleguide",
-"content" : "                Retningslinjer                    Kode                    Åbn dette eksempel i et nyt vindue: header-with-navigation            Eksempel på header                            Indhold på siden                    Sådan bruges komponenten        Varianter        Se komponenten i eksempelløsninger                Installation        Referencer            Sådan bruges komponentenAnvendes tilBrug headeren til at give brugeren et “ankerpunkt”, der er ens på tværs af trin og undersider i selvbetjeningsløsningen.Brug headeren til at kommunikere portal, NemLog-in-oplysninger, ansvarlig myndighed, evt. med kontaktoplysninger.En eventuel overordnet navigation (topnavigation) skal også placeres i headeren, så brugeren altid kan navigere rundt i selvbetjeningsløsningen.Anvendes ikke tilAnvend ikke headeren andre steder i løsningen end i toppen af siden.Brug ikke topnavigationen som faneblade, anvend da faneblade.VejledningTag et kig på eksemplerne på selvbetjeningsløsninger for at se, hvordan komponenten passer ind i en komplet løsning.En header består af et antal rækker med forskelligt indhold.  Række 1 og række 2 er obligatoriske. Alle selvbetjeningsløsninger skal have portal-logo, login-info og løsningstitel som minimum.  Række 3 kan anvendes hvis nødvendigt.Headerens rækker forklaretRække 1 (obligatorisk)Portal-logo, NemLog-in-oplysninger og “Log af” knap.Række 2 (obligatorisk)Selvbetjeningens navn (løsningstitel), ansvarshavende myndighed og eventuel support/kontaktoplysninger.Række 3 (frivillig)Navigation (topnavigation) i løsningen og søgefelt.VarianterSimpel header            Åbn dette eksempel i et nyt vindue: header-simple            Eksempel                        Header med navigation og søgefelt            Åbn dette eksempel i et nyt vindue: header-with-navigation            Eksempel                        Menupunkter med dropdownMenupunkter med dropdown-funktionalitet giver adgang til undermenupunkter, men er ikke et menupunkt i sig selv. Overvej om dropdown-menu er den rigtige løsning. Topnavigation kombineret med venstremenu giver større fleksibilitet og mulighed for flere niveauer i navigationen.Responsivitet og breakpointsPå små skærme foldes indhold vedr. log ind-information, ansvarlig myndighed og eventuelle menupunkter ind i en “mobil”-menu. Vi anbefaler, at løsningen kun anvender denne visning, når der ikke længere er plads til indholdet på sidens bredde.Menupunkter der ikke er plads til i sidens bredde samles i en “Mere”-menu, der vises som overflow-menu.Header med sprogvælgerHvis din selvbetjeningsløsning skal være tilgængelig på flere sprog, placeres sprogvælgeren både som overflow-menu øverst i række 1 og i sidens footer (se sprogvælger). Nedenstående eksempel viser udelukkende sprogvælgerens header-variant.            Åbn dette eksempel i et nyt vindue: header-switch-language            Eksempel                        Se komponenten i eksempelløsningerSe komponenten i eksemplerne på selvbetjeningsløsninger.InstallationHTML StrukturNedenstående eksempel viser den overordnede struktur i &amp;lt;header&amp;gt;-elementet. De øvrige afsnit indeholder uddybende kodeeksempler.            Kodeeksempel                                    Kopiér kode                        &amp;lt;header class=&amp;quot;header&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;portal-info&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;solution-info&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;navigation-menu&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;overlay&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;mobile-drawer&amp;quot; ...&amp;gt;        &amp;lt;div class=&amp;quot;menu-top&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;        &amp;lt;nav class=&amp;quot;navigation-menu-mobile&amp;quot; ...&amp;gt;...&amp;lt;/nav&amp;gt;        &amp;lt;div class=&amp;quot;solution-info-mobile&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;        &amp;lt;div class=&amp;quot;portal-info-mobile&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/header&amp;gt;        Placer &amp;lt;header&amp;gt;-elementet i din HTML-sides &amp;lt;body&amp;gt;-element.Overlay og mobilmenuSom standard ændres headeren til udelukkende at vise løsningstitel, evt. søgefelt og en menuknap, når skærmen er mindre end 992px bred. Headeren skal derfor altid indeholde nedenstående kode, som bruges på mindre skærme, for eksempel mobiltelefoner. Når menuen er åben, vises et mørkt overlay oven på det øvrige sideindhold.            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;overlay&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;mobile-drawer&amp;quot; role=&amp;quot;dialog&amp;quot; aria-modal=&amp;quot;true&amp;quot; aria-labelledby=&amp;quot;menu-heading&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;menu-top&amp;quot;&amp;gt;        &amp;lt;h2 id=&amp;quot;menu-heading&amp;quot; class=&amp;quot;menu-heading&amp;quot;&amp;gt;Menu&amp;lt;/h2&amp;gt;        &amp;lt;button class=&amp;quot;function-link button-menu-close js-menu-close&amp;quot;            aria-label=&amp;quot;Luk menu&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#close&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Luk&amp;lt;/button&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Det er muligt at ændre, hvornår headeren skal vise menuknappen, ved at bruge Sass-variablen $nav-responsive-breakpoint og derefter bygge CSS’en selv.Række 1Række 1 indeholder portal-logo, NemLog-in-oplysninger og “Log af” knap. Headeren skal altid indeholde denne række.Der er to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes øverst i headeren og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;portal-info&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;portal-info-inner container&amp;quot;&amp;gt;        &amp;lt;a href=&amp;quot;#&amp;quot; title=&amp;quot;Gå til Portalnavns forside&amp;quot; aria-label=&amp;quot;Portalnavn&amp;quot; class=&amp;quot;logo&amp;quot;&amp;gt;            &amp;lt;span&amp;gt;Portalnavn&amp;lt;/span&amp;gt;        &amp;lt;/a&amp;gt;        &amp;lt;button class=&amp;quot;function-link button-menu-open js-menu-open ml-auto d-print-none&amp;quot;            aria-haspopup=&amp;quot;dialog&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#menu&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Menu&amp;lt;/button&amp;gt;        &amp;lt;div class=&amp;quot;portal-user&amp;quot;&amp;gt;            &amp;lt;p class=&amp;quot;user&amp;quot;&amp;gt;                Anders Andersen, Forsikringens Forsikringsfirma            &amp;lt;/p&amp;gt;            &amp;lt;button                class=&amp;quot;function-link d-print-none log-off&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Log                af&amp;lt;/button&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Anden del skal indsættes nederst i mobilmenuen og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;portal-info-mobile&amp;quot;&amp;gt;    &amp;lt;h3 class=&amp;quot;sr-only&amp;quot;&amp;gt;Bruger&amp;lt;/h3&amp;gt;    &amp;lt;p class=&amp;quot;user&amp;quot;&amp;gt;        &amp;lt;span class=&amp;quot;mb-3&amp;quot;&amp;gt;Anders Andersen&amp;lt;/span&amp;gt;        &amp;lt;span&amp;gt;Forsikringens Forsikringsfirma&amp;lt;/span&amp;gt;    &amp;lt;/p&amp;gt;    &amp;lt;p&amp;gt;        &amp;lt;button            class=&amp;quot;function-link d-print-none log-off&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Log            af&amp;lt;/button&amp;gt;    &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;        Se eventuelt eksemplet med den overordnede struktur i headeren for nærmere detaljer om placering.Række 2Række 2 indeholder selvbetjeningens navn (løsningstitel), ansvarshavende myndighed og eventuel support/kontaktoplysninger. Headeren skal altid indeholde denne række.Der er to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes efter række 1 og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;solution-info&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;solution-info-inner container&amp;quot;&amp;gt;        &amp;lt;div class=&amp;quot;solution-heading&amp;quot;&amp;gt;            &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Løsningstitel&amp;lt;/a&amp;gt;        &amp;lt;/div&amp;gt;        &amp;lt;div class=&amp;quot;additional-info&amp;quot;&amp;gt;            &amp;lt;p&amp;gt;&amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;            &amp;lt;p&amp;gt;Support: 12 34 56 78&amp;lt;/p&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Anden del skal indsættes i mobilmenuen før række 1 og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;solution-info-mobile&amp;quot;&amp;gt;    &amp;lt;h3 class=&amp;quot;sr-only&amp;quot;&amp;gt;Myndighed&amp;lt;/h3&amp;gt;    &amp;lt;p class=&amp;quot;mb-2&amp;quot;&amp;gt;&amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;    &amp;lt;p&amp;gt;Support: 12 34 56 78&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;        Se eventuelt eksemplet med den overordnede struktur i headeren for nærmere detaljer om placering.Række 3Række 3 indeholder topnavigation i løsningen og søgefelt. Det er valgfrit, om headeren skal indeholde denne række.Der er to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes efter række 2 og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;navigation-menu contains-search&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;navigation-menu-inner container&amp;quot;&amp;gt;        &amp;lt;nav class=&amp;quot;nav&amp;quot; aria-label=&amp;quot;Hovedmenu&amp;quot;&amp;gt;            &amp;lt;ul class=&amp;quot;mainmenu&amp;quot;&amp;gt;                &amp;lt;li&amp;gt;                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                        &amp;lt;span&amp;gt;Første menupunkt&amp;lt;/span&amp;gt;                    &amp;lt;/a&amp;gt;                &amp;lt;/li&amp;gt;                &amp;lt;li class=&amp;quot;active&amp;quot;&amp;gt;                    &amp;lt;div class=&amp;quot;submenu&amp;quot;&amp;gt;                        &amp;lt;button class=&amp;quot;button-overflow-menu js-dropdown&amp;quot;                            data-js-target=&amp;quot;desktopmenu-2&amp;quot; aria-expanded=&amp;quot;false&amp;quot;                            aria-controls=&amp;quot;desktopmenu-2&amp;quot;&amp;gt;                            &amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;                        &amp;lt;/button&amp;gt;                        &amp;lt;div class=&amp;quot;overflow-menu-inner collapsed&amp;quot; id=&amp;quot;desktopmenu-2&amp;quot;&amp;gt;                            &amp;lt;ul class=&amp;quot;overflow-list&amp;quot;&amp;gt;                                &amp;lt;li&amp;gt;                                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                        &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                                    &amp;lt;/a&amp;gt;                                &amp;lt;/li&amp;gt;                                &amp;lt;li class=&amp;quot;active current&amp;quot;&amp;gt;                                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot; aria-current=&amp;quot;page&amp;quot;&amp;gt;                                        &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                                    &amp;lt;/a&amp;gt;                                &amp;lt;/li&amp;gt;                                &amp;lt;li&amp;gt;                                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                        &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                                    &amp;lt;/a&amp;gt;                                &amp;lt;/li&amp;gt;                            &amp;lt;/ul&amp;gt;                        &amp;lt;/div&amp;gt;                    &amp;lt;/div&amp;gt;                &amp;lt;/li&amp;gt;                &amp;lt;li&amp;gt;                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                        &amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;/span&amp;gt;                    &amp;lt;/a&amp;gt;                &amp;lt;/li&amp;gt;            &amp;lt;/ul&amp;gt;        &amp;lt;/nav&amp;gt;        &amp;lt;div class=&amp;quot;form-group search&amp;quot;&amp;gt;            &amp;lt;label for=&amp;quot;header-search&amp;quot; class=&amp;quot;sr-only&amp;quot;&amp;gt;Søg efter indhold&amp;lt;/label&amp;gt;            &amp;lt;input class=&amp;quot;form-input&amp;quot; id=&amp;quot;header-search&amp;quot; name=&amp;quot;header-search&amp;quot; type=&amp;quot;search&amp;quot;&amp;gt;            &amp;lt;button class=&amp;quot;button button-search&amp;quot;&amp;gt;                Søg            &amp;lt;/button&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Hvis række 3 indeholder menupunkter med undermenuer, husk at anvende korrekt opmærkning med aria-expanded og aria-controls (APG, Disclosure Pattern). Hvis løsningen anvender et søgefelt, skal dette indsættes i første kodedel som vist ovenover, men udelades fra koden til mobilmenuen.Anden del skal indsættes i mobilmenuen før række 2 og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;nav class=&amp;quot;navigation-menu-mobile&amp;quot; aria-label=&amp;quot;Hovedmenu&amp;quot;&amp;gt;    &amp;lt;ul class=&amp;quot;mainmenu&amp;quot;&amp;gt;        &amp;lt;li&amp;gt;            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                &amp;lt;span&amp;gt;Første menupunkt&amp;lt;/span&amp;gt;            &amp;lt;/a&amp;gt;        &amp;lt;/li&amp;gt;        &amp;lt;li class=&amp;quot;active&amp;quot;&amp;gt;            &amp;lt;div class=&amp;quot;submenu&amp;quot;&amp;gt;                &amp;lt;button class=&amp;quot;button-mobile-menu js-menudropdown&amp;quot;                    data-js-target=&amp;quot;mobilemenu-2&amp;quot; aria-expanded=&amp;quot;true&amp;quot;                    aria-controls=&amp;quot;mobilemenu-2&amp;quot;&amp;gt;                    &amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;                &amp;lt;/button&amp;gt;                &amp;lt;div class=&amp;quot;overflow-menu-inner&amp;quot; id=&amp;quot;mobilemenu-2&amp;quot;&amp;gt;                    &amp;lt;ul class=&amp;quot;overflow-list&amp;quot;&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li class=&amp;quot;active current&amp;quot;&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot; aria-current=&amp;quot;page&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                    &amp;lt;/ul&amp;gt;                &amp;lt;/div&amp;gt;            &amp;lt;/div&amp;gt;        &amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                &amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;/span&amp;gt;            &amp;lt;/a&amp;gt;        &amp;lt;/li&amp;gt;    &amp;lt;/ul&amp;gt;&amp;lt;/nav&amp;gt;        Se eventuelt eksemplet med den overordnede struktur i headeren for nærmere detaljer om placering.Topnavigation og venstremenuHvis løsningen anvender både en topnavigation og en venstremenu til at vise links til undersider, så skal venstremenuen skjules på mindre skærme og mobilmenuen skal indeholde alle links fra begge menuer. Her er man selv ansvarlig for at sikre, at venstremenuen vises og skjules på de rette tidspunkter, for eksempel ved at anvende hjælpeklasser for display, samt at mobilmenuen indeholder de korrekte links.Sørg for at anvende aria-current=&quot;page&quot; på det link i headeren, som viser den aktuelle side. Hvis du er på en underside (fx på en side vist i venstremenuen), men stadig har et link fremhævet i headeren, skal du bruge aria-current=&quot;true&quot; i stedet.SprogvælgerHvis man anvender en sprogvælger i headeren, er der to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes før række 1 (portalinfo) og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;language-switcher-header&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;        &amp;lt;div class=&amp;quot;overflow-menu overflow-menu--open-right&amp;quot;&amp;gt;            &amp;lt;button class=&amp;quot;button-overflow-menu js-dropdown select-language-button&amp;quot;                data-js-target=&amp;quot;header-language&amp;quot; aria-expanded=&amp;quot;false&amp;quot;                aria-controls=&amp;quot;header-language&amp;quot;&amp;gt;                &amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#language&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Dansk            &amp;lt;/button&amp;gt;            &amp;lt;div class=&amp;quot;overflow-menu-inner select-language-list collapsed&amp;quot;                id=&amp;quot;header-language&amp;quot;&amp;gt;                &amp;lt;ul class=&amp;#39;overflow-list&amp;#39;&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=da&amp;quot; lang=&amp;quot;da&amp;quot; aria-current=&amp;quot;true&amp;quot;&amp;gt;Dansk&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=en-GB&amp;quot; lang=&amp;quot;en-GB&amp;quot;&amp;gt;English&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=de&amp;quot; lang=&amp;quot;de&amp;quot;&amp;gt;Deutsch&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=pl&amp;quot; lang=&amp;quot;pl&amp;quot;&amp;gt;Polski&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                &amp;lt;/ul&amp;gt;            &amp;lt;/div&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Anden del skal indsættes i mobilmenuen, igen før række 1 (portalinfo) og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;language-switcher-mobile&amp;quot;&amp;gt;    &amp;lt;h3&amp;gt;Vælg sprog&amp;lt;/h3&amp;gt;    &amp;lt;ul&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=da&amp;quot; lang=&amp;quot;da&amp;quot;                aria-current=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#check&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Dansk&amp;lt;/a&amp;gt;        &amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=en-GB&amp;quot; lang=&amp;quot;en-GB&amp;quot;&amp;gt;English&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=de&amp;quot; lang=&amp;quot;de&amp;quot;&amp;gt;Deutsch&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=pl&amp;quot; lang=&amp;quot;pl&amp;quot;&amp;gt;Polski&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;    &amp;lt;/ul&amp;gt;&amp;lt;/div&amp;gt;        JavaScriptHeaderen kræver JavaScript for at fungere. Man kan enten gøre brug af DKFDS.init() eller initiere komponenten manuelt.Mobilmenuen initieres med:new DKFDS.Navigation().init();Hvis man anvender menupunkter med undermenuer, skal disse initieres med:new Dropdown(document.getElementById(&amp;#39;OVERFLOW-BUTTON-ID&amp;#39;)).init();Undermenuer i mobilmenuen initieres med:new MenuDropdown(document.getElementById(&amp;#39;MENUOVERFLOW-BUTTON-ID&amp;#39;)).init();Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvælgeren. Funktionen til at åbne og lukke sprogvælgeren initieres på samme måde som menupunkter med undermenuer.Referencer  ARIA Authoring Practices Guide (APG): Disclosure (Show/Hide) Pattern",
+"content" : "                Retningslinjer                    Kode                    Custom element                                Åbn dette eksempel i et nyt vindue: header-with-navigation            Eksempel på header                            Indhold på siden                    Sådan bruges komponenten        Varianter        Se komponenten i eksempelløsninger                Installation        Referencer        Eksempler        Konfiguration            Sådan bruges komponentenAnvendes tilBrug headeren til at give brugeren et “ankerpunkt”, der er ens på tværs af trin og undersider i selvbetjeningsløsningen.Brug headeren til at kommunikere portal, NemLog-in-oplysninger, ansvarlig myndighed, evt. med kontaktoplysninger.En eventuel overordnet navigation (topnavigation) skal også placeres i headeren, så brugeren altid kan navigere rundt i selvbetjeningsløsningen.Anvendes ikke tilAnvend ikke headeren andre steder i løsningen end i toppen af siden.Brug ikke topnavigationen som faneblade, anvend da faneblade.VejledningTag et kig på eksemplerne på selvbetjeningsløsninger for at se, hvordan komponenten passer ind i en komplet løsning.En header består af et antal rækker med forskelligt indhold.  Række 1 og række 2 er obligatoriske. Alle selvbetjeningsløsninger skal have portal-logo, login-info og løsningstitel som minimum.  Række 3 kan anvendes hvis nødvendigt.Headerens rækker forklaretRække 1 (obligatorisk)Portal-logo, NemLog-in-oplysninger og “Log af” knap.Række 2 (obligatorisk)Selvbetjeningens navn (løsningstitel), ansvarshavende myndighed og eventuel support/kontaktoplysninger.Række 3 (frivillig)Navigation (topnavigation) i løsningen og søgefelt.VarianterSimpel header            Åbn dette eksempel i et nyt vindue: header-simple            Eksempel                        Header med navigation og søgefelt            Åbn dette eksempel i et nyt vindue: header-with-navigation            Eksempel                        Menupunkter med dropdownMenupunkter med dropdown-funktionalitet giver adgang til undermenupunkter, men er ikke et menupunkt i sig selv. Overvej om dropdown-menu er den rigtige løsning. Topnavigation kombineret med venstremenu giver større fleksibilitet og mulighed for flere niveauer i navigationen.Responsivitet og breakpointsPå små skærme foldes indhold vedr. log ind-information, ansvarlig myndighed og eventuelle menupunkter ind i en “mobil”-menu. Vi anbefaler, at løsningen kun anvender denne visning, når der ikke længere er plads til indholdet på sidens bredde.Menupunkter der ikke er plads til i sidens bredde samles i en “Mere”-menu, der vises som overflow-menu.Header med sprogvælgerHvis din selvbetjeningsløsning skal være tilgængelig på flere sprog, placeres sprogvælgeren både som overflow-menu øverst i række 1 og i sidens footer (se sprogvælger). Nedenstående eksempel viser udelukkende sprogvælgerens header-variant.            Åbn dette eksempel i et nyt vindue: header-switch-language            Eksempel                        Se komponenten i eksempelløsningerSe komponenten i eksemplerne på selvbetjeningsløsninger.InstallationHTML StrukturNedenstående eksempel viser den overordnede struktur i &amp;lt;header&amp;gt;-elementet. De øvrige afsnit indeholder uddybende kodeeksempler.            Kodeeksempel                                    Kopiér kode                        &amp;lt;header class=&amp;quot;header&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;portal-info&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;solution-info&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;navigation-menu&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;overlay&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;    &amp;lt;div class=&amp;quot;mobile-drawer&amp;quot; ...&amp;gt;        &amp;lt;div class=&amp;quot;menu-top&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;        &amp;lt;nav class=&amp;quot;navigation-menu-mobile&amp;quot; ...&amp;gt;...&amp;lt;/nav&amp;gt;        &amp;lt;div class=&amp;quot;solution-info-mobile&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;        &amp;lt;div class=&amp;quot;portal-info-mobile&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/header&amp;gt;        Placer &amp;lt;header&amp;gt;-elementet i din HTML-sides &amp;lt;body&amp;gt;-element.Overlay og mobilmenuSom standard ændres headeren til udelukkende at vise løsningstitel, evt. søgefelt og en menuknap, når skærmen er mindre end 992px bred. Headeren skal derfor altid indeholde nedenstående kode, som bruges på mindre skærme, for eksempel mobiltelefoner. Når menuen er åben, vises et mørkt overlay oven på det øvrige sideindhold.            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;overlay&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;mobile-drawer&amp;quot; role=&amp;quot;dialog&amp;quot; aria-modal=&amp;quot;true&amp;quot; aria-labelledby=&amp;quot;menu-heading&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;menu-top&amp;quot;&amp;gt;        &amp;lt;h2 id=&amp;quot;menu-heading&amp;quot; class=&amp;quot;menu-heading&amp;quot;&amp;gt;Menu&amp;lt;/h2&amp;gt;        &amp;lt;button class=&amp;quot;function-link button-menu-close js-menu-close&amp;quot;            aria-label=&amp;quot;Luk menu&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#close&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Luk&amp;lt;/button&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Det er muligt at ændre, hvornår headeren skal vise menuknappen, ved at bruge Sass-variablen $nav-responsive-breakpoint og derefter bygge CSS’en selv.Række 1Række 1 indeholder portal-logo, NemLog-in-oplysninger og “Log af” knap. Headeren skal altid indeholde denne række.Der er to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes øverst i headeren og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;portal-info&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;portal-info-inner container&amp;quot;&amp;gt;        &amp;lt;a href=&amp;quot;#&amp;quot; title=&amp;quot;Gå til Portalnavns forside&amp;quot; aria-label=&amp;quot;Portalnavn&amp;quot; class=&amp;quot;logo&amp;quot;&amp;gt;            &amp;lt;span&amp;gt;Portalnavn&amp;lt;/span&amp;gt;        &amp;lt;/a&amp;gt;        &amp;lt;button class=&amp;quot;function-link button-menu-open js-menu-open ml-auto d-print-none&amp;quot;            aria-haspopup=&amp;quot;dialog&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#menu&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Menu&amp;lt;/button&amp;gt;        &amp;lt;div class=&amp;quot;portal-user&amp;quot;&amp;gt;            &amp;lt;p class=&amp;quot;user&amp;quot;&amp;gt;                Anders Andersen, Forsikringens Forsikringsfirma            &amp;lt;/p&amp;gt;            &amp;lt;button                class=&amp;quot;function-link d-print-none log-off&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Log                af&amp;lt;/button&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Anden del skal indsættes nederst i mobilmenuen og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;portal-info-mobile&amp;quot;&amp;gt;    &amp;lt;h3 class=&amp;quot;sr-only&amp;quot;&amp;gt;Bruger&amp;lt;/h3&amp;gt;    &amp;lt;p class=&amp;quot;user&amp;quot;&amp;gt;        &amp;lt;span class=&amp;quot;mb-3&amp;quot;&amp;gt;Anders Andersen&amp;lt;/span&amp;gt;        &amp;lt;span&amp;gt;Forsikringens Forsikringsfirma&amp;lt;/span&amp;gt;    &amp;lt;/p&amp;gt;    &amp;lt;p&amp;gt;        &amp;lt;button            class=&amp;quot;function-link d-print-none log-off&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Log            af&amp;lt;/button&amp;gt;    &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;        Se eventuelt eksemplet med den overordnede struktur i headeren for nærmere detaljer om placering.Række 2Række 2 indeholder selvbetjeningens navn (løsningstitel), ansvarshavende myndighed og eventuel support/kontaktoplysninger. Headeren skal altid indeholde denne række.Der er to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes efter række 1 og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;solution-info&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;solution-info-inner container&amp;quot;&amp;gt;        &amp;lt;div class=&amp;quot;solution-heading&amp;quot;&amp;gt;            &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Løsningstitel&amp;lt;/a&amp;gt;        &amp;lt;/div&amp;gt;        &amp;lt;div class=&amp;quot;additional-info&amp;quot;&amp;gt;            &amp;lt;p&amp;gt;&amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;            &amp;lt;p&amp;gt;Support: 12 34 56 78&amp;lt;/p&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Anden del skal indsættes i mobilmenuen før række 1 og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;solution-info-mobile&amp;quot;&amp;gt;    &amp;lt;h3 class=&amp;quot;sr-only&amp;quot;&amp;gt;Myndighed&amp;lt;/h3&amp;gt;    &amp;lt;p class=&amp;quot;mb-2&amp;quot;&amp;gt;&amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;    &amp;lt;p&amp;gt;Support: 12 34 56 78&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;        Se eventuelt eksemplet med den overordnede struktur i headeren for nærmere detaljer om placering.Række 3Række 3 indeholder topnavigation i løsningen og søgefelt. Det er valgfrit, om headeren skal indeholde denne række.Der er to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes efter række 2 og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;navigation-menu contains-search&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;navigation-menu-inner container&amp;quot;&amp;gt;        &amp;lt;nav class=&amp;quot;nav&amp;quot; aria-label=&amp;quot;Hovedmenu&amp;quot;&amp;gt;            &amp;lt;ul class=&amp;quot;mainmenu&amp;quot;&amp;gt;                &amp;lt;li&amp;gt;                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                        &amp;lt;span&amp;gt;Første menupunkt&amp;lt;/span&amp;gt;                    &amp;lt;/a&amp;gt;                &amp;lt;/li&amp;gt;                &amp;lt;li class=&amp;quot;active&amp;quot;&amp;gt;                    &amp;lt;div class=&amp;quot;submenu&amp;quot;&amp;gt;                        &amp;lt;button class=&amp;quot;button-overflow-menu js-dropdown&amp;quot;                            data-js-target=&amp;quot;desktopmenu-2&amp;quot; aria-expanded=&amp;quot;false&amp;quot;                            aria-controls=&amp;quot;desktopmenu-2&amp;quot;&amp;gt;                            &amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;                        &amp;lt;/button&amp;gt;                        &amp;lt;div class=&amp;quot;overflow-menu-inner collapsed&amp;quot; id=&amp;quot;desktopmenu-2&amp;quot;&amp;gt;                            &amp;lt;ul class=&amp;quot;overflow-list&amp;quot;&amp;gt;                                &amp;lt;li&amp;gt;                                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                        &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                                    &amp;lt;/a&amp;gt;                                &amp;lt;/li&amp;gt;                                &amp;lt;li class=&amp;quot;active current&amp;quot;&amp;gt;                                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot; aria-current=&amp;quot;page&amp;quot;&amp;gt;                                        &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                                    &amp;lt;/a&amp;gt;                                &amp;lt;/li&amp;gt;                                &amp;lt;li&amp;gt;                                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                        &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                                    &amp;lt;/a&amp;gt;                                &amp;lt;/li&amp;gt;                            &amp;lt;/ul&amp;gt;                        &amp;lt;/div&amp;gt;                    &amp;lt;/div&amp;gt;                &amp;lt;/li&amp;gt;                &amp;lt;li&amp;gt;                    &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                        &amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;/span&amp;gt;                    &amp;lt;/a&amp;gt;                &amp;lt;/li&amp;gt;            &amp;lt;/ul&amp;gt;        &amp;lt;/nav&amp;gt;        &amp;lt;div class=&amp;quot;form-group search&amp;quot;&amp;gt;            &amp;lt;label for=&amp;quot;header-search&amp;quot; class=&amp;quot;sr-only&amp;quot;&amp;gt;Søg efter indhold&amp;lt;/label&amp;gt;            &amp;lt;input class=&amp;quot;form-input&amp;quot; id=&amp;quot;header-search&amp;quot; name=&amp;quot;header-search&amp;quot; type=&amp;quot;search&amp;quot;&amp;gt;            &amp;lt;button class=&amp;quot;button button-search&amp;quot;&amp;gt;                Søg            &amp;lt;/button&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Hvis række 3 indeholder menupunkter med undermenuer, husk at anvende korrekt opmærkning med aria-expanded og aria-controls (APG, Disclosure Pattern). Hvis løsningen anvender et søgefelt, skal dette indsættes i første kodedel som vist ovenover, men udelades fra koden til mobilmenuen.Anden del skal indsættes i mobilmenuen før række 2 og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;nav class=&amp;quot;navigation-menu-mobile&amp;quot; aria-label=&amp;quot;Hovedmenu&amp;quot;&amp;gt;    &amp;lt;ul class=&amp;quot;mainmenu&amp;quot;&amp;gt;        &amp;lt;li&amp;gt;            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                &amp;lt;span&amp;gt;Første menupunkt&amp;lt;/span&amp;gt;            &amp;lt;/a&amp;gt;        &amp;lt;/li&amp;gt;        &amp;lt;li class=&amp;quot;active&amp;quot;&amp;gt;            &amp;lt;div class=&amp;quot;submenu&amp;quot;&amp;gt;                &amp;lt;button class=&amp;quot;button-mobile-menu js-menudropdown&amp;quot;                    data-js-target=&amp;quot;mobilemenu-2&amp;quot; aria-expanded=&amp;quot;true&amp;quot;                    aria-controls=&amp;quot;mobilemenu-2&amp;quot;&amp;gt;                    &amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;                &amp;lt;/button&amp;gt;                &amp;lt;div class=&amp;quot;overflow-menu-inner&amp;quot; id=&amp;quot;mobilemenu-2&amp;quot;&amp;gt;                    &amp;lt;ul class=&amp;quot;overflow-list&amp;quot;&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li class=&amp;quot;active current&amp;quot;&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot; aria-current=&amp;quot;page&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Endnu en undermenu&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                    &amp;lt;/ul&amp;gt;                &amp;lt;/div&amp;gt;            &amp;lt;/div&amp;gt;        &amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;            &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;nav-link&amp;quot;&amp;gt;                &amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;/span&amp;gt;            &amp;lt;/a&amp;gt;        &amp;lt;/li&amp;gt;    &amp;lt;/ul&amp;gt;&amp;lt;/nav&amp;gt;        Se eventuelt eksemplet med den overordnede struktur i headeren for nærmere detaljer om placering.Topnavigation og venstremenuHvis løsningen anvender både en topnavigation og en venstremenu til at vise links til undersider, så skal venstremenuen skjules på mindre skærme og mobilmenuen skal indeholde alle links fra begge menuer. Her er man selv ansvarlig for at sikre, at venstremenuen vises og skjules på de rette tidspunkter, for eksempel ved at anvende hjælpeklasser for display, samt at mobilmenuen indeholder de korrekte links.Sørg for at anvende aria-current=&quot;page&quot; på det link i headeren, som viser den aktuelle side. Hvis du er på en underside (fx på en side vist i venstremenuen), men stadig har et link fremhævet i headeren, skal du bruge aria-current=&quot;true&quot; i stedet.SprogvælgerHvis man anvender en sprogvælger i headeren, er der to dele, som skal indsættes i &amp;lt;header&amp;gt;-elementet.Første del skal indsættes før række 1 (portalinfo) og indeholder koden, der vises på større skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;language-switcher-header&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;        &amp;lt;div class=&amp;quot;overflow-menu overflow-menu--open-right&amp;quot;&amp;gt;            &amp;lt;button class=&amp;quot;button-overflow-menu js-dropdown select-language-button&amp;quot;                data-js-target=&amp;quot;header-language&amp;quot; aria-expanded=&amp;quot;false&amp;quot;                aria-controls=&amp;quot;header-language&amp;quot;&amp;gt;                &amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#language&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Dansk            &amp;lt;/button&amp;gt;            &amp;lt;div class=&amp;quot;overflow-menu-inner select-language-list collapsed&amp;quot;                id=&amp;quot;header-language&amp;quot;&amp;gt;                &amp;lt;ul class=&amp;#39;overflow-list&amp;#39;&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=da&amp;quot; lang=&amp;quot;da&amp;quot; aria-current=&amp;quot;true&amp;quot;&amp;gt;Dansk&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=en-GB&amp;quot; lang=&amp;quot;en-GB&amp;quot;&amp;gt;English&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=de&amp;quot; lang=&amp;quot;de&amp;quot;&amp;gt;Deutsch&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=pl&amp;quot; lang=&amp;quot;pl&amp;quot;&amp;gt;Polski&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                &amp;lt;/ul&amp;gt;            &amp;lt;/div&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;        Anden del skal indsættes i mobilmenuen, igen før række 1 (portalinfo) og indeholder koden, der vises på mindre skærme:            Kodeeksempel                                    Kopiér kode                        &amp;lt;div class=&amp;quot;language-switcher-mobile&amp;quot;&amp;gt;    &amp;lt;h3&amp;gt;Vælg sprog&amp;lt;/h3&amp;gt;    &amp;lt;ul&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=da&amp;quot; lang=&amp;quot;da&amp;quot;                aria-current=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;use href=&amp;quot;#check&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&amp;lt;/svg&amp;gt;Dansk&amp;lt;/a&amp;gt;        &amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=en-GB&amp;quot; lang=&amp;quot;en-GB&amp;quot;&amp;gt;English&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=de&amp;quot; lang=&amp;quot;de&amp;quot;&amp;gt;Deutsch&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;?lang=pl&amp;quot; lang=&amp;quot;pl&amp;quot;&amp;gt;Polski&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;    &amp;lt;/ul&amp;gt;&amp;lt;/div&amp;gt;        JavaScriptHeaderen kræver JavaScript for at fungere. Man kan enten gøre brug af DKFDS.init() eller initiere komponenten manuelt.Mobilmenuen initieres med:new DKFDS.Navigation().init();Hvis man anvender menupunkter med undermenuer, skal disse initieres med:new Dropdown(document.getElementById(&amp;#39;OVERFLOW-BUTTON-ID&amp;#39;)).init();Undermenuer i mobilmenuen initieres med:new MenuDropdown(document.getElementById(&amp;#39;MENUOVERFLOW-BUTTON-ID&amp;#39;)).init();Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvælgeren. Funktionen til at åbne og lukke sprogvælgeren initieres på samme måde som menupunkter med undermenuer.Referencer  ARIA Authoring Practices Guide (APG): Disclosure (Show/Hide) PatternEksempler    Åbn i et nyt vindue                                                                                Log af                Anders Andersen, Forsikringens Forsikringsfirma                Løsningstitel                    Myndighedsnavn            Support: 12 34 56 78                                                                                                                            Første menupunkt                                                                                                Undermenu                                    Undermenu                                    Undermenu                                    Undermenu                                                                                                                            Andet menupunkt                                                                        Tredje menupunkt                                                                                                Undermenu                                    Undermenu                                    Undermenu                                                                                                                            Fjerde menupunkt                                                                        Femte menupunkt                                                                                                Undermenu                                    Undermenu                                    Undermenu                                                                                                                                                                                                        Søg                                                                                                                                                                                        Første menupunkt                                                                                                            Undermenu                                        Undermenu                                        Undermenu                                        Undermenu                                                                                                                                                Andet menupunkt                                                                                    Tredje menupunkt                                                                                                            Undermenu                                        Undermenu                                        Undermenu                                                                                                                                                Fjerde menupunkt                                                                                    Femte menupunkt                                                                                                            Undermenu                                        Undermenu                                        Undermenu                                                                                                                                                                                                                        Myndighedsnavn                    Support: 12 34 56 78                                                                                                                        Log af                                Anders AndersenForsikringens Forsikringsfirma                                                                    Custom element                Genereret HTML                                                                                                                Kopiér kode                                                                            &amp;lt;div class=&amp;quot;header&amp;quot;&amp;gt;    &amp;lt;fds-portal-info&amp;gt;        &amp;lt;a slot=&amp;quot;logo&amp;quot; href=&amp;quot;#&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;&amp;lt;img id=&amp;quot;example-header-logo&amp;quot; src=&amp;quot;/assets/img/logo_virk.svg&amp;quot; alt=&amp;quot;Portalnavn&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;        &amp;lt;fds-drawer-button slot=&amp;quot;drawer-button&amp;quot; drawer=&amp;quot;drawer-example-default&amp;quot; class=&amp;quot;d-block d-lg-none&amp;quot;&amp;gt;&amp;lt;/fds-drawer-button&amp;gt;        &amp;lt;button slot=&amp;quot;log-off-button&amp;quot;&amp;gt;            &amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;                &amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;            &amp;lt;/svg&amp;gt;Log af        &amp;lt;/button&amp;gt;        &amp;lt;p slot=&amp;quot;user&amp;quot;&amp;gt;Anders Andersen, Forsikringens Forsikringsfirma&amp;lt;/p&amp;gt;    &amp;lt;/fds-portal-info&amp;gt;    &amp;lt;fds-solution-info&amp;gt;        &amp;lt;a slot=&amp;quot;solution-heading&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;Løsningstitel&amp;lt;/a&amp;gt;        &amp;lt;p slot=&amp;quot;additional-info&amp;quot; class=&amp;quot;d-none d-lg-block&amp;quot;&amp;gt;            &amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;            &amp;lt;span&amp;gt;Support: 12 34 56 78&amp;lt;/span&amp;gt;        &amp;lt;/p&amp;gt;    &amp;lt;/fds-solution-info&amp;gt;    &amp;lt;fds-main-menu&amp;gt;        &amp;lt;div class=&amp;quot;main-menu-inner d-block d-lg-flex&amp;quot;&amp;gt;            &amp;lt;nav aria-label=&amp;quot;Eksemplets hovedmenu&amp;quot; class=&amp;quot;d-none d-lg-block&amp;quot;&amp;gt;                &amp;lt;ul&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                            &amp;lt;button&amp;gt;&amp;lt;span&amp;gt;Første menupunkt&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;                            &amp;lt;div&amp;gt;                                &amp;lt;ul&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                &amp;lt;/ul&amp;gt;                            &amp;lt;/div&amp;gt;                        &amp;lt;/fds-dropdown-menu&amp;gt;                    &amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                            &amp;lt;button&amp;gt;&amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;                            &amp;lt;div&amp;gt;                                &amp;lt;ul&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; aria-current=&amp;quot;page&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                &amp;lt;/ul&amp;gt;                            &amp;lt;/div&amp;gt;                        &amp;lt;/fds-dropdown-menu&amp;gt;                    &amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Fjerde menupunkt&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                            &amp;lt;button&amp;gt;&amp;lt;span&amp;gt;Femte menupunkt&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;                            &amp;lt;div&amp;gt;                                &amp;lt;ul&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                &amp;lt;/ul&amp;gt;                            &amp;lt;/div&amp;gt;                        &amp;lt;/fds-dropdown-menu&amp;gt;                    &amp;lt;/li&amp;gt;                &amp;lt;/ul&amp;gt;            &amp;lt;/nav&amp;gt;            &amp;lt;div class=&amp;quot;search-form&amp;quot;&amp;gt;                &amp;lt;div class=&amp;quot;form-group search&amp;quot;&amp;gt;                    &amp;lt;input class=&amp;quot;form-input&amp;quot; id=&amp;quot;header-search&amp;quot; name=&amp;quot;header-search&amp;quot; type=&amp;quot;search&amp;quot; aria-label=&amp;quot;Søg efter indhold&amp;quot;&amp;gt;                    &amp;lt;button class=&amp;quot;button button-search&amp;quot;&amp;gt;Søg&amp;lt;/button&amp;gt;                &amp;lt;/div&amp;gt;            &amp;lt;/div&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/fds-main-menu&amp;gt;    &amp;lt;fds-drawer id=&amp;quot;drawer-example-default&amp;quot; class=&amp;quot;d-block d-lg-none&amp;quot;&amp;gt;        &amp;lt;div class=&amp;quot;mobile-drawer&amp;quot;&amp;gt;            &amp;lt;fds-main-menu&amp;gt;                &amp;lt;nav aria-label=&amp;quot;Eksemplets mobilmenu&amp;quot;&amp;gt;                    &amp;lt;ul&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;button&amp;gt;&amp;lt;span&amp;gt;Første menupunkt&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;                                &amp;lt;div&amp;gt;                                    &amp;lt;ul&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;/ul&amp;gt;                                &amp;lt;/div&amp;gt;                            &amp;lt;/fds-dropdown-menu&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;button&amp;gt;&amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;                                &amp;lt;div&amp;gt;                                    &amp;lt;ul&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; aria-current=&amp;quot;page&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;/ul&amp;gt;                                &amp;lt;/div&amp;gt;                            &amp;lt;/fds-dropdown-menu&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Fjerde menupunkt&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;button&amp;gt;&amp;lt;span&amp;gt;Femte menupunkt&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;                                &amp;lt;div&amp;gt;                                    &amp;lt;ul&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;                                    &amp;lt;/ul&amp;gt;                                &amp;lt;/div&amp;gt;                            &amp;lt;/fds-dropdown-menu&amp;gt;                        &amp;lt;/li&amp;gt;                    &amp;lt;/ul&amp;gt;                &amp;lt;/nav&amp;gt;            &amp;lt;/fds-main-menu&amp;gt;            &amp;lt;fds-solution-info&amp;gt;                &amp;lt;p slot=&amp;quot;additional-info&amp;quot;&amp;gt;                    &amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;                    &amp;lt;span&amp;gt;Support: 12 34 56 78&amp;lt;/span&amp;gt;                &amp;lt;/p&amp;gt;            &amp;lt;/fds-solution-info&amp;gt;            &amp;lt;fds-portal-info&amp;gt;                &amp;lt;button slot=&amp;quot;log-off-button&amp;quot;&amp;gt;                    &amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;                        &amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;                    &amp;lt;/svg&amp;gt;Log af                &amp;lt;/button&amp;gt;                &amp;lt;p slot=&amp;quot;user&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;mb-3&amp;quot;&amp;gt;Anders Andersen&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;Forsikringens Forsikringsfirma&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;            &amp;lt;/fds-portal-info&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/fds-drawer&amp;gt;&amp;lt;/div&amp;gt;                                                                                                                                                                            Kopiér kode                                                                            &amp;lt;div class=&amp;quot;header&amp;quot;&amp;gt;    &amp;lt;fds-portal-info&amp;gt;        &amp;lt;a slot=&amp;quot;logo&amp;quot; href=&amp;quot;#&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;            &amp;lt;img id=&amp;quot;example-header-logo&amp;quot; src=&amp;quot;/assets/img/logo_virk.svg&amp;quot; alt=&amp;quot;Portalnavn&amp;quot;&amp;gt;        &amp;lt;/a&amp;gt;        &amp;lt;fds-drawer-button slot=&amp;quot;drawer-button&amp;quot; drawer=&amp;quot;drawer-example-default&amp;quot; class=&amp;quot;d-block d-lg-none&amp;quot;&amp;gt;            &amp;lt;button type=&amp;quot;button&amp;quot; aria-haspopup=&amp;quot;dialog&amp;quot;&amp;gt;                &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg&amp;quot;&amp;gt;                    &amp;lt;path d=&amp;quot;M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                &amp;lt;/svg&amp;gt;                &amp;lt;span&amp;gt;Menu&amp;lt;/span&amp;gt;            &amp;lt;/button&amp;gt;        &amp;lt;/fds-drawer-button&amp;gt;        &amp;lt;button slot=&amp;quot;log-off-button&amp;quot;&amp;gt;            &amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;                &amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;            &amp;lt;/svg&amp;gt;Log af        &amp;lt;/button&amp;gt;        &amp;lt;p slot=&amp;quot;user&amp;quot;&amp;gt;Anders Andersen, Forsikringens Forsikringsfirma&amp;lt;/p&amp;gt;    &amp;lt;/fds-portal-info&amp;gt;    &amp;lt;fds-solution-info&amp;gt;        &amp;lt;a slot=&amp;quot;solution-heading&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;Løsningstitel&amp;lt;/a&amp;gt;        &amp;lt;p slot=&amp;quot;additional-info&amp;quot; class=&amp;quot;d-none d-lg-block&amp;quot;&amp;gt;            &amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;            &amp;lt;span&amp;gt;Support: 12 34 56 78&amp;lt;/span&amp;gt;        &amp;lt;/p&amp;gt;    &amp;lt;/fds-solution-info&amp;gt;    &amp;lt;fds-main-menu&amp;gt;        &amp;lt;div class=&amp;quot;main-menu-inner d-block d-lg-flex&amp;quot;&amp;gt;            &amp;lt;nav aria-label=&amp;quot;Eksemplets hovedmenu&amp;quot; class=&amp;quot;d-none d-lg-block&amp;quot;&amp;gt;                &amp;lt;ul&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                            &amp;lt;button data-menu-item=&amp;quot;&amp;quot; class=&amp;quot;dropdown-button&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Første menupunkt&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg collapsed-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                    &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg expanded-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                &amp;lt;/span&amp;gt;                            &amp;lt;/button&amp;gt;                            &amp;lt;div class=&amp;quot;dropdown-menu collapsed&amp;quot; tabindex=&amp;quot;-1&amp;quot;&amp;gt;                                &amp;lt;ul&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                &amp;lt;/ul&amp;gt;                            &amp;lt;/div&amp;gt;                        &amp;lt;/fds-dropdown-menu&amp;gt;                    &amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                            &amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;                        &amp;lt;/a&amp;gt;                    &amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                            &amp;lt;button data-menu-item=&amp;quot;&amp;quot; class=&amp;quot;dropdown-button&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg collapsed-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                    &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg expanded-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                &amp;lt;/span&amp;gt;                            &amp;lt;/button&amp;gt;                            &amp;lt;div class=&amp;quot;dropdown-menu collapsed&amp;quot; tabindex=&amp;quot;-1&amp;quot;&amp;gt;                                &amp;lt;ul&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; aria-current=&amp;quot;page&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                &amp;lt;/ul&amp;gt;                            &amp;lt;/div&amp;gt;                        &amp;lt;/fds-dropdown-menu&amp;gt;                    &amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                            &amp;lt;span&amp;gt;Fjerde menupunkt&amp;lt;/span&amp;gt;                        &amp;lt;/a&amp;gt;                    &amp;lt;/li&amp;gt;                    &amp;lt;li&amp;gt;                        &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                            &amp;lt;button data-menu-item=&amp;quot;&amp;quot; class=&amp;quot;dropdown-button&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Femte menupunkt&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg collapsed-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                    &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg expanded-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                &amp;lt;/span&amp;gt;                            &amp;lt;/button&amp;gt;                            &amp;lt;div class=&amp;quot;dropdown-menu collapsed&amp;quot; tabindex=&amp;quot;-1&amp;quot;&amp;gt;                                &amp;lt;ul&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                    &amp;lt;li&amp;gt;                                        &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                            &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                        &amp;lt;/a&amp;gt;                                    &amp;lt;/li&amp;gt;                                &amp;lt;/ul&amp;gt;                            &amp;lt;/div&amp;gt;                        &amp;lt;/fds-dropdown-menu&amp;gt;                    &amp;lt;/li&amp;gt;                    &amp;lt;li class=&amp;quot;more-button&amp;quot; data-hidden=&amp;quot;&amp;quot;&amp;gt;                        &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                            &amp;lt;button data-menu-item=&amp;quot;&amp;quot; class=&amp;quot;dropdown-button&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Mere&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg collapsed-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                    &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg expanded-icon&amp;quot;&amp;gt;                                        &amp;lt;path d=&amp;quot;M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                    &amp;lt;/svg&amp;gt;                                &amp;lt;/span&amp;gt;                            &amp;lt;/button&amp;gt;                            &amp;lt;div class=&amp;quot;dropdown-menu collapsed&amp;quot; tabindex=&amp;quot;-1&amp;quot;&amp;gt;                                &amp;lt;ul&amp;gt;&amp;lt;/ul&amp;gt;                            &amp;lt;/div&amp;gt;                        &amp;lt;/fds-dropdown-menu&amp;gt;                    &amp;lt;/li&amp;gt;                &amp;lt;/ul&amp;gt;            &amp;lt;/nav&amp;gt;            &amp;lt;div class=&amp;quot;search-form&amp;quot;&amp;gt;                &amp;lt;div class=&amp;quot;form-group search&amp;quot;&amp;gt;                    &amp;lt;input class=&amp;quot;form-input&amp;quot; id=&amp;quot;header-search&amp;quot; name=&amp;quot;header-search&amp;quot; type=&amp;quot;search&amp;quot; aria-label=&amp;quot;Søg efter indhold&amp;quot;&amp;gt;                    &amp;lt;button class=&amp;quot;button button-search&amp;quot;&amp;gt;Søg&amp;lt;/button&amp;gt;                &amp;lt;/div&amp;gt;            &amp;lt;/div&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/fds-main-menu&amp;gt;    &amp;lt;fds-drawer id=&amp;quot;drawer-example-default&amp;quot; class=&amp;quot;d-block d-lg-none&amp;quot;&amp;gt;        &amp;lt;div class=&amp;quot;overlay&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;        &amp;lt;div class=&amp;quot;mobile-drawer&amp;quot; role=&amp;quot;dialog&amp;quot; aria-modal=&amp;quot;true&amp;quot; aria-labelledby=&amp;quot;heac703e282&amp;quot;&amp;gt;            &amp;lt;div class=&amp;quot;menu-top&amp;quot;&amp;gt;                &amp;lt;h2 class=&amp;quot;menu-heading&amp;quot; id=&amp;quot;heac703e282&amp;quot;&amp;gt;Menu&amp;lt;/h2&amp;gt;                &amp;lt;button class=&amp;quot;function-link button-menu-close&amp;quot; aria-label=&amp;quot;Luk menu&amp;quot;&amp;gt;                    &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg&amp;quot;&amp;gt;                        &amp;lt;path d=&amp;quot;m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                    &amp;lt;/svg&amp;gt;                    &amp;lt;span&amp;gt;Luk&amp;lt;/span&amp;gt;                &amp;lt;/button&amp;gt;            &amp;lt;/div&amp;gt;            &amp;lt;fds-main-menu&amp;gt;                &amp;lt;nav aria-label=&amp;quot;Eksemplets mobilmenu&amp;quot;&amp;gt;                    &amp;lt;ul&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;button data-menu-item=&amp;quot;&amp;quot; class=&amp;quot;dropdown-button&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;                                    &amp;lt;span&amp;gt;Første menupunkt&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg collapsed-icon&amp;quot;&amp;gt;                                            &amp;lt;path d=&amp;quot;M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                        &amp;lt;/svg&amp;gt;                                        &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg expanded-icon&amp;quot;&amp;gt;                                            &amp;lt;path d=&amp;quot;M200-440v-80h560v80H200Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                        &amp;lt;/svg&amp;gt;                                    &amp;lt;/span&amp;gt;                                &amp;lt;/button&amp;gt;                                &amp;lt;div class=&amp;quot;dropdown-menu collapsed&amp;quot;&amp;gt;                                    &amp;lt;ul&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                    &amp;lt;/ul&amp;gt;                                &amp;lt;/div&amp;gt;                            &amp;lt;/fds-dropdown-menu&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Andet menupunkt&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;button data-menu-item=&amp;quot;&amp;quot; class=&amp;quot;dropdown-button&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;                                    &amp;lt;span&amp;gt;Tredje menupunkt&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg collapsed-icon&amp;quot;&amp;gt;                                            &amp;lt;path d=&amp;quot;M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                        &amp;lt;/svg&amp;gt;                                        &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg expanded-icon&amp;quot;&amp;gt;                                            &amp;lt;path d=&amp;quot;M200-440v-80h560v80H200Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                        &amp;lt;/svg&amp;gt;                                    &amp;lt;/span&amp;gt;                                &amp;lt;/button&amp;gt;                                &amp;lt;div class=&amp;quot;dropdown-menu collapsed&amp;quot;&amp;gt;                                    &amp;lt;ul&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; aria-current=&amp;quot;page&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                    &amp;lt;/ul&amp;gt;                                &amp;lt;/div&amp;gt;                            &amp;lt;/fds-dropdown-menu&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                &amp;lt;span&amp;gt;Fjerde menupunkt&amp;lt;/span&amp;gt;                            &amp;lt;/a&amp;gt;                        &amp;lt;/li&amp;gt;                        &amp;lt;li&amp;gt;                            &amp;lt;fds-dropdown-menu expanded=&amp;quot;false&amp;quot;&amp;gt;                                &amp;lt;button data-menu-item=&amp;quot;&amp;quot; class=&amp;quot;dropdown-button&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;                                    &amp;lt;span&amp;gt;Femte menupunkt&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg collapsed-icon&amp;quot;&amp;gt;                                            &amp;lt;path d=&amp;quot;M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                        &amp;lt;/svg&amp;gt;                                        &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; viewBox=&amp;quot;0 -960 960 960&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;icon-svg expanded-icon&amp;quot;&amp;gt;                                            &amp;lt;path d=&amp;quot;M200-440v-80h560v80H200Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;                                        &amp;lt;/svg&amp;gt;                                    &amp;lt;/span&amp;gt;                                &amp;lt;/button&amp;gt;                                &amp;lt;div class=&amp;quot;dropdown-menu collapsed&amp;quot;&amp;gt;                                    &amp;lt;ul&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                        &amp;lt;li&amp;gt;                                            &amp;lt;a href=&amp;quot;#&amp;quot; data-menu-item=&amp;quot;&amp;quot;&amp;gt;                                                &amp;lt;span&amp;gt;Undermenu&amp;lt;/span&amp;gt;                                            &amp;lt;/a&amp;gt;                                        &amp;lt;/li&amp;gt;                                    &amp;lt;/ul&amp;gt;                                &amp;lt;/div&amp;gt;                            &amp;lt;/fds-dropdown-menu&amp;gt;                        &amp;lt;/li&amp;gt;                    &amp;lt;/ul&amp;gt;                &amp;lt;/nav&amp;gt;            &amp;lt;/fds-main-menu&amp;gt;            &amp;lt;fds-solution-info&amp;gt;                &amp;lt;p slot=&amp;quot;additional-info&amp;quot;&amp;gt;                    &amp;lt;strong class=&amp;quot;authority-name&amp;quot;&amp;gt;Myndighedsnavn&amp;lt;/strong&amp;gt;                    &amp;lt;span&amp;gt;Support: 12 34 56 78&amp;lt;/span&amp;gt;                &amp;lt;/p&amp;gt;            &amp;lt;/fds-solution-info&amp;gt;            &amp;lt;fds-portal-info&amp;gt;                &amp;lt;button slot=&amp;quot;log-off-button&amp;quot;&amp;gt;                    &amp;lt;svg class=&amp;quot;icon-svg&amp;quot; focusable=&amp;quot;false&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;                        &amp;lt;use href=&amp;quot;#lock&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;                    &amp;lt;/svg&amp;gt;Log af                &amp;lt;/button&amp;gt;                &amp;lt;p slot=&amp;quot;user&amp;quot;&amp;gt;                    &amp;lt;span class=&amp;quot;mb-3&amp;quot;&amp;gt;Anders Andersen&amp;lt;/span&amp;gt;                    &amp;lt;span&amp;gt;Forsikringens Forsikringsfirma&amp;lt;/span&amp;gt;                &amp;lt;/p&amp;gt;            &amp;lt;/fds-portal-info&amp;gt;        &amp;lt;/div&amp;gt;    &amp;lt;/fds-drawer&amp;gt;&amp;lt;/div&amp;gt;                                                                                    Brug &amp;lt;div class=&quot;main-menu-inner&quot;&amp;gt; i &amp;lt;fds-main-menu&amp;gt; i desktop-versionen. Udelad wrapper og klasse, når menuen placeres i en &amp;lt;fds-drawer&amp;gt;.Konfigurationfds-drawer-buttonAttributter            Attribut      Beskrivelse                  drawer      ID på den drawer, der skal åbnes ved tryk på knappen.              button-text      Tekst på knappen.      fds-drawerAttributter            Attribut      Beskrivelse                  open      Hvis til stede, vil menuen være åben.              heading      Tekst der skal vises øverst i menuen. Default er ‘Menu’.              close-button-text      Tekst på luk-knappen i menuen. Default er ‘Luk’.              ready      Sæt til ‘false’ hvis initialisering af menuen skal ske manuelt i stedet for ved indlæsning af DOM’en.      fds-main-menuFunktioner            Funktion      Beskrivelse                  rebuildMoreMenu()      Genbyg mere-menuen såfremt behovet opstår (kun muligt ved desktop-visning)      fds-portal-infoSlots            Slot      Beskrivelse                  user      Brugeroplysninger. Placeres til venstre for log af-knappen.              log-off-button      Log af-knap. VIl blive placeret i højre side af portallinjen.              logo      Logo. Placeres i venstre side af portallinjen.              drawer-button      Placeres samme sted som log af-knappen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises.      fds-solution-infoSlots            Slot      Beskrivelse                  solution-heading      Løsningens navn. Vises i venstre side.              additional-info      Information vist i højre side af løsningslinjen.              drawer-button      Bør kun anvendes, hvis det ikke er muligt at vise knappen i portallinjen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises.      ",
 "description" : "Tydelige headers er med til at skabe en let navigation for brugeren og hjælper dermed brugeren med at finde vej.",
 "subnav": [""]
 },
@@ -2290,7 +2421,7 @@ let searchIndex = [
 {
 "url": "/komponenter/inputfelter/",
 "title": "Inputfelter",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Inputfelter lader brugeren indtaste kort information.",
 "tags": ['tekstfelt','input','frivilligt','påkrævet','påkrævede','required','fejlbesked','fejlmeddelelse','fejl på felt','hjælpetekst','hjælp på felt','felt','felter','længde på felter','deaktiveret felt','read-only','feltbredde','låst felt','karakterbegrænsning','karakterbegraensning','prefix','præfix','prefiks','præfiks','suffix','suffiks','sufix','sufiks'],
@@ -2307,8 +2438,8 @@ let searchIndex = [
 
 {
 "url": "/komponenter/knapper/",
-"title": "Knapper (Buttons)",
-"category": "Komponenter_category",
+"title": "Knapper",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Knapper lader brugeren udføre centrale funktioner.",
 "tags": ['primærknap','sekundærknap','tertiærknap'],
@@ -2326,7 +2457,7 @@ let searchIndex = [
 {
 "url": "/komponenter/spinner/",
 "title": "Loading spinner",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "En spinner er et visuelt aktivt og synligt signal til brugeren om, at indlæsningen af et element er undervejs.",
 "tags": [''],
@@ -2344,7 +2475,7 @@ let searchIndex = [
 {
 "url": "/komponenter/modal/",
 "title": "Modal",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Modaler tvinger brugeren til at fokusere på og tage stilling til afgørende indhold, mens den øvrige side er deaktiveret.",
 "tags": ['besked','dialog','dialogue','modal','modaler','modalvindue','popup','pop up','vindue'],
@@ -2362,7 +2493,7 @@ let searchIndex = [
 {
 "url": "/komponenter/overflowmenu/",
 "title": "Overflow menu",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Du kan bruge overflow menuer til at vise eller skjule en liste af links eller knapper. Når brugeren klikker på menulinjen, folder listen sig ud.",
 "tags": ['overflow','overflowmenu','overflow-menu','overflowmenu','sorter','sortering'],
@@ -2380,7 +2511,7 @@ let searchIndex = [
 {
 "url": "/komponenter/paginering/",
 "title": "Paginering",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Paginering bruges til at lade brugeren navigere mellem indhold, der er opdelt på flere sider. Brugeren navigerer ved at gå fra side til side, eller til første eller sidste side på listen.",
 "tags": ['paginering','pagination','sidevælger'],
@@ -2397,8 +2528,8 @@ let searchIndex = [
 
 {
 "url": "/komponenter/radioknap/",
-"title": "Radioknap (Radio button)",
-"category": "Komponenter_category",
+"title": "Radioknap",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Radioknapper lader brugeren vælge én blandt flere muligheder.",
 "tags": [''],
@@ -2416,7 +2547,7 @@ let searchIndex = [
 {
 "url": "/komponenter/sprogvaelger/",
 "title": "Sprogvælger",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "En sprogvælger bruges hvis løsningen udbydes på mere end et sprog. Den giver brugeren mulighed for at vælge et andet sprog end løsningens standardsprog.",
 "tags": [''],
@@ -2434,7 +2565,7 @@ let searchIndex = [
 {
 "url": "/komponenter/search/",
 "title": "Søgefelt",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Søgefeltet lader brugeren søge efter bestemt indhold på siden eller i løsningen.",
 "tags": [''],
@@ -2452,7 +2583,7 @@ let searchIndex = [
 {
 "url": "/komponenter/tables/",
 "title": "Tabeller",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Tabeller er en systematisk opstilling af data i kolonner og rækker.",
 "tags": [''],
@@ -2470,7 +2601,7 @@ let searchIndex = [
 {
 "url": "/komponenter/tags/",
 "title": "Tags",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Et tag er en mindre knap, som du kan bruge til at angive metainformation om indhold, der kan kategoriseres, filtreres eller på anden vis beskrives med nøgleord. Tags forekommer med og uden ikon.",
 "tags": [''],
@@ -2487,8 +2618,8 @@ let searchIndex = [
 
 {
 "url": "/komponenter/tekstomraade/",
-"title": "Tekstområde (Textarea)",
-"category": "Komponenter_category",
+"title": "Tekstområde",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Tekstområder lader brugeren indtaste en længere tekst på flere linjer.",
 "tags": ['tekstområde','tekstomraade','textarea','karakterbegrænsning','karakterbegraensning'],
@@ -2506,7 +2637,7 @@ let searchIndex = [
 {
 "url": "/komponenter/tilbage-link/",
 "title": "Tilbage-link",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Tilbage-linket gør brugeren i stand til at gå tilbage til forrige trin eller side i en selvbetjeningsløsning.",
 "tags": [''],
@@ -2524,7 +2655,7 @@ let searchIndex = [
 {
 "url": "/komponenter/tilbage-til-top/",
 "title": "Tilbage til toppen",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Tilbage til toppen-knappen hjælper brugeren med at navigere til toppen af en lang side på en let måde uden at miste overblikket.",
 "tags": ['back-to-top','top-link','top-knap','til toppen','til-top'],
@@ -2541,8 +2672,8 @@ let searchIndex = [
 
 {
 "url": "/komponenter/tjekboks/",
-"title": "Tjekboks (Checkbox)",
-"category": "Komponenter_category",
+"title": "Tjekboks",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Tjekbokse lader brugeren vælge en eller flere muligheder.",
 "tags": [''],
@@ -2560,7 +2691,7 @@ let searchIndex = [
 {
 "url": "/komponenter/toastbesked/",
 "title": "Toastbesked",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Toastbeskeder viser aktuel information og dukker op på skærmen i det øjeblik, de bliver relevante. Toastbeskeder vises typisk som reaktion på brugerinteraktion.",
 "tags": ['toast','toastbesked','notifikation','besked'],
@@ -2578,7 +2709,7 @@ let searchIndex = [
 {
 "url": "/komponenter/toggle/",
 "title": "Toggle switch",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "En toggle switch er en digital tænd/sluk-knap. Til forskel fra en radioknap eller tjekboks træder valget i kraft i det øjeblik brugerne interagerer med komponenten.",
 "tags": ['switch'],
@@ -2596,7 +2727,7 @@ let searchIndex = [
 {
 "url": "/komponenter/tooltip/",
 "title": "Tooltip",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Tooltips giver brugeren kort, forklarende information om specifikke elementer på siden. Tooltip vises ved klik på et hjælpeikon.",
 "tags": [''],
@@ -2614,7 +2745,7 @@ let searchIndex = [
 {
 "url": "/komponenter/trinindikator/",
 "title": "Trinindikator",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning.",
 "tags": [''],
@@ -2632,7 +2763,7 @@ let searchIndex = [
 {
 "url": "/komponenter/fil-upload/",
 "title": "Vedhæft fil",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Komponenten lader brugeren tilføje og indsende en fil.",
 "tags": [''],
@@ -2650,7 +2781,7 @@ let searchIndex = [
 {
 "url": "/komponenter/venstremenu/",
 "title": "Venstremenu",
-"category": "Komponenter_category",
+"category": "komponenter_menu",
 "subcategory": "Komponenter",
 "lead": "Venstremenuen strukturerer et navigationshierarki med op til tre niveauer i en vertikal liste.",
 "tags": [''],
@@ -2676,7 +2807,7 @@ let searchIndex = [
 {
 "url": "/eksempler/selvbetjeningsloesninger/",
 "title": "Selvbetjeningsløsninger",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "Eksempler",
 "lead": "",
 "tags": [''],
@@ -2694,7 +2825,7 @@ let searchIndex = [
 {
 "url": "/eksempler/patterns/",
 "title": "Patterns",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "Eksempler",
 "lead": "Patterns er best practice designløsninger til specifikke brugerfokuserede opgaver. De bruger ofte en eller flere komponenter og forklarer, hvordan man tilpasser dem til konteksten.",
 "tags": [''],
@@ -2712,7 +2843,7 @@ let searchIndex = [
 {
 "url": "/eksempler/templates/",
 "title": "Templates",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "Eksempler",
 "lead": "Templates er best practice designløsninger til specifikke sidetyper.",
 "tags": [''],
@@ -2738,7 +2869,7 @@ let searchIndex = [
 {
 "url": "/eksempler/patterns/angivelse-af-telefonnummer/",
 "title": "Angivelse af telefonnummer",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "Eksempler",
 "lead": "Måden at håndtere angivelsen af telefonnummer på bør afhænge af selvbetjeningsløsningens målgruppe.",
 "tags": [''],
@@ -2756,7 +2887,7 @@ let searchIndex = [
 {
 "url": "/eksempler/patterns/formular/",
 "title": "Formular",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "Eksempler",
 "lead": "",
 "tags": [''],
@@ -2774,7 +2905,7 @@ let searchIndex = [
 {
 "url": "/eksempler/patterns/hentet-data/",
 "title": "Inputfelter med hentet data",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "Eksempler",
 "lead": "En formular kan i visse situationer indeholde felter, der er udfyldt på forhånd med automatisk hentet data. Denne data skal nogen gange kunne ændres.",
 "tags": [''],
@@ -2792,7 +2923,7 @@ let searchIndex = [
 {
 "url": "/eksempler/patterns/session-udloeber/",
 "title": "Session udløber",
-"category": "Eksempler_category",
+"category": "eksempler_menu",
 "subcategory": "Eksempler",
 "lead": "Session udløber vises, inden brugeren automatisk logges af en løsning. Dialogen giver brugeren mulighed for at tage stilling til, om de vil logge af eller forblive i løsningen.",
 "tags": [''],
@@ -2818,7 +2949,7 @@ let searchIndex = [
 {
 "url": "/faellesskab/samarbejdsforum/",
 "title": "Samarbejdsforum",
-"category": "Faellesskab_category",
+"category": "faellesskab_menu",
 "subcategory": "Fællesskab",
 "lead": "I forummet sparrer vi om Det Fælles Designsystem (FDS) og udviklingen fremadrettet.",
 "tags": ['samarbejdsforum','forum','møde'],
@@ -2836,7 +2967,7 @@ let searchIndex = [
 {
 "url": "/faellesskab/governance/",
 "title": "Governance",
-"category": "Faellesskab_category",
+"category": "faellesskab_menu",
 "subcategory": "Fællesskab",
 "lead": "",
 "tags": [''],
@@ -2854,7 +2985,7 @@ let searchIndex = [
 {
 "url": "/faellesskab/nyhedsmail/",
 "title": "Nyhedsbrev",
-"category": "Faellesskab_category",
+"category": "faellesskab_menu",
 "subcategory": "Fællesskab",
 "lead": "Tilmeld dig nyhedsbrevet og følg med i arbejdet med Det Fælles Designsystem.",
 "tags": ['nyhedsbrev','nyhedsmail','tilmeld','afmeld'],
@@ -2872,7 +3003,7 @@ let searchIndex = [
 {
 "url": "/faellesskab/kontakt-support/",
 "title": "Kontakt og support",
-"category": "Faellesskab_category",
+"category": "faellesskab_menu",
 "subcategory": "Fællesskab",
 "lead": "",
 "tags": [''],
@@ -2890,7 +3021,7 @@ let searchIndex = [
 {
 "url": "/faellesskab/releases/",
 "title": "Release notes",
-"category": "Faellesskab_category",
+"category": "faellesskab_menu",
 "subcategory": "Fællesskab",
 "lead": "Nedenfor vises release notes — en opsummering af bug fixes, nye features og andre opdateringer.",
 "tags": ['changelog','releases','udgivelse','version','versioner','roadmap','2.1.2','3','3.0.0','3.0.1','3.0.2','3.0.3','4.0.0','4','4.0.1','4.1.1','4.1','4.2.0','4.2','4.3.0','4.3','4.4.0','4.4','5.0.0','5','5.1.0','5.1','5.2.0','5.2','5.3.0','5.3','6.0.0','6','6.0.1','6.1.0','6.1','6.1.1','7.0.0','7','7.1.0','7.1','7.1.1','7.2.0','7.2','7.3.0','7.3','7.4.0','7.4','7.5.0','7.5','7.5.1','7.5.2','7.5.3','8','8.0','8.0.0','8.0.1','8.1.0','8.2.0','8.2.1','9','9.0.0','9.0.1','9.0.2','9.1.0','10','10.0.0','10.0.1','10.0.2','10.1.0','10.2.0','10.2.1','11.0.0','11.0.1','11.1.0','11.2.0','11.3.0'],

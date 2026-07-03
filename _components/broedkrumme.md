@@ -3,7 +3,7 @@ permalink: "/komponenter/broedkrumme/"
 redirect_from:
 - "/kode/komponenter/broedkrumme/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Brødkrumme
 lead: "En brødkrumme bruges til at vise brugerne, hvor i løsningen de befinder sig, samtidig med at den gør det muligt for brugerne at navigere tilbage igennem løsningens niveauer."

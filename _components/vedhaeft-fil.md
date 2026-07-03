@@ -3,13 +3,14 @@ permalink: "/komponenter/fil-upload/"
 redirect_from:
 - "/kode/komponenter/fil-upload/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Vedhæft fil
 lead: Komponenten lader brugeren tilføje og indsende en fil.
 description: "Brug fil upload til at lade brugeren vælge en fil fra sin egen computer, tablet eller mobil."
 tags:
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

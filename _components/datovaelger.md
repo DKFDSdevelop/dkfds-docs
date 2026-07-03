@@ -3,13 +3,14 @@ permalink: "/komponenter/datovaelger/"
 redirect_from:
 - "/kode/komponenter/datovaelger/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Datovælger
 lead: Ét felt med knap, hvor man kan vælge en dato.
 description: Brug datovælger til at vælge en bestemt dato i nærmeste fortid eller fremtid
 tags:
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true custom=true %}

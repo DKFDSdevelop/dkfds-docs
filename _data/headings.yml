@@ -517,6 +517,10 @@ Header_Kode:
 - h2: Installation
 - h2: Referencer
 
+Header_Custom:
+- h2: Eksempler
+- h2: Konfiguration
+
 Inputfelter_Kode:
 - h2: Installation
 - h2: Hjælpetekst

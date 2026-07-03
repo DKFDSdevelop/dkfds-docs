@@ -4,7 +4,7 @@ redirect_from:
 - "/faellesskab/faq/"
 layout: styleguide
 title: Ofte stillede spørgsmål
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 description: ""
 lead: Nogle gange er der spørgsmål til FDS-teamet, der går igen. Før du tager kontakt til FDS-teamet kan du se her, om dit spørgsmål allerede er besvaret.

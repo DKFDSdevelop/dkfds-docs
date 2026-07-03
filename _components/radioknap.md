@@ -4,13 +4,15 @@ redirect_from:
 - "/komponenter/radiobutton/"
 - "/kode/komponenter/radioknap/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
-title: Radioknap (Radio button)
+title: Radioknap
+title_en: Radio button
 lead: Radioknapper lader brugeren vælge én blandt flere muligheder.
 description: "Radioknapper giver brugeren mulighed for at vælge en enkelt værdi ud fra en synlig liste."
 tags:
 tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true  custom=true %}

@@ -5,17 +5,7 @@ layout: default
 <div class="container page-container">
     <div class="row">
 
-        <aside class="col-12 col-lg-3">
-            <nav class="sidenav d-none d-lg-block mb-4 mb-md-0" id="docs-sidenav" aria-label="Sidemenu">
-                {%- assign sidenavFromNavData = site.data.nav[page.category] -%}
-
-                {% if sidenavFromNavData %}
-                <ul class="sidemenu">
-                    {%- include nav/sidenavigation/list.html links=sidenavFromNavData -%}
-                </ul>
-                {%- endif -%}
-            </nav>
-        </aside>
+        {% include side-menu.html %}
 
         <main class="col-12 col-lg-9" id="main-content">
             {%- include theme-alert.html -%}
@@ -33,17 +23,17 @@ layout: default
                 <h1 id="anchorlinks-page">{{ page.title }}</h1>
                 {% elsif page.title == "Selvbetjeningsløsninger" %}
                 <h1 id="self-service-page" class="hyphens-manual">Selvbetjenings&shy;løsninger</h1>
-                {% elsif page.title == "Beskeder (Alerts)" %}
+                {% elsif page.title == "Beskeder" %}
                 <h1 id="beskeder-alerts">Beskeder <span class="d-inline" lang="en">(Alerts)</span></h1>
-                {% elsif page.title == "Faneblade (Tabs)" %}
+                {% elsif page.title == "Faneblade" %}
                 <h1 id="faneblade-tabs">Faneblade <span class="d-inline" lang="en">(Tabs)</span></h1>
-                {% elsif page.title == "Knapper (Buttons)" %}
+                {% elsif page.title == "Knapper" %}
                 <h1 id="knapper-buttons">Knapper <span class="d-inline" lang="en">(Buttons)</span></h1>
-                {% elsif page.title == "Radioknap (Radio button)" %}
+                {% elsif page.title == "Radioknap" %}
                 <h1 id="radioknap-radio-button">Radioknap <span class="d-inline" lang="en">(Radio button)</span></h1>
-                {% elsif page.title == "Tekstområde (Textarea)" %}
+                {% elsif page.title == "Tekstområde" %}
                 <h1 id="tekstområde-textarea">Tekstområde <span class="d-inline" lang="en">(Textarea)</span></h1>
-                {% elsif page.title == "Tjekboks (Checkbox)" %}
+                {% elsif page.title == "Tjekboks" %}
                 <h1 id="tjekboks-checkbox">Tjekboks <span class="d-inline" lang="en">(Checkbox)</span></h1>
                 {% else %}
                 <h1 id="{{ page.title | slugify }}">{{ page.title }}</h1>
