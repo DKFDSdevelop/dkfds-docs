@@ -40,6 +40,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-tooltip-icon" description="Tooltip-ikon" %}
 {% include test/preview-test.html filename="test-fds-tooltip" description="Tooltip" %}
 {% include test/preview-test.html filename="test-fds-side-menu" description="Venstremenu" %}
+{% include test/preview-test.html filename="test-fds-toggle-switch" description="Toggle Switch" %}
 
 {:.h3}
 ## HTML-elementer
