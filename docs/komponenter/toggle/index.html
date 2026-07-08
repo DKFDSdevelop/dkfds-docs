@@ -1625,7 +1625,9 @@
                 <a href="/komponenter/toggle/"  aria-current="page" >
                     <span>Toggle switch
                         
-                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
                     </span>
                 </a>
 
@@ -1700,6 +1702,9 @@
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
+        </li><li>
+            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom element</span></a>
+            <span id="custom" hidden=""></span>
         </li></ul>
 </nav>
 <div id="retningslinjer" hidden=""></div>
@@ -1801,6 +1806,151 @@
 <h2 id="referencer-kode">Referencer</h2>
 
 <p><a href="https://www.w3.org/WAI/ARIA/apg/patterns/switch/" class="icon-link" target="_blank">ARIA Authoring Practices Guide (APG): Switch Pattern<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a></p>
+
+
+                        </div>
+                        <div id="custom-section">
+                            
+
+<div class="mt-3 mb-3">
+    <a href="/eksempel/fds-toggle-switch/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
+        <div class="row">
+    <div class="col-12 col-sm-7 col-md-5" role="group" aria-labelledby="toggle-switch-heading">
+        <h2 class="h5 mb-4 mt-0" id="toggle-switch-heading">Indstillinger</h2>
+        <fds-toggle-switch label="Vis afsluttede sager" state="on"></fds-toggle-switch>
+        <fds-toggle-switch label="Vis sager ældre end et år" state="off"></fds-toggle-switch>
+    </div>
+</div>
+    </div>
+    <fds-accordion heading="Se koden" content-id="example-box-fds-toggle-switch">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-1-toggle-tabpanel2" aria-selected="true" id="example-1-toggle-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-1-toggle-tabpanel3" aria-selected="false" id="example-1-toggle-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-toggle-tabpanel2" aria-labelledby="example-1-toggle-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-sm-7 col-md-5&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis afsluttede sager&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;on&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis sager ældre end et år&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;off&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-toggle-tabpanel3" aria-labelledby="example-1-toggle-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-sm-7 col-md-5&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis afsluttede sager&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;on&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;switch&quot;</span> <span class="hljs-attr">aria-checked</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Vis afsluttede sager<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis sager ældre end et år&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;off&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;switch&quot;</span> <span class="hljs-attr">aria-checked</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Vis sager ældre end et år<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fds-accordion>
+</div>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3>Attributter</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>state</td>
+      <td>Afgør om toggle switch er slået til eller fra. Gyldige værdier er <code>on</code> og <code>off</code>.</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Label for toggle switch.</td>
+    </tr>
+    <tr>
+      <td>disabled-switch</td>
+      <td>Gør komponentens knap inaktiv (sætter <code>disabled</code> på knappen).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Funktioner</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>on()</td>
+      <td>Slå toggle switch til.</td>
+    </tr>
+    <tr>
+      <td>off()</td>
+      <td>Slå toggle switch fra.</td>
+    </tr>
+    <tr>
+      <td>toggle()</td>
+      <td>Skift mellem at slå toggle switch til eller fra.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Events</h3>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fds-toggle-on</td>
+      <td>Udløses når toggle switch slås til.</td>
+    </tr>
+    <tr>
+      <td>fds-toggle-off</td>
+      <td>Udløses når toggle switch slås fra.</td>
+    </tr>
+  </tbody>
+</table>
 
                         </div>
             </section>
