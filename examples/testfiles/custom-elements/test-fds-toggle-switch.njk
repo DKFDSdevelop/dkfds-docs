@@ -10,8 +10,22 @@
         <div class="col-12">
             <h2 class="h3 mt-0">Simpel toggle switch</h2>
         </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <fds-toggle-switch label="Dette er en toggle switch"></fds-toggle-switch>
+            <fds-toggle-switch label="Dette er en aktiveret toggle switch" state="on"></fds-toggle-switch>
+        </div>
+    </div>
+
+    <div class="row mb-905">
         <div class="col-12">
-            <fds-toggle-switch></fds-toggle-switch>
+            <h2 class="h3 mt-0">Toggle switch i gruppe</h2>
+        </div>
+        <div class="col-12">
+            <div role="group" aria-labelledby="toggle-switch-heading" class="w-percent-100 w-percent-sm-60 w-percent-md-40">
+                <h2 class="h5 mb-4 mt-0" id="toggle-switch-heading">Indstillinger</h2>
+                <fds-toggle-switch label="Toggle switch nummer 1" state="on"></fds-toggle-switch>
+                <fds-toggle-switch label="Anden toggle switch i gruppen" state="off"></fds-toggle-switch>
+            </div>
         </div>
     </div>
 
