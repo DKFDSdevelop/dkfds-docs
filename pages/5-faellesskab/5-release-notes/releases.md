@@ -120,6 +120,7 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 - Modalevents `fds.modal.hidden` og `fds.modal.shown` er blevet ændret til at boble op i DOM'en (`bubbles: true`), så det ikke længere er nødvendigt at sætte event listeners direkte på en modal.
 - Modaler lukkes nu ved `keydown` i stedet for `keyup`.
 - Visse font-formater i stylingen er blevet fjernet.
+- Øget specificity på CSS-regler for {% include links/component-guideline-link.html linktext="toggle switch" %}.
 
 
 

@@ -238,6 +238,7 @@ Brug `<div class="main-menu-inner">` i `<fds-main-menu>` i desktop-versionen. Ud
 | heading           | Tekst der skal vises øverst i menuen. Default er 'Menu'.                                              |
 | close-button-text | Tekst på luk-knappen i menuen. Default er 'Luk'.                                                      |
 | ready             | Sæt til 'false' hvis initialisering af menuen skal ske manuelt i stedet for ved indlæsning af DOM'en. |
+| heading-id        | Sæt et specifikt id til titlen inde i menuen.                                                         |
 
 ### fds-main-menu
 
