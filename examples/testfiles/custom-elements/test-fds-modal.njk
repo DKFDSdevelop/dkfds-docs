@@ -11,8 +11,10 @@
             <h2 class="h3 mt-0">Simpel modal</h2>
         </div>
         <div class="col-12">
-            <fds-modal-button><button class="button button-secondary">Åbn modal</button></fds-modal-button>
-            <dialog>
+            <fds-modal-opener dialog-id="simple-modal-example">
+                <button class="button button-secondary">Åbn modal</button>
+            </fds-modal-opener>
+            <dialog id="simple-modal-example">
                 <button autofocus>Close</button>
                 <p>This is a modal created with &lt;dialog&gt;</p>
             </dialog>
