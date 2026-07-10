@@ -50,6 +50,7 @@ var testfiles = [
     "test-fds-tooltip",
     "test-fds-side-menu",
     "test-fds-toggle-switch",
+    "test-fds-modal",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
