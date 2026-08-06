@@ -259,12 +259,22 @@
             <fds-modal-opener dialog-id="simple-modal-example">
                 <button class="button button-secondary">Åbn modal</button>
             </fds-modal-opener>
-            <dialog id="simple-modal-example">
-                <fds-modal-closer>
-                    <button autofocus="">Close</button>
-                </fds-modal-closer>
-                <p>This is a modal created with &lt;dialog&gt;</p>
-            </dialog>
+            <fds-modal>
+                <dialog id="simple-modal-example">
+                    <fds-modal-closer>
+                        <button autofocus="">Close</button>
+                    </fds-modal-closer>
+                    <p>This is a modal created with &lt;dialog&gt;</p>
+                    <fds-tooltip-icon tooltip-text="Dette er en alt for lang tekst til et tooltip, men den er god at teste med. Tooltips bliver for lange, når de fylder mere end 4 linjer. fgdgdgfdsgfsdgfsdgsfdgerstsgfsgsgfgsfdgsdtertsgfgfdgsfgsgsdfgrtgrfgsfgsfdgsdfgsdrterargfsgsdfgsertg" sr-label="Læs mere"></fds-tooltip-icon>
+                    <fds-date-picker>
+                        <label>Datovælger</label>
+                        <div>
+                            <input type="text" name="input-text" />
+                            <div><fds-date-picker-grid></fds-date-picker-grid></div>
+                        </div>
+                    </fds-date-picker>
+                </dialog>
+            </fds-modal>
         </div>
     </div>
 
