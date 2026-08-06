@@ -20,14 +20,15 @@ tags:
 - popup
 - pop up
 - vindue
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="modal" title="Eksempel på modal" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" %}
+{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" custom="Modal_Custom" %}
 
 <!--split-->
 
@@ -129,3 +130,19 @@ Når en modal aktiveres, vil JavaScripten sætte `inert`-attributten på alle el
 {% include code/syntax.html component="modal-forced-action" link=true copybutton=true guidelines="/komponenter/modal/#modal-som-kraever-handling" %}
 
 Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner som escape. Bemærk, at eksemplet også undlader luk knappen øverst i modalen. Man skal huske at tilføre luk funktionalitet i knapperne tilføjet i modalen.
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-modal-default" tabId="example-1-modal" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+## Referencer {#{% include create-id.html heading="Referencer" %}}
+
+aria-labelledby i dialog: https://www.w3.org/WAI/WCAG22/Techniques/html/H102
