@@ -80,6 +80,33 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <fds-modal-opener dialog-id="dismissible-example">
+                <button class="button button-secondary">Modal som kræver handling</button>
+            </fds-modal-opener>
+            <fds-modal dismissible="false">
+                <dialog id="dismissible-example"
+                    aria-labelledby="dismissible-example-heading">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="dismissible-example-heading"
+                            tabindex="-1">
+                            Modal som kræver handling
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Indhold i modalen.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <fds-modal-closer class="button-wrapper">
+                            <button class="button button-primary" type="button">OK</button>
+                        </fds-modal-closer>
+                    </div>
+                </dialog>
+            </fds-modal>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <fds-modal-opener dialog-id="long-modal-example">
                 <button class="button button-secondary">Lang modal</button>
             </fds-modal-opener>

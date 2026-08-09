@@ -141,8 +141,20 @@ Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner 
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
+### Modal som kræver handling
+
+Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
+
+{% include code/show-example-with-tabs.html example="fds-modal-forced-action" tabId="example-2-modal" %}
+
+Implementeringen af attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
+
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
 ## Referencer {#{% include create-id.html heading="Referencer" %}}
 
 aria-labelledby i dialog: https://www.w3.org/WAI/WCAG22/Techniques/html/H102
+
+HTML Living Standard, 6.10.3 The CloseWatcher interface, cancel-eksempel: https://html.spec.whatwg.org/#example-CloseWatcher-cancel
+
+https://issues.chromium.org/issues/351867704
