@@ -139,6 +139,8 @@ Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner 
 
 {% include code/show-example-with-tabs.html example="fds-modal-default" tabId="example-1-modal" %}
 
+Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for at åbne to modaler efter hinanden, skal forrige modal lukkes, før den nye åbnes.
+
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Modal som kræver handling
