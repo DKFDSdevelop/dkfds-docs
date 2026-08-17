@@ -217,7 +217,7 @@ Brug `<div class="main-menu-inner">` i `<fds-main-menu>` i desktop-versionen. Ud
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-drawer-button
+### fds-drawer-opener
 
 #### Attributter
 
@@ -259,7 +259,7 @@ Brug `<div class="main-menu-inner">` i `<fds-main-menu>` i desktop-versionen. Ud
 | user           | Brugeroplysninger. Placeres til venstre for log af-knappen.                                                        |
 | log-off-button | Log af-knap. VIl blive placeret i højre side af portallinjen.                                                      |
 | logo           | Logo. Placeres i venstre side af portallinjen.                                                                     |
-| drawer-button  | Placeres samme sted som log af-knappen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |
+| drawer-opener  | Placeres samme sted som log af-knappen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |
 
 ### fds-solution-info
 
@@ -270,4 +270,4 @@ Brug `<div class="main-menu-inner">` i `<fds-main-menu>` i desktop-versionen. Ud
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | solution-heading | Løsningens navn. Vises i venstre side.                                                                                                               |
 | additional-info  | Information vist i højre side af løsningslinjen.                                                                                                     |
-| drawer-button    | Bør kun anvendes, hvis det ikke er muligt at vise knappen i portallinjen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |
+| drawer-opener    | Bør kun anvendes, hvis det ikke er muligt at vise knappen i portallinjen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |

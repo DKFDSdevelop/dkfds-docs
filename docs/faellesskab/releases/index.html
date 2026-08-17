@@ -230,7 +230,7 @@
         <div slot="solution-heading" class="d-flex flex-wrap align-items-center">
             <a href="/"  class="mr-4" >Det Fælles Designsystem</a><strong class="badge badge-error">Develop</strong>
         </div>
-        <fds-drawer-button slot="drawer-button" drawer="mobile-menu" class="d-block d-lg-none"></fds-drawer-button>
+        <fds-drawer-opener slot="drawer-opener" drawer="mobile-menu" class="d-block d-lg-none"></fds-drawer-opener>
     </fds-solution-info>
 
     <!-- Desktop main menu-->
@@ -1415,6 +1415,7 @@
   <li><strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Hjælpefunktioner til at generere unikke ID’er er omskrevet.</li>
   <li><strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Attributten <code>hidden="false"</code> på et element vil ikke længere skjule elementet.</li>
   <li><strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Stylingen, der satte max-bredde for lister, er ændret. Lister har som udgangspunkt ikke længere en automatisk max-bredde på 66 tegn, men dette kan sættes ved at bruge klassen <code>paragraph</code>.</li>
+  <li><strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Opdateret stylingen for knapper i en <a href="/komponenter/knapper/#knapgruppe">knapgruppe</a>, så kun direkte børn af <code>button-group</code> styles.</li>
   <li>Modalevents <code>fds.modal.hidden</code> og <code>fds.modal.shown</code> er blevet ændret til at boble op i DOM’en (<code>bubbles: true</code>), så det ikke længere er nødvendigt at sætte event listeners direkte på en modal.</li>
   <li>Modaler lukkes nu ved <code>keydown</code> i stedet for <code>keyup</code>.</li>
   <li>Visse font-formater i stylingen er blevet fjernet.</li>

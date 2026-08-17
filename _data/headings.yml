@@ -558,6 +558,13 @@ Modal_Kode:
 - h2: Installation
 - h2: Modal som kræver handling
 
+Modal_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+- h2: Referencer
+
 Overflowmenu_Kode:
 - h2: Installation
 - h2: Sortering
