@@ -139,3 +139,5 @@ Trinindikatoren skal vises i en modal ved mindre skærmstørrelser. Standard-bre
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+Se {% include links/component-guideline-link.html linktext="modal" %}.

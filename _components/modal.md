@@ -153,7 +153,18 @@ Implementeringen af attributten `dismissible` sætter både attributten `closedb
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-## Referencer {#{% include create-id.html heading="Referencer" %}}
+### fds-modal
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut     | Beskrivelse                                                                                                                                                                                                    |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| dismissible  | Hvis attributten er sat, er det ikke muligt at lukke modalen ved at trykke på baggrunden, bruge tilbage-knappen på mobiler eller trykke på Escape.                                                             |
+| bottom-sheet | Åben modalen med en animation fra bunden af skærmen. Bruges primært til {% include links/component-guideline-link.html linktext="trinindikator" %}.                                                            |
+| ready        | Kan bruges til at udskyde automatisk initialisering. Sæt ready="false" for at forhindre initialisering ved tilføjelse til DOM’en, og fjern attributten eller sæt ready="true" for at initialisere komponenten. |
+
+## Referencer {#{% include create-id.html heading="Referencer" append="-custom" %}}
 
 aria-labelledby i dialog: https://www.w3.org/WAI/WCAG22/Techniques/html/H102
 
