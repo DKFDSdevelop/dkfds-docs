@@ -1353,7 +1353,9 @@
                 <a href="/komponenter/cookiemeddelelse/"  aria-current="page" >
                     <span>Cookiemeddelelse
                         
-                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
                     </span>
                 </a>
 
@@ -1706,6 +1708,9 @@
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
+        </li><li>
+            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom element</span></a>
+            <span id="custom" hidden=""></span>
         </li></ul>
 </nav>
 <div id="retningslinjer" hidden=""></div>
@@ -1731,6 +1736,9 @@
         <li class="anchorlink-guidelines"><a href="#referencer">Referencer</a></li>
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
+        <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
+        <li class="anchorlink-custom"><a href="#eksempler-custom">Eksempler</a></li>
+        <li class="anchorlink-custom"><a href="#varianter-custom">Varianter</a></li>
         
     </ul>
 </nav>
@@ -1855,6 +1863,135 @@
 <p>Bemærk at DKFDS på nuværende tidspunkt kun leverer HTML og CSS til denne komponent. Funktionaliteten skal man derfor selv håndtere.</p>
 
 <p>Cookies brugt til statistik må ikke sættes, før man aktivt har accepteret dette.</p>
+
+
+                        </div>
+                        <div id="custom-section">
+                            
+
+<h2 id="om-custom-elements-custom">Om custom elements</h2>
+
+<h2 id="eksempler-custom">Eksempler</h2>
+
+<p>Hvis cookiemeddelelsen indeholder et logo, er det op til løsningen selv at sætte en passende højde og bredde for dette. Giv logoet en passende alt-tekst, så det også er muligt for skærmlæserbrugere at vide, hvem der står bag selvbetjeningsløsningen.</p>
+
+<div class="mt-3 mb-3">
+    <a href="/eksempel/cookie-default/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+<div class="example-box">
+    <div>
+        <fds-modal-opener dialog-id="simple-cookie-example">
+    <button class="button button-secondary" type="button">Vis standard cookiemeddelelse</button>
+</fds-modal-opener>
+
+<fds-modal dismissible="false">
+    <dialog id="simple-cookie-example" aria-labelledby="simple-cookie-example-heading">
+        <form method="dialog">
+            <div class="modal-header">
+                <img class="cookie-logo" id="simple-cookie-example-logo" src="/assets/img/logo-header-placeholder.png" alt="Logo for myndighed, der står bag selvbetjeningsløsningen" style="max-width: 110px;" />
+                <h2 class="modal-title" id="simple-cookie-example-heading" tabindex="-1">Denne selvbetjening bruger cookies</h2>
+            </div>
+            <div class="modal-body">
+                <p>Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres. </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
+                <p><a href="#">Læs mere om vores brug af cookies</a></p>
+            </div>
+            <div class="modal-footer">
+                <div class="button-group">
+                    <button class="button button-primary" type="submit" value="accept">Accepter cookies</button>
+                    <button class="button button-secondary" type="submit" value="reject">Nej til cookies</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+</fds-modal>
+
+    </div>
+    <fds-accordion heading="Se koden" content-id="example-box-cookie-default">
+        <div class="tab-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab-button" role="tab" aria-controls="example-1-cookie-tabpanel2" aria-selected="true" id="example-1-cookie-tab2"><span>Custom element</span></button>
+                <button class="tab-button" role="tab" aria-controls="example-1-cookie-tabpanel3" aria-selected="false" id="example-1-cookie-tab3"><span>Genereret HTML</span></button>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-cookie-tabpanel2" aria-labelledby="example-1-cookie-tab2">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">dialog-id</span>=<span class="hljs-string">&quot;simple-cookie-example&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Vis standard cookiemeddelelse<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-cookie-example&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;simple-cookie-example-heading&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-header&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cookie-logo&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-cookie-example-logo&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/img/logo-header-placeholder.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Logo for myndighed, der står bag selvbetjeningsløsningen&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 110px;&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-cookie-example-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span>&gt;</span>Denne selvbetjening bruger cookies<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-body&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres. <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>Læs mere om vores brug af cookies<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-footer&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;accept&quot;</span>&gt;</span>Accepter cookies<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;reject&quot;</span>&gt;</span>Nej til cookies<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span>
+</code></pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-panel code-tab" role="tabpanel" id="example-1-cookie-tabpanel3" aria-labelledby="example-1-cookie-tab3" hidden="">
+                <div>
+                    <div class="component-code">
+                        <div class="button-copy-container">
+                            <button class="button button-tertiary button-copy">Kopiér kode</button>
+                        </div>
+                        <figure tabindex="0" class="code-figure">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">dialog-id</span>=<span class="hljs-string">&quot;simple-cookie-example&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>Vis standard cookiemeddelelse<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-cookie-example&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;simple-cookie-example-heading&quot;</span> <span class="hljs-attr">closedby</span>=<span class="hljs-string">&quot;none&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-header&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cookie-logo&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-cookie-example-logo&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/img/logo-header-placeholder.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Logo for myndighed, der står bag selvbetjeningsløsningen&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 110px;&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-cookie-example-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span>&gt;</span>Denne selvbetjening bruger cookies<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-body&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Vi indsamler statistik ved hjælp af cookies. Alle indsamlede data anonymiseres. <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>Læs mere om vores brug af cookies<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-footer&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;accept&quot;</span>&gt;</span>Accepter cookies<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;reject&quot;</span>&gt;</span>Nej til cookies<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span></code></pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fds-accordion>
+</div>
+
+<h2 id="varianter-custom">Varianter</h2>
 
                         </div>
             </section>

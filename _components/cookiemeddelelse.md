@@ -11,14 +11,15 @@ lead: Anvender din selvbetjeningsløsning cookies til andet end teknisk nødvend
 description: Cookiemeddelelsen vises midt på siden, og blokerer indhold indtil man
   har taget stilling til brug af cookies.
 tags:
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-image.html component="cookie-message" title="Eksempel på cookiemeddelelse" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Cookiemeddelelse" code="Cookiemeddelelse_Kode" classes="hide-code" %}
+{% include anchorlinks.html guidelines="Cookiemeddelelse" code="Cookiemeddelelse_Kode" classes="hide-code" custom="Cookiemeddelelse_Custom" %}
 
 <!--split-->
 
@@ -61,3 +62,15 @@ Koden indsættes under body og før header. Gør man brug af {% include links/co
 Bemærk at DKFDS på nuværende tidspunkt kun leverer HTML og CSS til denne komponent. Funktionaliteten skal man derfor selv håndtere.
 
 Cookies brugt til statistik må ikke sættes, før man aktivt har accepteret dette.
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+Hvis cookiemeddelelsen indeholder et logo, er det op til løsningen selv at sætte en passende højde og bredde for dette. Giv logoet en passende alt-tekst, så det også er muligt for skærmlæserbrugere at vide, hvem der står bag selvbetjeningsløsningen.
+
+{% include code/show-example-with-tabs.html example="cookie-default" tabId="example-1-cookie" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
