@@ -74,3 +74,7 @@ Hvis cookiemeddelelsen indeholder et logo, er det op til løsningen selv at sæt
 {% include code/show-example-with-tabs.html example="cookie-default" tabId="example-1-cookie" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Flere end to typer cookies
+
+{% include code/show-example-with-tabs.html example="cookie-many-options" tabId="example-2-cookie" %}

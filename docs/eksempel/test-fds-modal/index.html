@@ -258,23 +258,43 @@
             </fds-modal-opener>
             <fds-modal>
                 <dialog id="simple-modal-example" aria-labelledby="simple-modal-example-heading">
-                    <div class="modal-header">
+                    <div class="scrollable-area">
                         <h2 class="modal-title" id="simple-modal-example-heading" tabindex="-1">
                             Simpel modal
                         </h2>
-                        <fds-modal-closer>
-                            <button class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
-                    </div>
-                    <div class="modal-body">
                         <p>Indhold i modalen.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <fds-modal-closer class="button-wrapper">
+                        <fds-modal-closer>
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
+                    </div>
+                </dialog>
+            </fds-modal>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <fds-modal-opener dialog-id="simple-modal-no-buttons-example">
+                <button class="button button-secondary">Simpel modal uden knapper i
+                    bunden</button>
+            </fds-modal-opener>
+            <fds-modal>
+                <dialog id="simple-modal-no-buttons-example" aria-labelledby="simple-modal-no-buttons-example-heading">
+                    <div class="scrollable-area">
+                        <h2 class="modal-title" id="simple-modal-no-buttons-example-heading" tabindex="-1">
+                            Simpel modal
+                        </h2>
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                                    <use href="#close"></use>
+                                </svg>Luk</button>
+                        </fds-modal-closer>
+                        <p>Indhold i modalen.</p>
                     </div>
                 </dialog>
             </fds-modal>
@@ -289,17 +309,15 @@
             </fds-modal-opener>
             <fds-modal>
                 <dialog id="escape-example" aria-labelledby="escape-example-heading">
-                    <div class="modal-header">
+                    <div class="scrollable-area">
                         <h2 class="modal-title" id="escape-example-heading" tabindex="-1">
                             Modal med elementer, der kan lukkes med Escape
                         </h2>
-                        <fds-modal-closer>
-                            <button class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
-                    </div>
-                    <div class="modal-body">
                         <fds-tooltip-icon tooltip-text="Dette er en alt for lang tekst til et tooltip, men den er god at teste med. Tooltips bliver for lange, når de fylder mere end 4 linjer. fgdgdgfdsgfsdgfsdgsfdgerstsgfsgsgfgsfdgsdtertsgfgfdgsfgsgsdfgrtgrfgsfgsfdgsdfgsdrterargfsgsdfgsertg" sr-label="Læs mere"></fds-tooltip-icon>
                         <fds-date-picker>
                             <label>Datovælger</label>
@@ -308,9 +326,7 @@
                                 <div><fds-date-picker-grid></fds-date-picker-grid></div>
                             </div>
                         </fds-date-picker>
-                    </div>
-                    <div class="modal-footer">
-                        <fds-modal-closer class="button-wrapper">
+                        <fds-modal-closer>
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
                     </div>
@@ -326,16 +342,12 @@
             </fds-modal-opener>
             <fds-modal dismissible="false">
                 <dialog id="dismissible-example" aria-labelledby="dismissible-example-heading">
-                    <div class="modal-header">
+                    <div class="scrollable-area">
                         <h2 class="modal-title" id="dismissible-example-heading" tabindex="-1">
                             Modal som kræver handling
                         </h2>
-                    </div>
-                    <div class="modal-body">
                         <p>Indhold i modalen.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <fds-modal-closer class="button-wrapper">
+                        <fds-modal-closer>
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
                     </div>
@@ -351,17 +363,15 @@
             </fds-modal-opener>
             <fds-modal>
                 <dialog id="long-modal-example" aria-labelledby="long-modal-example-heading">
-                    <div class="modal-header">
+                    <div class="scrollable-area">
                         <h2 class="modal-title" id="long-modal-example-heading" tabindex="-1">
                             Lang modal
                         </h2>
-                        <fds-modal-closer>
-                            <button class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
-                    </div>
-                    <div class="modal-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut
                             lectus sollicitudin, ullamcorper purus eget, ultricies
                             dui. Fusce finibus laoreet mi, sed semper ante convallis
@@ -448,9 +458,7 @@
                             convallis orci id euismod. Pellentesque ut pellentesque
                             velit. Maecenas tincidunt maximus metus, imperdiet auctor lacus
                             vulputate sed. Praesent eu sem nisi. </p>
-                    </div>
-                    <div class="modal-footer">
-                        <fds-modal-closer class="button-wrapper">
+                        <fds-modal-closer>
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
                     </div>
@@ -467,17 +475,17 @@
             </fds-modal-opener>
             <fds-modal bottom-sheet="">
                 <dialog id="bottom-sheet-example" aria-labelledby="bottom-sheet-example-heading">
-                    <div class="modal-header">
+                    <div class="fixed-area">
                         <h2 class="modal-title" id="bottom-sheet-example-heading" tabindex="-1">
                             Trin 7 af 10
                         </h2>
-                        <fds-modal-closer>
-                            <button class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
                     </div>
-                    <div class="modal-body">
+                    <div class="scrollable-area">
                         <nav aria-label="Trinindikator">
                             <ol class="step-indicator">
                                 <li>
@@ -602,22 +610,45 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <fds-modal-opener dialog-id="long-bottom-sheet-example">
+                <button class="button button-secondary">Bottom sheet med lang tekst</button>
+            </fds-modal-opener>
+            <fds-modal bottom-sheet="">
+                <dialog id="long-bottom-sheet-example" aria-labelledby="long-bottom-sheet-example-heading">
+                    <div class="fixed-area">
+                        <h2 class="modal-title" id="long-bottom-sheet-example-heading" tabindex="-1">
+                            LoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmaurisNamvenenatisidmiutgravidaPellentesquenonligulaaliquamvive
+                        </h2>
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                                    <use href="#close"></use>
+                                </svg>Luk</button>
+                        </fds-modal-closer>
+                    </div>
+                    <div class="scrollable-area">
+                        LoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmaurisNamvenenatisidmiutgravidaPellentesquenonligulaaliquamviverramagnasedpellentesquelacusLoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmaurisNamvenenatisidmiutgravidaPellentesquenonligulaaliquamviverramagnasedpellentesquelacusLoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmaurisNamvenenatisidmiutgravidaPellentesquenonligulaaliquamviverramagnasedpellentesquelacusLoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmaurisNamvenenatisidmiutgravidaPellentesquenonligulaaliquamviverramagnasedpellentesquelacusLoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmaurisNamvenenatisidmiutgravidaPellentesquenonligulaaliquamviverramagnasedpellentesquelacusLoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmau
+                    </div>
+                </dialog>
+            </fds-modal>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <fds-modal-opener dialog-id="transitions-example">
                 <button class="button button-secondary">Test af transition events</button>
             </fds-modal-opener>
             <fds-modal>
                 <dialog id="transitions-example" aria-labelledby="transitions-example-heading">
-                    <div class="modal-header">
+                    <div class="scrollable-area">
                         <h2 class="modal-title" id="transitions-example-heading" tabindex="-1">
                             Simpel modal
                         </h2>
-                        <fds-modal-closer>
-                            <button autofocus="" class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close">
+                            <button autofocus="" class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
-                    </div>
-                    <div class="modal-body">
                         <p>Fokus skal lande på luk-knappen, når denne modal åbnes.</p>
                         <p>Åbn konsollen og tab til knappen, så den får fokus.</p>
                         <p>Hover over knappen, så den skifter farve og skriver en besked i
@@ -626,9 +657,7 @@
                             fokus ikke ryge tilbage på luk-knappen.</p>
                         <p><button class="button button-secondary transition-button" style="transition: background-color 1s ease;">Hover på denne
                                 knap</button></p>
-                    </div>
-                    <div class="modal-footer">
-                        <fds-modal-closer class="button-wrapper">
+                        <fds-modal-closer>
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
                     </div>
@@ -644,21 +673,17 @@
             </fds-modal-opener>
             <fds-modal>
                 <dialog id="return-value-example" aria-labelledby="return-value-example-heading">
-                    <div class="modal-header">
+                    <div class="scrollable-area">
                         <h2 class="modal-title" id="return-value-example-heading" tabindex="-1">
                             Modal med returværdi
                         </h2>
-                        <fds-modal-closer return-value="Luk-knap">
-                            <button class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close" return-value="Luk-knap">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
-                    </div>
-                    <div class="modal-body">
                         <p>Indhold i modalen.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <fds-modal-closer class="button-wrapper" return-value="OK-knap">
+                        <fds-modal-closer return-value="OK-knap">
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
                     </div>

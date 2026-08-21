@@ -1,0 +1,69 @@
+<fds-modal-opener dialog-id="choices-cookie-example">
+    <button class="button button-secondary" type="button" aria-haspopup="dialog">Vis cookiemeddelelse med tjekbokse</button>
+</fds-modal-opener>
+<fds-modal dismissible="false">
+    <dialog id="choices-cookie-example" aria-labelledby="choices-cookie-example-heading" closedby="none">
+        <form method="dialog">
+            <div class="scrollable-area pb-0">
+                <img class="cookie-logo" id="choices-cookie-example-logo" src="/assets/img/logo-header-placeholder.png" alt="Logo for myndighed, der står bag selvbetjeningsløsningen" style="max-width: 110px;">
+                <h2 class="modal-title" id="choices-cookie-example-heading" tabindex="-1" autofocus="">Denne selvbetjening bruger cookies</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
+                <div class="d-block d-sm-flex flex-wrap mb-6">
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="required" disabled="" checked="" class="form-checkbox" id="chkf3eb33c6">
+                        <label class="form-label disabled" for="chkf3eb33c6">Nødvendige</label>
+                    </fds-checkbox>
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="statistics" class="form-checkbox" id="chkdb2965a6">
+                        <label class="form-label" for="chkdb2965a6">Statistik</label>
+                    </fds-checkbox>
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="preferences" class="form-checkbox" id="chkae5ad1ad">
+                        <label class="form-label" for="chkae5ad1ad">Præferencer</label>
+                    </fds-checkbox>
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="functional" class="form-checkbox" id="chk878f5c2">
+                        <label class="form-label" for="chk878f5c2">Funktionelle</label>
+                    </fds-checkbox>
+                </div>
+                <details class="details mb-md-4">
+                    <summary class="details-summary">Læs mere om vores brug af cookies</summary>
+                    <div class="details-text">
+                        <h3 class="mt-0 mb-1 h4">Nødvendige</h3>
+                        <p>Pellentesque nulla mi, pulvinar id blandit eu, volutpat at libero.</p>
+                        <ul>
+                            <li>Donec vulputate eros non felis finibus</li>
+                            <li>Ut facilisis leo dapibus</li>
+                        </ul>
+                        <h3 class="mb-1 h4">Statistik</h3>
+                        <p>Morbi faucibus nunc tortor, condimentum vulputate urna sollicitudin non. Nam commodo nulla metus. Phasellus varius eu dolor nec ultricies.</p>
+                        <ul>
+                            <li>Aenean vulputate</li>
+                            <li>Magna quis tempor consequat</li>
+                            <li>Mi ligula bibendum arcu</li>
+                        </ul>
+                        <h3 class="mb-1 h4">Præferencer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac leo finibus, blandit velit nec, consequat est. Nulla facilisi.</p>
+                        <ul>
+                            <li>A pulvinar libero elit at nibh</li>
+                            <li>Sed non ornare eros</li>
+                            <li>Quis egestas magna</li>
+                        </ul>
+                        <h3 class="mb-1 h4">Funktionelle</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <ul>
+                            <li>Nullam a quam tincidunt</li>
+                            <li>Laoreet vitae efficitur volutpat</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            <div class="fixed-area">
+                <div class="button-group">
+                    <button class="button button-primary" type="submit" value="accept">Accepter cookies</button>
+                    <button class="button button-secondary" type="submit" value="reject">Nej til cookies</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+</fds-modal>

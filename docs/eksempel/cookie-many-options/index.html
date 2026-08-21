@@ -18,8 +18,8 @@
 ================================================== -->
 
 
-<title>Trinindikator | Det Fælles Designsystem</title>
-<meta property="og:title" content="Trinindikator | Det Fælles Designsystem">
+<title>Eksempel på cookiemeddelelse med tjekbokse | Det Fælles Designsystem</title>
+<meta property="og:title" content="Eksempel på cookiemeddelelse med tjekbokse | Det Fælles Designsystem">
 
 
 
@@ -227,87 +227,77 @@
         <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     </header>
     <main class="container page-container" id="main-content">
-        <nav aria-label="Trinindikator" class="d-none d-md-block">
-    <ol class="step-indicator">
-        <li>
-            <a class="step" href="javascript:void(0);">
-                <span class="step-icon">
-                    <svg class="icon-svg" aria-label="Trin 1 gennemført" focusable="false">
-                        <use href="#check"></use>
-                    </svg></span>
-                <div>
-                    <span class="step-title">Trin 1</span>
-                </div>
-            </a>
-        </li>
-        <li class="current">
-            <a class="step" href="javascript:void(0);" aria-current="step">
-                <span class="step-number"><span>2</span></span>
-                <div>
-                    <span class="step-title">Trin 2</span>
-                </div>
-            </a>
-        </li>
-        <li class="disabled ">
-            <div class="step">
-                <span class="step-number"><span>3</span></span>
-                <div>
-                    <span class="step-title">Trin 3</span>
-                </div>
-            </div>
-        </li>
-    </ol>
-</nav>
-
-<fds-modal-opener class="d-md-none" dialog-id="step-indicator-example">
-    <button class="step-indicator-button" type="button"><span>Trin <strong>2</strong> af 3</span></button>
+        <fds-modal-opener dialog-id="choices-cookie-example">
+    <button class="button button-secondary" type="button">Vis cookiemeddelelse med tjekbokse</button>
 </fds-modal-opener>
 
-<fds-modal bottom-sheet="" class="d-md-none">
-    <dialog id="step-indicator-example" aria-labelledby="step-indicator-example-heading">
-        <div class="fixed-area">
-            <h2 class="modal-title" id="step-indicator-example-heading" tabindex="-1">
-                Trin 2 af 3
-            </h2>
-            <fds-modal-closer class="modal-close">
-                <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
-                        <use href="#close"></use>
-                    </svg>Luk</button>
-            </fds-modal-closer>
-        </div>
-        <div class="scrollable-area">
-            <nav aria-label="Trinindikator">
-                <ol class="step-indicator">
-                    <li>
-                        <a class="step" href="javascript:void(0);">
-                            <span class="step-icon">
-                                <svg class="icon-svg" aria-label="Trin 1 gennemført" focusable="false">
-                                    <use href="#check"></use>
-                                </svg></span>
-                            <div>
-                                <span class="step-title">Trin 1</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="current ">
-                        <a class="step" href="javascript:void(0);" aria-current="step">
-                            <span class="step-number"><span>2</span></span>
-                            <div>
-                                <span class="step-title">Trin 2</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="disabled ">
-                        <div class="step">
-                            <span class="step-number"><span>3</span></span>
-                            <div>
-                                <span class="step-title">Trin 3</span>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
-        </div>
+<fds-modal dismissible="false">
+    <dialog id="choices-cookie-example" aria-labelledby="choices-cookie-example-heading">
+        <form method="dialog">
+            <div class="scrollable-area pb-0">
+                <img class="cookie-logo" id="choices-cookie-example-logo" src="/assets/img/logo-header-placeholder.png" alt="Logo for myndighed, der står bag selvbetjeningsløsningen" style="max-width: 110px;" />
+                <h2 class="modal-title" id="choices-cookie-example-heading" tabindex="-1" autofocus="">Denne selvbetjening bruger cookies</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec
+                    arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
+                <div class="d-block d-sm-flex flex-wrap mb-6">
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="required" disabled="" checked="" />
+                        <label>Nødvendige</label>
+                    </fds-checkbox>
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="statistics" />
+                        <label>Statistik</label>
+                    </fds-checkbox>
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="preferences" />
+                        <label>Præferencer</label>
+                    </fds-checkbox>
+                    <fds-checkbox class="mr-sm-5">
+                        <input type="checkbox" name="functional" />
+                        <label>Funktionelle</label>
+                    </fds-checkbox>
+                </div>
+                <details class="details mb-md-4">
+                    <summary class="details-summary">Læs mere om vores brug af cookies</summary>
+                    <div class="details-text">
+                        <h3 class="mt-0 mb-1 h4">Nødvendige</h3>
+                        <p>Pellentesque nulla mi, pulvinar id blandit eu, volutpat at libero.</p>
+                        <ul>
+                            <li>Donec vulputate eros non felis finibus</li>
+                            <li>Ut facilisis leo dapibus</li>
+                        </ul>
+                        <h3 class="mb-1 h4">Statistik</h3>
+                        <p>Morbi faucibus nunc tortor, condimentum vulputate urna sollicitudin non. Nam commodo nulla metus. Phasellus varius eu dolor
+                            nec ultricies.</p>
+                        <ul>
+                            <li>Aenean vulputate</li>
+                            <li>Magna quis tempor consequat</li>
+                            <li>Mi ligula bibendum arcu</li>
+                        </ul>
+                        <h3 class="mb-1 h4">Præferencer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac leo finibus, blandit velit nec, consequat est. Nulla
+                            facilisi.</p>
+                        <ul>
+                            <li>A pulvinar libero elit at nibh</li>
+                            <li>Sed non ornare eros</li>
+                            <li>Quis egestas magna</li>
+                        </ul>
+                        <h3 class="mb-1 h4">Funktionelle</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <ul>
+                            <li>Nullam a quam tincidunt</li>
+                            <li>Laoreet vitae efficitur volutpat</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            <div class="fixed-area">
+                <div class="button-group">
+                    <button class="button button-primary" type="submit" value="accept">Accepter cookies</button>
+                    <button class="button button-secondary" type="submit" value="reject">Nej til cookies</button>
+                </div>
+            </div>
+        </form>
     </dialog>
 </fds-modal>
 
@@ -315,8 +305,6 @@
     <script src="/assets/js/theme.js?v=11.2.0"></script>
 <script src="/assets/js/styleguide.js?v=11.2.0"></script>
 <script src="/assets/js/dkfds.js?v=11.2.0"></script> <!-- Custom elements script -->
-<script src="/assets/js/step-indicator.js"></script>
-
 
 
 </body>
