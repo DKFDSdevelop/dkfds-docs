@@ -113,6 +113,40 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <fds-modal-opener dialog-id="modal-1-example">
+                <button class="button button-secondary">Modal åbner modal</button>
+            </fds-modal-opener>
+            <fds-modal dismissible="false">
+                <dialog id="modal-1-example" aria-labelledby="modal-1-example-heading">
+                    <div class="scrollable-area">
+                        <h2 class="modal-title" id="modal-1-example-heading" tabindex="-1">
+                            Modal åbner modal
+                        </h2>
+                        <p>Dette er modal nr. 1</p>
+                        <fds-modal-opener dialog-id="modal-2-example">
+                            <button class="button button-primary">Næste modal</button>
+                        </fds-modal-opener>
+                    </div>
+                </dialog>
+            </fds-modal>
+            <fds-modal dismissible="false">
+                <dialog id="modal-2-example" aria-labelledby="modal-2-example-heading">
+                    <div class="scrollable-area">
+                        <h2 class="modal-title" id="modal-2-example-heading" tabindex="-1">
+                            Modal åbner modal
+                        </h2>
+                        <p>Dette er modal nr. 2</p>
+                        <fds-modal-closer>
+                            <button class="button button-primary" type="button">Luk</button>
+                        </fds-modal-closer>
+                    </div>
+                </dialog>
+            </fds-modal>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <fds-modal-opener dialog-id="long-modal-example">
                 <button class="button button-secondary">Lang modal</button>
             </fds-modal-opener>
@@ -184,7 +218,7 @@
             <fds-modal-opener dialog-id="bottom-sheet-example">
                 <button class="button button-secondary">Modal som bottom sheet (trin 7 af 10)</button>
             </fds-modal-opener>
-            <fds-modal bottom-sheet>
+            <fds-modal variant="bottom-sheet">
                 <dialog id="bottom-sheet-example" aria-labelledby="bottom-sheet-example-heading">
                     <div class="fixed-area">
                         <h2 class="modal-title" id="bottom-sheet-example-heading" tabindex="-1">
@@ -319,7 +353,7 @@
             <fds-modal-opener dialog-id="long-bottom-sheet-example">
                 <button class="button button-secondary">Bottom sheet med lang tekst</button>
             </fds-modal-opener>
-            <fds-modal bottom-sheet>
+            <fds-modal variant="bottom-sheet">
                 <dialog id="long-bottom-sheet-example" aria-labelledby="long-bottom-sheet-example-heading">
                     <div class="fixed-area">
                         <h2 class="modal-title" id="long-bottom-sheet-example-heading" tabindex="-1">
@@ -390,6 +424,56 @@
                         <fds-modal-closer return-value="OK-knap">
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
+                    </div>
+                </dialog>
+            </fds-modal>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <fds-modal-opener dialog-id="drawer-example">
+                <button class="button button-secondary">Drawer-eksempel</button>
+            </fds-modal-opener>
+            <fds-modal variant="drawer">
+                <dialog id="drawer-example" aria-labelledby="drawer-example-heading">
+                    <div class="scrollable-area">
+                        <div class="drawer-top">
+                            <h2 class="modal-title" id="drawer-example-heading" tabindex="-1">
+                                Menu
+                            </h2>
+                            <fds-modal-closer class="modal-close">
+                                <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                                        <use href="#close"></use>
+                                    </svg>Luk</button>
+                            </fds-modal-closer>
+                        </div>
+                        <p class="drawer-content">Indhold i drawer.</p>
+                    </div>
+                </dialog>
+            </fds-modal>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <fds-modal-opener dialog-id="display-none-example">
+                <button class="button button-secondary">Luk drawer ved md-breakpoint</button>
+            </fds-modal-opener>
+            <fds-modal variant="drawer" class="d-md-none">
+                <dialog id="display-none-example" aria-labelledby="display-none-example-heading">
+                    <div class="scrollable-area">
+                        <div class="drawer-top">
+                            <h2 class="modal-title" id="display-none-example-heading" tabindex="-1">
+                                Menu
+                            </h2>
+                            <fds-modal-closer class="modal-close">
+                                <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                                        <use href="#close"></use>
+                                    </svg>Luk</button>
+                            </fds-modal-closer>
+                        </div>
+                        <p class="drawer-content">Indhold i drawer.</p>
                     </div>
                 </dialog>
             </fds-modal>
