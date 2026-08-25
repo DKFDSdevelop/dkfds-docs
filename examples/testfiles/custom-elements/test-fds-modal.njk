@@ -8,11 +8,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="simple-modal-example">
+            <fds-modal-opener modal-id="simple-modal-example">
                 <button class="button button-secondary">Simpel modal</button>
             </fds-modal-opener>
-            <fds-modal>
-                <dialog id="simple-modal-example" aria-labelledby="simple-modal-example-heading">
+            <fds-modal id="simple-modal-example">
+                <dialog aria-labelledby="simple-modal-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="simple-modal-example-heading" tabindex="-1">
                             Simpel modal
@@ -34,11 +34,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="simple-modal-no-buttons-example">
+            <fds-modal-opener modal-id="simple-modal-no-buttons-example">
                 <button class="button button-secondary">Simpel modal uden knapper i bunden</button>
             </fds-modal-opener>
-            <fds-modal>
-                <dialog id="simple-modal-no-buttons-example" aria-labelledby="simple-modal-no-buttons-example-heading">
+            <fds-modal id="simple-modal-no-buttons-example">
+                <dialog aria-labelledby="simple-modal-no-buttons-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="simple-modal-no-buttons-example-heading" tabindex="-1">
                             Simpel modal
@@ -57,11 +57,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="escape-example">
+            <fds-modal-opener modal-id="escape-example">
                 <button class="button button-secondary">Modal med elementer, der kan lukkes med Escape</button>
             </fds-modal-opener>
-            <fds-modal>
-                <dialog id="escape-example" aria-labelledby="escape-example-heading">
+            <fds-modal id="escape-example">
+                <dialog aria-labelledby="escape-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="escape-example-heading" tabindex="-1">
                             Modal med elementer, der kan lukkes med Escape
@@ -92,11 +92,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="dismissible-example">
+            <fds-modal-opener modal-id="dismissible-example">
                 <button class="button button-secondary">Modal som kræver handling</button>
             </fds-modal-opener>
-            <fds-modal dismissible="false">
-                <dialog id="dismissible-example" aria-labelledby="dismissible-example-heading">
+            <fds-modal id="dismissible-example" dismissible="false">
+                <dialog aria-labelledby="dismissible-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="dismissible-example-heading" tabindex="-1">
                             Modal som kræver handling
@@ -113,24 +113,24 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="modal-1-example">
+            <fds-modal-opener modal-id="modal-1-example">
                 <button class="button button-secondary">Modal åbner modal</button>
             </fds-modal-opener>
-            <fds-modal dismissible="false">
-                <dialog id="modal-1-example" aria-labelledby="modal-1-example-heading">
+            <fds-modal id="modal-1-example" dismissible="false">
+                <dialog aria-labelledby="modal-1-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="modal-1-example-heading" tabindex="-1">
                             Modal åbner modal
                         </h2>
                         <p>Dette er modal nr. 1</p>
-                        <fds-modal-opener dialog-id="modal-2-example">
+                        <fds-modal-opener modal-id="modal-2-example">
                             <button class="button button-primary">Næste modal</button>
                         </fds-modal-opener>
                     </div>
                 </dialog>
             </fds-modal>
-            <fds-modal dismissible="false">
-                <dialog id="modal-2-example" aria-labelledby="modal-2-example-heading">
+            <fds-modal id="modal-2-example" dismissible="false">
+                <dialog aria-labelledby="modal-2-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="modal-2-example-heading" tabindex="-1">
                             Modal åbner modal
@@ -147,11 +147,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="long-modal-example">
+            <fds-modal-opener modal-id="long-modal-example">
                 <button class="button button-secondary">Lang modal</button>
             </fds-modal-opener>
-            <fds-modal>
-                <dialog id="long-modal-example" aria-labelledby="long-modal-example-heading">
+            <fds-modal id="long-modal-example">
+                <dialog aria-labelledby="long-modal-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="long-modal-example-heading" tabindex="-1">
                             Lang modal
@@ -215,11 +215,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="bottom-sheet-example">
+            <fds-modal-opener modal-id="bottom-sheet-example">
                 <button class="button button-secondary">Modal som bottom sheet (trin 7 af 10)</button>
             </fds-modal-opener>
-            <fds-modal variant="bottom-sheet">
-                <dialog id="bottom-sheet-example" aria-labelledby="bottom-sheet-example-heading">
+            <fds-modal id="bottom-sheet-example" variant="bottom-sheet">
+                <dialog aria-labelledby="bottom-sheet-example-heading">
                     <div class="fixed-area">
                         <h2 class="modal-title" id="bottom-sheet-example-heading" tabindex="-1">
                             Trin 7 af 10
@@ -350,11 +350,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="long-bottom-sheet-example">
+            <fds-modal-opener modal-id="long-bottom-sheet-example">
                 <button class="button button-secondary">Bottom sheet med lang tekst</button>
             </fds-modal-opener>
-            <fds-modal variant="bottom-sheet">
-                <dialog id="long-bottom-sheet-example" aria-labelledby="long-bottom-sheet-example-heading">
+            <fds-modal id="long-bottom-sheet-example" variant="bottom-sheet">
+                <dialog aria-labelledby="long-bottom-sheet-example-heading">
                     <div class="fixed-area">
                         <h2 class="modal-title" id="long-bottom-sheet-example-heading" tabindex="-1">
                             LoremipsumdolorsitametconsecteturadipiscingelitVestibulumnecliberoquissapienvehiculaconsequatlaciniaetmaurisNamvenenatisidmiutgravidaPellentesquenonligulaaliquamvive
@@ -375,11 +375,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="transitions-example">
+            <fds-modal-opener modal-id="transitions-example">
                 <button class="button button-secondary">Test af transition events</button>
             </fds-modal-opener>
-            <fds-modal>
-                <dialog id="transitions-example" aria-labelledby="transitions-example-heading">
+            <fds-modal id="transitions-example">
+                <dialog aria-labelledby="transitions-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="transitions-example-heading" tabindex="-1">
                             Simpel modal
@@ -406,11 +406,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="return-value-example">
+            <fds-modal-opener modal-id="return-value-example">
                 <button class="button button-secondary">Returværdi</button>
             </fds-modal-opener>
-            <fds-modal>
-                <dialog id="return-value-example" aria-labelledby="return-value-example-heading">
+            <fds-modal id="return-value-example">
+                <dialog aria-labelledby="return-value-example-heading">
                     <div class="scrollable-area">
                         <h2 class="modal-title" id="return-value-example-heading" tabindex="-1">
                             Modal med returværdi
@@ -420,7 +420,7 @@
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
-                        <p>Indhold i modalen.</p>
+                        <p>Tjek returværdi i konsollen med <code>document.getElementById('return-value-example').dialog.returnValue</code></p>
                         <fds-modal-closer return-value="OK-knap">
                             <button class="button button-primary" type="button">OK</button>
                         </fds-modal-closer>
@@ -432,11 +432,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="drawer-example">
+            <fds-modal-opener modal-id="drawer-example">
                 <button class="button button-secondary">Drawer-eksempel</button>
             </fds-modal-opener>
-            <fds-modal variant="drawer">
-                <dialog id="drawer-example" aria-labelledby="drawer-example-heading">
+            <fds-modal id="drawer-example" variant="drawer">
+                <dialog aria-labelledby="drawer-example-heading">
                     <div class="scrollable-area">
                         <div class="drawer-top">
                             <h2 class="modal-title" id="drawer-example-heading" tabindex="-1">
@@ -457,11 +457,11 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <fds-modal-opener dialog-id="display-none-example">
+            <fds-modal-opener modal-id="display-none-example">
                 <button class="button button-secondary">Luk drawer ved md-breakpoint</button>
             </fds-modal-opener>
-            <fds-modal variant="drawer" class="d-md-none">
-                <dialog id="display-none-example" aria-labelledby="display-none-example-heading">
+            <fds-modal id="display-none-example" variant="drawer" class="d-md-none">
+                <dialog aria-labelledby="display-none-example-heading">
                     <div class="scrollable-area">
                         <div class="drawer-top">
                             <h2 class="modal-title" id="display-none-example-heading" tabindex="-1">
