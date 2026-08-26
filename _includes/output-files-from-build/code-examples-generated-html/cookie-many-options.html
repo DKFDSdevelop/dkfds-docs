@@ -1,29 +1,31 @@
 <fds-modal-opener dialog-id="choices-cookie-example">
     <button class="button button-secondary" type="button" aria-haspopup="dialog">Vis cookiemeddelelse med tjekbokse</button>
 </fds-modal-opener>
-<fds-modal dismissible="false">
-    <dialog id="choices-cookie-example" aria-labelledby="choices-cookie-example-heading" closedby="none">
+<fds-modal id="choices-cookie-example" heading="Denne selvbetjening bruger cookies" heading-id="choices-cookie-example-heading" dismissible="false">
+    <dialog aria-labelledby="choices-cookie-example-heading" closedby="none">
         <form method="dialog">
             <div class="scrollable-area has-fade pb-0">
                 <img class="cookie-logo" id="choices-cookie-example-logo" src="/assets/img/logo-header-placeholder.png" alt="Logo for myndighed, der står bag selvbetjeningsløsningen" style="max-width: 110px;">
-                <h2 class="modal-title" id="choices-cookie-example-heading" tabindex="-1" autofocus="">Denne selvbetjening bruger cookies</h2>
+                <div class="modal-top">
+                    <h2 class="top-heading" tabindex="-1" autofocus="" id="choices-cookie-example-heading">Denne selvbetjening bruger cookies</h2>
+                </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
                 <div class="d-block d-sm-flex flex-wrap mb-6">
                     <fds-checkbox class="mr-sm-5">
-                        <input type="checkbox" name="required" disabled="" checked="" class="form-checkbox" id="chk79adc19d">
-                        <label class="form-label disabled" for="chk79adc19d">Nødvendige</label>
+                        <input type="checkbox" name="required" disabled="" checked="" class="form-checkbox" id="chke5e8005a">
+                        <label class="form-label disabled" for="chke5e8005a">Nødvendige</label>
                     </fds-checkbox>
                     <fds-checkbox class="mr-sm-5">
-                        <input type="checkbox" name="statistics" class="form-checkbox" id="chk6e77cf5c">
-                        <label class="form-label" for="chk6e77cf5c">Statistik</label>
+                        <input type="checkbox" name="statistics" class="form-checkbox" id="chk4cc20cb0">
+                        <label class="form-label" for="chk4cc20cb0">Statistik</label>
                     </fds-checkbox>
                     <fds-checkbox class="mr-sm-5">
-                        <input type="checkbox" name="preferences" class="form-checkbox" id="chk6f264afb">
-                        <label class="form-label" for="chk6f264afb">Præferencer</label>
+                        <input type="checkbox" name="preferences" class="form-checkbox" id="chk9c4c0116">
+                        <label class="form-label" for="chk9c4c0116">Præferencer</label>
                     </fds-checkbox>
                     <fds-checkbox class="mr-sm-5">
-                        <input type="checkbox" name="functional" class="form-checkbox" id="chk9cc7fc2a">
-                        <label class="form-label" for="chk9cc7fc2a">Funktionelle</label>
+                        <input type="checkbox" name="functional" class="form-checkbox" id="chkb0395b9c">
+                        <label class="form-label" for="chkb0395b9c">Funktionelle</label>
                     </fds-checkbox>
                 </div>
                 <details class="details mb-md-4">
@@ -60,8 +62,8 @@
             </div>
             <div class="fixed-area">
                 <div class="button-group">
-                    <button class="button button-secondary" type="submit" value="accept">Accepter cookies</button>
-                    <button class="button button-secondary" type="submit" value="reject">Nej til cookies</button>
+                    <button class="button button-secondary" type="submit" value="accept">Accepter udvalgte cookies</button>
+                    <button class="button button-secondary" type="submit" value="reject">Accepter alle cookies</button>
                 </div>
             </div>
         </form>

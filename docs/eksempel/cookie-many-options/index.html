@@ -231,12 +231,12 @@
     <button class="button button-secondary" type="button">Vis cookiemeddelelse med tjekbokse</button>
 </fds-modal-opener>
 
-<fds-modal dismissible="false">
-    <dialog id="choices-cookie-example" aria-labelledby="choices-cookie-example-heading">
+<fds-modal id="choices-cookie-example" heading="Denne selvbetjening bruger cookies" heading-id="choices-cookie-example-heading" dismissible="false">
+    <dialog>
         <form method="dialog">
             <div class="scrollable-area has-fade pb-0">
                 <img class="cookie-logo" id="choices-cookie-example-logo" src="/assets/img/logo-header-placeholder.png" alt="Logo for myndighed, der står bag selvbetjeningsløsningen" style="max-width: 110px;" />
-                <h2 class="modal-title" id="choices-cookie-example-heading" tabindex="-1" autofocus="">Denne selvbetjening bruger cookies</h2>
+                <div class="modal-top"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec
                     arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
                 <div class="d-block d-sm-flex flex-wrap mb-6">
@@ -293,8 +293,8 @@
             </div>
             <div class="fixed-area">
                 <div class="button-group">
-                    <button class="button button-secondary" type="submit" value="accept">Accepter cookies</button>
-                    <button class="button button-secondary" type="submit" value="reject">Nej til cookies</button>
+                    <button class="button button-secondary" type="submit" value="accept">Accepter udvalgte cookies</button>
+                    <button class="button button-secondary" type="submit" value="reject">Accepter alle cookies</button>
                 </div>
             </div>
         </form>
