@@ -139,7 +139,7 @@ module.exports = function (outputPath, prod) {
                 {//copies content from /img and dkfds-components/dist to /assets/
                     patterns: [
                         { from: "./img/**/*", to: "" },
-                        { from: "./node_modules/dkfds/dist/custom-elements/dkfds.js", to: "js" },
+                        { from: "./node_modules/dkfds/dist/custom-elements/dkfds.js", to: "js", info: { minimized: true } },
                         { from: "./node_modules/dkfds/dist/img/svg-icons", to: "svg" },
                         { from: "./node_modules/dkfds/dist/fonts", to: "fonts" },
                         { from: "./node_modules/dkfds/dist/img/logo_virk.svg", to: "img" },

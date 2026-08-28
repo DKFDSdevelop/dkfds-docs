@@ -123,6 +123,7 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 - Visse font-formater i stylingen er blevet fjernet.
 - Øget specificity på CSS-regler for {% include links/component-guideline-link.html linktext="toggle switch" %}.
 - Ændret farven fra `#1a1a1a` til `#8e8e8e` på topstregen i {% include links/component-guideline-link.html linktext="trinindikatorens" %} panel på mobil.
+- Rettet fejl i accordion, hvor status ved visse zoomniveauer i nogle browsere blev vist på to linjer.
 
 
 

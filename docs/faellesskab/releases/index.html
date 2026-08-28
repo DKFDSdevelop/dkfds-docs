@@ -1430,6 +1430,7 @@
   <li>Visse font-formater i stylingen er blevet fjernet.</li>
   <li>Øget specificity på CSS-regler for <a href="/komponenter/toggle/">toggle switch</a>.</li>
   <li>Ændret farven fra <code>#1a1a1a</code> til <code>#8e8e8e</code> på topstregen i <a href="/komponenter/trinindikator/">trinindikatorens</a> panel på mobil.</li>
+  <li>Rettet fejl i accordion, hvor status ved visse zoomniveauer i nogle browsere blev vist på to linjer.</li>
 </ul>
 
 <h2 id="version-11-tre-0" class="mb-0">Version 11.3.0</h2>
@@ -2621,6 +2622,24 @@
 </footer>
 
 
+    <fds-modal id="fds-cookie-message" heading="Det Fælles Designsystem bruger cookies" heading-id="fds-cookie-message-heading" dismissible="false">
+    <dialog>
+        <form method="dialog">
+            <div class="scrollable-area has-fade pb-0">
+                <div class="modal-top"></div>
+                <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen.</p>
+                <p>Alle indsamlede data anonymiseres.</p>
+                <p class="mb-0"><a href="/privatlivspolitik-cookies/">Læs mere om vores brug af cookies</a></p>
+            </div>
+            <div class="fixed-area">
+                <div class="button-group">
+                    <button class="button button-secondary cpAcceptBtn" type="submit" value="accept">Accepter cookies</button>
+                    <button class="button button-secondary cpDontAcceptBtn" type="submit" value="reject">Nej til cookies</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+</fds-modal>
     <script src="/assets/js/theme.js?v=11.2.0"></script>
 <script src="/assets/js/styleguide.js?v=11.2.0"></script>
 <script src="/assets/js/dkfds.js?v=11.2.0"></script> <!-- Custom elements script -->

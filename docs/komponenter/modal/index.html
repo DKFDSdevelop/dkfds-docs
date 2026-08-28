@@ -2105,7 +2105,7 @@ modal.init();</code></pre></figure>
 </div>
 <div class="example-box">
     <div>
-        <fds-modal-opener dialog-id="simple-modal-example">
+        <fds-modal-opener modal-id="simple-modal-example">
     <button class="button button-secondary">Åbn modal</button>
 </fds-modal-opener>
 <fds-modal id="simple-modal-example" heading="Lorem ipsum" heading-id="simple-modal-example-heading">
@@ -2143,7 +2143,7 @@ modal.init();</code></pre></figure>
                             <button class="button button-tertiary button-copy">Kopiér kode</button>
                         </div>
                         <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">dialog-id</span>=<span class="hljs-string">&quot;simple-modal-example&quot;</span>&gt;</span>
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;simple-modal-example&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-modal-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;simple-modal-example-heading&quot;</span>&gt;</span>
@@ -2178,14 +2178,14 @@ modal.init();</code></pre></figure>
                             <button class="button button-tertiary button-copy">Kopiér kode</button>
                         </div>
                         <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">dialog-id</span>=<span class="hljs-string">&quot;simple-modal-example&quot;</span>&gt;</span>
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;simple-modal-example&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-modal-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;simple-modal-example-heading&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;simple-modal-example-heading&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;scrollable-area&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-top&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;top-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">autofocus</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-modal-example-heading&quot;</span>&gt;</span>Lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;top-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;simple-modal-example-heading&quot;</span>&gt;</span>Lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-close&quot;</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
@@ -2229,7 +2229,7 @@ modal.init();</code></pre></figure>
 </div>
 <div class="example-box">
     <div>
-        <fds-modal-opener dialog-id="not-dismissble-example">
+        <fds-modal-opener modal-id="not-dismissble-example">
     <button class="button button-secondary">Åbn modal</button>
 </fds-modal-opener>
 <fds-modal id="not-dismissble-example" heading="Lorem ipsum" heading-id="not-dismissble-example-heading" dismissible="false">
@@ -2266,7 +2266,7 @@ modal.init();</code></pre></figure>
                             <button class="button button-tertiary button-copy">Kopiér kode</button>
                         </div>
                         <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">dialog-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
@@ -2300,14 +2300,14 @@ modal.init();</code></pre></figure>
                             <button class="button button-tertiary button-copy">Kopiér kode</button>
                         </div>
                         <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">dialog-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">closedby</span>=<span class="hljs-string">&quot;none&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;scrollable-area&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-top&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;top-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">autofocus</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span>&gt;</span>Lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;top-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span>&gt;</span>Lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Cras eleifend elementum finibus. Mauris ac magna quis orci dapibus suscipit. Vestibulum accumsan turpis diam, ut pretium quam sollicitudin sed. Pellentesque posuere eget tortor quis imperdiet. Pellentesque gravida, enim vel porttitor sagittis, libero neque efficitur justo, nec gravida orci risus consequat lacus.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -2417,6 +2417,24 @@ modal.init();</code></pre></figure>
 </footer>
 
 
+    <fds-modal id="fds-cookie-message" heading="Det Fælles Designsystem bruger cookies" heading-id="fds-cookie-message-heading" dismissible="false">
+    <dialog>
+        <form method="dialog">
+            <div class="scrollable-area has-fade pb-0">
+                <div class="modal-top"></div>
+                <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen.</p>
+                <p>Alle indsamlede data anonymiseres.</p>
+                <p class="mb-0"><a href="/privatlivspolitik-cookies/">Læs mere om vores brug af cookies</a></p>
+            </div>
+            <div class="fixed-area">
+                <div class="button-group">
+                    <button class="button button-secondary cpAcceptBtn" type="submit" value="accept">Accepter cookies</button>
+                    <button class="button button-secondary cpDontAcceptBtn" type="submit" value="reject">Nej til cookies</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+</fds-modal>
     <script src="/assets/js/theme.js?v=11.2.0"></script>
 <script src="/assets/js/styleguide.js?v=11.2.0"></script>
 <script src="/assets/js/dkfds.js?v=11.2.0"></script> <!-- Custom elements script -->

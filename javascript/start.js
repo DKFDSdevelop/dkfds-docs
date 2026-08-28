@@ -62,7 +62,7 @@ window.addEventListener("load", (event) => {
 });
 
 $(document).ready(function () {
-    if (document.getElementsByClassName('page-cookie-message').length === 0) {
+    if (document.getElementsByClassName('page-privatlivspolitik-og-cookies').length === 0) {
         let cookiePrompt = CookiePrompter.init({
             trackers: [{
                 name: PiwikProTracker,
@@ -80,18 +80,8 @@ $(document).ready(function () {
             textReadMore: 'Læs mere om vores brug af cookies',
             textDontAccept: 'Nej tak til cookies',
             textAccept: 'Accepter cookies',
-            onReady: function () {
-                if ($('#cookieMessage').length !== 0) {
-                    $('body').addClass('cookie-message-active');
-                    $('.acceptCookieButton').click(function () {
-                        $('body').removeClass('cookie-message-active');
-                    });
-                }
-            },
-            onOptOut: function () {
-                $('body').removeClass('cookie-message-active');
-
-            }
+            onReady: function () {},
+            onOptOut: function () {}
         });
     }
 

@@ -9,6 +9,19 @@ description: Erhvervsstyrelsen behandler de oplysninger, du giver os eller vi in
 tags:
 ---
 
+<div id="cookieCardNoDecision" class="d-none">
+    <button type="button" class="button button-secondary" id="cookieCardAccept">Ja, accepter cookies</button>
+    <button type="button" class="button button-secondary" id="cookieCardReject">Nej tak til cookies</button>
+</div>
+
+<div id="cookieCardAccepted" class="d-none">
+    <button type="button" class="button button-secondary" id="cookieCardRejectOnly">Nej tak til cookies</button>
+</div>
+
+<div id="cookieCardRejected" class="d-none">
+    <button type="button" class="button button-secondary" id="cookieCardAcceptOnly">Ja, accepter cookies</button>
+</div>
+
 {% include anchorlinks.html headings="Privatlivspolitik_og_cookies" %}
 
 ## Privatlivspolitik {#{% include create-id.html heading="Privatlivspolitik" %}}
