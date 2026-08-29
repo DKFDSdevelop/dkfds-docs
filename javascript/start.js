@@ -62,28 +62,16 @@ window.addEventListener("load", (event) => {
 });
 
 $(document).ready(function () {
-    if (document.getElementsByClassName('page-privatlivspolitik-og-cookies').length === 0) {
-        let cookiePrompt = CookiePrompter.init({
-            trackers: [{
-                name: PiwikProTracker,
-                config: {
-                    account: 'e1985634-0fc1-4992-baf6-59088ee23b2a',
-                    piwikProPath: 'erst.containers.piwik.pro'
-                }
-            }],
-            readMoreUrl: '/privatlivspolitik-cookies/',
-            enableLog: false,
-            explicitAccept: true,
-            textHeader: 'Fortæl os om du accepterer cookies',
-            textblock1: 'Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen. Alle indsamlede data anonymiseres.',
-            textblock2: '',
-            textReadMore: 'Læs mere om vores brug af cookies',
-            textDontAccept: 'Nej tak til cookies',
-            textAccept: 'Accepter cookies',
-            onReady: function () {},
-            onOptOut: function () {}
-        });
-    }
+    CookiePrompter.init({
+        trackers: [{
+            name: PiwikProTracker,
+            config: {
+                account: 'e1985634-0fc1-4992-baf6-59088ee23b2a',
+                piwikProPath: 'erst.containers.piwik.pro'
+            }
+        }],
+        suppressPrompt: document.getElementsByClassName('page-privatlivspolitik-og-cookies').length !== 0
+    });
 
     $('.layout-demo form').submit(function (e) {
         e.preventDefault();
@@ -91,53 +79,58 @@ $(document).ready(function () {
     });
 
     /*
-     * If the "cookie radio buttons" are present (i.e. user is on the page "privatlivspolitik"),
-     * ensure that they show the correct cookie status and add functionality to the form.
+     * If the user is on the page "privatlivspolitik", show the correct cookie card.
      */
-    if ($('#cookieForm').length !== 0) {
+    if (document.getElementsByClassName('page-privatlivspolitik-og-cookies').length !== 0) {
+        var cookieCardNoDecision = document.getElementById('cookieCardNoDecision');
+        var cookieCardAccepted = document.getElementById('cookieCardAccepted');
+        var cookieCardRejected = document.getElementById('cookieCardRejected');
 
-        if (CookieMgr.readCookie('cookieOptOut') === "n") {
-            $('#statCookiesNo').prop("checked", true);
-            $('#originalValue').val('0'); // Update hidden input
+        var showCard = function (cardToShow) {
+            [cookieCardNoDecision, cookieCardAccepted, cookieCardRejected].forEach(function (card) {
+                card.parentElement.classList.add('d-none');
+            });
+            cardToShow.parentElement.classList.remove('d-none');
+        };
+
+        var currentCookieChoice = CookieMgr.readCookie('cookieOptOut');
+        if (currentCookieChoice === 'y') {
+            showCard(cookieCardAccepted);
         }
-        else if (CookieMgr.readCookie('cookieOptOut') === "y") {
-            $('#statCookiesYes').prop("checked", true);
-            $('#originalValue').val('1'); // Update hidden input
+        else if (currentCookieChoice === 'n') {
+            showCard(cookieCardRejected);
+        }
+        else {
+            showCard(cookieCardNoDecision);
         }
 
-        $('#cookieForm').submit(function (event) {
-            event.preventDefault();
-            var val = $('input[name=statCookies]:checked').val();
-            if (val === "1") {
-                CookieMgr.createCookie('cookieOptOut', 'y', 1);
-                CookiePrompter.removePrompt();
-                $('#cookieYesAlert').removeClass('d-none');
-                $('#originalValue').val('1'); // Update hidden input
-            } else {
-                CookiePrompter.eraseCookiesAndRemovePrompt();
-                $('#cookieNoAlert').removeClass('d-none');
-                $('#originalValue').val('0'); // Update hidden input
-            }
-
-            $('#cookieButtons').addClass('d-none');
+        document.getElementById('cookieCardAccept').addEventListener('click', function () {
+            CookieMgr.createCookie('cookieOptOut', 'y', 365);
+            $('#cookieYesAlert').removeClass('d-none');
+            showCard(cookieCardAccepted);
         });
 
-        $('input[type=radio][name=statCookies]').change(function () {
-            $('#cookieButtons').removeClass('d-none');
-            $('#cookieNoAlert').addClass('d-none');
+        document.getElementById('cookieCardReject').addEventListener('click', function () {
+            CookiePrompter.eraseCookiesAndRemovePrompt();
+            $('#cookieNoAlert').removeClass('d-none');
+            showCard(cookieCardRejected);
+        });
+
+        document.getElementById('cookieCardRejectOnly').addEventListener('click', function () {
+            CookiePrompter.eraseCookiesAndRemovePrompt();
             $('#cookieYesAlert').addClass('d-none');
+            $('#cookieNoAlert').removeClass('d-none');
+            showCard(cookieCardRejected);
         });
 
-        $('#cookieCancel').click(function () {
-            if ($('#originalValue').val() === "1") {
-                $('#statCookiesYes').prop("checked", true);
-            } else {
-                $('#statCookiesNo').prop("checked", true);
-            }
-
-            $('#cookieButtons').addClass('d-none');
+        document.getElementById('cookieCardAcceptOnly').addEventListener('click', function () {
+            CookieMgr.createCookie('cookieOptOut', 'y', 365);
+            $('#cookieNoAlert').addClass('d-none');
+            $('#cookieYesAlert').removeClass('d-none');
+            showCard(cookieCardAccepted);
         });
     }
+
 
 
     var inFormOrLink = false;

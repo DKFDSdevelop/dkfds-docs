@@ -357,10 +357,13 @@ var CookiePrompter = (function () {
             if (cookie === OK_TRACK_VAL) {
                 log('  b) ok cookie found, tracking accepted, we are tracking');
                 insertTrackingCode();
-            } else {
+            } 
+            else {
                 log('  rendering prompt because explicit (no cookie)');
-                eraseCookies(); // Ensure that there are no cookies when the user hasn't selected an option
-                renderCookieprompt();
+                eraseCookies();
+                if (!config.suppressPrompt) {
+                    renderCookieprompt();
+                }
             }
         }
 
