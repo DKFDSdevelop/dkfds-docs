@@ -1742,6 +1742,7 @@
     <ul class="anchorlist">
         
         <li class="anchorlink-guidelines"><a href="#saadan-bruges-komponenten">Sådan bruges komponenten</a></li>
+        <li class="anchorlink-guidelines"><a href="#varianter">Varianter</a></li>
         <li class="anchorlink-guidelines"><a href="#referencer">Referencer</a></li>
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
@@ -1768,9 +1769,36 @@
 
 <h3>Vejledning</h3>
 
-<p>Det Fælles Designsystem anviser kun styling for cookiemeddelelsen, ikke den tekniske implementering af cookiemeddelelsen.</p>
-
 <p>Du skal selv tilpasse indholdet i meddelelsen, så den overholder gældende lovgivning og stemmer overens med din løsnings specifikke anvendelse af cookies.</p>
+
+<p>De to handlingsknapper skal begge have sekundær visuel vægt, så ingen af valgmulighederne fremhæves frem for den anden.</p>
+
+<p>Brug enten et link eller detaljekomponenten til at give brugeren adgang til yderligere information om anvendelsen af cookies. Hvis adgang via et link forudsætter accept af cookies, anbefales det at anvende detaljekomponenten.</p>
+
+<h3>Logo</h3>
+
+<p>Det anbefales, at afsenderens logo vises i cookiemeddelelsen, så det er tydeligt for brugeren, hvem der står bag løsningen. Du vurderer selv logoets størrelse, så det passer naturligt ind i cookiemodulet og samtidig er tydeligt for brugeren. Som udgangspunkt bør logoet ikke være mere end 120 px bredt eller 60 px højt.</p>
+
+<p>Hvis det ikke er muligt at indsætte et logo, kan afsenderens navn i stedet vises som tekst. Teksten placeres samme sted som logoet og styles således:</p>
+<ul>
+  <li>Fontstørrelse: 16 px</li>
+  <li>Farve: #1A1A1A</li>
+  <li>Fontvægt: Semibold (600)</li>
+</ul>
+
+<h2>Varianter</h2>
+
+<h3>Når der er to cookieindstillinger</h3>
+
+<p>Ved kun to cookieindstillinger anbefales en løsning uden tjekbokse. Cookiemodalet bør tydeligt beskrive, hvilke cookies brugeren skal forholde sig til. Brugeren skal kun tage stilling til, om vedkommende vil acceptere cookies eller afvise cookies, ud over de funktionelt nødvendige cookies.</p>
+
+<h3>Når der er flere end to cookies (udvidet løsning)</h3>
+
+<p>Hvis din løsning anvender mere end 2 cookies, bør du bruge tjekbokse, så brugeren selv kan vælge, hvilke cookies der accepteres.</p>
+
+<p>Brug detaljekomponenten til at beskrive de enkelte cookies og gerne med punktopstilling. Ved at bruge punktopstilling med korte forklaringer bliver information mere overskueligt og nemmere at gennemlæse. https://www.nngroup.com/articles/cookie-permissions/</p>
+
+<p>Brugeren kan enten vælge “Accepter valgte cookies”, hvilket betyder, at kun de markerede cookies accepteres, eller vælge at acceptere alle cookies.</p>
 
 <div class=" component-preview-cookie-message-dos-donts">
     <div class="component-example">

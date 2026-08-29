@@ -1317,38 +1317,23 @@
         
 
         <div class="row card-row">
-    <div class="col-12 mt-805 d-none">
-        <section class="card" id="cookieCardNoDecision">
+    <div class="col-12 mt-805">
+        <section class="card">
             <div class="card-content">
                 <h2 class="card-heading">Det Fælles Designsystem bruger cookies</h2>
                 <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen. Alle indsamlede data anonymiseres.</p>
+                <div id="cookieCardStatus">
+                    <div class="accepted mt-4 d-none">
+                        <p><strong>Du har accepteret cookies.</strong> Hvis du fortryder din accept af, at designsystem.dk anvender cookies, skal du klikke på knappen "Nej til cookies".</p>
+                    </div>
+                    <div class="rejected mt-4 d-none">
+                        <p><strong>Du har sagt nej til cookies.</strong> Hvis du fortryder og vil acceptere, at designsystem.dk anvender cookies, skal du klikke på knappen "Acceptér cookies".</p>
+                    </div>
+                </div>
+                <div class="sr-only" aria-live="polite" id="aria-live-area"></div>
                 <div class="button-group card-actions">
                     <button type="button" class="button button-secondary" id="cookieCardAccept">Acceptér cookies</button>
                     <button type="button" class="button button-secondary" id="cookieCardReject">Nej til cookies</button>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="col-12 mt-805 d-none">
-        <section class="card" id="cookieCardAccepted">
-            <div class="card-content">
-                <h2 class="card-heading">Det Fælles Designsystem bruger cookies</h2>
-                <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen. Alle indsamlede data anonymiseres.</p>
-                <p><strong>Du har accepteret cookies.</strong> Hvis du fortryder din accept af, at designsystem.dk anvender cookies, skal du klikke på knappen “Nej til cookies”.</p>
-                <div class="button-group card-actions">
-                    <button type="button" class="button button-secondary" id="cookieCardRejectOnly">Nej til cookies</button>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="col-12 mt-805 d-none">
-        <section class="card" id="cookieCardRejected">
-            <div class="card-content">
-                <h2 class="card-heading">Det Fælles Designsystem bruger cookies</h2>
-                <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen. Alle indsamlede data anonymiseres.</p>
-                <p><strong>Du har sagt nej til cookies.</strong> Hvis du fortryder og vil acceptere, at designsystem.dk anvender cookies, skal du klikke på knappen “Acceptér cookies”.</p>
-                <div class="button-group card-actions">
-                    <button type="button" class="button button-secondary" id="cookieCardAcceptOnly">Acceptér cookies</button>
                 </div>
             </div>
         </section>

@@ -51,9 +51,9 @@ var CookieMgr = (function () {
         var domain = getCookieDomain(window.location.hostname);
         log('setting cookie on ' + domain);
         if (domain === 'localhost') {
-            document.cookie = name + "=" + value + expires + "; path=/" + ";SameSite=Strict";
+            document.cookie = name + "=" + value + expires + "; path=/" + ";SameSite=Strict;Secure";
         } else {
-            document.cookie = name + "=" + value + expires + ";domain=" + domain + "; path=/" + ";SameSite=Strict";
+            document.cookie = name + "=" + value + expires + ";domain=" + domain + "; path=/" + ";SameSite=Strict;Secure";
         }
     },
         readCookie = function (name) {
@@ -149,7 +149,7 @@ var PiwikProTracker = (function () {
                     var e = new Date;
                     e.setTime(e.getTime() + 24 * c * 60 * 60 * 1e3), d = "; expires=" + e.toUTCString()
                 }
-                document.cookie = a + "=" + b + d + "; path=/"
+                document.cookie = a + "=" + b + d + "; path=/;Secure"
             }
             var isStgDebug = (window.location.href.match("stg_debug") || document.cookie.match("stg_debug")) && !window.location.href.match("stg_disable_debug");
             stgCreateCookie("stg_debug", isStgDebug ? 1 : "", isStgDebug ? 14 : -1);
@@ -209,22 +209,11 @@ var CookiePrompter = (function () {
         TRACKING_COOKIE = 'cookieOptOut',
         trackers = [],
         config = {}, // will get keys from defaults on init
-        defaults = { // will be copied into config on init
+        defaults = {
             setCookieOnTopLevelDomain: false,
             expiryDays: 365,
-            readMoreUrl: '/',
-            textHeader: 'Vi samler statistik ved hjælp af cookies',
-            textblock1: 'Ved at klikke OK accepterer du vores cookies til statistik. Du kan sige ',
-            textblock2: '. Vi bruger en cookie, for at huske dit nej.',
-            textNoThanks: 'nej tak til statistikcookies ved at klikke her',
-            textReadMore: 'Læs mere om cookies her',
-            textAccept: 'OK',
-            textDontAccept: '',
-            styling: {
-                'inlinestyle': 'border-bottom:2px solid #000;padding: 12px 20px 0 20px;margin-bottom:12px;',
-                'inlinestyleInner': 'max-width:960px;margin-left:auto;margin-right:auto;'
-            },
             enableLog: false,
+            suppressPrompt: false,
             onOptOut: function (pageHref) {
                 log('opting out from page: ' + pageHref);
             },
@@ -357,7 +346,7 @@ var CookiePrompter = (function () {
             if (cookie === OK_TRACK_VAL) {
                 log('  b) ok cookie found, tracking accepted, we are tracking');
                 insertTrackingCode();
-            } 
+            }
             else {
                 log('  rendering prompt because explicit (no cookie)');
                 eraseCookies();

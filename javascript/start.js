@@ -62,6 +62,8 @@ window.addEventListener("load", (event) => {
 });
 
 $(document).ready(function () {
+    var onPrivacyPage = document.getElementsByClassName('page-privatlivspolitik-og-cookies').length !== 0;
+
     CookiePrompter.init({
         trackers: [{
             name: PiwikProTracker,
@@ -70,7 +72,7 @@ $(document).ready(function () {
                 piwikProPath: 'erst.containers.piwik.pro'
             }
         }],
-        suppressPrompt: document.getElementsByClassName('page-privatlivspolitik-og-cookies').length !== 0
+        suppressPrompt: onPrivacyPage
     });
 
     $('.layout-demo form').submit(function (e) {
@@ -79,59 +81,69 @@ $(document).ready(function () {
     });
 
     /*
-     * If the user is on the page "privatlivspolitik", show the correct cookie card.
+     * If the user is on the page "privatlivspolitik", show the correct cookie message.
      */
-    if (document.getElementsByClassName('page-privatlivspolitik-og-cookies').length !== 0) {
-        var cookieCardNoDecision = document.getElementById('cookieCardNoDecision');
-        var cookieCardAccepted = document.getElementById('cookieCardAccepted');
-        var cookieCardRejected = document.getElementById('cookieCardRejected');
+    if (onPrivacyPage) {
 
-        var showCard = function (cardToShow) {
-            [cookieCardNoDecision, cookieCardAccepted, cookieCardRejected].forEach(function (card) {
-                card.parentElement.classList.add('d-none');
-            });
-            cardToShow.parentElement.classList.remove('d-none');
+        var acceptBtn = document.getElementById('cookieCardAccept');
+        var rejectBtn = document.getElementById('cookieCardReject');
+        var acceptedMessage = document.querySelector('#cookieCardStatus .accepted');
+        var rejectedMessage = document.querySelector('#cookieCardStatus .rejected');
+
+        var showState = function (state) {
+            if (state === 'accepted') {
+                acceptedMessage.classList.remove('d-none');
+                rejectedMessage.classList.add('d-none');
+                acceptBtn.classList.add('d-none');
+                rejectBtn.classList.remove('d-none');
+            } 
+            else if (state === 'rejected') {
+                acceptedMessage.classList.add('d-none');
+                rejectedMessage.classList.remove('d-none');
+                acceptBtn.classList.remove('d-none');
+                rejectBtn.classList.add('d-none');
+            } 
+            else if (state === 'no-decision') {
+                acceptedMessage.classList.add('d-none');
+                rejectedMessage.classList.add('d-none');
+                acceptBtn.classList.remove('d-none');
+                rejectBtn.classList.remove('d-none');
+            }
+        };
+
+        var announceStateChange = function (state) {
+            var message = state === 'accepted' ? acceptedMessage : rejectedMessage;
+            var ariaLiveArea = document.getElementById('aria-live-area');
+            if (message && ariaLiveArea) {
+                ariaLiveArea.textContent = message.textContent;
+            }
         };
 
         var currentCookieChoice = CookieMgr.readCookie('cookieOptOut');
         if (currentCookieChoice === 'y') {
-            showCard(cookieCardAccepted);
-        }
+            showState('accepted');
+        } 
         else if (currentCookieChoice === 'n') {
-            showCard(cookieCardRejected);
-        }
+            showState('rejected');
+        } 
         else {
-            showCard(cookieCardNoDecision);
+            showState('no-decision');
         }
 
-        document.getElementById('cookieCardAccept').addEventListener('click', function () {
+        acceptBtn.addEventListener('click', function () {
             CookieMgr.createCookie('cookieOptOut', 'y', 365);
-            $('#cookieYesAlert').removeClass('d-none');
-            showCard(cookieCardAccepted);
+            showState('accepted');
+            announceStateChange('accepted');
+            rejectBtn.focus();
         });
 
-        document.getElementById('cookieCardReject').addEventListener('click', function () {
+        rejectBtn.addEventListener('click', function () {
             CookiePrompter.eraseCookiesAndRemovePrompt();
-            $('#cookieNoAlert').removeClass('d-none');
-            showCard(cookieCardRejected);
-        });
-
-        document.getElementById('cookieCardRejectOnly').addEventListener('click', function () {
-            CookiePrompter.eraseCookiesAndRemovePrompt();
-            $('#cookieYesAlert').addClass('d-none');
-            $('#cookieNoAlert').removeClass('d-none');
-            showCard(cookieCardRejected);
-        });
-
-        document.getElementById('cookieCardAcceptOnly').addEventListener('click', function () {
-            CookieMgr.createCookie('cookieOptOut', 'y', 365);
-            $('#cookieNoAlert').addClass('d-none');
-            $('#cookieYesAlert').removeClass('d-none');
-            showCard(cookieCardAccepted);
+            showState('rejected');
+            announceStateChange('rejected');
+            acceptBtn.focus();
         });
     }
-
-
 
     var inFormOrLink = false;
     $('.layout-demo a, .layout-demo button').click(function (e) {
@@ -149,8 +161,6 @@ $(document).ready(function () {
             }
         }
 
-
-
         if ($(this).hasClass('alert-leave2')) {
             var r = confirm("Du er ved at forlade siden. Evt. indtastninger der ikke er gemt vil gå tabt. Vil du fortsætte?");
             if (r == true) {
@@ -165,7 +175,6 @@ $(document).ready(function () {
     });
 
     $('.layout-iframed .icon-link, .layout-demo .icon-link').click(function (e) {
-
         var r = confirm("Du er ved at forlade selvbetjeningsløsningen. Data, der ikke er gemt vil gå tabt. Vil du fortsætte?");
         if (r == true) {
             inFormOrLink = true;
@@ -175,7 +184,6 @@ $(document).ready(function () {
             inFormOrLink = false;
             return false;
         }
-
     });
 
     // alert upon closing page
@@ -195,12 +203,10 @@ $(document).ready(function () {
             if (showPopup) {
                 if (!inFormOrLink) {
                     e = e || window.event;
-
                     // For IE and Firefox prior to version 4
                     if (e) {
                         e.returnValue = 'Sure?';
                     }
-
                     // For Safari
                     return 'Sure?';
                 }
@@ -208,5 +214,3 @@ $(document).ready(function () {
         }
     };
 });
-
-
