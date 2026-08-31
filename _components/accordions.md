@@ -27,7 +27,7 @@ tabs: "Retningslinjer, kode"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til  
+### Anvendes til
 
 Accordions er interaktive overskrifter, der anvendes til at skjule og vise det relaterede indhold.
 
