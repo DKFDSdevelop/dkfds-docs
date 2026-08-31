@@ -128,7 +128,7 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 ## Version 11.3.0 {#{% include create-id.html heading="Version 11.3.0" %}}
 {:.mb-0}
 
-<div><span class="small-text mt-0 d-block">xx-xx-2026</span></div>
+<div><span class="small-text mt-0 d-block">31-08-2026</span></div>
 
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Fjernet `aria-labelledby` fra Nunjucks-macro og eksempler med {% include links/component-guideline-link.html linktext="radioknapper" %}, hvor brugen er overflødig. `aria-labelledby` anvendes stadig for {% include links/component-guideline-link.html linktext="radioknap med tooltip" %}.
 {% include links/github-link.html number="282" afternumber=" på GitHub" %}
