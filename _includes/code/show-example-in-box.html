@@ -1,0 +1,19 @@
+{% if include.example and include.example != '' %}
+<div class="tab-panel code-tab">
+    <div>
+        <div class="component-code">
+            <div class="button-copy-container">
+                <button class="button button-tertiary button-copy">Kopiér kode</button>
+            </div>
+            <figure tabindex="0" class="code-figure">
+<pre><code class="language-html" data-lang="html">{% include {{ include.path }}{{ include.example }}.html %}</code></pre>
+            </figure>
+        </div>
+    </div>
+</div>
+{% if include.link and include.link != '' %}
+<div class="mt-3 mb-8">
+    <a href="/eksempel/{{ include.example }}/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+</div>
+{% endif %}
+{% endif %}

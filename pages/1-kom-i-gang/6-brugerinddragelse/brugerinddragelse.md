@@ -1,7 +1,7 @@
 ---
 permalink: "/kom-i-gang/brugerinddragelse/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Brugerinddragelse
 lead: Når du bruger Det Fælles Designsystem, er det stadig vigtigt at inddrage brugerne og brugerteste den enkelte løsning for at sikre den gode brugeroplevelse. 

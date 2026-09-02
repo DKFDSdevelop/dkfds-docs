@@ -1,0 +1,65 @@
+const fs = require('fs');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const beautify = require('js-beautify').html;
+
+// https://www.npmjs.com/package/js-beautify#css--html
+const BEAUTIFY_OPTIONS = {
+    "indent_size": 4,
+    "unformatted": [],
+    "preserve_newlines": false,
+    "indent_inner_html": true,
+    "inline": ['use'],
+    "inline_custom_elements": false
+};
+
+const srcDir = '_includes/code-examples';
+const destDir = '_includes/output-files-from-build/code-examples-generated-html';
+
+const dom = new JSDOM(`<!DOCTYPE html><head></head><body></body>`);
+const window = dom.window;
+const document = window.document;
+const body = document.body;
+
+const SKIP_FILES = [
+    'blazor-app.html',
+    'blazor-component.html',
+    'fds-input-wrapper-simple.html',
+    'react-ref.html',
+    'react-wrapper.html',
+    'react-script.html'
+];
+
+global.HTMLElement = window.HTMLElement;
+global.document = window.document;
+global.window = window;
+global.customElements = dom.window.customElements;
+global.Event = window.Event;
+global.CustomEvent = window.CustomEvent;
+global.MutationObserver = window.MutationObserver;
+global.CSSStyleSheet = window.CSSStyleSheet;
+global.Node = window.Node;
+global.HTMLFieldSetElement = window.HTMLFieldSetElement;
+
+// Mock ResizeObserver since jsdom doesn't support it
+global.ResizeObserver = class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+};
+
+const DKFDS = require('dkfds/new-dkfds');
+DKFDS.registerCustomElements();
+
+fs.readdirSync(srcDir).forEach(file => {
+    if (!SKIP_FILES.includes(file)) {
+        const content = fs.readFileSync(`${srcDir}/${file}`, 'utf8');
+        body.innerHTML = content;
+        const beautifiedContent = beautify(body.innerHTML, BEAUTIFY_OPTIONS);
+        fs.writeFileSync(`${destDir}/${file}`, beautifiedContent);
+    }
+});
+
+process.on('exit', () => {
+    console.log(`Files created in ${destDir}`);
+});

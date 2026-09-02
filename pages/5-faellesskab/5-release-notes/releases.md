@@ -1,7 +1,7 @@
 ---
 permalink: "/faellesskab/releases/"
 layout: styleguide
-category: Faellesskab_category
+category: faellesskab_menu
 subcategory: Fællesskab
 title: Release notes
 lead: Nedenfor vises release notes — en opsummering af bug fixes, nye features og andre opdateringer.
@@ -107,6 +107,24 @@ Har du et nyt forslag til en feature eller et bug fix? Så må du meget gerne {%
 ### Tidligere versioner af dokumentationen
 
 Har du brug for at se en version af dokumentationen på designsystem.dk, som stemmer overens med en tidligere release, så er du velkommen til at {% include links/internal-link.html linktext="kontakte os" %}.
+
+
+
+## Version x.0.0 {#{% include create-id.html heading="Version x.0.0" %}}
+
+- <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet custom elements og web components.
+- <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet ikonet `plus-circle`.
+- <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Hjælpefunktioner til at generere unikke ID'er er omskrevet.
+- <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Attributten `hidden="false"` på et element vil ikke længere skjule elementet.
+- <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Stylingen, der satte max-bredde for lister, er ændret. Lister har som udgangspunkt ikke længere en automatisk max-bredde på 66 tegn, men dette kan sættes ved at bruge klassen `paragraph`.
+- <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Opdateret stylingen for knapper i en {% include links/component-guideline-link.html linktext="knapgruppe" %}, så kun direkte børn af `button-group` styles.
+- Modalevents `fds.modal.hidden` og `fds.modal.shown` er blevet ændret til at boble op i DOM'en (`bubbles: true`), så det ikke længere er nødvendigt at sætte event listeners direkte på en modal.
+- Modaler lukkes nu ved `keydown` i stedet for `keyup`.
+- Visse font-formater i stylingen er blevet fjernet.
+- Øget specificity på CSS-regler for {% include links/component-guideline-link.html linktext="toggle switch" %}.
+- Ændret farven fra `#1a1a1a` til `#8e8e8e` på topstregen i {% include links/component-guideline-link.html linktext="trinindikatorens" %} panel på mobil.
+- Rettet fejl i accordion, hvor status ved visse zoomniveauer i nogle browsere blev vist på to linjer.
+- Rettet fejl i cards, hvor paragraffer ikke havde en maksimum længde på 66 tegn.
 
 
 

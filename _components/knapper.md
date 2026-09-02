@@ -4,9 +4,10 @@ redirect_from:
 - "/komponenter/buttons/"
 - "/kode/komponenter/knapper/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
-title: Knapper (Buttons)
+title: Knapper
+title_en: Buttons
 lead: Knapper lader brugeren udføre centrale funktioner.
 description: Knapper er grafiske elementer, som brugerne kan trykke eller klikke på
   og dermed udløse en funktion eller handling.

@@ -3,7 +3,7 @@ permalink: "/komponenter/tags/"
 redirect_from:
 - "/kode/komponenter/tags/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Tags
 lead: Et tag er en mindre knap, som du kan bruge til at angive metainformation om

@@ -4,7 +4,7 @@ redirect_from:
 - "/design/kanter/"
 - "/design/borders/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Hjørner, streger, skygger
 description: Hjørner, streger og skygger hjælper med at danne ramme om indhold på siden.

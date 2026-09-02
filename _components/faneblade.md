@@ -5,9 +5,10 @@ redirect_from:
 - "/kode/komponenter/faneblad/"
 - "/kode/komponenter/faneblade/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
-title: Faneblade (Tabs)
+title: Faneblade
+title_en: Tabs
 lead: Faneblade gør det muligt for brugerne at bladre imellem relaterede sektioner
   af indhold og kun få vist en sektion af gangen. Vær opmærksom på om dine brugere
   ser de skjulte sektioner, når du anvender faneblade.

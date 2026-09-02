@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/plugins/micromodal/"
 - "/kode/komponenter/modal/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Modal
 lead: Modaler tvinger brugeren til at fokusere på og tage stilling til afgørende indhold, mens den øvrige side er deaktiveret.
@@ -20,14 +20,15 @@ tags:
 - popup
 - pop up
 - vindue
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="modal" title="Eksempel på modal" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" %}
+{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" custom="Modal_Custom" %}
 
 <!--split-->
 
@@ -129,3 +130,44 @@ Når en modal aktiveres, vil JavaScripten sætte `inert`-attributten på alle el
 {% include code/syntax.html component="modal-forced-action" link=true copybutton=true guidelines="/komponenter/modal/#modal-som-kraever-handling" %}
 
 Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner som escape. Bemærk, at eksemplet også undlader luk knappen øverst i modalen. Man skal huske at tilføre luk funktionalitet i knapperne tilføjet i modalen.
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-tabs.html example="fds-modal-default" tabId="example-1-modal" %}
+
+Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for at åbne to modaler efter hinanden, skal forrige modal lukkes, før den nye åbnes.
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Modal som kræver handling
+
+Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
+
+{% include code/show-example-with-tabs.html example="fds-modal-forced-action" tabId="example-2-modal" %}
+
+Implementeringen af attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### fds-modal
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut     | Beskrivelse                                                                                                                                                                                                    |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| dismissible  | Hvis attributten er sat, er det ikke muligt at lukke modalen ved at trykke på baggrunden, bruge tilbage-knappen på mobiler eller trykke på Escape.                                                             |
+| bottom-sheet | Åben modalen med en animation fra bunden af skærmen. Bruges primært til {% include links/component-guideline-link.html linktext="trinindikator" %}.                                                            |
+| ready        | Kan bruges til at udskyde automatisk initialisering. Sæt ready="false" for at forhindre initialisering ved tilføjelse til DOM’en, og fjern attributten eller sæt ready="true" for at initialisere komponenten. |
+
+## Referencer {#{% include create-id.html heading="Referencer" append="-custom" %}}
+
+aria-labelledby i dialog: https://www.w3.org/WAI/WCAG22/Techniques/html/H102
+
+HTML Living Standard, 6.10.3 The CloseWatcher interface, cancel-eksempel: https://html.spec.whatwg.org/#example-CloseWatcher-cancel
+
+https://issues.chromium.org/issues/351867704

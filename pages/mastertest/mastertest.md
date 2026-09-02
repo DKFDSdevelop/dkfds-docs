@@ -8,6 +8,43 @@ title: Test
 # Testside
 
 {:.h3}
+## Tom side til automatiske tests
+
+{% include test/preview-test.html filename="test-empty-page" description="Tom side til automatiske tests" %}
+
+{:.h3}
+## Custom elements
+
+{% include test/preview-test.html filename="test-fds-help-text" description="Hjælpetekst" %}
+{% include test/preview-test.html filename="test-fds-error-message" description="Fejlmeddelelser" %}
+{% include test/preview-test.html filename="test-fds-character-limit" description="Karakterbegrænsning" %}
+
+{% include test/preview-test.html filename="test-fds-accordion" description="Accordions" %}
+{% include test/preview-test.html filename="test-fds-accordion-group" description="Accordiongruppe" %}
+{% include test/preview-test.html filename="test-fds-input" description="Inputfelter" %}
+{% include test/preview-test.html filename="test-fds-select" description="Dropdowns" %}
+{% include test/preview-test.html filename="test-fds-checkbox" description="Tjekbokse" %}
+{% include test/preview-test.html filename="test-fds-radio-button" description="Radioknap" %}
+{% include test/preview-test.html filename="test-fds-date-input" description="Datofelter" %}
+{% include test/preview-test.html filename="test-fds-upload-file" description="Vedhæft fil" %}
+{% include test/preview-test.html filename="test-fds-date-picker" description="Datovælger" %}
+{% include test/preview-test.html filename="test-fds-textarea" description="Tekstområde" %}
+{% include test/preview-test.html filename="test-fds-error-summary-manual" description="Fejlopsummering - manual indsættelse fejl" %}
+{% include test/preview-test.html filename="test-fds-error-summary-auto" description="Fejlopsummering - automatisk opsamling af fejl" %}
+{% include test/preview-test.html filename="test-fds-drawer" description="Mobilmenu" %}
+{% include test/preview-test.html filename="test-fds-portal-info" description="Portalinfo" %}
+{% include test/preview-test.html filename="test-fds-solution-info" description="Løsningsinfo" %}
+{% include test/preview-test.html filename="test-fds-header-from-components" description="Header lavet med komponenter" %}
+{% include test/preview-test.html filename="test-fds-header-hardcoded" description="Hardcoded header" %}
+{% include test/preview-test.html filename="test-fds-dropdown-menu" description="Submenu til navigation" %}
+{% include test/preview-test.html filename="test-fds-tooltip-icon" description="Tooltip-ikon" %}
+{% include test/preview-test.html filename="test-fds-tooltip" description="Tooltip" %}
+{% include test/preview-test.html filename="test-fds-side-menu" description="Venstremenu" %}
+{% include test/preview-test.html filename="test-fds-toggle-switch" description="Toggle Switch" %}
+{% include test/preview-test.html filename="test-fds-modal" description="Modal" %}
+{% include test/preview-test.html filename="test-fds-step-indicator" description="Trinindikator" %}
+
+{:.h3}
 ## HTML-elementer
 
 {% include test/preview-test.html filename="test-html-elements" description="HTML-elementer" %}

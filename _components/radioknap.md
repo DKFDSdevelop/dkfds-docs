@@ -4,20 +4,22 @@ redirect_from:
 - "/komponenter/radiobutton/"
 - "/kode/komponenter/radioknap/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
-title: Radioknap (Radio button)
+title: Radioknap
+title_en: Radio button
 lead: Radioknapper lader brugeren vælge én blandt flere muligheder.
 description: "Radioknapper giver brugeren mulighed for at vælge en enkelt værdi ud fra en synlig liste."
 tags:
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true  custom=true %}
 
 {% include code/preview-box.html component="radiobutton" title="Eksempel på radioknapper" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Radioknap" code="Radioknap_Kode" %}
+{% include anchorlinks.html guidelines="Radioknap" code="Radioknap_Kode" custom="Radioknap_Custom" %}
 
 <!--split-->
 
@@ -167,3 +169,87 @@ Det element som skal collapses/expandes skal have følgende:
 
 - `id="id-of-target-to-collapse"`
 - `aria-hidden="false"` hvis indholdet vises og `aria-hidden="true"` hvis indholdet skjules
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+Radioknap har to custom elementer tilknyttet: `<fds-radio-button>` og `<fds-radio-button-group>`. Bemærk venligst, at `<fds-radio-button>` ikke er beregnet til at blive brugt alene, men kun inden for en gruppe.
+
+Begge komponenter forventer, at de nødvendige HTML-elementer er til stede. Den enkelte checkbox kræver et input- og et label-element. Radioknap-gruppen kræver et fieldset, der omslutter gruppens legend og de enkelte radioknapper. Ved initialisering tilføjer custom elementet de nødvendige klasser, attributter og event listeners. 
+
+Hvis den forventede HTML mangler, forsøger komponenten at initialisere det, der er muligt, uden at flytte rundt på eksisterende elementer.
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-radio-button-group>` med `<div class="fds-radio-button-group">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+### Radioknapgruppe med label lavet med custom element
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-example" tabId="example-1-acc" %}
+
+Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-radio-button-group-simple" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include custom-element-shared-text/fds-error-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-error" tabId="example-radio-button-group-error" %}
+
+{% include custom-element-shared-text/fds-error-tables.html %}
+
+### Hjælpetekst
+
+{% include custom-element-shared-text/fds-helptext-intro-text.html %}
+
+#### Hjælpetekst til enkelte radioknap
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-helptext" tabId="example-radio-button-helptext" %}
+
+{% include custom-element-shared-text/fds-help-text-tables.html %}
+
+#### Radioknapgruppe med hjælpetekst
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-helptext" tabId="example-radio-button-group-helptext" %}
+
+### Skjult indhold (Collapse)
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-collapse" tabId="example-radio-button-group-collapse" %}
+
+#### Deaktiveret radioknapgruppe
+
+{% include code/show-example-with-tabs.html example="fds-radio-button-group-disabled" tabId="example-radio-button-group-disabled" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### fds-radio-button
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                           |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om tjekboksen er obligatorisk eller frivillig. Indsæt en tekst i attributten for at overskrive default-teksten. |
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| init()                | Initialiserer komponenten manuelt, fx hvis komponenten har ready="false", eller hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|
+
+### fds-radio-button-group
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------|
+| init()                | Initialiserer komponenten manuelt, fx hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|

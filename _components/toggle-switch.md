@@ -3,17 +3,18 @@ permalink: "/komponenter/toggle/"
 redirect_from:
 - "/kode/komponenter/toggle/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Toggle switch
 lead: "En toggle switch er en digital tænd/sluk-knap. Til forskel fra en radioknap eller tjekboks træder valget i kraft i det øjeblik brugerne interagerer med komponenten."
 description:
 tags:
 - "switch"
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 <div id="kode" hidden></div>
 
@@ -56,3 +57,35 @@ Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på swi
 ## Referencer {#{% include create-id.html heading="Referencer" append="-kode" %}}
 
 {% include links/external-link.html linktext="ARIA Authoring Practices Guide (APG): Switch Pattern" %}
+
+<!--split-->
+
+{% include code/show-example-with-tabs.html example="fds-toggle-switch" tabId="example-1-toggle" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut        | Beskrivelse                                                                      |
+|-----------------|----------------------------------------------------------------------------------|
+| state           | Afgør om toggle switch er slået til eller fra. Gyldige værdier er `on` og `off`. |
+| label           | Label for toggle switch.                                                         |
+| disabled-switch | Gør komponentens knap inaktiv (sætter `disabled` på knappen).                    |
+
+### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion | Beskrivelse                                      |
+|----------|--------------------------------------------------|
+| on()     | Slå toggle switch til.                           |
+| off()    | Slå toggle switch fra.                           |
+| toggle() | Skift mellem at slå toggle switch til eller fra. |
+
+### Events
+
+{:.table .table--responsive-headers}
+| Event          | Beskrivelse                         |
+|----------------|-------------------------------------|
+| fds-toggle-on  | Udløses når toggle switch slås til. |
+| fds-toggle-off | Udløses når toggle switch slås fra. |

@@ -1,7 +1,7 @@
 ---
 permalink: "/eksempler/"
 layout: styleguide
-category: Eksempler_category
+category: eksempler_menu
 title: Eksempler
 lead: Eksemplerne viser, hvordan forskellige typer af selvbetjeningsløsninger kan sættes op i layout og flow.
 description: Eksempler på løsninger, der gør brug af Det Fælles Designsystem

@@ -35,6 +35,12 @@ Print:
 Frameworks:
 - h2: JavaScript
 - h2: Kodefrihed under ansvar
+- h2: Eksempler på anvendelse
+
+Custom_elements:
+- h2: Om custom elements
+- h2: Forskellen på custom elements og web components
+- h2: Sådan kan du bruge custom elements
 
 Design_og_ressourcer:
 - h2: Grundprincipper
@@ -222,6 +228,7 @@ Cards:
 
 Cookiemeddelelse:
 - h2: Sådan bruges komponenten
+- h2: Varianter
 - h2: Referencer
 
 Datofelter:
@@ -395,6 +402,12 @@ Accordions_Kode:
 - h2: Med fejl
 - h2: Med succesbeskeder
 
+Accordions_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: fds-accordion-group
+- h2: fds-accordion
+
 Anchorlinks_Kode:
 - h2: Installation
 
@@ -422,9 +435,17 @@ Cards_Kode:
 Cookiemeddelelse_Kode:
 - h2: Installation
 
+Cookiemeddelelse_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+
 Datofelter_Kode:
 - h2: Installation
 - h2: Fejlmeddelelse
+
+Datofelter_Custom:
+- h2: Om custom elements
 
 Datovaelger_Kode:
 - h2: Installation
@@ -434,12 +455,24 @@ Datovaelger_Kode:
 - h2: Fejlmeddelelse
 - h2: Deaktiveret
 
+Datovaelger_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 Detaljer_Kode:
 - h2: Installation
 
 Dropdown_Kode:
 - h2: Installation
 - h2: Deaktiveret
+
+Dropdown_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Faneblade_Kode:
 - h2: Installation
@@ -461,6 +494,12 @@ Fejlmeddelelser_Kode:
 
 Fejlopsummering_Kode:
 - h2: Installation
+
+Fejlopsummering_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Footer_Kode:
 - h2: Installation
@@ -484,6 +523,10 @@ Header_Kode:
 - h2: Installation
 - h2: Referencer
 
+Header_Custom:
+- h2: Eksempler
+- h2: Konfiguration
+
 Inputfelter_Kode:
 - h2: Installation
 - h2: Hjælpetekst
@@ -493,6 +536,12 @@ Inputfelter_Kode:
 - h2: Prefix og suffix
 - h2: Karakterbegrænsning
 - h2: Feltbredde
+
+Inputfelter_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Knapper_Kode:
 - h2: Installation
@@ -515,6 +564,13 @@ Modal_Kode:
 - h2: Installation
 - h2: Modal som kræver handling
 
+Modal_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+- h2: Referencer
+
 Overflowmenu_Kode:
 - h2: Installation
 - h2: Sortering
@@ -526,6 +582,12 @@ Radioknap_Kode:
 - h2: Installation
 - h2: Hjælpetekst
 - h2: Skjult indhold (Collapse)
+
+Radioknap_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Sprogvaelger_Kode:
 - h2: Installation
@@ -556,6 +618,12 @@ Tekstomraade_Kode:
 - h2: Karakterbegrænsning
 - h2: Deaktiveret
 
+Tekstomraade_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 TilbageLink_Kode:
 - h2: Installation
 
@@ -566,6 +634,12 @@ Tjekboks_Kode:
 - h2: Installation
 - h2: Hjælpetekst
 - h2: Skjult indhold (collapse)
+
+Tjekboks_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Toastbesked_Kode:
 - h2: Installation
@@ -587,6 +661,12 @@ Tooltip_Kode:
 - h2: Knap med hover-tooltip
 - h2: Referencer
 
+Tooltip_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 Trinindikator_Kode:
 - h2: Installation
 - h2: Alle trin klikbare
@@ -594,8 +674,20 @@ Trinindikator_Kode:
 - h2: Trinindikator med fejl
 - h2: Simpel trinindikator
 
+Trinindikator_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
+
 VedhaeftFil_Kode:
 - h2: Installation
+
+VedhaeftFil_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 Venstremenu_Kode:
 - h2: Installation

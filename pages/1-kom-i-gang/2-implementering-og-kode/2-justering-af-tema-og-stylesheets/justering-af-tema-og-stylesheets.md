@@ -2,7 +2,7 @@
 permalink: "/kom-i-gang/implementering-kode/justering/"
 parentlink: "/kom-i-gang/implementering-kode/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Justering af tema og stylesheets
 description: Sådan tilpasser du stylesheets til dit projekt.

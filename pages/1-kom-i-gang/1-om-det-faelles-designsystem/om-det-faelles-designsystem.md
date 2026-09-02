@@ -16,7 +16,7 @@ redirect_from:
 - "/omdesignsystemet/"
 - "/omdesignsystemet/gennemgang/"
 layout: styleguide
-category: Kom_i_gang_category
+category: kom_i_gang_menu
 subcategory: Kom i gang
 title: Om Det Fælles Designsystem
 lead: Det Fælles Designsystem er udviklet for at sikre ensartet funktionalitet og design i selvbetjeningsløsninger på tværs af offentlige myndigheder. Det skaber genkendelse for brugerne på tværs af løsninger og gør det nemmere for dem at foretage selvbetjening. Alle komponenter er testet og tilgængelige. 

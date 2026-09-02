@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/typografi/tekst/"
 - "/design/typografi/tekst/"
 layout: styleguide
-category: Styleguide_category
+category: styleguide_menu
 subcategory: Styleguide
 title: Tekst
 description: Se hvordan tekster anvendes i designsystemet.

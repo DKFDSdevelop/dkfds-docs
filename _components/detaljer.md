@@ -5,7 +5,7 @@ redirect_from:
 - "/kode/komponenter/collapse/"
 - "/kode/komponenter/detaljer/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Detaljer
 lead:  Detaljekomponenten holder indhold skjult, indtil brugeren selv vælger at folde den ud.

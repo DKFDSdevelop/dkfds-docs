@@ -1,0 +1,22 @@
+import { useEffect, useRef } from 'react';
+
+function Example() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const handleFilesAdded = (event) => {
+      console.log(event.detail);
+    };
+
+    el.addEventListener('files-added', handleFilesAdded);
+
+    return () => {
+      el.removeEventListener('files-added', handleFilesAdded);
+    };
+  }, []);
+
+  return <fds-upload-file ref={ref} />;
+}

@@ -3,7 +3,7 @@ permalink: "/komponenter/tilbage-til-top/"
 redirect_from:
 - "/kode/komponenter/tilbage-til-top/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Tilbage til toppen
 lead: Tilbage til toppen-knappen hjælper brugeren med at navigere til toppen af en lang side på en let måde uden at miste overblikket. 

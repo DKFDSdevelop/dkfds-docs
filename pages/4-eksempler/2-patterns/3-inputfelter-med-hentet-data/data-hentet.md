@@ -4,7 +4,7 @@ parentlink: "/eksempler/patterns/"
 layout: styleguide
 title: Inputfelter med hentet data
 lead: En formular kan i visse situationer indeholde felter, der er udfyldt på forhånd med automatisk hentet data. Denne data skal nogen gange kunne ændres.
-category: Eksempler_category
+category: eksempler_menu
 subcategory: Eksempler
 description: En formular med automatisk hentet data.
 ---
@@ -47,12 +47,14 @@ Det har ingen indflydelse på en formulars flow, om brugeren vælger at redigere
 let editButton = document.getElementById("hentetdata-rediger");
 
 editButton.addEventListener('click', function (e) {
-    let textfield = document.getElementById("hentetdata-redigerbar");
-    let hinttext = document.getElementById("hentetdata-redigerbar-hint");
+    const hentetDataEksempel = document.getElementById('hentetnavn-eksempel');
+    const textfield = hentetDataEksempel.querySelector('input');
+
     this.setAttribute('hidden', '');
-    hinttext.setAttribute('hidden', '');
+
+    hentetDataEksempel.querySelector('fds-help-text').remove();
     textfield.removeAttribute('readonly');
-    textfield.removeAttribute("aria-describedby");
+
     textfield.setAttribute('required', '');
     textfield.setAttribute('autocomplete', 'name');
     textfield.classList.remove('mr-3');

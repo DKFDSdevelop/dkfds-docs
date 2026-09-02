@@ -19,11 +19,39 @@ var titles = require('./example-titles').default;
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildFile = ['examples/testfiles/loading-spinner/*.njk'];
+var buildFile = ['examples/testfiles/custom-elements/*.njk'];
 
 var activeBuild = buildAll;
 
 var testfiles = [
+    "test-empty-page",
+    "test-fds-accordion",
+    "test-fds-accordion-group",
+    "test-fds-help-text",
+    "test-fds-input",
+    "test-fds-select",
+    "test-fds-error-message",
+    "test-fds-character-limit",
+    "test-fds-checkbox",
+    "test-fds-radio-button",
+    "test-fds-date-input",
+    "test-fds-upload-file",
+    "test-fds-date-picker",
+    "test-fds-textarea",
+    "test-fds-error-summary-manual",
+    "test-fds-error-summary-auto",
+    "test-fds-drawer",
+    "test-fds-portal-info",
+    "test-fds-solution-info",
+    "test-fds-header-from-components",
+    "test-fds-header-hardcoded",
+    "test-fds-dropdown-menu",
+    "test-fds-tooltip-icon",
+    "test-fds-tooltip",
+    "test-fds-side-menu",
+    "test-fds-toggle-switch",
+    "test-fds-modal",
+    "test-fds-step-indicator",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
@@ -135,12 +163,12 @@ var testfiles = [
     "test-radiobuttons-2",
     "test-radiobuttons-3",
     "test-radiobuttons-4",
-    "test-search",
     "test-structured-list-1",
     "test-structured-list-2",
     "test-structured-list-3",
     "test-structured-list-4",
     "test-structured-list-5",
+    "test-search",
     "test-simple-table",
     "test-responsive-table",
     "test-sorting-table",

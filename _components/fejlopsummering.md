@@ -3,20 +3,21 @@ permalink: "/komponenter/fejlopsummering/"
 redirect_from:
 - "/kode/komponenter/fejlopsummering/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Fejlopsummering
 lead: Fejlopsummeringer bruges til at give overblik over fejl eller mangler, der skal rettes på en side eller et trin, før brugeren kan komme videre.
 description: 
 tags: 
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="error-summary" title="Eksempel på fejlopsummering" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Fejlopsummering" code="Fejlopsummering_Kode" classes="hide-code" %}
+{% include anchorlinks.html guidelines="Fejlopsummering" code="Fejlopsummering_Kode" custom="Fejlopsummering_Custom" classes="hide-code" %}
 
 <!--split-->
 
@@ -85,3 +86,64 @@ Fejlopsummering kræver JavaScript samt attributten `data-module="error-summary"
 {% highlight javascript %}
 new DKFDS.ErrorSummary(document.getElementById('ALERT-ID')).init();
 {% endhighlight %}
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+`fds-error-summary` kan anvendes på to måder:
+
+- uden attributten `auto`, hvor udvikleren selv er ansvarlig for at tilføje fejl til oversigten og styre, hvornår komponenten skal vises
+- med attributten `auto`, hvor komponenten automatisk samler alle synlige fejlmeddelelser på siden, som ligger i et understøttet inputelement, og selv viser eller skjuler oversigten afhængigt af, om der er fejl
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+### Fejlopsummering med custom element
+
+{% include code/show-example-with-tabs.html example="fds-error-summary" tabId="example-1-errorsum" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Auto
+
+Med attributten `auto` opdateres fejloversigten automatisk ud fra synlige `fds-error-message` i understøttede wrappers. Hvis en fejl er standalone eller befinder sig i en ikke-understøttet parent wrapper, bliver den ikke automatisk føjet til fejloversigten.
+
+{% include code/show-example-with-tabs.html example="fds-error-summary-auto" tabId="example-2-errorsum" %}
+
+### Understøttede wrappers
+
+`fds-error-summary` understøtter fejlmeddelelser i følgende wrappers:
+
+- `fds-input`
+- `fds-checkbox`
+- `fds-checkbox-group`
+- `fds-radio-button-group`
+- `fds-date-input`
+- `fds-textarea`
+- `fds-select`
+- `fds-upload-file`
+- `fds-date-picker`
+
+Fejlmeddelelsen skal være angivet som et `fds-error-message` inde i wrapperen.
+
+Når der klikkes på et link i fejloversigten, flyttes fokus til det første fokusbare element i den wrapper, som fejlmeddelelsen tilhører, fx et `input`, `select`, `textarea` eller `button`.
+
+Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhørende fejlmeddelelse heller ikke er skjult.
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut      | Beskrivelse                                                                                                          |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| heading       | Sæt en anden overskrift end standardoverskriften `"Der er problemer"`.                                               |
+| heading-id    | Sætter id på overskriftselementet, så fejlopsummeringen kan referere til overskriften via aria-labelledby.           |
+| heading-level | Angiver hvilket overskriftsniveau der anvendes til overskriften. Gyldige værdier er `h1` til `h6`. Standard er `h2`. |
+| auto          | Gør komponenten automatisk og holder fejloversigten synkroniseret med `fds-error-message` i understøttede wrappers.  |

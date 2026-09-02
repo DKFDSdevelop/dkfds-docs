@@ -10,7 +10,7 @@ redirect_from:
 - "/eksempel/notification-info/"
 - "/kode/komponenter/toastbesked/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Toastbesked
 lead: Toastbeskeder viser aktuel information og dukker op på skærmen i det øjeblik, de bliver relevante. Toastbeskeder vises typisk som reaktion på brugerinteraktion.

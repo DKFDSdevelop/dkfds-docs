@@ -7,7 +7,7 @@ redirect_from:
 - "/kode/komponenter/tekstfelter/"
 - "/kode/komponenter/inputfelter/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Inputfelter
 lead: Inputfelter lader brugeren indtaste kort information.
@@ -41,14 +41,15 @@ tags:
 - suffiks
 - sufix
 - sufiks
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="text-input" title="Eksempel på inputfelt" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" %}
+{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" custom="Inputfelter_Custom" %}
 
 <!--split-->
 
@@ -300,3 +301,96 @@ For at styre bredden på inputfelter efter tegn, skal der i stedet bruges nedens
 - `input-char-27` har en bredde der passer til 27 tegn
 
 For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes klassen `input-char-X`, hvor det nye tal skal erstattes med X.
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+### HTML-muligheder
+
+Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+
+Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input>` med `<div class="fds-input">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+### Inputfelt med label lavet med custom element
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
+
+Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
+{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-input-wrapper-simple" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include custom-element-shared-text/fds-error-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-error" tabId="tab-example-input-error" %}
+
+{% include custom-element-shared-text/fds-error-tables.html %}
+
+### Hjælpetekst
+
+{% include custom-element-shared-text/fds-helptext-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
+
+{% include custom-element-shared-text/fds-help-text-tables.html %}
+
+### Obligatoriske og frivillige inputfelter
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
+
+### Read-only
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
+
+### Deaktiveret
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
+
+### Præfiks og suffiks
+
+Præfiks og suffiks kræver, at man lægger inputfeltet i et custom element kaldet `<fds-input-affix>`. Dette element kan tage to attributter: `input-prefix` og `input-suffix`.
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
+
+### Karakterbegrænsning
+
+{% include custom-element-shared-text/fds-character-limit-intro-text.html %}
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
+
+{% include custom-element-shared-text/fds-character-limit-tables.html %}
+
+### Feltbredde
+
+#### Input bredde med rem
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
+
+#### Input bredde med tegn
+
+{% include code/show-example-with-tabs.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                           |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
+| input-prefix         | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
+| input-suffix         | Indsæt et suffiks-element (tekst efter inputfeltet). Kræver at inputfeltet ligger i en `form-input-wrapper`.                          |
+| input-maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
+
+### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion              | Beskrivelse                                                                     |
+|-----------------------|---------------------------------------------------------------------------------|
+| updateIdReferences()  | Sikrer korrekt kobling mellem label, input og øvrige elementer. Kald ved behov. |
+| setClasses()          | Sætter de nødvendige klasser på inputfelt og label. Kald ved behov.             |

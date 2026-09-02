@@ -3,7 +3,7 @@ permalink: "/komponenter/search/"
 redirect_from:
 - "/kode/komponenter/search/"
 layout: styleguide
-category: Komponenter_category
+category: komponenter_menu
 subcategory: Komponenter
 title: Søgefelt
 lead: Søgefeltet lader brugeren søge efter bestemt indhold på siden eller i løsningen.
