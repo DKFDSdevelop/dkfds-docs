@@ -40,26 +40,26 @@
                 </ol>
             </nav>
 
-            <fds-modal-opener class="d-md-none" dialog-id="step-indicator-example">
+            <fds-modal-opener class="d-md-none" modal-id="step-indicator-example">
                 <button class="step-indicator-button" type="button"><span>Trin
                         <strong>2</strong> af 3</span></button>
             </fds-modal-opener>
 
-            <fds-modal bottom-sheet class="d-md-none">
+            <fds-modal variant="bottom-sheet" class="d-md-none">
                 <dialog id="step-indicator-example"
                     aria-labelledby="step-indicator-example-heading">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="step-indicator-example-heading"
+                    <div class="fixed-area">
+                        <h2 class="top-heading" id="step-indicator-example-heading"
                             tabindex="-1">
                             Trin 2 af 3
                         </h2>
-                        <fds-modal-closer>
-                            <button class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
                     </div>
-                    <div class="modal-body">
+                    <div class="scrollable-area">
                         <nav aria-label='Trinindikator'>
                             <ol class="step-indicator">
                                 <li>

@@ -285,24 +285,24 @@
                 </ol>
             </nav>
 
-            <fds-modal-opener class="d-md-none" dialog-id="step-indicator-example">
+            <fds-modal-opener class="d-md-none" modal-id="step-indicator-example">
                 <button class="step-indicator-button" type="button"><span>Trin
                         <strong>2</strong> af 3</span></button>
             </fds-modal-opener>
 
-            <fds-modal bottom-sheet="" class="d-md-none">
+            <fds-modal variant="bottom-sheet" class="d-md-none">
                 <dialog id="step-indicator-example" aria-labelledby="step-indicator-example-heading">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="step-indicator-example-heading" tabindex="-1">
+                    <div class="fixed-area">
+                        <h2 class="top-heading" id="step-indicator-example-heading" tabindex="-1">
                             Trin 2 af 3
                         </h2>
-                        <fds-modal-closer>
-                            <button class="modal-close function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
                                     <use href="#close"></use>
                                 </svg>Luk</button>
                         </fds-modal-closer>
                     </div>
-                    <div class="modal-body">
+                    <div class="scrollable-area">
                         <nav aria-label="Trinindikator">
                             <ol class="step-indicator">
                                 <li>
@@ -343,6 +343,24 @@
 
 </main>
 
+    <fds-modal id="fds-cookie-message" heading="Det Fælles Designsystem bruger cookies" heading-id="fds-cookie-message-heading" dismissible="false">
+    <dialog>
+        <form method="dialog">
+            <div class="scrollable-area has-fade pb-0">
+                <div class="modal-top"></div>
+                <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen.</p>
+                <p>Alle indsamlede data anonymiseres.</p>
+                <p class="mb-0"><a href="/privatlivspolitik-cookies/">Læs mere om vores brug af cookies</a></p>
+            </div>
+            <div class="fixed-area">
+                <div class="button-group">
+                    <button class="button button-secondary cpAcceptBtn" type="submit" value="accept">Accepter cookies</button>
+                    <button class="button button-secondary cpDontAcceptBtn" type="submit" value="reject">Nej til cookies</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+</fds-modal>
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/styleguide.js"></script>
     <script src="/assets/js/dkfds.js"></script> <!-- Custom elements script -->

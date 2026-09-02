@@ -230,7 +230,13 @@
         <div slot="solution-heading" class="d-flex flex-wrap align-items-center">
             <a href="/"  class="mr-4" >Det Fælles Designsystem</a><strong class="badge badge-error">Develop</strong>
         </div>
-        <fds-drawer-opener slot="drawer-opener" drawer="mobile-menu" class="d-block d-lg-none"></fds-drawer-opener>
+        <fds-modal-opener slot="drawer-opener" class="d-block d-lg-none mobile-menu-opener" modal-id="mobile-menu">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" focusable="false" aria-hidden="true" class="icon-svg">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></path>
+                </svg><span>Menu</span>
+            </button>
+        </fds-modal-opener>
     </fds-solution-info>
 
     <!-- Desktop main menu-->
@@ -294,12 +300,14 @@
         </div>
     </fds-main-menu>
 
-    <fds-drawer id="mobile-menu" class="d-block d-lg-none">
-        <div class="mobile-drawer">
-            <fds-main-menu>
-                <nav aria-label="Hovedmenu og undermenuer">
-                    <ul>
-                         
+    <fds-modal id="mobile-menu" variant="drawer" heading="Menu" class="d-block d-lg-none">
+        <dialog>
+            <div class="scrollable-area">
+                <div class="modal-top"></div>
+                <fds-main-menu>
+                    <nav aria-label="Hovedmenu og undermenuer">
+                        <ul>
+                             
 
         
         <li>
@@ -1279,11 +1287,12 @@
         
 
 
-                    </ul>
-                </nav>
-            </fds-main-menu>
-        </div>
-    </fds-drawer>
+                        </ul>
+                    </nav>
+                </fds-main-menu>
+            </div>
+        </dialog>
+    </fds-modal>
 </header>
 
 <div class="container page-container">
@@ -1353,7 +1362,9 @@
                 <a href="/komponenter/cookiemeddelelse/" >
                     <span>Cookiemeddelelse
                         
-                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
                     </span>
                 </a>
 
@@ -1649,7 +1660,9 @@
                 <a href="/komponenter/trinindikator/" >
                     <span>Trinindikator
                         
-                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
                     </span>
                 </a>
 
@@ -2004,6 +2017,24 @@
 </footer>
 
 
+    <fds-modal id="fds-cookie-message" heading="Det Fælles Designsystem bruger cookies" heading-id="fds-cookie-message-heading" dismissible="false">
+    <dialog>
+        <form method="dialog">
+            <div class="scrollable-area has-fade pb-0">
+                <div class="modal-top"></div>
+                <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen.</p>
+                <p>Alle indsamlede data anonymiseres.</p>
+                <p class="mb-0"><a href="/privatlivspolitik-cookies/">Læs mere om vores brug af cookies</a></p>
+            </div>
+            <div class="fixed-area">
+                <div class="button-group">
+                    <button class="button button-secondary cpAcceptBtn" type="submit" value="accept">Accepter cookies</button>
+                    <button class="button button-secondary cpDontAcceptBtn" type="submit" value="reject">Nej til cookies</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+</fds-modal>
     <script src="/assets/js/theme.js?v=11.3.0"></script>
 <script src="/assets/js/styleguide.js?v=11.3.0"></script>
 <script src="/assets/js/dkfds.js?v=11.3.0"></script> <!-- Custom elements script -->

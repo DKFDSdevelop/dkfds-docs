@@ -330,6 +330,38 @@ let setExampleLogo = function () {
             logo.setAttribute('src', '/assets/img/logo-header-placeholder.png');
         }
     }
+
+    const cookieLogo = document.getElementById('simple-cookie-example-logo');
+    if (cookieLogo) {
+        if (cookie === 'borgerdk') {
+            cookieLogo.setAttribute('src', '/assets/img/logo-borgerdk.svg');
+            cookieLogo.setAttribute('style', 'max-width: 120px;');
+        }
+        else if (cookie === 'virk') {
+            cookieLogo.setAttribute('src', '/assets/img/logo_virk.svg');
+            cookieLogo.setAttribute('style', 'max-width: 80px;');
+        }
+        else {
+            cookieLogo.setAttribute('src', '/assets/img/logo-header-placeholder.png');
+            cookieLogo.setAttribute('style', 'max-width: 110px;');
+        }
+    }
+
+    const choiceCookieLogo = document.getElementById('choices-cookie-example-logo');
+    if (choiceCookieLogo) {
+        if (cookie === 'borgerdk') {
+            choiceCookieLogo.setAttribute('src', '/assets/img/logo-borgerdk.svg');
+            choiceCookieLogo.setAttribute('style', 'max-width: 120px;');
+        }
+        else if (cookie === 'virk') {
+            choiceCookieLogo.setAttribute('src', '/assets/img/logo_virk.svg');
+            choiceCookieLogo.setAttribute('style', 'max-width: 80px;');
+        }
+        else {
+            choiceCookieLogo.setAttribute('src', '/assets/img/logo-header-placeholder.png');
+            choiceCookieLogo.setAttribute('style', 'max-width: 110px;');
+        }
+    }
 }
 
 let setDoDontImages = function () {

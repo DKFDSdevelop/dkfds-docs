@@ -9,6 +9,30 @@ description: Erhvervsstyrelsen behandler de oplysninger, du giver os eller vi in
 tags:
 ---
 
+<div class="row card-row">
+    <div class="col-12 mt-805">
+        <section class="card">
+            <div class="card-content">
+                <h2 class="card-heading">Det Fælles Designsystem bruger cookies</h2>
+                <p>Vi indsamler statistik ved hjælp af tredjepartscookies til at forbedre brugeroplevelsen. Alle indsamlede data anonymiseres.</p>
+                <div id="cookieCardStatus">
+                    <div class="accepted mt-4 d-none">
+                        <p><strong>Du har accepteret cookies.</strong> Hvis du fortryder din accept af, at designsystem.dk anvender cookies, skal du klikke på knappen "Nej til cookies".</p>
+                    </div>
+                    <div class="rejected mt-4 d-none">
+                        <p><strong>Du har sagt nej til cookies.</strong> Hvis du fortryder og vil acceptere, at designsystem.dk anvender cookies, skal du klikke på knappen "Acceptér cookies".</p>
+                    </div>
+                </div>
+                <div class="sr-only" aria-live="polite" id="aria-live-area"></div>
+                <div class="button-group card-actions">
+                    <button type="button" class="button button-secondary" id="cookieCardAccept">Acceptér cookies</button>
+                    <button type="button" class="button button-secondary" id="cookieCardReject">Nej til cookies</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
 {% include anchorlinks.html headings="Privatlivspolitik_og_cookies" %}
 
 ## Privatlivspolitik {#{% include create-id.html heading="Privatlivspolitik" %}}
@@ -105,42 +129,6 @@ Hvis du klikker på "Accepter cookies", sættes der cookies til at samle statist
 <h3>Cookies ved brugerundersøgelser</h3>
 
 Når vi gennemfører brugerundersøgelser på FDS, anvender vi cookies, dels til at styre, hvor mange gange du som bruger ser invitationen til undersøgelsen, dels til at registrere, om du har svaret på undersøgelsen. På den måde sikrer vi, at du som bruger ikke ser invitationen til undersøgelsen igen, efter du har svaret.
-
-<h3>Stop med at samle statistik</h3>
-
-Ønsker du at vi stopper med at samle statistik om din brug af FDS, så kan du nedenfor ændre dit valg, hvormed dine besøg på FDS ikke længere vil blive registreret til forbedring af brugeroplevelsen. Vi bruger dog stadig en cookie for at huske dit valg.
-
-For at undgå at der bliver sat statistikcookies fra Piwik PRO, skal du nedenunder vælge "nej" og efterfølgende trykke på knappen "gem".
-
-<form id="cookieForm" method="post" action="/">
-    <fds-radio-button-group group-label="Må vi indsamle statistik om din brug af Det Fælles Designsystem (FDS)?">
-        <fds-radio-button>
-            <input type="radio" name="statCookies" value="1" id="statCookiesYes">
-            <label>Ja, accepter cookies</label>
-        </fds-radio-button>
-        <fds-radio-button>
-            <input type="radio" name="statCookies" value="0" id="statCookiesNo">
-            <label>Nej</label>
-        </fds-radio-button>
-    </fds-radio-button-group>
-    <div id="cookieButtons" class="mt-6 d-none">
-        <input type="hidden" id="originalValue" value="" />
-        <button type="submit" class="button button-primary" id="cookieSave">Gem</button>
-        <button type="button" class="button button-secondary" id="cookieCancel">Annuller</button>
-    </div>
-</form>
-<div class="alert alert-success alert--paragraph d-none" role="alert" id="cookieNoAlert">
-    <svg class="icon-svg alert-icon" aria-label="Succes" focusable="false"><use href="#success"></use></svg>
-    <div class="alert-body">
-        <p class="alert-text">Ok, vi samler ikke længere anonymiseret statistik til forbedring af brugeroplevelsen</p>
-    </div>
-</div>
-<div class="alert alert-success alert--paragraph d-none" role="alert" id="cookieYesAlert">
-    <svg class="icon-svg alert-icon" aria-label="Succes" focusable="false"><use href="#success"></use></svg>
-    <div class="alert-body">
-        <p class="alert-text">Tak, vi samler nu anonymiseret statistik til forbedring af brugeroplevelsen</p>
-    </div>
-</div>
 
 <h3>Varighed af cookies</h3>
 

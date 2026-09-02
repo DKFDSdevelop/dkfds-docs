@@ -228,6 +228,7 @@ Cards:
 
 Cookiemeddelelse:
 - h2: Sådan bruges komponenten
+- h2: Varianter
 - h2: Referencer
 
 Datofelter:
@@ -433,6 +434,11 @@ Cards_Kode:
 
 Cookiemeddelelse_Kode:
 - h2: Installation
+
+Cookiemeddelelse_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
 
 Datofelter_Kode:
 - h2: Installation
@@ -667,6 +673,12 @@ Trinindikator_Kode:
 - h2: Ekstra information
 - h2: Trinindikator med fejl
 - h2: Simpel trinindikator
+
+Trinindikator_Custom:
+- h2: Om custom elements
+- h2: Eksempler
+- h2: Varianter
+- h2: Konfiguration
 
 VedhaeftFil_Kode:
 - h2: Installation

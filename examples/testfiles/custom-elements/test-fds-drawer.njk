@@ -48,13 +48,30 @@
                         ønsker at blive navigeret væk.</p>
                     <a href="#" class="mx-5">Dette er et link</a>
                     <div class="mt-6 mx-5">
-                        <button class="button button-secondary" data-module="modal" data-target="modal-example"
-                            aria-haspopup="dialog">
+                        <button class="button button-secondary" data-module="modal" data-target="modal-example" aria-haspopup="dialog">
                             Åbn modal
                         </button>
                     </div>
+                    <fds-modal-opener class="mt-6 mx-5" modal-id="new-fds-modal">
+                        <button class="button button-secondary">Åbn ny fds-modal</button>
+                    </fds-modal-opener>
                 </div>
             </fds-drawer>
+            <fds-modal>
+                <dialog id="new-fds-modal" aria-labelledby="new-fds-modal-heading">
+                    <div class="scrollable-area">
+                        <h2 class="modal-title" id="new-fds-modal-heading" tabindex="-1">
+                            fds-modal
+                        </h2>
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                                    <use href="#close"></use>
+                                </svg>Luk</button>
+                        </fds-modal-closer>
+                        <p>Indhold i modalen.</p>
+                    </div>
+                </dialog>
+            </fds-modal>
         </div>
     </div>
 
@@ -71,8 +88,7 @@
 </main>
 
 <div class="fds-modal-container">
-    <div class="fds-modal" id="modal-example" aria-hidden="true" role="dialog" aria-modal="true"
-        aria-labelledby="modal-example-heading">
+    <div class="fds-modal" id="modal-example" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-example-heading">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="modal-example-heading">Lorem ipsum</h2>

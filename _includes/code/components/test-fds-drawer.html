@@ -55,8 +55,26 @@
                             Åbn modal
                         </button>
                     </div>
+                    <fds-modal-opener class="mt-6 mx-5" modal-id="new-fds-modal">
+                        <button class="button button-secondary">Åbn ny fds-modal</button>
+                    </fds-modal-opener>
                 </div>
             </fds-drawer>
+            <fds-modal>
+                <dialog id="new-fds-modal" aria-labelledby="new-fds-modal-heading">
+                    <div class="scrollable-area">
+                        <h2 class="modal-title" id="new-fds-modal-heading" tabindex="-1">
+                            fds-modal
+                        </h2>
+                        <fds-modal-closer class="modal-close">
+                            <button class="function-link" type="button"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                                    <use href="#close"></use>
+                                </svg>Luk</button>
+                        </fds-modal-closer>
+                        <p>Indhold i modalen.</p>
+                    </div>
+                </dialog>
+            </fds-modal>
         </div>
     </div>
 

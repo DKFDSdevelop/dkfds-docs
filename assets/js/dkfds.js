@@ -1,1 +1,8429 @@
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.DKFDS=t():e.DKFDS=t()}(this,()=>(()=>{"use strict";var e={d:(t,i)=>{for(var s in i)e.o(i,s)&&!e.o(t,s)&&Object.defineProperty(t,s,{enumerable:!0,get:i[s]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};function i(e){return e+crypto.getRandomValues(new Uint32Array(1))[0].toString(16)}function s(e){let t=i(e),s=10;for(;document.getElementById(t)&&s>0;)t=i(e),s--;return t}e.r(t),e.d(t,{registerAccordion:()=>r,registerAccordionGroup:()=>o,registerCharacterLimit:()=>x,registerCheckbox:()=>L,registerCheckboxGroup:()=>M,registerCustomElements:()=>Pe,registerDateInput:()=>R,registerDatePicker:()=>J,registerDatePickerGrid:()=>ie,registerDrawer:()=>pe,registerDrawerOpener:()=>me,registerDropdownMenu:()=>Se,registerErrorMessage:()=>C,registerErrorSummary:()=>de,registerFileItem:()=>_,registerHelpText:()=>A,registerInput:()=>y,registerInputAffix:()=>ce,registerMainMenu:()=>we,registerModal:()=>Ne,registerModalCloser:()=>Fe,registerModalOpener:()=>Re,registerPortalInfo:()=>fe,registerRadioButton:()=>T,registerRadioButtonGroup:()=>I,registerSelect:()=>F,registerSolutionInfo:()=>Ee,registerTextarea:()=>ne,registerToggleSwitch:()=>Ie,registerTooltip:()=>Me,registerTooltipIcon:()=>Te,registerUploadFile:()=>N});class n extends HTMLElement{static observedAttributes=["heading","heading-level","expanded","content-id","variant-text","variant-icon","ready"];get heading(){return this.getAttribute("heading")}set heading(e){this.setAttribute("heading",e)}#e;#t;#i=null;#s(){return this.querySelector("h1, h2, h3, h4, h5, h6")}#n(){return this.querySelector(".accordion-content")}#r(e){const t=(e||"h3").toLowerCase();return["h1","h2","h3","h4","h5","h6"].includes(t)?t:"h3"}#a(){const e=this.#r(this.getAttribute("heading-level"));let t=this.#s(),i=this.querySelector(":scope > div");if(!t){t=document.createElement(e);const s=document.createElement("button");s.classList.add("accordion-button"),s.setAttribute("type","button");const n=document.createElement("span");return n.classList.add("accordion-title"),n.textContent=this.getAttribute("heading")||"",s.appendChild(n),t.appendChild(s),i||(i=document.createElement("div"),this.appendChild(i)),i.classList.add("accordion-content"),this.prepend(t),!0}const s=t.querySelector(":scope > button");if(!s)return console.warn("<fds-accordion> Missing direct child button inside heading."),!1;const n=s.querySelector(":scope > span");return n?i?(s.classList.add("accordion-button"),s.setAttribute("type","button"),n.classList.add("accordion-title"),i.classList.add("accordion-content"),!0):(console.warn("<fds-accordion> Missing direct child div for accordion content."),!1):(console.warn("<fds-accordion> Missing direct child span inside button."),!1)}#o(e){this.querySelector(".accordion-title").textContent=e}#l(e){const t=this.#r(e);let i=this.#s();if(!i||i.tagName.toLowerCase()===t)return;const s=document.createElement(t);s.append(...i.childNodes),i.replaceWith(s)}#d(e){const t=this.#s()?.querySelector("button.accordion-button"),i=this.#n();t&&i&&(t.setAttribute("aria-expanded",e?"true":"false"),i.setAttribute("aria-hidden",e?"false":"true"))}#h(e){const t=null!==e&&"false"!==e;this.#d(t)}#c(e){this.#s().querySelector(".accordion-button").setAttribute("aria-controls",e),this.#n().setAttribute("id",e)}#u(){const e=this.#s(),t=this.#n();if(!e||!t)return;const i=e.querySelector(".accordion-button").getAttribute("aria-controls"),n=t.getAttribute("id");if(this.hasAttribute("content-id"))this.#c(this.getAttribute("content-id"));else{if(n&&i===n)return;n?this.#c(n):i?this.#c(i):this.#c(s("acc"))}}#p(e,t){const i=this.#s().querySelector("button.accordion-button");if(e&&t){let s=i.querySelector(".accordion-icon");s||(s=document.createElement("span"),s.classList.add("accordion-icon"),i.appendChild(s)),s.innerHTML="";const n=document.createElement("span");n.classList.add("icon_text"),n.textContent=e,s.appendChild(n);const r=document.createElementNS("http://www.w3.org/2000/svg","svg");r.classList.add("icon-svg"),r.setAttribute("focusable","false"),r.setAttribute("aria-hidden","true");const a=document.createElementNS("http://www.w3.org/2000/svg","use");a.setAttributeNS(null,"href",`#${t}`),r.appendChild(a),s.appendChild(r)}else i.querySelector(".accordion-icon")&&i.querySelector(".accordion-icon").remove()}#b(){this.hasAttribute("heading")&&this.#o(this.getAttribute("heading")),this.hasAttribute("heading-level")&&this.#l(this.getAttribute("heading-level")),this.#h(this.getAttribute("expanded")),this.#u(),this.hasAttribute("variant-text")||this.hasAttribute("variant-icon")?this.#p(this.getAttribute("variant-text"),this.getAttribute("variant-icon")):this.#p("","")}#m(){if(this.#i)return;this.#i=new MutationObserver(this.#g);this.#i.observe(this,{subtree:!0,childList:!0})}#g=e=>{const t=this.#s()?.querySelector("button.accordion-button");t&&t.addEventListener("click",this.#t,!1)};constructor(){super(),this.#e=!1,this.#t=()=>{this.toggleAccordion()}}init(){if(this.#e)return;if(this.#m(),""===this.innerHTML)return;if(!this.#a())return;this.#b();const e=this.#s()?.querySelector("button.accordion-button");e&&e.addEventListener("click",this.#t,!1),this.#e=!0}expandAccordion(){this.#d(!0),"true"!==this.getAttribute("expanded")&&this.setAttribute("expanded","true"),this.dispatchEvent(new CustomEvent("fds-accordion-expanded",{bubbles:!0}))}collapseAccordion(){this.#d(!1),"false"!==this.getAttribute("expanded")&&this.setAttribute("expanded","false"),this.dispatchEvent(new CustomEvent("fds-accordion-collapsed",{bubbles:!0}))}toggleAccordion(){this.isExpanded()?this.collapseAccordion():this.expandAccordion()}isExpanded(){return this.hasAttribute("expanded")&&"false"!==this.getAttribute("expanded")}connectedCallback(){"false"!==this.getAttribute("ready")&&this.init()}disconnectedCallback(){const e=this.#s()?.querySelector("button.accordion-button");e&&e.removeEventListener("click",this.#t,!1),this.#e=!1,this.#i&&(this.#i.disconnect(),this.#i=null)}attributeChangedCallback(e,t,i){"ready"!==e?this.#e&&("heading"===e&&this.#o(i),"heading-level"===e&&this.#l(i),"expanded"===e&&t!==i&&this.#h(i),"content-id"===e&&null!==i&&""!==i&&this.#c(i),"variant-text"===e&&(this.hasAttribute("variant-icon")?this.#p(i,this.getAttribute("variant-icon")):this.#p(i,"")),"variant-icon"===e&&(this.hasAttribute("variant-text")?this.#p(this.getAttribute("variant-text"),i):this.#p("",i))):!this.#e&&this.isConnected&&"false"!==i&&this.init()}}const r=function(){void 0===customElements.get("fds-accordion")&&window.customElements.define("fds-accordion",n)};class a extends HTMLElement{static observedAttributes=["heading-level","has-bulk-button","open-all-text","close-all-text"];#f;#v;#y;#E;#A;#S;#x(){return this.#y||(this.#y=this.querySelector(":scope > .bulk-button")),this.#y}#w(){if(!this.#x()){const e=document.createElement("button");e.classList.add("bulk-button"),this.prepend(e),this.#y=e}}#C(){if(this.#f)return;const e=this.querySelectorAll("button.bulk-button").length>0;null!==this.getAttribute("has-bulk-button")&&"false"!==this.getAttribute("has-bulk-button")&&!e&&this.#w(),this.#q(),this.#f=!0}#L(){return Array.from(this.querySelectorAll(":scope > fds-accordion"))}#k(){return this.#L().every(e=>{const t=e.getAttribute("expanded");if(null!=t)return"true"===t;const i=e.querySelector("button.accordion-button");return"true"===i?.getAttribute("aria-expanded")})}#l(e){["h1","h2","h3","h4","h5","h6"].includes(e)&&this.#L().forEach(t=>t.setAttribute("heading-level",e))}#M(e){const t=null!==e&&"false"!==e,i=this.#x();t?(this.#w(),this.#x()?.removeEventListener("click",this.#E),this.#x()?.addEventListener("click",this.#E)):!t&&i&&(this.#x()?.removeEventListener("click",this.#E),this.#x()?.remove(),this.#y=null),this.#q()}#q(){const e=this.#x();if(!e)return;const t=this.getAttribute("open-all-text")||"Åbn alle",i=this.getAttribute("close-all-text")||"Luk alle",s=this.#k();e.textContent=s?i:t,s?e.classList.add("close"):e.classList.remove("close")}constructor(){super(),this.#f=!1,this.#v=!1,this.#y=null,this.#E=()=>this.toggleAllAccordions(),this.#A=e=>{e.stopPropagation(),this.#q()},this.#S=e=>{e.stopPropagation(),this.#q()}}toggleAllAccordions(){const e=this.#L(),t=!this.#k()?"true":"false";e.forEach(e=>e.setAttribute("expanded",t)),this.#q()}connectedCallback(){this.#f||(this.#C(),this.#v||(this.addEventListener("fds-accordion-expanded",this.#A),this.addEventListener("fds-accordion-collapsed",this.#S),this.#x()&&this.#x().addEventListener("click",this.#E),this.#v=!0,this.hasAttribute("heading-level")&&this.#l(this.getAttribute("heading-level")),this.#q()))}disconnectedCallback(){this.#f=!1,this.#v&&(this.removeEventListener("fds-accordion-expanded",this.#A),this.removeEventListener("fds-accordion-collapsed",this.#S),this.#x()&&this.#x().removeEventListener("click",this.#E),this.#v=!1)}attributeChangedCallback(e,t,i){this.#f&&("heading-level"===e&&this.#l(i),"has-bulk-button"===e&&this.#M(i),"open-all-text"!==e&&"close-all-text"!==e||this.#q())}}const o=function(){void 0===customElements.get("fds-accordion-group")&&window.customElements.define("fds-accordion-group",a)},l={subtree:!0,childList:!0,attributes:!0,attributeFilter:["hidden","aria-hidden","id","class","disabled","required","aria-required"],attributeOldValue:!1,characterData:!1,characterDataOldValue:!1};function d(e,t,i){e&&(t?(t.id||(t.id=s(i)),e.htmlFor=t.id):e.removeAttribute("for"))}function h(e){const t=document.createElementNS("http://www.w3.org/2000/svg","svg");t.setAttribute("xmlns","http://www.w3.org/2000/svg"),t.setAttribute("viewBox","0 -960 960 960"),t.setAttribute("focusable","false"),t.setAttribute("aria-hidden","true"),t.classList.add("icon-svg");const i=document.createElementNS("http://www.w3.org/2000/svg","path");return i.setAttribute("d",e),t.appendChild(i),t}function c(e,t,i){if(!e||!t)return;let s=e.querySelector(":scope > span.weight-normal");if(null===i&&s)return void s.remove();if(!s){const t=document.createElement("span");t.className="weight-normal",e.appendChild(t),s=t}const n=function(e){if(e instanceof HTMLFieldSetElement){const t=e.querySelectorAll("input, select, textarea");return Array.from(t).some(e=>e.hasAttribute("required")||e.hasAttribute("aria-required")&&"false"!==e.getAttribute("aria-required"))}return e.hasAttribute("required")||e.hasAttribute("aria-required")&&"false"!==e.getAttribute("aria-required")}(t);let r=i;""===i&&n&&(r="skal udfyldes"),""!==i||n||(r="frivilligt"),s.textContent=n?` (*${r})`:` (${r})`}function u(e){document.querySelector("fds-error-summary[auto]")&&e.querySelectorAll("fds-error-message[id]").forEach(e=>{document.dispatchEvent(new CustomEvent("error-message-callback",{detail:{errorId:e.id,isRemoved:!0}}))})}function p(e){document.querySelector("fds-error-summary[auto]")&&e.querySelectorAll("fds-error-message[id]").forEach(e=>{document.dispatchEvent(new CustomEvent("error-message-visibility-changed",{detail:{errorId:e.id}}))})}function b(e){return!e.closest('.d-none, [hidden]:not([hidden="false"]), [aria-hidden="true"]')}function m(e,t){e&&t&&e.classList.toggle("disabled",t.hasAttribute("disabled"))}function g(e,t,i){if(!e)return;const s=[...t,...i,arguments.length>3&&void 0!==arguments[3]?arguments[3]:null].filter(e=>e&&e.id&&b(e)).map(e=>e.id);s.length>0?e.setAttribute("aria-describedby",s.join(" ")):e.removeAttribute("aria-describedby")}function f(e,t){if(!e)return;Array.from(t).some(e=>b(e))?e.setAttribute("aria-invalid","true"):e.removeAttribute("aria-invalid")}class v extends HTMLElement{static observedAttributes=["show-required-status","input-maxwidth"];get showRequiredStatus(){return this.getAttribute("show-required-status")}set showRequiredStatus(e){null===e?this.removeAttribute("show-required-status"):this.setAttribute("show-required-status",e)}#e=!1;#D=null;#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["LABEL","INPUT","FDS-ERROR-MESSAGE","FDS-HELP-TEXT","FDS-CHARACTER-LIMIT"];if([...s,...n].some(t=>e.includes(t?.tagName))){const e=this.querySelector("label"),t=this.querySelector("input"),i=this.querySelectorAll("fds-error-message"),s=this.querySelectorAll("fds-help-text"),n=this.querySelector("fds-character-limit span.sr-only[id]");d(e,t,"inp"),g(t,i,s,n),f(t,i),this.hasAttribute("show-required-status")&&c(e,t,this.getAttribute("show-required-status"));break}if("required"===t&&"INPUT"===i?.tagName){if(this.hasAttribute("show-required-status")){c(this.querySelector("label"),i,this.getAttribute("show-required-status"))}}else if("id"===t||"hidden"===t||"aria-hidden"===t||"class"===t){const e=this.querySelector("label"),s=this.querySelector("input"),n=this.querySelectorAll("fds-error-message"),r=this.querySelectorAll("fds-help-text"),a=this.querySelector("fds-character-limit span.sr-only[id]");d(e,s,"inp"),g(s,n,r,a),f(s,n),"hidden"===t&&i===this&&p(this)}}};#m(){this.#D||(this.#D=new MutationObserver(this.#g),this.#D.observe(this,l))}#T(){this.#m();const e=this.querySelector("label"),t=this.querySelector("input"),i=this.querySelectorAll("fds-error-message"),s=this.querySelectorAll("fds-help-text"),n=this.querySelector("fds-character-limit span.sr-only[id]");d(e,t,"inp"),g(t,i,s,n),f(t,i),this.hasAttribute("show-required-status")&&c(e,t,this.getAttribute("show-required-status")),this.#e=!0}#O(e){const t=this.querySelector("input");if(t&&""!==e){const i=[...t.classList].find(e=>e.startsWith("input-width-")||e.startsWith("input-char-"));t.classList.remove(i),["xxs","xs","s","m","l","xl"].includes(e)?t.classList.add(`input-width-${e}`):/^\d+$/.test(e)&&t.classList.add(`input-char-${e}`)}}connectedCallback(){this.#e||this.#T(),this.hasAttribute("input-maxwidth")&&this.#O(this.getAttribute("input-maxwidth"))}disconnectedCallback(){u(this),this.#e=!1,this.#D&&(this.#D.disconnect(),this.#D=null)}attributeChangedCallback(e,t,i){if(this.#e){if("show-required-status"===e&&t!==i){c(this.querySelector("label"),this.querySelector("input"),i)}if("input-maxwidth"===e&&t!==i)if(this.hasAttribute("input-maxwidth"))this.#O(i);else{const e=this.querySelector("input");if(!e)return;const t=[...e.classList].find(e=>e.startsWith("input-width-")||e.startsWith("input-char-"));e.classList.remove(t)}}}}const y=function(){void 0===customElements.get("fds-input")&&window.customElements.define("fds-input",v)};class E extends HTMLElement{static observedAttributes=["id","hidden"];#f;#I;#C(){this.#f||(this.classList.add("help-text"),this.#f=!0)}#z(e){return"true"===e||""===e}#R(){this.setAttribute("aria-hidden","true")}#H(){this.removeAttribute("aria-hidden")}#F(){this.#I?.dispatchEvent(new CustomEvent("help-text-visibility-changed",{bubbles:!0,detail:{helptextId:this.id,isHidden:this.#z(this.getAttribute("hidden"))}}))}constructor(){super(),this.#f=!1,this.#I=null}connectedCallback(){this.#f||(this.#C(),this.id||(this.id=s("help")),this.#z(this.getAttribute("hidden"))&&this.#R(),this.#I=this.closest("fds-input, fds-checkbox, fds-checkbox-group, fds-radio-button, fds-radio-button-group, fds-date-input, fds-upload-file"),this.#I?.dispatchEvent(new Event("help-text-callback")))}disconnectedCallback(){this.#I?.dispatchEvent(new Event("help-text-callback")),this.#I=null,this.#f=!1}attributeChangedCallback(e,t,i){this.#f&&("hidden"===e&&t!==i&&(this.#z(i)?this.#R():this.#H(),this.#F()),this.#I?.dispatchEvent(new Event("help-text-callback")))}}const A=function(){void 0===customElements.get("fds-help-text")&&window.customElements.define("fds-help-text",E)};class S extends HTMLElement{static observedAttributes=["limit","one-character-remaining-text","several-characters-remaining-text","one-character-too-many-text","several-characters-too-many-text","max-limit-text","limit-id"];#e=!1;#B={one_character_remaining:"Du har {value} tegn tilbage",several_characters_remaining:"Du har {value} tegn tilbage",one_character_too_many:"Du har {value} tegn for meget",several_characters_too_many:"Du har {value} tegn for meget",max_limit:"Du kan indtaste op til {value} tegn"};#N=(()=>document.createElement("span"))();#P=(()=>document.createElement("span"))();#_=(()=>document.createElement("span"))();#I=null;#Y=null;#U=null;#$=null;#V=null;#W=!1;#j=e=>{this.#K(this.#G()),this.#$=Date.now(),this.#W=!0};#Z=e=>{null!==this.#U&&(window.clearInterval(this.#U),this.#U=null),this.#Y&&(this.#_.setAttribute("aria-hidden","true"),this.#P.setAttribute("aria-hidden","false"),this.#U=window.setInterval(()=>{if(!this.#$||Date.now()-500>=this.#$){const e=this.#V!==this.#Y.value,t=this.#P.textContent!==this.#_.textContent;(e||t||this.#W)&&(this.#W=!1,this.#V=this.#Y.value,this.#X(this.#G()))}},1e3))};#J=e=>{null!==this.#U&&(window.clearInterval(this.#U),this.#U=null),this.#Y&&(this.#K(this.#G()),this.#P.textContent="",this.#P.setAttribute("aria-hidden","true"),this.#_.setAttribute("aria-hidden","false"))};#Q=e=>{this.#K(this.#G())};#G(){if(!this.#Y)return;const e=parseInt(this.getAttribute("limit"),10);return Number.isNaN(e)?null:e-this.#Y.value.length}#ee(e){let t="";if(-1===e){const i=Math.abs(e);t=this.#B.one_character_too_many.replace(/{value}/,i)}else if(1===e)t=this.#B.one_character_remaining.replace(/{value}/,e);else if(e>=0)t=this.#B.several_characters_remaining.replace(/{value}/,e);else{const i=Math.abs(e);t=this.#B.several_characters_too_many.replace(/{value}/,i)}return t}#K(e){this.#_.textContent=this.#ee(e),e<0?this.#_.classList.add("limit-exceeded"):this.#_.classList.remove("limit-exceeded")}#te(e){this.#P.textContent=this.#ee(e)}#X(e){this.#K(e),this.#te(e)}#ie(e){this.#N.id=e||s("lim")}connectedCallback(){if(!this.hasAttribute("limit"))return;if(3===this.children.length){const[e,t,i]=this.children;this.#N=e,this.#P=t,this.#_=i}else this.appendChild(this.#N),this.appendChild(this.#P),this.appendChild(this.#_);if(this.#I=this.closest("fds-input, fds-textarea"),this.#Y=this.#I?.querySelector("input, textarea"),!this.#Y)return;const e=this.#G();this.hasAttribute("one-character-remaining-text")&&(this.#B.one_character_remaining=this.getAttribute("one-character-remaining-text")),this.hasAttribute("several-characters-remaining-text")&&(this.#B.several_characters_remaining=this.getAttribute("several-characters-remaining-text")),this.hasAttribute("one-character-too-many-text")&&(this.#B.one_character_too_many=this.getAttribute("one-character-too-many-text")),this.hasAttribute("several-characters-too-many-text")&&(this.#B.several_characters_too_many=this.getAttribute("several-characters-too-many-text")),this.hasAttribute("max-limit-text")&&(this.#B.max_limit=this.getAttribute("max-limit-text")),this.#N.classList.add("sr-only"),this.#N.textContent=this.#B.max_limit.replace(/{value}/,this.getAttribute("limit")),this.hasAttribute("limit-id")||""===this.getAttribute("limit-id")?this.#N.id=this.getAttribute("limit-id"):this.#N.id=s("lim"),this.#_.classList.add("visual-message"),this.#_.setAttribute("aria-hidden","false"),this.#_.textContent=this.#ee(e),this.#P.classList.add("sr-only"),this.#P.textContent="",this.#P.setAttribute("aria-hidden",!0),this.#P.setAttribute("aria-live","polite"),this.#Y.addEventListener("keyup",this.#j),this.#Y.addEventListener("focus",this.#Z),this.#Y.addEventListener("blur",this.#J),"onpageshow"in window?window.addEventListener("pageshow",this.#Q):document.addEventListener("DOMContentLoaded",this.#Q),this.#e=!0}disconnectedCallback(){this.#Y?.removeEventListener("keyup",this.#j),this.#Y?.removeEventListener("focus",this.#Z),this.#Y?.removeEventListener("blur",this.#J),window.removeEventListener("pageshow",this.#Q),document.removeEventListener("DOMContentLoaded",this.#Q),this.#e=!1}attributeChangedCallback(e,t,i){this.#e&&("limit"===e&&this.#X(this.#G()),"one-character-remaining-text"===e&&(this.#B.one_character_remaining=i,this.#X(this.#G())),"several-characters-remaining-text"===e&&(this.#B.several_characters_remaining=i,this.#X(this.#G())),"one-character-too-many-text"===e&&(this.#B.one_character_too_many=i,this.#X(this.#G())),"several-characters-too-many-text"===e&&(this.#B.several_characters_too_many=i,this.#X(this.#G())),"max-limit-text"===e&&(this.#B.max_limit=i,this.#X(this.#G())),"limit-id"===e&&this.#ie(i),this.#I?.dispatchEvent(new Event("character-limit-callback")))}}const x=function(){void 0===customElements.get("fds-character-limit")&&window.customElements.define("fds-character-limit",S)};class w extends HTMLElement{static observedAttributes=["id","icon-text","hidden","targets","message"];#f;#se;#I;#C(){if(this.#f)return;if(!(this.children.length>0)){const e=this.getAttribute("icon-text");null!==e&&""!==e&&(this.#se=e);const t=document.createElementNS("http://www.w3.org/2000/svg","svg");t.classList.add("icon-svg","alert-icon"),t.setAttribute("aria-label",this.#se),t.setAttribute("focusable","false");const i=document.createElementNS("http://www.w3.org/2000/svg","use");i.setAttribute("href","#error"),t.appendChild(i);const s=document.createElement("span");s.classList.add("visible-message"),s.textContent=this.getAttribute("message")||this.textContent,this.textContent="",this.appendChild(t),this.appendChild(s)}this.#f=!0}#z(e){return"true"===e||""===e}#F(){this.#I?.dispatchEvent(new CustomEvent("error-message-visibility-changed",{bubbles:!0,detail:{errorId:this.id,targets:this.getTargets(),isHidden:this.#z(this.getAttribute("hidden"))}}))}#ne(){this.#I&&this.#I.dispatchEvent(new CustomEvent("error-message-callback",{bubbles:!0,detail:{errorId:this.id,isHidden:this.#z(this.getAttribute("hidden")),targets:this.getTargets()}}))}constructor(){super(),this.#f=!1,this.#se="Fejl",this.#I=null}getTargets(){const e=this.getAttribute("targets");return e?e.split(",").map(e=>e.trim()).filter(e=>e):[]}connectedCallback(){this.#f||(this.#C(),this.id||(this.id=s("error")),this.#I=this.closest("fds-input, fds-checkbox, fds-checkbox-group, fds-radio-button-group, fds-date-input, fds-textarea, fds-select, fds-upload-file, fds-date-picker"),this.#ne())}disconnectedCallback(){this.#I?.dispatchEvent(new CustomEvent("error-message-callback",{bubbles:!0,detail:{errorId:this.id,targets:this.getTargets()}})),this.#I=null,this.#f=!1}attributeChangedCallback(e,t,i){this.#f&&("icon-text"===e&&t!==i&&(this.#se=i,this.querySelector(":scope > .alert-icon").setAttribute("aria-label",this.#se)),"hidden"===e&&t!==i&&this.#F(),"message"===e&&t!==i&&(this.querySelector(":scope > .visible-message").textContent=i),this.#ne())}}const C=function(){void 0===customElements.get("fds-error-message")&&window.customElements.define("fds-error-message",w)};class q extends HTMLElement{static observedAttributes=["show-required-status","ready"];get showRequiredStatus(){return this.getAttribute("show-required-status")}set showRequiredStatus(e){null===e?this.removeAttribute("show-required-status"):this.setAttribute("show-required-status",e)}#e=!1;#re=null;#ae;#oe;#le;#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["LABEL","INPUT","FDS-HELP-TEXT","FDS-ERROR-MESSAGE"];if([...s,...n].some(t=>e.includes(t?.tagName))){this.#ae=this.#de(),this.#oe=this.#he(),this.#ce(),m(this.#oe,this.#ae),this.#ue(),this.hasAttribute("show-required-status")&&c(this.#oe,this.#ae,this.getAttribute("show-required-status"));break}"disabled"===t&&i===this.#de()?m(this.#he(),i):"required"!==t&&"aria-required"!==t||i!==this.#de()?("id"===t||"hidden"===t||"aria-hidden"===t||"class"===t&&"LABEL"!==i?.tagName)&&(this.#ue(),"hidden"===t&&i===this&&p(this)):this.hasAttribute("show-required-status")&&c(this.#he(),i,this.getAttribute("show-required-status"))}};#de(){return this.querySelector(':scope > input[type="checkbox"]')}#he(){return this.querySelector(":scope > label")}#pe(){return this.querySelectorAll(":scope > fds-help-text")}#be(){return this.querySelectorAll(":scope > fds-error-message")}#m(){this.#re||(this.#re=new MutationObserver(this.#g),this.#re.observe(this,l))}#ue(){const e=this.#he(),t=this.#de(),i=this.#be(),s=this.#pe();d(e,t,"chk"),g(t,i,s),f(t,i)}#ce(){this.#oe&&this.#ae&&(this.#oe.classList.add("form-label"),this.#ae.classList.add("form-checkbox"))}#me(){const e=this.#ae,t=this.querySelector(":scope > div.checkbox-content");if(!e||!t)return;t.classList.add("checkbox-content"),t.id||(t.id=s("exp"));const i=()=>{const i=e.checked;e.setAttribute("data-aria-controls",t.id),e.setAttribute("data-aria-expanded",String(i)),t.setAttribute("aria-hidden",String(!i)),t.classList.toggle("collapsed",!i)};this.#le&&e.removeEventListener("change",this.#le),this.#le=i,i(),e.addEventListener("change",this.#le)}init(){this.#ae=this.#de(),this.#oe=this.#he(),this.#ce(),m(this.#oe,this.#ae),this.#ue(),this.hasAttribute("show-required-status")&&c(this.#oe,this.#ae,this.getAttribute("show-required-status")),this.#me(),this.#m(),this.#e=!0}connectedCallback(){"false"!==this.getAttribute("ready")&&(this.#e||this.init())}disconnectedCallback(){u(this),this.#ae&&this.#ae.removeEventListener("change",this.#le),this.#e=!1,this.#re&&(this.#re.disconnect(),this.#re=null)}attributeChangedCallback(e,t,i){if("ready"!==e){if(this.#e&&"show-required-status"===e&&t!==i){c(this.#he(),this.#de(),i)}}else!this.#e&&this.isConnected&&"true"===i&&this.init()}}const L=function(){void 0===customElements.get("fds-checkbox")&&window.customElements.define("fds-checkbox",q)};class k extends HTMLElement{#e=!1;#ge=null;#fe;#ve;#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["FIELDSET","LEGEND","FDS-HELP-TEXT","FDS-ERROR-MESSAGE"];if([...s,...n].some(t=>e.includes(t?.tagName))){this.#fe=this.#ye(),this.#ve=this.#Ee(),this.#ce(),this.#Ae(),this.#ue();break}"disabled"===t&&i===this.#ye()?i.classList.toggle("disabled",i.hasAttribute("disabled")):("id"===t||"hidden"===t||"aria-hidden"===t||"class"===t&&!["LEGEND","FIELDSET"].includes(i?.tagName))&&(this.#ue(),"hidden"===t&&i===this&&p(this))}};#ye(){return this.querySelector("fieldset")}#Ee(){return this.querySelector(":scope > fieldset > legend")}#Se(){return this.querySelectorAll(":scope > fieldset > fds-help-text")}#be(){return this.querySelectorAll(":scope > fieldset > fds-error-message")}#m(){this.#ge||(this.#ge=new MutationObserver(this.#g),this.#ge.observe(this,l))}#ue(){g(this.#ye(),this.#be(),this.#Se())}#ce(){this.#ve?.classList.add("form-label")}#Ae(){const e=this.#ye();e&&e.classList.toggle("disabled",e.hasAttribute("disabled"))}init(){this.#fe=this.#ye(),this.#ve=this.#Ee(),this.#ce(),this.#Ae(),this.#ue(),this.#m(),this.#e=!0}connectedCallback(){this.#e||this.init()}disconnectedCallback(){u(this),this.#e=!1,this.#ge&&(this.#ge.disconnect(),this.#ge=null)}}const M=function(){customElements.get("fds-checkbox-group")||customElements.define("fds-checkbox-group",k)};class D extends HTMLElement{static observedAttributes=["ready"];get checked(){return this.#ae?.checked??!1}set checked(e){this.#ae&&(this.#ae.checked=Boolean(e))}#e=!1;#xe=null;#ae;#oe;#le;#we;#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["LABEL","INPUT","FDS-HELP-TEXT"];if([...s,...n].some(t=>e.includes(t?.tagName))){this.#ae=this.#de(),this.#oe=this.#he(),this.#ce(),m(this.#oe,this.#ae),this.#ue();break}"disabled"===t&&i===this.#de()?m(this.#he(),i):("id"===t||"hidden"===t||"aria-hidden"===t||"class"===t&&"LABEL"!==i?.tagName)&&this.#ue()}};#de(){return this.querySelector(':scope > input[type="radio"]')}#he(){return this.querySelector(":scope > label")}#pe(){return this.querySelectorAll(":scope > fds-help-text")}#m(){this.#xe||(this.#xe=new MutationObserver(this.#g),this.#xe.observe(this,l))}#ue(){const e=this.#he(),t=this.#de(),i=this.#pe();d(e,t,"rad"),g(t,[],i)}#ce(){this.#oe&&this.#ae&&(this.#oe.classList.add("form-label"),this.#ae.classList.add("form-radio"))}#Ce(){const e=this.#ae,t=this.querySelector(":scope > div.radio-content");if(!e||!t)return;t.classList.add("radio-content"),t.id||(t.id=s("exp"));const i=()=>{const i=e.checked;e.setAttribute("data-aria-controls",t.id),e.setAttribute("data-aria-expanded",String(i)),t.setAttribute("aria-hidden",String(!i)),t.classList.toggle("collapsed",!i)};this.#we=i,i()}collapseContent(){const e=this.querySelector(":scope > div.radio-content");e&&this.#ae&&(this.#ae.setAttribute("data-aria-expanded","false"),e.setAttribute("aria-hidden","true"),e.classList.add("collapsed"))}init(){this.#ae=this.#de(),this.#oe=this.#he(),this.#ce(),m(this.#oe,this.#ae),this.#ue(),this.#Ce(),this.#ae&&(this.#le&&this.#ae.removeEventListener("change",this.#le),this.#le=()=>{this.#we?.(),this.dispatchEvent(new CustomEvent("radio-changed",{detail:{checked:this.#ae.checked},bubbles:!0}))},this.#ae.addEventListener("change",this.#le)),this.#m(),this.#e=!0}connectedCallback(){"false"!==this.getAttribute("ready")&&(this.#e||this.init())}disconnectedCallback(){this.#ae&&this.#ae.removeEventListener("change",this.#le),this.#e=!1,this.#xe&&(this.#xe.disconnect(),this.#xe=null)}attributeChangedCallback(e,t,i){"ready"!==e||!this.#e&&this.isConnected&&"true"===i&&this.init()}}const T=function(){void 0===customElements.get("fds-radio-button")&&window.customElements.define("fds-radio-button",D)};class O extends HTMLElement{#e=!1;#qe=null;#Le=e=>{const t=e.target.closest("fds-radio-button");if(e.detail.checked){this.querySelectorAll("fds-radio-button").forEach(e=>{e!==t&&e.collapseContent?.()})}};#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["FIELDSET","LEGEND","FDS-HELP-TEXT","FDS-ERROR-MESSAGE"];if([...s,...n].some(t=>e.includes(t?.tagName))){this.#ke();break}("id"===t||"hidden"===t||"aria-hidden"===t||"class"===t&&!["LEGEND","FIELDSET"].includes(i?.tagName))&&(this.#ke(),"hidden"===t&&i===this&&p(this))}};#ke(){g(this.querySelector("fieldset"),this.querySelectorAll(":scope > fieldset > fds-error-message"),this.querySelectorAll(":scope > fieldset > fds-help-text"))}#Me(){this.addEventListener("radio-changed",this.#Le)}#De(){this.removeEventListener("radio-changed",this.#Le)}#Te(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:l;this.#qe||(this.#qe=new MutationObserver(this.#g),this.#qe.observe(this,e))}#Oe(){this.#qe&&(this.#qe.disconnect(),this.#qe=null)}init(){this.#ke(),this.#Me(),this.#Te(),this.#e=!0}connectedCallback(){this.#e||this.init()}disconnectedCallback(){u(this),this.#De(),this.#Oe(),this.#e=!1}}const I=function(){void 0===customElements.get("fds-radio-button-group")&&window.customElements.define("fds-radio-button-group",O)};class z extends HTMLElement{static observedAttributes=["show-required-status","input-readonly","input-required","legend","input-id"];#e=!1;#qe=null;#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["LABEL","INPUT","FDS-ERROR-MESSAGE","FDS-HELP-TEXT"];if([...s,...n].some(t=>e.includes(t?.tagName))){const e=this.querySelector("legend"),t=this.querySelector("fieldset"),i=this.querySelectorAll("fds-error-message"),s=this.querySelectorAll("fds-help-text"),n=this.querySelector('[data-attribute="day"] label'),r=this.querySelector('[data-attribute="month"] label'),a=this.querySelector('[data-attribute="year"] label'),o=this.querySelector('[data-attribute="day"] input'),l=this.querySelector('[data-attribute="month"] input'),h=this.querySelector('[data-attribute="year"] input');d(n,o,"day"),d(r,l,"month"),d(a,h,"year"),g(t,i,s),this.#Ie("day",o,i),this.#Ie("month",l,i),this.#Ie("year",h,i),this.hasAttribute("show-required-status")&&c(e,t,this.getAttribute("show-required-status"));break}if("required"===t&&"INPUT"===i?.tagName){if(this.hasAttribute("show-required-status")){c(this.querySelector("legend"),this.querySelector("fieldset"),this.getAttribute("show-required-status"))}}else if("id"===t||"hidden"===t||"aria-hidden"===t||"class"===t||"targets"===t){this.querySelector("legend");const e=this.querySelector("fieldset"),s=this.querySelectorAll("fds-error-message"),n=this.querySelectorAll("fds-help-text"),r=this.querySelector('[data-attribute="day"] label'),a=this.querySelector('[data-attribute="month"] label'),o=this.querySelector('[data-attribute="year"] label'),l=this.querySelector('[data-attribute="day"] input'),h=this.querySelector('[data-attribute="month"] input'),c=this.querySelector('[data-attribute="year"] input');d(r,l,"day"),d(a,h,"month"),d(o,c,"year"),g(e,s,n),this.#Ie("day",l,s),this.#Ie("month",h,s),this.#Ie("year",c,s),"hidden"===t&&i===this&&p(this)}}};#ze(){let e=this.querySelector("fieldset");null===e&&(e=document.createElement("fieldset"),this.appendChild(e));let t=e.querySelector("legend");null===t&&(t=document.createElement("legend"),e.appendChild(t)),""===t.textContent&&(t.textContent="Indtast dato");let i=e.querySelector(":scope > div");null===i&&(i=document.createElement("div"),e.appendChild(i));let s=i.querySelector('[data-attribute="day"]');null===s&&(s=document.createElement("div"),s.setAttribute("data-attribute","day"),i.appendChild(s));let n=i.querySelector('[data-attribute="month"]');null===n&&(n=document.createElement("div"),n.setAttribute("data-attribute","month"),i.appendChild(n));let r=i.querySelector('[data-attribute="year"]');null===r&&(r=document.createElement("div"),r.setAttribute("data-attribute","year"),i.appendChild(r));let a=s.querySelector("label");null===a&&(a=document.createElement("label"),s.appendChild(a)),""===a.textContent&&(a.textContent="Dag");let o=s.querySelector("input");null===o&&(o=document.createElement("input"),s.appendChild(o)),o.hasAttribute("name")||o.setAttribute("name","day"),o.hasAttribute("type")||o.setAttribute("type","number");let l=n.querySelector("label");null===l&&(l=document.createElement("label"),n.appendChild(l)),""===l.textContent&&(l.textContent="Måned");let d=n.querySelector("input");null===d&&(d=document.createElement("input"),n.appendChild(d)),d.hasAttribute("name")||d.setAttribute("name","month"),d.hasAttribute("type")||d.setAttribute("type","number");let h=r.querySelector("label");null===h&&(h=document.createElement("label"),r.appendChild(h)),""===h.textContent&&(h.textContent="År");let c=r.querySelector("input");null===c&&(c=document.createElement("input"),r.appendChild(c)),c.hasAttribute("name")||c.setAttribute("name","year"),c.hasAttribute("type")||c.setAttribute("type","number")}#Te(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:l;this.#qe||(this.#qe=new MutationObserver(this.#g),this.#qe.observe(this,e))}#Oe(){this.#qe&&(this.#qe.disconnect(),this.#qe=null)}#Ie(e,t,i){const s=Array.from(i).filter(t=>{const i=t.getAttribute("targets");return i&&i.includes(e)});s.length>0&&f(t,s)}#T(){this.#ze(),this.#Te();const e=this.querySelector("legend"),t=this.querySelector("fieldset"),i=this.querySelectorAll("fds-error-message"),s=this.querySelectorAll("fds-help-text"),n=this.querySelector('[data-attribute="day"] label'),r=this.querySelector('[data-attribute="month"] label'),a=this.querySelector('[data-attribute="year"] label'),o=this.querySelector('[data-attribute="day"] input'),l=this.querySelector('[data-attribute="month"] input'),h=this.querySelector('[data-attribute="year"] input');d(n,o,"day"),d(r,l,"month"),d(a,h,"year"),g(t,i,s),this.#Ie("day",o,i),this.#Ie("month",l,i),this.#Ie("year",h,i),this.hasAttribute("show-required-status")&&c(e,t,this.getAttribute("show-required-status")),this.#e=!0}#Re(){this.querySelectorAll("input").forEach(e=>{null!==this.getAttribute("input-readonly")&&"false"!==this.getAttribute("input-readonly")?e.setAttribute("readonly",""):e.removeAttribute("readonly")})}#He(){this.querySelectorAll("input").forEach(e=>{null!==this.getAttribute("input-required")&&"false"!==this.getAttribute("input-required")?e.setAttribute("required",""):e.removeAttribute("required")})}#Fe(){this.querySelectorAll("div[data-attribute]").forEach(e=>{e.querySelector("label");const t=e.querySelector("input");null!==this.getAttribute("input-id")&&""!==this.getAttribute("input-id")&&(t.id=`${e.getAttribute("data-attribute")}-${this.getAttribute("input-id")}`)})}connectedCallback(){this.#e||this.#T(),this.hasAttribute("input-readonly")&&this.#Re(),this.hasAttribute("input-required")&&this.#He(),this.hasAttribute("legend")&&(this.querySelector("legend").textContent=this.getAttribute("legend")),this.hasAttribute("input-id")&&this.#Fe()}disconnectedCallback(){u(this),this.#Oe(),this.#e=!1}attributeChangedCallback(e,t,i){if(this.#e&&t!==i)switch(e){case"show-required-status":c(this.querySelector("legend"),this.querySelector("fieldset"),i);break;case"input-readonly":this.#Re();break;case"input-required":this.#He();break;case"legend":null!==i&&(this.querySelector("legend").textContent=i);break;case"input-id":this.#Fe()}}}const R=function(){void 0===customElements.get("fds-date-input")&&window.customElements.define("fds-date-input",z)};class H extends HTMLElement{static observedAttributes=["show-required-status"];get showRequiredStatus(){return this.getAttribute("show-required-status")}set showRequiredStatus(e){null===e?this.removeAttribute("show-required-status"):this.setAttribute("show-required-status",e)}#e=!1;#qe=null;#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["LABEL","SELECT","FDS-ERROR-MESSAGE","FDS-HELP-TEXT"];if([...s,...n].some(t=>e.includes(t?.tagName))){if(this.#Be(),this.hasAttribute("show-required-status")){c(this.querySelector("label"),this.querySelector("select"),this.getAttribute("show-required-status"))}break}if("required"===t&&"SELECT"===i?.tagName){if(this.hasAttribute("show-required-status")){c(this.querySelector("label"),i,this.getAttribute("show-required-status"))}}else"id"!==t&&"hidden"!==t&&"aria-hidden"!==t&&"class"!==t||(this.#Be(),"hidden"===t&&i===this&&p(this))}};#Be(){const e=this.querySelector("label"),t=this.querySelector("select"),i=this.querySelectorAll("fds-error-message"),s=this.querySelectorAll("fds-help-text");d(e,t,"sel"),g(t,i,s),f(t,i)}#Te(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:l;this.#qe||(this.#qe=new MutationObserver(this.#g),this.#qe.observe(this,e))}#Oe(){this.#qe&&(this.#qe.disconnect(),this.#qe=null)}#T(){if(this.#Be(),this.hasAttribute("show-required-status")){c(this.querySelector("label"),this.querySelector("select"),this.getAttribute("show-required-status"))}this.#Te(),this.#e=!0}connectedCallback(){this.#T()}disconnectedCallback(){u(this),this.#Oe(),this.#e=!1}attributeChangedCallback(e,t,i){if(this.#e&&t!==i&&"show-required-status"===e){c(this.querySelector("label"),this.querySelector("select"),i)}}}const F=function(){void 0===customElements.get("fds-select")&&window.customElements.define("fds-select",H)};class B extends HTMLElement{static observedAttributes=["dropzone-prefix","dropzone-link","dropzone-suffix","file-list-header","file-list-more","remove-text","heading-level","show-required-status"];get showRequiredStatus(){return this.getAttribute("show-required-status")}set showRequiredStatus(e){null===e?this.removeAttribute("show-required-status"):this.setAttribute("show-required-status",e)}#Ne=null;#e=!1;#Pe=[];#_e=null;#Ye=null;#Ue=null;#$e;#le;#g=e=>{let t=!1;for(const{attributeName:i,target:s,addedNodes:n,removedNodes:r}of e){if("hidden"===i&&s===this&&p(this),"disabled"===i&&"INPUT"===s?.tagName){m(this.querySelector("label"),s)}else"required"===i&&"INPUT"===s?.tagName&&this.hasAttribute("show-required-status")&&this.#Ve();if("id"===i||"hidden"===i||"aria-hidden"===i){t=!0;continue}const e=["FDS-ERROR-MESSAGE","FDS-HELP-TEXT"];[...n,...r].some(t=>e.includes(t?.tagName))&&(t=!0)}t&&this.#We()};#je(){return this.getAttribute("dropzone-prefix")??"Træk dine filer herhen eller"}#Ke(){return this.getAttribute("dropzone-link")??"vælg filer"}#Ge(){return this.getAttribute("dropzone-suffix")??""}#Ze(){return this.getAttribute("file-list-header")??"Valgte filer"}#Xe(){return this.getAttribute("file-list-more")??"Vælg flere filer"}#Je(){const e=this.getAttribute("heading-level");return e&&["h1","h2","h3","h4","h5","h6"].includes(e)?e:"h5"}#Qe(e){const t=this.querySelector("label");t&&e&&(t.classList.add("fds-upload-label"),e.classList.add("fds-upload-input"),e.id||(e.id=s("file-input")),t.setAttribute("for",e.id),e.removeEventListener("change",this.#le),e.addEventListener("change",this.#le),this.#Ne=e,m(t,e),this.hasAttribute("show-required-status")&&this.#Ve())}#et(){this.#Qe(this.querySelector('.fds-upload-dropzone input[type="file"]'))}#tt(e,t){const i=this.querySelector(e);i&&(i.textContent=t)}#it(){const e=this.querySelectorAll("fds-file-item"),t=this.getAttribute("remove-text")||"Fjern";e.forEach(e=>{e.setAttribute("remove-text",t)})}#st(e){e.replaceChildren();const t=this.#je();t&&e.append(t+" ");const i=document.createElement("span");i.className="fds-upload-choose",i.textContent=this.#Ke(),e.appendChild(i);const s=this.#Ge();s&&e.append(" "+s)}#nt(){const e=this.#Ue?.querySelector(".fds-upload-add-more");e&&(e.hidden=!this.#Ne?.multiple)}#rt(){if(!this.#Ye){const e=this.#Ne||this.querySelector('input[type="file"]');if(!e)return;const t=e.parentNode,i=e.nextSibling;if(this.#Ye=this.#at(),!this.#Ye)return;t===this&&this.insertBefore(this.#Ye,i)}if(this.#Ue?.remove(),this.#Ue=null,!this.contains(this.#Ye)){const e=this.querySelector("fds-error-message");e?this.insertBefore(this.#Ye,e):this.appendChild(this.#Ye)}}#ot(){const e=this.#Ye?.nextSibling??null;if(this.#Ue?this.#lt():this.#Ue=this.#dt(),this.#nt(),this.#Ye?.remove(),this.#Ye=null,!this.contains(this.#Ue)){const t=this.querySelector("fds-error-message");e&&this.contains(e)?this.insertBefore(this.#Ue,e):t?this.insertBefore(this.#Ue,t):this.appendChild(this.#Ue)}}#lt(){const e=this.#Ue.querySelector(".fds-upload-files");e&&(e.replaceChildren(),this.#Pe.forEach(t=>{e.appendChild(this.#ht(t))}))}#ct(){if(!this.#Ue)return;const e=this.#Ue.querySelector(".fds-upload-title");if(!e)return;const t=this.#Je();if(e.tagName.toLowerCase()===t)return;const i=document.createElement(t);i.className=e.className,i.textContent=e.textContent,e.replaceWith(i)}#ut(){const e=this.#Ye?.querySelector(".fds-upload-dropzone-content p");e&&this.#st(e)}#m(){this.#_e||(this.#_e=new MutationObserver(this.#g),this.#_e.observe(this,l))}#We(){const e=this.#Ne;if(!e)return;const t=[];let i=!1;const s=this.querySelector(".fds-upload-dropzone-content");s&&s.id&&t.push(s.id);const n=[...this.querySelectorAll("fds-error-message:not([targets])"),...this.querySelectorAll("fds-help-text")];for(const e of n){const s=e.hasAttribute("hidden"),n="true"===e.getAttribute("aria-hidden");!e.id||s||n||(t.push(e.id),"FDS-ERROR-MESSAGE"===e.tagName&&(i=!0))}if(t.length>0){const i=t.join(" ");e.setAttribute("aria-describedby",i)}else e.removeAttribute("aria-describedby");e&&(i?e.setAttribute("aria-invalid","true"):e.removeAttribute("aria-invalid"))}#C(){0===this.#Pe.length?this.#rt():this.#ot(),this.#We()}#at(){const e=document.createElement("div");e.className="fds-upload-dropzone";const t=this.#Ne||this.querySelector('input[type="file"]');if(!t)return null;this.#Qe(t);const i=document.createElement("div");i.className="fds-upload-dropzone-content",i.id=`dropzone-${t.id}`;const s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.classList.add("icon-svg"),s.setAttribute("aria-hidden","true");const n=document.createElementNS("http://www.w3.org/2000/svg","use");n.setAttribute("href","#plus-circle"),s.appendChild(n);const r=document.createElement("p");return this.#st(r),i.append(s,r),e.append(t,i),e}#dt(){const e=document.createElement("div");e.className="fds-upload-file-list";const t=document.createElement("div");t.className="fds-upload-header";const i=this.#Je(),s=document.createElement(i);s.className="fds-upload-title",s.textContent=this.#Ze();const n=document.createElement("button");n.type="button",n.className="fds-upload-add-more",n.textContent=this.#Xe(),n.hidden=!this.#Ne?.multiple,t.append(s,n);const r=document.createElement("div");return r.setAttribute("role","list"),r.className="fds-upload-files",this.#Pe.forEach(e=>{r.appendChild(this.#ht(e))}),e.append(t,r),e}#ht(e){const{id:t,file:i}=e,s=document.createElement("fds-file-item"),n=this.getAttribute("remove-text")||"Fjern";return s.setAttribute("remove-text",n),s.setFileData(i,t),s}#pt(e){const t=0===this.#Pe.length,i=Array.from(e),n=this.#Ne?.multiple?i:i.slice(0,Math.max(0,1-this.#Pe.length));if(0===n.length)return;const r=n.map(e=>({id:s("file"),file:e}));if(this.#Pe.push(...r),this.dispatchEvent(new CustomEvent("files-added",{detail:r.map(e=>e.file),bubbles:!0,composed:!0})),t)return void this.#C();const a=this.querySelector(".fds-upload-files");r.forEach(e=>{a?.appendChild(this.#ht(e))})}#bt(e){const t=this.#Pe.find(t=>t.id===e);this.#Pe=this.#Pe.filter(t=>t.id!==e);const i=this.querySelector(`fds-file-item[data-file-key="${e}"]`);i&&i.remove(),t&&this.dispatchEvent(new CustomEvent("files-removed",{detail:t.file,bubbles:!0,composed:!0})),0===this.#Pe.length&&this.#C()}#Ve(){c(this.querySelector("label"),this.#Ne||this.querySelector('input[type="file"]'),this.getAttribute("show-required-status"))}constructor(){super(),this.#le=e=>this.#pt(e.target.files),this.#$e=e=>{if(this.#Ne?.disabled)return;const t=e.target.closest(".fds-upload-remove");if(t){const e=t.dataset.fileKey;if(e)return void this.#bt(e)}if(e.target.closest(".fds-upload-add-more")){if(!this.#Ne?.multiple)return;const e=document.createElement("input");e.type="file",e.multiple=!0,e.style.display="none";const t=()=>{e.remove(),window.removeEventListener("focus",t)};e.addEventListener("change",e=>{e.target.files?.length&&this.#pt(e.target.files),t()},{once:!0}),window.addEventListener("focus",t,{once:!0}),document.body.appendChild(e),e.click()}}}getFiles(){return this.#Pe.map(e=>({id:e.id,file:e.file}))}addError(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;const i=document.createElement("fds-error-message");return i.textContent=e,t&&i.setAttribute("targets",t),this.appendChild(i),this.#We(),i}removeError(e){this.contains(e)&&(e.remove(),this.#We())}connectedCallback(){if(this.#e)return;this.addEventListener("click",this.#$e),this.#m();const e=this.querySelector(".fds-upload-dropzone"),t=this.querySelector(".fds-upload-file-list");this.#Ye=e,this.#Ue=t,e?this.#et():this.#Qe(this.querySelector('input[type="file"]')),e||t||this.#C(),this.#We(),this.#e=!0}disconnectedCallback(){u(this),this.#e=!1,this.removeEventListener("click",this.#$e),this.#Ne?.removeEventListener("change",this.#le),this.#_e&&(this.#_e.disconnect(),this.#_e=null)}attributeChangedCallback(e,t,i){this.#e&&("show-required-status"===e&&t!==i&&this.#Ve(),["dropzone-prefix","dropzone-link","dropzone-suffix"].includes(e)&&t!==i&&0===this.#Pe.length&&this.#ut(),"file-list-header"===e&&t!==i&&this.#tt(".fds-upload-title",this.#Ze()),"file-list-more"===e&&t!==i&&this.#tt(".fds-upload-add-more",this.#Xe()),"remove-text"===e&&t!==i&&this.#it(),"heading-level"===e&&t!==i&&this.#ct())}}const N=function(){void 0===customElements.get("fds-upload-file")&&window.customElements.define("fds-upload-file",B)};class P extends HTMLElement{static observedAttributes=["remove-text"];#e=!1;#mt=null;#gt=null;#ft=null;#vt(e){const t=e.type;return t.startsWith("image/")?"file-image":"application/pdf"===t?"file-pdf":t.includes("word")?"file-word":t.includes("excel")||t.includes("spreadsheet")?"file-excel":"file"}#yt(e){const t=document.createElementNS("http://www.w3.org/2000/svg","svg");t.classList.add("icon-svg","fds-upload-file-icon"),t.setAttribute("aria-hidden","true");const i=document.createElementNS("http://www.w3.org/2000/svg","use");return i.setAttribute("href",`#${this.#vt(e)}`),t.appendChild(i),t}#Et(){return this.getAttribute("remove-text")??"Fjern"}#At(){const e=this.querySelector(".fds-upload-remove-text"),t=this.querySelector(".fds-upload-remove");if(!e||!t||!this.#mt)return;const i=this.#Et();e.textContent=` ${i}`,t.setAttribute("aria-label",`${i} ${this.#mt.name}`)}#St(){this.#ft&&this.#ft.disconnect(),this.#ft=new MutationObserver(()=>{this.#xt()});const e=this.closest("fds-upload-file");if(e){const t={subtree:!0,childList:!0,attributes:!0,attributeFilter:["hidden","aria-hidden","targets"]};this.#ft.observe(e,t)}this.#xt()}#xt(){if(!this.#gt)return;const e=this.closest("fds-upload-file");if(!e)return;const t=e.querySelectorAll("fds-error-message[targets]"),i=Array.from(t).filter(e=>{const t=e.getAttribute("targets");if(!t)return!1;return t.split(",").map(e=>e.trim()).includes(this.#gt)});if(this.classList.remove("fds-upload-file-item-error"),this.removeAttribute("aria-invalid"),this.removeAttribute("aria-describedby"),i.forEach(e=>{e.parentElement!==this&&this.appendChild(e)}),i.length>0){this.classList.add("fds-upload-file-item-error"),this.setAttribute("aria-invalid","true");const e=i.map(e=>e.id).filter(Boolean);e.length>0&&this.setAttribute("aria-describedby",e.join(" "))}}#C(){if(!this.#mt||!this.#gt)return;this.innerHTML="",this.className="fds-upload-file-item",this.dataset.fileKey=this.#gt,this.setAttribute("role","listitem");const e=document.createElement("div");e.className="fds-upload-file-row";const t=this.#yt(this.#mt),i=document.createElement("span");i.className="fds-upload-file-name",i.textContent=this.#mt.name;const s=document.createElement("button");s.type="button",s.className="fds-upload-remove",s.dataset.fileKey=this.#gt;const n=document.createElement("span");n.className="fds-upload-remove-text",n.textContent=` ${this.#Et()}`;const r=document.createElementNS("http://www.w3.org/2000/svg","svg");r.classList.add("icon-svg"),r.setAttribute("aria-hidden","true");const a=document.createElementNS("http://www.w3.org/2000/svg","use");a.setAttribute("href","#close"),r.appendChild(a),s.appendChild(r),s.appendChild(n),s.setAttribute("aria-label",`${this.#Et()} ${this.#mt.name}`),e.append(t,i,s),this.appendChild(e),this.#St()}setFileData(e,t){this.#mt=e,this.#gt=t,this.isConnected&&this.#C()}connectedCallback(){this.#e||(this.#mt&&this.#gt&&!this.innerHTML&&this.#C(),this.#e=!0)}disconnectedCallback(){this.#e=!1,this.#ft&&(this.#ft.disconnect(),this.#ft=null)}attributeChangedCallback(e,t,i){this.#e&&"remove-text"===e&&t!==i&&this.#mt&&this.#gt&&this.#At()}}const _=function(){void 0===customElements.get("fds-file-item")&&window.customElements.define("fds-file-item",P)};function Y(e){return(e.getDay()+6)%7}function U(e){const t=new Date(1990,1,1);return t.setFullYear(e.getFullYear()),t.setMonth(e.getMonth()+1),t.setDate(0),t.getDate()}function $(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if("string"!=typeof e)return new Date("invalid");let i=/^(\d{4})[\/\-\. ](\d{1,2})[\/\-\. ](\d{1,2})$/;t&&(i=/^(\d{1,2})[\/\-\. ](\d{1,2})[\/\-\. ](\d{4})$/);const s=e.match(i);if(s){if(t){const e=parseInt(s[1],10),t=parseInt(s[2],10)-1;return W(parseInt(s[3],10),t,e)}return W(parseInt(s[1],10),parseInt(s[2],10)-1,parseInt(s[3],10))}return new Date("invalid")}function V(e){return e instanceof Date&&!isNaN(e.getTime())}function W(e,t,i){if(!Number.isInteger(e)||!Number.isInteger(t)||!Number.isInteger(i))throw new Error("dateFromIntegers() must receive integers");if(0<=t&&t<=11&&0<=e&&e<=9999){const s=U(new Date(e,t,1));if(1<=i&&i<=s){const s=new Date(1990,1,1);return s.setFullYear(e),s.setMonth(t),s.setDate(i),s}return new Date("invalid")}return new Date("invalid")}function j(e){return`${String(e.getFullYear()).padStart(4,"0")}-${String(e.getMonth()+1).padStart(2,"0")}-${String(e.getDate()).padStart(2,"0")}`}function K(e){let t=e.getDate(),i=e.getMonth(),s=e.getFullYear(),n=i-1;-1===n&&(n=11,s-=1);const r=U(new Date(s,n,1));r<t&&(t=r);const a=new Date(1990,1,1);return a.setFullYear(s),a.setMonth(n),a.setDate(t),a}function G(e){let t=e.getDate(),i=e.getMonth(),s=e.getFullYear(),n=i+1;12===n&&(n=0,s+=1);const r=U(new Date(s,n,1));r<t&&(t=r);const a=new Date(1990,1,1);return a.setFullYear(s),a.setMonth(n),a.setDate(t),a}function Z(e,t){return!(!V(e)||!V(t))&&e.getTime()===t.getTime()}class X extends HTMLElement{static observedAttributes=["show-required-status","format","text-open","text-selecteddate","text-months"];#e=!1;#wt=null;#Ct;#qt;#Lt;#kt;#Mt;#Dt;#Tt;#Ot;#It=["januar","februar","marts","april","maj","juni","juli","august","september","oktober","november","december"];#zt=["DD/MM/YYYY","DD-MM-YYYY","DD.MM.YYYY","DD MM YYYY","DD/MM-YYYY"];#Rt="Åbn datovælger";#Ht="valgt dato er DAY. MONTH YEAR";#g=(e,t)=>{e.some(e=>"hidden"===e.attributeName&&e.target===this)&&p(this);if(e.some(e=>this.#Ft(e.addedNodes,e.removedNodes,e.target,e.attributeName))){if(this.#Qe(),this.#Bt(),this.hasAttribute("show-required-status")){c(this.querySelector("label"),this.querySelector("input"),this.getAttribute("show-required-status"))}this.querySelector(".date-button")&&(this.querySelector("input")?.hasAttribute("disabled")?this.querySelector(".date-button").setAttribute("disabled",""):this.querySelector(".date-button").removeAttribute("disabled"))}};#Bt(){const e=this.querySelector("label");if(!e)return;const t=this.querySelector("input");t&&e.classList.toggle("disabled",t.hasAttribute("disabled"))}#Qe(){const e=this.querySelector("input");if(!e)return;e.removeAttribute("aria-describedby");const t=[];let i=!1;const s=[...this.querySelectorAll("fds-error-message"),...this.querySelectorAll("fds-help-text")];for(const e of s){const s="none"!==window.getComputedStyle(e).display,n=!e.hasAttribute("aria-hidden")||"false"===e.getAttribute("aria-hidden"),r=s&&n;e.id&&r&&(t.push(e.id),"FDS-ERROR-MESSAGE"===e.tagName&&(i=!0))}t.length>0?e.setAttribute("aria-describedby",t.join(" ")):e.removeAttribute("aria-describedby"),i?e.setAttribute("aria-invalid","true"):e.removeAttribute("aria-invalid")}#T(){if(this.#e)return;const e=this.querySelector("label"),t=this.querySelector("div input"),i=this.querySelector("div fds-date-picker-grid");if(!e||!t||!i)return;this.#m(),d(e,t,"datp"),this.#Qe(),this.#Bt(),this.hasAttribute("text-open")&&(this.#Rt=this.getAttribute("text-open")),this.hasAttribute("text-selecteddate")&&(this.#Ht=this.getAttribute("text-selecteddate")),this.hasAttribute("text-months")&&this.#Nt(this.getAttribute("text-months"));const s=this.querySelector(".date-button")||document.createElement("button");if(!s.querySelector("svg")){s.setAttribute("aria-haspopup","dialog"),s.classList.add("button","button-icon-only","date-button"),s.setAttribute("aria-label",this.#Rt),s.setAttribute("type","button");const e=h("M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z");s.appendChild(e)}t.insertAdjacentElement("afterend",s),t.parentElement.classList.add("input-wrapper");const n=this.querySelector('[tabindex="-1"]')||document.createElement("div");n.setAttribute("tabindex","-1");const r=this.querySelector(".close-button")||document.createElement("button");if(r.textContent="Luk",r.setAttribute("type","button"),r.classList.add("close-button","function-link"),!r.querySelector("svg")){const e=h("m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z");r.prepend(e)}n.querySelector(".close-button")||n.appendChild(r);const a=i.parentElement;a.classList.add("ce-date-picker","d-none"),a.setAttribute("role","dialog"),a.setAttribute("aria-modal","false"),a.appendChild(n),this.#e=!0}#m(){this.#wt||(this.#wt=new MutationObserver(this.#g),this.#wt.observe(this,l))}#Ft(e,t,i,s){if("disabled"===s&&"INPUT"===i?.tagName||"required"===s&&"INPUT"===i?.tagName||"class"===s&&"LABEL"!==i?.tagName||"id"===s||"hidden"===s||"aria-hidden"===s)return!0;const n=["LABEL","INPUT","FDS-ERROR-MESSAGE","FDS-HELP-TEXT"];return[...e,...t].some(e=>n.includes(e?.tagName))}#Pt(e){if(V(e)){const t=e.getDate(),i=e.getMonth(),s=e.getFullYear(),n=this.#Ht.replace("DAY",t).replace("MONTH",this.#It[i]).replace("YEAR",s);this.querySelector(".date-button").setAttribute("aria-label",`${this.#Rt}, ${n}`)}else this.querySelector(".date-button").setAttribute("aria-label",this.#Rt)}#_t(e){V(e)?this.querySelector("fds-date-picker-grid").setAttribute("selected-date",j(e)):this.querySelector("fds-date-picker-grid").setAttribute("selected-date","")}#Yt(e){if(!this.contains(e.relatedTarget)){if(""!==this.querySelector("input").value){const e=!0,t=$(this.querySelector("input").value,e);this.#Pt(t),this.#_t(t)}this.close()}}#Ut(){if(""!==this.querySelector("input").value){const e=!0,t=$(this.querySelector("input").value,e);this.#Pt(t),this.#_t(t)}this.toggle(),this.querySelector(".ce-date-picker").classList.contains("d-none")||this.querySelector("fds-date-picker-grid").focusFocusableDate()}#$t(){const e=$(this.querySelector("fds-date-picker-grid").getAttribute("selected-date"));if(this.#Pt(e),document.activeElement!==this.querySelector("input")&&V(e)){let t=this.#zt[0];this.hasAttribute("format")&&this.#zt.includes(this.getAttribute("format"))&&(t=this.getAttribute("format"));const i=String(e.getDate()).padStart(2,"0"),s=String(e.getMonth()+1).padStart(2,"0"),n=String(e.getFullYear()).padStart(4,"0");this.querySelector("input").value=t.replace("DD",i).replace("MM",s).replace("YYYY",n)}}#Vt(){this.close(),this.querySelector(".date-button").focus()}#Wt(e){const t=$(e.target.value,!0);V(t)?this.querySelector("fds-date-picker-grid").setAttribute("selected-date",j(t)):this.querySelector("fds-date-picker-grid").setAttribute("selected-date","")}#jt(){let e=new Date("invalid");if(""!==this.querySelector("input").value){const t=!0;e=$(this.querySelector("input").value,t),this.#Pt(e),this.#_t(e)}else this.querySelector("fds-date-picker-grid").hasAttribute("selected-date")&&(e=$(this.querySelector("fds-date-picker-grid").getAttribute("selected-date")),this.#Pt(e),this.#$t())}#Kt(e){switch(e.key){case"Tab":const t=this.querySelector("fds-date-picker-grid").shadowRoot.querySelector(".previous-month"),i=this.querySelector("fds-date-picker-grid").shadowRoot.querySelector(".selected-month");if(e.shiftKey){const s=e.composedPath()[0];(s===i&&t.hasAttribute("disabled")||s===t)&&(e.preventDefault(),this.querySelector(".close-button").focus())}else e.target===this.querySelector(".close-button")&&(e.preventDefault(),t.hasAttribute("disabled")?i.focus():t.focus());break;case"Escape":this.#Vt()}}#Nt(e){const t=e.split(" ");12===t.length&&(this.#It=t,this.querySelector("fds-date-picker-grid")?.setAttribute("text-months",e))}constructor(){super(),this.#Ct=()=>{this.#Ut()},this.#qt=e=>{this.#Yt(e)},this.#Lt=()=>{this.#$t()},this.#kt=()=>{this.#Vt()},this.#Mt=()=>{this.#Vt()},this.#Dt=e=>{this.#Wt(e)},this.#Tt=()=>{this.#jt()},this.#Ot=e=>{this.#Kt(e)}}open(){this.querySelector(".ce-date-picker")&&(this.querySelector(".ce-date-picker").classList.remove("d-none"),this.querySelector("fds-date-picker-grid").resizeMonth())}close(){this.querySelector(".ce-date-picker")&&this.querySelector(".ce-date-picker").classList.add("d-none")}toggle(){this.querySelector(".ce-date-picker")&&(this.querySelector(".ce-date-picker").classList.toggle("d-none"),this.querySelector("fds-date-picker-grid").resizeMonth())}connectedCallback(){if(this.#e)return;this.#T();const e=this.querySelector("label"),t=this.querySelector("input");this.hasAttribute("show-required-status")&&c(e,t,this.getAttribute("show-required-status")),this.querySelector(".date-button")?.addEventListener("click",this.#Ct,!1),this.addEventListener("focusout",this.#qt,!1),this.querySelector("fds-date-picker-grid")?.addEventListener("date-selected",this.#Lt,!1),this.querySelector("fds-date-picker-grid")?.addEventListener("date-clicked",this.#kt,!1),this.querySelector(".close-button")?.addEventListener("click",this.#Mt,!1),this.querySelector("input")?.addEventListener("input",this.#Dt,!1),this.querySelector(".ce-date-picker")?.addEventListener("keydown",this.#Ot,!1),window.addEventListener("pageshow",this.#Tt,!1)}disconnectedCallback(){u(this),this.#e=!1,this.#wt&&(this.#wt.disconnect(),this.#wt=null),this.querySelector(".date-button")?.removeEventListener("click",this.#Ct,!1),this.removeEventListener("focusout",this.#qt,!1),this.querySelector("fds-date-picker-grid")?.removeEventListener("date-selected",this.#Lt,!1),this.querySelector("fds-date-picker-grid")?.removeEventListener("date-clicked",this.#kt,!1),this.querySelector(".close-button")?.removeEventListener("click",this.#Mt,!1),this.querySelector("input")?.removeEventListener("input",this.#Dt,!1),this.querySelector(".ce-date-picker")?.removeEventListener("keydown",this.#Ot,!1),window.removeEventListener("pageshow",this.#Tt,!1)}attributeChangedCallback(e,t,i){if(this.#e){if("show-required-status"===e&&t!==i){c(this.querySelector("label"),this.querySelector("input"),i)}if("format"===e&&t!==i&&document.activeElement!==this.querySelector("input")&&this.hasAttribute("format")&&this.#zt.includes(i)){const e=!0,t=$(this.querySelector("input").value,e);if(V(t)){const e=String(t.getDate()).padStart(2,"0"),s=String(t.getMonth()+1).padStart(2,"0"),n=String(t.getFullYear()).padStart(4,"0");this.querySelector("input").value=i.replace("DD",e).replace("MM",s).replace("YYYY",n)}}if("text-open"===e&&(this.#Rt=i),"text-selecteddate"===e){const e=(i.match(/DAY/g)||[]).length,t=(i.match(/MONTH/g)||[]).length,s=(i.match(/YEAR/g)||[]).length;1===e&&1===t&&1===s&&(this.#Ht=i)}"text-months"===e&&this.#Nt(i)}}}const J=function(){void 0===customElements.get("fds-date-picker")&&window.customElements.define("fds-date-picker",X)},Q="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z",ee=new CSSStyleSheet;ee.replaceSync('\n    *,\n    *::before,\n    *::after {\n        box-sizing: border-box;\n    }\n\n    .sr-only {\n        position: absolute;\n        width: 1px;\n        height: 1px;\n        margin: -1px;\n        padding: 0;\n        overflow: hidden;\n        clip-path: inset(50%);\n        border: 0;\n        user-select: none;\n        white-space: nowrap;\n    }\n\n    button,\n    select {\n        text-transform: none;\n        appearance: none;\n        font-family: inherit;\n        font-size: 100%;\n        line-height: 1.5;\n        margin: 0;\n    }\n\n    button:focus,\n    input:focus,\n    select:focus {\n        outline: 3px solid #454545;\n        outline-offset: 1px;\n    }\n\n    :host {\n        display: block;\n        border: 1px solid #8E8E8E;\n        background-color: white;\n        max-width: calc(7 * 40px + 8 * 0.4rem + 2px);\n        border-radius: 8px;\n        overflow: auto;\n    }\n\n    .grid-container {\n        width: fit-content;\n    }\n\n    .grid-container:focus {\n        outline: 0;\n    }\n\n    .date-picker-header {\n        display: flex;\n        justify-content: space-between;\n        background-color: #F5F5F5;\n        padding-top: 4px;\n        padding-bottom: 4px;\n        min-width: 220px;\n        position: relative;\n        z-index: 3;\n    }\n\n    .month-year-wrapper {\n        display: flex;\n        flex-wrap: wrap;\n        justify-content: center;\n    }\n\n    .month-wrapper,\n    .year-wrapper {\n        position: relative;\n        display: flex;\n        align-items: center;\n        margin-left: 4px;\n        margin-right: 4px;\n    }\n\n    .select-arrow {\n        position: absolute;\n        width: 24px;\n        right: 0;\n        pointer-events: none;\n    }\n\n    .selected-month,\n    .selected-year {\n        border: 0;\n        background-color: #F5F5F5;\n        border-radius: 8px;\n        background-position: 100%;\n        background-size: 2.4rem;\n        padding-right: 24px;\n        padding-left: 8px;\n        font-weight: 600;\n        height: calc(1.6rem + 24px);\n    }\n\n    .selected-month:hover,\n    .selected-year:hover {\n        background-color: #DCDCDC;\n    }\n\n    .selected-month:active,\n    .selected-year:active {\n        background-color: #BFBFBF;\n    }\n\n    .selected-month:focus,\n    .selected-year:focus {\n        outline-offset: -3px;\n    }\n\n    .selected-month option,\n    .selected-year option {\n        background-color: #ffffff;\n    }\n\n    .previous-month,\n    .next-month {\n        display: inline-flex;\n        align-items: center;\n        justify-content: center;\n        line-height: 1.5;\n        text-align: center;\n        vertical-align: middle;\n        cursor: pointer;\n        margin: 0;\n        overflow-wrap: break-word;\n        max-width: 100%;\n        font-weight: inherit;\n        font-size: 1.6rem;\n        min-height: 32px;\n        padding: 2px;\n        border-width: 2px;\n        border-style: solid;\n        text-decoration: none;\n        border-color: transparent;\n        color: #1a1a1a;\n        background-color: transparent;\n        width: 40px;\n        height: 40px;\n        border-radius: 20px;\n    }\n\n    .previous-month {\n        margin-left: 4px;\n    }\n\n    .next-month {\n        margin-right: 4px;\n    }\n\n    .previous-month:hover,\n    .next-month:hover {\n        border-color: #DCDCDC;\n        color: #1a1a1a;\n        background-color: #DCDCDC;\n    }\n\n    .previous-month:active,\n    .next-month:active {\n        border-color: #BFBFBF;\n        color: #1a1a1a;\n        background-color: #BFBFBF;\n    }\n\n    .previous-month:disabled,\n    .next-month:disabled {\n        opacity: 0.25;\n        cursor: not-allowed;\n        box-shadow: none !important;\n        border-color: transparent;\n        color: #1a1a1a;\n        background-color: transparent;\n    }\n\n    .previous-month svg,\n    .next-month svg {\n        margin: 0;\n        fill: currentColor;\n        width: 2.4rem;\n        pointer-events: none;\n    }\n\n    table {\n        border-collapse: separate;\n        border-spacing: 0.4rem;\n        min-width: 220px;\n    }\n\n    thead th {\n        position: relative;\n        font-size: 1.4rem;\n        font-weight: 400;\n        height: 40px;\n    }\n\n    thead th span[aria-hidden="true"] {\n        position: relative;\n        z-index: 1;\n        top: -4px;\n    }\n\n    thead th::before {\n        content: \'\';\n        position: absolute;\n        z-index: 1;\n        background-color: #F5F5F5;\n        display: block;\n        left: calc(0rem - 0.4rem);\n        top: calc(0rem - 0.4rem - 4px);\n        width: calc(100% + 2 * 0.4rem);\n        height: calc(100% + 2 * 0.4rem);\n        border-bottom: 1px solid #DCDCDC;\n    }\n\n    td {\n        height: 40px;\n        width: 40px;\n        max-width: 40px;\n        text-align: center;\n        border-radius: 20px;\n    }\n\n    td[data-date]:focus {\n        outline: 3px solid #454545;\n        outline-offset: 1px;\n    }\n\n    td:not([data-date]):focus {\n        outline: none;\n    }\n\n    td[aria-selected] {\n        cursor: pointer;\n    }\n\n    td[aria-selected]:hover {\n        background-color: #DCDCDC;\n    }\n\n    td[aria-selected="true"],\n    td[aria-selected="true"]:hover {\n        background-color: #1a1a1a;\n        color: #ffffff;\n    }\n\n    td[aria-disabled="true"] {\n        color: #BFBFBF;\n    }\n\n    td[aria-disabled="true"]:focus {\n        outline: none;\n    }\n\n    td[aria-current="date"] {\n        font-weight: 700;\n        text-decoration: underline;\n    }\n');class te extends HTMLElement{static observedAttributes=["min-date","max-date","selected-date","default-date","text-months","text-days","text-prevbutton","text-nextbutton","text-date-announcement","text-mindate","text-maxdate"];#e=!1;#Gt;#Zt;#Xt;#Jt;#It=["januar","februar","marts","april","maj","juni","juli","august","september","oktober","november","december"];#Qt=["Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag","Søndag"];#ei=6;#ti;#ii="DAY. MONTH YEAR";#si;#ni;#ri;#ai;#oi;#li;#kt;#di;#hi;#ci;#Ot=e=>{if(e.target.hasAttribute("data-date")){const t=$(e.target.getAttribute("data-date")),i=this.#Xt,s=this.#Jt;switch(e.key){case"ArrowLeft":e.preventDefault();let n=function(e){const t=new Date(e);return t.setDate(t.getDate()-1),t}(t);n<i&&(n=i),this.#ui(n,!0);break;case"ArrowRight":e.preventDefault();let r=function(e){const t=new Date(e);return t.setDate(t.getDate()+1),t}(t);s<r&&(r=s),this.#ui(r,!0);break;case"ArrowUp":e.preventDefault();let a=function(e){const t=new Date(e);return t.setDate(t.getDate()-7),t}(t);a<i&&(a=i),this.#ui(a,!0);break;case"ArrowDown":e.preventDefault();let o=function(e){const t=new Date(e);return t.setDate(t.getDate()+7),t}(t);s<o&&(o=s),this.#ui(o,!0);break;case"Enter":case" ":e.preventDefault(),this.setAttribute("selected-date",e.target.getAttribute("data-date")),this.dispatchEvent(new Event("date-clicked"));break;case"PageDown":if(e.preventDefault(),e.shiftKey){let e=function(e){let t=e.getDate();const i=e.getMonth();let s=e.getFullYear()+1;const n=U(new Date(s,i,1));n<t&&(t=n);const r=new Date(1990,1,1);return r.setFullYear(s),r.setMonth(i),r.setDate(t),r}(t);s<e&&(e=s),this.#ui(e,!0)}else{let e=G(t);s<e&&(e=s),this.#ui(e,!0)}break;case"PageUp":if(e.preventDefault(),e.shiftKey){let e=function(e){let t=e.getDate();const i=e.getMonth();let s=e.getFullYear()-1;const n=U(new Date(s,i,1));n<t&&(t=n);const r=new Date(1990,1,1);return r.setFullYear(s),r.setMonth(i),r.setDate(t),r}(t);e<i&&(e=i),this.#ui(e,!0)}else{let e=K(t);e<i&&(e=i),this.#ui(e,!0)}break;case"Home":if(e.preventDefault(),e.ctrlKey){const e=parseInt(this.shadowRoot.querySelector(".selected-month").value,10);let t=W(parseInt(this.shadowRoot.querySelector(".selected-year").value,10),e,1);t<i&&(t=i),this.#ui(t,!0)}else{const e=Y(t);if(0!==e){let s=new Date(t);s.setDate(t.getDate()-e),s<i&&(s=i),this.#ui(s,!0)}}break;case"End":if(e.preventDefault(),e.ctrlKey){const e=parseInt(this.shadowRoot.querySelector(".selected-month").value,10),t=parseInt(this.shadowRoot.querySelector(".selected-year").value,10),i=U(W(t,e,1));let n=W(t,e,i);s<n&&(n=s),this.#ui(n,!0)}else{const e=Y(t);if(6!==e){let i=new Date(t);i.setDate(t.getDate()+(6-e)),s<i&&(i=s),this.#ui(i,!0)}}}}};#T(){if(this.#e)return;this.#pi();let e=new Date;this.getAttribute("selected-date")?e=$(this.getAttribute("selected-date")):this.getAttribute("default-date")&&(e=$(this.getAttribute("default-date"))),this.#ui(e,!1),this.#e=!0}#pi(){const e=document.createElement("div");e.classList.add("grid-container"),e.setAttribute("tabindex","-1"),this.shadowRoot.appendChild(e);const t=document.createElement("div");t.classList.add("date-picker-header");const i=document.createElement("span");i.classList.add("sr-only"),i.setAttribute("aria-live","polite"),t.appendChild(i);const s=document.createElement("button");s.classList.add("previous-month"),s.setAttribute("type","button");const n=h("M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"),r=document.createElement("span");r.textContent="Forrige",r.classList.add("sr-only"),s.appendChild(n),s.appendChild(r),t.appendChild(s);const a=document.createElement("div");a.classList.add("month-year-wrapper");const o=document.createElement("div");o.classList.add("month-wrapper");const l=document.createElement("select");l.setAttribute("name","month"),l.setAttribute("aria-label","Måned"),l.classList.add("selected-month");for(let e=0;e<this.#It.length;e++)l.innerHTML+=`<option value="${e}">${this.#It[e].charAt(0).toUpperCase()+this.#It[e].slice(1)}</option>`;o.appendChild(l);const d=h(Q);d.classList.add("select-arrow"),o.appendChild(d),a.appendChild(o);const c=document.createElement("div");c.classList.add("year-wrapper");const u=document.createElement("select");u.setAttribute("name","year"),u.setAttribute("aria-label","År"),u.classList.add("selected-year"),c.appendChild(u);const p=h(Q);p.classList.add("select-arrow"),c.appendChild(p),a.appendChild(c),t.appendChild(a);const b=document.createElement("button");b.classList.add("next-month"),b.setAttribute("type","button");const m=h("M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"),g=document.createElement("span");g.textContent="Næste",g.classList.add("sr-only"),b.appendChild(m),b.appendChild(g),t.appendChild(b),e.appendChild(t),this.hasAttribute("text-mindate")&&(this.#di=this.getAttribute("text-mindate")),this.hasAttribute("text-maxdate")&&(this.#hi=this.getAttribute("text-maxdate"));const f=document.createElement("table");f.setAttribute("role","grid"),f.classList.add("date-picker-grid");const v=document.createElement("thead"),y=document.createElement("tr");for(let e=0;e<this.#Qt.length;e++){const t=document.createElement("th");t.setAttribute("scope","col"),t.innerHTML=`<span aria-hidden="true">${this.#Qt[e].slice(0,2)}</span><span class="sr-only">${this.#Qt[e]}</span>`,y.appendChild(t)}v.appendChild(y),f.appendChild(v);const E=document.createElement("tbody");for(let e=0;e<this.#ei;e++){const e=document.createElement("tr");for(let t=0;t<this.#Qt.length;t++){const t=document.createElement("td");e.appendChild(t)}E.appendChild(e)}f.appendChild(E),e.appendChild(f)}#ui(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];const i=this.shadowRoot.querySelector(".grid-container"),s=new Date;if(s.setHours(0,0,0,0),!i)return;V(e)||(e=s);let n=!1;if(this.#Gt!==this.getAttribute("min-date")||this.#Zt!==this.getAttribute("max-date")||!V(this.#Xt)||!V(this.#Jt)||this.#Xt>this.#Jt){if(this.#Gt=this.getAttribute("min-date"),this.#Zt=this.getAttribute("max-date"),this.#Xt=$(this.getAttribute("min-date")),this.#Jt=$(this.getAttribute("max-date")),V(this.#Xt)||(this.#Xt=this.#si),V(this.#Jt)||(this.#Jt=this.#ni),this.hasAttribute("start-date-id")){const e=document.querySelector(`[end-date-id="${this.getAttribute("start-date-id")}"]`);if(e&&e.hasAttribute("selected-date")){const t=$(e.getAttribute("selected-date"));V(t)&&t<this.#Jt&&(this.#Jt=t)}}else if(this.hasAttribute("end-date-id")){const e=document.querySelector(`[start-date-id="${this.getAttribute("end-date-id")}"]`);if(e&&e.hasAttribute("selected-date")){const t=$(e.getAttribute("selected-date"));V(t)&&this.#Xt<t&&(this.#Xt=t)}}this.#Xt>this.#Jt&&(this.#Xt=this.#Jt),n=!0}if(e=function(e,t,i){return V(t)?(t.setHours(0,0,0,0),V(e)&&e.setHours(0,0,0,0),V(i)&&i.setHours(0,0,0,0),V(e)&&t<e?e:V(i)&&i<t?i:t):new Date("invalid")}(this.#Xt,e,this.#Jt),n){let e=this.#Xt.getFullYear(),t=this.#Jt.getFullYear();const i=this.shadowRoot.querySelector(".selected-year");i.innerHTML="";for(let s=e;s<=t;s++)i.innerHTML+=`<option value="${s}">${s}</option>`}const r=e.getFullYear();i.querySelector(".selected-year").value=e.getFullYear();const a=this.shadowRoot.querySelector(".selected-month").querySelectorAll("option"),o=this.shadowRoot.querySelector(".selected-year").value;for(let e=0;e<a.length;e++)a[e].removeAttribute("disabled");if(this.#Xt.getFullYear()===parseInt(o,10)){const e=this.#Xt.getMonth();for(let t=0;t<a.length;t++)t<e&&a[t].setAttribute("disabled","")}if(this.#Jt.getFullYear()===parseInt(o,10)){const e=this.#Jt.getMonth();for(let t=0;t<a.length;t++)t>e&&a[t].setAttribute("disabled","")}const l=e.getMonth();i.querySelector(".selected-month").value=l,this.resizeMonth();const d=document.activeElement;d&&"TD"===d.tagName&&d.hasAttribute("data-date")&&i.contains(d)&&i.focus();const h=i.querySelectorAll("td");for(let e=0;e<this.#ti;e++)h[e].setAttribute("tabindex","-1"),h[e].removeAttribute("data-date"),h[e].removeAttribute("aria-label"),h[e].removeAttribute("aria-selected"),h[e].removeAttribute("aria-disabled"),h[e].removeAttribute("aria-current"),h[e].innerHTML="";const c=U(e),u=Y(W(r,l,1));for(let e=1;e<=c;e++){const t=W(r,l,e);h[e+u-1].setAttribute("data-date",`${j(t)}`);const i=this.#ii.replace("DAY",e).replace("MONTH",this.#It[l]).replace("YEAR",r);if(h[e+u-1].setAttribute("aria-label",i),Z(t,this.#Xt)){const t=`${i}, ${this.#di}`;h[e+u-1].setAttribute("aria-label",t)}else if(Z(t,this.#Jt)){const t=`${i}, ${this.#hi}`;h[e+u-1].setAttribute("aria-label",t)}Z(t,s)&&h[e+u-1].setAttribute("aria-current","date"),h[e+u-1].innerHTML=`${e}`;const n=V(this.#Xt)&&V(this.#Jt)&&this.#Xt<=t&&t<=this.#Jt,a=V(this.#Xt)&&!V(this.#Jt)&&this.#Xt<=t,o=!V(this.#Xt)&&V(this.#Jt)&&t<=this.#Jt,d=!V(this.#Xt)&&!V(this.#Jt);n||a||o||d?h[e+u-1].setAttribute("aria-selected","false"):h[e+u-1].setAttribute("aria-disabled","true")}const p=this.getAttribute("selected-date");if(this.hasAttribute("selected-date")&&function(e){const t=$(e);return t instanceof Date&&!isNaN(t.getTime())}(p)){const e=i.querySelector(`[data-date="${p}"]`);e&&!e.hasAttribute("aria-disabled")&&e?.setAttribute("aria-selected","true")}i.querySelector(`[data-date="${j(e)}"]`).setAttribute("tabindex","0");const b=this.shadowRoot.querySelector(".previous-month"),m=this.shadowRoot.querySelector(".next-month"),g=this.shadowRoot.querySelector(`[data-date="${j(this.#Xt)}"]`),f=this.shadowRoot.querySelector(`[data-date="${j(this.#Jt)}"]`),v=this.shadowRoot?.activeElement??document.activeElement;g?(v.classList.contains("previous-month")&&this.focusFocusableDate(),b.setAttribute("disabled","")):b.removeAttribute("disabled"),f?(v.classList.contains("next-month")&&this.focusFocusableDate(),m.setAttribute("disabled","")):m.removeAttribute("disabled");const y=this.offsetParent;t&&y&&"INPUT"!==document.activeElement.tagName&&this.focusFocusableDate()}#bi(e){let t=$(this.shadowRoot.querySelector('td[data-date][tabindex="0"]').getAttribute("data-date")).getDate(),i=parseInt(this.shadowRoot.querySelector(".selected-month").value,10),s=parseInt(this.shadowRoot.querySelector(".selected-year").value,10);e.target===this.shadowRoot.querySelector(".selected-month")?i=parseInt(e.target.value,10):e.target===this.shadowRoot.querySelector(".selected-year")&&(s=parseInt(e.target.value,10));const n=U(W(s,i,1));n<t&&(t=n);const r=W(s,i,t);this.#ui(r,!1),e.target.focus()}#mi(e){const t=$(this.shadowRoot.querySelector('td[data-date][tabindex="0"]').getAttribute("data-date"));let i=K(t),s=G(t);if(e.target===this.shadowRoot.querySelector(".previous-month"))this.#ui(i,!1),null!==e.target.getAttribute("disabled")&&(this.shadowRoot.querySelector(".sr-only").textContent="",this.shadowRoot.querySelector('td[tabindex="0"]')?.setAttribute("tabindex","-1"),this.shadowRoot.querySelector("td[aria-selected]")?.setAttribute("tabindex","0"),this.focusFocusableDate());else if(e.target===this.shadowRoot.querySelector(".next-month")&&(this.#ui(s,!1),null!==e.target.getAttribute("disabled"))){this.shadowRoot.querySelector(".sr-only").textContent="",this.shadowRoot.querySelector('td[tabindex="0"]')?.setAttribute("tabindex","-1");const e=this.shadowRoot.querySelectorAll("td[aria-selected]");e[e.length-1]?.setAttribute("tabindex","0"),this.focusFocusableDate()}if(null===e.target.getAttribute("disabled")){const e=this.#It[parseInt(this.shadowRoot.querySelector(".selected-month").value,10)],t=parseInt(this.shadowRoot.querySelector(".selected-year").value,10);this.shadowRoot.querySelector(".sr-only").textContent=`${e} ${t}`}}#gi(e){e.target.hasAttribute("data-date")&&!e.target.hasAttribute("aria-disabled")&&(this.setAttribute("selected-date",e.target.getAttribute("data-date")),this.dispatchEvent(new Event("date-clicked")))}#fi(e){const t=e.split(" ");if(7===t.length){this.#Qt=t;const e=this.shadowRoot.querySelectorAll("th");for(let t=0;t<e.length;t++)e[t].innerHTML=`<span aria-hidden="true">${this.#Qt[t].slice(0,2)}</span><span class="sr-only">${this.#Qt[t]}</span>`}}#Nt(e){const t=e.split(" ");if(12===t.length){this.#It=t;const e=this.shadowRoot.querySelector(".date-picker-header");e&&e.querySelector(".sr-only")&&(e.querySelector(".sr-only").textContent="");const i=this.shadowRoot.querySelectorAll(".selected-month option");for(let e=0;e<i.length;e++)i[e].textContent=this.#It[e].charAt(0).toUpperCase()+this.#It[e].slice(1);this.resizeMonth()}}#vi(e){this.shadowRoot.querySelector(".previous-month")&&(this.shadowRoot.querySelector(".previous-month .sr-only").textContent=e)}#yi(e){this.shadowRoot.querySelector(".next-month")&&(this.shadowRoot.querySelector(".next-month .sr-only").textContent=e)}#Ei(e){const t=(e.match(/DAY/g)||[]).length,i=(e.match(/MONTH/g)||[]).length,s=(e.match(/YEAR/g)||[]).length;1===t&&1===i&&1===s&&(this.#ii=e)}constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.adoptedStyleSheets=[ee],this.#ti=this.#ei*this.#Qt.length,this.#ii="DAY. MONTH YEAR",this.#di="tidligste valgbare dato",this.#hi="seneste valgbare dato",this.#si=new Date,this.#si.setHours(0,0,0,0),this.#ni=new Date(this.#si),this.#ni.setFullYear(this.#si.getFullYear()+10),this.#Gt=0,this.#Zt=0,this.#Xt=null,this.#Jt=null,this.#ri=e=>{this.#bi(e)},this.#ai=e=>{this.#bi(e)},this.#oi=e=>{this.#mi(e)},this.#li=e=>{this.#mi(e)},this.#kt=e=>{this.#gi(e)},this.#ci=!1}forceCompleteRedraw(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];this.#Zt=0,this.#ui(e,t)}setHasDatePickerConnection(e){this.#ci=e}getHasDatePickerConnection(){return this.#ci}focusFocusableDate(){this.shadowRoot.querySelector('td[tabindex="0"]')?.focus()}resizeMonth(){const e=this.shadowRoot.querySelector(".selected-month");if(!e)return;const t=e.options?.[e.selectedIndex];if(!t)return;const i=document.createElement("span");if(i.style.visibility="hidden",i.style.position="absolute",i.style.fontFamily='"IBM Plex Sans", "system-ui", system, sans-serif',i.style.fontSize="16px",i.style.lineHeight="1.5",i.style.fontWeight="600",i.textContent=t.text,this.shadowRoot.appendChild(i),i.offsetWidth>0){const t=i.offsetWidth/10;e.style.width=`calc(${t}rem + 32px)`}this.shadowRoot.removeChild(i)}connectedCallback(){if(this.#e)return;this.hasAttribute("text-days")&&this.#fi(this.getAttribute("text-days")),this.hasAttribute("text-months")&&this.#Nt(this.getAttribute("text-months")),this.hasAttribute("text-date-announcement")&&this.#Ei(this.getAttribute("text-date-announcement")),this.#T(),this.hasAttribute("text-prevbutton")&&this.#vi(this.getAttribute("text-prevbutton")),this.hasAttribute("text-nextbutton")&&this.#yi(this.getAttribute("text-nextbutton")),this.shadowRoot.querySelector(".grid-container").addEventListener("keydown",this.#Ot,!1),this.shadowRoot.querySelector(".selected-month").addEventListener("change",this.#ri,!1),this.shadowRoot.querySelector(".selected-year").addEventListener("change",this.#ai,!1),this.shadowRoot.querySelector(".previous-month").addEventListener("click",this.#oi,!1),this.shadowRoot.querySelector(".next-month").addEventListener("click",this.#li,!1),this.shadowRoot.querySelector(".date-picker-grid").addEventListener("click",this.#kt,!1);const e=this.hasAttribute("start-date-id"),t=this.hasAttribute("end-date-id"),i=document.querySelector(`[start-date-id="${this.getAttribute("end-date-id")}"]`),s=document.querySelector(`[end-date-id="${this.getAttribute("start-date-id")}"]`);e&&s?customElements.whenDefined("fds-date-picker-grid").then(()=>{this.getHasDatePickerConnection()||s?.getHasDatePickerConnection()||(this.addEventListener("date-selected",()=>{const e=s.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute("data-date");s.forceCompleteRedraw($(e))}),s.addEventListener("date-selected",()=>{const e=this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute("data-date");this.forceCompleteRedraw($(e))}),this.setHasDatePickerConnection(!0),s.setHasDatePickerConnection(!0))}):t&&i&&customElements.whenDefined("fds-date-picker-grid").then(()=>{this.getHasDatePickerConnection()||i?.getHasDatePickerConnection()||(i.addEventListener("date-selected",()=>{const e=this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute("data-date");this.forceCompleteRedraw($(e))}),this.addEventListener("date-selected",()=>{const e=i.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute("data-date");i.forceCompleteRedraw($(e))}),i.setHasDatePickerConnection(!0),this.setHasDatePickerConnection(!0))});const n=()=>{this.resizeMonth(),window.removeEventListener("load",n)};window.addEventListener("load",n)}disconnectedCallback(){this.#e=!1}attributeChangedCallback(e,t,i){if(!this.#e&&t!==i)return;let s=!1;if("selected-date"===e){const e=$(i),t=!0;if(V(e))this.#ui(e,t);else{const e=this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute("data-date");this.#ui($(e),t)}this.dispatchEvent(new Event("date-selected"))}if("min-date"!==e&&"max-date"!==e||(s=!0),"text-days"===e&&this.#fi(i),"text-months"===e&&this.#Nt(i),"text-prevbutton"===e&&this.#vi(i),"text-nextbutton"===e&&this.#yi(i),"text-date-announcement"===e&&this.#Ei(i),"text-mindate"===e&&(this.#di=i,s=!0),"text-maxdate"===e&&(this.#hi=i,s=!0),s){const e=this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute("data-date");let t=$(e);V(t)||(t=new Date),this.#ui(t,!0)}}}const ie=function(){void 0===customElements.get("fds-date-picker-grid")&&window.customElements.define("fds-date-picker-grid",te)};class se extends HTMLElement{static observedAttributes=["show-required-status"];get showRequiredStatus(){return this.getAttribute("show-required-status")}set showRequiredStatus(e){null===e?this.removeAttribute("show-required-status"):this.setAttribute("show-required-status",e)}#e=!1;#Ai=null;#g=e=>{for(const{attributeName:t,target:i,addedNodes:s,removedNodes:n}of e){const e=["LABEL","TEXTAREA","FDS-ERROR-MESSAGE","FDS-HELP-TEXT","FDS-CHARACTER-LIMIT"];if([...s,...n].some(t=>e.includes(t?.tagName))){const e=this.querySelector("label"),t=this.querySelector("textarea"),i=this.querySelectorAll("fds-error-message"),s=this.querySelectorAll("fds-help-text"),n=this.querySelector("fds-character-limit span.sr-only[id]");d(e,t,"tex"),g(t,i,s,n),f(t,i),this.hasAttribute("show-required-status")&&c(e,t,this.getAttribute("show-required-status"));break}if("required"===t&&"TEXTAREA"===i?.tagName){if(this.hasAttribute("show-required-status")){c(this.querySelector("label"),i,this.getAttribute("show-required-status"))}}else if("id"===t||"hidden"===t||"aria-hidden"===t||"class"===t){const e=this.querySelector("label"),s=this.querySelector("textarea"),n=this.querySelectorAll("fds-error-message"),r=this.querySelectorAll("fds-help-text"),a=this.querySelector("fds-character-limit span.sr-only[id]");d(e,s,"tex"),g(s,n,r,a),f(s,n),"hidden"===t&&i===this&&p(this)}}};#m(){this.#Ai||(this.#Ai=new MutationObserver(this.#g),this.#Ai.observe(this,l))}#T(){this.#m();const e=this.querySelector("label"),t=this.querySelector("textarea"),i=this.querySelectorAll("fds-error-message"),s=this.querySelectorAll("fds-help-text"),n=this.querySelector("fds-character-limit span.sr-only[id]");d(e,t,"tex"),g(t,i,s,n),f(t,i),this.hasAttribute("show-required-status")&&c(e,t,this.getAttribute("show-required-status")),this.#e=!0}connectedCallback(){this.#e||this.#T()}disconnectedCallback(){u(this),this.#e=!1,this.#Ai&&(this.#Ai.disconnect(),this.#Ai=null)}attributeChangedCallback(e,t,i){if(this.#e&&"show-required-status"===e&&t!==i){c(this.querySelector("label"),this.querySelector("textarea"),i)}}}const ne=function(){void 0===customElements.get("fds-textarea")&&window.customElements.define("fds-textarea",se)},re=["fds-input","fds-checkbox","fds-checkbox-group","fds-radio-button-group","fds-date-input","fds-textarea","fds-select","fds-upload-file","fds-date-picker"],ae=re.join(", "),oe=re.map(e=>`${e} fds-error-message`).join(", ");class le extends HTMLElement{static observedAttributes=["heading","heading-level","heading-id","auto"];#e;#Si;#xi(){const e=this.querySelector(":scope > nav"),t=e?.querySelector(":scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6"),i=e?.querySelector(":scope > ul");return{navElement:e,headingElement:t,listElement:i}}#wi(e){return e?.closest(ae)}#Ci(e){const t=this.#wi(e);return t?t.querySelector('input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])'):null}#r(e){const t=(e||"h2").toLowerCase();return["h1","h2","h3","h4","h5","h6"].includes(t)?t:"h2"}#qi(e){if(!e)return!0;const t=e.getAttribute("hidden");return""===t||"true"===t}#Li(e){if(!e?.matches("fds-error-message"))return!1;const t=this.#wi(e);return!!t&&!this.#qi(t)}#ki(){const{listElement:e}=this.#xi(),t=!!e?.querySelector(":scope > li");this.hidden=!t}#Mi(e){const{navElement:t,headingElement:i}=this.#xi();t&&i&&(i.id=e||i.id||s("error-summary-heading"),t.setAttribute("aria-labelledby",i.id))}#a(){const e=this.#r(this.getAttribute("heading-level"));let t=this.querySelector(":scope > nav");if(!t){t=document.createElement("nav");const i=document.createElementNS("http://www.w3.org/2000/svg","svg");i.setAttribute("aria-label","Fejl"),i.setAttribute("focusable","false");const s=document.createElementNS("http://www.w3.org/2000/svg","use");s.setAttributeNS(null,"href","#error"),i.appendChild(s);const n=document.createElement(e);n.textContent=this.getAttribute("heading")||"Der er problemer";const r=document.createElement("ul");return t.appendChild(i),t.appendChild(n),t.appendChild(r),this.appendChild(t),this.#Mi(),!0}if(!t.querySelector(":scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6"))return console.warn("<fds-error-summary> Missing direct child heading inside nav."),!1;return t.querySelector(":scope > ul")?(this.#Mi(),!0):(console.warn("<fds-error-summary> Missing direct child ul inside nav."),!1)}#o(e){const{headingElement:t}=this.#xi();t&&(t.textContent=e)}#l(e){const t=this.#r(e),{navElement:i,headingElement:s}=this.#xi();if(!s||s.tagName.toLowerCase()===t)return;const n=document.createElement(t);for(const e of s.attributes)n.setAttribute(e.name,e.value);n.append(...s.childNodes),s.replaceWith(n),i&&n.id&&i.setAttribute("aria-labelledby",n.id)}#b(){const e=this.getAttribute("heading"),t=this.getAttribute("heading-level"),i=this.getAttribute("heading-id");null!==e&&this.#o(e),null!==t&&this.#l(t),this.#Mi(i)}#Di(e,t){const{listElement:i}=this.#xi();if(!i||!e||!t)return;const s=document.getElementById(e);if(!s)return;const n=this.#Ci(s);let r=i.querySelector(`[data-error-id="${e}"]`);if(!r){r=document.createElement("li"),r.dataset.errorId=e;const t=document.createElement("a");t.classList.add("function-link"),r.appendChild(t),i.appendChild(r)}const a=r.querySelector("a");a&&(a.href=n?.id?`#${n.id}`:"#",a.textContent=t,a.onclick=e=>{e.preventDefault(),n&&n.focus()});const o=[...i.querySelectorAll(":scope > li")].filter(e=>e!==r);let l=!1;for(const e of o){const t=e.dataset.errorId,n=t?document.getElementById(t):null;if(!n)continue;if(s.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_FOLLOWING){i.insertBefore(r,e),l=!0;break}}l||i.appendChild(r),this.#ki()}#Ti(e){const{listElement:t}=this.#xi();t?.querySelector(`[data-error-id="${e}"]`)?.remove(),this.#ki()}#Oi(e){if(!e?.id||!this.#Li(e))return void(e?.id&&this.#Ti(e.id));const t=this.#qi(e),i=e.querySelector(":scope > .visible-message")?.textContent?.trim()||e.textContent?.trim();!t&&i?this.#Di(e.id,i):this.#Ti(e.id)}#Ii(e){if(!e)return;const t=document.getElementById(e);t&&this.#Li(t)?this.#Oi(t):this.#Ti(e)}#zi(){document.querySelectorAll(oe).forEach(e=>{this.#Oi(e)}),this.#ki()}#Ri(){this.#Si&&(document.removeEventListener("error-message-visibility-changed",this.#Si),document.removeEventListener("error-message-callback",this.#Si),this.#Si=null)}#Hi(){this.#Ri();const{listElement:e}=this.#xi();e&&(e.innerHTML=""),this.#ki(),this.#zi(),this.#Si=e=>{const{errorId:t,isRemoved:i}=e.detail||{};"error-message-callback"!==e.type||t?t&&(i?this.#Ti(t):this.#Ii(t)):this.#zi()},document.addEventListener("error-message-visibility-changed",this.#Si),document.addEventListener("error-message-callback",this.#Si)}constructor(){super(),this.#e=!1,this.#Si=null}init(){if(this.#e)return;this.#a()&&(this.#b(),this.hasAttribute("auto")&&this.#Hi(),this.#e=!0)}connectedCallback(){this.init()}disconnectedCallback(){this.#Ri(),this.#e=!1}attributeChangedCallback(e,t,i){"auto"!==e?this.#e&&("heading"===e&&this.#o(i),"heading-id"===e&&this.#Mi(i),"heading-level"===e&&this.#l(i)):this.#e&&null!==i&&null===t?this.#Hi():this.#e&&null===i&&null!==t&&this.#Ri()}}const de=function(){void 0===customElements.get("fds-error-summary")&&window.customElements.define("fds-error-summary",le)};class he extends HTMLElement{static observedAttributes=["input-prefix","input-suffix"];#e=!1;#T(){this.querySelector("input")&&(this.hasAttribute("input-prefix")&&this.#Fi(this.getAttribute("input-prefix"),"prefix"),this.hasAttribute("input-suffix")&&this.#Fi(this.getAttribute("input-suffix"),"suffix"),this.#e=!0)}#Fi(e,t){let i=null;"prefix"===t?i=this.querySelector(".form-input-prefix"):"suffix"===t&&(i=this.querySelector(".form-input-suffix")),null!==e&&""!==e?(i||(i=document.createElement("div"),"prefix"===t?(i.className="form-input-prefix",this.prepend(i)):"suffix"===t&&(i.className="form-input-suffix",this.appendChild(i))),i.setAttribute("aria-hidden","true"),i.textContent=e):i?.remove()}connectedCallback(){this.#e||this.#T()}disconnectedCallback(){this.#e=!1}attributeChangedCallback(e,t,i){this.#e&&("input-prefix"===e&&t!==i&&this.#Fi(i,"prefix"),"input-suffix"===e&&t!==i&&this.#Fi(i,"suffix"))}}const ce=function(){void 0===customElements.get("fds-input-affix")&&window.customElements.define("fds-input-affix",he)};class ue extends HTMLElement{static observedAttributes=["open","ready","heading","close-button-text","heading-id"];#e=!1;#Bi=null;#Mt=()=>{this.close()};#Ni=e=>{e.target.closest("a")&&this.close()};#Pi=e=>{e.forEach(e=>{!("none"!==window.getComputedStyle(e.target).display)&&this.hasAttribute("open")&&this.close()})};#Ot=e=>{switch(e.key){case"Tab":{const t='a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]',i=[...this.querySelector(".mobile-drawer").querySelectorAll(t)].filter(e=>e.offsetWidth>0&&e.offsetHeight>0),s=i[0],n=i[i.length-1];e.shiftKey?document.activeElement===s&&(e.preventDefault(),n.focus()):document.activeElement===n&&(e.preventDefault(),s.focus());break}case"Escape":this.close()}};#ze(){let e=this.querySelector(".overlay"),t=this.querySelector(".mobile-drawer"),i=this.querySelector(".menu-top"),n=this.querySelector(".menu-heading"),r=this.querySelector(".button-menu-close");if(e||(e=document.createElement("div"),e.classList.add("overlay"),t?this.insertBefore(e,t):this.appendChild(e)),t||(t=document.createElement("div"),t.classList.add("mobile-drawer"),this.appendChild(t)),t.setAttribute("role","dialog"),t.setAttribute("aria-modal","true"),i||(i=document.createElement("div"),i.classList.add("menu-top"),t.prepend(i)),n||(n=document.createElement("h2"),n.classList.add("menu-heading"),i.appendChild(n)),n.id||(n.id=this.getAttribute("heading-id")??s("hea-")),n.textContent=this.getAttribute("heading")||"Menu",t.setAttribute("aria-labelledby",n.id),!r){r=document.createElement("button"),r.classList.add("function-link","button-menu-close"),i.appendChild(r);const e=h("m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z");r.appendChild(e);const t=document.createElement("span");t.textContent=this.getAttribute("close-button-text")||"Luk",r.appendChild(t)}r.setAttribute("aria-label","Luk menu")}#m(){this.#Bi||(this.#Bi=new ResizeObserver(this.#Pi),this.#Bi.observe(this))}init(){this.#ze(),this.querySelector(".button-menu-close").addEventListener("click",this.#Mt,!1),this.querySelector(".overlay").addEventListener("click",this.#Mt,!1),this.querySelector(".mobile-drawer").addEventListener("click",this.#Ni,!1),this.#m(),this.#e=!0}toggle(){if(!this.#e)return;this.hasAttribute("open")&&"false"!==this.getAttribute("open")?this.close():this.open()}open(){this.#e&&(this.hasAttribute("open")&&"false"!==this.getAttribute("open")||(this.setAttribute("open",""),document.addEventListener("fds.modal.shown",this.#Mt,!1),document.addEventListener("keydown",this.#Ot,!1),this.querySelector(".button-menu-close")?.focus()))}close(){var e;if(this.#e&&this.hasAttribute("open")){this.removeAttribute("open"),document.removeEventListener("fds.modal.shown",this.#Mt,!1),document.removeEventListener("keydown",this.#Ot,!1);const t=document.querySelector(`fds-drawer-opener[drawer=${this.id}] button`);null!==(e=t).offsetParent&&!e.disabled&&e.tabIndex>=0&&t.focus()}}connectedCallback(){"false"!==this.getAttribute("ready")&&this.init()}disconnectedCallback(){this.#e=!1,this.querySelector(".button-menu-close")?.removeEventListener("click",this.#Mt,!1),this.querySelector(".overlay")?.removeEventListener("click",this.#Mt,!1),this.querySelector(".mobile-drawer").removeEventListener("click",this.#Ni,!1),document.removeEventListener("fds.modal.shown",this.#Mt,!1),document.removeEventListener("keydown",this.#Ot,!1),this.#Bi&&(this.#Bi.disconnect(),this.#Bi=null)}attributeChangedCallback(e,t,i){if("ready"!==e){if(this.#e&&t!==i)switch(e){case"open":null===i||"false"===i?(this.querySelector(".overlay")?.classList.remove("is-visible"),this.querySelector(".mobile-drawer")?.classList.remove("is-visible"),document.body.classList.remove("mobile-nav-active")):(this.querySelector(".overlay")?.classList.add("is-visible"),this.querySelector(".mobile-drawer")?.classList.add("is-visible"),document.body.classList.add("mobile-nav-active"));break;case"heading":const e=this.querySelector(".menu-heading");e&&(e.textContent=i);break;case"close-button-text":if(null===i)return;const t=this.querySelector(".button-menu-close span");t&&(t.textContent=i);break;case"heading-id":if(null!==i){const e=this.querySelector(".menu-heading"),t=this.querySelector(".mobile-drawer");e.id=i,t.setAttribute("aria-labelledby",i)}}}else!this.#e&&this.isConnected&&"false"!==i&&this.init()}}const pe=function(){void 0===customElements.get("fds-drawer")&&window.customElements.define("fds-drawer",ue)};class be extends HTMLElement{static observedAttributes=["drawer","button-text"];#e=!1;#_i=()=>{document.getElementById(this.getAttribute("drawer"))?.open()};#ze(){let e=this.querySelector("button");if(!e){e=document.createElement("button"),this.appendChild(e);const t=h("M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z");e.appendChild(t);const i=document.createElement("span");i.textContent=this.getAttribute("button-text")||"Menu",e.appendChild(i)}e.setAttribute("type","button"),e.setAttribute("aria-haspopup","dialog")}#T(){this.#e||(this.#ze(),this.querySelector("button").addEventListener("click",this.#_i,!1),this.#e=!0)}connectedCallback(){this.#T()}disconnectedCallback(){this.#e=!1,this.querySelector("button")?.removeEventListener("click",this.#_i,!1)}attributeChangedCallback(e,t,i){if(this.#e&&t!==i&&"button-text"===e){const e=this.querySelector("button > span");e&&(e.textContent=i||"")}}}const me=function(){void 0===customElements.get("fds-drawer-opener")&&window.customElements.define("fds-drawer-opener",be)};class ge extends HTMLElement{static observedAttributes=["breakpoint","ready"];#e=!1;#Yi=(()=>new CSSStyleSheet)();#Ui=e=>{e.target.assignedElements().forEach(e=>{e.classList.add("ml-auto")})};#$i=e=>{e.target.assignedElements().forEach(e=>{e.classList.add("user")})};#Vi=e=>{e.target.assignedElements().forEach(e=>{e.classList.add("function-link","d-print-none","log-off")})};#Wi(){const e=this.getAttribute("breakpoint")||"992px";this.#Yi.replaceSync((e=>`\n    *,\n    *::before,\n    *::after {\n        box-sizing: border-box;\n    }\n\n    .portal-info-inner {\n        width: 100%;\n        max-width: 1200px;\n        min-height: 48px;\n        padding-top: 4px;\n        padding-bottom: 4px;\n        padding-right: 16px;\n        padding-left: 16px;\n        display: flex;\n        align-items: center;\n        flex-direction: row;\n        margin-right: auto;\n        margin-left: auto;\n    }\n\n    .portal-user {\n        margin-left: auto;\n        display: none;\n        align-items: center;\n        justify-content: flex-end;\n        max-width: 70%;\n\n        @media (min-width: ${e}) {\n            display: flex;\n        }\n    }\n\n    .portal-info-mobile {\n        border-top: 1px solid #8e8e8e;\n        padding: 24px;\n        text-align: left;\n        background-color: var(--header-portal-background-color, #FFFFFF);\n    }\n`)(e))}#ze(){if(this.closest("fds-drawer")){let e=this.shadowRoot.querySelector(".portal-info-mobile");e||(e=document.createElement("section"),e.classList.add("portal-info-mobile"),this.shadowRoot.appendChild(e));let t=e.querySelector('slot[name="user"]');t||(t=document.createElement("slot"),t.name="user",e.appendChild(t));let i=e.querySelector('slot[name="log-off-button"]');i||(i=document.createElement("slot"),i.name="log-off-button",e.appendChild(i))}else{let e=this.shadowRoot.querySelector(".portal-info-inner");e||(e=document.createElement("div"),e.classList.add("portal-info-inner"),this.shadowRoot.appendChild(e));let t=e.querySelector('slot[name="logo"]');t||(t=document.createElement("slot"),t.name="logo",e.appendChild(t));let i=e.querySelector('slot[name="drawer-opener"]');i||(i=document.createElement("slot"),i.name="drawer-opener",e.appendChild(i));let s=e.querySelector(".portal-user");s||(s=document.createElement("div"),s.classList.add("portal-user"),e.appendChild(s));let n=s.querySelector('slot[name="user"]');n||(n=document.createElement("slot"),n.name="user",s.appendChild(n));let r=s.querySelector('slot[name="log-off-button"]');r||(r=document.createElement("slot"),r.name="log-off-button",s.appendChild(r))}}#ji(){this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.addEventListener("slotchange",this.#Ui),this.shadowRoot.querySelector('slot[name="user"]')?.addEventListener("slotchange",this.#$i),this.shadowRoot.querySelector('slot[name="log-off-button"]')?.addEventListener("slotchange",this.#Vi)}#Ki(){this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.removeEventListener("slotchange",this.#Ui),this.shadowRoot.querySelector('slot[name="user"]')?.removeEventListener("slotchange",this.#$i),this.shadowRoot.querySelector('slot[name="log-off-button"]')?.removeEventListener("slotchange",this.#Vi)}constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.adoptedStyleSheets=[this.#Yi]}init(){this.#Wi(),this.#ze(),this.#ji(),this.#e=!0}connectedCallback(){"false"!==this.getAttribute("ready")&&this.init()}disconnectedCallback(){this.#Ki(),this.#e=!1}attributeChangedCallback(e,t,i){if("ready"!==e){if(this.#e&&t!==i&&"breakpoint"===e)this.#Wi()}else!this.#e&&this.isConnected&&"false"!==i&&this.init()}}const fe=function(){customElements.get("fds-portal-info")||customElements.define("fds-portal-info",ge)},ve=new CSSStyleSheet;ve.replaceSync("\n    *,\n    *::before,\n    *::after {\n        box-sizing: border-box;\n    }\n\n    .solution-info-inner {\n        display: flex;\n        align-items: center;\n        flex-direction: row;\n        justify-content: space-between;\n        padding-top: calc(16px - 1px);\n        padding-bottom: calc(16px - 1px);\n        padding-right: 16px;\n        padding-left: 16px;\n        max-width: 1200px;\n        margin-right: auto;\n        margin-left: auto;\n    }\n");class ye extends HTMLElement{static observedAttributes=["ready"];#e=!1;#Ui=e=>{e.target.assignedElements().forEach(e=>{e.classList.add("ml-auto")})};#ze(){if(this.closest("fds-drawer")){let e=this.shadowRoot.querySelector(".solution-info-mobile");e||(e=document.createElement("section"),e.classList.add("solution-info-mobile"),this.shadowRoot.appendChild(e));let t=e.querySelector('slot[name="additional-info"]');t||(t=document.createElement("slot"),t.name="additional-info",e.appendChild(t))}else{let e=this.shadowRoot.querySelector(".solution-info-inner");e||(e=document.createElement("div"),e.classList.add("solution-info-inner"),this.shadowRoot.appendChild(e));let t=e.querySelector('slot[name="solution-heading"]');t||(t=document.createElement("slot"),t.name="solution-heading",e.appendChild(t));let i=e.querySelector('slot[name="additional-info"]');i||(i=document.createElement("slot"),i.name="additional-info",e.appendChild(i));let s=e.querySelector('slot[name="drawer-opener"]');s||(s=document.createElement("slot"),s.name="drawer-opener",e.appendChild(s))}}#ji(){this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.addEventListener("slotchange",this.#Ui)}#Ki(){this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.removeEventListener("slotchange",this.#Ui)}constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.adoptedStyleSheets=[ve]}init(){this.#ze(),this.#ji(),this.#e=!0}connectedCallback(){"false"!==this.getAttribute("ready")&&this.init()}disconnectedCallback(){this.#Ki(),this.#e=!1}attributeChangedCallback(e,t,i){"ready"!==e||!this.#e&&this.isConnected&&"false"!==i&&this.init()}}const Ee=function(){customElements.get("fds-solution-info")||customElements.define("fds-solution-info",ye)};class Ae extends HTMLElement{static observedAttributes=["expanded"];#e=!1;#Gi="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z";#Zi="M200-440v-80h560v80H200Z";#Xi="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z";#Ji="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z";#Qi="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z";#_i=e=>{this.toggle()};#qt=e=>{!this.contains(e.relatedTarget)&&this.close()};#Ot=e=>{if("Escape"===e.key)this.close(),this.querySelector(":scope > .dropdown-button")?.focus()};#es=e=>{e.target.closest("[data-menu-item]")&&this.close()};#ts=e=>{this.contains(e.target)||this.close()};#ze(){if(this.querySelector(":scope > .dropdown-button")||this.querySelector(":scope > button")?.classList.add("dropdown-button"),!this.querySelector(":scope > .dropdown-button span svg")){let e=this.#Qi,t=this.#Qi;this.closest("fds-drawer fds-main-menu")?(e=this.#Gi,t=this.#Zi):this.closest("fds-main-menu .main-menu-inner li:not(.more-button)")&&(e=this.#Xi,t=this.#Ji);const i=this.querySelector(":scope > .dropdown-button span"),s=h(e);s.classList.add("collapsed-icon"),i?.appendChild(s);const n=h(t);n.classList.add("expanded-icon"),i?.appendChild(n)}this.querySelector(":scope > .dropdown-menu")||this.querySelector(":scope > div")?.classList.add("dropdown-menu"),this.hasAttribute("expanded")||this.setAttribute("expanded","false"),this.#h(this.getAttribute("expanded")),this.closest("fds-main-menu .main-menu-inner")&&this.querySelector(":scope > .dropdown-menu").setAttribute("tabindex","-1")}#h(e){const t=this.querySelector(":scope > .dropdown-button"),i=this.querySelector(":scope > .dropdown-menu");if("false"===e)t?.setAttribute("aria-expanded","false"),i?.classList.add("collapsed"),i.removeAttribute("style"),this.closest("fds-main-menu .main-menu-inner")&&document.removeEventListener("mousedown",this.#ts,!1),this.dispatchEvent(new Event("fds-dropdown-menu-closed"));else{t?.setAttribute("aria-expanded","true"),i?.classList.remove("collapsed"),this.closest("fds-main-menu .main-menu-inner")&&document.addEventListener("mousedown",this.#ts,!1);const e=i.getBoundingClientRect(),s=window.visualViewport?.width??document.documentElement.clientWidth;i.offsetWidth>s?i.style.maxWidth=`${s}px`:e.left<0?i.style.left="0px":e.left+i.offsetWidth>s&&(i.style.right="0px"),this.dispatchEvent(new Event("fds-dropdown-menu-opened"))}}#ji(){this.querySelector(":scope > .dropdown-button")?.addEventListener("click",this.#_i),this.closest("fds-main-menu .main-menu-inner")&&(this.addEventListener("focusout",this.#qt,!1),this.addEventListener("keydown",this.#Ot,!1),this.querySelector(".dropdown-menu").addEventListener("click",this.#es,!1))}#Ki(){this.querySelector(":scope > .dropdown-button")?.removeEventListener("click",this.#_i),this.closest("fds-main-menu .main-menu-inner")&&(this.removeEventListener("focusout",this.#qt,!1),this.removeEventListener("keydown",this.#Ot,!1),this.querySelector(".dropdown-menu").removeEventListener("click",this.#es,!1))}toggle(){"false"===this.getAttribute("expanded")?this.setAttribute("expanded","true"):this.setAttribute("expanded","false")}open(){this.setAttribute("expanded","true")}close(){this.setAttribute("expanded","false")}connectedCallback(){this.#ze(),this.#ji(),this.#e=!0}disconnectedCallback(){this.#Ki(),this.closest("fds-main-menu .main-menu-inner")&&document.removeEventListener("mousedown",this.#ts,!1),this.#e=!1}attributeChangedCallback(e,t,i){if(this.#e&&t!==i&&"expanded"===e)this.#h(i)}}const Se=function(){customElements.get("fds-dropdown-menu")||customElements.define("fds-dropdown-menu",Ae)};class xe extends HTMLElement{#e=!1;#Bi=null;#is=()=>{this.rebuildMoreMenu()};#Pi=()=>{this.rebuildMoreMenu()};#ze(){this.querySelectorAll("li > fds-dropdown-menu > button, li > a").forEach(e=>{e.setAttribute("data-menu-item","")});if(!this.querySelector(".main-menu-inner"))return;const e=document.createElement("span");e.textContent="Mere";const t=document.createElement("button");t.setAttribute("data-menu-item",""),t.appendChild(e);const i=document.createElement("ul"),s=document.createElement("div");s.appendChild(i);const n=document.createElement("fds-dropdown-menu");n.setAttribute("expanded","false"),n.appendChild(t),n.appendChild(s);const r=document.createElement("li");r.classList.add("more-button"),r.setAttribute("data-hidden",""),r.appendChild(n);const a=this.querySelector(".main-menu-inner > nav > ul");a?.appendChild(r)}#ji(){this.querySelector(".main-menu-inner")&&(window.addEventListener("load",this.#is,{once:!0}),this.#Bi||(this.#Bi=new ResizeObserver(this.#Pi),this.#Bi.observe(this)))}#Ki(){this.#Bi&&(this.#Bi.disconnect(),this.#Bi=null)}#ss(){let e=16;this.querySelectorAll(".main-menu-inner > *:not(nav)").forEach(t=>{e+=Math.ceil(t.getBoundingClientRect().width)});return Math.floor(this.querySelector(".main-menu-inner")?.getBoundingClientRect().width)-e}#ns(e){const t=e.hasAttribute("data-hidden");t&&e.removeAttribute("data-hidden");const i=Math.ceil(e.getBoundingClientRect().width);return t&&e.setAttribute("data-hidden",""),i}#rs(){const e=this.#ss(),t=[...this.querySelectorAll(".main-menu-inner > nav > ul > li:not(.more-button)")];let i=0;if(t.forEach(e=>i+=this.#ns(e)),i<=e)return t.length;const s=this.#ns(this.querySelector(".more-button"));let n=0,r=0;for(const i of t){if(n+=this.#ns(i),n+s>=e)break;r++}return r}rebuildMoreMenu(){if("complete"!==document.readyState)return;if(!this.querySelector(".more-button"))return;const e=this.querySelectorAll(".main-menu-inner > nav > ul > li:not(.more-button)"),t=this.#rs();this.querySelector(".more-button").toggleAttribute("data-hidden",e.length===t);const i=this.querySelector(".main-menu-inner li.more-button > fds-dropdown-menu > .dropdown-menu > ul");i.innerHTML="",e.forEach((e,s)=>{if(s<t)e.removeAttribute("data-hidden");else if(e.setAttribute("data-hidden",""),e.querySelector("fds-dropdown-menu")){const t=document.createElement("li");i.appendChild(t);const s=document.createElement("span");s.classList.add("sub-title"),s.setAttribute("aria-hidden","true"),s.textContent=e.querySelector("fds-dropdown-menu > .dropdown-button > span").textContent,t.appendChild(s);const n=document.createElement("ul");n.setAttribute("aria-label",s.textContent),t.appendChild(n);e.querySelectorAll("fds-dropdown-menu > .dropdown-menu > ul > li").forEach(e=>{const t=e.cloneNode(!0);n.appendChild(t)})}else{const t=e.cloneNode(!0);t.removeAttribute("data-hidden"),i.appendChild(t)}})}connectedCallback(){this.#ze(),this.#ji(),this.#e=!0}disconnectedCallback(){this.#Ki(),this.#e=!1}}const we=function(){customElements.get("fds-main-menu")||customElements.define("fds-main-menu",xe)};function Ce(e){e.style.width="max-content",e.offsetWidth>330&&(e.style.width="330px");const t=document.documentElement.clientWidth-16;e.offsetWidth>t&&(e.style.width=`${t}px`)}function qe(e,t){const i=t.getBoundingClientRect();let s=i.left+i.width/2-e.offsetWidth/2;s+e.offsetWidth>document.documentElement.clientWidth-8&&(s=document.documentElement.clientWidth-8-e.offsetWidth),s<8&&(s=8),e.style.left=`${Math.round(s)}px`}function Le(e,t,i,s){const n=i.getBoundingClientRect(),{arrowHeight:r,arrowDistanceToTarget:a}=function(){const e=getComputedStyle(document.documentElement);return{arrowHeight:parseInt(e.getPropertyValue("--tooltip-arrow-height")),arrowDistanceToTarget:parseInt(e.getPropertyValue("--tooltip-arrow-distance-to-target"))}}(),o=e.offsetHeight+r+a,l=n.top,d=window.innerHeight-n.bottom;let h=s;"above"===s&&l<o?h="below":"below"===s&&d<o&&(h="above"),"above"===h?(e.style.top=`${Math.round(n.top-e.offsetHeight-r-a+1)}px`,t.style.top=`${Math.round(n.top-r-a)}px`,e.classList.add("place-above"),e.classList.remove("place-below"),t.classList.add("place-above"),t.classList.remove("place-below")):(e.style.top=`${Math.round(n.bottom+r+a-1)}px`,t.style.top=`${Math.round(n.bottom+a)}px`,e.classList.add("place-below"),e.classList.remove("place-above"),t.classList.add("place-below"),t.classList.remove("place-above")),t.style.left=`${Math.round(n.left+n.width/2)}px`}class ke extends HTMLElement{static observedAttributes=["tooltip-text","placement","purpose","tooltip-id"];get tooltipText(){return this.getAttribute("tooltip-text")}set tooltipText(e){null==e?this.removeAttribute("tooltip-text"):this.setAttribute("tooltip-text",e)}get placement(){return this.getAttribute("placement")??"above"}set placement(e){null==e?this.removeAttribute("placement"):this.setAttribute("placement",e)}get purpose(){return this.getAttribute("purpose")??"hint"}set purpose(e){null==e?this.removeAttribute("purpose"):this.setAttribute("purpose",e)}get tooltipId(){return this.getAttribute("tooltip-id")}set tooltipId(e){null==e?this.removeAttribute("tooltip-id"):this.setAttribute("tooltip-id",e)}#e=!1;#as=e=>{"mouse"===e.pointerType&&(this.firstElementChild.classList.add("js-hover"),setTimeout(()=>{this.firstElementChild.classList.contains("js-hover")&&this.open()},300))};#os=e=>{"mouse"===e.pointerType?(this.firstElementChild.classList.remove("js-hover"),this.close()):"touch"===e.pointerType&&(this.firstElementChild.classList.remove("js-pressing"),this.firstElementChild.classList.remove("js-pressed"))};#ls=e=>{"touch"===e.pointerType&&(this.firstElementChild.classList.remove("js-pressed"),this.firstElementChild.releasePointerCapture(e.pointerId),this.firstElementChild.classList.add("js-pressing"),setTimeout(()=>{this.firstElementChild.classList.contains("js-pressing")&&(this.firstElementChild.classList.add("js-pressed"),this.firstElementChild.classList.remove("js-pressing"))},600))};#ds=e=>{"touch"===e.pointerType&&this.firstElementChild.classList.contains("js-pressed")&&(e.preventDefault(),this.open())};#Z=()=>{this.open()};#qt=e=>{!this.contains(e.relatedTarget)&&this.close()};#Ot=e=>{"Escape"===e.key&&"none"!==this.querySelector(".tooltip").style.display&&(this.close(),e.stopImmediatePropagation())};#hs=e=>{this.contains(e.target)||this.close()};#ze(){if(!this.hasAttribute("tooltip-text"))return;if(1!==this.querySelectorAll(":scope > :not(.tooltip):not(.tooltip-arrow)").length)return;let e=this.querySelector(".tooltip");const t=null!==e?e.getAttribute("id"):s("tooltip-"),i=this.getAttribute("tooltip-id")??t;null===e&&(e=document.createElement("span"),e.setAttribute("id",i),e.setAttribute("role","tooltip"),e.setAttribute("tabindex","-1"),e.classList.add("tooltip"),e.textContent=this.getAttribute("tooltip-text"),e.style.display="none",this.appendChild(e));let n=this.querySelector(".tooltip-arrow");null===n&&(n=document.createElement("span"),n.classList.add("tooltip-arrow"),n.setAttribute("aria-hidden","true"),n.style.display="none",this.appendChild(n));const r=this.firstElementChild,a="label"===this.purpose?"aria-labelledby":"aria-describedby",o=r.getAttribute(a);null===o?r.setAttribute(a,i):o.includes(i)||r.setAttribute(a,`${o} ${i}`)}#ji(){this.firstElementChild.addEventListener("pointerenter",this.#as,!1),this.addEventListener("pointerleave",this.#os,!1),this.firstElementChild.addEventListener("pointerdown",this.#ls,!1),this.firstElementChild.addEventListener("pointerup",this.#ds,!1),this.firstElementChild.addEventListener("focus",this.#Z,!1),this.addEventListener("focusout",this.#qt,!1)}#Ki(){this.firstElementChild.removeEventListener("pointerenter",this.#as,!1),this.removeEventListener("pointerleave",this.#os,!1),this.firstElementChild.removeEventListener("pointerdown",this.#ls,!1),this.firstElementChild.removeEventListener("pointerup",this.#ds,!1),this.firstElementChild.removeEventListener("focus",this.#Z,!1),this.removeEventListener("focusout",this.#qt,!1)}#cs(){Ce(this.querySelector(".tooltip")),qe(this.querySelector(".tooltip"),this.firstElementChild),Le(this.querySelector(".tooltip"),this.querySelector(".tooltip-arrow"),this.firstElementChild,this.placement)}init(){this.#ze(),this.#ji(),this.#e=!0}open(){this.querySelector(".tooltip").style.display="block",this.querySelector(".tooltip-arrow").style.display="block",document.addEventListener("click",this.#hs,!1),document.addEventListener("keydown",this.#Ot,!1),this.#cs()}close(){this.querySelector(".tooltip").style.display="none",this.querySelector(".tooltip-arrow").style.display="none",this.firstElementChild.classList.remove("js-hover"),this.firstElementChild.classList.remove("js-pressing"),this.firstElementChild.classList.remove("js-pressed"),document.removeEventListener("click",this.#hs,!1),document.removeEventListener("keydown",this.#Ot,!1)}toggle(){"none"===this.querySelector(".tooltip").style.display?this.open():this.close()}connectedCallback(){this.init()}disconnectedCallback(){this.#Ki(),document.removeEventListener("click",this.#hs,!1),document.removeEventListener("keydown",this.#Ot,!1),this.#e=!1}attributeChangedCallback(e,t,i){if(this.#e&&t!==i)switch(e){case"tooltip-text":this.querySelector(".tooltip").textContent=i,"none"!==this.querySelector(".tooltip").style.display&&this.#cs();break;case"placement":"none"!==this.querySelector(".tooltip").style.display&&this.#cs();break;case"purpose":if("hint"!==i&&"label"!==i&&null!==i)return;const e=this.firstElementChild,s=this.querySelector(".tooltip").getAttribute("id"),n="label"===i?"aria-labelledby":"aria-describedby",r="label"===i?"aria-describedby":"aria-labelledby",a=e.getAttribute(r);if(null!==a){const t=a.replace(s,"").trim();t?e.setAttribute(r,t):e.removeAttribute(r)}const o=e.getAttribute(n);null===o?e.setAttribute(n,s):o.includes(s)||e.setAttribute(n,`${o} ${s}`);break;case"tooltip-id":if(null!==i){const e=this.querySelector(".tooltip"),s=this.firstElementChild,n="label"===this.purpose?"aria-labelledby":"aria-describedby",r=t??e.getAttribute("id"),a=s.getAttribute(n);null!==a&&s.setAttribute(n,a.replace(r,i).trim()),e.setAttribute("id",i)}}}}const Me=function(){customElements.get("fds-tooltip")||customElements.define("fds-tooltip",ke)};class De extends HTMLElement{static observedAttributes=["tooltip-text","sr-label","placement","tooltip-id"];get tooltipText(){return this.getAttribute("tooltip-text")}set tooltipText(e){null==e?this.removeAttribute("tooltip-text"):this.setAttribute("tooltip-text",e)}get srLabel(){return this.getAttribute("sr-label")}set srLabel(e){null==e?this.removeAttribute("sr-label"):this.setAttribute("sr-label",e)}get placement(){return this.getAttribute("placement")??"above"}set placement(e){null==e?this.removeAttribute("placement"):this.setAttribute("placement",e)}get tooltipId(){return this.getAttribute("tooltip-id")}set tooltipId(e){null==e?this.removeAttribute("tooltip-id"):this.setAttribute("tooltip-id",e)}#e=!1;#us=null;#_i=e=>{this.toggle()};#qt=e=>{!this.contains(e.relatedTarget)&&this.close()};#Ot=e=>{if("Escape"===e.key){const t=!this.closest("dialog");"false"!==this.querySelector("button").getAttribute("aria-expanded")&&t&&(this.close(),this.querySelector("button").focus(),e.stopImmediatePropagation())}};#Pi=()=>{this.#cs()};#ps=()=>{this.#cs()};#bs=e=>{e.forEach(e=>{e.isIntersecting||this.close()})};#ts=e=>{this.contains(e.target)||this.close()};#ms=e=>{e.preventDefault(),this.close()};#ze(){if(!this.hasAttribute("tooltip-text")||!this.hasAttribute("sr-label"))return;const e=this.getAttribute("tooltip-id")??s("tooltip-");let t=this.querySelector("button");if(null===t){t=document.createElement("button"),t.classList.add("button","button-unstyled"),t.setAttribute("type","button"),t.setAttribute("aria-controls",e),this.appendChild(t);const i=h("M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z");t.appendChild(i)}t.setAttribute("aria-label",this.getAttribute("sr-label")),t.setAttribute("aria-expanded","false");let i=this.querySelector("[aria-live]");null===i&&(i=document.createElement("span"),i.setAttribute("aria-atomic","true"),i.setAttribute("aria-live","assertive"),this.appendChild(i));let n=this.querySelector(".tooltip");null===n&&(n=document.createElement("span"),n.setAttribute("id",e),n.setAttribute("tabindex","-1"),n.classList.add("tooltip"),i.appendChild(n)),n.style.display="none";let r=this.querySelector(".tooltip-arrow");null===r&&(r=document.createElement("span"),r.classList.add("tooltip-arrow"),this.appendChild(r)),r.setAttribute("aria-hidden","true"),r.style.display="none"}#ji(){this.querySelector("button").addEventListener("click",this.#_i,!1),this.addEventListener("focusout",this.#qt,!1),this.addEventListener("keydown",this.#Ot,!1)}#Ki(){this.querySelector("button").removeEventListener("click",this.#_i,!1),this.removeEventListener("focusout",this.#qt,!1),this.removeEventListener("keydown",this.#Ot,!1)}#gs(){this.#us||(this.#us=new IntersectionObserver(this.#bs,{threshold:0}),this.#us.observe(this.querySelector("button")))}#fs(){this.#us&&(this.#us.disconnect(),this.#us=null)}#cs(){Ce(this.querySelector(".tooltip")),qe(this.querySelector(".tooltip"),this.querySelector("button")),Le(this.querySelector(".tooltip"),this.querySelector(".tooltip-arrow"),this.querySelector("button"),this.placement)}init(){this.#ze(),this.#ji(),this.#e=!0}open(){this.querySelector("button").setAttribute("aria-expanded","true"),this.querySelector(".tooltip-arrow").style.display="block",this.querySelector(".tooltip").style.display="block",this.querySelector(".tooltip").textContent=this.getAttribute("tooltip-text"),this.#cs(),window.addEventListener("resize",this.#Pi,!1),document.addEventListener("mousedown",this.#ts,!1),document.addEventListener("scroll",this.#ps,!0),document.addEventListener("keydown",this.#Ot,!1),this.#gs(),this.closest("dialog")?.addEventListener("cancel",this.#ms)}close(){this.querySelector("button").setAttribute("aria-expanded","false"),this.querySelector(".tooltip").style.display="none",this.querySelector(".tooltip-arrow").style.display="none",this.querySelector(".tooltip").textContent="",window.removeEventListener("resize",this.#Pi,!1),document.removeEventListener("mousedown",this.#ts,!1),document.removeEventListener("scroll",this.#ps,!0),document.removeEventListener("keydown",this.#Ot,!1),this.#fs(),this.closest("dialog")?.removeEventListener("cancel",this.#ms)}toggle(){"false"===this.querySelector("button").getAttribute("aria-expanded")?this.open():this.close()}connectedCallback(){this.init()}disconnectedCallback(){this.#Ki(),window.removeEventListener("resize",this.#Pi,!1),document.removeEventListener("mousedown",this.#ts,!1),document.removeEventListener("scroll",this.#ps,!0),this.#fs(),this.#e=!1}attributeChangedCallback(e,t,i){if(this.#e&&t!==i)switch(e){case"tooltip-text":"true"===this.querySelector("button").getAttribute("aria-expanded")&&(this.querySelector(".tooltip").textContent=i,this.#cs());break;case"sr-label":this.querySelector("button").setAttribute("aria-label",i);break;case"placement":"true"===this.querySelector("button").getAttribute("aria-expanded")&&this.#cs();break;case"tooltip-id":if(null!==i){this.querySelector(".tooltip").setAttribute("id",i),this.querySelector("button").setAttribute("aria-controls",i)}}}}const Te=function(){customElements.get("fds-tooltip-icon")||customElements.define("fds-tooltip-icon",De)};class Oe extends HTMLElement{static observedAttributes=["state","label","disabled-switch"];get state(){return this.getAttribute("state")??"off"}set state(e){null==e?this.removeAttribute("state"):this.setAttribute("state",e)}get label(){return this.getAttribute("label")}set label(e){null==e?this.removeAttribute("label"):this.setAttribute("label",e)}get disabledSwitch(){return this.getAttribute("disabled-switch")}set disabledSwitch(e){null==e?this.removeAttribute("disabled-switch"):this.setAttribute("disabled-switch",e)}#e=!1;#_i=()=>{this.toggle()};#ze(){const e=this.querySelector("button")??document.createElement("button"),t=this.querySelector("button span")??document.createElement("span");t.textContent=this.getAttribute("label")??t.textContent,t.isConnected||e.appendChild(t),e.setAttribute("type","button"),e.setAttribute("role","switch"),e.isConnected||this.appendChild(e),this.#vs(this.getAttribute("state"),!1),this.hasAttribute("disabled-switch")&&"false"!==this.getAttribute("disabled-switch")?e.setAttribute("disabled",""):e.removeAttribute("disabled")}#vs(e,t){const i=this.querySelector("button");let s="fds-toggle-off";"off"!==e&&e?(i.setAttribute("aria-checked","true"),s="fds-toggle-on"):i.setAttribute("aria-checked","false"),t&&!i.disabled&&this.dispatchEvent(new Event(s))}#T(){this.#ze(),this.querySelector("button")?.addEventListener("click",this.#_i),this.#e=!0}on(){this.setAttribute("state","on")}off(){this.setAttribute("state","off")}toggle(){"off"===this.state?this.on():this.off()}connectedCallback(){this.#T()}disconnectedCallback(){this.querySelector("button")?.removeEventListener("click",this.#_i),this.#e=!1}attributeChangedCallback(e,t,i){if(this.#e&&t!==i)switch(e){case"state":this.#vs(i,!0);break;case"label":const e=this.querySelector("button span");e&&(e.textContent=i??"");break;case"disabled-switch":const t=this.querySelector("button");null===i||"false"===i?t.removeAttribute("disabled"):t.setAttribute("disabled","")}}}const Ie=function(){customElements.get("fds-toggle-switch")||customElements.define("fds-toggle-switch",Oe)};class ze extends HTMLElement{static observedAttributes=["dialog-id","ready"];get dialogId(){return this.getAttribute("dialog-id")}set dialogId(e){null==e?this.removeAttribute("dialog-id"):this.setAttribute("dialog-id",e)}get ready(){return"false"!==this.getAttribute("ready")}set ready(e){this.setAttribute("ready",e?"true":"false")}#e=!1;#_i=()=>{const e=document.getElementById(this.dialogId);if(!e)return;e.showModal();const t=e.closest("fds-modal");t?.hasAttribute("bottom-sheet")&&requestAnimationFrame(()=>{requestAnimationFrame(()=>{e.classList.add("bottom-sheet-open")})}),this.dispatchEvent(new CustomEvent("fds-modal-opener-click",{bubbles:!0,detail:{dialogId:this.dialogId}}))};#ze(){const e=this.firstElementChild;("BUTTON"===e?.tagName||"INPUT"===e?.tagName&&"button"===e.type)&&e.setAttribute("aria-haspopup","dialog")}#ji(){this.firstElementChild?.addEventListener("click",this.#_i)}#Ki(){this.firstElementChild?.removeEventListener("click",this.#_i)}init(){this.#ze(),this.#ji(),this.#e=!0}connectedCallback(){"false"!==this.getAttribute("ready")&&this.init()}disconnectedCallback(){this.#Ki(),this.#e=!1}attributeChangedCallback(e,t,i){"ready"!==e||!this.#e&&this.isConnected&&"false"!==i&&this.init()}}const Re=function(){customElements.get("fds-modal-opener")||customElements.define("fds-modal-opener",ze)};class He extends HTMLElement{static observedAttributes=["return-value","ready"];get returnValue(){return this.getAttribute("return-value")}set returnValue(e){null==e?this.removeAttribute("return-value"):this.setAttribute("return-value",e)}get ready(){return"false"!==this.getAttribute("ready")}set ready(e){this.setAttribute("ready",e?"true":"false")}#e=!1;#_i=()=>{const e=this.closest("dialog");if(!e)return;const t=this.returnValue??void 0,i=new CustomEvent("fds-modal-closer-click",{bubbles:!0,cancelable:!0,detail:{returnValue:t}});this.dispatchEvent(i)&&e.close(t)};#ji(){this.firstElementChild?.addEventListener("click",this.#_i)}#Ki(){this.firstElementChild?.removeEventListener("click",this.#_i)}init(){this.#ji(),this.#e=!0}connectedCallback(){"false"!==this.getAttribute("ready")&&this.init()}disconnectedCallback(){this.#Ki(),this.#e=!1}attributeChangedCallback(e,t,i){"ready"!==e||!this.#e&&this.isConnected&&"false"!==i&&this.init()}}const Fe=function(){customElements.get("fds-modal-closer")||customElements.define("fds-modal-closer",He)};class Be extends HTMLElement{static observedAttributes=["ready","dismissible","bottom-sheet"];get ready(){return"false"!==this.getAttribute("ready")}set ready(e){this.setAttribute("ready",e?"true":"false")}get dismissible(){return"false"!==this.getAttribute("dismissible")}set dismissible(e){this.setAttribute("dismissible",e?"true":"false")}get bottomSheet(){return this.hasAttribute("bottom-sheet")}set bottomSheet(e){e?this.setAttribute("bottom-sheet",""):this.removeAttribute("bottom-sheet")}get dialog(){return this.querySelector("dialog")}#e=!1;#ys=!1;#Es=void 0;#As=()=>{this.dialog.classList.remove("bottom-sheet-open"),this.#ys&&(this.dialog.removeEventListener("transitionend",this.#Ss),this.#ys=!1,this.#Es=void 0),this.dispatchEvent(new CustomEvent("fds-modal-close",{bubbles:!0,detail:{returnValue:this.dialog.returnValue}}))};#xs=e=>{this.dismissible||e.preventDefault()};#ws=e=>{if(!this.dismissible)return;if(e.target!==this.dialog)return;const t=this.dialog.getBoundingClientRect();(e.clientX<t.left||e.clientX>t.right||e.clientY<t.top||e.clientY>t.bottom)&&(this.bottomSheet?this.#Cs(""):this.dialog.close(""))};#qs=e=>{this.bottomSheet&&(e.preventDefault(),this.#Cs(e.detail?.returnValue))};#Ss=e=>{"translate"===e.propertyName&&e.target===this.dialog&&(this.dialog.removeEventListener("transitionend",this.#Ss),this.#ys=!1,this.dialog.close(this.#Es),this.#Es=void 0)};#Ls(){this.dialog&&(this.dismissible?this.dialog.removeAttribute("closedby"):this.dialog.setAttribute("closedby","none"))}#Cs(e){this.#ys||(this.dialog.classList.remove("bottom-sheet-open"),this.#ys=!0,this.#Es=e,this.dialog.addEventListener("transitionend",this.#Ss))}#ji(){this.dialog?.addEventListener("close",this.#As),this.dialog?.addEventListener("cancel",this.#xs),this.dialog?.addEventListener("click",this.#ws),this.addEventListener("fds-modal-closer-click",this.#qs)}#Ki(){this.dialog?.removeEventListener("close",this.#As),this.dialog?.removeEventListener("cancel",this.#xs),this.dialog?.removeEventListener("click",this.#ws),this.removeEventListener("fds-modal-closer-click",this.#qs)}init(){this.#Ls(),this.#ji(),this.#e=!0}connectedCallback(){"false"!==this.getAttribute("ready")&&this.init()}disconnectedCallback(){this.#Ki(),this.#ys&&(this.dialog?.removeEventListener("transitionend",this.#Ss),this.#ys=!1,this.#Es=void 0),this.#e=!1}attributeChangedCallback(e,t,i){if("ready"!==e){if(this.#e&&t!==i)switch(e){case"dismissible":this.#Ls();break;case"bottom-sheet":this.dialog?.open&&this.dialog.classList.add("bottom-sheet-open")}}else!this.#e&&this.isConnected&&"false"!==i&&this.init()}}const Ne=function(){customElements.get("fds-modal")||customElements.define("fds-modal",Be)},Pe=()=>{r(),o(),y(),A(),x(),C(),L(),M(),T(),I(),R(),F(),J(),ie(),ne(),N(),_(),de(),ce(),pe(),me(),fe(),Ee(),Se(),we(),Me(),Te(),Ie(),Re(),Fe(),Ne()};return Pe(),t})());
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["DKFDS"] = factory();
+	else
+		root["DKFDS"] = factory();
+})(this, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  registerAccordion: () => (/* reexport */ fds_accordion),
+  registerAccordionGroup: () => (/* reexport */ fds_accordion_group),
+  registerCharacterLimit: () => (/* reexport */ fds_character_limit),
+  registerCheckbox: () => (/* reexport */ fds_checkbox),
+  registerCheckboxGroup: () => (/* reexport */ fds_checkbox_group),
+  registerCustomElements: () => (/* binding */ registerCustomElements),
+  registerDateInput: () => (/* reexport */ fds_date_input),
+  registerDatePicker: () => (/* reexport */ fds_date_picker),
+  registerDatePickerGrid: () => (/* reexport */ fds_date_picker_grid),
+  registerDrawer: () => (/* reexport */ fds_drawer),
+  registerDrawerOpener: () => (/* reexport */ fds_drawer_opener),
+  registerDropdownMenu: () => (/* reexport */ fds_dropdown_menu),
+  registerErrorMessage: () => (/* reexport */ fds_error_message),
+  registerErrorSummary: () => (/* reexport */ fds_error_summary),
+  registerFileItem: () => (/* reexport */ fds_file_item),
+  registerHelpText: () => (/* reexport */ fds_help_text),
+  registerInput: () => (/* reexport */ fds_input),
+  registerInputAffix: () => (/* reexport */ input_affix),
+  registerMainMenu: () => (/* reexport */ fds_main_menu),
+  registerModal: () => (/* reexport */ fds_modal),
+  registerModalCloser: () => (/* reexport */ fds_modal_closer),
+  registerModalOpener: () => (/* reexport */ fds_modal_opener),
+  registerPortalInfo: () => (/* reexport */ fds_portal_info),
+  registerRadioButton: () => (/* reexport */ fds_radio_button),
+  registerRadioButtonGroup: () => (/* reexport */ fds_radio_button_group),
+  registerSelect: () => (/* reexport */ fds_select),
+  registerSolutionInfo: () => (/* reexport */ fds_solution_info),
+  registerTextarea: () => (/* reexport */ fds_textarea),
+  registerToggleSwitch: () => (/* reexport */ fds_toggle_switch),
+  registerTooltip: () => (/* reexport */ fds_tooltip),
+  registerTooltipIcon: () => (/* reexport */ fds_tooltip_icon),
+  registerUploadFile: () => (/* reexport */ fds_upload_file)
+});
+
+;// ./src/js/utils/generate-unique-id.js
+function generateUniqueId() {
+  return crypto.getRandomValues(new Uint32Array(1))[0].toString(16);
+}
+function generateUniqueIdWithPrefix(str) {
+  return str + crypto.getRandomValues(new Uint32Array(1))[0].toString(16);
+}
+function generateAndVerifyUniqueId(str) {
+  let uniqueId = generateUniqueIdWithPrefix(str);
+  let attempts = 10; // Precaution to prevent long loops - more than 10 failed attempts should be extremely rare
+
+  while (document.getElementById(uniqueId) && attempts > 0) {
+    uniqueId = generateUniqueIdWithPrefix(str);
+    attempts--;
+  }
+  return uniqueId;
+}
+;// ./src/js/custom-elements/accordion/fds-accordion.js
+
+class FDSAccordion extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['heading', 'heading-level', 'expanded', 'content-id', 'variant-text', 'variant-icon', 'ready'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get heading() {
+    return this.getAttribute('heading');
+  }
+  set heading(val) {
+    this.setAttribute('heading', val);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized;
+  #handleAccordionClick;
+  #accordionObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getHeadingElement() {
+    return this.querySelector('h1, h2, h3, h4, h5, h6');
+  }
+  #getContentElement() {
+    return this.querySelector('.accordion-content');
+  }
+  #normalizeHeadingLevel(headingLevel) {
+    const normalizedHeadingLevel = (headingLevel || 'h3').toLowerCase();
+    return ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(normalizedHeadingLevel) ? normalizedHeadingLevel : 'h3';
+  }
+  #ensureDOM() {
+    const headingLevel = this.#normalizeHeadingLevel(this.getAttribute('heading-level'));
+    let headingElement = this.#getHeadingElement();
+    let contentElement = this.querySelector(':scope > div');
+
+    // Attribute mode:
+    // No heading markup provided, so create canonical structure from attributes
+    if (!headingElement) {
+      headingElement = document.createElement(headingLevel);
+      const buttonElement = document.createElement('button');
+      buttonElement.classList.add('accordion-button');
+      buttonElement.setAttribute('type', 'button');
+      const titleElement = document.createElement('span');
+      titleElement.classList.add('accordion-title');
+      titleElement.textContent = this.getAttribute('heading') || '';
+      buttonElement.appendChild(titleElement);
+      headingElement.appendChild(buttonElement);
+      if (!contentElement) {
+        contentElement = document.createElement('div');
+        this.appendChild(contentElement);
+      }
+      contentElement.classList.add('accordion-content');
+      this.prepend(headingElement);
+      return true;
+    }
+
+    // Enhance mode:
+    // Heading exists, so the supported prerendered structure must already be present
+    const buttonElement = headingElement.querySelector(':scope > button');
+    if (!buttonElement) {
+      console.warn('<fds-accordion> Missing direct child button inside heading.');
+      return false;
+    }
+    const titleElement = buttonElement.querySelector(':scope > span');
+    if (!titleElement) {
+      console.warn('<fds-accordion> Missing direct child span inside button.');
+      return false;
+    }
+    if (!contentElement) {
+      console.warn('<fds-accordion> Missing direct child div for accordion content.');
+      return false;
+    }
+    buttonElement.classList.add('accordion-button');
+    buttonElement.setAttribute('type', 'button');
+    titleElement.classList.add('accordion-title');
+    contentElement.classList.add('accordion-content');
+    return true;
+  }
+  #updateHeading(heading) {
+    this.querySelector('.accordion-title').textContent = heading;
+  }
+  #updateHeadingLevel(headingLevel) {
+    const normalizedHeadingLevel = this.#normalizeHeadingLevel(headingLevel);
+    let headingElement = this.#getHeadingElement();
+    if (!headingElement || headingElement.tagName.toLowerCase() === normalizedHeadingLevel) return;
+    const newHeadingLevel = document.createElement(normalizedHeadingLevel);
+    newHeadingLevel.append(...headingElement.childNodes);
+    headingElement.replaceWith(newHeadingLevel);
+  }
+  #setExpandedState(isExpanded) {
+    const button = this.#getHeadingElement()?.querySelector('button.accordion-button');
+    const content = this.#getContentElement();
+    if (!button || !content) return;
+    button.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    content.setAttribute('aria-hidden', isExpanded ? 'false' : 'true');
+  }
+  #updateExpanded(expanded) {
+    const isExpanded = expanded !== null && expanded !== 'false';
+    this.#setExpandedState(isExpanded);
+  }
+  #updateContentId(contentId) {
+    this.#getHeadingElement().querySelector('.accordion-button').setAttribute('aria-controls', contentId);
+    this.#getContentElement().setAttribute('id', contentId);
+  }
+  #ensureContentId() {
+    const headingElement = this.#getHeadingElement();
+    const contentElement = this.#getContentElement();
+    if (!headingElement || !contentElement) return;
+    const buttonHeadingId = headingElement.querySelector('.accordion-button').getAttribute('aria-controls');
+    const contentId = contentElement.getAttribute('id');
+    if (this.hasAttribute('content-id')) {
+      this.#updateContentId(this.getAttribute('content-id'));
+    } else if (contentId && buttonHeadingId === contentId) {
+      return;
+    } else if (contentId) {
+      this.#updateContentId(contentId);
+    } else if (buttonHeadingId) {
+      this.#updateContentId(buttonHeadingId);
+    } else {
+      this.#updateContentId(generateAndVerifyUniqueId('acc'));
+    }
+  }
+  #updateVariant(text, icon) {
+    const button = this.#getHeadingElement().querySelector('button.accordion-button');
+    if (text && icon) {
+      let variantEl = button.querySelector('.accordion-icon');
+      if (!variantEl) {
+        variantEl = document.createElement('span');
+        variantEl.classList.add('accordion-icon');
+        button.appendChild(variantEl);
+      }
+      variantEl.innerHTML = '';
+      const textEl = document.createElement('span');
+      textEl.classList.add('icon_text');
+      textEl.textContent = text;
+      variantEl.appendChild(textEl);
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.classList.add('icon-svg');
+      svg.setAttribute('focusable', 'false');
+      svg.setAttribute('aria-hidden', 'true');
+      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      use.setAttributeNS(null, 'href', `#${icon}`);
+      svg.appendChild(use);
+      variantEl.appendChild(svg);
+    } else if (button.querySelector('.accordion-icon')) {
+      button.querySelector('.accordion-icon').remove();
+    }
+  }
+
+  //Apply all current attributes to the DOM
+  //Ensures that attr values take precedence if they conflict with pre-generated HTML.
+  #syncAll() {
+    if (this.hasAttribute('heading')) {
+      this.#updateHeading(this.getAttribute('heading'));
+    }
+    if (this.hasAttribute('heading-level')) {
+      this.#updateHeadingLevel(this.getAttribute('heading-level'));
+    }
+    this.#updateExpanded(this.getAttribute('expanded'));
+    this.#ensureContentId();
+    if (this.hasAttribute('variant-text') || this.hasAttribute('variant-icon')) {
+      this.#updateVariant(this.getAttribute('variant-text'), this.getAttribute('variant-icon'));
+    } else {
+      this.#updateVariant('', '');
+    }
+  }
+  #setupObserver() {
+    if (this.#accordionObserver) return;
+    this.#accordionObserver = new MutationObserver(this.#handleMutations);
+    const config = {
+      subtree: true,
+      childList: true
+    };
+    this.#accordionObserver.observe(this, config);
+  }
+  #handleMutations = records => {
+    const button = this.#getHeadingElement()?.querySelector('button.accordion-button');
+    if (button) {
+      button.addEventListener('click', this.#handleAccordionClick, false);
+    }
+  };
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.#initialized = false;
+
+    /* Set up instance fields for event handling */
+
+    this.#handleAccordionClick = () => {
+      this.toggleAccordion();
+    };
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    if (this.#initialized) return;
+    this.#setupObserver();
+    if (this.innerHTML === '') return; // Accordions must have content. If no content is found at all, don't init as some frameworks have experienced problems otherwise.
+
+    const isValid = this.#ensureDOM();
+    if (!isValid) return;
+    this.#syncAll();
+    const button = this.#getHeadingElement()?.querySelector('button.accordion-button');
+    if (button) {
+      button.addEventListener('click', this.#handleAccordionClick, false);
+    }
+    this.#initialized = true;
+  }
+  expandAccordion() {
+    this.#setExpandedState(true);
+    if (this.getAttribute('expanded') !== 'true') {
+      this.setAttribute('expanded', 'true');
+    }
+    this.dispatchEvent(new CustomEvent('fds-accordion-expanded', {
+      bubbles: true
+    }));
+  }
+  collapseAccordion() {
+    this.#setExpandedState(false);
+    if (this.getAttribute('expanded') !== 'false') {
+      this.setAttribute('expanded', 'false');
+    }
+    this.dispatchEvent(new CustomEvent('fds-accordion-collapsed', {
+      bubbles: true
+    }));
+  }
+  toggleAccordion() {
+    this.isExpanded() ? this.collapseAccordion() : this.expandAccordion();
+  }
+  isExpanded() {
+    return this.hasAttribute('expanded') && this.getAttribute('expanded') !== 'false';
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    const button = this.#getHeadingElement()?.querySelector('button.accordion-button');
+    if (button) {
+      button.removeEventListener('click', this.#handleAccordionClick, false);
+    }
+    this.#initialized = false;
+    if (this.#accordionObserver) {
+      this.#accordionObserver.disconnect();
+      this.#accordionObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
+    if (!this.#initialized) return;
+    if (attribute === 'heading') {
+      this.#updateHeading(newValue);
+    }
+    if (attribute === 'heading-level') {
+      this.#updateHeadingLevel(newValue);
+    }
+    if (attribute === 'expanded' && oldValue !== newValue) {
+      this.#updateExpanded(newValue);
+    }
+    if (attribute === 'content-id') {
+      if (newValue !== null && newValue !== '') {
+        this.#updateContentId(newValue);
+      }
+    }
+    if (attribute === 'variant-text') {
+      if (this.hasAttribute('variant-icon')) {
+        this.#updateVariant(newValue, this.getAttribute('variant-icon'));
+      } else {
+        this.#updateVariant(newValue, '');
+      }
+    }
+    if (attribute === 'variant-icon') {
+      if (this.hasAttribute('variant-text')) {
+        this.#updateVariant(this.getAttribute('variant-text'), newValue);
+      } else {
+        this.#updateVariant('', newValue);
+      }
+    }
+  }
+
+  // #endregion
+}
+function registerAccordion() {
+  if (customElements.get('fds-accordion') === undefined) {
+    window.customElements.define('fds-accordion', FDSAccordion);
+  }
+}
+/* harmony default export */ const fds_accordion = (registerAccordion);
+;// ./src/js/custom-elements/accordion/fds-accordion-group.js
+class FDSAccordionGroup extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['heading-level', 'has-bulk-button', 'open-all-text', 'close-all-text'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #rendered;
+  #listenersAttached;
+  #bulkButton;
+  #handleBulkClick;
+  #handleAccordionExpanded;
+  #handleAccordionCollapsed;
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getBulkButton() {
+    if (this.#bulkButton) return this.#bulkButton;
+    this.#bulkButton = this.querySelector(':scope > .bulk-button');
+    return this.#bulkButton;
+  }
+  #renderBulkButton() {
+    if (!this.#getBulkButton()) {
+      const bulkButton = document.createElement('button');
+      bulkButton.classList.add('bulk-button');
+      this.prepend(bulkButton);
+      this.#bulkButton = bulkButton;
+    }
+  }
+  #render() {
+    if (this.#rendered) return;
+    const hasRenderedBulkButton = this.querySelectorAll('button.bulk-button').length > 0;
+    const hasBulkButtonFromAttr = this.getAttribute('has-bulk-button') !== null && this.getAttribute('has-bulk-button') !== 'false';
+    if (hasBulkButtonFromAttr && !hasRenderedBulkButton) {
+      this.#renderBulkButton();
+    }
+    this.#updateBulkButtonText();
+    this.#rendered = true;
+  }
+  #getAllAccordions() {
+    return Array.from(this.querySelectorAll(':scope > fds-accordion'));
+  }
+  #areAllExpanded() {
+    return this.#getAllAccordions().every(acc => {
+      const expandedAttr = acc.getAttribute('expanded');
+      if (expandedAttr != null) return expandedAttr === 'true';
+      const button = acc.querySelector('button.accordion-button');
+      return button?.getAttribute('aria-expanded') === 'true';
+    });
+  }
+  #updateHeadingLevel(headingLevel) {
+    const valid = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    if (!valid.includes(headingLevel)) return;
+    this.#getAllAccordions().forEach(acc => acc.setAttribute('heading-level', headingLevel));
+  }
+  #updateHasBulkButton(attrValue) {
+    const mustHasBulkButton = attrValue !== null && attrValue !== 'false';
+    const hasBulkButton = this.#getBulkButton();
+    if (mustHasBulkButton) {
+      this.#renderBulkButton();
+      this.#getBulkButton()?.removeEventListener('click', this.#handleBulkClick);
+      this.#getBulkButton()?.addEventListener('click', this.#handleBulkClick);
+    } else if (!mustHasBulkButton && hasBulkButton) {
+      this.#getBulkButton()?.removeEventListener('click', this.#handleBulkClick);
+      this.#getBulkButton()?.remove();
+      this.#bulkButton = null;
+    }
+    this.#updateBulkButtonText();
+  }
+  #updateBulkButtonText() {
+    const button = this.#getBulkButton();
+    if (!button) return;
+    const openText = this.getAttribute('open-all-text') || 'Åbn alle';
+    const closeText = this.getAttribute('close-all-text') || 'Luk alle';
+    const allExpanded = this.#areAllExpanded();
+    button.textContent = allExpanded ? closeText : openText;
+    allExpanded ? button.classList.add('close') : button.classList.remove('close');
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.#rendered = false;
+    this.#listenersAttached = false;
+    this.#bulkButton = null;
+    this.#handleBulkClick = () => this.toggleAllAccordions();
+    this.#handleAccordionExpanded = e => {
+      e.stopPropagation();
+      this.#updateBulkButtonText();
+    };
+    this.#handleAccordionCollapsed = e => {
+      e.stopPropagation();
+      this.#updateBulkButtonText();
+    };
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  toggleAllAccordions() {
+    const accordions = this.#getAllAccordions();
+    const shouldExpandAll = !this.#areAllExpanded();
+    const newValue = shouldExpandAll ? 'true' : 'false';
+    accordions.forEach(acc => acc.setAttribute('expanded', newValue));
+    this.#updateBulkButtonText();
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.#rendered) return;
+    this.#render();
+    if (this.#listenersAttached) return;
+    this.addEventListener('fds-accordion-expanded', this.#handleAccordionExpanded);
+    this.addEventListener('fds-accordion-collapsed', this.#handleAccordionCollapsed);
+    if (this.#getBulkButton()) {
+      this.#getBulkButton().addEventListener('click', this.#handleBulkClick);
+    }
+    this.#listenersAttached = true;
+    if (this.hasAttribute('heading-level')) {
+      this.#updateHeadingLevel(this.getAttribute('heading-level'));
+    }
+    this.#updateBulkButtonText();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#rendered = false;
+    if (!this.#listenersAttached) return;
+    this.removeEventListener('fds-accordion-expanded', this.#handleAccordionExpanded);
+    this.removeEventListener('fds-accordion-collapsed', this.#handleAccordionCollapsed);
+    if (this.#getBulkButton()) {
+      this.#getBulkButton().removeEventListener('click', this.#handleBulkClick);
+    }
+    this.#listenersAttached = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#rendered) return;
+    if (attribute === 'heading-level') {
+      this.#updateHeadingLevel(newValue);
+    }
+    if (attribute === 'has-bulk-button') {
+      this.#updateHasBulkButton(newValue);
+    }
+    if (attribute === 'open-all-text' || attribute === 'close-all-text') {
+      this.#updateBulkButtonText();
+    }
+  }
+
+  // #endregion
+}
+function registerAccordionGroup() {
+  if (customElements.get('fds-accordion-group') === undefined) {
+    window.customElements.define('fds-accordion-group', FDSAccordionGroup);
+  }
+}
+/* harmony default export */ const fds_accordion_group = (registerAccordionGroup);
+;// ./src/js/custom-elements/custom-element-utils.js
+
+
+/**
+ * Configuration object for a MutationObserver.
+ * Tracked attributes: `hidden`, `aria-hidden`, `id`, `class`, `disabled`, `required`.
+ *
+ * @type {MutationObserverInit}
+ */
+const mutationObserverConfig = {
+  subtree: true,
+  childList: true,
+  attributes: true,
+  attributeFilter: ['hidden', 'aria-hidden', 'id', 'class', 'disabled', 'required', 'aria-required'],
+  attributeOldValue: false,
+  characterData: false,
+  characterDataOldValue: false
+};
+
+/**
+ * Associates a label element with an (input) element.
+ * If the element lacks an ID, a unique one is generated using the given prefix.
+ * If no element is provided, the `for` attribute is removed from the label.
+ *
+ * @param {HTMLLabelElement} label - The label element to associate.
+ * @param {HTMLElement} element - The element to associate the label with.
+ * @param {string} prefix - The prefix used when generating a unique ID for the element.
+ */
+function associateLabelWithElement(label, element, prefix) {
+  if (!label) return;
+  if (element) {
+    if (!element.id) {
+      element.id = generateAndVerifyUniqueId(prefix);
+    }
+    label.htmlFor = element.id;
+  } else {
+    label.removeAttribute('for');
+  }
+}
+
+/**
+ * Creates an SVG icon element with a single path.
+ * The SVG is given a fixed viewBox of '0 -960 960 960'.
+ *
+ * @param {string} pathD - The `d` attribute value defining the shape of the SVG path.
+ * @returns {SVGSVGElement} The constructed SVG element containing the specified path.
+ */
+function createSvgIcon(pathD) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svg.setAttribute('viewBox', '0 -960 960 960');
+  svg.setAttribute('focusable', 'false');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.classList.add('icon-svg');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', pathD);
+  svg.appendChild(path);
+  return svg;
+}
+
+/**
+ * Shows or hides a required status indicator in a label element based on the given value.
+ * If value is null, the indicator is removed. If value is an empty string, a default
+ * text is used based on whether the element is required or not.
+ *
+ * @param {HTMLLabelElement} label - The label element to update.
+ * @param {HTMLElement|HTMLFieldSetElement} element - The form element or fieldset to check for required status.
+ * @param {string|null} value - The value to display in the status indicator.
+ */
+function showRequiredStatus(label, element, value) {
+  if (!label || !element) return;
+  let statusIndicator = label.querySelector(':scope > span.weight-normal');
+  if (value === null && statusIndicator) {
+    statusIndicator.remove();
+    return;
+  }
+  if (!statusIndicator) {
+    const span = document.createElement('span');
+    span.className = 'weight-normal';
+    label.appendChild(span);
+    statusIndicator = span;
+  }
+  const isRequired = isElementRequired(element);
+  let text = value;
+  if (value === '' && isRequired) text = 'skal udfyldes';
+  if (value === '' && !isRequired) text = 'frivilligt';
+  statusIndicator.textContent = isRequired ? ` (*${text})` : ` (${text})`;
+}
+
+/**
+ * Determines whether a form element or fieldset is considered required.
+ * For fieldsets, returns true if any child form element is required.
+ *
+ * @param {HTMLElement|HTMLFieldSetElement} element - The element to check.
+ * @returns {boolean} Whether the element (or any child within a fieldset) is required.
+ */
+function isElementRequired(element) {
+  if (element instanceof HTMLFieldSetElement) {
+    const fields = element.querySelectorAll('input, select, textarea');
+    return Array.from(fields).some(field => field.hasAttribute('required') || field.hasAttribute('aria-required') && field.getAttribute('aria-required') !== 'false');
+  }
+  return element.hasAttribute('required') || element.hasAttribute('aria-required') && element.getAttribute('aria-required') !== 'false';
+}
+
+/**
+ * Notifies the error summary that error messages have been disconnected/removed.
+ * The parent wrapper dispatches 'error-message-callback' events for each error message found.
+ *
+ * @param {HTMLElement} element - The element to query for error messages.
+ */
+function notifySummaryOnDisconnect(element) {
+  if (!document.querySelector('fds-error-summary[auto]')) return;
+  element.querySelectorAll('fds-error-message[id]').forEach(errorMessage => {
+    document.dispatchEvent(new CustomEvent('error-message-callback', {
+      detail: {
+        errorId: errorMessage.id,
+        isRemoved: true
+      }
+    }));
+  });
+}
+
+/**
+ * Notifies the error summary of visibility changes in error messages.
+ * The parent wrapper dispatches 'error-message-visibility-changed' events for each error message found.
+ *
+ * @param {HTMLElement} element - The element to query for error messages.
+ */
+function notifySummaryOnVisibilityChange(element) {
+  if (!document.querySelector('fds-error-summary[auto]')) return;
+  element.querySelectorAll('fds-error-message[id]').forEach(errorMessage => {
+    document.dispatchEvent(new CustomEvent('error-message-visibility-changed', {
+      detail: {
+        errorId: errorMessage.id
+      }
+    }));
+  });
+}
+
+/**
+ * Determines whether an element is visible to screen readers.
+ *
+ * @param {HTMLElement} element - The element to check.
+ * @returns {boolean} True if the element is visible to screen readers, false otherwise.
+ */
+function isVisibleToScreenReader(element) {
+  return !element.closest('.d-none, [hidden]:not([hidden="false"]), [aria-hidden="true"]');
+}
+
+/**
+ * Matches the disabled class of a label element to the disabled attribute of a form element.
+ *
+ * @param {HTMLLabelElement} label - The label element to update.
+ * @param {HTMLElement} element - The form element to match the disabled state from.
+ */
+function setDisabledClass(label, element) {
+  if (!label || !element) return;
+  label.classList.toggle('disabled', element.hasAttribute('disabled'));
+}
+
+/**
+ * Sets the `aria-describedby` attribute on a form element or fieldset based on
+ * the IDs of visible error messages, help texts, and an optional character limit element.
+ *
+ * @param {HTMLElement|HTMLFieldSetElement} element - The form element or fieldset to update.
+ * @param {NodeList} errorMessages - Error message elements to consider.
+ * @param {NodeList} helpTexts - Help text elements to consider.
+ * @param {HTMLElement|null} [characterLimit=null] - Optional character limit element to consider.
+ */
+function setAriaDescribedBy(element, errorMessages, helpTexts) {
+  let characterLimit = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+  if (!element) return;
+  const ids = [...errorMessages, ...helpTexts, characterLimit].filter(el => el && el.id && isVisibleToScreenReader(el)).map(el => el.id);
+  ids.length > 0 ? element.setAttribute('aria-describedby', ids.join(' ')) : element.removeAttribute('aria-describedby');
+}
+
+/**
+ * Sets or removes the `aria-invalid` attribute on a form element
+ * based on whether any error messages are visible to screen readers.
+ *
+ * @param {HTMLElement} element - The form element to update.
+ * @param {NodeList} errorMessages - Error message elements to evaluate.
+ */
+function setInvalid(element, errorMessages) {
+  if (!element) return;
+  const invalid = Array.from(errorMessages).some(el => isVisibleToScreenReader(el));
+  invalid ? element.setAttribute('aria-invalid', 'true') : element.removeAttribute('aria-invalid');
+}
+
+/**
+ * Determines if an element is visible and focusable.
+ *
+ * @param {HTMLElement} element - The element to check.
+ * @returns {boolean} True if the element is visible and focusable, false otherwise.
+ */
+function isVisibleAndFocusable(element) {
+  return element.offsetParent !== null && !element.disabled && element.tabIndex >= 0;
+}
+;// ./src/js/custom-elements/input/fds-input.js
+
+
+class FDSInput extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['show-required-status', 'input-maxwidth'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get showRequiredStatus() {
+    return this.getAttribute('show-required-status');
+  }
+  set showRequiredStatus(value) {
+    value === null ? this.removeAttribute('show-required-status') : this.setAttribute('show-required-status', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #inputObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      // A relevant child element was added or removed.
+      const relevantTagNames = ['LABEL', 'INPUT', 'FDS-ERROR-MESSAGE', 'FDS-HELP-TEXT', 'FDS-CHARACTER-LIMIT'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        const label = this.querySelector('label');
+        const input = this.querySelector('input');
+        const errorMessages = this.querySelectorAll('fds-error-message');
+        const helpTexts = this.querySelectorAll('fds-help-text');
+        const characterLimit = this.querySelector('fds-character-limit span.sr-only[id]');
+        associateLabelWithElement(label, input, 'inp');
+        setAriaDescribedBy(input, errorMessages, helpTexts, characterLimit);
+        setInvalid(input, errorMessages);
+        if (this.hasAttribute('show-required-status')) {
+          showRequiredStatus(label, input, this.getAttribute('show-required-status'));
+        }
+        break;
+      }
+
+      // The input's required attribute changed
+      if (attributeName === 'required' && target?.tagName === 'INPUT') {
+        if (this.hasAttribute('show-required-status')) {
+          const label = this.querySelector('label');
+          showRequiredStatus(label, target, this.getAttribute('show-required-status'));
+        }
+      }
+      // Attributes which might affect aria-describedby
+      else if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class') {
+        const label = this.querySelector('label');
+        const input = this.querySelector('input');
+        const errorMessages = this.querySelectorAll('fds-error-message');
+        const helpTexts = this.querySelectorAll('fds-help-text');
+        const characterLimit = this.querySelector('fds-character-limit span.sr-only[id]');
+        associateLabelWithElement(label, input, 'inp');
+        setAriaDescribedBy(input, errorMessages, helpTexts, characterLimit);
+        setInvalid(input, errorMessages);
+        if (attributeName === 'hidden' && target === this) {
+          notifySummaryOnVisibilityChange(this);
+        }
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupObserver() {
+    if (this.#inputObserver) return;
+    this.#inputObserver = new MutationObserver(this.#handleMutations);
+    this.#inputObserver.observe(this, mutationObserverConfig);
+  }
+  #init() {
+    this.#setupObserver();
+    const label = this.querySelector('label');
+    const input = this.querySelector('input');
+    const errorMessages = this.querySelectorAll('fds-error-message');
+    const helpTexts = this.querySelectorAll('fds-help-text');
+    const characterLimit = this.querySelector('fds-character-limit span.sr-only[id]');
+    associateLabelWithElement(label, input, 'inp');
+    setAriaDescribedBy(input, errorMessages, helpTexts, characterLimit);
+    setInvalid(input, errorMessages);
+    if (this.hasAttribute('show-required-status')) {
+      showRequiredStatus(label, input, this.getAttribute('show-required-status'));
+    }
+    this.#initialized = true;
+  }
+  #setMaxwidth(value) {
+    const input = this.querySelector('input');
+    if (!input) return;
+    if (value !== '') {
+      const maxwidthClass = [...input.classList].find(cls => cls.startsWith('input-width-') || cls.startsWith('input-char-'));
+      input.classList.remove(maxwidthClass);
+      if (['xxs', 'xs', 's', 'm', 'l', 'xl'].includes(value)) {
+        input.classList.add(`input-width-${value}`);
+      } else if (/^\d+$/.test(value)) {
+        input.classList.add(`input-char-${value}`);
+      }
+    }
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (!this.#initialized) {
+      this.#init();
+    }
+    if (this.hasAttribute('input-maxwidth')) {
+      this.#setMaxwidth(this.getAttribute('input-maxwidth'));
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#initialized = false;
+    if (this.#inputObserver) {
+      this.#inputObserver.disconnect();
+      this.#inputObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (attribute === 'show-required-status' && oldValue !== newValue) {
+      const label = this.querySelector('label');
+      const input = this.querySelector('input');
+      showRequiredStatus(label, input, newValue);
+    }
+    if (attribute === 'input-maxwidth' && oldValue !== newValue) {
+      if (this.hasAttribute('input-maxwidth')) {
+        this.#setMaxwidth(newValue);
+      }
+      // The attribute has previously been used but has now been removed from the element.
+      // Remove all classes set by the attribute from when it was used.
+      else {
+        const input = this.querySelector('input');
+        if (!input) return;
+        const maxwidthClass = [...input.classList].find(cls => cls.startsWith('input-width-') || cls.startsWith('input-char-'));
+        input.classList.remove(maxwidthClass);
+      }
+    }
+  }
+
+  // #endregion
+}
+function registerInput() {
+  if (customElements.get('fds-input') === undefined) {
+    window.customElements.define('fds-input', FDSInput);
+  }
+}
+/* harmony default export */ const fds_input = (registerInput);
+;// ./src/js/custom-elements/help-text/fds-help-text.js
+
+class FDSHelpText extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['id', 'hidden'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #rendered;
+  #parentWrapper;
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #render() {
+    if (this.#rendered) return;
+    this.classList.add('help-text');
+    this.#rendered = true;
+  }
+  #shouldBeHidden(hiddenValue) {
+    return hiddenValue === 'true' || hiddenValue === '';
+  }
+  #setAriaHidden() {
+    this.setAttribute('aria-hidden', 'true');
+  }
+  #removeAriaHidden() {
+    this.removeAttribute('aria-hidden');
+  }
+  #notifyParent() {
+    this.#parentWrapper?.dispatchEvent(new CustomEvent('help-text-visibility-changed', {
+      bubbles: true,
+      detail: {
+        helptextId: this.id,
+        isHidden: this.#shouldBeHidden(this.getAttribute('hidden'))
+      }
+    }));
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.#rendered = false;
+    this.#parentWrapper = null;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.#rendered) return;
+    this.#render();
+    if (!this.id) {
+      this.id = generateAndVerifyUniqueId('help');
+    }
+
+    // Handle initial hidden state
+    if (this.#shouldBeHidden(this.getAttribute('hidden'))) {
+      this.#setAriaHidden();
+    }
+
+    // During disconnect, the custom element may lose connection to the wrapper.
+    // Save the wrapper and use it to dispatch events - otherwise, the events may be lost.
+    this.#parentWrapper = this.closest('fds-input, fds-checkbox, fds-checkbox-group, fds-radio-button, fds-radio-button-group, fds-date-input, fds-upload-file');
+    this.#parentWrapper?.dispatchEvent(new Event('help-text-callback'));
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#parentWrapper?.dispatchEvent(new Event('help-text-callback'));
+    this.#parentWrapper = null;
+    this.#rendered = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#rendered) return;
+    if (attribute === 'hidden' && oldValue !== newValue) {
+      if (this.#shouldBeHidden(newValue)) {
+        this.#setAriaHidden();
+      } else {
+        this.#removeAriaHidden();
+      }
+      this.#notifyParent();
+    }
+    this.#parentWrapper?.dispatchEvent(new Event('help-text-callback'));
+  }
+
+  // #endregion
+}
+function registerHelpText() {
+  if (customElements.get('fds-help-text') === undefined) {
+    window.customElements.define('fds-help-text', FDSHelpText);
+  }
+}
+/* harmony default export */ const fds_help_text = (registerHelpText);
+;// ./src/js/custom-elements/character-limit/fds-character-limit.js
+
+class FDSCharacterLimit extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['limit', 'one-character-remaining-text', 'several-characters-remaining-text', 'one-character-too-many-text', 'several-characters-too-many-text', 'max-limit-text', 'limit-id'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #messages = {
+    'one_character_remaining': "Du har {value} tegn tilbage",
+    'several_characters_remaining': "Du har {value} tegn tilbage",
+    'one_character_too_many': "Du har {value} tegn for meget",
+    'several_characters_too_many': "Du har {value} tegn for meget",
+    'max_limit': "Du kan indtaste op til {value} tegn"
+  };
+  #spanSrMaxLimit = (() => document.createElement('span'))();
+  #spanSrUpdate = (() => document.createElement('span'))();
+  #spanVisualUpdate = (() => document.createElement('span'))();
+  #parentWrapper = null;
+  #field = null;
+  #intervalID = null;
+  #lastKeyUpTimestamp = null;
+  #oldValue = null;
+  #forceSRUpdate = false;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleKeyUp = event => {
+    // Update the visible message immediately
+    this.#updateVisibleMessage(this.#charactersLeft());
+
+    // Safe the timestamp so the SR message won't update until the user has stopped typing
+    this.#lastKeyUpTimestamp = Date.now();
+
+    // The user typed something so the SR message must be updated
+    this.#forceSRUpdate = true;
+  };
+  #handleFocus = event => {
+    // Clear any previous timers
+    if (this.#intervalID !== null) {
+      window.clearInterval(this.#intervalID);
+      this.#intervalID = null;
+    }
+    if (!this.#field) return;
+    this.#spanVisualUpdate.setAttribute('aria-hidden', 'true');
+    this.#spanSrUpdate.setAttribute('aria-hidden', 'false');
+
+    // Set a timer to prevent SR users from being spammed with audio notifications while typing
+    this.#intervalID = window.setInterval(() => {
+      if (!this.#lastKeyUpTimestamp || Date.now() - 500 >= this.#lastKeyUpTimestamp) {
+        const inputValueChanged = this.#oldValue !== this.#field.value;
+        const messageInconsistency = this.#spanSrUpdate.textContent !== this.#spanVisualUpdate.textContent;
+        if (inputValueChanged || messageInconsistency || this.#forceSRUpdate) {
+          this.#forceSRUpdate = false;
+          this.#oldValue = this.#field.value;
+          this.#updateMessages(this.#charactersLeft());
+        }
+      }
+    }, 1000);
+  };
+  #handleBlur = event => {
+    // Stop the input timer
+    if (this.#intervalID !== null) {
+      window.clearInterval(this.#intervalID);
+      this.#intervalID = null;
+    }
+    if (!this.#field) return;
+    this.#updateVisibleMessage(this.#charactersLeft());
+    this.#spanSrUpdate.textContent = '';
+    this.#spanSrUpdate.setAttribute('aria-hidden', 'true');
+    this.#spanVisualUpdate.setAttribute('aria-hidden', 'false');
+  };
+  #handlePageshow = event => {
+    this.#updateVisibleMessage(this.#charactersLeft());
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #charactersLeft() {
+    if (!this.#field) return;
+    const parsedLimit = parseInt(this.getAttribute('limit'), 10);
+    if (!Number.isNaN(parsedLimit)) {
+      return parsedLimit - this.#field.value.length;
+    } else {
+      return null;
+    }
+  }
+  #getMessage(charactersLeft) {
+    let msg = '';
+    if (charactersLeft === -1) {
+      const exceeded = Math.abs(charactersLeft);
+      msg = this.#messages.one_character_too_many.replace(/{value}/, exceeded);
+    } else if (charactersLeft === 1) {
+      msg = this.#messages.one_character_remaining.replace(/{value}/, charactersLeft);
+    } else if (charactersLeft >= 0) {
+      msg = this.#messages.several_characters_remaining.replace(/{value}/, charactersLeft);
+    } else {
+      const exceeded = Math.abs(charactersLeft);
+      msg = this.#messages.several_characters_too_many.replace(/{value}/, exceeded);
+    }
+    return msg;
+  }
+  #updateVisibleMessage(charactersLeft) {
+    this.#spanVisualUpdate.textContent = this.#getMessage(charactersLeft);
+    if (charactersLeft < 0) {
+      this.#spanVisualUpdate.classList.add('limit-exceeded');
+    } else {
+      this.#spanVisualUpdate.classList.remove('limit-exceeded');
+    }
+  }
+  #updateSRMessage(charactersLeft) {
+    this.#spanSrUpdate.textContent = this.#getMessage(charactersLeft);
+  }
+  #updateMessages(charactersLeft) {
+    this.#updateVisibleMessage(charactersLeft);
+    this.#updateSRMessage(charactersLeft);
+  }
+  #updateId(value) {
+    if (value) {
+      this.#spanSrMaxLimit.id = value;
+    } else {
+      this.#spanSrMaxLimit.id = generateAndVerifyUniqueId('lim');
+    }
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (!this.hasAttribute('limit')) return;
+    if (this.children.length === 3) {
+      const [spanSrMaxLimit, spanSrUpdate, spanVisualUpdate] = this.children;
+      this.#spanSrMaxLimit = spanSrMaxLimit;
+      this.#spanSrUpdate = spanSrUpdate;
+      this.#spanVisualUpdate = spanVisualUpdate;
+    } else {
+      this.appendChild(this.#spanSrMaxLimit);
+      this.appendChild(this.#spanSrUpdate);
+      this.appendChild(this.#spanVisualUpdate);
+    }
+    this.#parentWrapper = this.closest('fds-input, fds-textarea');
+    this.#field = this.#parentWrapper?.querySelector('input, textarea');
+    if (!this.#field) return;
+    const charactersLeft = this.#charactersLeft();
+
+    // Update the default text used in the component
+    if (this.hasAttribute('one-character-remaining-text')) {
+      this.#messages.one_character_remaining = this.getAttribute('one-character-remaining-text');
+    }
+    if (this.hasAttribute('several-characters-remaining-text')) {
+      this.#messages.several_characters_remaining = this.getAttribute('several-characters-remaining-text');
+    }
+    if (this.hasAttribute('one-character-too-many-text')) {
+      this.#messages.one_character_too_many = this.getAttribute('one-character-too-many-text');
+    }
+    if (this.hasAttribute('several-characters-too-many-text')) {
+      this.#messages.several_characters_too_many = this.getAttribute('several-characters-too-many-text');
+    }
+    if (this.hasAttribute('max-limit-text')) {
+      this.#messages.max_limit = this.getAttribute('max-limit-text');
+    }
+
+    // <span> announcing the max limit to SR users
+    this.#spanSrMaxLimit.classList.add('sr-only');
+    this.#spanSrMaxLimit.textContent = this.#messages.max_limit.replace(/{value}/, this.getAttribute('limit'));
+    if (!this.hasAttribute('limit-id') && this.getAttribute('limit-id') !== '') {
+      this.#spanSrMaxLimit.id = generateAndVerifyUniqueId('lim');
+    } else {
+      this.#spanSrMaxLimit.id = this.getAttribute('limit-id');
+    }
+
+    // <span> visually showing the characters left
+    this.#spanVisualUpdate.classList.add('visual-message');
+    this.#spanVisualUpdate.setAttribute('aria-hidden', 'false');
+    this.#spanVisualUpdate.textContent = this.#getMessage(charactersLeft);
+
+    // <span> announcing characters left to SR users (updates are slightly delayed compared to the visual message)
+    this.#spanSrUpdate.classList.add('sr-only');
+    this.#spanSrUpdate.textContent = '';
+    this.#spanSrUpdate.setAttribute('aria-hidden', true);
+    this.#spanSrUpdate.setAttribute('aria-live', 'polite');
+
+    // Add event listeners
+    this.#field.addEventListener('keyup', this.#handleKeyUp);
+    this.#field.addEventListener('focus', this.#handleFocus);
+    this.#field.addEventListener('blur', this.#handleBlur);
+    if ('onpageshow' in window) {
+      window.addEventListener('pageshow', this.#handlePageshow);
+    } else {
+      document.addEventListener('DOMContentLoaded', this.#handlePageshow);
+    }
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#field?.removeEventListener('keyup', this.#handleKeyUp);
+    this.#field?.removeEventListener('focus', this.#handleFocus);
+    this.#field?.removeEventListener('blur', this.#handleBlur);
+    window.removeEventListener('pageshow', this.#handlePageshow);
+    document.removeEventListener('DOMContentLoaded', this.#handlePageshow);
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (attribute === 'limit') {
+      this.#updateMessages(this.#charactersLeft());
+    }
+    if (attribute === 'one-character-remaining-text') {
+      this.#messages.one_character_remaining = newValue;
+      this.#updateMessages(this.#charactersLeft());
+    }
+    if (attribute === 'several-characters-remaining-text') {
+      this.#messages.several_characters_remaining = newValue;
+      this.#updateMessages(this.#charactersLeft());
+    }
+    if (attribute === 'one-character-too-many-text') {
+      this.#messages.one_character_too_many = newValue;
+      this.#updateMessages(this.#charactersLeft());
+    }
+    if (attribute === 'several-characters-too-many-text') {
+      this.#messages.several_characters_too_many = newValue;
+      this.#updateMessages(this.#charactersLeft());
+    }
+    if (attribute === 'max-limit-text') {
+      this.#messages.max_limit = newValue;
+      this.#updateMessages(this.#charactersLeft());
+    }
+    if (attribute === 'limit-id') {
+      this.#updateId(newValue);
+    }
+    this.#parentWrapper?.dispatchEvent(new Event('character-limit-callback'));
+  }
+
+  // #endregion
+}
+function registerCharacterLimit() {
+  if (customElements.get('fds-character-limit') === undefined) {
+    window.customElements.define('fds-character-limit', FDSCharacterLimit);
+  }
+}
+/* harmony default export */ const fds_character_limit = (registerCharacterLimit);
+;// ./src/js/custom-elements/error-message/fds-error-message.js
+
+class FDSErrorMessage extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['id', 'icon-text', 'hidden', 'targets', 'message'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #rendered;
+  #iconText;
+  #parentWrapper;
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #render() {
+    if (this.#rendered) return;
+    const hasElements = this.children.length > 0;
+    if (!hasElements) {
+      const iconText = this.getAttribute('icon-text');
+      if (iconText !== null && iconText !== '') {
+        this.#iconText = iconText;
+      }
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.classList.add('icon-svg', 'alert-icon');
+      svg.setAttribute('aria-label', this.#iconText);
+      svg.setAttribute('focusable', 'false');
+      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      use.setAttribute('href', '#error');
+      svg.appendChild(use);
+      const visibleMessage = document.createElement('span');
+      visibleMessage.classList.add('visible-message');
+      visibleMessage.textContent = this.getAttribute('message') || this.textContent;
+      this.textContent = '';
+      this.appendChild(svg);
+      this.appendChild(visibleMessage);
+    }
+    this.#rendered = true;
+  }
+  #shouldBeHidden(hiddenValue) {
+    return hiddenValue === 'true' || hiddenValue === '';
+  }
+  #notifyParent() {
+    this.#parentWrapper?.dispatchEvent(new CustomEvent('error-message-visibility-changed', {
+      bubbles: true,
+      detail: {
+        errorId: this.id,
+        targets: this.getTargets(),
+        isHidden: this.#shouldBeHidden(this.getAttribute('hidden'))
+      }
+    }));
+  }
+  #dispatchErrorMessageCallback() {
+    if (!this.#parentWrapper) return;
+    this.#parentWrapper.dispatchEvent(new CustomEvent('error-message-callback', {
+      bubbles: true,
+      detail: {
+        errorId: this.id,
+        isHidden: this.#shouldBeHidden(this.getAttribute('hidden')),
+        targets: this.getTargets()
+      }
+    }));
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.#rendered = false;
+    this.#iconText = 'Fejl';
+    this.#parentWrapper = null;
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  getTargets() {
+    const targets = this.getAttribute('targets');
+    if (!targets) return [];
+    return targets.split(',').map(target => target.trim()).filter(target => target);
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.#rendered) return;
+    this.#render();
+    if (!this.id) {
+      this.id = generateAndVerifyUniqueId('error');
+    }
+
+    // Save reference to parent wrapper
+    this.#parentWrapper = this.closest('fds-input, fds-checkbox, fds-checkbox-group, fds-radio-button-group, fds-date-input, fds-textarea, fds-select, fds-upload-file, fds-date-picker');
+    this.#dispatchErrorMessageCallback();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#parentWrapper?.dispatchEvent(new CustomEvent('error-message-callback', {
+      bubbles: true,
+      detail: {
+        errorId: this.id,
+        targets: this.getTargets()
+      }
+    }));
+    this.#parentWrapper = null;
+    this.#rendered = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#rendered) return;
+    if (attribute === 'icon-text' && oldValue !== newValue) {
+      this.#iconText = newValue;
+      this.querySelector(':scope > .alert-icon').setAttribute('aria-label', this.#iconText);
+    }
+    if (attribute === 'hidden' && oldValue !== newValue) {
+      this.#notifyParent();
+    }
+    if (attribute === 'message' && oldValue !== newValue) {
+      this.querySelector(':scope > .visible-message').textContent = newValue;
+    }
+    this.#dispatchErrorMessageCallback();
+  }
+
+  // #endregion
+}
+function registerErrorMessage() {
+  if (customElements.get('fds-error-message') === undefined) {
+    window.customElements.define('fds-error-message', FDSErrorMessage);
+  }
+}
+/* harmony default export */ const fds_error_message = (registerErrorMessage);
+;// ./src/js/custom-elements/checkbox/fds-checkbox.js
+
+
+class FDSCheckbox extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['show-required-status', 'ready'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get showRequiredStatus() {
+    return this.getAttribute('show-required-status');
+  }
+  set showRequiredStatus(value) {
+    value === null ? this.removeAttribute('show-required-status') : this.setAttribute('show-required-status', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #checkboxObserver = null;
+  #input;
+  #label;
+  #onInputChange;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      const relevantTagNames = ['LABEL', 'INPUT', 'FDS-HELP-TEXT', 'FDS-ERROR-MESSAGE'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        this.#input = this.#getInputElement();
+        this.#label = this.#getLabelElement();
+        this.#setClasses();
+        setDisabledClass(this.#label, this.#input);
+        this.#updateAccessibilityState();
+        if (this.hasAttribute('show-required-status')) {
+          showRequiredStatus(this.#label, this.#input, this.getAttribute('show-required-status'));
+        }
+        break;
+      }
+      if (attributeName === 'disabled' && target === this.#getInputElement()) {
+        setDisabledClass(this.#getLabelElement(), target);
+      } else if ((attributeName === 'required' || attributeName === 'aria-required') && target === this.#getInputElement()) {
+        if (this.hasAttribute('show-required-status')) {
+          showRequiredStatus(this.#getLabelElement(), target, this.getAttribute('show-required-status'));
+        }
+      } else if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class' && target?.tagName !== 'LABEL') {
+        this.#updateAccessibilityState();
+        if (attributeName === 'hidden' && target === this) {
+          notifySummaryOnVisibilityChange(this);
+        }
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getInputElement() {
+    return this.querySelector(':scope > input[type="checkbox"]');
+  }
+  #getLabelElement() {
+    return this.querySelector(':scope > label');
+  }
+  #getHelpTextElements() {
+    return this.querySelectorAll(':scope > fds-help-text');
+  }
+  #getErrorMessages() {
+    return this.querySelectorAll(':scope > fds-error-message');
+  }
+  #setupObserver() {
+    if (this.#checkboxObserver) return;
+    this.#checkboxObserver = new MutationObserver(this.#handleMutations);
+    this.#checkboxObserver.observe(this, mutationObserverConfig);
+  }
+  #updateAccessibilityState() {
+    const label = this.#getLabelElement();
+    const input = this.#getInputElement();
+    const errorMessages = this.#getErrorMessages();
+    const helpTexts = this.#getHelpTextElements();
+    associateLabelWithElement(label, input, 'chk');
+    setAriaDescribedBy(input, errorMessages, helpTexts);
+    setInvalid(input, errorMessages);
+  }
+  #setClasses() {
+    if (!this.#label || !this.#input) return;
+    this.#label.classList.add('form-label');
+    this.#input.classList.add('form-checkbox');
+  }
+
+  /* Collapsible content */
+
+  #handleCollapsibleCheckboxes() {
+    const input = this.#input;
+    const possibleContent = this.querySelector(':scope > div.checkbox-content');
+    if (!input || !possibleContent) return;
+
+    // Ensure the div has the expected classes
+    possibleContent.classList.add('checkbox-content');
+
+    // Ensure the content has an ID
+    if (!possibleContent.id) {
+      possibleContent.id = generateAndVerifyUniqueId('exp');
+    }
+    const updateState = () => {
+      const expanded = input.checked;
+      input.setAttribute('data-aria-controls', possibleContent.id);
+      input.setAttribute('data-aria-expanded', String(expanded));
+      possibleContent.setAttribute('aria-hidden', String(!expanded));
+      possibleContent.classList.toggle('collapsed', !expanded);
+    };
+    if (this.#onInputChange) {
+      input.removeEventListener('change', this.#onInputChange);
+    }
+    this.#onInputChange = updateState;
+    updateState();
+    input.addEventListener('change', this.#onInputChange);
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#input = this.#getInputElement();
+    this.#label = this.#getLabelElement();
+    this.#setClasses();
+    setDisabledClass(this.#label, this.#input);
+    this.#updateAccessibilityState();
+    if (this.hasAttribute('show-required-status')) {
+      showRequiredStatus(this.#label, this.#input, this.getAttribute('show-required-status'));
+    }
+    this.#handleCollapsibleCheckboxes();
+    this.#setupObserver();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    if (!this.#initialized) {
+      this.init();
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    if (this.#input) {
+      this.#input.removeEventListener('change', this.#onInputChange);
+    }
+    this.#initialized = false;
+    if (this.#checkboxObserver) {
+      this.#checkboxObserver.disconnect();
+      this.#checkboxObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue === 'true') {
+        this.init();
+      }
+      return;
+    }
+    if (!this.#initialized) return;
+    if (attribute === 'show-required-status' && oldValue !== newValue) {
+      const label = this.#getLabelElement();
+      const input = this.#getInputElement();
+      showRequiredStatus(label, input, newValue);
+    }
+  }
+
+  // #endregion
+}
+function registerCheckbox() {
+  if (customElements.get('fds-checkbox') === undefined) {
+    window.customElements.define('fds-checkbox', FDSCheckbox);
+  }
+}
+/* harmony default export */ const fds_checkbox = (registerCheckbox);
+;// ./src/js/custom-elements/checkbox/fds-checkbox-group.js
+
+class FDSCheckboxGroup extends HTMLElement {
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #checkboxGroupObserver = null;
+  #fieldset;
+  #legend;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      const relevantTagNames = ['FIELDSET', 'LEGEND', 'FDS-HELP-TEXT', 'FDS-ERROR-MESSAGE'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        this.#fieldset = this.#getFieldsetElement();
+        this.#legend = this.#getLegendElement();
+        this.#setClasses();
+        this.#setDisabledClass();
+        this.#updateAccessibilityState();
+        break;
+      }
+      if (attributeName === 'disabled' && target === this.#getFieldsetElement()) {
+        target.classList.toggle('disabled', target.hasAttribute('disabled'));
+      } else if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class' && !['LEGEND', 'FIELDSET'].includes(target?.tagName)) {
+        this.#updateAccessibilityState();
+        if (attributeName === 'hidden' && target === this) {
+          notifySummaryOnVisibilityChange(this);
+        }
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getFieldsetElement() {
+    return this.querySelector('fieldset');
+  }
+  #getLegendElement() {
+    return this.querySelector(':scope > fieldset > legend');
+  }
+  #getGroupHelpTexts() {
+    return this.querySelectorAll(':scope > fieldset > fds-help-text');
+  }
+  #getErrorMessages() {
+    return this.querySelectorAll(':scope > fieldset > fds-error-message');
+  }
+  #setupObserver() {
+    if (this.#checkboxGroupObserver) return;
+    this.#checkboxGroupObserver = new MutationObserver(this.#handleMutations);
+    this.#checkboxGroupObserver.observe(this, mutationObserverConfig);
+  }
+  #updateAccessibilityState() {
+    const fieldset = this.#getFieldsetElement();
+    const errorMessages = this.#getErrorMessages();
+    const helpTexts = this.#getGroupHelpTexts();
+    setAriaDescribedBy(fieldset, errorMessages, helpTexts);
+  }
+  #setClasses() {
+    this.#legend?.classList.add('form-label');
+  }
+  #setDisabledClass() {
+    const fieldset = this.#getFieldsetElement();
+    if (!fieldset) return;
+    fieldset.classList.toggle('disabled', fieldset.hasAttribute('disabled'));
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#fieldset = this.#getFieldsetElement();
+    this.#legend = this.#getLegendElement();
+    this.#setClasses();
+    this.#setDisabledClass();
+    this.#updateAccessibilityState();
+    this.#setupObserver();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (!this.#initialized) {
+      this.init();
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#initialized = false;
+    if (this.#checkboxGroupObserver) {
+      this.#checkboxGroupObserver.disconnect();
+      this.#checkboxGroupObserver = null;
+    }
+  }
+
+  // #endregion
+}
+function registerCheckboxGroup() {
+  if (!customElements.get('fds-checkbox-group')) {
+    customElements.define('fds-checkbox-group', FDSCheckboxGroup);
+  }
+}
+/* harmony default export */ const fds_checkbox_group = (registerCheckboxGroup);
+;// ./src/js/custom-elements/radio-button/fds-radio-button.js
+
+
+class FDSRadioButton extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['ready'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get checked() {
+    return this.#input?.checked ?? false;
+  }
+  set checked(value) {
+    if (!this.#input) return;
+    this.#input.checked = Boolean(value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #radioButtonObserver = null;
+  #input;
+  #label;
+  #onInputChange;
+  #updateExpandableContent;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      const relevantTagNames = ['LABEL', 'INPUT', 'FDS-HELP-TEXT'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        this.#input = this.#getInputElement();
+        this.#label = this.#getLabelElement();
+        this.#setClasses();
+        setDisabledClass(this.#label, this.#input);
+        this.#updateAccessibilityState();
+        break;
+      }
+      if (attributeName === 'disabled' && target === this.#getInputElement()) {
+        setDisabledClass(this.#getLabelElement(), target);
+      } else if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class' && target?.tagName !== 'LABEL') {
+        this.#updateAccessibilityState();
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getInputElement() {
+    return this.querySelector(':scope > input[type="radio"]');
+  }
+  #getLabelElement() {
+    return this.querySelector(':scope > label');
+  }
+  #getHelpTextElements() {
+    return this.querySelectorAll(':scope > fds-help-text');
+  }
+  #setupObserver() {
+    if (this.#radioButtonObserver) return;
+    this.#radioButtonObserver = new MutationObserver(this.#handleMutations);
+    this.#radioButtonObserver.observe(this, mutationObserverConfig);
+  }
+  #updateAccessibilityState() {
+    const label = this.#getLabelElement();
+    const input = this.#getInputElement();
+    const helpTexts = this.#getHelpTextElements();
+    associateLabelWithElement(label, input, 'rad');
+    setAriaDescribedBy(input, [], helpTexts);
+  }
+  #setClasses() {
+    if (!this.#label || !this.#input) return;
+    this.#label.classList.add('form-label');
+    this.#input.classList.add('form-radio');
+  }
+  #handleCollapsibleContent() {
+    const input = this.#input;
+    const possibleContent = this.querySelector(':scope > div.radio-content');
+    if (!input || !possibleContent) return;
+    possibleContent.classList.add('radio-content');
+    if (!possibleContent.id) {
+      possibleContent.id = generateAndVerifyUniqueId('exp');
+    }
+    const updateState = () => {
+      const expanded = input.checked;
+      input.setAttribute('data-aria-controls', possibleContent.id);
+      input.setAttribute('data-aria-expanded', String(expanded));
+      possibleContent.setAttribute('aria-hidden', String(!expanded));
+      possibleContent.classList.toggle('collapsed', !expanded);
+    };
+    this.#updateExpandableContent = updateState;
+    updateState();
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  collapseContent() {
+    const content = this.querySelector(':scope > div.radio-content');
+    if (content && this.#input) {
+      this.#input.setAttribute('data-aria-expanded', 'false');
+      content.setAttribute('aria-hidden', 'true');
+      content.classList.add('collapsed');
+    }
+  }
+  init() {
+    this.#input = this.#getInputElement();
+    this.#label = this.#getLabelElement();
+    this.#setClasses();
+    setDisabledClass(this.#label, this.#input);
+    this.#updateAccessibilityState();
+    this.#handleCollapsibleContent();
+    if (this.#input) {
+      if (this.#onInputChange) {
+        this.#input.removeEventListener('change', this.#onInputChange);
+      }
+      this.#onInputChange = () => {
+        this.#updateExpandableContent?.();
+        this.dispatchEvent(new CustomEvent('radio-changed', {
+          detail: {
+            checked: this.#input.checked
+          },
+          bubbles: true
+        }));
+      };
+      this.#input.addEventListener('change', this.#onInputChange);
+    }
+    this.#setupObserver();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    if (!this.#initialized) {
+      this.init();
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    if (this.#input) {
+      this.#input.removeEventListener('change', this.#onInputChange);
+    }
+    this.#initialized = false;
+    if (this.#radioButtonObserver) {
+      this.#radioButtonObserver.disconnect();
+      this.#radioButtonObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue === 'true') {
+        this.init();
+      }
+      return;
+    }
+  }
+
+  // #endregion
+}
+function registerRadioButton() {
+  if (customElements.get('fds-radio-button') === undefined) {
+    window.customElements.define('fds-radio-button', FDSRadioButton);
+  }
+}
+/* harmony default export */ const fds_radio_button = (registerRadioButton);
+;// ./src/js/custom-elements/radio-button/fds-radio-button-group.js
+
+class FDSRadioButtonGroup extends HTMLElement {
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #mutationObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleRadioChange = event => {
+    const changedRadioButton = event.target.closest('fds-radio-button');
+    if (event.detail.checked) {
+      const allRadios = this.querySelectorAll('fds-radio-button');
+      allRadios.forEach(radio => {
+        if (radio !== changedRadioButton) {
+          radio.collapseContent?.();
+        }
+      });
+    }
+  };
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      const relevantTagNames = ['FIELDSET', 'LEGEND', 'FDS-HELP-TEXT', 'FDS-ERROR-MESSAGE'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        this.#updateAriaDescribedBy();
+        break;
+      }
+      if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class' && !['LEGEND', 'FIELDSET'].includes(target?.tagName)) {
+        this.#updateAriaDescribedBy();
+        if (attributeName === 'hidden' && target === this) {
+          notifySummaryOnVisibilityChange(this);
+        }
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #updateAriaDescribedBy() {
+    const fieldset = this.querySelector('fieldset');
+    const errorMessages = this.querySelectorAll(':scope > fieldset > fds-error-message');
+    const helpTexts = this.querySelectorAll(':scope > fieldset > fds-help-text');
+    setAriaDescribedBy(fieldset, errorMessages, helpTexts);
+  }
+  #addEventListener() {
+    this.addEventListener('radio-changed', this.#handleRadioChange);
+  }
+  #removeEventListener() {
+    this.removeEventListener('radio-changed', this.#handleRadioChange);
+  }
+  #connectMutationObserver() {
+    let config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : mutationObserverConfig;
+    if (this.#mutationObserver) return;
+    this.#mutationObserver = new MutationObserver(this.#handleMutations);
+    this.#mutationObserver.observe(this, config);
+  }
+  #disconnectMutationObserver() {
+    if (this.#mutationObserver) {
+      this.#mutationObserver.disconnect();
+      this.#mutationObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#updateAriaDescribedBy();
+    this.#addEventListener();
+    this.#connectMutationObserver();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (!this.#initialized) {
+      this.init();
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#removeEventListener();
+    this.#disconnectMutationObserver();
+    this.#initialized = false;
+  }
+
+  // #endregion
+}
+function registerRadioButtonGroup() {
+  if (customElements.get('fds-radio-button-group') === undefined) {
+    window.customElements.define('fds-radio-button-group', FDSRadioButtonGroup);
+  }
+}
+/* harmony default export */ const fds_radio_button_group = (registerRadioButtonGroup);
+;// ./src/js/custom-elements/date-input/fds-date-input.js
+
+class FDSDateInput extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['show-required-status', 'input-readonly', 'input-required', 'legend', 'input-id'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #mutationObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      // A relevant child element was added or removed.
+      const relevantTagNames = ['LABEL', 'INPUT', 'FDS-ERROR-MESSAGE', 'FDS-HELP-TEXT'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        const legend = this.querySelector('legend');
+        const fieldset = this.querySelector('fieldset');
+        const errorMessages = this.querySelectorAll('fds-error-message');
+        const helpTexts = this.querySelectorAll('fds-help-text');
+        const label_day = this.querySelector('[data-attribute="day"] label');
+        const label_month = this.querySelector('[data-attribute="month"] label');
+        const label_year = this.querySelector('[data-attribute="year"] label');
+        const input_day = this.querySelector('[data-attribute="day"] input');
+        const input_month = this.querySelector('[data-attribute="month"] input');
+        const input_year = this.querySelector('[data-attribute="year"] input');
+        associateLabelWithElement(label_day, input_day, 'day');
+        associateLabelWithElement(label_month, input_month, 'month');
+        associateLabelWithElement(label_year, input_year, 'year');
+        setAriaDescribedBy(fieldset, errorMessages, helpTexts);
+        this.#setInvalidForInput('day', input_day, errorMessages);
+        this.#setInvalidForInput('month', input_month, errorMessages);
+        this.#setInvalidForInput('year', input_year, errorMessages);
+        if (this.hasAttribute('show-required-status')) {
+          showRequiredStatus(legend, fieldset, this.getAttribute('show-required-status'));
+        }
+        break;
+      }
+
+      // The input's required attribute changed
+      if (attributeName === 'required' && target?.tagName === 'INPUT') {
+        if (this.hasAttribute('show-required-status')) {
+          const legend = this.querySelector('legend');
+          const fieldset = this.querySelector('fieldset');
+          showRequiredStatus(legend, fieldset, this.getAttribute('show-required-status'));
+        }
+      }
+      // Attributes which might affect aria-describedby
+      else if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class' || attributeName === 'targets') {
+        const legend = this.querySelector('legend');
+        const fieldset = this.querySelector('fieldset');
+        const errorMessages = this.querySelectorAll('fds-error-message');
+        const helpTexts = this.querySelectorAll('fds-help-text');
+        const label_day = this.querySelector('[data-attribute="day"] label');
+        const label_month = this.querySelector('[data-attribute="month"] label');
+        const label_year = this.querySelector('[data-attribute="year"] label');
+        const input_day = this.querySelector('[data-attribute="day"] input');
+        const input_month = this.querySelector('[data-attribute="month"] input');
+        const input_year = this.querySelector('[data-attribute="year"] input');
+        associateLabelWithElement(label_day, input_day, 'day');
+        associateLabelWithElement(label_month, input_month, 'month');
+        associateLabelWithElement(label_year, input_year, 'year');
+        setAriaDescribedBy(fieldset, errorMessages, helpTexts);
+        this.#setInvalidForInput('day', input_day, errorMessages);
+        this.#setInvalidForInput('month', input_month, errorMessages);
+        this.#setInvalidForInput('year', input_year, errorMessages);
+        if (attributeName === 'hidden' && target === this) {
+          notifySummaryOnVisibilityChange(this);
+        }
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    // Fieldset
+    let fieldset = this.querySelector('fieldset');
+    if (fieldset === null) {
+      fieldset = document.createElement('fieldset');
+      this.appendChild(fieldset);
+    }
+
+    // Legend
+    let legend = fieldset.querySelector('legend');
+    if (legend === null) {
+      legend = document.createElement('legend');
+      fieldset.appendChild(legend);
+    }
+    if (legend.textContent === '') {
+      legend.textContent = 'Indtast dato';
+    }
+
+    // Div wrapper
+    let divWrapper = fieldset.querySelector(':scope > div');
+    if (divWrapper === null) {
+      divWrapper = document.createElement('div');
+      fieldset.appendChild(divWrapper);
+    }
+
+    // Div for day input
+    let divDay = divWrapper.querySelector('[data-attribute="day"]');
+    if (divDay === null) {
+      divDay = document.createElement('div');
+      divDay.setAttribute('data-attribute', 'day');
+      divWrapper.appendChild(divDay);
+    }
+
+    // Div for month input
+    let divMonth = divWrapper.querySelector('[data-attribute="month"]');
+    if (divMonth === null) {
+      divMonth = document.createElement('div');
+      divMonth.setAttribute('data-attribute', 'month');
+      divWrapper.appendChild(divMonth);
+    }
+
+    // Div for year input
+    let divYear = divWrapper.querySelector('[data-attribute="year"]');
+    if (divYear === null) {
+      divYear = document.createElement('div');
+      divYear.setAttribute('data-attribute', 'year');
+      divWrapper.appendChild(divYear);
+    }
+
+    // Day label
+    let labelDay = divDay.querySelector('label');
+    if (labelDay === null) {
+      labelDay = document.createElement('label');
+      divDay.appendChild(labelDay);
+    }
+    if (labelDay.textContent === '') {
+      labelDay.textContent = 'Dag';
+    }
+
+    // Day input
+    let inputDay = divDay.querySelector('input');
+    if (inputDay === null) {
+      inputDay = document.createElement('input');
+      divDay.appendChild(inputDay);
+    }
+    if (!inputDay.hasAttribute('name')) {
+      inputDay.setAttribute('name', 'day');
+    }
+    if (!inputDay.hasAttribute('type')) {
+      inputDay.setAttribute('type', 'number');
+    }
+
+    // Month label
+    let labelMonth = divMonth.querySelector('label');
+    if (labelMonth === null) {
+      labelMonth = document.createElement('label');
+      divMonth.appendChild(labelMonth);
+    }
+    if (labelMonth.textContent === '') {
+      labelMonth.textContent = 'Måned';
+    }
+
+    // Month input
+    let inputMonth = divMonth.querySelector('input');
+    if (inputMonth === null) {
+      inputMonth = document.createElement('input');
+      divMonth.appendChild(inputMonth);
+    }
+    if (!inputMonth.hasAttribute('name')) {
+      inputMonth.setAttribute('name', 'month');
+    }
+    if (!inputMonth.hasAttribute('type')) {
+      inputMonth.setAttribute('type', 'number');
+    }
+
+    // Year label
+    let labelYear = divYear.querySelector('label');
+    if (labelYear === null) {
+      labelYear = document.createElement('label');
+      divYear.appendChild(labelYear);
+    }
+    if (labelYear.textContent === '') {
+      labelYear.textContent = 'År';
+    }
+
+    // Year input
+    let inputYear = divYear.querySelector('input');
+    if (inputYear === null) {
+      inputYear = document.createElement('input');
+      divYear.appendChild(inputYear);
+    }
+    if (!inputYear.hasAttribute('name')) {
+      inputYear.setAttribute('name', 'year');
+    }
+    if (!inputYear.hasAttribute('type')) {
+      inputYear.setAttribute('type', 'number');
+    }
+  }
+  #connectMutationObserver() {
+    let config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : mutationObserverConfig;
+    if (this.#mutationObserver) return;
+    this.#mutationObserver = new MutationObserver(this.#handleMutations);
+    this.#mutationObserver.observe(this, config);
+  }
+  #disconnectMutationObserver() {
+    if (this.#mutationObserver) {
+      this.#mutationObserver.disconnect();
+      this.#mutationObserver = null;
+    }
+  }
+  #setInvalidForInput(target, inputElement, errorMessages) {
+    const relevantErrors = Array.from(errorMessages).filter(errorMsg => {
+      const targets = errorMsg.getAttribute('targets');
+      return targets && targets.includes(target);
+    });
+    if (relevantErrors.length > 0) {
+      setInvalid(inputElement, relevantErrors);
+    }
+  }
+  #init() {
+    this.#setupHTML();
+    this.#connectMutationObserver();
+    const legend = this.querySelector('legend');
+    const fieldset = this.querySelector('fieldset');
+    const errorMessages = this.querySelectorAll('fds-error-message');
+    const helpTexts = this.querySelectorAll('fds-help-text');
+    const label_day = this.querySelector('[data-attribute="day"] label');
+    const label_month = this.querySelector('[data-attribute="month"] label');
+    const label_year = this.querySelector('[data-attribute="year"] label');
+    const input_day = this.querySelector('[data-attribute="day"] input');
+    const input_month = this.querySelector('[data-attribute="month"] input');
+    const input_year = this.querySelector('[data-attribute="year"] input');
+    associateLabelWithElement(label_day, input_day, 'day');
+    associateLabelWithElement(label_month, input_month, 'month');
+    associateLabelWithElement(label_year, input_year, 'year');
+    setAriaDescribedBy(fieldset, errorMessages, helpTexts);
+    this.#setInvalidForInput('day', input_day, errorMessages);
+    this.#setInvalidForInput('month', input_month, errorMessages);
+    this.#setInvalidForInput('year', input_year, errorMessages);
+    if (this.hasAttribute('show-required-status')) {
+      showRequiredStatus(legend, fieldset, this.getAttribute('show-required-status'));
+    }
+    this.#initialized = true;
+  }
+  #setReadonly() {
+    const inputs = this.querySelectorAll('input');
+    inputs.forEach(input => {
+      if (this.getAttribute('input-readonly') !== null && this.getAttribute('input-readonly') !== 'false') {
+        input.setAttribute('readonly', '');
+      } else {
+        input.removeAttribute('readonly');
+      }
+    });
+  }
+  #setRequired() {
+    const inputs = this.querySelectorAll('input');
+    inputs.forEach(input => {
+      if (this.getAttribute('input-required') !== null && this.getAttribute('input-required') !== 'false') {
+        input.setAttribute('required', '');
+      } else {
+        input.removeAttribute('required');
+      }
+    });
+  }
+  #setInputId() {
+    const inputWrappers = this.querySelectorAll('div[data-attribute]');
+    inputWrappers.forEach(inputWrapper => {
+      const label = inputWrapper.querySelector('label');
+      const input = inputWrapper.querySelector('input');
+      if (this.getAttribute('input-id') !== null && this.getAttribute('input-id') !== '') {
+        input.id = `${inputWrapper.getAttribute('data-attribute')}-${this.getAttribute('input-id')}`;
+      }
+    });
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (!this.#initialized) {
+      this.#init();
+    }
+    if (this.hasAttribute('input-readonly')) {
+      this.#setReadonly();
+    }
+    if (this.hasAttribute('input-required')) {
+      this.#setRequired();
+    }
+    if (this.hasAttribute('legend')) {
+      this.querySelector('legend').textContent = this.getAttribute('legend');
+    }
+    if (this.hasAttribute('input-id')) {
+      this.#setInputId();
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#disconnectMutationObserver();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'show-required-status':
+        const legend = this.querySelector('legend');
+        const fieldset = this.querySelector('fieldset');
+        showRequiredStatus(legend, fieldset, newValue);
+        break;
+      case 'input-readonly':
+        this.#setReadonly();
+        break;
+      case 'input-required':
+        this.#setRequired();
+        break;
+      case 'legend':
+        if (newValue !== null) {
+          this.querySelector('legend').textContent = newValue;
+        }
+        break;
+      case 'input-id':
+        this.#setInputId();
+        break;
+    }
+  }
+
+  // #endregion    
+}
+function registerDateInput() {
+  if (customElements.get('fds-date-input') === undefined) {
+    window.customElements.define('fds-date-input', FDSDateInput);
+  }
+}
+/* harmony default export */ const fds_date_input = (registerDateInput);
+;// ./src/js/custom-elements/select/fds-select.js
+
+class FDSSelect extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['show-required-status'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get showRequiredStatus() {
+    return this.getAttribute('show-required-status');
+  }
+  set showRequiredStatus(value) {
+    value === null ? this.removeAttribute('show-required-status') : this.setAttribute('show-required-status', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #mutationObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      // A relevant child element was added or removed.
+      const relevantTagNames = ['LABEL', 'SELECT', 'FDS-ERROR-MESSAGE', 'FDS-HELP-TEXT'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        this.#setAccessibilityAttributes();
+        if (this.hasAttribute('show-required-status')) {
+          const label = this.querySelector('label');
+          const select = this.querySelector('select');
+          showRequiredStatus(label, select, this.getAttribute('show-required-status'));
+        }
+        break;
+      }
+
+      // The select's required attribute changed
+      if (attributeName === 'required' && target?.tagName === 'SELECT') {
+        if (this.hasAttribute('show-required-status')) {
+          const label = this.querySelector('label');
+          showRequiredStatus(label, target, this.getAttribute('show-required-status'));
+        }
+      }
+      // Attributes which might affect aria-describedby
+      else if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class') {
+        this.#setAccessibilityAttributes();
+        if (attributeName === 'hidden' && target === this) {
+          notifySummaryOnVisibilityChange(this);
+        }
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setAccessibilityAttributes() {
+    const label = this.querySelector('label');
+    const select = this.querySelector('select');
+    const errorMessages = this.querySelectorAll('fds-error-message');
+    const helpTexts = this.querySelectorAll('fds-help-text');
+    associateLabelWithElement(label, select, 'sel');
+    setAriaDescribedBy(select, errorMessages, helpTexts);
+    setInvalid(select, errorMessages);
+  }
+  #connectMutationObserver() {
+    let config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : mutationObserverConfig;
+    if (this.#mutationObserver) return;
+    this.#mutationObserver = new MutationObserver(this.#handleMutations);
+    this.#mutationObserver.observe(this, config);
+  }
+  #disconnectMutationObserver() {
+    if (this.#mutationObserver) {
+      this.#mutationObserver.disconnect();
+      this.#mutationObserver = null;
+    }
+  }
+  #init() {
+    this.#setAccessibilityAttributes();
+    if (this.hasAttribute('show-required-status')) {
+      const label = this.querySelector('label');
+      const select = this.querySelector('select');
+      showRequiredStatus(label, select, this.getAttribute('show-required-status'));
+    }
+    this.#connectMutationObserver();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.#init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#disconnectMutationObserver();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'show-required-status':
+        const label = this.querySelector('label');
+        const select = this.querySelector('select');
+        showRequiredStatus(label, select, newValue);
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerSelect() {
+  if (customElements.get('fds-select') === undefined) {
+    window.customElements.define('fds-select', FDSSelect);
+  }
+}
+/* harmony default export */ const fds_select = (registerSelect);
+;// ./src/js/custom-elements/upload-file/fds-upload-file.js
+
+
+class FDSUploadFile extends HTMLElement {
+  /**
+   * Internal state:
+   * - #files holds the canonical list of selected files (source of truth).
+   * - UI (dropzone vs file list) is rendered based on #files.length.
+   * - DOM is partially cached (#dropzoneEl, #fileListEl) to allow toggling without recreating elements unnecessarily.
+   */
+
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['dropzone-prefix', 'dropzone-link', 'dropzone-suffix', 'file-list-header', 'file-list-more', 'remove-text', 'heading-level', 'show-required-status'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get showRequiredStatus() {
+    return this.getAttribute('show-required-status');
+  }
+  set showRequiredStatus(value) {
+    value === null ? this.removeAttribute('show-required-status') : this.setAttribute('show-required-status', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #inputEl = null;
+  #initialized = false;
+  #files = [];
+  #uploadObserver = null;
+  #dropzoneEl = null;
+  #fileListEl = null;
+  #onClick;
+  #onInputChange;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    let shouldUpdateAccessibility = false;
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      if (attributeName === 'hidden' && target === this) {
+        notifySummaryOnVisibilityChange(this);
+      }
+
+      // The input's disabled attribute changed
+      if (attributeName === 'disabled' && target?.tagName === 'INPUT') {
+        const label = this.querySelector('label');
+        setDisabledClass(label, target);
+      }
+
+      // The input's required attribute changed
+      else if (attributeName === 'required' && target?.tagName === 'INPUT') {
+        if (this.hasAttribute('show-required-status')) {
+          this.#updateRequiredStatus();
+        }
+      }
+      if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden') {
+        shouldUpdateAccessibility = true;
+        continue;
+      }
+      const relevantTagNames = ['FDS-ERROR-MESSAGE', 'FDS-HELP-TEXT'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        shouldUpdateAccessibility = true;
+      }
+    }
+    if (shouldUpdateAccessibility) {
+      this.#setupAccessibility();
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getDropzonePrefix() {
+    return this.getAttribute('dropzone-prefix') ?? 'Træk dine filer herhen eller';
+  }
+  #getDropzoneLink() {
+    return this.getAttribute('dropzone-link') ?? 'vælg filer';
+  }
+  #getDropzoneSuffix() {
+    return this.getAttribute('dropzone-suffix') ?? '';
+  }
+  #getFileListHeader() {
+    return this.getAttribute('file-list-header') ?? 'Valgte filer';
+  }
+  #getFileListMore() {
+    return this.getAttribute('file-list-more') ?? 'Vælg flere filer';
+  }
+  #getFileListHeadingLevel() {
+    const headingLevel = this.getAttribute('heading-level');
+    if (!headingLevel || !['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(headingLevel)) {
+      return 'h5';
+    }
+    return headingLevel;
+  }
+  #setupInput(input) {
+    const label = this.querySelector('label');
+    if (!label || !input) return;
+    label.classList.add('fds-upload-label');
+    input.classList.add('fds-upload-input');
+    if (!input.id) {
+      input.id = generateAndVerifyUniqueId('file-input');
+    }
+    label.setAttribute('for', input.id);
+    input.removeEventListener('change', this.#onInputChange);
+    input.addEventListener('change', this.#onInputChange);
+    this.#inputEl = input;
+    setDisabledClass(label, input);
+    if (this.hasAttribute('show-required-status')) {
+      this.#updateRequiredStatus();
+    }
+  }
+  #hydrateExistingDropzone() {
+    this.#setupInput(this.querySelector('.fds-upload-dropzone input[type="file"]'));
+  }
+  #setText(selector, value) {
+    const element = this.querySelector(selector);
+    if (element) {
+      element.textContent = value;
+    }
+  }
+  #setFileItemsRemoveText() {
+    const fileItems = this.querySelectorAll('fds-file-item');
+    const removeText = this.getAttribute('remove-text') || 'Fjern';
+    fileItems.forEach(item => {
+      item.setAttribute('remove-text', removeText);
+    });
+  }
+  #setDropzoneText(container) {
+    container.replaceChildren();
+    const prefix = this.#getDropzonePrefix();
+    if (prefix) {
+      container.append(prefix + ' ');
+    }
+    const linkText = document.createElement('span');
+    linkText.className = 'fds-upload-choose';
+    linkText.textContent = this.#getDropzoneLink();
+    container.appendChild(linkText);
+    const suffix = this.#getDropzoneSuffix();
+    if (suffix) {
+      container.append(' ' + suffix);
+    }
+  }
+  #syncAddMoreVisibility() {
+    const addMore = this.#fileListEl?.querySelector('.fds-upload-add-more');
+    if (addMore) {
+      addMore.hidden = !this.#inputEl?.multiple;
+    }
+  }
+  #showDropzone() {
+    if (!this.#dropzoneEl) {
+      const input = this.#inputEl || this.querySelector('input[type="file"]');
+      if (!input) return;
+      const originalParent = input.parentNode;
+      const originalNextSibling = input.nextSibling;
+      this.#dropzoneEl = this.#renderDropzone();
+      if (!this.#dropzoneEl) return;
+      if (originalParent === this) {
+        this.insertBefore(this.#dropzoneEl, originalNextSibling);
+      }
+    }
+    this.#fileListEl?.remove();
+    this.#fileListEl = null;
+    if (!this.contains(this.#dropzoneEl)) {
+      const errorMessage = this.querySelector('fds-error-message');
+      if (errorMessage) {
+        this.insertBefore(this.#dropzoneEl, errorMessage);
+      } else {
+        this.appendChild(this.#dropzoneEl);
+      }
+    }
+  }
+  #showFileList() {
+    const dropzoneNextSibling = this.#dropzoneEl?.nextSibling ?? null;
+    if (!this.#fileListEl) {
+      this.#fileListEl = this.#renderFileList();
+    } else {
+      this.#updateFileList();
+    }
+    this.#syncAddMoreVisibility();
+    this.#dropzoneEl?.remove();
+    this.#dropzoneEl = null;
+    if (!this.contains(this.#fileListEl)) {
+      const errorMessage = this.querySelector('fds-error-message');
+      if (dropzoneNextSibling && this.contains(dropzoneNextSibling)) {
+        this.insertBefore(this.#fileListEl, dropzoneNextSibling);
+      } else if (errorMessage) {
+        this.insertBefore(this.#fileListEl, errorMessage);
+      } else {
+        this.appendChild(this.#fileListEl);
+      }
+    }
+  }
+  #updateFileList() {
+    const filesContainer = this.#fileListEl.querySelector('.fds-upload-files');
+    if (!filesContainer) return;
+    filesContainer.replaceChildren();
+    this.#files.forEach(fileObj => {
+      filesContainer.appendChild(this.#renderFileItem(fileObj));
+    });
+  }
+  #updateFileListHeadingLevel() {
+    if (!this.#fileListEl) return;
+    const currentTitle = this.#fileListEl.querySelector('.fds-upload-title');
+    if (!currentTitle) return;
+    const newTag = this.#getFileListHeadingLevel();
+    const currentTag = currentTitle.tagName.toLowerCase();
+    if (currentTag === newTag) return;
+    const newTitle = document.createElement(newTag);
+    newTitle.className = currentTitle.className;
+    newTitle.textContent = currentTitle.textContent;
+    currentTitle.replaceWith(newTitle);
+  }
+  #updateDropzoneContent() {
+    const content = this.#dropzoneEl?.querySelector('.fds-upload-dropzone-content p');
+    if (!content) return;
+    this.#setDropzoneText(content);
+  }
+
+  /* Mutation observer */
+
+  #setupObserver() {
+    if (this.#uploadObserver) return;
+    this.#uploadObserver = new MutationObserver(this.#handleMutations);
+    this.#uploadObserver.observe(this, mutationObserverConfig);
+  }
+  #setupAccessibility() {
+    const input = this.#inputEl;
+    if (!input) return;
+    const idsForAriaDescribedby = [];
+    let isInvalid = false;
+
+    // Preserve dropzone description for screen reader
+    const dropzoneDesc = this.querySelector('.fds-upload-dropzone-content');
+    if (dropzoneDesc && dropzoneDesc.id) {
+      idsForAriaDescribedby.push(dropzoneDesc.id);
+    }
+    const errorMessages = this.querySelectorAll('fds-error-message:not([targets])');
+    const helpTexts = this.querySelectorAll('fds-help-text');
+    const ariaDescribedbyElements = [...errorMessages, ...helpTexts];
+
+    // Build aria-describedby attribute from visible elements
+    for (const element of ariaDescribedbyElements) {
+      const isHidden = element.hasAttribute('hidden');
+      const isAriaHidden = element.getAttribute('aria-hidden') === 'true';
+      if (element.id && !isHidden && !isAriaHidden) {
+        idsForAriaDescribedby.push(element.id);
+        if (element.tagName === 'FDS-ERROR-MESSAGE') {
+          isInvalid = true;
+        }
+      }
+    }
+    if (idsForAriaDescribedby.length > 0) {
+      const describedBy = idsForAriaDescribedby.join(' ');
+      input.setAttribute('aria-describedby', describedBy);
+    } else {
+      input.removeAttribute('aria-describedby');
+    }
+    if (input) {
+      isInvalid ? input.setAttribute('aria-invalid', 'true') : input.removeAttribute('aria-invalid');
+    }
+  }
+
+  /* -----------------------------
+     Rendering
+  ----------------------------- */
+
+  #render() {
+    if (this.#files.length === 0) {
+      this.#showDropzone();
+    } else {
+      this.#showFileList();
+    }
+    this.#setupAccessibility();
+  }
+  #renderDropzone() {
+    const dropzone = document.createElement('div');
+    dropzone.className = 'fds-upload-dropzone';
+
+    // Input
+    const input = this.#inputEl || this.querySelector('input[type="file"]');
+    if (!input) return null;
+    this.#setupInput(input);
+
+    // Dropzone content
+    const content = document.createElement('div');
+    content.className = 'fds-upload-dropzone-content';
+    content.id = `dropzone-${input.id}`;
+    ;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('icon-svg');
+    svg.setAttribute('aria-hidden', 'true');
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    use.setAttribute('href', '#plus-circle');
+    svg.appendChild(use);
+    const p = document.createElement('p');
+
+    // Text content: prefix + link + suffix
+    this.#setDropzoneText(p);
+    content.append(svg, p);
+    dropzone.append(input, content);
+    return dropzone;
+  }
+  #renderFileList() {
+    const container = document.createElement('div');
+    container.className = 'fds-upload-file-list';
+    const header = document.createElement('div');
+    header.className = 'fds-upload-header';
+    const level = this.#getFileListHeadingLevel();
+    const title = document.createElement(level);
+    title.className = 'fds-upload-title';
+    title.textContent = this.#getFileListHeader();
+    const addMore = document.createElement('button');
+    addMore.type = 'button';
+    addMore.className = 'fds-upload-add-more';
+    addMore.textContent = this.#getFileListMore();
+    addMore.hidden = !this.#inputEl?.multiple;
+    header.append(title, addMore);
+    const filesContainer = document.createElement('div');
+    filesContainer.setAttribute('role', 'list');
+    filesContainer.className = 'fds-upload-files';
+    this.#files.forEach(fileObj => {
+      filesContainer.appendChild(this.#renderFileItem(fileObj));
+    });
+    container.append(header, filesContainer);
+    return container;
+  }
+  #renderFileItem(fileObj) {
+    const {
+      id,
+      file
+    } = fileObj;
+    const fileItem = document.createElement('fds-file-item');
+    const removeText = this.getAttribute('remove-text') || 'Fjern';
+    fileItem.setAttribute('remove-text', removeText);
+    fileItem.setFileData(file, id);
+    return fileItem;
+  }
+
+  /* -----------------------------
+     State updates
+  ----------------------------- */
+
+  #addFiles(fileList) {
+    const isFirstFile = this.#files.length === 0;
+    const incomingFiles = Array.from(fileList);
+    const allowedFiles = this.#inputEl?.multiple ? incomingFiles : incomingFiles.slice(0, Math.max(0, 1 - this.#files.length));
+    if (allowedFiles.length === 0) return;
+    const newFiles = allowedFiles.map(file => ({
+      id: generateAndVerifyUniqueId('file'),
+      file
+    }));
+    this.#files.push(...newFiles);
+
+    // Emit event with added files
+    this.dispatchEvent(new CustomEvent('files-added', {
+      detail: newFiles.map(f => f.file),
+      bubbles: true,
+      composed: true
+    }));
+
+    // If this is the first file, we must re-render to switch from dropzone view to file list view.
+    if (isFirstFile) {
+      this.#render();
+      return;
+    }
+    const filesContainer = this.querySelector('.fds-upload-files');
+    newFiles.forEach(fileObj => {
+      filesContainer?.appendChild(this.#renderFileItem(fileObj));
+    });
+  }
+  #removeFileByKey(key) {
+    // Find the file to remove before filtering
+    const removedFile = this.#files.find(f => f.id === key);
+
+    // Remove it from internal state
+    this.#files = this.#files.filter(f => f.id !== key);
+    const fileItem = this.querySelector(`fds-file-item[data-file-key="${key}"]`);
+    if (fileItem) {
+      fileItem.remove();
+    }
+
+    // Emit event with removed file
+    if (removedFile) {
+      this.dispatchEvent(new CustomEvent('files-removed', {
+        detail: removedFile.file,
+        bubbles: true,
+        composed: true
+      }));
+    }
+
+    // Re-render to show dropzone if all files are removed
+    if (this.#files.length === 0) {
+      this.#render();
+    }
+  }
+  #updateRequiredStatus() {
+    const label = this.querySelector('label');
+    const input = this.#inputEl || this.querySelector('input[type="file"]');
+    showRequiredStatus(label, input, this.getAttribute('show-required-status'));
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.#onInputChange = e => this.#addFiles(e.target.files);
+    this.#onClick = e => {
+      if (this.#inputEl?.disabled) return;
+      const removeBtn = e.target.closest('.fds-upload-remove');
+      if (removeBtn) {
+        const fileKey = removeBtn.dataset.fileKey;
+        if (fileKey) {
+          this.#removeFileByKey(fileKey);
+          return;
+        }
+      }
+      const addMore = e.target.closest('.fds-upload-add-more');
+      if (addMore) {
+        if (!this.#inputEl?.multiple) return;
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.multiple = true;
+        input.style.display = 'none';
+        const cleanup = () => {
+          input.remove();
+          window.removeEventListener('focus', cleanup);
+        };
+        input.addEventListener('change', e => {
+          if (e.target.files?.length) {
+            this.#addFiles(e.target.files);
+          }
+          cleanup();
+        }, {
+          once: true
+        });
+        window.addEventListener('focus', cleanup, {
+          once: true
+        });
+        document.body.appendChild(input);
+        input.click();
+      }
+    };
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  getFiles() {
+    return this.#files.map(fileObj => ({
+      id: fileObj.id,
+      file: fileObj.file
+    }));
+  }
+  addError(message) {
+    let fileId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    const errorMessage = document.createElement('fds-error-message');
+    errorMessage.textContent = message;
+    if (fileId) {
+      errorMessage.setAttribute('targets', fileId);
+    }
+    this.appendChild(errorMessage);
+    this.#setupAccessibility();
+    return errorMessage;
+  }
+  removeError(errorElement) {
+    if (this.contains(errorElement)) {
+      errorElement.remove();
+      this.#setupAccessibility();
+    }
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.#initialized) return;
+    this.addEventListener('click', this.#onClick);
+    this.#setupObserver();
+    const existingDropzone = this.querySelector('.fds-upload-dropzone');
+    const existingFileList = this.querySelector('.fds-upload-file-list');
+    this.#dropzoneEl = existingDropzone;
+    this.#fileListEl = existingFileList;
+    if (existingDropzone) {
+      this.#hydrateExistingDropzone();
+    } else {
+      this.#setupInput(this.querySelector('input[type="file"]'));
+    }
+    if (!existingDropzone && !existingFileList) {
+      this.#render();
+    }
+    this.#setupAccessibility();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#initialized = false;
+    this.removeEventListener('click', this.#onClick);
+    this.#inputEl?.removeEventListener('change', this.#onInputChange);
+    if (this.#uploadObserver) {
+      this.#uploadObserver.disconnect();
+      this.#uploadObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (attribute === 'show-required-status' && oldValue !== newValue) {
+      this.#updateRequiredStatus();
+    }
+    if (['dropzone-prefix', 'dropzone-link', 'dropzone-suffix'].includes(attribute) && oldValue !== newValue) {
+      if (this.#files.length === 0) {
+        this.#updateDropzoneContent();
+      }
+    }
+    if (attribute === 'file-list-header' && oldValue !== newValue) {
+      this.#setText('.fds-upload-title', this.#getFileListHeader());
+    }
+    if (attribute === 'file-list-more' && oldValue !== newValue) {
+      this.#setText('.fds-upload-add-more', this.#getFileListMore());
+    }
+    if (attribute === 'remove-text' && oldValue !== newValue) {
+      this.#setFileItemsRemoveText();
+    }
+    if (attribute === 'heading-level' && oldValue !== newValue) {
+      this.#updateFileListHeadingLevel();
+    }
+  }
+
+  // #endregion
+}
+function registerUploadFile() {
+  if (customElements.get('fds-upload-file') === undefined) {
+    window.customElements.define('fds-upload-file', FDSUploadFile);
+  }
+}
+/* harmony default export */ const fds_upload_file = (registerUploadFile);
+;// ./src/js/custom-elements/upload-file/fds-file-item.js
+
+class FDSFileItem extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['remove-text'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #file = null;
+  #fileId = null;
+  #observer = null;
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getFileTypeIcon(file) {
+    const mimeType = file.type;
+    if (mimeType.startsWith('image/')) return 'file-image';
+    if (mimeType === 'application/pdf') return 'file-pdf';
+    if (mimeType.includes('word')) return 'file-word';
+    if (mimeType.includes('excel') || mimeType.includes('spreadsheet')) return 'file-excel';
+    return 'file';
+  }
+  #createFileIcon(file) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('icon-svg', 'fds-upload-file-icon');
+    svg.setAttribute('aria-hidden', 'true');
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    use.setAttribute('href', `#${this.#getFileTypeIcon(file)}`);
+    svg.appendChild(use);
+    return svg;
+  }
+  #getRemoveText() {
+    return this.getAttribute('remove-text') ?? 'Fjern';
+  }
+  #updateRemoveButtonText() {
+    const removeTextSpan = this.querySelector('.fds-upload-remove-text');
+    const removeButton = this.querySelector('.fds-upload-remove');
+    if (!removeTextSpan || !removeButton || !this.#file) return;
+    const removeText = this.#getRemoveText();
+    removeTextSpan.textContent = ` ${removeText}`;
+    removeButton.setAttribute('aria-label', `${removeText} ${this.#file.name}`);
+  }
+  #setupErrorObserver() {
+    if (this.#observer) {
+      this.#observer.disconnect();
+    }
+    this.#observer = new MutationObserver(() => {
+      this.#updateErrorState();
+    });
+    const uploadParent = this.closest('fds-upload-file');
+    if (uploadParent) {
+      const config = {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        attributeFilter: ['hidden', 'aria-hidden', 'targets']
+      };
+      this.#observer.observe(uploadParent, config);
+    }
+    this.#updateErrorState();
+  }
+  #updateErrorState() {
+    if (!this.#fileId) return;
+    const uploadParent = this.closest('fds-upload-file');
+    if (!uploadParent) return;
+    const allErrors = uploadParent.querySelectorAll('fds-error-message[targets]');
+    const matchingErrors = Array.from(allErrors).filter(errorEl => {
+      const targetsAttr = errorEl.getAttribute('targets');
+      if (!targetsAttr) return false;
+      const targets = targetsAttr.split(',').map(t => t.trim());
+      return targets.includes(this.#fileId);
+    });
+    this.classList.remove('fds-upload-file-item-error');
+    this.removeAttribute('aria-invalid');
+    this.removeAttribute('aria-describedby');
+    matchingErrors.forEach(errorEl => {
+      if (errorEl.parentElement !== this) {
+        this.appendChild(errorEl);
+      }
+    });
+    if (matchingErrors.length > 0) {
+      this.classList.add('fds-upload-file-item-error');
+      this.setAttribute('aria-invalid', 'true');
+      const errorIds = matchingErrors.map(error => error.id).filter(Boolean);
+      if (errorIds.length > 0) {
+        this.setAttribute('aria-describedby', errorIds.join(' '));
+      }
+    }
+  }
+  #render() {
+    if (!this.#file || !this.#fileId) return;
+    this.innerHTML = '';
+    this.className = 'fds-upload-file-item';
+    this.dataset.fileKey = this.#fileId;
+    this.setAttribute('role', 'listitem');
+    const row = document.createElement('div');
+    row.className = 'fds-upload-file-row';
+    const fileIcon = this.#createFileIcon(this.#file);
+    const name = document.createElement('span');
+    name.className = 'fds-upload-file-name';
+    name.textContent = this.#file.name;
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'fds-upload-remove';
+    remove.dataset.fileKey = this.#fileId;
+    const removeTextSpan = document.createElement('span');
+    removeTextSpan.className = 'fds-upload-remove-text';
+    removeTextSpan.textContent = ` ${this.#getRemoveText()}`;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('icon-svg');
+    svg.setAttribute('aria-hidden', 'true');
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    use.setAttribute('href', '#close');
+    svg.appendChild(use);
+    remove.appendChild(svg);
+    remove.appendChild(removeTextSpan);
+    remove.setAttribute('aria-label', `${this.#getRemoveText()} ${this.#file.name}`);
+    row.append(fileIcon, name, remove);
+    this.appendChild(row);
+    this.#setupErrorObserver();
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  setFileData(file, fileId) {
+    this.#file = file;
+    this.#fileId = fileId;
+    if (this.isConnected) {
+      this.#render();
+    }
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.#initialized) return;
+    if (this.#file && this.#fileId && !this.innerHTML) {
+      this.#render();
+    }
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#initialized = false;
+    if (this.#observer) {
+      this.#observer.disconnect();
+      this.#observer = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (attribute === 'remove-text' && oldValue !== newValue) {
+      if (this.#file && this.#fileId) {
+        this.#updateRemoveButtonText();
+      }
+    }
+  }
+
+  // #endregion
+}
+function registerFileItem() {
+  if (customElements.get('fds-file-item') === undefined) {
+    window.customElements.define('fds-file-item', FDSFileItem);
+  }
+}
+/* harmony default export */ const fds_file_item = (registerFileItem);
+;// ./src/js/custom-elements/date-picker/fds-date-picker-utils.js
+/**
+ * Get weekday index with Monday as 0
+ *
+ * @param {Date} date - Date to get weekday for
+ * @return {number} Weekday index (0=Mon..6=Sun)
+ */
+function getWeekday(date) {
+  const day = (date.getDay() + 6) % 7; // First day of the week changed from Sunday to Monday
+  return day;
+}
+
+/**
+ * Get the number of days in a month
+ *
+ * @param {Date} date - Any date in the month, for which you want the total number of days
+ * @return {number} The month's total number of days
+ */
+function totalDaysInMonth(date) {
+  const newDate = new Date(1990, 1, 1); // Date() uses an argument to create a timestamp of 00:00:00
+
+  newDate.setFullYear(date.getFullYear());
+  newDate.setMonth(date.getMonth() + 1);
+  newDate.setDate(0); // Sets the date to the last day of the previous month
+
+  return newDate.getDate();
+}
+
+/**
+ * Converts a date string to a Date object, setting time to 00:00:00.
+ * Accepts various separators: slash (/), dash (-), dot (.), or space.
+ * 
+ * @param {string} str - The date string in YYYY-MM-DD format (or DD-MM-YYYY if reverse is true)
+ * @param {boolean} [reverse=false] - If true, expects DD-MM-YYYY format; if false, expects YYYY-MM-DD format
+ * @return {Date} A new Date object (time set to 00:00:00), or invalid Date if string format is invalid
+ */
+function stringToDate(str) {
+  let reverse = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  if (typeof str !== 'string') {
+    return new Date('invalid');
+  }
+  let regex = /^(\d{4})[\/\-\. ](\d{1,2})[\/\-\. ](\d{1,2})$/; // Matches year first, e.g. YYYY-MM-DD
+  if (reverse) {
+    regex = /^(\d{1,2})[\/\-\. ](\d{1,2})[\/\-\. ](\d{4})$/; // Matches day first, e.g. DD-MM-YYYY
+  }
+  const match = str.match(regex);
+  if (match) {
+    if (reverse) {
+      const day = parseInt(match[1], 10);
+      const month = parseInt(match[2], 10) - 1;
+      const year = parseInt(match[3], 10);
+      return dateFromIntegers(year, month, day);
+    } else {
+      const year = parseInt(match[1], 10);
+      const month = parseInt(match[2], 10) - 1;
+      const day = parseInt(match[3], 10);
+      return dateFromIntegers(year, month, day);
+    }
+  } else {
+    return new Date('invalid');
+  }
+}
+
+/**
+ * Checks whether the date is a valid Date
+ *
+ * @param {*} date - The value to check if it's a valid Date object
+ * @return {boolean} True if the value is a valid Date object, false otherwise
+ */
+function isValidDate(date) {
+  return date instanceof Date && !isNaN(date.getTime());
+}
+
+/**
+ * Checks whether the string would be a valid Date if converted
+ *
+ * @param {*} date - The value to check if it's a valid Date object
+ * @return {boolean} True if the value is a valid Date object, false otherwise
+ */
+function isValidDateStr(str) {
+  const date = stringToDate(str);
+  return date instanceof Date && !isNaN(date.getTime());
+}
+
+/**
+ * Constrains a date to be within the specified range and sets time to 00:00:00
+ * 
+ * @param {Date} minDate - The minimum allowed date (lower bound, ignored if invalid)
+ * @param {Date} date - The date to constrain within the range
+ * @param {Date} maxDate - The maximum allowed date (upper bound, ignored if invalid)
+ * @return {Date} A new Date object with the constrained date, or invalid Date if input date is invalid
+ */
+function constrainDate(minDate, date, maxDate) {
+  if (!isValidDate(date)) {
+    return new Date('invalid');
+  }
+  date.setHours(0, 0, 0, 0);
+  if (isValidDate(minDate)) {
+    minDate.setHours(0, 0, 0, 0);
+  }
+  if (isValidDate(maxDate)) {
+    maxDate.setHours(0, 0, 0, 0);
+  }
+  if (isValidDate(minDate) && date < minDate) {
+    return minDate;
+  } else if (isValidDate(maxDate) && maxDate < date) {
+    return maxDate;
+  } else {
+    return date;
+  }
+}
+
+/**
+ * Create a date from integers with timestamp 00:00:00. Unlike new Date(yyyy, mm, dd) this function don't allow date roll overs.
+ *
+ * @param {number} year - The year in the date
+ * @param {number} month - The month in the date (0=January..11=December)
+ * @param {number} day - The day in the date
+ */
+function dateFromIntegers(year, month, day) {
+  if (!Number.isInteger(year) || !Number.isInteger(month) || !Number.isInteger(day)) {
+    throw new Error('dateFromIntegers() must receive integers');
+  }
+  if (0 <= month && month <= 11 && 0 <= year && year <= 9999) {
+    const totalMonthDays = totalDaysInMonth(new Date(year, month, 1));
+    if (1 <= day && day <= totalMonthDays) {
+      const date = new Date(1990, 1, 1); // Date() uses an argument to create a timestamp of 00:00:00
+      date.setFullYear(year);
+      date.setMonth(month);
+      date.setDate(day);
+      return date;
+    } else {
+      return new Date('invalid');
+    }
+  } else {
+    return new Date('invalid');
+  }
+}
+
+/**
+ * Format date as YYYY-MM-DD
+ *
+ * @param {Date} date - Date to format
+ * @return {string} ISO-like local date (YYYY-MM-DD)
+ */
+function ISOFormatFromDate(date) {
+  const year = String(date.getFullYear()).padStart(4, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Get the previous day
+ *
+ * @param {Date} date - Reference date
+ * @return {Date} New Date representing yesterday
+ */
+function getYesterday(date) {
+  const yesterday = new Date(date);
+  yesterday.setDate(yesterday.getDate() - 1);
+  return yesterday;
+}
+
+/**
+ * Get the next day
+ *
+ * @param {Date} date - Reference date
+ * @return {Date} New Date representing tomorrow
+ */
+function getTomorrow(date) {
+  const tomorrow = new Date(date);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  return tomorrow;
+}
+function getPrevWeek(date) {
+  const prevWeek = new Date(date);
+  prevWeek.setDate(prevWeek.getDate() - 7);
+  return prevWeek;
+}
+function getNextWeek(date) {
+  const nextWeek = new Date(date);
+  nextWeek.setDate(nextWeek.getDate() + 7);
+  return nextWeek;
+}
+function getPrevMonth(date) {
+  let day = date.getDate();
+  let month = date.getMonth();
+  let year = date.getFullYear();
+  let prevMonth = month - 1;
+  if (prevMonth === -1) {
+    prevMonth = 11;
+    year = year - 1;
+  }
+  const newDaysInMonth = totalDaysInMonth(new Date(year, prevMonth, 1));
+  if (newDaysInMonth < day) {
+    day = newDaysInMonth;
+  }
+  const newDate = new Date(1990, 1, 1); // Date() uses an argument to create a timestamp of 00:00:00
+  newDate.setFullYear(year); // Use setFullYear as new Date(year, month, date) would set year "20" to "1920"
+  newDate.setMonth(prevMonth);
+  newDate.setDate(day);
+  return newDate;
+}
+function getNextMonth(date) {
+  let day = date.getDate();
+  let month = date.getMonth();
+  let year = date.getFullYear();
+  let nextMonth = month + 1;
+  if (nextMonth === 12) {
+    nextMonth = 0;
+    year = year + 1;
+  }
+  const newDaysInMonth = totalDaysInMonth(new Date(year, nextMonth, 1));
+  if (newDaysInMonth < day) {
+    day = newDaysInMonth;
+  }
+  const newDate = new Date(1990, 1, 1); // Date() uses an argument to create a timestamp of 00:00:00
+  newDate.setFullYear(year); // Use setFullYear as new Date(year, month, date) would set year "20" to "1920"
+  newDate.setMonth(nextMonth);
+  newDate.setDate(day);
+  return newDate;
+}
+function getPrevYear(date) {
+  let day = date.getDate();
+  const month = date.getMonth();
+  let year = date.getFullYear();
+  let prevYear = year - 1;
+  const newDaysInMonth = totalDaysInMonth(new Date(prevYear, month, 1));
+  if (newDaysInMonth < day) {
+    day = newDaysInMonth;
+  }
+  const newDate = new Date(1990, 1, 1); // Date() uses an argument to create a timestamp of 00:00:00
+  newDate.setFullYear(prevYear); // Use setFullYear as new Date(year, month, date) would set year "20" to "1920"
+  newDate.setMonth(month);
+  newDate.setDate(day);
+  return newDate;
+}
+function getNextYear(date) {
+  let day = date.getDate();
+  const month = date.getMonth();
+  let year = date.getFullYear();
+  let nextYear = year + 1;
+  const newDaysInMonth = totalDaysInMonth(new Date(nextYear, month, 1));
+  if (newDaysInMonth < day) {
+    day = newDaysInMonth;
+  }
+  const newDate = new Date(1990, 1, 1); // Date() uses an argument to create a timestamp of 00:00:00
+  newDate.setFullYear(nextYear); // Use setFullYear as new Date(year, month, date) would set year "20" to "1920"
+  newDate.setMonth(month);
+  newDate.setDate(day);
+  return newDate;
+}
+
+/**
+ * Checks if two dates are exactly the same
+ * 
+ * @param {Date} date1 - The first date to compare
+ * @param {Date} date2 - The second date to compare
+ * @returns {boolean} True if the dates are exactly equal, false otherwise
+ */
+function datesAreEqual(date1, date2) {
+  if (!isValidDate(date1) || !isValidDate(date2)) {
+    return false;
+  }
+  return date1.getTime() === date2.getTime();
+}
+;// ./src/js/custom-elements/date-picker/fds-date-picker.js
+
+
+
+class FDSDatePicker extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['show-required-status', 'format', 'text-open', 'text-selecteddate', 'text-months'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #datePickerObserver = null;
+  #handleDatePickerButtonClick;
+  #handleFocusOut;
+  #handleDateSelection;
+  #handleDateClick;
+  #handleCloseClick;
+  #handleInput;
+  #handlePageShow;
+  #handleKeydown;
+  #MONTHS = ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december'];
+  #FORMATS = ['DD/MM/YYYY', 'DD-MM-YYYY', 'DD.MM.YYYY', 'DD MM YYYY', 'DD/MM-YYYY'];
+  #textOpen = 'Åbn datovælger';
+  #textSelectedDate = 'valgt dato er DAY. MONTH YEAR';
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = (records, observer) => {
+    const wrapperHiddenChanged = records.some(record => record.attributeName === 'hidden' && record.target === this);
+    if (wrapperHiddenChanged) {
+      notifySummaryOnVisibilityChange(this);
+    }
+    const shouldUpdate = records.some(record => this.#hasRelevantMutationHappened(record.addedNodes, record.removedNodes, record.target, record.attributeName));
+    if (shouldUpdate) {
+      this.#setupInput();
+      this.#setupLabel();
+      if (this.hasAttribute('show-required-status')) {
+        const label = this.querySelector('label');
+        const input = this.querySelector('input');
+        showRequiredStatus(label, input, this.getAttribute('show-required-status'));
+      }
+      if (this.querySelector('.date-button')) {
+        this.querySelector('input')?.hasAttribute('disabled') ? this.querySelector('.date-button').setAttribute('disabled', '') : this.querySelector('.date-button').removeAttribute('disabled');
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupLabel() {
+    const label = this.querySelector('label');
+    if (!label) return;
+    const input = this.querySelector('input');
+    if (input) {
+      label.classList.toggle('disabled', input.hasAttribute('disabled'));
+    }
+  }
+  #setupInput() {
+    const input = this.querySelector('input');
+    if (!input) return;
+
+    /* Add or remove aria-describedby */
+
+    input.removeAttribute('aria-describedby');
+    const idsForAriaDescribedby = [];
+    let isInvalid = false;
+    const errorMessages = this.querySelectorAll('fds-error-message');
+    const helpTexts = this.querySelectorAll('fds-help-text');
+    const ariaDescribedbyElements = [...errorMessages, ...helpTexts];
+    for (const element of ariaDescribedbyElements) {
+      const notDisplayNone = window.getComputedStyle(element).display !== 'none';
+      const notAriaHidden = !element.hasAttribute('aria-hidden') || element.getAttribute('aria-hidden') === 'false';
+      const visibleToScreenReaders = notDisplayNone && notAriaHidden;
+      if (element.id && visibleToScreenReaders) {
+        idsForAriaDescribedby.push(element.id);
+        if (element.tagName === 'FDS-ERROR-MESSAGE') {
+          isInvalid = true;
+        }
+      }
+    }
+    idsForAriaDescribedby.length > 0 ? input.setAttribute('aria-describedby', idsForAriaDescribedby.join(' ')) : input.removeAttribute('aria-describedby');
+    isInvalid ? input.setAttribute('aria-invalid', 'true') : input.removeAttribute('aria-invalid');
+  }
+  #init() {
+    if (this.#initialized) return;
+
+    /* Confirm that the element was initialized with the required elements */
+
+    const label = this.querySelector('label');
+    const input = this.querySelector('div input');
+    const grid = this.querySelector('div fds-date-picker-grid');
+    if (!label || !input || !grid) return;
+
+    /* Add mutation observer */
+
+    this.#setupObserver();
+
+    /* Setup elements */
+
+    associateLabelWithElement(label, input, 'datp');
+    this.#setupInput();
+    this.#setupLabel();
+
+    /* Update text */
+
+    if (this.hasAttribute('text-open')) {
+      this.#textOpen = this.getAttribute('text-open');
+    }
+    if (this.hasAttribute('text-selecteddate')) {
+      this.#textSelectedDate = this.getAttribute('text-selecteddate');
+    }
+    if (this.hasAttribute('text-months')) {
+      this.#updateTextMonths(this.getAttribute('text-months'));
+    }
+
+    /* Add date picker button next to the input */
+
+    const dateButton = this.querySelector('.date-button') || document.createElement('button');
+    if (!dateButton.querySelector('svg')) {
+      dateButton.setAttribute('aria-haspopup', 'dialog');
+      dateButton.classList.add('button', 'button-icon-only', 'date-button');
+      dateButton.setAttribute('aria-label', this.#textOpen);
+      dateButton.setAttribute('type', 'button');
+      const svg = createSvgIcon("M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z");
+      dateButton.appendChild(svg);
+    }
+    input.insertAdjacentElement('afterend', dateButton);
+    input.parentElement.classList.add('input-wrapper');
+
+    /* Add close button and setup dialog */
+
+    const closeButtonContainer = this.querySelector('[tabindex="-1"]') || document.createElement('div');
+    closeButtonContainer.setAttribute('tabindex', '-1');
+    const closeButton = this.querySelector('.close-button') || document.createElement('button');
+    closeButton.textContent = 'Luk';
+    closeButton.setAttribute('type', 'button');
+    closeButton.classList.add('close-button', 'function-link');
+    if (!closeButton.querySelector('svg')) {
+      const svgClose = createSvgIcon('m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z');
+      closeButton.prepend(svgClose);
+    }
+    if (!closeButtonContainer.querySelector('.close-button')) {
+      closeButtonContainer.appendChild(closeButton);
+    }
+
+    /* Add wrapper for fds-date-picker-grid and close button */
+
+    const datePicker = grid.parentElement;
+    datePicker.classList.add('ce-date-picker', 'd-none');
+    datePicker.setAttribute('role', 'dialog');
+    datePicker.setAttribute('aria-modal', 'false');
+    datePicker.appendChild(closeButtonContainer);
+    this.#initialized = true;
+  }
+  #setupObserver() {
+    if (this.#datePickerObserver) return;
+    this.#datePickerObserver = new MutationObserver(this.#handleMutations);
+    this.#datePickerObserver.observe(this, mutationObserverConfig);
+  }
+  #hasRelevantMutationHappened(addedNodes, removedNodes, target, attributeName) {
+    if (attributeName === 'disabled' && target?.tagName === 'INPUT' || attributeName === 'required' && target?.tagName === 'INPUT' || attributeName === 'class' && target?.tagName !== 'LABEL' || attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden') {
+      return true;
+    }
+    const relevantTagNames = ['LABEL', 'INPUT', 'FDS-ERROR-MESSAGE', 'FDS-HELP-TEXT'];
+    const allNodes = [...addedNodes, ...removedNodes];
+    return allNodes.some(node => relevantTagNames.includes(node?.tagName));
+  }
+  #updateDateButton(date) {
+    if (isValidDate(date)) {
+      const day = date.getDate();
+      const month = date.getMonth();
+      const year = date.getFullYear();
+      const ariaLabel = this.#textSelectedDate.replace('DAY', day).replace('MONTH', this.#MONTHS[month]).replace('YEAR', year);
+      this.querySelector('.date-button').setAttribute('aria-label', `${this.#textOpen}, ${ariaLabel}`);
+    } else {
+      this.querySelector('.date-button').setAttribute('aria-label', this.#textOpen);
+    }
+  }
+  #updateSelectedDateAttr(date) {
+    if (isValidDate(date)) {
+      this.querySelector('fds-date-picker-grid').setAttribute('selected-date', ISOFormatFromDate(date));
+    } else {
+      this.querySelector('fds-date-picker-grid').setAttribute('selected-date', '');
+    }
+  }
+  #closeOnFocusOut(event) {
+    if (!this.contains(event.relatedTarget)) {
+      // If anything is entered in the input field, the date picker must match
+      if (this.querySelector('input').value !== '') {
+        const dayMonthYearFormat = true;
+        const date = stringToDate(this.querySelector('input').value, dayMonthYearFormat);
+        this.#updateDateButton(date);
+        this.#updateSelectedDateAttr(date);
+      }
+      this.close();
+    }
+  }
+  #datePickerButtonClicked() {
+    if (this.querySelector('input').value !== '') {
+      const dayMonthYearFormat = true;
+      const date = stringToDate(this.querySelector('input').value, dayMonthYearFormat);
+      this.#updateDateButton(date);
+      this.#updateSelectedDateAttr(date);
+    }
+    this.toggle();
+    if (!this.querySelector('.ce-date-picker').classList.contains('d-none')) {
+      this.querySelector('fds-date-picker-grid').focusFocusableDate();
+    }
+  }
+  #dateSelected() {
+    const selectedDate = stringToDate(this.querySelector('fds-date-picker-grid').getAttribute('selected-date'));
+    this.#updateDateButton(selectedDate);
+
+    // Update value in input field unless focus is on the input - otherwise, you risk moving the caret during typing
+    if (document.activeElement !== this.querySelector('input')) {
+      if (isValidDate(selectedDate)) {
+        let format = this.#FORMATS[0];
+        if (this.hasAttribute('format') && this.#FORMATS.includes(this.getAttribute('format'))) {
+          format = this.getAttribute('format');
+        }
+        const dayWithZeros = String(selectedDate.getDate()).padStart(2, '0');
+        const monthWithZeros = String(selectedDate.getMonth() + 1).padStart(2, '0');
+        const yearWithZeros = String(selectedDate.getFullYear()).padStart(4, '0');
+        this.querySelector('input').value = format.replace('DD', dayWithZeros).replace('MM', monthWithZeros).replace('YYYY', yearWithZeros);
+      }
+    }
+  }
+  #closeAndFocusButton() {
+    this.close();
+    this.querySelector('.date-button').focus();
+  }
+  #inputUpdated(event) {
+    const dayMonthYearFormat = true;
+    const inputDate = stringToDate(event.target.value, dayMonthYearFormat);
+    if (isValidDate(inputDate)) {
+      this.querySelector('fds-date-picker-grid').setAttribute('selected-date', ISOFormatFromDate(inputDate));
+    } else {
+      this.querySelector('fds-date-picker-grid').setAttribute('selected-date', '');
+    }
+  }
+  #updateOnPageshow() {
+    let date = new Date('invalid');
+    if (this.querySelector('input').value !== '') {
+      const dayMonthYearFormat = true;
+      date = stringToDate(this.querySelector('input').value, dayMonthYearFormat);
+      this.#updateDateButton(date);
+      this.#updateSelectedDateAttr(date); // The value in the input field supersedes the selected-date attribute
+    } else if (this.querySelector('fds-date-picker-grid').hasAttribute('selected-date')) {
+      date = stringToDate(this.querySelector('fds-date-picker-grid').getAttribute('selected-date'));
+      this.#updateDateButton(date);
+      this.#dateSelected();
+    }
+  }
+  #keyboardNavigation(event) {
+    switch (event.key) {
+      case 'Tab':
+        const previousButton = this.querySelector('fds-date-picker-grid').shadowRoot.querySelector('.previous-month');
+        const monthSelect = this.querySelector('fds-date-picker-grid').shadowRoot.querySelector('.selected-month');
+        if (event.shiftKey) {
+          const path = event.composedPath();
+          const innerTarget = path[0];
+          if (innerTarget === monthSelect && previousButton.hasAttribute('disabled') || innerTarget === previousButton) {
+            event.preventDefault();
+            this.querySelector('.close-button').focus();
+          }
+        } else {
+          if (event.target === this.querySelector('.close-button')) {
+            event.preventDefault();
+            if (!previousButton.hasAttribute('disabled')) {
+              previousButton.focus();
+            } else {
+              monthSelect.focus();
+            }
+          }
+        }
+        break;
+      case 'Escape':
+        this.#closeAndFocusButton();
+        break;
+    }
+  }
+  #updateTextMonths(str) {
+    const newMonths = str.split(" ");
+    if (newMonths.length === 12) {
+      this.#MONTHS = newMonths;
+      this.querySelector('fds-date-picker-grid')?.setAttribute('text-months', str);
+    }
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+
+    /* Set up instance fields for event handling */
+
+    this.#handleDatePickerButtonClick = () => {
+      this.#datePickerButtonClicked();
+    };
+    this.#handleFocusOut = event => {
+      this.#closeOnFocusOut(event);
+    };
+    this.#handleDateSelection = () => {
+      this.#dateSelected();
+    };
+    this.#handleDateClick = () => {
+      this.#closeAndFocusButton();
+    };
+    this.#handleCloseClick = () => {
+      this.#closeAndFocusButton();
+    };
+    this.#handleInput = event => {
+      this.#inputUpdated(event);
+    };
+    this.#handlePageShow = () => {
+      this.#updateOnPageshow();
+    };
+    this.#handleKeydown = event => {
+      this.#keyboardNavigation(event);
+    };
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  open() {
+    if (!this.querySelector('.ce-date-picker')) return;
+    this.querySelector('.ce-date-picker').classList.remove('d-none');
+    this.querySelector('fds-date-picker-grid').resizeMonth();
+  }
+  close() {
+    if (!this.querySelector('.ce-date-picker')) return;
+    this.querySelector('.ce-date-picker').classList.add('d-none');
+  }
+  toggle() {
+    if (!this.querySelector('.ce-date-picker')) return;
+    this.querySelector('.ce-date-picker').classList.toggle('d-none');
+    this.querySelector('fds-date-picker-grid').resizeMonth();
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.#initialized) return;
+    this.#init();
+    const label = this.querySelector('label');
+    const input = this.querySelector('input');
+    if (this.hasAttribute('show-required-status')) {
+      showRequiredStatus(label, input, this.getAttribute('show-required-status'));
+    }
+
+    // Add event listeners
+    this.querySelector('.date-button')?.addEventListener('click', this.#handleDatePickerButtonClick, false);
+    this.addEventListener('focusout', this.#handleFocusOut, false);
+    this.querySelector('fds-date-picker-grid')?.addEventListener('date-selected', this.#handleDateSelection, false);
+    this.querySelector('fds-date-picker-grid')?.addEventListener('date-clicked', this.#handleDateClick, false);
+    this.querySelector('.close-button')?.addEventListener('click', this.#handleCloseClick, false);
+    this.querySelector('input')?.addEventListener('input', this.#handleInput, false);
+    this.querySelector('.ce-date-picker')?.addEventListener('keydown', this.#handleKeydown, false);
+
+    // Handles previously entered input when using the browser's back button
+    window.addEventListener('pageshow', this.#handlePageShow, false);
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#initialized = false;
+    if (this.#datePickerObserver) {
+      this.#datePickerObserver.disconnect();
+      this.#datePickerObserver = null;
+    }
+    this.querySelector('.date-button')?.removeEventListener('click', this.#handleDatePickerButtonClick, false);
+    this.removeEventListener('focusout', this.#handleFocusOut, false);
+    this.querySelector('fds-date-picker-grid')?.removeEventListener('date-selected', this.#handleDateSelection, false);
+    this.querySelector('fds-date-picker-grid')?.removeEventListener('date-clicked', this.#handleDateClick, false);
+    this.querySelector('.close-button')?.removeEventListener('click', this.#handleCloseClick, false);
+    this.querySelector('input')?.removeEventListener('input', this.#handleInput, false);
+    this.querySelector('.ce-date-picker')?.removeEventListener('keydown', this.#handleKeydown, false);
+    window.removeEventListener('pageshow', this.#handlePageShow, false);
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (attribute === 'show-required-status' && oldValue !== newValue) {
+      const label = this.querySelector('label');
+      const input = this.querySelector('input');
+      showRequiredStatus(label, input, newValue);
+    }
+    if (attribute === 'format' && oldValue !== newValue) {
+      if (document.activeElement !== this.querySelector('input')) {
+        // If the new format is valid...
+        if (this.hasAttribute('format') && this.#FORMATS.includes(newValue)) {
+          const dayMonthYearFormat = true;
+          const date = stringToDate(this.querySelector('input').value, dayMonthYearFormat);
+
+          // ...and if the input field contains a valid date...
+          if (isValidDate(date)) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = String(date.getFullYear()).padStart(4, '0');
+
+            // ...then update the date displayed
+            this.querySelector('input').value = newValue.replace('DD', day).replace('MM', month).replace('YYYY', year);
+          }
+        }
+      }
+    }
+    if (attribute === 'text-open') {
+      this.#textOpen = newValue;
+    }
+    if (attribute === 'text-selecteddate') {
+      // Check that string contains exactly one "DAY", one "MONTH", and one "YEAR" substring
+      const dayCount = (newValue.match(/DAY/g) || []).length;
+      const monthCount = (newValue.match(/MONTH/g) || []).length;
+      const yearCount = (newValue.match(/YEAR/g) || []).length;
+      if (dayCount === 1 && monthCount === 1 && yearCount === 1) {
+        this.#textSelectedDate = newValue;
+      }
+    }
+    if (attribute === 'text-months') {
+      this.#updateTextMonths(newValue);
+    }
+  }
+
+  // #endregion
+}
+function registerDatePicker() {
+  if (customElements.get('fds-date-picker') === undefined) {
+    window.customElements.define('fds-date-picker', FDSDatePicker);
+  }
+}
+/* harmony default export */ const fds_date_picker = (registerDatePicker);
+;// ./src/js/custom-elements/date-picker/fds-date-picker-grid-styling.js
+const styles = `
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        border: 0;
+        user-select: none;
+        white-space: nowrap;
+    }
+
+    button,
+    select {
+        text-transform: none;
+        appearance: none;
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    button:focus,
+    input:focus,
+    select:focus {
+        outline: 3px solid #454545;
+        outline-offset: 1px;
+    }
+
+    :host {
+        display: block;
+        border: 1px solid #8E8E8E;
+        background-color: white;
+        max-width: calc(7 * 40px + 8 * 0.4rem + 2px);
+        border-radius: 8px;
+        overflow: auto;
+    }
+
+    .grid-container {
+        width: fit-content;
+    }
+
+    .grid-container:focus {
+        outline: 0;
+    }
+
+    .date-picker-header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #F5F5F5;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        min-width: 220px;
+        position: relative;
+        z-index: 3;
+    }
+
+    .month-year-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .month-wrapper,
+    .year-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    .select-arrow {
+        position: absolute;
+        width: 24px;
+        right: 0;
+        pointer-events: none;
+    }
+
+    .selected-month,
+    .selected-year {
+        border: 0;
+        background-color: #F5F5F5;
+        border-radius: 8px;
+        background-position: 100%;
+        background-size: 2.4rem;
+        padding-right: 24px;
+        padding-left: 8px;
+        font-weight: 600;
+        height: calc(1.6rem + 24px);
+    }
+
+    .selected-month:hover,
+    .selected-year:hover {
+        background-color: #DCDCDC;
+    }
+
+    .selected-month:active,
+    .selected-year:active {
+        background-color: #BFBFBF;
+    }
+
+    .selected-month:focus,
+    .selected-year:focus {
+        outline-offset: -3px;
+    }
+
+    .selected-month option,
+    .selected-year option {
+        background-color: #ffffff;
+    }
+
+    .previous-month,
+    .next-month {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.5;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        margin: 0;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        font-weight: inherit;
+        font-size: 1.6rem;
+        min-height: 32px;
+        padding: 2px;
+        border-width: 2px;
+        border-style: solid;
+        text-decoration: none;
+        border-color: transparent;
+        color: #1a1a1a;
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    .previous-month {
+        margin-left: 4px;
+    }
+
+    .next-month {
+        margin-right: 4px;
+    }
+
+    .previous-month:hover,
+    .next-month:hover {
+        border-color: #DCDCDC;
+        color: #1a1a1a;
+        background-color: #DCDCDC;
+    }
+
+    .previous-month:active,
+    .next-month:active {
+        border-color: #BFBFBF;
+        color: #1a1a1a;
+        background-color: #BFBFBF;
+    }
+
+    .previous-month:disabled,
+    .next-month:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+        box-shadow: none !important;
+        border-color: transparent;
+        color: #1a1a1a;
+        background-color: transparent;
+    }
+
+    .previous-month svg,
+    .next-month svg {
+        margin: 0;
+        fill: currentColor;
+        width: 2.4rem;
+        pointer-events: none;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0.4rem;
+        min-width: 220px;
+    }
+
+    thead th {
+        position: relative;
+        font-size: 1.4rem;
+        font-weight: 400;
+        height: 40px;
+    }
+
+    thead th span[aria-hidden="true"] {
+        position: relative;
+        z-index: 1;
+        top: -4px;
+    }
+
+    thead th::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        background-color: #F5F5F5;
+        display: block;
+        left: calc(0rem - 0.4rem);
+        top: calc(0rem - 0.4rem - 4px);
+        width: calc(100% + 2 * 0.4rem);
+        height: calc(100% + 2 * 0.4rem);
+        border-bottom: 1px solid #DCDCDC;
+    }
+
+    td {
+        height: 40px;
+        width: 40px;
+        max-width: 40px;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    td[data-date]:focus {
+        outline: 3px solid #454545;
+        outline-offset: 1px;
+    }
+
+    td:not([data-date]):focus {
+        outline: none;
+    }
+
+    td[aria-selected] {
+        cursor: pointer;
+    }
+
+    td[aria-selected]:hover {
+        background-color: #DCDCDC;
+    }
+
+    td[aria-selected="true"],
+    td[aria-selected="true"]:hover {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+
+    td[aria-disabled="true"] {
+        color: #BFBFBF;
+    }
+
+    td[aria-disabled="true"]:focus {
+        outline: none;
+    }
+
+    td[aria-current="date"] {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+`;
+;// ./src/js/custom-elements/date-picker/fds-date-picker-grid.js
+
+
+
+const CHEVRON_DOWN_PATH = 'M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z';
+const CHEVRON_LEFT_PATH = 'M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z';
+const CHEVRON_RIGHT_PATH = 'M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z';
+const sheet = new CSSStyleSheet();
+sheet.replaceSync(styles);
+class FDSDatePickerGrid extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['min-date', 'max-date', 'selected-date', 'default-date', 'text-months', 'text-days', 'text-prevbutton', 'text-nextbutton', 'text-date-announcement', 'text-mindate', 'text-maxdate'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #previousMinDate;
+  #previousMaxDate;
+  #correctedMinDate;
+  #correctedMaxDate;
+  #MONTHS = ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december'];
+  #DAYS = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
+  #GRID_ROWS = 6; // To avoid potential height changes when changing month, the calendar grid has a fixed set of rows
+  #TOTAL_GRIDCELLS;
+  #CELL_DATE_FORMAT = 'DAY. MONTH YEAR';
+  #DEFAULT_MIN_DATE;
+  #DEFAULT_MAX_DATE;
+  #handleChangeMonth;
+  #handleChangeYear;
+  #handlePrevMonth;
+  #handleNextMonth;
+  #handleDateClick;
+  #textMinDate;
+  #textMaxDate;
+  #hasDatePickerConnection;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleKeydown = event => {
+    if (event.target.hasAttribute('data-date')) {
+      const focusedDay = stringToDate(event.target.getAttribute('data-date'));
+      const minDate = this.#correctedMinDate;
+      const maxDate = this.#correctedMaxDate;
+      switch (event.key) {
+        case 'ArrowLeft':
+          event.preventDefault();
+          let yesterday = getYesterday(focusedDay);
+          if (yesterday < minDate) {
+            yesterday = minDate;
+          }
+          this.#redraw(yesterday, true);
+          break;
+        case 'ArrowRight':
+          event.preventDefault();
+          let tomorrow = getTomorrow(focusedDay);
+          if (maxDate < tomorrow) {
+            tomorrow = maxDate;
+          }
+          this.#redraw(tomorrow, true);
+          break;
+        case 'ArrowUp':
+          event.preventDefault();
+          let prevWeek = getPrevWeek(focusedDay);
+          if (prevWeek < minDate) {
+            prevWeek = minDate;
+          }
+          this.#redraw(prevWeek, true);
+          break;
+        case 'ArrowDown':
+          event.preventDefault();
+          let nextWeek = getNextWeek(focusedDay);
+          if (maxDate < nextWeek) {
+            nextWeek = maxDate;
+          }
+          this.#redraw(nextWeek, true);
+          break;
+        case 'Enter':
+        case ' ':
+          event.preventDefault();
+          this.setAttribute('selected-date', event.target.getAttribute('data-date'));
+          this.dispatchEvent(new Event('date-clicked'));
+          break;
+        case 'PageDown':
+          event.preventDefault();
+          if (event.shiftKey) {
+            let nextYear = getNextYear(focusedDay);
+            if (maxDate < nextYear) {
+              nextYear = maxDate;
+            }
+            this.#redraw(nextYear, true);
+          } else {
+            let nextMonth = getNextMonth(focusedDay);
+            if (maxDate < nextMonth) {
+              nextMonth = maxDate;
+            }
+            this.#redraw(nextMonth, true);
+          }
+          break;
+        case 'PageUp':
+          event.preventDefault();
+          if (event.shiftKey) {
+            let prevYear = getPrevYear(focusedDay);
+            if (prevYear < minDate) {
+              prevYear = minDate;
+            }
+            this.#redraw(prevYear, true);
+          } else {
+            let prevMonth = getPrevMonth(focusedDay);
+            if (prevMonth < minDate) {
+              prevMonth = minDate;
+            }
+            this.#redraw(prevMonth, true);
+          }
+          break;
+        case 'Home':
+          event.preventDefault();
+          // Go to first day of the month
+          if (event.ctrlKey) {
+            const month = parseInt(this.shadowRoot.querySelector('.selected-month').value, 10);
+            const year = parseInt(this.shadowRoot.querySelector('.selected-year').value, 10);
+            let firstDay = dateFromIntegers(year, month, 1);
+            if (firstDay < minDate) {
+              firstDay = minDate;
+            }
+            this.#redraw(firstDay, true);
+          }
+          // Go to first day of the week (Monday)
+          else {
+            const weekDay = getWeekday(focusedDay);
+            if (weekDay !== 0) {
+              let monday = new Date(focusedDay);
+              monday.setDate(focusedDay.getDate() - weekDay);
+              if (monday < minDate) {
+                monday = minDate;
+              }
+              this.#redraw(monday, true);
+            }
+          }
+          break;
+        case 'End':
+          event.preventDefault();
+          // Go to last day of the month
+          if (event.ctrlKey) {
+            const month = parseInt(this.shadowRoot.querySelector('.selected-month').value, 10);
+            const year = parseInt(this.shadowRoot.querySelector('.selected-year').value, 10);
+            const day = totalDaysInMonth(dateFromIntegers(year, month, 1));
+            let lastDay = dateFromIntegers(year, month, day);
+            if (maxDate < lastDay) {
+              lastDay = maxDate;
+            }
+            this.#redraw(lastDay, true);
+          }
+          // Go to last day of the week (Sunday)
+          else {
+            const weekDay = getWeekday(focusedDay);
+            if (weekDay !== 6) {
+              let sunday = new Date(focusedDay);
+              sunday.setDate(focusedDay.getDate() + (6 - weekDay));
+              if (maxDate < sunday) {
+                sunday = maxDate;
+              }
+              this.#redraw(sunday, true);
+            }
+          }
+          break;
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #init() {
+    if (this.#initialized) return;
+    this.#create();
+
+    // Determine which date to place the focus on in the grid
+    let dateToFocus = new Date();
+    if (this.getAttribute('selected-date')) {
+      dateToFocus = stringToDate(this.getAttribute('selected-date'));
+    } else if (this.getAttribute('default-date')) {
+      dateToFocus = stringToDate(this.getAttribute('default-date'));
+    }
+    this.#redraw(dateToFocus, false);
+    this.#initialized = true;
+  }
+  #create() {
+    const gridContainer = document.createElement('div');
+    gridContainer.classList.add('grid-container');
+    gridContainer.setAttribute('tabindex', '-1'); // Used to prevent focus from escaping when non-clickable items are clicked
+    this.shadowRoot.appendChild(gridContainer);
+
+    /* Create the date picker header with previous button, next button, year selection, and month selection */
+
+    const datePickerHeader = document.createElement('div');
+    datePickerHeader.classList.add('date-picker-header');
+
+    // sr messages
+    const srMessage = document.createElement('span');
+    srMessage.classList.add('sr-only');
+    srMessage.setAttribute('aria-live', 'polite');
+    datePickerHeader.appendChild(srMessage);
+
+    // Previous button
+    const prevButton = document.createElement('button');
+    prevButton.classList.add('previous-month');
+    prevButton.setAttribute('type', 'button');
+    const svgPrev = createSvgIcon(CHEVRON_LEFT_PATH);
+    const prevButtonSR = document.createElement('span');
+    prevButtonSR.textContent = 'Forrige';
+    prevButtonSR.classList.add('sr-only');
+    prevButton.appendChild(svgPrev);
+    prevButton.appendChild(prevButtonSR);
+    datePickerHeader.appendChild(prevButton);
+
+    // Wrapper for month and year
+    const monthYearWrapper = document.createElement('div');
+    monthYearWrapper.classList.add('month-year-wrapper');
+
+    // Select month
+    const monthWrapper = document.createElement('div');
+    monthWrapper.classList.add('month-wrapper');
+    const monthSelect = document.createElement('select');
+    monthSelect.setAttribute('name', 'month');
+    monthSelect.setAttribute('aria-label', 'Måned');
+    monthSelect.classList.add('selected-month');
+    for (let i = 0; i < this.#MONTHS.length; i++) {
+      monthSelect.innerHTML += `<option value="${i}">${this.#MONTHS[i].charAt(0).toUpperCase() + this.#MONTHS[i].slice(1)}</option>`;
+    }
+    monthWrapper.appendChild(monthSelect);
+    const svgArrow = createSvgIcon(CHEVRON_DOWN_PATH);
+    svgArrow.classList.add('select-arrow');
+    monthWrapper.appendChild(svgArrow);
+    monthYearWrapper.appendChild(monthWrapper);
+
+    // Select year
+    const yearWrapper = document.createElement('div');
+    yearWrapper.classList.add('year-wrapper');
+    const yearSelect = document.createElement('select');
+    yearSelect.setAttribute('name', 'year');
+    yearSelect.setAttribute('aria-label', 'År');
+    yearSelect.classList.add('selected-year');
+    yearWrapper.appendChild(yearSelect);
+    const svgYearArrow = createSvgIcon(CHEVRON_DOWN_PATH);
+    svgYearArrow.classList.add('select-arrow');
+    yearWrapper.appendChild(svgYearArrow);
+    monthYearWrapper.appendChild(yearWrapper);
+    datePickerHeader.appendChild(monthYearWrapper);
+
+    // Next button
+    const nextButton = document.createElement('button');
+    nextButton.classList.add('next-month');
+    nextButton.setAttribute('type', 'button');
+    const svgNext = createSvgIcon(CHEVRON_RIGHT_PATH);
+    const nextButtonSR = document.createElement('span');
+    nextButtonSR.textContent = 'Næste';
+    nextButtonSR.classList.add('sr-only');
+    nextButton.appendChild(svgNext);
+    nextButton.appendChild(nextButtonSR);
+    datePickerHeader.appendChild(nextButton);
+    gridContainer.appendChild(datePickerHeader);
+
+    /* The grid with dates */
+
+    if (this.hasAttribute('text-mindate')) {
+      this.#textMinDate = this.getAttribute('text-mindate');
+    }
+    if (this.hasAttribute('text-maxdate')) {
+      this.#textMaxDate = this.getAttribute('text-maxdate');
+    }
+    const grid = document.createElement('table');
+    grid.setAttribute('role', 'grid');
+    grid.classList.add('date-picker-grid');
+    const gridHead = document.createElement('thead');
+    const gridHeadRow = document.createElement('tr');
+    for (let i = 0; i < this.#DAYS.length; i++) {
+      const gridHeader = document.createElement('th');
+      gridHeader.setAttribute('scope', 'col');
+      gridHeader.innerHTML = `<span aria-hidden="true">${this.#DAYS[i].slice(0, 2)}</span><span class="sr-only">${this.#DAYS[i]}</span>`;
+      gridHeadRow.appendChild(gridHeader);
+    }
+    gridHead.appendChild(gridHeadRow);
+    grid.appendChild(gridHead);
+    const gridBody = document.createElement('tbody');
+    for (let i = 0; i < this.#GRID_ROWS; i++) {
+      const gridBodyRow = document.createElement('tr');
+      for (let j = 0; j < this.#DAYS.length; j++) {
+        const gridCell = document.createElement('td');
+        gridBodyRow.appendChild(gridCell);
+      }
+      gridBody.appendChild(gridBodyRow);
+    }
+    grid.appendChild(gridBody);
+    gridContainer.appendChild(grid);
+  }
+  #redraw(date) {
+    let setFocus = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    const gridContainer = this.shadowRoot.querySelector('.grid-container');
+    const TODAY = new Date();
+    TODAY.setHours(0, 0, 0, 0);
+    if (!gridContainer) return;
+    if (!isValidDate(date)) {
+      date = TODAY;
+    }
+
+    /* Check if any changes were made to minimum date or maximum date */
+
+    let updatedMinMaxDates = false;
+    if (this.#previousMinDate !== this.getAttribute('min-date') || this.#previousMaxDate !== this.getAttribute('max-date') || !isValidDate(this.#correctedMinDate) || !isValidDate(this.#correctedMaxDate) || this.#correctedMinDate > this.#correctedMaxDate) {
+      this.#previousMinDate = this.getAttribute('min-date');
+      this.#previousMaxDate = this.getAttribute('max-date');
+      this.#correctedMinDate = stringToDate(this.getAttribute('min-date'));
+      this.#correctedMaxDate = stringToDate(this.getAttribute('max-date'));
+      if (!isValidDate(this.#correctedMinDate)) {
+        this.#correctedMinDate = this.#DEFAULT_MIN_DATE;
+      }
+      if (!isValidDate(this.#correctedMaxDate)) {
+        this.#correctedMaxDate = this.#DEFAULT_MAX_DATE;
+      }
+
+      // If the grid has another connected date picker grid, the min-date or max-date might need adjustment
+      if (this.hasAttribute('start-date-id')) {
+        const endDateGrid = document.querySelector(`[end-date-id="${this.getAttribute('start-date-id')}"]`);
+        if (endDateGrid && endDateGrid.hasAttribute('selected-date')) {
+          const potentialMaxDate = stringToDate(endDateGrid.getAttribute('selected-date'));
+          if (isValidDate(potentialMaxDate) && potentialMaxDate < this.#correctedMaxDate) {
+            this.#correctedMaxDate = potentialMaxDate;
+          }
+        }
+      } else if (this.hasAttribute('end-date-id')) {
+        const startDateGrid = document.querySelector(`[start-date-id="${this.getAttribute('end-date-id')}"]`);
+        if (startDateGrid && startDateGrid.hasAttribute('selected-date')) {
+          const potentialMinDate = stringToDate(startDateGrid.getAttribute('selected-date'));
+          if (isValidDate(potentialMinDate) && this.#correctedMinDate < potentialMinDate) {
+            this.#correctedMinDate = potentialMinDate;
+          }
+        }
+      }
+      if (this.#correctedMinDate > this.#correctedMaxDate) {
+        this.#correctedMinDate = this.#correctedMaxDate;
+      }
+      updatedMinMaxDates = true;
+    }
+
+    /* Constrain the date to always be between the minimum date and maximum date */
+    date = constrainDate(this.#correctedMinDate, date, this.#correctedMaxDate);
+
+    /* Changes to minimum date or maximum date can affect the selectable years
+       and requires the select to be updated */
+
+    if (updatedMinMaxDates) {
+      let minYear = this.#correctedMinDate.getFullYear();
+      let maxYear = this.#correctedMaxDate.getFullYear();
+      const yearSelect = this.shadowRoot.querySelector('.selected-year');
+      yearSelect.innerHTML = '';
+      for (let i = minYear; i <= maxYear; i++) {
+        yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
+      }
+    }
+    const year = date.getFullYear();
+    gridContainer.querySelector('.selected-year').value = date.getFullYear();
+
+    /* Disable unselectable months */
+
+    const monthSelect = this.shadowRoot.querySelector('.selected-month');
+    const monthOptions = monthSelect.querySelectorAll('option');
+    const chosenYear = this.shadowRoot.querySelector('.selected-year').value;
+    for (let i = 0; i < monthOptions.length; i++) {
+      monthOptions[i].removeAttribute('disabled'); // Reset disabled status on all options
+    }
+    if (this.#correctedMinDate.getFullYear() === parseInt(chosenYear, 10)) {
+      const minMonth = this.#correctedMinDate.getMonth();
+      for (let i = 0; i < monthOptions.length; i++) {
+        if (i < minMonth) {
+          monthOptions[i].setAttribute('disabled', '');
+        }
+      }
+    }
+    if (this.#correctedMaxDate.getFullYear() === parseInt(chosenYear, 10)) {
+      const maxMonth = this.#correctedMaxDate.getMonth();
+      for (let i = 0; i < monthOptions.length; i++) {
+        if (i > maxMonth) {
+          monthOptions[i].setAttribute('disabled', '');
+        }
+      }
+    }
+    const month = date.getMonth();
+    gridContainer.querySelector('.selected-month').value = month;
+    this.resizeMonth();
+
+    /* Remove existing dates in the grid */
+
+    // Prevent focusout event to trigger in fds-date-picker when tabindex is updated
+    const activeElement = document.activeElement;
+    const isDateCellFocused = activeElement && activeElement.tagName === 'TD' && activeElement.hasAttribute('data-date') && gridContainer.contains(activeElement);
+    if (isDateCellFocused) {
+      gridContainer.focus();
+    }
+    const gridcells = gridContainer.querySelectorAll('td');
+    for (let i = 0; i < this.#TOTAL_GRIDCELLS; i++) {
+      gridcells[i].setAttribute('tabindex', '-1');
+      gridcells[i].removeAttribute('data-date');
+      gridcells[i].removeAttribute('aria-label');
+      gridcells[i].removeAttribute('aria-selected');
+      gridcells[i].removeAttribute('aria-disabled');
+      gridcells[i].removeAttribute('aria-current');
+      gridcells[i].innerHTML = '';
+    }
+
+    /* Add new dates */
+
+    const totalDays = totalDaysInMonth(date);
+    const offset = getWeekday(dateFromIntegers(year, month, 1));
+    for (let i = 1; i <= totalDays; i++) {
+      const gridcellDate = dateFromIntegers(year, month, i);
+
+      // Set the data-date attribute for each date cell
+      gridcells[i + offset - 1].setAttribute('data-date', `${ISOFormatFromDate(gridcellDate)}`);
+
+      // Set the aria-label for each cell
+      const ariaLabel = this.#CELL_DATE_FORMAT.replace('DAY', i).replace('MONTH', this.#MONTHS[month]).replace('YEAR', year);
+      gridcells[i + offset - 1].setAttribute('aria-label', ariaLabel);
+
+      // If the cell is the minimum or maximum date, add additional info in the aria-label
+      if (datesAreEqual(gridcellDate, this.#correctedMinDate)) {
+        const minAriaLabel = `${ariaLabel}, ${this.#textMinDate}`;
+        gridcells[i + offset - 1].setAttribute('aria-label', minAriaLabel);
+      } else if (datesAreEqual(gridcellDate, this.#correctedMaxDate)) {
+        const maxAriaLabel = `${ariaLabel}, ${this.#textMaxDate}`;
+        gridcells[i + offset - 1].setAttribute('aria-label', maxAriaLabel);
+      }
+      if (datesAreEqual(gridcellDate, TODAY)) {
+        gridcells[i + offset - 1].setAttribute('aria-current', 'date');
+      }
+
+      // Set the content of each cell (a number from 1-31)
+      gridcells[i + offset - 1].innerHTML = `${i}`;
+      const dateIsBetweenMinAndMax = isValidDate(this.#correctedMinDate) && isValidDate(this.#correctedMaxDate) && this.#correctedMinDate <= gridcellDate && gridcellDate <= this.#correctedMaxDate;
+      const dateIsGreaterThanMinNoMax = isValidDate(this.#correctedMinDate) && !isValidDate(this.#correctedMaxDate) && this.#correctedMinDate <= gridcellDate;
+      const dateIsSmallerThanMaxNoMin = !isValidDate(this.#correctedMinDate) && isValidDate(this.#correctedMaxDate) && gridcellDate <= this.#correctedMaxDate;
+      const noMinNoMax = !isValidDate(this.#correctedMinDate) && !isValidDate(this.#correctedMaxDate);
+      if (dateIsBetweenMinAndMax || dateIsGreaterThanMinNoMax || dateIsSmallerThanMaxNoMin || noMinNoMax) {
+        gridcells[i + offset - 1].setAttribute('aria-selected', `false`);
+      } else {
+        gridcells[i + offset - 1].setAttribute('aria-disabled', `true`);
+      }
+    }
+
+    // If a date is selected and visible in the grid, ensure it is properly marked
+    const selectedDate = this.getAttribute('selected-date');
+    if (this.hasAttribute('selected-date') && isValidDateStr(selectedDate)) {
+      const selectedDateCell = gridContainer.querySelector(`[data-date="${selectedDate}"]`);
+      // Disabled dates can not be selected
+      if (selectedDateCell && !selectedDateCell.hasAttribute('aria-disabled')) {
+        selectedDateCell?.setAttribute('aria-selected', 'true');
+      }
+    }
+
+    // Ensure it is possible to tab to the date which caused the grid to be redrawn
+    gridContainer.querySelector(`[data-date="${ISOFormatFromDate(date)}"]`).setAttribute('tabindex', '0');
+
+    // Ensure previous and next month buttons have the proper disabled state
+    const prevMonthButton = this.shadowRoot.querySelector('.previous-month');
+    const nextMonthButton = this.shadowRoot.querySelector('.next-month');
+    const visibleMinDate = this.shadowRoot.querySelector(`[data-date="${ISOFormatFromDate(this.#correctedMinDate)}"]`);
+    const visibleMaxDate = this.shadowRoot.querySelector(`[data-date="${ISOFormatFromDate(this.#correctedMaxDate)}"]`);
+    const focusedElement = this.shadowRoot?.activeElement ?? document.activeElement;
+    if (visibleMinDate) {
+      if (focusedElement.classList.contains('previous-month')) {
+        this.focusFocusableDate();
+      }
+      prevMonthButton.setAttribute('disabled', '');
+    } else {
+      prevMonthButton.removeAttribute('disabled');
+    }
+    if (visibleMaxDate) {
+      if (focusedElement.classList.contains('next-month')) {
+        this.focusFocusableDate();
+      }
+      nextMonthButton.setAttribute('disabled', '');
+    } else {
+      nextMonthButton.removeAttribute('disabled');
+    }
+
+    // If wanted, set focus on the date causing the redraw unless the grid is hidden or the focus is on the date input field
+    const isDisplayed = this.offsetParent;
+    if (setFocus && isDisplayed && document.activeElement.tagName !== 'INPUT') {
+      this.focusFocusableDate();
+    }
+  }
+  #selectChange(event) {
+    const focusedDay = this.shadowRoot.querySelector('td[data-date][tabindex="0"]');
+    const focusedDayAsDate = stringToDate(focusedDay.getAttribute('data-date'));
+    let day = focusedDayAsDate.getDate();
+    let month = parseInt(this.shadowRoot.querySelector('.selected-month').value, 10);
+    let year = parseInt(this.shadowRoot.querySelector('.selected-year').value, 10);
+    if (event.target === this.shadowRoot.querySelector('.selected-month')) {
+      month = parseInt(event.target.value, 10);
+    } else if (event.target === this.shadowRoot.querySelector('.selected-year')) {
+      year = parseInt(event.target.value, 10);
+    }
+    const daysInNewMonth = totalDaysInMonth(dateFromIntegers(year, month, 1));
+    if (daysInNewMonth < day) {
+      day = daysInNewMonth;
+    }
+    const newDate = dateFromIntegers(year, month, day);
+    this.#redraw(newDate, false);
+    event.target.focus();
+  }
+  #monthButtonClicked(event) {
+    const focusedDay = this.shadowRoot.querySelector('td[data-date][tabindex="0"]');
+    const focusedDayAsDate = stringToDate(focusedDay.getAttribute('data-date'));
+    let prevMonth = getPrevMonth(focusedDayAsDate);
+    let nextMonth = getNextMonth(focusedDayAsDate);
+    if (event.target === this.shadowRoot.querySelector('.previous-month')) {
+      this.#redraw(prevMonth, false);
+      if (event.target.getAttribute('disabled') !== null) {
+        this.shadowRoot.querySelector('.sr-only').textContent = '';
+        // Focus the earliest selectable date for proper sr announcement
+        this.shadowRoot.querySelector('td[tabindex="0"]')?.setAttribute('tabindex', '-1');
+        this.shadowRoot.querySelector('td[aria-selected]')?.setAttribute('tabindex', '0');
+        this.focusFocusableDate();
+      }
+    } else if (event.target === this.shadowRoot.querySelector('.next-month')) {
+      this.#redraw(nextMonth, false);
+      if (event.target.getAttribute('disabled') !== null) {
+        this.shadowRoot.querySelector('.sr-only').textContent = '';
+        // Focus the last selectable date for proper sr announcement
+        this.shadowRoot.querySelector('td[tabindex="0"]')?.setAttribute('tabindex', '-1');
+        const tds = this.shadowRoot.querySelectorAll('td[aria-selected]');
+        tds[tds.length - 1]?.setAttribute('tabindex', '0');
+        this.focusFocusableDate();
+      }
+    }
+    if (event.target.getAttribute('disabled') === null) {
+      // Update screen reader message so the new month (and year) is announced
+      const month = this.#MONTHS[parseInt(this.shadowRoot.querySelector('.selected-month').value, 10)];
+      const year = parseInt(this.shadowRoot.querySelector('.selected-year').value, 10);
+      this.shadowRoot.querySelector('.sr-only').textContent = `${month} ${year}`;
+    }
+  }
+  #dateClicked(event) {
+    if (event.target.hasAttribute('data-date') && !event.target.hasAttribute('aria-disabled')) {
+      this.setAttribute('selected-date', event.target.getAttribute('data-date'));
+      this.dispatchEvent(new Event('date-clicked'));
+    }
+  }
+  #updateTextDays(str) {
+    const newDays = str.split(" ");
+    if (newDays.length === 7) {
+      this.#DAYS = newDays;
+      const tableHeaders = this.shadowRoot.querySelectorAll('th');
+      for (let i = 0; i < tableHeaders.length; i++) {
+        tableHeaders[i].innerHTML = `<span aria-hidden="true">${this.#DAYS[i].slice(0, 2)}</span><span class="sr-only">${this.#DAYS[i]}</span>`;
+      }
+    }
+  }
+  #updateTextMonths(str) {
+    const newMonths = str.split(" ");
+    if (newMonths.length === 12) {
+      this.#MONTHS = newMonths;
+      const header = this.shadowRoot.querySelector('.date-picker-header');
+      if (header && header.querySelector('.sr-only')) {
+        header.querySelector('.sr-only').textContent = '';
+      }
+      const monthOptions = this.shadowRoot.querySelectorAll('.selected-month option');
+      for (let i = 0; i < monthOptions.length; i++) {
+        monthOptions[i].textContent = this.#MONTHS[i].charAt(0).toUpperCase() + this.#MONTHS[i].slice(1);
+      }
+      this.resizeMonth();
+    }
+  }
+  #updateTextPrevButton(str) {
+    if (this.shadowRoot.querySelector('.previous-month')) {
+      this.shadowRoot.querySelector('.previous-month .sr-only').textContent = str;
+    }
+  }
+  #updateTextNextButton(str) {
+    if (this.shadowRoot.querySelector('.next-month')) {
+      this.shadowRoot.querySelector('.next-month .sr-only').textContent = str;
+    }
+  }
+  #updateTextDateAnnouncement(str) {
+    // Check that string contains exactly one "DAY", one "MONTH", and one "YEAR" substring
+    const dayCount = (str.match(/DAY/g) || []).length;
+    const monthCount = (str.match(/MONTH/g) || []).length;
+    const yearCount = (str.match(/YEAR/g) || []).length;
+    if (dayCount === 1 && monthCount === 1 && yearCount === 1) {
+      this.#CELL_DATE_FORMAT = str;
+    }
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.attachShadow({
+      mode: 'open'
+    });
+    this.shadowRoot.adoptedStyleSheets = [sheet];
+    this.#TOTAL_GRIDCELLS = this.#GRID_ROWS * this.#DAYS.length;
+    this.#CELL_DATE_FORMAT = 'DAY. MONTH YEAR';
+    this.#textMinDate = 'tidligste valgbare dato';
+    this.#textMaxDate = 'seneste valgbare dato';
+    this.#DEFAULT_MIN_DATE = new Date();
+    this.#DEFAULT_MIN_DATE.setHours(0, 0, 0, 0);
+    this.#DEFAULT_MAX_DATE = new Date(this.#DEFAULT_MIN_DATE);
+    this.#DEFAULT_MAX_DATE.setFullYear(this.#DEFAULT_MIN_DATE.getFullYear() + 10);
+    this.#previousMinDate = 0;
+    this.#previousMaxDate = 0;
+    this.#correctedMinDate = null;
+    this.#correctedMaxDate = null;
+    this.#handleChangeMonth = event => {
+      this.#selectChange(event);
+    };
+    this.#handleChangeYear = event => {
+      this.#selectChange(event);
+    };
+    this.#handlePrevMonth = event => {
+      this.#monthButtonClicked(event);
+    };
+    this.#handleNextMonth = event => {
+      this.#monthButtonClicked(event);
+    };
+    this.#handleDateClick = event => {
+      this.#dateClicked(event);
+    };
+    this.#hasDatePickerConnection = false;
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  forceCompleteRedraw(date) {
+    let setFocus = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    this.#previousMaxDate = 0; // Force update of select element with possible years
+    this.#redraw(date, setFocus);
+  }
+  setHasDatePickerConnection(val) {
+    this.#hasDatePickerConnection = val;
+  }
+  getHasDatePickerConnection() {
+    return this.#hasDatePickerConnection;
+  }
+  focusFocusableDate() {
+    this.shadowRoot.querySelector('td[tabindex="0"]')?.focus();
+  }
+  resizeMonth() {
+    const monthSelect = this.shadowRoot.querySelector('.selected-month');
+    if (!monthSelect) return;
+    const ROOT_FONT_SIZE = 10; // px, result of the 62.5% trick
+    const ARROW_OFFSET_PX = 24; // px, is converted to rem
+    const PADDING_PX = 8; // px, kept as pixels
+
+    const selectedOption = monthSelect.options?.[monthSelect.selectedIndex];
+    if (!selectedOption) return;
+    const tempSpan = document.createElement('span');
+    tempSpan.style.visibility = 'hidden';
+    tempSpan.style.position = 'absolute';
+    tempSpan.style.fontFamily = '"IBM Plex Sans", "system-ui", system, sans-serif';
+    tempSpan.style.fontSize = '16px';
+    tempSpan.style.lineHeight = '1.5';
+    tempSpan.style.fontWeight = '600';
+    tempSpan.textContent = selectedOption.text;
+    this.shadowRoot.appendChild(tempSpan);
+    if (tempSpan.offsetWidth > 0) {
+      const remWidth = tempSpan.offsetWidth / ROOT_FONT_SIZE;
+      monthSelect.style.width = `calc(${remWidth}rem + ${PADDING_PX + ARROW_OFFSET_PX}px)`;
+    }
+    this.shadowRoot.removeChild(tempSpan);
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.#initialized) return;
+    if (this.hasAttribute('text-days')) {
+      this.#updateTextDays(this.getAttribute('text-days'));
+    }
+    if (this.hasAttribute('text-months')) {
+      this.#updateTextMonths(this.getAttribute('text-months'));
+    }
+    if (this.hasAttribute('text-date-announcement')) {
+      this.#updateTextDateAnnouncement(this.getAttribute('text-date-announcement'));
+    }
+    this.#init();
+    if (this.hasAttribute('text-prevbutton')) {
+      this.#updateTextPrevButton(this.getAttribute('text-prevbutton'));
+    }
+    if (this.hasAttribute('text-nextbutton')) {
+      this.#updateTextNextButton(this.getAttribute('text-nextbutton'));
+    }
+
+    // Add event listeners
+    this.shadowRoot.querySelector('.grid-container').addEventListener('keydown', this.#handleKeydown, false);
+    this.shadowRoot.querySelector('.selected-month').addEventListener('change', this.#handleChangeMonth, false);
+    this.shadowRoot.querySelector('.selected-year').addEventListener('change', this.#handleChangeYear, false);
+    this.shadowRoot.querySelector('.previous-month').addEventListener('click', this.#handlePrevMonth, false);
+    this.shadowRoot.querySelector('.next-month').addEventListener('click', this.#handleNextMonth, false);
+    this.shadowRoot.querySelector('.date-picker-grid').addEventListener('click', this.#handleDateClick, false);
+
+    // If the date picker is part of a "duo" defining start date and end date, add event listeners when both grids exist
+    const isStartDate = this.hasAttribute('start-date-id');
+    const isEndDate = this.hasAttribute('end-date-id');
+    const startDateGrid = document.querySelector(`[start-date-id="${this.getAttribute('end-date-id')}"]`);
+    const endDateGrid = document.querySelector(`[end-date-id="${this.getAttribute('start-date-id')}"]`);
+    if (isStartDate && endDateGrid) {
+      customElements.whenDefined('fds-date-picker-grid').then(() => {
+        if (!this.getHasDatePickerConnection() && !endDateGrid?.getHasDatePickerConnection()) {
+          this.addEventListener('date-selected', () => {
+            const focusableDate = endDateGrid.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute('data-date');
+            endDateGrid.forceCompleteRedraw(stringToDate(focusableDate));
+          });
+          endDateGrid.addEventListener('date-selected', () => {
+            const focusableDate = this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute('data-date');
+            this.forceCompleteRedraw(stringToDate(focusableDate));
+          });
+          this.setHasDatePickerConnection(true);
+          endDateGrid.setHasDatePickerConnection(true);
+        }
+      });
+    } else if (isEndDate && startDateGrid) {
+      customElements.whenDefined('fds-date-picker-grid').then(() => {
+        if (!this.getHasDatePickerConnection() && !startDateGrid?.getHasDatePickerConnection()) {
+          startDateGrid.addEventListener('date-selected', () => {
+            const focusableDate = this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute('data-date');
+            this.forceCompleteRedraw(stringToDate(focusableDate));
+          });
+          this.addEventListener('date-selected', () => {
+            const focusableDate = startDateGrid.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute('data-date');
+            startDateGrid.forceCompleteRedraw(stringToDate(focusableDate));
+          });
+          startDateGrid.setHasDatePickerConnection(true);
+          this.setHasDatePickerConnection(true);
+        }
+      });
+    }
+
+    // Resize again on load - the font may initially be missing, when the width of the month <select> is calculated
+    const onLoad = () => {
+      this.resizeMonth();
+      window.removeEventListener('load', onLoad);
+    };
+    window.addEventListener('load', onLoad);
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized && oldValue !== newValue) return;
+    let redrawNeeded = false;
+    if (attribute === 'selected-date') {
+      const date = stringToDate(newValue);
+      const setFocusOnDate = true;
+      if (isValidDate(date)) {
+        this.#redraw(date, setFocusOnDate);
+      } else {
+        // An invalid date might be temporary while the user enters a date in the fds-date-picker's input field
+        // Keep displaying the previous dates to give a more "steady" experience with no rapid updates
+        const dateWithCurrentFocus = this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute('data-date');
+        this.#redraw(stringToDate(dateWithCurrentFocus), setFocusOnDate);
+      }
+      this.dispatchEvent(new Event('date-selected'));
+    }
+    if (attribute === 'min-date' || attribute === 'max-date') {
+      redrawNeeded = true;
+    }
+    if (attribute === 'text-days') {
+      this.#updateTextDays(newValue);
+    }
+    if (attribute === 'text-months') {
+      this.#updateTextMonths(newValue);
+    }
+    if (attribute === 'text-prevbutton') {
+      this.#updateTextPrevButton(newValue);
+    }
+    if (attribute === 'text-nextbutton') {
+      this.#updateTextNextButton(newValue);
+    }
+    if (attribute === 'text-date-announcement') {
+      this.#updateTextDateAnnouncement(newValue);
+    }
+    if (attribute === 'text-mindate') {
+      this.#textMinDate = newValue;
+      redrawNeeded = true;
+    }
+    if (attribute === 'text-maxdate') {
+      this.#textMaxDate = newValue;
+      redrawNeeded = true;
+    }
+    if (redrawNeeded) {
+      const dateWithCurrentFocus = this.shadowRoot.querySelector('td[tabindex="0"]')?.getAttribute('data-date');
+      let placeFocusOnDate = stringToDate(dateWithCurrentFocus);
+      if (!isValidDate(placeFocusOnDate)) {
+        placeFocusOnDate = new Date();
+      }
+      this.#redraw(placeFocusOnDate, true);
+    }
+  }
+
+  // #endregion
+}
+function registerDatePickerGrid() {
+  if (customElements.get('fds-date-picker-grid') === undefined) {
+    window.customElements.define('fds-date-picker-grid', FDSDatePickerGrid);
+  }
+}
+/* harmony default export */ const fds_date_picker_grid = (registerDatePickerGrid);
+;// ./src/js/custom-elements/textarea/fds-textarea.js
+
+
+class FDSTextarea extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['show-required-status'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get showRequiredStatus() {
+    return this.getAttribute('show-required-status');
+  }
+  set showRequiredStatus(value) {
+    value === null ? this.removeAttribute('show-required-status') : this.setAttribute('show-required-status', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #textareaObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleMutations = records => {
+    for (const {
+      attributeName,
+      target,
+      addedNodes,
+      removedNodes
+    } of records) {
+      // A relevant child element was added or removed.
+      const relevantTagNames = ['LABEL', 'TEXTAREA', 'FDS-ERROR-MESSAGE', 'FDS-HELP-TEXT', 'FDS-CHARACTER-LIMIT'];
+      const allNodes = [...addedNodes, ...removedNodes];
+      if (allNodes.some(node => relevantTagNames.includes(node?.tagName))) {
+        const label = this.querySelector('label');
+        const textarea = this.querySelector('textarea');
+        const errorMessages = this.querySelectorAll('fds-error-message');
+        const helpTexts = this.querySelectorAll('fds-help-text');
+        const characterLimit = this.querySelector('fds-character-limit span.sr-only[id]');
+        associateLabelWithElement(label, textarea, 'tex');
+        setAriaDescribedBy(textarea, errorMessages, helpTexts, characterLimit);
+        setInvalid(textarea, errorMessages);
+        if (this.hasAttribute('show-required-status')) {
+          showRequiredStatus(label, textarea, this.getAttribute('show-required-status'));
+        }
+        break;
+      }
+
+      // The textarea's required attribute changed
+      if (attributeName === 'required' && target?.tagName === 'TEXTAREA') {
+        if (this.hasAttribute('show-required-status')) {
+          const label = this.querySelector('label');
+          showRequiredStatus(label, target, this.getAttribute('show-required-status'));
+        }
+      }
+      // Attributes which might affect aria-describedby
+      else if (attributeName === 'id' || attributeName === 'hidden' || attributeName === 'aria-hidden' || attributeName === 'class') {
+        const label = this.querySelector('label');
+        const textarea = this.querySelector('textarea');
+        const errorMessages = this.querySelectorAll('fds-error-message');
+        const helpTexts = this.querySelectorAll('fds-help-text');
+        const characterLimit = this.querySelector('fds-character-limit span.sr-only[id]');
+        associateLabelWithElement(label, textarea, 'tex');
+        setAriaDescribedBy(textarea, errorMessages, helpTexts, characterLimit);
+        setInvalid(textarea, errorMessages);
+        if (attributeName === 'hidden' && target === this) {
+          notifySummaryOnVisibilityChange(this);
+        }
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupObserver() {
+    if (this.#textareaObserver) return;
+    this.#textareaObserver = new MutationObserver(this.#handleMutations);
+    this.#textareaObserver.observe(this, mutationObserverConfig);
+  }
+  #init() {
+    this.#setupObserver();
+    const label = this.querySelector('label');
+    const textarea = this.querySelector('textarea');
+    const errorMessages = this.querySelectorAll('fds-error-message');
+    const helpTexts = this.querySelectorAll('fds-help-text');
+    const characterLimit = this.querySelector('fds-character-limit span.sr-only[id]');
+    associateLabelWithElement(label, textarea, 'tex');
+    setAriaDescribedBy(textarea, errorMessages, helpTexts, characterLimit);
+    setInvalid(textarea, errorMessages);
+    if (this.hasAttribute('show-required-status')) {
+      showRequiredStatus(label, textarea, this.getAttribute('show-required-status'));
+    }
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (!this.#initialized) {
+      this.#init();
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    notifySummaryOnDisconnect(this);
+    this.#initialized = false;
+    if (this.#textareaObserver) {
+      this.#textareaObserver.disconnect();
+      this.#textareaObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (attribute === 'show-required-status' && oldValue !== newValue) {
+      const label = this.querySelector('label');
+      const textarea = this.querySelector('textarea');
+      showRequiredStatus(label, textarea, newValue);
+    }
+  }
+
+  // #endregion
+}
+function registerTextarea() {
+  if (customElements.get('fds-textarea') === undefined) {
+    window.customElements.define('fds-textarea', FDSTextarea);
+  }
+}
+/* harmony default export */ const fds_textarea = (registerTextarea);
+;// ./src/js/custom-elements/error-summary/fds-error-summary.js
+
+const ERROR_WRAPPER_SELECTORS = ['fds-input', 'fds-checkbox', 'fds-checkbox-group', 'fds-radio-button-group', 'fds-date-input', 'fds-textarea', 'fds-select', 'fds-upload-file', 'fds-date-picker'];
+const ERROR_WRAPPER_SELECTOR = ERROR_WRAPPER_SELECTORS.join(', ');
+const ERROR_MESSAGE_SELECTOR = ERROR_WRAPPER_SELECTORS.map(selector => `${selector} fds-error-message`).join(', ');
+class FDSErrorSummary extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['heading', 'heading-level', 'heading-id', 'auto'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized;
+  #handleErrorMessageEvents;
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #getSummaryElements() {
+    const navElement = this.querySelector(':scope > nav');
+    const headingElement = navElement?.querySelector(':scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6');
+    const listElement = navElement?.querySelector(':scope > ul');
+    return {
+      navElement,
+      headingElement,
+      listElement
+    };
+  }
+  #getErrorWrapper(errorMessage) {
+    return errorMessage?.closest(ERROR_WRAPPER_SELECTOR);
+  }
+  #findFocusableControl(errorMessage) {
+    const wrapper = this.#getErrorWrapper(errorMessage);
+    if (!wrapper) return null;
+    return wrapper.querySelector('input:not([disabled]), ' + 'select:not([disabled]), ' + 'textarea:not([disabled]), ' + 'button:not([disabled]), ' + '[tabindex]:not([tabindex="-1"])');
+  }
+  #normalizeHeadingLevel(headingLevel) {
+    const normalizedHeadingLevel = (headingLevel || 'h2').toLowerCase();
+    return ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(normalizedHeadingLevel) ? normalizedHeadingLevel : 'h2';
+  }
+  #hasHiddenAttribute(element) {
+    if (!element) return true;
+    const hiddenValue = element.getAttribute('hidden');
+    return hiddenValue === '' || hiddenValue === 'true';
+  }
+  #isEligibleErrorMessage(errorMessage) {
+    if (!errorMessage?.matches('fds-error-message')) return false;
+    const wrapper = this.#getErrorWrapper(errorMessage);
+    if (!wrapper) return false;
+    return !this.#hasHiddenAttribute(wrapper);
+  }
+  #syncVisibility() {
+    const {
+      listElement
+    } = this.#getSummaryElements();
+    const hasErrors = !!listElement?.querySelector(':scope > li');
+    this.hidden = !hasErrors;
+  }
+  #updateHeadingId(headingId) {
+    const {
+      navElement,
+      headingElement
+    } = this.#getSummaryElements();
+    if (!navElement || !headingElement) return;
+    headingElement.id = headingId || headingElement.id || generateAndVerifyUniqueId('error-summary-heading');
+    navElement.setAttribute('aria-labelledby', headingElement.id);
+  }
+  #ensureDOM() {
+    const headingLevel = this.#normalizeHeadingLevel(this.getAttribute('heading-level'));
+    let navElement = this.querySelector(':scope > nav');
+
+    // Attribute mode:
+    // No nav markup provided, so create canonical structure from attributes
+    if (!navElement) {
+      navElement = document.createElement('nav');
+      const iconElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      iconElement.setAttribute('aria-label', 'Fejl');
+      iconElement.setAttribute('focusable', 'false');
+      const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      useElement.setAttributeNS(null, 'href', '#error');
+      iconElement.appendChild(useElement);
+      const headingElement = document.createElement(headingLevel);
+      headingElement.textContent = this.getAttribute('heading') || 'Der er problemer';
+      const listElement = document.createElement('ul');
+      navElement.appendChild(iconElement);
+      navElement.appendChild(headingElement);
+      navElement.appendChild(listElement);
+      this.appendChild(navElement);
+      this.#updateHeadingId();
+      return true;
+    }
+    const headingElement = navElement.querySelector(':scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6');
+    if (!headingElement) {
+      console.warn('<fds-error-summary> Missing direct child heading inside nav.');
+      return false;
+    }
+
+    // Enhance mode: 
+    // Nav exists, so the supported prerendered structure must already be present
+    const listElement = navElement.querySelector(':scope > ul');
+    if (!listElement) {
+      console.warn('<fds-error-summary> Missing direct child ul inside nav.');
+      return false;
+    }
+    this.#updateHeadingId();
+    return true;
+  }
+  #updateHeading(heading) {
+    const {
+      headingElement
+    } = this.#getSummaryElements();
+    if (headingElement) {
+      headingElement.textContent = heading;
+    }
+  }
+  #updateHeadingLevel(headingLevel) {
+    const normalizedHeadingLevel = this.#normalizeHeadingLevel(headingLevel);
+    const {
+      navElement,
+      headingElement
+    } = this.#getSummaryElements();
+    if (!headingElement || headingElement.tagName.toLowerCase() === normalizedHeadingLevel) return;
+    const newHeadingElement = document.createElement(normalizedHeadingLevel);
+    for (const attr of headingElement.attributes) {
+      newHeadingElement.setAttribute(attr.name, attr.value);
+    }
+    newHeadingElement.append(...headingElement.childNodes);
+    headingElement.replaceWith(newHeadingElement);
+    if (navElement && newHeadingElement.id) {
+      navElement.setAttribute('aria-labelledby', newHeadingElement.id);
+    }
+  }
+  #syncAll() {
+    const heading = this.getAttribute('heading');
+    const headingLevel = this.getAttribute('heading-level');
+    const headingId = this.getAttribute('heading-id');
+    if (heading !== null) {
+      this.#updateHeading(heading);
+    }
+    if (headingLevel !== null) {
+      this.#updateHeadingLevel(headingLevel);
+    }
+    this.#updateHeadingId(headingId);
+  }
+  #addError(errorId, message) {
+    const {
+      listElement
+    } = this.#getSummaryElements();
+    if (!listElement || !errorId || !message) return;
+    const sourceError = document.getElementById(errorId);
+    if (!sourceError) return;
+    const focusTarget = this.#findFocusableControl(sourceError);
+    let li = listElement.querySelector(`[data-error-id="${errorId}"]`);
+    if (!li) {
+      li = document.createElement('li');
+      li.dataset.errorId = errorId;
+      const link = document.createElement('a');
+      link.classList.add('function-link');
+      li.appendChild(link);
+      listElement.appendChild(li);
+    }
+    const link = li.querySelector('a');
+    if (link) {
+      link.href = focusTarget?.id ? `#${focusTarget.id}` : '#';
+      link.textContent = message;
+      link.onclick = e => {
+        e.preventDefault();
+        if (focusTarget) {
+          focusTarget.focus();
+        }
+      };
+    }
+
+    // Reinsert in correct DOM order
+    const items = [...listElement.querySelectorAll(':scope > li')].filter(item => item !== li);
+    let inserted = false;
+    for (const item of items) {
+      const itemErrorId = item.dataset.errorId;
+      const itemSourceError = itemErrorId ? document.getElementById(itemErrorId) : null;
+      if (!itemSourceError) continue;
+      const isBefore = sourceError.compareDocumentPosition(itemSourceError) & Node.DOCUMENT_POSITION_FOLLOWING;
+      if (isBefore) {
+        listElement.insertBefore(li, item);
+        inserted = true;
+        break;
+      }
+    }
+    if (!inserted) {
+      listElement.appendChild(li);
+    }
+    this.#syncVisibility();
+  }
+  #removeError(errorId) {
+    const {
+      listElement
+    } = this.#getSummaryElements();
+    listElement?.querySelector(`[data-error-id="${errorId}"]`)?.remove();
+    this.#syncVisibility();
+  }
+  #syncErrorMessage(errorMessage) {
+    if (!errorMessage?.id || !this.#isEligibleErrorMessage(errorMessage)) {
+      if (errorMessage?.id) {
+        this.#removeError(errorMessage.id);
+      }
+      return;
+    }
+    const isHidden = this.#hasHiddenAttribute(errorMessage);
+    const message = errorMessage.querySelector(':scope > .visible-message')?.textContent?.trim() || errorMessage.textContent?.trim();
+    if (isHidden || !message) {
+      this.#removeError(errorMessage.id);
+      return;
+    }
+    this.#addError(errorMessage.id, message);
+  }
+  #syncErrorById(errorId) {
+    if (!errorId) return;
+    const errorMessage = document.getElementById(errorId);
+    if (!errorMessage || !this.#isEligibleErrorMessage(errorMessage)) {
+      this.#removeError(errorId);
+      return;
+    }
+    this.#syncErrorMessage(errorMessage);
+  }
+  #scanAllErrors() {
+    document.querySelectorAll(ERROR_MESSAGE_SELECTOR).forEach(errorMessage => {
+      this.#syncErrorMessage(errorMessage);
+    });
+    this.#syncVisibility();
+  }
+  #cleanupAutoMode() {
+    if (!this.#handleErrorMessageEvents) return;
+    document.removeEventListener('error-message-visibility-changed', this.#handleErrorMessageEvents);
+    document.removeEventListener('error-message-callback', this.#handleErrorMessageEvents);
+    this.#handleErrorMessageEvents = null;
+  }
+  #initAutoMode() {
+    this.#cleanupAutoMode();
+    const {
+      listElement
+    } = this.#getSummaryElements();
+    if (listElement) {
+      listElement.innerHTML = '';
+    }
+    this.#syncVisibility();
+    this.#scanAllErrors();
+    this.#handleErrorMessageEvents = e => {
+      const {
+        errorId,
+        isRemoved
+      } = e.detail || {};
+      if (e.type === 'error-message-callback' && !errorId) {
+        this.#scanAllErrors();
+        return;
+      }
+      if (!errorId) return;
+      if (isRemoved) {
+        this.#removeError(errorId);
+        return;
+      }
+      this.#syncErrorById(errorId);
+    };
+    document.addEventListener('error-message-visibility-changed', this.#handleErrorMessageEvents);
+    document.addEventListener('error-message-callback', this.#handleErrorMessageEvents);
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.#initialized = false;
+    this.#handleErrorMessageEvents = null;
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    if (this.#initialized) return;
+    const isValid = this.#ensureDOM();
+    if (!isValid) return;
+    this.#syncAll();
+    if (this.hasAttribute('auto')) {
+      this.#initAutoMode();
+    }
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#cleanupAutoMode();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'auto') {
+      if (this.#initialized && newValue !== null && oldValue === null) {
+        this.#initAutoMode();
+      } else if (this.#initialized && newValue === null && oldValue !== null) {
+        this.#cleanupAutoMode();
+      }
+      return;
+    }
+    if (!this.#initialized) return;
+    if (attribute === 'heading') {
+      this.#updateHeading(newValue);
+    }
+    if (attribute === 'heading-id') {
+      this.#updateHeadingId(newValue);
+    }
+    if (attribute === 'heading-level') {
+      this.#updateHeadingLevel(newValue);
+    }
+  }
+
+  // #endregion
+}
+function registerErrorSummary() {
+  if (customElements.get('fds-error-summary') === undefined) {
+    window.customElements.define('fds-error-summary', FDSErrorSummary);
+  }
+}
+/* harmony default export */ const fds_error_summary = (registerErrorSummary);
+;// ./src/js/custom-elements/input-affix/input-affix.js
+
+class FDSInputAffix extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['input-prefix', 'input-suffix'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #init() {
+    const input = this.querySelector('input');
+    if (!input) return;
+    if (this.hasAttribute('input-prefix')) {
+      this.#setAffix(this.getAttribute('input-prefix'), 'prefix');
+    }
+    if (this.hasAttribute('input-suffix')) {
+      this.#setAffix(this.getAttribute('input-suffix'), 'suffix');
+    }
+    this.#initialized = true;
+  }
+  #setAffix(value, affix) {
+    let element = null;
+    if (affix === 'prefix') {
+      element = this.querySelector('.form-input-prefix');
+    } else if (affix === 'suffix') {
+      element = this.querySelector('.form-input-suffix');
+    }
+    if (value !== null && value !== '') {
+      if (!element) {
+        element = document.createElement('div');
+        if (affix === 'prefix') {
+          element.className = 'form-input-prefix';
+          this.prepend(element);
+        } else if (affix === 'suffix') {
+          element.className = 'form-input-suffix';
+          this.appendChild(element);
+        }
+      }
+      element.setAttribute('aria-hidden', 'true');
+      element.textContent = value;
+    } else {
+      element?.remove();
+    }
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (!this.#initialized) {
+      this.#init();
+    }
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (attribute === 'input-prefix' && oldValue !== newValue) {
+      this.#setAffix(newValue, 'prefix');
+    }
+    if (attribute === 'input-suffix' && oldValue !== newValue) {
+      this.#setAffix(newValue, 'suffix');
+    }
+  }
+
+  // #endregion
+}
+function registerInputAffix() {
+  if (customElements.get('fds-input-affix') === undefined) {
+    window.customElements.define('fds-input-affix', FDSInputAffix);
+  }
+}
+/* harmony default export */ const input_affix = (registerInputAffix);
+;// ./src/js/custom-elements/header/fds-drawer.js
+
+
+class FDSDrawer extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['open', 'ready', 'heading', 'close-button-text', 'heading-id'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #resizeObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleCloseClick = () => {
+    this.close();
+  };
+  #handleDrawerLinkClick = event => {
+    if (event.target.closest('a')) {
+      this.close();
+    }
+  };
+  #handleResize = entries => {
+    entries.forEach(entry => {
+      const style = window.getComputedStyle(entry.target);
+      const isVisible = style.display !== 'none';
+      if (!isVisible && this.hasAttribute('open')) {
+        this.close();
+      }
+    });
+  };
+  #handleKeydown = event => {
+    switch (event.key) {
+      case 'Tab':
+        {
+          const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+          const drawer = this.querySelector('.mobile-drawer');
+          const focusableElements = [...drawer.querySelectorAll(focusableElementsString)].filter(el => el.offsetWidth > 0 && el.offsetHeight > 0); // Exclude hidden elements from the focus trap
+
+          const firstTabStop = focusableElements[0];
+          const lastTabStop = focusableElements[focusableElements.length - 1];
+          if (event.shiftKey) {
+            if (document.activeElement === firstTabStop) {
+              event.preventDefault();
+              lastTabStop.focus();
+            }
+          } else {
+            if (document.activeElement === lastTabStop) {
+              event.preventDefault();
+              firstTabStop.focus();
+            }
+          }
+          break;
+        }
+      case 'Escape':
+        this.close();
+        break;
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    let overlay = this.querySelector('.overlay');
+    let drawer = this.querySelector('.mobile-drawer');
+    let menuTop = this.querySelector('.menu-top');
+    let heading = this.querySelector('.menu-heading');
+    let closeButton = this.querySelector('.button-menu-close');
+
+    // Dark overlay when drawer is open
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.classList.add('overlay');
+      drawer ? this.insertBefore(overlay, drawer) : this.appendChild(overlay);
+    }
+
+    // Drawer
+    if (!drawer) {
+      drawer = document.createElement('div');
+      drawer.classList.add('mobile-drawer');
+      this.appendChild(drawer);
+    }
+    drawer.setAttribute('role', 'dialog');
+    drawer.setAttribute('aria-modal', 'true');
+
+    // The top container element inside the drawer
+    if (!menuTop) {
+      menuTop = document.createElement('div');
+      menuTop.classList.add('menu-top');
+      drawer.prepend(menuTop);
+    }
+
+    // Heading inside the drawer
+    if (!heading) {
+      heading = document.createElement('h2');
+      heading.classList.add('menu-heading');
+      menuTop.appendChild(heading);
+    }
+    if (!heading.id) {
+      heading.id = this.getAttribute('heading-id') ?? generateAndVerifyUniqueId('hea-');
+    }
+    heading.textContent = this.getAttribute('heading') || 'Menu';
+    drawer.setAttribute('aria-labelledby', heading.id);
+
+    // Close button inside the drawer
+    if (!closeButton) {
+      closeButton = document.createElement('button');
+      closeButton.classList.add('function-link', 'button-menu-close');
+      menuTop.appendChild(closeButton);
+      const closeButtonIcon = createSvgIcon('m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z');
+      closeButton.appendChild(closeButtonIcon);
+      const closeButtonText = document.createElement('span');
+      closeButtonText.textContent = this.getAttribute('close-button-text') || 'Luk';
+      closeButton.appendChild(closeButtonText);
+    }
+    closeButton.setAttribute('aria-label', 'Luk menu');
+  }
+  #setupObserver() {
+    if (this.#resizeObserver) return;
+    this.#resizeObserver = new ResizeObserver(this.#handleResize);
+    this.#resizeObserver.observe(this);
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#setupHTML();
+    this.querySelector('.button-menu-close').addEventListener('click', this.#handleCloseClick, false);
+    this.querySelector('.overlay').addEventListener('click', this.#handleCloseClick, false);
+    this.querySelector('.mobile-drawer').addEventListener('click', this.#handleDrawerLinkClick, false);
+    this.#setupObserver();
+    this.#initialized = true;
+  }
+  toggle() {
+    if (!this.#initialized) return;
+    const drawerIsVisible = this.hasAttribute('open') && this.getAttribute('open') !== 'false';
+    drawerIsVisible ? this.close() : this.open();
+  }
+  open() {
+    if (!this.#initialized) return;
+    if (!this.hasAttribute('open') || this.getAttribute('open') === 'false') {
+      this.setAttribute('open', '');
+      document.addEventListener('fds.modal.shown', this.#handleCloseClick, false);
+      document.addEventListener('fds-modal-opener-click', this.#handleCloseClick, false);
+      document.addEventListener('keydown', this.#handleKeydown, false);
+      this.querySelector('.button-menu-close')?.focus();
+    }
+  }
+  close() {
+    if (!this.#initialized) return;
+    if (this.hasAttribute('open')) {
+      this.removeAttribute('open');
+      document.removeEventListener('fds.modal.shown', this.#handleCloseClick, false);
+      document.removeEventListener('fds-modal-opener-click', this.#handleCloseClick, false);
+      document.removeEventListener('keydown', this.#handleKeydown, false);
+      const drawerOpener = document.querySelector(`fds-drawer-opener[drawer=${this.id}] button`);
+      const visibleDrawerOpener = isVisibleAndFocusable(drawerOpener);
+      if (visibleDrawerOpener) {
+        drawerOpener.focus();
+      }
+    }
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#initialized = false;
+    this.querySelector('.button-menu-close')?.removeEventListener('click', this.#handleCloseClick, false);
+    this.querySelector('.overlay')?.removeEventListener('click', this.#handleCloseClick, false);
+    this.querySelector('.mobile-drawer').removeEventListener('click', this.#handleDrawerLinkClick, false);
+    document.removeEventListener('fds.modal.shown', this.#handleCloseClick, false);
+    document.removeEventListener('fds-modal-opener-click', this.#handleCloseClick, false);
+    document.removeEventListener('keydown', this.#handleKeydown, false);
+    if (this.#resizeObserver) {
+      this.#resizeObserver.disconnect();
+      this.#resizeObserver = null;
+    }
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'open':
+        const closeDrawer = newValue === null || newValue === 'false';
+        if (closeDrawer) {
+          this.querySelector('.overlay')?.classList.remove('is-visible');
+          this.querySelector('.mobile-drawer')?.classList.remove('is-visible');
+          document.body.classList.remove('mobile-nav-active');
+        } else {
+          this.querySelector('.overlay')?.classList.add('is-visible');
+          this.querySelector('.mobile-drawer')?.classList.add('is-visible');
+          document.body.classList.add('mobile-nav-active');
+        }
+        break;
+      case 'heading':
+        const heading = this.querySelector('.menu-heading');
+        if (heading) {
+          heading.textContent = newValue;
+        }
+        break;
+      case 'close-button-text':
+        if (newValue === null) return;
+        const closeButtonText = this.querySelector('.button-menu-close span');
+        if (closeButtonText) {
+          closeButtonText.textContent = newValue;
+        }
+        break;
+      case 'heading-id':
+        if (newValue !== null) {
+          const heading = this.querySelector('.menu-heading');
+          const drawer = this.querySelector('.mobile-drawer');
+          heading.id = newValue;
+          drawer.setAttribute('aria-labelledby', newValue);
+        }
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerDrawer() {
+  if (customElements.get('fds-drawer') === undefined) {
+    window.customElements.define('fds-drawer', FDSDrawer);
+  }
+}
+/* harmony default export */ const fds_drawer = (registerDrawer);
+;// ./src/js/custom-elements/header/fds-drawer-opener.js
+
+class FDSDrawerOpener extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['drawer', 'button-text'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleClick = () => {
+    document.getElementById(this.getAttribute('drawer'))?.open();
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    let button = this.querySelector('button');
+    if (!button) {
+      button = document.createElement('button');
+      this.appendChild(button);
+      const svg = createSvgIcon("M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z");
+      button.appendChild(svg);
+      const text = document.createElement('span');
+      text.textContent = this.getAttribute('button-text') || 'Menu';
+      button.appendChild(text);
+    }
+    button.setAttribute('type', 'button');
+    button.setAttribute('aria-haspopup', 'dialog');
+  }
+  #init() {
+    if (this.#initialized) return;
+    this.#setupHTML();
+    this.querySelector('button').addEventListener('click', this.#handleClick, false);
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.#init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#initialized = false;
+    this.querySelector('button')?.removeEventListener('click', this.#handleClick, false);
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    if (attribute === 'button-text') {
+      const text = this.querySelector('button > span');
+      if (text) {
+        text.textContent = newValue || '';
+      }
+    }
+  }
+
+  // #endregion
+}
+function registerDrawerOpener() {
+  if (customElements.get('fds-drawer-opener') === undefined) {
+    window.customElements.define('fds-drawer-opener', FDSDrawerOpener);
+  }
+}
+/* harmony default export */ const fds_drawer_opener = (registerDrawerOpener);
+;// ./src/js/custom-elements/header/fds-portal-info-styling.js
+/**
+ * Breakpoint is passed as a parameter rather than read from a CSS custom property
+ * due to unreliable timing in execution order.
+ *
+ * @param {string} breakpoint - The min-width breakpoint value, e.g. '992px'.
+ * @returns {string} The CSS string for the Shadow DOM stylesheet.
+ */
+const fds_portal_info_styling_styles = breakpoint => `
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .portal-info-inner {
+        width: 100%;
+        max-width: 1200px;
+        min-height: 48px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-right: 16px;
+        padding-left: 16px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .portal-user {
+        margin-left: auto;
+        display: none;
+        align-items: center;
+        justify-content: flex-end;
+        max-width: 70%;
+
+        @media (min-width: ${breakpoint}) {
+            display: flex;
+        }
+    }
+
+    .portal-info-mobile {
+        border-top: 1px solid #8e8e8e;
+        padding: 24px;
+        text-align: left;
+        background-color: var(--header-portal-background-color, #FFFFFF);
+    }
+`;
+;// ./src/js/custom-elements/header/fds-portal-info.js
+
+
+class FDSPortalInfo extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['breakpoint', 'ready'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #sheet = (() => new CSSStyleSheet())();
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleSlotDrawerOpenerChange = event => {
+    event.target.assignedElements().forEach(element => {
+      element.classList.add('ml-auto');
+    });
+  };
+  #handleSlotUserChange = event => {
+    event.target.assignedElements().forEach(element => {
+      element.classList.add('user');
+    });
+  };
+  #handleSlotLogOffButtonChange = event => {
+    event.target.assignedElements().forEach(element => {
+      element.classList.add('function-link', 'd-print-none', 'log-off');
+    });
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #updateStyles() {
+    const breakpoint = this.getAttribute('breakpoint') || '992px';
+    this.#sheet.replaceSync(fds_portal_info_styling_styles(breakpoint));
+  }
+  #setupHTML() {
+    if (this.closest('fds-modal')) {
+      // --- Section ---
+      let section = this.shadowRoot.querySelector('.portal-info-mobile');
+      if (!section) {
+        section = document.createElement('section');
+        section.classList.add('portal-info-mobile');
+        this.shadowRoot.appendChild(section);
+      }
+
+      // --- User ---
+      let userSlot = section.querySelector('slot[name="user"]');
+      if (!userSlot) {
+        userSlot = document.createElement('slot');
+        userSlot.name = 'user';
+        section.appendChild(userSlot);
+      }
+
+      // --- Log off button ---
+      let logOffButtonSlot = section.querySelector('slot[name="log-off-button"]');
+      if (!logOffButtonSlot) {
+        logOffButtonSlot = document.createElement('slot');
+        logOffButtonSlot.name = 'log-off-button';
+        section.appendChild(logOffButtonSlot);
+      }
+    } else {
+      // --- Inner wrapper ---
+      let divWrapper = this.shadowRoot.querySelector('.portal-info-inner');
+      if (!divWrapper) {
+        divWrapper = document.createElement('div');
+        divWrapper.classList.add('portal-info-inner');
+        this.shadowRoot.appendChild(divWrapper);
+      }
+
+      // --- Logo ---
+      let portalLogo = divWrapper.querySelector('slot[name="logo"]');
+      if (!portalLogo) {
+        portalLogo = document.createElement('slot');
+        portalLogo.name = 'logo';
+        divWrapper.appendChild(portalLogo);
+      }
+
+      // --- Drawer opener ---
+      let drawerOpenerSlot = divWrapper.querySelector('slot[name="drawer-opener"]');
+      if (!drawerOpenerSlot) {
+        drawerOpenerSlot = document.createElement('slot');
+        drawerOpenerSlot.name = 'drawer-opener';
+        divWrapper.appendChild(drawerOpenerSlot);
+      }
+
+      // --- User wrapper ---
+      let userWrapper = divWrapper.querySelector('.portal-user');
+      if (!userWrapper) {
+        userWrapper = document.createElement('div');
+        userWrapper.classList.add('portal-user');
+        divWrapper.appendChild(userWrapper);
+      }
+
+      // --- User ---
+      let userSlot = userWrapper.querySelector('slot[name="user"]');
+      if (!userSlot) {
+        userSlot = document.createElement('slot');
+        userSlot.name = 'user';
+        userWrapper.appendChild(userSlot);
+      }
+
+      // --- Log off button ---
+      let logOffButtonSlot = userWrapper.querySelector('slot[name="log-off-button"]');
+      if (!logOffButtonSlot) {
+        logOffButtonSlot = document.createElement('slot');
+        logOffButtonSlot.name = 'log-off-button';
+        userWrapper.appendChild(logOffButtonSlot);
+      }
+    }
+  }
+  #addEventListeners() {
+    this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.addEventListener('slotchange', this.#handleSlotDrawerOpenerChange);
+    this.shadowRoot.querySelector('slot[name="user"]')?.addEventListener('slotchange', this.#handleSlotUserChange);
+    this.shadowRoot.querySelector('slot[name="log-off-button"]')?.addEventListener('slotchange', this.#handleSlotLogOffButtonChange);
+  }
+  #removeEventListeners() {
+    this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.removeEventListener('slotchange', this.#handleSlotDrawerOpenerChange);
+    this.shadowRoot.querySelector('slot[name="user"]')?.removeEventListener('slotchange', this.#handleSlotUserChange);
+    this.shadowRoot.querySelector('slot[name="log-off-button"]')?.removeEventListener('slotchange', this.#handleSlotLogOffButtonChange);
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.attachShadow({
+      mode: 'open'
+    });
+    this.shadowRoot.adoptedStyleSheets = [this.#sheet];
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#updateStyles();
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'breakpoint':
+        this.#updateStyles();
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerPortalInfo() {
+  if (!customElements.get('fds-portal-info')) {
+    customElements.define('fds-portal-info', FDSPortalInfo);
+  }
+}
+/* harmony default export */ const fds_portal_info = (registerPortalInfo);
+;// ./src/js/custom-elements/header/fds-solution-info-styling.js
+const fds_solution_info_styling_styles = `
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .solution-info-inner {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: calc(16px - 1px);
+        padding-bottom: calc(16px - 1px);
+        padding-right: 16px;
+        padding-left: 16px;
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+`;
+;// ./src/js/custom-elements/header/fds-solution-info.js
+
+const fds_solution_info_sheet = new CSSStyleSheet();
+fds_solution_info_sheet.replaceSync(fds_solution_info_styling_styles);
+class FDSSolutionInfo extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['ready'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleSlotDrawerOpenerChange = event => {
+    event.target.assignedElements().forEach(element => {
+      element.classList.add('ml-auto');
+    });
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    if (this.closest('fds-modal')) {
+      // --- Section ---
+      let section = this.shadowRoot.querySelector('.solution-info-mobile');
+      if (!section) {
+        section = document.createElement('section');
+        section.classList.add('solution-info-mobile');
+        this.shadowRoot.appendChild(section);
+      }
+
+      // --- Additional info ---
+      let additionalInfo = section.querySelector('slot[name="additional-info"]');
+      if (!additionalInfo) {
+        additionalInfo = document.createElement('slot');
+        additionalInfo.name = 'additional-info';
+        section.appendChild(additionalInfo);
+      }
+    } else {
+      // --- Inner wrapper ---
+      let divWrapper = this.shadowRoot.querySelector('.solution-info-inner');
+      if (!divWrapper) {
+        divWrapper = document.createElement('div');
+        divWrapper.classList.add('solution-info-inner');
+        this.shadowRoot.appendChild(divWrapper);
+      }
+
+      // --- Solution heading ---
+      let solutionHeading = divWrapper.querySelector('slot[name="solution-heading"]');
+      if (!solutionHeading) {
+        solutionHeading = document.createElement('slot');
+        solutionHeading.name = 'solution-heading';
+        divWrapper.appendChild(solutionHeading);
+      }
+
+      // --- Additional info ---
+      let additionalInfo = divWrapper.querySelector('slot[name="additional-info"]');
+      if (!additionalInfo) {
+        additionalInfo = document.createElement('slot');
+        additionalInfo.name = 'additional-info';
+        divWrapper.appendChild(additionalInfo);
+      }
+
+      // --- Drawer opener ---
+      let drawerOpenerSlot = divWrapper.querySelector('slot[name="drawer-opener"]');
+      if (!drawerOpenerSlot) {
+        drawerOpenerSlot = document.createElement('slot');
+        drawerOpenerSlot.name = 'drawer-opener';
+        divWrapper.appendChild(drawerOpenerSlot);
+      }
+    }
+  }
+  #addEventListeners() {
+    this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.addEventListener('slotchange', this.#handleSlotDrawerOpenerChange);
+  }
+  #removeEventListeners() {
+    this.shadowRoot.querySelector('slot[name="drawer-opener"]')?.removeEventListener('slotchange', this.#handleSlotDrawerOpenerChange);
+  }
+
+  // #endregion
+
+  // #region - CONSTRUCTOR (do not access or add attributes in the constructor) ---------------------------
+
+  constructor() {
+    super();
+    this.attachShadow({
+      mode: 'open'
+    });
+    this.shadowRoot.adoptedStyleSheets = [fds_solution_info_sheet];
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    // The 'ready' attribute can be used to defer initialization.
+    // Omit the attribute or set it to anything other than 'false' to initialize immediately.
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
+  }
+
+  // #endregion
+}
+function registerSolutionInfo() {
+  if (!customElements.get('fds-solution-info')) {
+    customElements.define('fds-solution-info', FDSSolutionInfo);
+  }
+}
+/* harmony default export */ const fds_solution_info = (registerSolutionInfo);
+;// ./src/js/custom-elements/dropdown-menu/fds-dropdown-menu.js
+
+class FDSDropdownMenu extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['expanded'];
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #plusIcon = 'M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z';
+  #minusIcon = 'M200-440v-80h560v80H200Z';
+  #chevronDownIcon = 'M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z';
+  #chevronUpIcon = 'M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z';
+  #moreVertIcon = 'M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z';
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleClick = event => {
+    this.toggle();
+  };
+  #handleFocusOut = event => {
+    const focusLeftDropdownMenu = !this.contains(event.relatedTarget);
+    if (focusLeftDropdownMenu) {
+      this.close();
+    }
+  };
+  #handleKeydown = event => {
+    switch (event.key) {
+      case 'Escape':
+        this.close();
+        this.querySelector(':scope > .dropdown-button')?.focus();
+        break;
+    }
+  };
+  #handleMenuItemClick = event => {
+    if (event.target.closest('[data-menu-item]')) {
+      this.close();
+    }
+  };
+  #handleOutsideClick = event => {
+    if (!this.contains(event.target)) {
+      this.close();
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    // Dropdown button
+    if (!this.querySelector(':scope > .dropdown-button')) {
+      this.querySelector(':scope > button')?.classList.add('dropdown-button');
+    }
+
+    // Dropdown button icon
+    if (!this.querySelector(':scope > .dropdown-button span svg')) {
+      let collapsedIcon = this.#moreVertIcon;
+      let expandedIcon = this.#moreVertIcon;
+      if (this.closest('fds-modal fds-main-menu')) {
+        collapsedIcon = this.#plusIcon;
+        expandedIcon = this.#minusIcon;
+      } else if (this.closest('fds-main-menu .main-menu-inner li:not(.more-button)')) {
+        collapsedIcon = this.#chevronDownIcon;
+        expandedIcon = this.#chevronUpIcon;
+      }
+      const span = this.querySelector(':scope > .dropdown-button span');
+      const collapsed = createSvgIcon(collapsedIcon);
+      collapsed.classList.add('collapsed-icon');
+      span?.appendChild(collapsed);
+      const expanded = createSvgIcon(expandedIcon);
+      expanded.classList.add('expanded-icon');
+      span?.appendChild(expanded);
+    }
+
+    // Dropdown menu
+    if (!this.querySelector(':scope > .dropdown-menu')) {
+      this.querySelector(':scope > div')?.classList.add('dropdown-menu');
+    }
+
+    // Expanded attribute on fds-dropdown-menu
+    if (!this.hasAttribute('expanded')) {
+      this.setAttribute('expanded', 'false');
+    }
+    this.#updateExpanded(this.getAttribute('expanded'));
+
+    // If the overflow menu opens on top of content, ensure it doesn't close on misclick inside the opened menu
+    if (this.closest('fds-main-menu .main-menu-inner')) {
+      this.querySelector(':scope > .dropdown-menu').setAttribute('tabindex', '-1');
+    }
+  }
+  #updateExpanded(value) {
+    const dropdownButton = this.querySelector(':scope > .dropdown-button');
+    const menu = this.querySelector(':scope > .dropdown-menu');
+    if (value === 'false') {
+      dropdownButton?.setAttribute('aria-expanded', 'false');
+      menu?.classList.add('collapsed');
+      menu.removeAttribute('style');
+      if (this.closest('fds-main-menu .main-menu-inner')) {
+        document.removeEventListener('mousedown', this.#handleOutsideClick, false);
+      }
+      this.dispatchEvent(new Event('fds-dropdown-menu-closed'));
+    } else {
+      dropdownButton?.setAttribute('aria-expanded', 'true');
+      menu?.classList.remove('collapsed');
+      if (this.closest('fds-main-menu .main-menu-inner')) {
+        document.addEventListener('mousedown', this.#handleOutsideClick, false);
+      }
+
+      /* Check if the dropdown is within the screen borders */
+
+      const rect = menu.getBoundingClientRect();
+      const viewportWidth = window.visualViewport?.width ?? document.documentElement.clientWidth;
+      if (menu.offsetWidth > viewportWidth) {
+        menu.style.maxWidth = `${viewportWidth}px`;
+      } else if (rect.left < 0) {
+        menu.style.left = '0px';
+      } else if (rect.left + menu.offsetWidth > viewportWidth) {
+        menu.style.right = '0px';
+      }
+
+      /* Dispatch event */
+
+      this.dispatchEvent(new Event('fds-dropdown-menu-opened'));
+    }
+  }
+  #addEventListeners() {
+    this.querySelector(':scope > .dropdown-button')?.addEventListener('click', this.#handleClick);
+    if (this.closest('fds-main-menu .main-menu-inner')) {
+      this.addEventListener('focusout', this.#handleFocusOut, false);
+      this.addEventListener('keydown', this.#handleKeydown, false);
+      this.querySelector('.dropdown-menu').addEventListener('click', this.#handleMenuItemClick, false);
+    }
+  }
+  #removeEventListeners() {
+    this.querySelector(':scope > .dropdown-button')?.removeEventListener('click', this.#handleClick);
+    if (this.closest('fds-main-menu .main-menu-inner')) {
+      this.removeEventListener('focusout', this.#handleFocusOut, false);
+      this.removeEventListener('keydown', this.#handleKeydown, false);
+      this.querySelector('.dropdown-menu').removeEventListener('click', this.#handleMenuItemClick, false);
+    }
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  toggle() {
+    this.getAttribute('expanded') === 'false' ? this.setAttribute('expanded', 'true') : this.setAttribute('expanded', 'false');
+  }
+  open() {
+    this.setAttribute('expanded', 'true');
+  }
+  close() {
+    this.setAttribute('expanded', 'false');
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    if (this.closest('fds-main-menu .main-menu-inner')) {
+      document.removeEventListener('mousedown', this.#handleOutsideClick, false);
+    }
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'expanded':
+        this.#updateExpanded(newValue);
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerDropdownMenu() {
+  if (!customElements.get('fds-dropdown-menu')) {
+    customElements.define('fds-dropdown-menu', FDSDropdownMenu);
+  }
+}
+/* harmony default export */ const fds_dropdown_menu = (registerDropdownMenu);
+;// ./src/js/custom-elements/header/fds-main-menu.js
+class FDSMainMenu extends HTMLElement {
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #resizeObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleLoad = () => {
+    this.rebuildMoreMenu();
+  };
+  #handleResize = () => {
+    this.rebuildMoreMenu();
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    const listItems = this.querySelectorAll('li > fds-dropdown-menu > button, li > a');
+    listItems.forEach(item => {
+      item.setAttribute('data-menu-item', '');
+    });
+
+    // More menu
+
+    const isDesktopMainMenu = this.querySelector('.main-menu-inner');
+    if (!isDesktopMainMenu) return;
+    const moreMenuButtonSpan = document.createElement('span');
+    moreMenuButtonSpan.textContent = 'Mere';
+    const moreMenuButton = document.createElement('button');
+    moreMenuButton.setAttribute('data-menu-item', '');
+    moreMenuButton.appendChild(moreMenuButtonSpan);
+    const moreMenuDropdownList = document.createElement('ul');
+    const moreMenuDropdown = document.createElement('div');
+    moreMenuDropdown.appendChild(moreMenuDropdownList);
+    const moreMenu = document.createElement('fds-dropdown-menu');
+    moreMenu.setAttribute('expanded', 'false');
+    moreMenu.appendChild(moreMenuButton);
+    moreMenu.appendChild(moreMenuDropdown);
+    const moreMenuListItem = document.createElement('li');
+    moreMenuListItem.classList.add('more-button');
+    moreMenuListItem.setAttribute('data-hidden', '');
+    moreMenuListItem.appendChild(moreMenu);
+    const mainMenu = this.querySelector('.main-menu-inner > nav > ul');
+    mainMenu?.appendChild(moreMenuListItem);
+  }
+  #addEventListeners() {
+    const isDesktopMainMenu = this.querySelector('.main-menu-inner');
+    if (!isDesktopMainMenu) return;
+    window.addEventListener('load', this.#handleLoad, {
+      once: true
+    });
+    if (this.#resizeObserver) return;
+    this.#resizeObserver = new ResizeObserver(this.#handleResize);
+    this.#resizeObserver.observe(this);
+  }
+  #removeEventListeners() {
+    if (this.#resizeObserver) {
+      this.#resizeObserver.disconnect();
+      this.#resizeObserver = null;
+    }
+  }
+
+  /* 'More menu' helper functions */
+
+  // The main menu may contain other elements than <nav> such as search - get the space available to show main menu items
+  #getAvailableSpace() {
+    const MAIN_MENU_INNER_PADDING_RIGHT = 16;
+    let usedWidth = MAIN_MENU_INNER_PADDING_RIGHT;
+    const otherMainMenuElements = this.querySelectorAll('.main-menu-inner > *:not(nav)');
+    otherMainMenuElements.forEach(el => {
+      usedWidth += Math.ceil(el.getBoundingClientRect().width);
+    });
+    const totalSpace = Math.floor(this.querySelector('.main-menu-inner')?.getBoundingClientRect().width);
+    return totalSpace - usedWidth;
+  }
+
+  // List items may be hidden in the main menu - get the length of a <li> regardless of visibility
+  #getListItemWidth(listItem) {
+    const isHidden = listItem.hasAttribute('data-hidden');
+    if (isHidden) {
+      listItem.removeAttribute('data-hidden');
+    }
+    const width = Math.ceil(listItem.getBoundingClientRect().width);
+    if (isHidden) {
+      listItem.setAttribute('data-hidden', '');
+    }
+    return width;
+  }
+  // Get the number of list items that can be displayed before a more menu should appear
+  #maxVisibleListItems() {
+    const availableSpace = this.#getAvailableSpace();
+    const listItems = [...this.querySelectorAll('.main-menu-inner > nav > ul > li:not(.more-button)')];
+    let totalListWidth = 0;
+    listItems.forEach(item => totalListWidth += this.#getListItemWidth(item));
+
+    // All items fit without the more button
+    if (totalListWidth <= availableSpace) return listItems.length;
+
+    // Not all items fit, recalculate with more button width included
+    const moreButtonWidth = this.#getListItemWidth(this.querySelector('.more-button'));
+    let totalWidth = 0;
+    let count = 0;
+    for (const item of listItems) {
+      totalWidth += this.#getListItemWidth(item);
+      if (totalWidth + moreButtonWidth >= availableSpace) break;
+      count++;
+    }
+    return count;
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  rebuildMoreMenu() {
+    if (document.readyState !== 'complete') return;
+    if (!this.querySelector('.more-button')) return;
+    const listItems = this.querySelectorAll('.main-menu-inner > nav > ul > li:not(.more-button)');
+    const maxVisibleListItems = this.#maxVisibleListItems();
+    this.querySelector('.more-button').toggleAttribute('data-hidden', listItems.length === maxVisibleListItems);
+    const moreMenuDropdownMenu = this.querySelector('.main-menu-inner li.more-button > fds-dropdown-menu > .dropdown-menu > ul');
+    moreMenuDropdownMenu.innerHTML = '';
+    listItems.forEach((item, index) => {
+      if (index < maxVisibleListItems) {
+        item.removeAttribute('data-hidden');
+      } else {
+        item.setAttribute('data-hidden', '');
+        if (item.querySelector('fds-dropdown-menu')) {
+          const customListItem = document.createElement('li');
+          moreMenuDropdownMenu.appendChild(customListItem);
+          const subTitle = document.createElement('span');
+          subTitle.classList.add('sub-title');
+          subTitle.setAttribute('aria-hidden', 'true');
+          subTitle.textContent = item.querySelector('fds-dropdown-menu > .dropdown-button > span').textContent;
+          customListItem.appendChild(subTitle);
+          const customUnorderedList = document.createElement('ul');
+          customUnorderedList.setAttribute('aria-label', subTitle.textContent);
+          customListItem.appendChild(customUnorderedList);
+          const dropdownListItems = item.querySelectorAll('fds-dropdown-menu > .dropdown-menu > ul > li');
+          dropdownListItems.forEach(dropdownItem => {
+            const clone = dropdownItem.cloneNode(true);
+            customUnorderedList.appendChild(clone);
+          });
+        } else {
+          const clone = item.cloneNode(true);
+          clone.removeAttribute('data-hidden');
+          moreMenuDropdownMenu.appendChild(clone);
+        }
+      }
+    });
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    this.#initialized = false;
+  }
+
+  // #endregion
+}
+function registerMainMenu() {
+  if (!customElements.get('fds-main-menu')) {
+    customElements.define('fds-main-menu', FDSMainMenu);
+  }
+}
+/* harmony default export */ const fds_main_menu = (registerMainMenu);
+;// ./src/js/custom-elements/tooltip/fds-tooltip-utils.js
+const MIN_MARGIN = 8; // Minimum margin to the edge of the viewport in pixels
+const MAX_WIDTH = 330; // Maximum width of the tooltip in pixels
+
+/**
+ * Get arrow dimensions from CSS custom properties.
+ *
+ * @returns {{ arrowHeight: number, arrowDistanceToTarget: number }} Arrow dimensions in pixels
+ */
+function getArrowDimensions() {
+  const style = getComputedStyle(document.documentElement);
+  return {
+    arrowHeight: parseInt(style.getPropertyValue('--tooltip-arrow-height')),
+    arrowDistanceToTarget: parseInt(style.getPropertyValue('--tooltip-arrow-distance-to-target'))
+  };
+}
+
+/**
+ * Set the width of the tooltip bubble, capped at a maximum width and the viewport width.
+ *
+ * @param {HTMLElement} tooltip - The tooltip bubble element
+ */
+function setTooltipWidth(tooltip) {
+  // Start with natural width
+  tooltip.style.width = 'max-content';
+
+  // Cap at max width
+  if (tooltip.offsetWidth > MAX_WIDTH) {
+    tooltip.style.width = `${MAX_WIDTH}px`;
+  }
+
+  // Further cap if viewport is narrower than max width
+  const viewportMaxWidth = document.documentElement.clientWidth - MIN_MARGIN * 2;
+  if (tooltip.offsetWidth > viewportMaxWidth) {
+    tooltip.style.width = `${viewportMaxWidth}px`;
+  }
+}
+
+/**
+ * Set the horizontal position of the tooltip bubble, centered on the trigger element.
+ * Adjusts if the tooltip exceeds the left or right edge of the viewport.
+ *
+ * @param {HTMLElement} tooltip - The tooltip bubble element
+ * @param {HTMLElement} trigger - The trigger element
+ */
+function setTooltipLeft(tooltip, trigger) {
+  const triggerRect = trigger.getBoundingClientRect();
+
+  // Center tooltip on trigger
+  let left = triggerRect.left + triggerRect.width / 2 - tooltip.offsetWidth / 2;
+
+  // If tooltip exceeds right edge, shift left
+  if (left + tooltip.offsetWidth > document.documentElement.clientWidth - MIN_MARGIN) {
+    left = document.documentElement.clientWidth - MIN_MARGIN - tooltip.offsetWidth;
+  }
+
+  // If tooltip exceeds left edge, clamp to MIN_MARGIN
+  if (left < MIN_MARGIN) {
+    left = MIN_MARGIN;
+  }
+  tooltip.style.left = `${Math.round(left)}px`;
+}
+
+/**
+ * Set the vertical placement of the tooltip bubble and arrow, either above or below the trigger element.
+ * Placement is determined by the preferred placement and available space.
+ *
+ * @param {HTMLElement} tooltip - The tooltip bubble element
+ * @param {HTMLElement} arrow - The tooltip arrow element
+ * @param {HTMLElement} trigger - The trigger element
+ * @param {string} preferredPlacement - Preferred placement, either 'above' or 'below'
+ */
+function setVerticalPlacement(tooltip, arrow, trigger, preferredPlacement) {
+  const triggerRect = trigger.getBoundingClientRect();
+  const {
+    arrowHeight,
+    arrowDistanceToTarget
+  } = getArrowDimensions();
+
+  // Calculate space available above and below the trigger
+  const spaceNeeded = tooltip.offsetHeight + arrowHeight + arrowDistanceToTarget;
+  const spaceAbove = triggerRect.top;
+  const spaceBelow = window.innerHeight - triggerRect.bottom;
+
+  // Determine actual placement based on preferred placement and available space
+  let actualPlacement = preferredPlacement;
+  if (preferredPlacement === 'above' && spaceAbove < spaceNeeded) {
+    actualPlacement = 'below';
+  } else if (preferredPlacement === 'below' && spaceBelow < spaceNeeded) {
+    actualPlacement = 'above';
+  }
+
+  // Position tooltip bubble and arrow based on actual placement
+  if (actualPlacement === 'above') {
+    tooltip.style.top = `${Math.round(triggerRect.top - tooltip.offsetHeight - arrowHeight - arrowDistanceToTarget + 1)}px`;
+    arrow.style.top = `${Math.round(triggerRect.top - arrowHeight - arrowDistanceToTarget)}px`;
+    tooltip.classList.add('place-above');
+    tooltip.classList.remove('place-below');
+    arrow.classList.add('place-above');
+    arrow.classList.remove('place-below');
+  } else {
+    tooltip.style.top = `${Math.round(triggerRect.bottom + arrowHeight + arrowDistanceToTarget - 1)}px`;
+    arrow.style.top = `${Math.round(triggerRect.bottom + arrowDistanceToTarget)}px`;
+    tooltip.classList.add('place-below');
+    tooltip.classList.remove('place-above');
+    arrow.classList.add('place-below');
+    arrow.classList.remove('place-above');
+  }
+
+  // Arrow is always centered on the trigger
+  arrow.style.left = `${Math.round(triggerRect.left + triggerRect.width / 2)}px`;
+}
+;// ./src/js/custom-elements/tooltip/fds-tooltip.js
+
+
+class FDSTooltip extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['tooltip-text', 'placement', 'purpose', 'tooltip-id'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get tooltipText() {
+    return this.getAttribute('tooltip-text');
+  }
+  set tooltipText(value) {
+    value == null ? this.removeAttribute('tooltip-text') : this.setAttribute('tooltip-text', value);
+  }
+  get placement() {
+    return this.getAttribute('placement') ?? 'above';
+  }
+  set placement(value) {
+    value == null ? this.removeAttribute('placement') : this.setAttribute('placement', value);
+  }
+  get purpose() {
+    return this.getAttribute('purpose') ?? 'hint';
+  }
+  set purpose(value) {
+    value == null ? this.removeAttribute('purpose') : this.setAttribute('purpose', value);
+  }
+  get tooltipId() {
+    return this.getAttribute('tooltip-id');
+  }
+  set tooltipId(value) {
+    value == null ? this.removeAttribute('tooltip-id') : this.setAttribute('tooltip-id', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handlePointerEnter = event => {
+    if (event.pointerType === 'mouse') {
+      this.firstElementChild.classList.add('js-hover');
+      setTimeout(() => {
+        if (this.firstElementChild.classList.contains('js-hover')) {
+          this.open();
+        }
+      }, 300);
+    }
+  };
+  #handlePointerLeave = event => {
+    if (event.pointerType === 'mouse') {
+      this.firstElementChild.classList.remove('js-hover');
+      this.close();
+    } else if (event.pointerType === 'touch') {
+      this.firstElementChild.classList.remove('js-pressing');
+      this.firstElementChild.classList.remove('js-pressed');
+    }
+  };
+  #handlePointerDown = event => {
+    if (event.pointerType === 'touch') {
+      this.firstElementChild.classList.remove('js-pressed');
+      this.firstElementChild.releasePointerCapture(event.pointerId);
+      this.firstElementChild.classList.add('js-pressing');
+      setTimeout(() => {
+        if (this.firstElementChild.classList.contains('js-pressing')) {
+          this.firstElementChild.classList.add('js-pressed');
+          this.firstElementChild.classList.remove('js-pressing');
+        }
+      }, 600);
+    }
+  };
+  #handlePointerUp = event => {
+    if (event.pointerType === 'touch') {
+      if (this.firstElementChild.classList.contains('js-pressed')) {
+        event.preventDefault();
+        this.open();
+      }
+    }
+  };
+  #handleFocus = () => {
+    this.open();
+  };
+  #handleFocusOut = event => {
+    const focusLeftComponent = !this.contains(event.relatedTarget);
+    if (focusLeftComponent) {
+      this.close();
+    }
+  };
+  #handleKeydown = event => {
+    if (event.key === 'Escape') {
+      if (this.querySelector('.tooltip').style.display !== 'none') {
+        this.close();
+        event.stopImmediatePropagation();
+      }
+    }
+  };
+  #handleClickOutside = event => {
+    if (!this.contains(event.target)) {
+      this.close();
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    if (!this.hasAttribute('tooltip-text')) return;
+    const triggerElements = this.querySelectorAll(':scope > :not(.tooltip):not(.tooltip-arrow)');
+    if (triggerElements.length !== 1) return;
+    let tooltip = this.querySelector('.tooltip');
+
+    // Reuse the existing tooltip ID if available, to prevent a duplicate ID being appended to the trigger's aria attribute
+    const fallbackId = tooltip !== null ? tooltip.getAttribute('id') : generateAndVerifyUniqueId('tooltip-');
+    const uniqueId = this.getAttribute('tooltip-id') ?? fallbackId;
+    if (tooltip === null) {
+      tooltip = document.createElement('span');
+      tooltip.setAttribute('id', uniqueId);
+      tooltip.setAttribute('role', 'tooltip');
+      tooltip.setAttribute('tabindex', '-1');
+      tooltip.classList.add('tooltip');
+      tooltip.textContent = this.getAttribute('tooltip-text');
+      tooltip.style.display = 'none';
+      this.appendChild(tooltip);
+    }
+    let tooltipArrow = this.querySelector('.tooltip-arrow');
+    if (tooltipArrow === null) {
+      tooltipArrow = document.createElement('span');
+      tooltipArrow.classList.add('tooltip-arrow');
+      tooltipArrow.setAttribute('aria-hidden', 'true');
+      tooltipArrow.style.display = 'none';
+      this.appendChild(tooltipArrow);
+    }
+    const trigger = this.firstElementChild;
+    const ariaAttribute = this.purpose === 'label' ? 'aria-labelledby' : 'aria-describedby';
+    const existingValue = trigger.getAttribute(ariaAttribute);
+    if (existingValue === null) {
+      trigger.setAttribute(ariaAttribute, uniqueId);
+    } else if (!existingValue.includes(uniqueId)) {
+      trigger.setAttribute(ariaAttribute, `${existingValue} ${uniqueId}`);
+    }
+  }
+  #addEventListeners() {
+    this.firstElementChild.addEventListener('pointerenter', this.#handlePointerEnter, false);
+    this.addEventListener('pointerleave', this.#handlePointerLeave, false);
+    this.firstElementChild.addEventListener('pointerdown', this.#handlePointerDown, false);
+    this.firstElementChild.addEventListener('pointerup', this.#handlePointerUp, false);
+    this.firstElementChild.addEventListener('focus', this.#handleFocus, false);
+    this.addEventListener('focusout', this.#handleFocusOut, false);
+  }
+  #removeEventListeners() {
+    this.firstElementChild.removeEventListener('pointerenter', this.#handlePointerEnter, false);
+    this.removeEventListener('pointerleave', this.#handlePointerLeave, false);
+    this.firstElementChild.removeEventListener('pointerdown', this.#handlePointerDown, false);
+    this.firstElementChild.removeEventListener('pointerup', this.#handlePointerUp, false);
+    this.firstElementChild.removeEventListener('focus', this.#handleFocus, false);
+    this.removeEventListener('focusout', this.#handleFocusOut, false);
+  }
+  #updatePosition() {
+    setTooltipWidth(this.querySelector('.tooltip'));
+    setTooltipLeft(this.querySelector('.tooltip'), this.firstElementChild);
+    setVerticalPlacement(this.querySelector('.tooltip'), this.querySelector('.tooltip-arrow'), this.firstElementChild, this.placement);
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+  open() {
+    this.querySelector('.tooltip').style.display = 'block';
+    this.querySelector('.tooltip-arrow').style.display = 'block';
+    document.addEventListener('click', this.#handleClickOutside, false);
+    document.addEventListener('keydown', this.#handleKeydown, false);
+    this.#updatePosition();
+  }
+  close() {
+    this.querySelector('.tooltip').style.display = 'none';
+    this.querySelector('.tooltip-arrow').style.display = 'none';
+    this.firstElementChild.classList.remove('js-hover');
+    this.firstElementChild.classList.remove('js-pressing');
+    this.firstElementChild.classList.remove('js-pressed');
+    document.removeEventListener('click', this.#handleClickOutside, false);
+    document.removeEventListener('keydown', this.#handleKeydown, false);
+  }
+  toggle() {
+    this.querySelector('.tooltip').style.display === 'none' ? this.open() : this.close();
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    document.removeEventListener('click', this.#handleClickOutside, false);
+    document.removeEventListener('keydown', this.#handleKeydown, false);
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'tooltip-text':
+        this.querySelector('.tooltip').textContent = newValue;
+        if (this.querySelector('.tooltip').style.display !== 'none') {
+          this.#updatePosition();
+        }
+        break;
+      case 'placement':
+        if (this.querySelector('.tooltip').style.display !== 'none') {
+          this.#updatePosition();
+        }
+        break;
+      case 'purpose':
+        if (newValue !== 'hint' && newValue !== 'label' && newValue !== null) return;
+        const trigger = this.firstElementChild;
+        const tooltipId = this.querySelector('.tooltip').getAttribute('id');
+        const addToAttribute = newValue === 'label' ? 'aria-labelledby' : 'aria-describedby';
+        const removeFromAttribute = newValue === 'label' ? 'aria-describedby' : 'aria-labelledby';
+
+        // Remove tooltip ID from old attribute
+        const oldAttributeValue = trigger.getAttribute(removeFromAttribute);
+        if (oldAttributeValue !== null) {
+          const updatedValue = oldAttributeValue.replace(tooltipId, '').trim();
+          // If the attribute is now empty, remove it entirely to keep the DOM clean
+          updatedValue ? trigger.setAttribute(removeFromAttribute, updatedValue) : trigger.removeAttribute(removeFromAttribute);
+        }
+
+        // Add tooltip ID to new attribute
+        const newAttributeValue = trigger.getAttribute(addToAttribute);
+        if (newAttributeValue === null) {
+          // Attribute doesn't exist yet, set it with just the tooltip ID
+          trigger.setAttribute(addToAttribute, tooltipId);
+        } else if (!newAttributeValue.includes(tooltipId)) {
+          // Attribute already exists, append tooltip ID to preserve existing references
+          trigger.setAttribute(addToAttribute, `${newAttributeValue} ${tooltipId}`);
+        }
+        break;
+      case 'tooltip-id':
+        if (newValue !== null) {
+          const tooltip = this.querySelector('.tooltip');
+          const trigger = this.firstElementChild;
+          const ariaAttribute = this.purpose === 'label' ? 'aria-labelledby' : 'aria-describedby';
+          const idToReplace = oldValue ?? tooltip.getAttribute('id');
+          const ariaValue = trigger.getAttribute(ariaAttribute);
+          if (ariaValue !== null) {
+            trigger.setAttribute(ariaAttribute, ariaValue.replace(idToReplace, newValue).trim());
+          }
+          tooltip.setAttribute('id', newValue);
+        }
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerTooltip() {
+  if (!customElements.get('fds-tooltip')) {
+    customElements.define('fds-tooltip', FDSTooltip);
+  }
+}
+/* harmony default export */ const fds_tooltip = (registerTooltip);
+;// ./src/js/custom-elements/tooltip/fds-tooltip-icon.js
+
+
+
+class FDSTooltipIcon extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['tooltip-text', 'sr-label', 'placement', 'tooltip-id'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get tooltipText() {
+    return this.getAttribute('tooltip-text');
+  }
+  set tooltipText(value) {
+    value == null ? this.removeAttribute('tooltip-text') : this.setAttribute('tooltip-text', value);
+  }
+  get srLabel() {
+    return this.getAttribute('sr-label');
+  }
+  set srLabel(value) {
+    value == null ? this.removeAttribute('sr-label') : this.setAttribute('sr-label', value);
+  }
+  get placement() {
+    return this.getAttribute('placement') ?? 'above';
+  }
+  set placement(value) {
+    value == null ? this.removeAttribute('placement') : this.setAttribute('placement', value);
+  }
+  get tooltipId() {
+    return this.getAttribute('tooltip-id');
+  }
+  set tooltipId(value) {
+    value == null ? this.removeAttribute('tooltip-id') : this.setAttribute('tooltip-id', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #intersectionObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleClick = event => {
+    this.toggle();
+  };
+  #handleFocusOut = event => {
+    const focusLeftTooltip = !this.contains(event.relatedTarget);
+    if (focusLeftTooltip) {
+      this.close();
+    }
+  };
+  #handleKeydown = event => {
+    switch (event.key) {
+      case 'Escape':
+        // #handleDialogCancel handles presses on Escape so #handleKeydown should be ignored inside dialogs
+        const notInsideDialog = !this.closest('dialog');
+        if (this.querySelector('button').getAttribute('aria-expanded') !== 'false' && notInsideDialog) {
+          this.close();
+          this.querySelector('button').focus();
+          event.stopImmediatePropagation();
+        }
+        break;
+    }
+  };
+  #handleResize = () => {
+    this.#updatePosition();
+  };
+  #handleScroll = () => {
+    this.#updatePosition();
+  };
+  #handleIntersection = entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        this.close();
+      }
+    });
+  };
+  #handleOutsideClick = event => {
+    if (!this.contains(event.target)) {
+      this.close();
+    }
+  };
+
+  // Closes the tooltip instead of the dialog when Escape is pressed inside a dialog
+  #handleDialogCancel = event => {
+    event.preventDefault();
+    this.close();
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    if (!this.hasAttribute('tooltip-text') || !this.hasAttribute('sr-label')) return;
+    const uniqueId = this.getAttribute('tooltip-id') ?? generateAndVerifyUniqueId('tooltip-');
+    let button = this.querySelector('button');
+    if (button === null) {
+      button = document.createElement('button');
+      button.classList.add('button', 'button-unstyled');
+      button.setAttribute('type', 'button');
+      button.setAttribute('aria-controls', uniqueId);
+      this.appendChild(button);
+      const helpIcon = createSvgIcon('M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z');
+      button.appendChild(helpIcon);
+    }
+    button.setAttribute('aria-label', this.getAttribute('sr-label'));
+    button.setAttribute('aria-expanded', 'false');
+    let ariaLive = this.querySelector('[aria-live]');
+    if (ariaLive === null) {
+      ariaLive = document.createElement('span');
+      ariaLive.setAttribute('aria-atomic', 'true');
+      ariaLive.setAttribute('aria-live', 'assertive');
+      this.appendChild(ariaLive);
+    }
+    let tooltip = this.querySelector('.tooltip');
+    if (tooltip === null) {
+      tooltip = document.createElement('span');
+      tooltip.setAttribute('id', uniqueId);
+      tooltip.setAttribute('tabindex', '-1');
+      tooltip.classList.add('tooltip');
+      ariaLive.appendChild(tooltip);
+    }
+    tooltip.style.display = 'none';
+    let tooltipArrow = this.querySelector('.tooltip-arrow');
+    if (tooltipArrow === null) {
+      tooltipArrow = document.createElement('span');
+      tooltipArrow.classList.add('tooltip-arrow');
+      this.appendChild(tooltipArrow);
+    }
+    tooltipArrow.setAttribute('aria-hidden', 'true');
+    tooltipArrow.style.display = 'none';
+  }
+  #addEventListeners() {
+    this.querySelector('button').addEventListener('click', this.#handleClick, false);
+    this.addEventListener('focusout', this.#handleFocusOut, false);
+    this.addEventListener('keydown', this.#handleKeydown, false);
+  }
+  #removeEventListeners() {
+    this.querySelector('button').removeEventListener('click', this.#handleClick, false);
+    this.removeEventListener('focusout', this.#handleFocusOut, false);
+    this.removeEventListener('keydown', this.#handleKeydown, false);
+  }
+  #connectIntersectionObserver() {
+    if (this.#intersectionObserver) return;
+    this.#intersectionObserver = new IntersectionObserver(this.#handleIntersection, {
+      threshold: 0
+    });
+    this.#intersectionObserver.observe(this.querySelector('button'));
+  }
+  #disconnectIntersectionObserver() {
+    if (this.#intersectionObserver) {
+      this.#intersectionObserver.disconnect();
+      this.#intersectionObserver = null;
+    }
+  }
+  #updatePosition() {
+    // Width must be set before left, as left depends on tooltip width
+    setTooltipWidth(this.querySelector('.tooltip'));
+    setTooltipLeft(this.querySelector('.tooltip'), this.querySelector('button'));
+    setVerticalPlacement(this.querySelector('.tooltip'), this.querySelector('.tooltip-arrow'), this.querySelector('button'), this.placement);
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+  open() {
+    this.querySelector('button').setAttribute('aria-expanded', 'true');
+    this.querySelector('.tooltip-arrow').style.display = 'block';
+    this.querySelector('.tooltip').style.display = 'block';
+    this.querySelector('.tooltip').textContent = this.getAttribute('tooltip-text');
+    this.#updatePosition();
+    window.addEventListener('resize', this.#handleResize, false);
+    document.addEventListener('mousedown', this.#handleOutsideClick, false);
+    document.addEventListener('scroll', this.#handleScroll, true);
+    document.addEventListener('keydown', this.#handleKeydown, false);
+    this.#connectIntersectionObserver();
+
+    // Let the tooltip consume Escape key press before an ancestor dialog does
+    this.closest('dialog')?.addEventListener('cancel', this.#handleDialogCancel);
+  }
+  close() {
+    this.querySelector('button').setAttribute('aria-expanded', 'false');
+    this.querySelector('.tooltip').style.display = 'none';
+    this.querySelector('.tooltip-arrow').style.display = 'none';
+    this.querySelector('.tooltip').textContent = '';
+    window.removeEventListener('resize', this.#handleResize, false);
+    document.removeEventListener('mousedown', this.#handleOutsideClick, false);
+    document.removeEventListener('scroll', this.#handleScroll, true);
+    document.removeEventListener('keydown', this.#handleKeydown, false);
+    this.#disconnectIntersectionObserver();
+    this.closest('dialog')?.removeEventListener('cancel', this.#handleDialogCancel);
+  }
+  toggle() {
+    this.querySelector('button').getAttribute('aria-expanded') === 'false' ? this.open() : this.close();
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+
+    // Remove observer and event listeners that are temporarily added when the tooltip is open
+    window.removeEventListener('resize', this.#handleResize, false);
+    document.removeEventListener('mousedown', this.#handleOutsideClick, false);
+    document.removeEventListener('scroll', this.#handleScroll, true);
+    this.#disconnectIntersectionObserver();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'tooltip-text':
+        if (this.querySelector('button').getAttribute('aria-expanded') === 'true') {
+          this.querySelector('.tooltip').textContent = newValue;
+          this.#updatePosition();
+        }
+        break;
+      case 'sr-label':
+        this.querySelector('button').setAttribute('aria-label', newValue);
+        break;
+      case 'placement':
+        if (this.querySelector('button').getAttribute('aria-expanded') === 'true') {
+          this.#updatePosition();
+        }
+        break;
+      case 'tooltip-id':
+        if (newValue !== null) {
+          const tooltip = this.querySelector('.tooltip');
+          tooltip.setAttribute('id', newValue);
+          this.querySelector('button').setAttribute('aria-controls', newValue);
+        }
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerTooltipIcon() {
+  if (!customElements.get('fds-tooltip-icon')) {
+    customElements.define('fds-tooltip-icon', FDSTooltipIcon);
+  }
+}
+/* harmony default export */ const fds_tooltip_icon = (registerTooltipIcon);
+;// ./src/js/custom-elements/toggle-switch/fds-toggle-switch.js
+class FDSToggleSwitch extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['state', 'label', 'disabled-switch'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get state() {
+    return this.getAttribute('state') ?? 'off';
+  } // Default state is 'off'
+  set state(value) {
+    value == null ? this.removeAttribute('state') : this.setAttribute('state', value);
+  }
+  get label() {
+    return this.getAttribute('label');
+  }
+  set label(value) {
+    value == null ? this.removeAttribute('label') : this.setAttribute('label', value);
+  }
+  get disabledSwitch() {
+    return this.getAttribute('disabled-switch');
+  }
+  set disabledSwitch(value) {
+    value == null ? this.removeAttribute('disabled-switch') : this.setAttribute('disabled-switch', value);
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleClick = () => {
+    this.toggle();
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    const button = this.querySelector('button') ?? document.createElement('button');
+    const buttonText = this.querySelector('button span') ?? document.createElement('span');
+
+    // Ensure label attribute is used as label when attribute is present
+    buttonText.textContent = this.getAttribute('label') ?? buttonText.textContent;
+
+    // Add the button text if not already present
+    if (!buttonText.isConnected) {
+      button.appendChild(buttonText);
+    }
+
+    // Add the button if not already present
+    button.setAttribute('type', 'button');
+    button.setAttribute('role', 'switch');
+    if (!button.isConnected) {
+      this.appendChild(button);
+    }
+
+    // Set on-off state of the button
+    this.#stateChange(this.getAttribute('state'), false);
+
+    // Set disabled state of the button
+    !this.hasAttribute('disabled-switch') || this.getAttribute('disabled-switch') === 'false' ? button.removeAttribute('disabled') : button.setAttribute('disabled', '');
+  }
+  #stateChange(newState, dispatchEvent) {
+    const button = this.querySelector('button');
+    let eventName = 'fds-toggle-off';
+    if (newState === 'off' || !newState) {
+      button.setAttribute('aria-checked', 'false');
+    } else {
+      button.setAttribute('aria-checked', 'true');
+      eventName = 'fds-toggle-on';
+    }
+    if (dispatchEvent && !button.disabled) {
+      this.dispatchEvent(new Event(eventName));
+    }
+  }
+  #init() {
+    this.#setupHTML();
+    this.querySelector('button')?.addEventListener('click', this.#handleClick);
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  on() {
+    this.setAttribute('state', 'on');
+  }
+  off() {
+    this.setAttribute('state', 'off');
+  }
+  toggle() {
+    this.state === 'off' ? this.on() : this.off();
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    this.#init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.querySelector('button')?.removeEventListener('click', this.#handleClick);
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'state':
+        this.#stateChange(newValue, true);
+        break;
+      case 'label':
+        const span = this.querySelector('button span');
+        if (span) {
+          span.textContent = newValue ?? '';
+        }
+        break;
+      case 'disabled-switch':
+        const button = this.querySelector('button');
+        newValue === null || newValue === 'false' ? button.removeAttribute('disabled') : button.setAttribute('disabled', '');
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerToggleSwitch() {
+  if (!customElements.get('fds-toggle-switch')) {
+    customElements.define('fds-toggle-switch', FDSToggleSwitch);
+  }
+}
+/* harmony default export */ const fds_toggle_switch = (registerToggleSwitch);
+;// ./src/js/custom-elements/modal/fds-modal-opener.js
+class FDSModalOpener extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['modal-id', 'ready'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get modalId() {
+    return this.getAttribute('modal-id');
+  }
+  set modalId(value) {
+    value == null ? this.removeAttribute('modal-id') : this.setAttribute('modal-id', value);
+  }
+  get ready() {
+    return this.getAttribute('ready') !== 'false';
+  }
+  set ready(value) {
+    this.setAttribute('ready', value ? 'true' : 'false');
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleClick = () => {
+    const modal = document.getElementById(this.modalId);
+    if (!modal) return;
+    modal.open();
+    this.dispatchEvent(new CustomEvent('fds-modal-opener-click', {
+      bubbles: true,
+      detail: {
+        modalId: this.modalId
+      }
+    }));
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    const opener = this.firstElementChild;
+    if (opener?.tagName === 'BUTTON' || opener?.tagName === 'INPUT' && opener.type === 'button') {
+      opener.setAttribute('aria-haspopup', 'dialog');
+    }
+  }
+  #addEventListeners() {
+    this.firstElementChild?.addEventListener('click', this.#handleClick);
+  }
+  #removeEventListeners() {
+    this.firstElementChild?.removeEventListener('click', this.#handleClick);
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
+  }
+
+  // #endregion
+}
+function registerModalOpener() {
+  if (!customElements.get('fds-modal-opener')) {
+    customElements.define('fds-modal-opener', FDSModalOpener);
+  }
+}
+/* harmony default export */ const fds_modal_opener = (registerModalOpener);
+;// ./src/js/custom-elements/modal/fds-modal-closer.js
+class FDSModalCloser extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['return-value', 'ready'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get returnValue() {
+    return this.getAttribute('return-value');
+  }
+  set returnValue(value) {
+    value == null ? this.removeAttribute('return-value') : this.setAttribute('return-value', value);
+  }
+  get ready() {
+    return this.getAttribute('ready') !== 'false';
+  }
+  set ready(value) {
+    this.setAttribute('ready', value ? 'true' : 'false');
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleClick = () => {
+    const dialog = this.closest('dialog');
+    if (!dialog) return;
+    const returnValue = this.returnValue ?? undefined;
+    const event = new CustomEvent('fds-modal-closer-click', {
+      bubbles: true,
+      cancelable: true,
+      detail: {
+        returnValue
+      }
+    });
+
+    // dispatchEvent() returns false if preventDefault() was called from an event handler.
+    // This may happen for bottom sheets where closing the modal requires animation.
+    const notPrevented = this.dispatchEvent(event);
+    if (notPrevented) {
+      dialog.close(returnValue);
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #addEventListeners() {
+    this.firstElementChild?.addEventListener('click', this.#handleClick);
+  }
+  #removeEventListeners() {
+    this.firstElementChild?.removeEventListener('click', this.#handleClick);
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
+  }
+
+  // #endregion
+}
+function registerModalCloser() {
+  if (!customElements.get('fds-modal-closer')) {
+    customElements.define('fds-modal-closer', FDSModalCloser);
+  }
+}
+/* harmony default export */ const fds_modal_closer = (registerModalCloser);
+;// ./src/js/custom-elements/modal/fds-modal.js
+
+
+class FDSModal extends HTMLElement {
+  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
+
+  static observedAttributes = ['ready', 'heading', 'heading-id', 'dismissible', 'variant', 'close-text'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get ready() {
+    return this.getAttribute('ready') !== 'false';
+  }
+  set ready(value) {
+    this.setAttribute('ready', value ? 'true' : 'false');
+  }
+  get heading() {
+    return this.getAttribute('heading');
+  }
+  set heading(value) {
+    value == null ? this.removeAttribute('heading') : this.setAttribute('heading', value);
+  }
+  get headingId() {
+    return this.getAttribute('heading-id');
+  }
+  set headingId(value) {
+    value == null ? this.removeAttribute('heading-id') : this.setAttribute('heading-id', value);
+  }
+  get dismissible() {
+    return this.getAttribute('dismissible') !== 'false';
+  }
+  set dismissible(value) {
+    this.setAttribute('dismissible', value ? 'true' : 'false');
+  }
+  get variant() {
+    return this.getAttribute('variant') ?? 'default';
+  }
+  set variant(value) {
+    value == null ? this.removeAttribute('variant') : this.setAttribute('variant', value);
+  }
+  get closeText() {
+    return this.getAttribute('close-text');
+  }
+  set closeText(value) {
+    value == null ? this.removeAttribute('close-text') : this.setAttribute('close-text', value);
+  }
+  get dialog() {
+    return this.querySelector('dialog');
+  }
+
+  // #endregion
+
+  // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
+
+  #initialized = false;
+  #closing = false;
+  #storedReturnValue = (() => undefined)();
+  #resizeObserver = null;
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleClose = () => {
+    if (this.#isAnimatedVariant()) {
+      this.dialog.classList.remove(`${this.variant}-open`);
+    }
+
+    // Clean up in case the dialog closed some other way before the exit
+    // transition finished (e.g. Escape interrupting a bottom sheet's/drawer's animation)
+    if (this.#closing) {
+      this.dialog.removeEventListener('transitionend', this.#handleTransitionEnd);
+      this.#closing = false;
+      this.#storedReturnValue = undefined;
+    }
+    this.dispatchEvent(new CustomEvent('fds-modal-close', {
+      bubbles: true,
+      detail: {
+        returnValue: this.dialog.returnValue
+      }
+    }));
+  };
+
+  // Blocks Escape/back button/requestClose() when not dismissible (Safari)
+  #handleCancel = event => {
+    if (!this.dismissible) {
+      event.preventDefault();
+    }
+  };
+  #handleBackdropClick = event => {
+    if (!this.dismissible) return;
+
+    // Using the keyboard to interact with modal content can register as clicks outside the dialog.
+    // Ignore these events by ensuring the event target is the dialog.
+    if (event.target !== this.dialog) return;
+    const rect = this.dialog.getBoundingClientRect();
+    const clickedBackdrop = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    if (!clickedBackdrop) return;
+    if (this.#isAnimatedVariant()) {
+      this.#animateClose('');
+    } else {
+      this.dialog.close('');
+    }
+  };
+  #handleCloserClick = event => {
+    if (!this.#isAnimatedVariant()) return;
+    event.preventDefault();
+    this.#animateClose(event.detail?.returnValue);
+  };
+
+  // Close the modal when a nested fds-modal-opener is clicked
+  #handleNestedOpenerClick = () => {
+    if (this.#isAnimatedVariant()) {
+      this.#animateClose('');
+    } else {
+      this.dialog.close('');
+    }
+  };
+  #handleTransitionEnd = event => {
+    if (event.propertyName !== 'translate' || event.target !== this.dialog) return;
+    this.dialog.removeEventListener('transitionend', this.#handleTransitionEnd);
+    this.#closing = false;
+    this.dialog.close(this.#storedReturnValue);
+    this.#storedReturnValue = undefined;
+  };
+  #handleBottomFade = () => {
+    const scrollableArea = this.dialog?.querySelector('.scrollable-area.has-fade');
+    if (!scrollableArea) return;
+    const distanceFromBottom = scrollableArea.scrollHeight - scrollableArea.scrollTop - scrollableArea.clientHeight;
+    const atBottom = distanceFromBottom <= 1; // 1 used instead of 0 for a small tolerance margin
+
+    atBottom ? scrollableArea.setAttribute('data-at-bottom', '') : scrollableArea.removeAttribute('data-at-bottom');
+  };
+  #handleResize = entries => {
+    for (const entry of entries) {
+      // Close the modal if a resize caused it to become hidden
+      if (entry.target === this && !this.checkVisibility()) {
+        this.#forceClose();
+      }
+      // Scrollable areas with a fade effect might need an attribute update on resize
+      else {
+        this.#handleBottomFade();
+      }
+    }
+  };
+
+  // #endregion
+
+  // #region - PRIVATE METHODS ----------------------------------------------------------------------------
+
+  #setupHTML() {
+    const modalTop = this.querySelector('.modal-top');
+    if (!modalTop || !this.dialog) return;
+    this.#updateHeading();
+    let closeButton = modalTop.querySelector('.modal-close');
+    if (!closeButton && this.dismissible) {
+      closeButton = document.createElement('fds-modal-closer');
+      closeButton.classList.add('modal-close');
+      const innerButton = document.createElement('button');
+      innerButton.classList.add('function-link');
+      innerButton.setAttribute('type', 'button');
+      closeButton.appendChild(innerButton);
+      const innerButtonIcon = createSvgIcon('m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z');
+      innerButton.appendChild(innerButtonIcon);
+      const innerButtonText = document.createElement('span');
+      innerButton.appendChild(innerButtonText);
+      modalTop.appendChild(closeButton);
+    }
+    this.#updateCloseText();
+  }
+  #addEventListeners() {
+    this.dialog?.addEventListener('close', this.#handleClose);
+    this.dialog?.addEventListener('cancel', this.#handleCancel);
+    this.dialog?.addEventListener('click', this.#handleBackdropClick);
+    this.dialog?.querySelector('.scrollable-area.has-fade')?.addEventListener('scroll', this.#handleBottomFade);
+    this.addEventListener('fds-modal-closer-click', this.#handleCloserClick);
+    this.addEventListener('fds-modal-opener-click', this.#handleNestedOpenerClick);
+  }
+  #removeEventListeners() {
+    this.dialog?.removeEventListener('close', this.#handleClose);
+    this.dialog?.removeEventListener('cancel', this.#handleCancel);
+    this.dialog?.removeEventListener('click', this.#handleBackdropClick);
+    this.dialog?.querySelector('.scrollable-area.has-fade')?.removeEventListener('scroll', this.#handleBottomFade);
+    this.removeEventListener('fds-modal-closer-click', this.#handleCloserClick);
+    this.removeEventListener('fds-modal-opener-click', this.#handleNestedOpenerClick);
+  }
+  #connectResizeObserver() {
+    if (this.#resizeObserver) return;
+    this.#resizeObserver = new ResizeObserver(this.#handleResize);
+    this.#resizeObserver.observe(this);
+    const scrollableArea = this.dialog?.querySelector('.scrollable-area.has-fade');
+    if (scrollableArea) {
+      this.#resizeObserver.observe(scrollableArea);
+    }
+  }
+  #disconnectResizeObserver() {
+    if (this.#resizeObserver) {
+      this.#resizeObserver.disconnect();
+      this.#resizeObserver = null;
+    }
+  }
+
+  // Sets closedby="none" when not dismissible (Chrome/Firefox). Not supported in Safari.
+  #updateClosedBy() {
+    if (!this.dialog) return;
+    if (this.dismissible) {
+      this.dialog.removeAttribute('closedby');
+    } else {
+      this.dialog.setAttribute('closedby', 'none');
+    }
+  }
+  #isAnimatedVariant() {
+    return this.variant === 'bottom-sheet' || this.variant === 'drawer';
+  }
+  #animateClose(returnValue) {
+    if (this.#closing) return; // Already closing, ignore duplicate requests
+
+    this.dialog.classList.remove(`${this.variant}-open`);
+    this.#closing = true;
+    this.#storedReturnValue = returnValue;
+    this.dialog.addEventListener('transitionend', this.#handleTransitionEnd);
+  }
+
+  // Closes the dialog immediately, bypassing dismissible and skipping any exit transition
+  #forceClose() {
+    if (!this.dialog?.open) return;
+    if (this.#closing) {
+      this.dialog.removeEventListener('transitionend', this.#handleTransitionEnd);
+      this.#closing = false;
+      this.#storedReturnValue = undefined;
+    }
+    if (this.#isAnimatedVariant()) {
+      this.dialog.classList.remove(`${this.variant}-open`);
+    }
+    this.dialog.close();
+  }
+  #updateHeading() {
+    if (!this.heading) return;
+    const modalTop = this.querySelector('.modal-top');
+    if (!modalTop || !this.dialog) return;
+    let topHeading = modalTop.querySelector('.top-heading');
+    if (!topHeading) {
+      topHeading = document.createElement('h2');
+      topHeading.classList.add('top-heading');
+      topHeading.setAttribute('tabindex', '-1');
+      modalTop.prepend(topHeading);
+      this.#updateHeadingId();
+    }
+    topHeading.textContent = this.heading;
+  }
+  #updateHeadingId() {
+    const topHeading = this.querySelector('.top-heading');
+    if (!topHeading || !this.dialog) return;
+    const headingId = this.headingId && this.headingId.trim() !== '' ? this.headingId : generateAndVerifyUniqueId('top-heading-');
+    topHeading.id = headingId;
+    this.dialog.setAttribute('aria-labelledby', headingId);
+  }
+  #updateCloseText() {
+    const closeButton = this.querySelector('.modal-close');
+    if (!closeButton) return;
+    const textSpan = closeButton.querySelector('span');
+    if (textSpan) {
+      textSpan.textContent = this.closeText || 'Luk';
+    }
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  init() {
+    this.#setupHTML();
+    this.#updateClosedBy();
+    this.#addEventListeners();
+    this.#connectResizeObserver();
+    this.#initialized = true;
+  }
+  open() {
+    if (!this.#initialized || !this.dialog) return;
+    if (this.dialog.open) return;
+    if (!this.checkVisibility()) {
+      console.warn('fds-modal is hidden and cannot open', this);
+      return;
+    }
+    this.dialog.showModal();
+    if (this.#isAnimatedVariant()) {
+      // Ensures the closed state is painted first, otherwise the slide-in transition may be skipped
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          this.dialog.classList.add(`${this.variant}-open`);
+        });
+      });
+    }
+    this.dispatchEvent(new CustomEvent('fds-modal-open', {
+      bubbles: true
+    }));
+  }
+  close(returnValue) {
+    if (!this.#initialized || !this.dialog?.open) return;
+    if (this.#isAnimatedVariant()) {
+      this.#animateClose(returnValue);
+    } else {
+      this.dialog.close(returnValue);
+    }
+  }
+
+  // #endregion
+
+  // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
+
+  connectedCallback() {
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
+  }
+
+  // #endregion
+
+  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
+
+  disconnectedCallback() {
+    this.#removeEventListeners();
+    this.#disconnectResizeObserver();
+    if (this.#closing) {
+      this.dialog?.removeEventListener('transitionend', this.#handleTransitionEnd);
+      this.#closing = false;
+      this.#storedReturnValue = undefined;
+    }
+    this.#initialized = false;
+  }
+
+  // #endregion
+
+  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
+
+  attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
+    if (!this.#initialized) return;
+    if (oldValue === newValue) return;
+    switch (attribute) {
+      case 'dismissible':
+        this.#updateClosedBy();
+        break;
+      case 'variant':
+        this.dialog?.classList.remove('bottom-sheet-open', 'drawer-open');
+        if (this.dialog?.open && this.#isAnimatedVariant()) {
+          this.dialog.classList.add(`${this.variant}-open`);
+        }
+        break;
+      case 'heading':
+        this.#updateHeading();
+        break;
+      case 'heading-id':
+        this.#updateHeadingId();
+        break;
+      case 'close-text':
+        this.#updateCloseText();
+        break;
+    }
+  }
+
+  // #endregion
+}
+function registerModal() {
+  if (!customElements.get('fds-modal')) {
+    customElements.define('fds-modal', FDSModal);
+  }
+}
+/* harmony default export */ const fds_modal = (registerModal);
+;// ./src/js/new-dkfds.js
+
+
+// Custom elements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const registerCustomElements = () => {
+  fds_accordion();
+  fds_accordion_group();
+  fds_input();
+  fds_help_text();
+  fds_character_limit();
+  fds_error_message();
+  fds_checkbox();
+  fds_checkbox_group();
+  fds_radio_button();
+  fds_radio_button_group();
+  fds_date_input();
+  fds_select();
+  fds_date_picker();
+  fds_date_picker_grid();
+  fds_textarea();
+  fds_upload_file();
+  fds_file_item();
+  fds_error_summary();
+  input_affix();
+  fds_drawer();
+  fds_drawer_opener();
+  fds_portal_info();
+  fds_solution_info();
+  fds_dropdown_menu();
+  fds_main_menu();
+  fds_tooltip();
+  fds_tooltip_icon();
+  fds_toggle_switch();
+  fds_modal_opener();
+  fds_modal_closer();
+  fds_modal();
+};
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', registerCustomElements);
+} else {
+  registerCustomElements();
+}
+
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});

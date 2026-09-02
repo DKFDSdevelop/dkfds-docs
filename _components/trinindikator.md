@@ -11,14 +11,15 @@ title: Trinindikator
 lead: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."
 description: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."
 tags:
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="step-indicator" title="Eksempel på trinindikator" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Trinindikator" code="Trinindikator_Kode" %}
+{% include anchorlinks.html guidelines="Trinindikator" code="Trinindikator_Kode" custom="Trinindikator_Custom" %}
 
 <!--split-->
 
@@ -124,3 +125,19 @@ Tilføj klassen `sidenav-error` til de liste-elementer, der er fejl i og anvend 
 ## Simpel trinindikator {#{% include create-id.html heading="Simpel trinindikator" append="-kode" %}}
 
 {% include code/syntax.html component="step-indicator-simple" link=true copybutton=true guidelines="/komponenter/trinindikator/#simpel-trinindikator" %}
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+Trinindikatoren skal vises i en modal ved mindre skærmstørrelser. Standard-breakpoint er `md`, hvor `d-md-block` skal sættes som klasse på `nav`-elementet og `d-md-none` skal sættes som klasse på `fds-modal` og `fds-modal-opener`.
+
+{% include code/show-example-with-tabs.html example="step-indicator-default" tabId="example-1-step" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+Se {% include links/component-guideline-link.html linktext="modal" %}.
