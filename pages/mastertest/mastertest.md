@@ -43,6 +43,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-toggle-switch" description="Toggle Switch" %}
 {% include test/preview-test.html filename="test-fds-modal" description="Modal" %}
 {% include test/preview-test.html filename="test-fds-step-indicator" description="Trinindikator" %}
+{% include test/preview-test.html filename="test-fds-tabs" description="Faneblade" %}
 
 {:.h3}
 ## HTML-elementer

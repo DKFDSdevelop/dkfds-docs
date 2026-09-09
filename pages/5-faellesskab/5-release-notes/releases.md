@@ -110,7 +110,10 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 
 
 
-## Version x.0.0 {#{% include create-id.html heading="Version x.0.0" %}}
+## Version 12.0.0 {#{% include create-id.html heading="Version 12.0.0" %}}
+{:.mb-0}
+
+<div><span class="small-text mt-0 d-block">xx-xx-2026</span></div>
 
 - <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet custom elements og web components.
 - <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet ikonet `plus-circle`.
