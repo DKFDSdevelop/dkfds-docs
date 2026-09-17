@@ -27,7 +27,9 @@ const SKIP_FILES = [
     'fds-input-wrapper-simple.html',
     'react-ref.html',
     'react-wrapper.html',
-    'react-script.html'
+    'react-script.html',
+    'fds-tabs-default',
+    'fds-tabs-icons'
 ];
 
 global.HTMLElement = window.HTMLElement;
@@ -49,7 +51,44 @@ global.ResizeObserver = class ResizeObserver {
 };
 
 const DKFDS = require('dkfds/new-dkfds');
-DKFDS.registerCustomElements();
+
+DKFDS.registerAccordion();
+DKFDS.registerAccordionGroup();
+DKFDS.registerInput();
+DKFDS.registerHelpText();
+DKFDS.registerCharacterLimit();
+DKFDS.registerErrorMessage();
+DKFDS.registerCheckbox();
+DKFDS.registerCheckboxGroup();
+DKFDS.registerRadioButton();
+DKFDS.registerRadioButtonGroup();
+DKFDS.registerDateInput();
+DKFDS.registerSelect();
+DKFDS.registerDatePicker();
+DKFDS.registerDatePickerGrid();
+DKFDS.registerTextarea();
+DKFDS.registerUploadFile();
+DKFDS.registerFileItem();
+DKFDS.registerErrorSummary();
+DKFDS.registerInputAffix();
+DKFDS.registerDrawer();
+DKFDS.registerDrawerOpener();
+DKFDS.registerPortalInfo();
+DKFDS.registerSolutionInfo();
+DKFDS.registerDropdownMenu();
+DKFDS.registerMainMenu();
+DKFDS.registerTooltip();
+DKFDS.registerTooltipIcon();
+DKFDS.registerToggleSwitch();
+DKFDS.registerModalOpener();
+DKFDS.registerModalCloser();
+DKFDS.registerModal();
+
+// Don't register tabs as they use assign() and the examples are skipped anyway
+
+//DKFDS.registerTab();
+//DKFDS.registerTabPanel();
+//DKFDS.registerTabs();
 
 fs.readdirSync(srcDir).forEach(file => {
     if (!SKIP_FILES.includes(file)) {

@@ -8349,6 +8349,17 @@ function registerModal() {
   }
 }
 /* harmony default export */ const fds_modal = (registerModal);
+;// ./src/js/utils/breakpoints.js
+
+
+let breakpoints = {
+  'xs': 0,
+  'sm': 576,
+  'md': 768,
+  'lg': 992,
+  'xl': 1200
+};
+/* harmony default export */ const utils_breakpoints = (breakpoints);
 ;// ./src/js/custom-elements/tabs/fds-tab-styling.js
 const fds_tab_styling_styles = breakpoint => `
     *,
@@ -8366,7 +8377,7 @@ const fds_tab_styling_styles = breakpoint => `
         text-align: center;
         border: 0;
         text-decoration: underline;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
         cursor: pointer;
 
         border-radius: 20px;
@@ -8397,14 +8408,20 @@ const fds_tab_styling_styles = breakpoint => `
             padding: 1px 24px;
         }
     }
+
+    ::slotted(.icon-svg) {
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
 `;
 ;// ./src/js/custom-elements/tabs/fds-tab.js
+
 
 
 class FDSTab extends HTMLElement {
   // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
 
-  static observedAttributes = ['tab-key'];
+  static observedAttributes = ['tab-key', 'breakpoint'];
 
   // #endregion
 
@@ -8417,23 +8434,21 @@ class FDSTab extends HTMLElement {
     value == null ? this.removeAttribute('tab-key') : this.setAttribute('tab-key', value);
   }
 
+  // Only accepts a known breakpoint key (xs, sm, md, lg, xl) - anything else defaults to 'md'.
+  get breakpoint() {
+    const value = this.getAttribute('breakpoint');
+    return value in utils_breakpoints ? value : 'md';
+  }
+  set breakpoint(value) {
+    value == null ? this.removeAttribute('breakpoint') : this.setAttribute('breakpoint', value);
+  }
+
   // #endregion
 
   // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
 
   #initialized = false;
   #sheet = (() => new CSSStyleSheet())();
-
-  // #endregion
-
-  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
-
-  #handleClick = () => {
-    this.dispatchEvent(new CustomEvent('fds-tab-activate', {
-      bubbles: true,
-      composed: true
-    }));
-  };
 
   // #endregion
 
@@ -8449,11 +8464,14 @@ class FDSTab extends HTMLElement {
     if (this.id || !this.tabKey) return;
     this.id = generateAndVerifyUniqueId(`tab-${this.tabKey}-`);
   }
+  #applyStyles() {
+    this.#sheet.replaceSync(fds_tab_styling_styles(`${utils_breakpoints[this.breakpoint]}px`));
+  }
   #init() {
     this.#setupHTML();
     this.#setupId();
     this.setAttribute('role', 'tab');
-    this.addEventListener('click', this.#handleClick);
+    this.#applyStyles();
     this.#initialized = true;
   }
 
@@ -8467,7 +8485,6 @@ class FDSTab extends HTMLElement {
       mode: 'open'
     });
     this.shadowRoot.adoptedStyleSheets = [this.#sheet];
-    this.#sheet.replaceSync(fds_tab_styling_styles('768px'));
   }
 
   // #endregion
@@ -8483,7 +8500,6 @@ class FDSTab extends HTMLElement {
   // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
 
   disconnectedCallback() {
-    this.removeEventListener('click', this.#handleClick);
     this.#initialized = false;
   }
 
@@ -8496,6 +8512,8 @@ class FDSTab extends HTMLElement {
     if (oldValue === newValue) return;
     if (attribute === 'tab-key') {
       this.#setupId();
+    } else if (attribute === 'breakpoint') {
+      this.#applyStyles();
     }
   }
 
@@ -8573,6 +8591,7 @@ class FDSTabPanel extends HTMLElement {
     this.#setupHTML();
     this.#setupId();
     this.setAttribute('role', 'tabpanel');
+    this.tabIndex = 0;
     this.#initialized = true;
   }
 
@@ -8654,6 +8673,7 @@ const fds_tabs_styling_styles = breakpoint => `
 `;
 ;// ./src/js/custom-elements/tabs/fds-tabs.js
 
+
 const fds_tabs_mutationObserverConfig = {
   subtree: true,
   childList: true,
@@ -8663,17 +8683,24 @@ const fds_tabs_mutationObserverConfig = {
 class FDSTabs extends HTMLElement {
   // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
 
-  static observedAttributes = ['selected-tab'];
+  static observedAttributes = ['breakpoint'];
 
   // #endregion
 
   // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
 
-  get selectedTab() {
-    return this.getAttribute('selected-tab');
+  get defaultTab() {
+    return this.getAttribute('default-tab');
   }
-  set selectedTab(value) {
-    value == null ? this.removeAttribute('selected-tab') : this.setAttribute('selected-tab', value);
+  set defaultTab(value) {
+    value == null ? this.removeAttribute('default-tab') : this.setAttribute('default-tab', value);
+  }
+  get breakpoint() {
+    const value = this.getAttribute('breakpoint');
+    return value in utils_breakpoints ? value : 'md';
+  }
+  set breakpoint(value) {
+    value == null ? this.removeAttribute('breakpoint') : this.setAttribute('breakpoint', value);
   }
 
   // #endregion
@@ -8688,13 +8715,49 @@ class FDSTabs extends HTMLElement {
 
   // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
 
-  #handleTabActivate = event => {
+  #handleClick = event => {
     const tabElement = event.composedPath().find(node => node.nodeName === 'FDS-TAB');
     if (!tabElement || !tabElement.tabKey) return;
-    this.selectedTab = tabElement.tabKey;
+    this.selectTab(tabElement.tabKey);
+  };
+  #handleKeyDown = event => {
+    const tabElement = event.composedPath().find(node => node.nodeName === 'FDS-TAB');
+    if (!tabElement) return;
+    const assignedTabs = this.shadowRoot.querySelector('#tab-slot').assignedElements();
+    const currentIndex = assignedTabs.indexOf(tabElement);
+    if (currentIndex === -1) return;
+    let newIndex;
+    switch (event.key) {
+      case 'ArrowLeft':
+        newIndex = currentIndex - 1;
+        if (newIndex < 0) {
+          newIndex = assignedTabs.length - 1;
+        }
+        break;
+      case 'ArrowRight':
+        newIndex = currentIndex + 1;
+        if (newIndex >= assignedTabs.length) {
+          newIndex = 0;
+        }
+        break;
+      case 'Home':
+        newIndex = 0;
+        break;
+      case 'End':
+        newIndex = assignedTabs.length - 1;
+        break;
+      default:
+        return;
+    }
+    event.preventDefault(); // Prevent default ArrowLeft, ArrowRight, Home, and End
+
+    const newTab = assignedTabs[newIndex];
+    newTab.focus();
+    this.selectTab(newTab.tabKey);
   };
   #handleMutations = () => {
     this.#updateSlotAssignments();
+    this.#ensureValidSelection();
   };
 
   // #endregion
@@ -8713,17 +8776,34 @@ class FDSTabs extends HTMLElement {
     this.shadowRoot.appendChild(wrapper);
     this.shadowRoot.appendChild(panelSlot);
   }
+  #getSelectedTab() {
+    return this.dataset.selectedTab ?? null;
+  }
+  #setSelectedTab(tabKey) {
+    if (tabKey == null) {
+      delete this.dataset.selectedTab;
+    } else {
+      this.dataset.selectedTab = tabKey;
+    }
+  }
+  #applyStyles() {
+    this.#sheet.replaceSync(fds_tabs_styling_styles(`${utils_breakpoints[this.breakpoint]}px`));
+  }
 
   // Returns a Map of (tab-key, element) for all direct children matching the given tag name.
   #createTabKeyMap(tagName) {
-    const elementsByTabKey = new Map();
+    const validTabKeyElements = new Map();
     for (const child of this.children) {
-      const shouldAddEntry = child.tagName === tagName && child.tabKey && !elementsByTabKey.has(child.tabKey);
-      if (shouldAddEntry) {
-        elementsByTabKey.set(child.tabKey, child);
+      const isValidTabKeyElement = child.tagName === tagName && child.tabKey;
+      if (isValidTabKeyElement) {
+        if (validTabKeyElements.has(child.tabKey)) {
+          console.warn(`fds-tabs: duplicate tab-key "${child.tabKey}" on ${tagName.toLowerCase()}.`, child);
+        } else {
+          validTabKeyElements.set(child.tabKey, child);
+        }
       }
     }
-    return elementsByTabKey;
+    return validTabKeyElements;
   }
 
   // Assign valid tab and tab-panel pairs to slots
@@ -8737,7 +8817,8 @@ class FDSTabs extends HTMLElement {
       if (panel) {
         tab.setAttribute('aria-controls', panel.id);
         panel.setAttribute('aria-labelledby', tab.id);
-        if (tabKey === this.selectedTab) {
+        tab.breakpoint = this.breakpoint;
+        if (tabKey === this.#getSelectedTab()) {
           tab.setAttribute('aria-selected', 'true');
           tab.tabIndex = 0;
           panel.hidden = false;
@@ -8753,31 +8834,27 @@ class FDSTabs extends HTMLElement {
     this.shadowRoot.querySelector('#tab-slot').assign(...pairedTabs);
     this.shadowRoot.querySelector('#panel-slot').assign(...pairedPanels);
   }
-  #updateSelectedTab(tabKey, previousTabKey) {
+
+  // Sets the initial selection: default-tab if it matches a valid tab, otherwise the first one.
+  #selectInitialTab() {
     const assignedTabs = this.shadowRoot.querySelector('#tab-slot').assignedElements();
-    const assignedPanels = this.shadowRoot.querySelector('#panel-slot').assignedElements();
-    const newTab = assignedTabs.find(tab => tab.tabKey === tabKey);
-    if (!newTab) return;
-    const previouslySelectedTabs = this.querySelectorAll(':scope > fds-tab[aria-selected="true"]');
-    for (const tab of previouslySelectedTabs) {
-      tab.setAttribute('aria-selected', 'false');
-      tab.tabIndex = -1;
+    if (assignedTabs.length === 0) return;
+    const hasDefaultTab = assignedTabs.some(tab => tab.tabKey === this.defaultTab);
+    const initialTabKey = hasDefaultTab ? this.defaultTab : assignedTabs[0].tabKey;
+    this.selectTab(initialTabKey, false);
+  }
+
+  // Called after tabs/panels are added or removed. If the current selection is no longer valid,
+  // falls back to the first remaining tab, or clears the selection entirely if none remain.
+  #ensureValidSelection() {
+    const assignedTabs = this.shadowRoot.querySelector('#tab-slot').assignedElements();
+    const isStillValid = assignedTabs.some(tab => tab.tabKey === this.#getSelectedTab());
+    if (isStillValid) return;
+    if (assignedTabs.length > 0) {
+      this.selectTab(assignedTabs[0].tabKey);
+    } else {
+      this.#setSelectedTab(null);
     }
-    newTab.setAttribute('aria-selected', 'true');
-    newTab.tabIndex = 0;
-    for (const panel of assignedPanels) {
-      panel.hidden = panel.tabKey !== tabKey;
-    }
-    const previousTab = previousTabKey ? assignedTabs.find(tab => tab.tabKey === previousTabKey) ?? null : null;
-    this.dispatchEvent(new CustomEvent('fds-tab-changed', {
-      bubbles: true,
-      detail: {
-        selectedTab: newTab,
-        selectedTabKey: tabKey,
-        previousTab: previousTab ?? null,
-        previousTabKey: previousTabKey ?? null
-      }
-    }));
   }
   #connectMutationObserver() {
     if (this.#mutationObserver) return;
@@ -8790,20 +8867,22 @@ class FDSTabs extends HTMLElement {
       this.#mutationObserver = null;
     }
   }
-
-  // If selected-tab is missing or doesn't match any tab-key, default to the first tab.
-  #applyFallbackSelection() {
-    const hasValidSelection = this.querySelector(`:scope > fds-tab[tab-key="${this.selectedTab}"]`);
-    const firstTab = this.querySelector(':scope > fds-tab[tab-key]');
-    if (!hasValidSelection && firstTab) {
-      this.selectedTab = firstTab.tabKey;
-    }
+  #addEventListeners() {
+    this.addEventListener('click', this.#handleClick);
+    this.addEventListener('keydown', this.#handleKeyDown);
+  }
+  #removeEventListeners() {
+    this.removeEventListener('click', this.#handleClick);
+    this.removeEventListener('keydown', this.#handleKeyDown);
   }
   #init() {
+    // Ensures custom element children are upgraded before reading their properties (e.g. after insertions with innerHTML or devtools edits)
+    customElements.upgrade(this);
+    this.#applyStyles();
     this.#setupHTML();
-    this.#applyFallbackSelection();
     this.#updateSlotAssignments();
-    this.addEventListener('fds-tab-activate', this.#handleTabActivate);
+    this.#selectInitialTab();
+    this.#addEventListeners();
     this.#connectMutationObserver();
     this.#initialized = true;
   }
@@ -8819,7 +8898,41 @@ class FDSTabs extends HTMLElement {
       slotAssignment: 'manual'
     });
     this.shadowRoot.adoptedStyleSheets = [this.#sheet];
-    this.#sheet.replaceSync(fds_tabs_styling_styles('768px'));
+  }
+
+  // #endregion
+
+  // #region - PUBLIC METHODS -----------------------------------------------------------------------------
+
+  selectTab(tabKey) {
+    let dispatch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    if (tabKey === this.#getSelectedTab()) return;
+    const assignedTabs = this.shadowRoot.querySelector('#tab-slot').assignedElements();
+    const assignedPanels = this.shadowRoot.querySelector('#panel-slot').assignedElements();
+    const newTab = assignedTabs.find(tab => tab.tabKey === tabKey);
+    if (!newTab) return; // Return if the tab to select doesn't exist
+
+    const previousTabKey = this.#getSelectedTab();
+    const previouslySelectedTabs = this.querySelectorAll(':scope > fds-tab[aria-selected="true"]');
+    for (const tab of previouslySelectedTabs) {
+      tab.setAttribute('aria-selected', 'false');
+      tab.tabIndex = -1;
+    }
+    newTab.setAttribute('aria-selected', 'true');
+    newTab.tabIndex = 0;
+    for (const panel of assignedPanels) {
+      panel.hidden = panel.tabKey !== tabKey;
+    }
+    this.#setSelectedTab(tabKey);
+    if (dispatch) {
+      this.dispatchEvent(new CustomEvent('fds-tab-changed', {
+        bubbles: true,
+        detail: {
+          selectedTab: tabKey,
+          previousTab: previousTabKey
+        }
+      }));
+    }
   }
 
   // #endregion
@@ -8835,7 +8948,7 @@ class FDSTabs extends HTMLElement {
   // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
 
   disconnectedCallback() {
-    this.removeEventListener('fds-tab-activate', this.#handleTabActivate);
+    this.#removeEventListeners();
     this.#disconnectMutationObserver();
     this.#initialized = false;
   }
@@ -8847,8 +8960,9 @@ class FDSTabs extends HTMLElement {
   attributeChangedCallback(attribute, oldValue, newValue) {
     if (!this.#initialized) return;
     if (oldValue === newValue) return;
-    if (attribute === 'selected-tab' && newValue) {
-      this.#updateSelectedTab(newValue, oldValue);
+    if (attribute === 'breakpoint') {
+      this.#applyStyles();
+      this.#updateSlotAssignments();
     }
   }
 
