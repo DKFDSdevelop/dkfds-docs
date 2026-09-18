@@ -8978,35 +8978,113 @@ function registerTabs() {
   }
 }
 /* harmony default export */ const fds_tabs = (registerTabs);
-;// ./src/js/custom-elements/alert/fds-alert.js
+;// ./src/js/custom-elements/alert/fds-alert-styling.js
+const fds_alert_styling_styles = `
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
-const fds_alert_styles = `
     :host {
         display: block;
     }
+
+    .alert {
+        position: relative;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        padding: 1.6rem;
+        padding-left: 5.2rem;
+        background-repeat: no-repeat;
+        background-color: var(--alert-background-color);
+        background-image: linear-gradient(to right, var(--alert-border-color) 4px, transparent 4px);
+    }
+
+    .alert-info {
+        --alert-background-color: #e2f2fb;
+        --alert-border-color: #1B86C3;
+    }
+
+    .alert-success {
+        --alert-background-color: #ddf7ce;
+        --alert-border-color: #358000;
+    }
+
+    .alert-warning {
+        --alert-background-color: #FFEECC;
+        --alert-border-color: #febb30;
+    }
+
+    .alert-error {
+        --alert-background-color: #FFE0E0;
+        --alert-border-color: #CC0000;
+    }
+
+    slot[name="heading"]::slotted(*) {
+        margin-top: var(--alert-heading-margin-top) !important;
+        margin-bottom: var(--alert-heading-margin-bottom) !important;
+        font-size: 1.6rem !important;
+        line-height: 1.5 !important;
+        font-weight: 600 !important;
+        color: #1a1a1a !important;
+        overflow-wrap: break-word !important;
+    }
+
+    slot[name="content"]::slotted(*) {
+        margin-top: var(--alert-content-margin-top) !important;
+        margin-bottom: var(--alert-content-margin-bottom) !important;
+    }
+
+    .alert-icon,
+    slot[name="icon"]::slotted(*) {
+        height: 2.4rem;
+        width: 2.4rem;
+        vertical-align: middle;
+        fill: currentColor;
+        position: absolute;
+        left: 2rem;
+    }
 `;
+;// ./src/js/custom-elements/alert/fds-alert.js
+
+
 const fds_alert_sheet = new CSSStyleSheet();
-fds_alert_sheet.replaceSync(fds_alert_styles);
+fds_alert_sheet.replaceSync(fds_alert_styling_styles);
+const DEFAULT_VARIANT = 'info';
+const ICONS = {
+  info: 'M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z',
+  success: 'm424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z',
+  warning: 'm40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z',
+  error: 'M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'
+};
+const ICON_LABELS = {
+  info: 'Information',
+  success: 'Succes',
+  warning: 'Advarsel',
+  error: 'Fejl'
+};
 class FDSAlert extends HTMLElement {
   // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
 
-  static observedAttributes = ['attr', 'ready'];
+  static observedAttributes = ['variant', 'icon-label'];
 
   // #endregion
 
   // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
 
-  get attr() {
-    return this.getAttribute('attr');
+  get variant() {
+    return this.getAttribute('variant') || DEFAULT_VARIANT;
   }
-  set attr(value) {
-    value == null ? this.removeAttribute('attr') : this.setAttribute('attr', value);
+  set variant(value) {
+    this.setAttribute('variant', value);
   }
-  get ready() {
-    return this.getAttribute('ready') !== 'false';
+  get iconLabel() {
+    return this.getAttribute('icon-label') || ICON_LABELS[this.variant] || ICON_LABELS[DEFAULT_VARIANT];
   }
-  set ready(value) {
-    this.setAttribute('ready', value ? 'true' : 'false');
+  set iconLabel(value) {
+    value == null ? this.removeAttribute('icon-label') : this.setAttribute('icon-label', value);
   }
 
   // #endregion
@@ -9014,71 +9092,68 @@ class FDSAlert extends HTMLElement {
   // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
 
   #initialized = false;
-  #mutationObserver = null;
-
-  // #endregion
-
-  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
-
-  #handleClick = event => {
-    console.log('Click event:', event);
-  };
-  #handleKeyDown = event => {
-    console.log('KeyDown event:', event);
-  };
-  #handleMutations = records => {
-    for (const {
-      attributeName,
-      target,
-      addedNodes,
-      removedNodes
-    } of records) {
-      console.log('attributeName', attributeName);
-      console.log('target', target);
-      console.log('addedNodes', addedNodes);
-      console.log('removedNodes', removedNodes);
-    }
-  };
 
   // #endregion
 
   // #region - PRIVATE METHODS ----------------------------------------------------------------------------
 
   #setupHTML() {
-    // --- Slot ---
-    if (!this.shadowRoot.querySelector('slot[name="element-slot"]')) {
-      const slot = document.createElement('slot');
-      slot.name = 'element-slot';
-      this.shadowRoot.appendChild(slot);
+    // --- Wrapper ---
+    let alert = this.shadowRoot.querySelector('.alert');
+    if (!alert) {
+      alert = document.createElement('div');
+      alert.classList.add('alert');
+      this.shadowRoot.appendChild(alert);
     }
 
-    // --- Button ---
-    let button = this.shadowRoot.querySelector('button');
-    if (!button) {
-      button = document.createElement('button');
-      this.shadowRoot.appendChild(button);
+    // --- Icon slot ---
+    if (!alert.querySelector('slot[name="icon"]')) {
+      const iconSlot = document.createElement('slot');
+      iconSlot.name = 'icon';
+      alert.appendChild(iconSlot);
     }
-    button.textContent = 'Click me';
-  }
-  #addEventListeners() {
-    this.shadowRoot.querySelector('button').addEventListener('click', this.#handleClick);
-    this.shadowRoot.querySelector('button').addEventListener('keydown', this.#handleKeyDown);
-  }
-  #removeEventListeners() {
-    this.shadowRoot.querySelector('button').removeEventListener('click', this.#handleClick);
-    this.shadowRoot.querySelector('button').removeEventListener('keydown', this.#handleKeyDown);
-  }
-  #connectMutationObserver() {
-    let config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : mutationObserverConfig;
-    if (this.#mutationObserver) return;
-    this.#mutationObserver = new MutationObserver(this.#handleMutations);
-    this.#mutationObserver.observe(this, config);
-  }
-  #disconnectMutationObserver() {
-    if (this.#mutationObserver) {
-      this.#mutationObserver.disconnect();
-      this.#mutationObserver = null;
+
+    // --- Alert body ---
+    let alertBody = alert.querySelector('.alert-body');
+    if (!alertBody) {
+      alertBody = document.createElement('div');
+      alertBody.classList.add('alert-body');
+      alert.appendChild(alertBody);
     }
+
+    // --- Heading slot ---
+    if (!alertBody.querySelector('slot[name="heading"]')) {
+      const headingSlot = document.createElement('slot');
+      headingSlot.name = 'heading';
+      alertBody.appendChild(headingSlot);
+    }
+
+    // --- Content slot ---
+    if (!alertBody.querySelector('slot[name="content"]')) {
+      const contentSlot = document.createElement('slot');
+      contentSlot.name = 'content';
+      alertBody.appendChild(contentSlot);
+    }
+    this.#applyVariant();
+    this.#applyIcon();
+  }
+  #applyVariant() {
+    const alert = this.shadowRoot.querySelector('.alert');
+    alert.className = 'alert';
+    alert.classList.add(`alert-${this.variant}`);
+  }
+  #applyIcon() {
+    const iconSlot = this.shadowRoot.querySelector('slot[name="icon"]');
+    if (iconSlot.assignedNodes().length > 0) return;
+
+    // If no icon was slotted, generate a default icon instead
+    iconSlot.innerHTML = '';
+    const pathD = ICONS[this.variant] || ICONS[DEFAULT_VARIANT];
+    const icon = createSvgIcon(pathD);
+    icon.classList.add('alert-icon');
+    icon.removeAttribute('aria-hidden');
+    icon.setAttribute('aria-label', this.iconLabel);
+    iconSlot.appendChild(icon);
   }
 
   // #endregion
@@ -9099,8 +9174,6 @@ class FDSAlert extends HTMLElement {
 
   init() {
     this.#setupHTML();
-    this.#addEventListeners();
-    this.#connectMutationObserver();
     this.#initialized = true;
   }
 
@@ -9109,9 +9182,6 @@ class FDSAlert extends HTMLElement {
   // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
 
   connectedCallback() {
-    // The 'ready' attribute can be used to defer initialization.
-    // Omit the attribute or set it to anything other than 'false' to initialize immediately.
-    if (this.getAttribute('ready') === 'false') return;
     this.init();
   }
 
@@ -9120,8 +9190,6 @@ class FDSAlert extends HTMLElement {
   // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
 
   disconnectedCallback() {
-    this.#removeEventListeners();
-    this.#disconnectMutationObserver();
     this.#initialized = false;
   }
 
@@ -9130,17 +9198,15 @@ class FDSAlert extends HTMLElement {
   // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
 
   attributeChangedCallback(attribute, oldValue, newValue) {
-    if (attribute === 'ready') {
-      if (!this.#initialized && this.isConnected && newValue !== 'false') {
-        this.init();
-      }
-      return;
-    }
     if (!this.#initialized) return;
     if (oldValue === newValue) return;
     switch (attribute) {
-      case 'attr':
-        console.log('attr changed to', newValue);
+      case 'variant':
+        this.#applyVariant();
+        this.#applyIcon();
+        break;
+      case 'icon-label':
+        this.#applyIcon();
         break;
     }
   }
