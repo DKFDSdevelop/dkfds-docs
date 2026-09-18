@@ -44,6 +44,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-modal" description="Modal" %}
 {% include test/preview-test.html filename="test-fds-step-indicator" description="Trinindikator" %}
 {% include test/preview-test.html filename="test-fds-tabs" description="Faneblade" %}
+{% include test/preview-test.html filename="test-fds-alert" description="Beskeder" %}
 
 {:.h3}
 ## HTML-elementer

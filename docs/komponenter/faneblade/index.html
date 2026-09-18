@@ -2200,9 +2200,15 @@ Ikoner skal altid understøttes af en label med fanebladets navn.</p>
 <div class="example-box">
     <div>
         <fds-tabs>
-    <fds-tab tab-key="1"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#calculator"></use></svg><span>Faneblad 1</span></fds-tab>
-    <fds-tab tab-key="2"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#feedback"></use></svg><span>Faneblad 2</span></fds-tab>
-    <fds-tab tab-key="3"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#settings"></use></svg><span>Faneblad 3</span></fds-tab>
+    <fds-tab tab-key="1">
+        <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#calculator"></use></svg><span>Faneblad 1</span>
+    </fds-tab>
+    <fds-tab tab-key="2">
+        <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#feedback"></use></svg><span>Faneblad 2</span>
+    </fds-tab>
+    <fds-tab tab-key="3">
+        <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#settings"></use></svg><span>Faneblad 3</span>
+    </fds-tab>
 
     <fds-tab-panel tab-key="1"><p>Indhold i første faneblad</p></fds-tab-panel>
     <fds-tab-panel tab-key="2"><p>Indhold i andet faneblad</p></fds-tab-panel>
@@ -2218,9 +2224,15 @@ Ikoner skal altid understøttes af en label med fanebladets navn.</p>
                     </div>
                     <figure tabindex="0" class="code-figure">
 <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-tabs</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#calculator&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Faneblad 1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#feedback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Faneblad 2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#settings&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Faneblad 3<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#calculator&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Faneblad 1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#feedback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Faneblad 2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#settings&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Faneblad 3<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab-panel</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Indhold i første faneblad<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab-panel</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-tab-panel</span> <span class="hljs-attr">tab-key</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Indhold i andet faneblad<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-tab-panel</span>&gt;</span>
@@ -2271,7 +2283,7 @@ Ikoner skal altid understøttes af en label med fanebladets navn.</p>
   </tbody>
 </table>
 
-<h3>Events</h3>
+<h4>Events</h4>
 
 <table class="table table--responsive-headers">
   <thead>
