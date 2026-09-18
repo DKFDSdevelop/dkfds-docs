@@ -11,14 +11,15 @@ lead: Beskeder anvendes til at fremhæve aktuel information, som er vigtig for b
 description: Beskeder (Alerts) er farvede bokse, du kan bruge til at give brugeren vigtig og aktuel information om fx status, fejl, opdateringer, o.l.
 tags:
 - fejlbesked
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, custom"
+custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true custom=true %}
 
 {% include code/preview-box.html component="alerts" title="Eksempel på beskeder" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Beskeder" code="Beskeder_Kode" %}
+{% include anchorlinks.html guidelines="Beskeder" code="Beskeder_Kode" custom="Beskeder_Custom" %}
 
 <!--split-->
 
@@ -173,3 +174,49 @@ Defineres med klassen `alert--paragraph`.
 ## Luk knap {#{% include create-id.html heading="Luk knap" append="-kode" %}}
 
 {% include code/syntax.html component="alert-close" link=true copybutton=true guidelines="/komponenter/beskeder/#besked-med-luk-knap" %}
+
+<!--split-->
+
+## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+
+## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+
+{% include code/show-example-with-no-tabs.html example="fds-alert-variants" tabId="example-1-alert" %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Teksteksempler
+
+{% include code/show-example-with-no-tabs.html example="fds-alert-text-variants" tabId="example-2-alert" %}
+
+### Besked med luk-knap
+
+{% include code/show-example-with-no-tabs.html example="fds-alert-close" tabId="example-3-alert" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut    | Beskrivelse                                                                                                                                               |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| variant     |  |
+| icon-label  |  |
+| closable    |  |
+| close-label |  |
+
+### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion | Beskrivelse                                                       |
+|----------|-------------------------------------------------------------------|
+| show     |  |
+| hide     |  |
+
+### Events
+
+{:.table .table--responsive-headers}
+| Event            | Beskrivelse                       |
+|------------------|-----------------------------------|
+| fds-alert-shown  |  |
+| fds-alert-hidden |  |
