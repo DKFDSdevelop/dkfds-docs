@@ -52,6 +52,7 @@ var testfiles = [
     "test-fds-toggle-switch",
     "test-fds-modal",
     "test-fds-step-indicator",
+    "test-fds-tabs",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
