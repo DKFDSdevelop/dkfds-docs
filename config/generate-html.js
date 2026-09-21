@@ -29,7 +29,10 @@ const SKIP_FILES = [
     'react-wrapper.html',
     'react-script.html',
     'fds-tabs-default',
-    'fds-tabs-icons'
+    'fds-tabs-icons',
+    'fds-alert-variants',
+    'fds-alert-text-variants',
+    'fds-alert-close',
 ];
 
 global.HTMLElement = window.HTMLElement;
