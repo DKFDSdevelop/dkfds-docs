@@ -9,11 +9,11 @@ title: Datovælger
 lead: Ét felt med knap, hvor man kan vælge en dato.
 description: Brug datovælger til at vælge en bestemt dato i nærmeste fortid eller fremtid
 tags:
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="date-picker" title="Eksempel på datovælger" classes="intro-example" %}
 

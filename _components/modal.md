@@ -20,11 +20,11 @@ tags:
 - popup
 - pop up
 - vindue
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="modal" title="Eksempel på modal" classes="intro-example" %}
 

@@ -10,11 +10,11 @@ title_en: Checkbox
 lead: Tjekbokse lader brugeren vælge en eller flere muligheder.
 description: "Tjekbokse giver brugeren mulighed for at vælge en eller flere værdier ud fra en synlig liste."
 tags:
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="checkbox-large" title="Eksempel på tjekbokse" classes="intro-example" %}
 

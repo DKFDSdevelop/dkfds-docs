@@ -10,11 +10,11 @@ lead: "En toggle switch er en digital tænd/sluk-knap. Til forskel fra en radiok
 description:
 tags:
 - "switch"
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 <div id="kode" hidden></div>
 

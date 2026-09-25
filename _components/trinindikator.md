@@ -11,11 +11,11 @@ title: Trinindikator
 lead: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."
 description: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."
 tags:
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="step-indicator" title="Eksempel på trinindikator" classes="intro-example" %}
 
