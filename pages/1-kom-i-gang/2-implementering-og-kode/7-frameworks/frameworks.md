@@ -40,17 +40,17 @@ Nedenstående eksempler viser, hvordan man kan anvende koden i udvalgte framewor
 #### Registrering
 
 FDS custom elements kan bruges direkte i React, når Designsystemets JavaScript er indlæst. dkfds.js registrerer alle custom elements globalt, så React-udviklere behøver ikke at registrere hvert enkelt element manuelt.
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-script" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-script" %}
 
 Derefter kan elementerne bruges direkte i JSX:
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-upload-file-example" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-upload-file-example" %}
 
 Hvis du bruger FDS via npm-pakken, skal du sikre dig, at pakkens JavaScript bliver importeret, så de custom elements er registreret, før de bruges.
 
 #### Attributer, funktioner og custom events 
 
 Brug FDS custom elements direkte i React via JSX-attributter. Hvis en komponent eksponerer funktioner eller custom events, skal du tilgå elementet via en ref.
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-ref" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-ref" %}
 
 #### Server-side rendering
 
@@ -59,12 +59,12 @@ FDS custom elements kan bruges med server-renderet HTML, hvor den fulde markup g
 #### React wrappers
 
 En wrapper giver især mening i React, når du har brug for ref, offentlige metoder eller custom event listeners. Hvis en komponent allerede fungerer enkelt og naturligt direkte i JSX, vil en wrapper ofte ikke tilføre nok værdi.
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-wrapper" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="react-wrapper" %}
 
 ### Blazor
 
 Opdatér den fil, hvor du definerer dit HTML-layout og anvender scripts (fx App.razor i nyrere versioner af .NET).
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="blazor-app" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="blazor-app" %}
 
 Hvis du anvender Blazor-komponenter inde i custom elements, skal du selv sørge for at HTML'en ikke initialiserer for tidligt. Du kan styre dette ved at bruge `ready`-attributten, som er skrevet ind i alle FDS' custom elements.
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="blazor-component" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="blazor-component" %}

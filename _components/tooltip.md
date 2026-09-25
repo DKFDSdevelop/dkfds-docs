@@ -189,37 +189,37 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-icon-default" tabId="example-1-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-icon-default" tabId="example-1-tooltip" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Placering
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-icon-placement" tabId="example-2-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-icon-placement" tabId="example-2-tooltip" %}
 
 ### Radioknap med tooltip
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-icon-radio-buttons" tabId="example-3-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-icon-radio-buttons" tabId="example-3-tooltip" %}
 
 ### Tjekboks med tooltip
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-icon-checkbox" tabId="example-4-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-icon-checkbox" tabId="example-4-tooltip" %}
 
 ### Inputfelt med tooltip
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-icon-input-field" tabId="example-5-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-icon-input-field" tabId="example-5-tooltip" %}
 
 ### Brødtekst med tooltip
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-icon-text" tabId="example-6-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-icon-text" tabId="example-6-tooltip" %}
 
 ### Ikoner med hover-tooltip
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-hover" tabId="example-7-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-hover" tabId="example-7-tooltip" %}
 
 ### Knap med hover-tooltip
 
-{% include code/show-example-with-tabs.html example="fds-tooltip-hover-button" tabId="example-8-tooltip" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-tooltip-hover-button" tabId="example-8-tooltip" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

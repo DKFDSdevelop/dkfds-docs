@@ -199,10 +199,10 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Tjekbox med label lavet med custom element
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-example" tabId="example-1-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-example" tabId="example-1-acc" %}
 
 Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-checkbox-simple" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-checkbox-simple" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -210,7 +210,7 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-error" tabId="example-input-error" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-error" tabId="example-input-error" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
@@ -220,31 +220,31 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 #### Hjælpetekst til enkelte tjekbokse
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-help-text" tabId="example-checkbox-helptext" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-help-text" tabId="example-checkbox-helptext" %}
 
 #### Tjekboksgruppe med hjælpetekst
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-group-help-text" tabId="example-checkbox-group-helptext" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-group-help-text" tabId="example-checkbox-group-helptext" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html%}
 
 ### Obligatoriske og frivillige tjekbokse
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-required" tabId="example-3-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-required" tabId="example-3-acc" %}
 
 ### Skjult indhold (Collapse)
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-collapse" tabId="example-4-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-collapse" tabId="example-4-acc" %}
 
 ### Deaktiveret
 
 #### Deaktiveret enkelte tjekbokse
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-disabled" tabId="example-5-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-disabled" tabId="example-5-acc" %}
 
 #### Deaktiveret tjekboksgruppe
 
-{% include code/show-example-with-tabs.html example="fds-checkbox-group-disabled" tabId="example-6-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-group-disabled" tabId="example-6-acc" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

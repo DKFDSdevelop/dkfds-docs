@@ -211,7 +211,7 @@ Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvæl
 
 ## Eksempler {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-header-default" tabId="example-1-hea" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-header-default" tabId="example-1-hea" %}
 
 Brug `<div class="main-menu-inner">` i `<fds-main-menu>` i desktop-versionen. Udelad wrapper og klasse, når menuen placeres i en `<fds-drawer>`.
 

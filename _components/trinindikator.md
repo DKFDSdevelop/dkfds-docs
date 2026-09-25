@@ -134,7 +134,7 @@ Tilføj klassen `sidenav-error` til de liste-elementer, der er fejl i og anvend 
 
 Trinindikatoren skal vises i en modal ved mindre skærmstørrelser. Standard-breakpoint er `md`, hvor `d-md-block` skal sættes som klasse på `nav`-elementet og `d-md-none` skal sættes som klasse på `fds-modal` og `fds-modal-opener`.
 
-{% include code/show-example-with-tabs.html example="step-indicator-default" tabId="example-1-step" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="step-indicator-default" tabId="example-1-step" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 

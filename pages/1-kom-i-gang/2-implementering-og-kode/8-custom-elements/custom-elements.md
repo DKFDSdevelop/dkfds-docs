@@ -56,7 +56,7 @@ Komponenterne i design systemet kan bruges på tre forskellige måder afhængigt
 Du kan styre komponentens opførsel via HTML-attributter. Custom elementet sørger for at synkronisere attributterne med DOM.
 Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig. Du kan finde hvilke attributter hvert custom element har på dets respektive komponent-side.
 
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-simple" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-simple" %}
 
 ### 2. Brug med eksisterende markup (hydrering)
 
@@ -81,4 +81,4 @@ Dette er især nyttigt når:
 
 Hvis den forventede struktur ikke er til stede, kan komponenten ikke initialiseres korrekt.
 
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-full" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="ce-example-accordion-full" %}

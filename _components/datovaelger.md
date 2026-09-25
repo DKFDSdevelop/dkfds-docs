@@ -211,7 +211,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-date-picker" tabId="example-1-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker" tabId="example-1-datep" overflowVisible="" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -219,7 +219,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-date-picker-error" tabId="example-2-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-error" tabId="example-2-datep" overflowVisible="" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
@@ -227,29 +227,29 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-helptext-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-date-picker-helptext" tabId="example-3-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-helptext" tabId="example-3-datep" overflowVisible="" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html %}
 
 ### Begræns mulige datoer
 
-{% include code/show-example-with-tabs.html example="fds-date-picker-minmax" tabId="example-4-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-minmax" tabId="example-4-datep" overflowVisible="" %}
 
 ### Fast værdi
 
-{% include code/show-example-with-tabs.html example="fds-date-picker-default" tabId="example-5-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-default" tabId="example-5-datep" overflowVisible="" %}
 
 ### Datoformat
 
-{% include code/show-example-with-tabs.html example="fds-date-picker-format" tabId="example-6-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-format" tabId="example-6-datep" overflowVisible="" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-date-picker-disabled" tabId="example-7-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-disabled" tabId="example-7-datep" overflowVisible="" %}
 
 ### Start- og slutdato
 
-{% include code/show-example-with-tabs.html example="fds-date-picker-start-end-dates" tabId="example-8-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-start-end-dates" tabId="example-8-datep" overflowVisible="" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

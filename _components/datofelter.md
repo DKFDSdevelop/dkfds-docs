@@ -95,7 +95,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-date-input" tabId="example-1-dat" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-input" tabId="example-1-dat" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -103,7 +103,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-date-input-error" tabId="example-2-dat" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-input-error" tabId="example-2-dat" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
@@ -111,17 +111,17 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-helptext-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-date-input-help" tabId="example-3-dat" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-input-help" tabId="example-3-dat" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html %}
 
 ### Obligatoriske og frivillige inputfelter
 
-{% include code/show-example-with-tabs.html example="fds-date-input-required" tabId="example-4-dat" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-input-required" tabId="example-4-dat" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-date-input-disabled" tabId="example-5-dat" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-input-disabled" tabId="example-5-dat" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

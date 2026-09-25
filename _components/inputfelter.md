@@ -316,10 +316,10 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Inputfelt med label lavet med custom element
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
 
 Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-input-wrapper-simple" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-input-wrapper-simple" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -327,7 +327,7 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-error" tabId="tab-example-input-error" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-error" tabId="tab-example-input-error" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
@@ -335,33 +335,33 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include custom-element-shared-text/fds-helptext-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html %}
 
 ### Obligatoriske og frivillige inputfelter
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
 
 ### Read-only
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
 
 ### Præfiks og suffiks
 
 Præfiks og suffiks kræver, at man lægger inputfeltet i et custom element kaldet `<fds-input-affix>`. Dette element kan tage to attributter: `input-prefix` og `input-suffix`.
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
 
 ### Karakterbegrænsning
 
 {% include custom-element-shared-text/fds-character-limit-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
 
 {% include custom-element-shared-text/fds-character-limit-tables.html %}
 
@@ -369,11 +369,11 @@ Præfiks og suffiks kræver, at man lægger inputfeltet i et custom element kald
 
 #### Input bredde med rem
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
 
 #### Input bredde med tegn
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

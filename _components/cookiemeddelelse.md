@@ -96,10 +96,10 @@ Cookies brugt til statistik må ikke sættes, før man aktivt har accepteret det
 
 Hvis cookiemeddelelsen indeholder et logo, er det op til løsningen selv at sætte en passende højde og bredde for dette. Giv logoet en passende alt-tekst, så det også er muligt for skærmlæserbrugere at vide, hvem der står bag selvbetjeningsløsningen.
 
-{% include code/show-example-with-tabs.html example="cookie-default" tabId="example-1-cookie" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="cookie-default" tabId="example-1-cookie" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Flere end to typer cookies
 
-{% include code/show-example-with-tabs.html example="cookie-many-options" tabId="example-2-cookie" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="cookie-many-options" tabId="example-2-cookie" %}

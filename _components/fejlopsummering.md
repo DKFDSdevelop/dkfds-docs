@@ -106,7 +106,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Fejlopsummering med custom element
 
-{% include code/show-example-with-tabs.html example="fds-error-summary" tabId="example-1-errorsum" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-error-summary" tabId="example-1-errorsum" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -114,7 +114,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 Med attributten `auto` opdateres fejloversigten automatisk ud fra synlige `fds-error-message` i understøttede wrappers. Hvis en fejl er standalone eller befinder sig i en ikke-understøttet parent wrapper, bliver den ikke automatisk føjet til fejloversigten.
 
-{% include code/show-example-with-tabs.html example="fds-error-summary-auto" tabId="example-2-errorsum" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-error-summary-auto" tabId="example-2-errorsum" %}
 
 ### Understøttede wrappers
 

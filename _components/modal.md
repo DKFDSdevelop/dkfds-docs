@@ -137,7 +137,7 @@ Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner 
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-modal-default" tabId="example-1-modal" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-modal-default" tabId="example-1-modal" %}
 
 Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for at åbne to modaler efter hinanden, skal forrige modal lukkes, før den nye åbnes.
 
@@ -147,7 +147,7 @@ Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for
 
 Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
 
-{% include code/show-example-with-tabs.html example="fds-modal-forced-action" tabId="example-2-modal" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-modal-forced-action" tabId="example-2-modal" %}
 
 Implementeringen af attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
 

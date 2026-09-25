@@ -89,7 +89,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Vedhæft fil lavet med custom element
 
-{% include code/show-example-with-tabs.html example="fds-upload-file-example" tabId="example-1" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-upload-file-example" tabId="example-1" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -97,7 +97,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-helptext-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-upload-file-helptext" tabId="example-2" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-upload-file-helptext" tabId="example-2" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html%}
 
@@ -107,13 +107,13 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som anden parameter i addError() metoden. Når en fejl knyttes til en fil, vises fejlbeskeden direkte under den pågældende fil i fillisten, og filen markeres visuelt som ugyldig. Hvis fil-ID'et ikke angives, vises fejlen som en generel fejl for hele upload-komponenten.
 
-{% include code/show-example-with-tabs.html example="fds-upload-file-error" tabId="example-3" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-upload-file-error" tabId="example-3" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-upload-file-disabled" tabId="example-4" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-upload-file-disabled" tabId="example-4" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

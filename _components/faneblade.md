@@ -130,13 +130,13 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-no-tabs.html example="fds-tabs-default" tabId="example-1-modal" %}
+{% include containers-for-code-and-examples/show-example-with-no-tabs.html example="fds-tabs-default" tabId="example-1-modal" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Med ikoner
 
-{% include code/show-example-with-no-tabs.html example="fds-tabs-icons" tabId="example-1-modal" %}
+{% include containers-for-code-and-examples/show-example-with-no-tabs.html example="fds-tabs-icons" tabId="example-1-modal" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

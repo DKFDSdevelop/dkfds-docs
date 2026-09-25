@@ -190,10 +190,10 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Radioknapgruppe med label lavet med custom element
 
-{% include code/show-example-with-tabs.html example="fds-radio-button-group-example" tabId="example-1-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-radio-button-group-example" tabId="example-1-acc" %}
 
 Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-radio-button-group-simple" %}
+{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-radio-button-group-simple" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -201,7 +201,7 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-radio-button-group-error" tabId="example-radio-button-group-error" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-radio-button-group-error" tabId="example-radio-button-group-error" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
@@ -211,21 +211,21 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 #### Hjælpetekst til enkelte radioknap
 
-{% include code/show-example-with-tabs.html example="fds-radio-button-helptext" tabId="example-radio-button-helptext" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-radio-button-helptext" tabId="example-radio-button-helptext" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html %}
 
 #### Radioknapgruppe med hjælpetekst
 
-{% include code/show-example-with-tabs.html example="fds-radio-button-group-helptext" tabId="example-radio-button-group-helptext" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-radio-button-group-helptext" tabId="example-radio-button-group-helptext" %}
 
 ### Skjult indhold (Collapse)
 
-{% include code/show-example-with-tabs.html example="fds-radio-button-group-collapse" tabId="example-radio-button-group-collapse" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-radio-button-group-collapse" tabId="example-radio-button-group-collapse" %}
 
 #### Deaktiveret radioknapgruppe
 
-{% include code/show-example-with-tabs.html example="fds-radio-button-group-disabled" tabId="example-radio-button-group-disabled" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-radio-button-group-disabled" tabId="example-radio-button-group-disabled" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

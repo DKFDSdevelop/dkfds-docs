@@ -193,7 +193,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-textarea-example" tabId="example-1-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-example" tabId="example-1-sel" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -201,7 +201,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-textarea-error" tabId="example-2-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-error" tabId="example-2-sel" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
@@ -209,7 +209,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-helptext-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-textarea-helptext" tabId="example-3-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-helptext" tabId="example-3-sel" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html %}
 
@@ -217,17 +217,17 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-character-limit-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-textarea-limit" tabId="example-input-limit" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-limit" tabId="example-input-limit" %}
 
 {% include custom-element-shared-text/fds-character-limit-tables.html %}
 
 ### Obligatoriske og frivillige inputfelter
 
-{% include code/show-example-with-tabs.html example="fds-textarea-required" tabId="example-4-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-required" tabId="example-4-sel" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-textarea-disabled" tabId="example-5-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-disabled" tabId="example-5-sel" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

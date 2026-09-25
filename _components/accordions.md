@@ -151,17 +151,17 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Accordion lavet med custom element
 
-{% include code/show-example-with-tabs.html example="fds-accordion-example" tabId="example-1-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-accordion-example" tabId="example-1-acc" %}
 
 ### Accordiongruppe lavet med custom element
 
-{% include code/show-example-with-tabs.html example="fds-accordion-group-example" tabId="fds-accordion-group-example" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-accordion-group-example" tabId="fds-accordion-group-example" %}
 
 ### Varianter
 
 Begge attributter skal angives samtidig for at varianten aktiveres. Hvis kun én af dem er sat, vises ingen variant. Når begge er til stede, tilføjes et ikon-element i knappen med den angivne tekst (variant-text) og et SVG-ikon refereret via ikonets ID (variant-icon).
 
-{% include code/show-example-with-tabs.html example="fds-accordion-variants" tabId="example-2-acc" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-accordion-variants" tabId="example-2-acc" %}
 
 ## fds-accordion-group {#{% include create-id.html heading="fds-accordion-group" append="-custom" %}}
 

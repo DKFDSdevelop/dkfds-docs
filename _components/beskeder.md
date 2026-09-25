@@ -181,17 +181,17 @@ Defineres med klassen `alert--paragraph`.
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-no-tabs.html example="fds-alert-variants" tabId="example-1-alert" %}
+{% include containers-for-code-and-examples/show-example-with-no-tabs.html example="fds-alert-variants" tabId="example-1-alert" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Teksteksempler
 
-{% include code/show-example-with-no-tabs.html example="fds-alert-text-variants" tabId="example-2-alert" %}
+{% include containers-for-code-and-examples/show-example-with-no-tabs.html example="fds-alert-text-variants" tabId="example-2-alert" %}
 
 ### Besked med luk-knap
 
-{% include code/show-example-with-no-tabs.html example="fds-alert-close" tabId="example-3-alert" %}
+{% include containers-for-code-and-examples/show-example-with-no-tabs.html example="fds-alert-close" tabId="example-3-alert" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

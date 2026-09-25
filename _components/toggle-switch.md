@@ -60,7 +60,7 @@ Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på swi
 
 <!--split-->
 
-{% include code/show-example-with-tabs.html example="fds-toggle-switch" tabId="example-1-toggle" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-toggle-switch" tabId="example-1-toggle" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

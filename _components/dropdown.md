@@ -106,7 +106,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-select" tabId="example-1-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-select" tabId="example-1-sel" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -114,7 +114,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-select-error" tabId="example-2-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-select-error" tabId="example-2-sel" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 
@@ -122,17 +122,17 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 {% include custom-element-shared-text/fds-helptext-intro-text.html %}
 
-{% include code/show-example-with-tabs.html example="fds-select-help" tabId="example-3-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-select-help" tabId="example-3-sel" %}
 
 {% include custom-element-shared-text/fds-help-text-tables.html %}
 
 ### Obligatoriske og frivillige dropdown
 
-{% include code/show-example-with-tabs.html example="fds-select-required" tabId="example-4-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-select-required" tabId="example-4-sel" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-select-disabled" tabId="example-5-sel" %}
+{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-select-disabled" tabId="example-5-sel" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
