@@ -304,6 +304,8 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 <!--split-->
 
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-example" collapsable=false %}
+
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
 
 ### HTML-muligheder
@@ -316,8 +318,6 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Inputfelt med label lavet med custom element
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-example" %}
-
 Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
 {% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-input-wrapper-simple" %}
 
@@ -327,7 +327,7 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-input-wrapper-error" tabId="tab-example-input-error" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 

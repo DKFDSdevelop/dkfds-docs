@@ -1523,45 +1523,55 @@ Styling for examples
             }
 
             .accordion-content {
-                background-color: color('transparent');
-                border-radius: border-radius('none');
                 padding: units(6) 0 0 0;
-                overflow: visible;
-
-                fds-tab-panel {
-                    --tab-panel-background-color: var(--color-black);
-                }
-
-                .copy-code-wrapper {
-                    display: flex;
-                    margin-top: units(3);
-                    justify-content: flex-end;
-                    align-items: flex-end;
-
-                    .copy-code {
-                        padding-right: units(1);
-                    }
-                }
-
-                pre {
-                    pointer-events: none;
-
-                    &:focus {
-                        outline: none;
-                        outline-offset: 0;
-                    }
-                }
 
                 @include media-breakpoint-up(md) {
-                    --tabs-tablist-width: calc(100% - 8rem);
-
                     .copy-code-wrapper {
-                        margin-top: 0;
-                        position: absolute;
                         top: units(6);
-                        right: 0;
-                        min-height: 48px;
                     }
+                }
+            }
+        }
+
+        .code-content {
+            background-color: color('transparent');
+            border-radius: border-radius('none');
+            overflow: visible;
+            position: relative;
+
+            fds-tab-panel {
+                --tab-panel-background-color: var(--color-black);
+            }
+
+            .copy-code-wrapper {
+                margin-top: units(3);
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+
+                .copy-code {
+                    padding-right: units(1);
+                }
+            }
+
+            pre {
+                overflow: visible;
+
+                /* &:focus {
+                    outline: none;
+                    outline-offset: 0;
+                } */
+            }
+
+            @include media-breakpoint-up(md) {
+                --tabs-tablist-width: calc(100% - 8rem);
+
+                .copy-code-wrapper {
+                    margin-top: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    min-height: 48px;
                 }
             }
         }
