@@ -1,0 +1,1 @@
+// Change label in accordion on click - add listener for events when accordion is open/closed

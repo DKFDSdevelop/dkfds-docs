@@ -1482,6 +1482,132 @@ Styling for loading spinner examples
 Styling for examples
 -----------------------------------------------------
 */
+
+.show-code-in-tabs {
+    border: border('low-contrast');
+
+    .open-in-new-window {
+        display: flex;
+        justify-content: flex-end;
+        border-bottom: border('low-contrast');
+        padding: units(4);
+    }
+
+    .top-example {
+        border-bottom: border('low-contrast');
+        padding: units(7) units(5); // top and bottom | left and right
+    }
+
+    .code-in-tabs {
+        padding: 16px;
+
+        & > fds-accordion {
+            margin-bottom: 0;
+
+            h2, h3, h4, h5, h6 {
+                .accordion-button {
+                    background-color: color('white');
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    padding-right: units(2);
+                    padding-left: units(505, 'rem');
+                    width: auto;
+                    border-radius: border-radius('small');
+                    font-weight: font-weight("normal");
+                    text-decoration: underline;
+
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+
+            .accordion-content {
+                background-color: color('transparent');
+                border-radius: border-radius('none');
+                padding: units(6) 0 0 0;
+                overflow: visible;
+
+                fds-tab-panel {
+                    --tab-panel-background-color: var(--color-black);
+                }
+
+                .copy-code-wrapper {
+                    display: flex;
+                    margin-top: units(3);
+                    justify-content: flex-end;
+                    align-items: flex-end;
+
+                    .copy-code {
+                        padding-right: units(1);
+                    }
+                }
+
+                pre {
+                    pointer-events: none;
+
+                    &:focus {
+                        outline: none;
+                        outline-offset: 0;
+                    }
+                }
+
+                @include media-breakpoint-up(md) {
+                    --tabs-tablist-width: calc(100% - 8rem);
+
+                    .copy-code-wrapper {
+                        margin-top: 0;
+                        position: absolute;
+                        top: units(6);
+                        right: 0;
+                        min-height: 48px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.show-code-in-tabs pre code {
+    color: color('gray-100');
+
+    .hljs-tag {
+        color: color('gray-300');
+    }
+
+    .hljs-name {
+        color: color('data-blue-500');
+    }
+
+    .hljs-string {
+        color: color('data-blue-400');
+    }
+
+    .hljs-attr {
+        color: color('data-yellow-red-500');
+    }
+
+    .hljs-comment {
+        color: color('data-green-500');
+    }
+
+    .hljs-symbol {
+        color: color('gray-300');
+    }
+
+    .hljs-keyword {
+        color: color('data-blue-400');
+    }
+
+    .hljs-literal {
+        color: color('data-pink-violet-400');
+    }
+
+    .hljs-title {
+        color: color('data-yellow-red-200');
+    }
+}
+
 .example-box {
     border: 1px solid #8e8e8e;
     padding: 16px 16px 8px 16px;
