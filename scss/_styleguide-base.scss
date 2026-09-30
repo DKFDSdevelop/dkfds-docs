@@ -1483,7 +1483,8 @@ Styling for examples
 -----------------------------------------------------
 */
 
-.show-code-in-tabs {
+.show-code-in-tabs,
+.show-code-in-box {
     border: border('low-contrast');
 
     .open-in-new-window {
@@ -1498,7 +1499,7 @@ Styling for examples
         padding: units(7) units(5); // top and bottom | left and right
     }
 
-    .code-in-tabs {
+    .code-in-tabs, .code-in-box {
         padding: 16px;
 
         & > fds-accordion {
@@ -1524,6 +1525,9 @@ Styling for examples
 
             .accordion-content {
                 padding: units(6) 0 0 0;
+                background-color: color('transparent');
+                border-radius: border-radius('none');
+                overflow: visible;
 
                 @include media-breakpoint-up(md) {
                     .copy-code-wrapper {
@@ -1534,13 +1538,11 @@ Styling for examples
         }
 
         .code-content {
-            background-color: color('transparent');
-            border-radius: border-radius('none');
-            overflow: visible;
             position: relative;
 
-            fds-tab-panel {
-                --tab-panel-background-color: var(--color-black);
+            pre {
+                overflow: visible; // Prevent pre tags from getting browser focus
+                margin: 0;
             }
 
             .copy-code-wrapper {
@@ -1554,15 +1556,6 @@ Styling for examples
                 }
             }
 
-            pre {
-                overflow: visible;
-
-                /* &:focus {
-                    outline: none;
-                    outline-offset: 0;
-                } */
-            }
-
             @include media-breakpoint-up(md) {
                 --tabs-tablist-width: calc(100% - 8rem);
 
@@ -1571,14 +1564,55 @@ Styling for examples
                     position: absolute;
                     right: 0;
                     top: 0;
-                    min-height: 48px;
                 }
+            }
+        }
+    }
+
+    .code-in-tabs .code-content {
+        fds-tab-panel {
+            --tab-panel-background-color: var(--color-black);
+            --tab-panel-border-color: var(--color-black);
+        }
+
+        @include media-breakpoint-up(md) {
+            .copy-code-wrapper {
+                min-height: 48px;
+            }
+        }
+    }
+
+    .code-in-box .code-content {
+        .code-container {
+            background-color: var(--color-black);
+            border: 1px solid var(--color-black);
+            width: 100%;
+            overflow: auto hidden;
+
+            &:focus {
+                outline: 3px solid var(--color-gray-600);
+                outline-offset: 1px;
+            }
+
+            .scroll-container {
+                width: fit-content;
+                min-width: 100%;
+                padding: 24px;
+                width: fit-content;
+                min-width: 100%;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            .copy-code-wrapper {
+                min-height: 28px;
             }
         }
     }
 }
 
-.show-code-in-tabs pre code {
+.show-code-in-tabs pre code,
+.show-code-in-box pre code {
     color: color('gray-100');
 
     .hljs-tag {

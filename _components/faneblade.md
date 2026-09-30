@@ -126,17 +126,15 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 <!--split-->
 
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-default" collapsable=false %}
+
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
-
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
-
-{% include containers-for-code-and-examples/show-example-with-no-tabs.html example="fds-tabs-default" tabId="example-1-modal" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Med ikoner
 
-{% include containers-for-code-and-examples/show-example-with-no-tabs.html example="fds-tabs-icons" tabId="example-1-modal" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-icons" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

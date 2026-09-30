@@ -15,22 +15,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     newCopyButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-            let container = button.closest('.code-in-tabs');
-            if (!container) return;
+            // Copy button for code blocks in tabs
+            let tabsContainer = button.closest('.code-in-tabs');
+            if (tabsContainer) {
+                let tabs = tabsContainer.querySelector('fds-tabs');
+                if (!tabs) return;
 
-            let tabs = container.querySelector('fds-tabs');
-            if (!tabs) return;
+                let selectedTabKey = tabs.getAttribute('data-selected-tab');
+                if (!selectedTabKey) return;
 
-            let selectedTabKey = tabs.getAttribute('data-selected-tab');
-            if (!selectedTabKey) return;
+                let activePanel = tabsContainer.querySelector('fds-tab-panel[tab-key="' + selectedTabKey + '"]');
+                if (!activePanel) return;
 
-            let activePanel = container.querySelector('fds-tab-panel[tab-key="' + selectedTabKey + '"]');
-            if (!activePanel) return;
+                let codeElement = activePanel.querySelector('code');
+                if (!codeElement) return;
 
-            let codeElement = activePanel.querySelector('code');
-            if (!codeElement) return;
+                navigator.clipboard.writeText(codeElement.innerText);
+                return;
+            }
 
-            navigator.clipboard.writeText(codeElement.innerText);
+            // Copy button for a single code box
+            let boxContainer = button.closest('.code-in-box');
+            if (boxContainer) {
+                let codeElement = boxContainer.querySelector('code');
+                if (!codeElement) return;
+
+                navigator.clipboard.writeText(codeElement.innerText);
+                return;
+            }
         });
     });
 });

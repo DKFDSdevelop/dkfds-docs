@@ -1,0 +1,32 @@
+{% if include.example and include.example != '' %}
+<div class="show-code-in-box">
+    <div class="open-in-new-window">
+        <a href="/eksempel/{{ include.example }}/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        {% include code-examples/{{ include.example }}.html %}
+    </div>
+    <div class="code-in-box">
+        {% if include.collapsable != false %}<fds-accordion heading="Vis kode" content-id="example-box-{{ include.example }}">{% endif %}
+            <div class="code-content">
+                <h2 class="h4 mt-0">Web Component</h2>
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true">
+                            <use href="#copy"></use>
+                        </svg>Kopiér</button>
+                </div>
+            </div>
+            {% if include.collapsable != false %}
+        </fds-accordion>{% endif %}
+    </div>
+</div>
+{% endif %}
