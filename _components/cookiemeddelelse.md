@@ -13,6 +13,7 @@ description: Cookiemeddelelsen vises midt på siden, og blokerer indhold indtil 
 tags:
 tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
+difference_warning: true
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}

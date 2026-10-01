@@ -24,6 +24,7 @@ tags:
 - fejlmedellelser
 tabs: "Retningslinjer, kode"
 custom_element: "Ready"
+difference_warning: true
 ---
 
 {% include tabs.html guidelines=true code=true %}
