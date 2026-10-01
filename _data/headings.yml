@@ -38,9 +38,10 @@ Frameworks:
 - h2: Eksempler på anvendelse
 
 Web_Components_i_beta_version:
-- h2: Om custom elements
-- h2: Forskellen på custom elements og web components
-- h2: Sådan kan du bruge custom elements
+- h2: Hvorfor skifter vi til Web Components?
+- h2: Om Web Components
+- h2: Web Components som beta-version
+- h2: Vi har brug for din feedback
 
 Design_og_ressourcer:
 - h2: Grundprincipper
