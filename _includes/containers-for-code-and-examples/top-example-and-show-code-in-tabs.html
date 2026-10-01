@@ -11,7 +11,7 @@
         {% include code-examples/{{ include.example }}.html %}
     </div>
     <div class="code-in-tabs">
-        {% if include.collapsable != false %}<fds-accordion heading="Vis kode" content-id="example-box-{{ include.example }}">{% endif %}
+        {% if include.collapsable != false %}<fds-accordion heading="Vis kode" heading-level="{{ include.heading_tag | default: 'h2' }}" content-id="example-box-{{ include.example }}">{% endif %}
             <div class="code-content">
                 <fds-tabs>
                     <fds-tab tab-key="web-component">Web Component</fds-tab>

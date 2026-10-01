@@ -126,7 +126,7 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 <!--split-->
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-default" collapsable=false %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-default" subheading_tag="h2" collapsable=false %}
 
 ## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
 
@@ -134,7 +134,7 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 ### Med ikoner
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-icons" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-icons" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

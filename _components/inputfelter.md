@@ -319,7 +319,7 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 ### Inputfelt med label lavet med custom element
 
 Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-input-wrapper-simple" only_code=true %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-input-wrapper-simple" only_code=true subheading_tag="h4" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -327,7 +327,7 @@ Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Eleme
 
 {% include custom-element-shared-text/fds-error-intro-text.html %}
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" heading_tag="h4" subheading_tag="h5" %}
 
 {% include custom-element-shared-text/fds-error-tables.html %}
 

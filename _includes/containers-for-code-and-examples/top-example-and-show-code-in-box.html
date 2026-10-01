@@ -13,9 +13,9 @@
     </div>
     {% endif %}
     <div class="code-in-box">
-        {% if include.collapsable != false and include.only_code != true %}<fds-accordion heading="Vis kode" content-id="example-box-{{ include.example }}">{% endif %}
+        {% if include.collapsable != false and include.only_code != true %}<fds-accordion heading="Vis kode" heading-level="{{ include.heading_tag | default: 'h2' }}" content-id="example-box-{{ include.example }}">{% endif %}
             <div class="code-content">
-                <h2 class="h4 mt-0">Web Component</h2>
+                <{{ include.subheading_tag | default: "h2" }} class="h4 mt-0">Web Component</{{ include.subheading_tag | default: "h2" }}>
                 <div class="code-container" tabindex="0">
                     <div class="scroll-container">
                         <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
