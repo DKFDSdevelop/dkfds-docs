@@ -22,13 +22,13 @@ kom_i_gang_menu:
 
 implementering_kode_submenu:
   - href: /kom-i-gang/implementering-kode/hent-kodepakken/
+  - href: /kom-i-gang/implementering-kode/web-components-i-beta-version/
   - href: /kom-i-gang/implementering-kode/justering/
   - href: /kom-i-gang/implementering-kode/hjaelpeklasser/
   - href: /kom-i-gang/implementering-kode/browserunderstoettelse/
   - href: /kom-i-gang/implementering-kode/plugins/
   - href: /kom-i-gang/implementering-kode/print/
   - href: /kom-i-gang/implementering-kode/frameworks/
-  - href: /kom-i-gang/implementering-kode/custom-elements/
 
 styleguide_menu:
   - href: /styleguide/farver/

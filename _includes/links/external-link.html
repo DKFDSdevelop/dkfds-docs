@@ -23,7 +23,8 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
         <a href="https://github.com/detfaellesdesignsystem/dkfds-components/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
     {%- when "opret et issue på github",
-             "oprette et issue på github" -%}
+             "oprette et issue på github",
+             "dele din feedback via github" -%}
         <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
     {%- when "zipfil på github", 
@@ -537,6 +538,9 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
 
     {%- when "xlink:href er forældet" -%}
         <a href="https://svgwg.org/svg2-draft/linking.html#XLinkRefAttrs" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
+
+    {%- when "shadow dom og tilgængelighed" -%}
+        <a href="https://nolanlawson.com/2022/11/28/shadow-dom-and-accessibility-the-trouble-with-aria/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
 
 

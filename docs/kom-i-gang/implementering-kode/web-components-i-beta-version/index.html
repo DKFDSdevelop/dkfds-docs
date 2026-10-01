@@ -16,11 +16,11 @@
 ================================================== -->
 
 
-<title>Custom elements | Det Fælles Designsystem</title>
-<meta property="og:title" content="Custom elements | Det Fælles Designsystem">
+<title>Web Components i beta-version | Det Fælles Designsystem</title>
+<meta property="og:title" content="Web Components i beta-version | Det Fælles Designsystem">
 
-<meta name="description" content="I denne sektion findes al dokumentation henvendt specifikt til udvikling.">
-<meta property="og:description" content="I denne sektion findes al dokumentation henvendt specifikt til udvikling.">
+<meta name="description" content="Vi omskriver designsystemets kode til Web Components. Det gør komponenterne mere robuste, lettere at vedligeholde og nemmere at bruge på tværs af forskellige frameworks.">
+<meta property="og:description" content="Vi omskriver designsystemets kode til Web Components. Det gør komponenterne mere robuste, lettere at vedligeholde og nemmere at bruge på tværs af forskellige frameworks.">
 
 
 
@@ -65,7 +65,7 @@
 </noscript>
 
   </head>
-  <body class="page-custom-elements layout-styleguide">
+  <body class="page-web-components-i-beta-version layout-styleguide">
     <div class="hide-base-svg">
     <svg xmlns="http://www.w3.org/2000/svg">
         <symbol id="accessibility-new" viewBox="0 -960 960 960"><path d="M480-720q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720ZM360-80v-520q-60-5-122-15t-118-25l20-80q78 21 166 30.5t174 9.5q86 0 174-9.5T820-720l20 80q-56 15-118 25t-122 15v520h-80v-240h-80v240h-80Z"/></symbol>
@@ -359,6 +359,16 @@
 
         
         <li>
+            <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/" aria-current="page">
+                <span>Web Components i beta-version</span>
+            </a>
+        </li>
+        
+
+ 
+
+        
+        <li>
             <a href="/kom-i-gang/implementering-kode/justering/">
                 <span>Justering af tema og stylesheets</span>
             </a>
@@ -411,16 +421,6 @@
         <li>
             <a href="/kom-i-gang/implementering-kode/frameworks/">
                 <span>Frameworks</span>
-            </a>
-        </li>
-        
-
- 
-
-        
-        <li>
-            <a href="/kom-i-gang/implementering-kode/custom-elements/" aria-current="page">
-                <span>Custom elements</span>
             </a>
         </li>
         
@@ -1327,6 +1327,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/"  aria-current="page" >
+                            <span>Web Components i beta-version</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/kom-i-gang/implementering-kode/justering/" >
                             <span>Justering af tema og stylesheets</span>
                         </a>
@@ -1354,11 +1359,6 @@
                     <li>
                         <a href="/kom-i-gang/implementering-kode/frameworks/" >
                             <span>Frameworks</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/kom-i-gang/implementering-kode/custom-elements/"  aria-current="page" >
-                            <span>Custom elements</span>
                         </a>
                     </li>
                 </ul>
@@ -1421,7 +1421,7 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/kom-i-gang/implementering-kode/custom-elements/">
+<section id="section-/kom-i-gang/implementering-kode/web-components-i-beta-version/">
 
                 <div class="subheading">
                     Kom i gang
@@ -1429,9 +1429,11 @@
 
                 
                 
-                <h1 id="custom-elements">Custom elements</h1>
+                <h1 id="web-components-i-beta-version">Web Components i beta-version</h1>
                 
 
+                
+                <p class="font-lead">Vi er i gang med en større teknisk ændring af designsystemet: Vi skifter den underliggende kodebase fra en ældre JavaScript-arkitektur baseret på constructor functions til Web Components. Læs mere i de følgende afsnit om, hvad ændringen betyder i praksis, og hvordan du kan hjælpe os med at gøre koden bedre.</p>
                 <nav class="anchorbox" aria-labelledby="anchorlinks">
     <h2 class="anchortitle" id="anchorlinks">Indhold på siden</h2>
     <ul class="anchorlist">
@@ -1444,120 +1446,45 @@
     </ul>
 </nav>
 
-<h2 id="om-custome-elements">Om custom elements</h2>
+<h2 id="hvorfor-skifter-vi-til-web-components">Hvorfor skifter vi til Web Components?</h2>
 
-<p>Custom elements er en browserstandard, som gør det muligt at definere nye HTML-elementer med egen funktionalitet.
-Når browseren møder elementet, kører den tilknyttede JavaScript-logik, som sørger for at:</p>
+<p>Designsystemet bliver i dag brugt på tværs af mange forskellige projekter og teams og dermed også på tværs af forskellige frontend-frameworks. Med den tidligere JavaScript-arkitektur har det krævet ekstra arbejde at integrere komponenterne korrekt i frameworks, uanset om det er Vue, Angular, React eller noget helt fjerde. Web Components er stadig ren Vanilla JS ligesom den tidligere kode, men bruger en mere moderne tilgang, hvor formålet er at gøre det lettere at bruge komponenterne as-is, også i frameworks, og lettere at opgradere til nye versioner, da mere af HTML’en ligger i selve elementet.</p>
 
+<h2 id="om-web-components">Om Web Components</h2>
+
+<p>Da designsystemet bruges forskelligt fra projekt til projekt, har vi lagt vægt på, at komponenterne skal være fleksible at arbejde med. Derfor er de fleste af vores Web Components i første beta-version bygget uden Shadow DOM. Shadow DOM er en teknik, der isolerer en komponents interne HTML og styling fra resten af siden og beskytter den mod at blive påvirket af for eksempel scripts eller frameworks’ opdateringer af siden. Dog giver det også mindre fleksibilitet for udviklere, fordi det ikke er muligt at få kontrol over al HTML. Det står i modsætning til Light DOM, hvor komponentens HTML indgår direkte i sidens almindelige DOM-struktur.</p>
+
+<p>Brugen af Shadow DOM eller Light DOM i FDS er blevet vurderet fra komponent til komponent, og valget fremgår af hver komponents dokumentation. Denne vurdering kan ændre sig, i takt med at vi bliver klogere på behov og udfordringer. Vi er samtidig opmærksomme på, at Shadow DOM i visse situationer kan give tilgængelighedsudfordringer, hvorfor vi er forsigtige med, hvor og hvordan vi anvender det. Omvendt kan Shadow DOM gøre en komponent mere robust at bruge i frameworks. Både fleksibilitet, tilgængelighed og robusthed spiller derfor ind, når vi vurderer, hvilken tilgang der giver mest mening for den enkelte komponent.</p>
+
+<p>Læs mere om <a href="https://nolanlawson.com/2022/11/28/shadow-dom-and-accessibility-the-trouble-with-aria/" class="icon-link" target="_blank">Shadow DOM og tilgængelighed<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</p>
+
+<h2 id="web-components-som-beta-version">Web Components som beta-version</h2>
+
+<p>Vi udgiver i første omgang en række udvalgte komponenter som Web Components. Det er bevidst et begrænset udvalg, fordi vi er i en betafase, hvor formålet er at teste tilgangen i praksis, samle erfaringer og rette eventuelle problemer, inden vi udruller det til resten af designsystemet.
+Betakomponenterne kan bruges side om side med den tidligere kode. Vær dog opmærksom på, at koden til Web Components ligger i nye stylesheets og scripts, som skal tilføjes særskilt.</p>
+
+<p>Det betyder også, at:</p>
 <ul>
-  <li>opbygge den nødvendige HTML-struktur</li>
-  <li>håndtere interaktion (f.eks. klik)</li>
-  <li>synkronisere attributter og DOM</li>
-  <li>sikre korrekt tilgængelighed (ARIA-attributter)</li>
+  <li>De udvalgte komponenter, der nu er tilgængelige, kan ændre sig, efterhånden som vi justerer dem baseret på feedback. Der kan forekomme breaking changes i denne periode, så vi anbefaler, at du holder øje med versionsnumre og release notes, hvis du tager komponenterne i brug allerede nu.</li>
+  <li>Dokumentationen bliver løbende opdateret i takt med, at vi lærer mere.</li>
+  <li>Der udvides løbende med flere komponenter.</li>
 </ul>
 
-<p>Resultatet er, at udviklere kan bruge design systemets komponenter som almindelige HTML-tags.</p>
+<p>Vær også opmærksom på, om dit framework kræver særlig konfiguration eller andre ændringer, når du tager Web Components i brug.</p>
 
-<h2>Forskellen på custom elements og web components</h2>
+<p>Du kan <a href="/kom-i-gang/implementering-kode/hent-kodepakken/">hente kodepakken</a> via NPM.</p>
 
-<p>Begreberne bliver ofte brugt i flæng, men de betyder ikke helt det samme.
-Web Components er en samling af flere browserteknologier:</p>
+<h2 id="vi-har-brug-for-din-feedback">Vi har brug for din feedback</h2>
 
+<p>Overgangen vil lykkes bedst, hvis den er testet af de teams, der rent faktisk bruger designsystemet i hverdagen. Derfor vil vi meget gerne høre fra dig, hvis du:</p>
 <ul>
-  <li>Custom Elements</li>
-  <li>Shadow DOM</li>
-  <li>HTML Templates</li>
+  <li>støder på fejl eller uventet adfærd i en eller flere af komponenterne</li>
+  <li>oplever udfordringer med at integrere komponenterne i jeres framework</li>
+  <li>har ønsker til valget mellem Light DOM og Shadow DOM for den enkelte komponent, fx om afvejningen mellem fleksibilitet og stabilitet i jeres framework fungerer godt for jer</li>
+  <li>generelt har erfaringer, positive som negative, som I har lyst til at dele</li>
 </ul>
 
-<p>Et custom element er kun én del af Web Components.I Fælles Design System anvender vi primært custom elements uden Shadow DOM.</p>
-
-<p>Det betyder:</p>
-
-<ul>
-  <li>komponenterne fungerer som almindelig HTML</li>
-  <li>eksisterende CSS kan stadig styles direkte</li>
-  <li>markup er synlig i DOM</li>
-  <li>komponenterne er kompatible med frameworks som React, Vue og Blazor</li>
-</ul>
-
-<p>Kort sagt:
-Custom elements giver os komponenter i HTML uden at skjule markup eller styling bag Shadow DOM.</p>
-
-<h2 id="saadan-kan-du-bruge-custom-elements">Sådan kan du bruge custom elements</h2>
-
-<p>Komponenterne i design systemet kan bruges på tre forskellige måder afhængigt af behov.</p>
-
-<h3>1. Simpel brug – konfiguration via attributter</h3>
-
-<p>Du kan styre komponentens opførsel via HTML-attributter. Custom elementet sørger for at synkronisere attributterne med DOM.
-Hvis en attribut ændres efterfølgende, vil komponenten automatisk opdatere sig. Du kan finde hvilke attributter hvert custom element har på dets respektive komponent-side.</p>
-
-<div class="tab-panel code-tab">
-    <div>
-        <div class="component-code">
-            <div class="button-copy-container">
-                <button class="button button-tertiary button-copy">Kopiér kode</button>
-            </div>
-            <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Overskrift&quot;</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span> <span class="hljs-attr">variant-icon</span>=<span class="hljs-string">&quot;warning&quot;</span> <span class="hljs-attr">variant-text</span>=<span class="hljs-string">&quot;Advarsel&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Indhold i accordionen<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span></code></pre>
-            </figure>
-        </div>
-    </div>
-</div>
-
-<h3>2. Brug med eksisterende markup (hydrering)</h3>
-
-<p>Du kan også selv levere hele HTML-strukturen på forhånd. I dette tilfælde overtager custom elementet ikke opbygningen af DOM’en, men tilføjer i stedet funktionalitet ovenpå den eksisterende markup.</p>
-
-<p>Når custom elementet initialiseres, gennemgår det den eksisterende struktur og forventer, at den følger det aftalte markup-mønster (fx korrekt placering af heading, button og content).</p>
-
-<p>Hvis strukturen er gyldig, vil komponenten:</p>
-
-<ul>
-  <li>tilføje nødvendig funktionalitet (fx event listeners)</li>
-  <li>sikre at relevante attributter (fx aria-expanded, aria-controls) er sat korrekt</li>
-  <li>tilføje eller normalisere nødvendige klasser</li>
-  <li>synkronisere med eventuelle attributter på custom elementet</li>
-</ul>
-
-<p>Komponenten ændrer altså ikke strukturen, men forbedrer (hydrerer) den, så den opfører sig som en fuldt funktionel komponent.</p>
-
-<p>Dette er især nyttigt når:</p>
-
-<ul>
-  <li>markup genereres på serveren (SSR)</li>
-  <li>du bruger et framework, der allerede renderer HTML</li>
-  <li>du ønsker fuld kontrol over markup (fx til SEO eller performance)</li>
-</ul>
-
-<p>Hvis den forventede struktur ikke er til stede, kan komponenten ikke initialiseres korrekt.</p>
-
-<div class="tab-panel code-tab">
-    <div>
-        <div class="component-code">
-            <div class="button-copy-container">
-                <button class="button button-tertiary button-copy">Kopiér kode</button>
-            </div>
-            <figure tabindex="0" class="code-figure">
-<pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-accordion</span> <span class="hljs-attr">content-id</span>=<span class="hljs-string">&quot;accordion-custom-id&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Dette er en accordion<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Indhold i accordionen<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-accordion</span>&gt;</span></code></pre>
-            </figure>
-        </div>
-    </div>
-</div>
-
+<p>Du kan <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">dele din feedback via GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a>.</p>
 
             </section>
         </main>
