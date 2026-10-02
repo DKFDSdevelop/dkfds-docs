@@ -1841,9 +1841,7 @@
         <li class="anchorlink-code"><a href="#ekstra-information-kode">Ekstra information</a></li>
         <li class="anchorlink-code"><a href="#trinindikator-med-fejl-kode">Trinindikator med fejl</a></li>
         <li class="anchorlink-code"><a href="#simpel-trinindikator-kode">Simpel trinindikator</a></li>
-        <li class="anchorlink-web-component"><a href="#om-custom-elements-custom">Om custom elements</a></li>
-        <li class="anchorlink-web-component"><a href="#eksempler-custom">Eksempler</a></li>
-        <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
         <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
@@ -2790,17 +2788,15 @@
                         <div id="web-component-section">
                             
 
-<h2 id="om-custom-elements-custom">Om custom elements</h2>
-
-<h2 id="eksempler-custom">Eksempler</h2>
-
-<p>Trinindikatoren skal vises i en modal ved mindre skærmstørrelser. Standard-breakpoint er <code>md</code>, hvor <code>d-md-block</code> skal sættes som klasse på <code>nav</code>-elementet og <code>d-md-none</code> skal sættes som klasse på <code>fds-modal</code> og <code>fds-modal-opener</code>.</p>
-
-<div class="mt-3 mb-3">
-    <a href="/eksempel/step-indicator-default/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/step-indicator-default/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <nav aria-label="Trinindikator" class="d-none d-md-block">
     <ol class="step-indicator">
         <li>
@@ -2878,20 +2874,15 @@
     </dialog>
 </fds-modal>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-step-indicator-default">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-1-step-tabpanel2" aria-selected="true" id="example-1-step-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-1-step-tabpanel3" aria-selected="false" id="example-1-step-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-step-tabpanel2" aria-labelledby="example-1-step-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Trinindikator&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-none d-md-block&quot;</span>&gt;</span>
+    <div class="code-in-tabs">
+        
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Trinindikator&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-none d-md-block&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ol</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;step-indicator&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;step&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:void(0);&quot;</span>&gt;</span>
@@ -2967,18 +2958,9 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-step-tabpanel3" aria-labelledby="example-1-step-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Trinindikator&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-none d-md-block&quot;</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Trinindikator&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-none d-md-block&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ol</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;step-indicator&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;step&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:void(0);&quot;</span>&gt;</span>
@@ -3074,19 +3056,24 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        
+    </div>
 </div>
 
-<h2 id="varianter-custom">Varianter</h2>
+<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+
+<p>Trinindikatoren anvender <code>fds-modal</code> med <code>variant="bottom-sheet"</code> på mindre skærme, men er ikke selv en Web Component.</p>
 
 <h2 id="konfiguration-custom">Konfiguration</h2>
 
-<p>Se <a href="/komponenter/modal/">modal</a>.</p>
+<p>Se dokumentationen for <a href="/komponenter/modal/">modaler</a> for konfiguration af bottom-sheet-varianten. Bemærk, at trinindikatorer bruger <code>&lt;div class="fixed-area"&gt;</code> og <code>&lt;div class="scrollable-area"&gt;</code> i komponentens <code>&lt;dialog&gt;</code>.</p>
 
                         </div>
             </section>
