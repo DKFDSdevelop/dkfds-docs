@@ -31,11 +31,9 @@ title: Test
 {% include test/preview-test.html filename="test-fds-textarea" description="Tekstområde" %}
 {% include test/preview-test.html filename="test-fds-error-summary-manual" description="Fejlopsummering - manual indsættelse fejl" %}
 {% include test/preview-test.html filename="test-fds-error-summary-auto" description="Fejlopsummering - automatisk opsamling af fejl" %}
-{% include test/preview-test.html filename="test-fds-drawer" description="Mobilmenu" %}
 {% include test/preview-test.html filename="test-fds-portal-info" description="Portalinfo" %}
 {% include test/preview-test.html filename="test-fds-solution-info" description="Løsningsinfo" %}
 {% include test/preview-test.html filename="test-fds-header-from-components" description="Header lavet med komponenter" %}
-{% include test/preview-test.html filename="test-fds-header-hardcoded" description="Hardcoded header" %}
 {% include test/preview-test.html filename="test-fds-dropdown-menu" description="Submenu til navigation" %}
 {% include test/preview-test.html filename="test-fds-tooltip-icon" description="Tooltip-ikon" %}
 {% include test/preview-test.html filename="test-fds-tooltip" description="Tooltip" %}

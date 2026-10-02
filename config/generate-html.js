@@ -74,8 +74,6 @@ DKFDS.registerUploadFile();
 DKFDS.registerFileItem();
 DKFDS.registerErrorSummary();
 DKFDS.registerInputAffix();
-DKFDS.registerDrawer();
-DKFDS.registerDrawerOpener();
 DKFDS.registerPortalInfo();
 DKFDS.registerSolutionInfo();
 DKFDS.registerDropdownMenu();
@@ -86,6 +84,7 @@ DKFDS.registerToggleSwitch();
 DKFDS.registerModalOpener();
 DKFDS.registerModalCloser();
 DKFDS.registerModal();
+DKFDS.registerAlert();
 
 // Don't register tabs as they use assign() and the examples are skipped anyway
 
