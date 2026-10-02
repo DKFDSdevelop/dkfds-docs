@@ -1781,10 +1781,9 @@
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
         <li class="anchorlink-code"><a href="#faneblade-til-navigation-kode">Faneblade til navigation</a></li>
         <li class="anchorlink-code"><a href="#faneblade-med-ikoner-kode">Faneblade med ikoner</a></li>
-        <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
-        <li class="anchorlink-custom"><a href="#eksempler-custom">Eksempler</a></li>
-        <li class="anchorlink-custom"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-custom"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
         <li class="anchorlink-custom"><a href="#konfiguration-custom">Konfiguration</a></li>
+        <li class="anchorlink-custom"><a href="#varianter-custom">Varianter</a></li>
         
     </ul>
 </nav>
@@ -2195,11 +2194,165 @@ Ikoner skal altid understøttes af en label med fanebladets navn.</p>
     </div>
 </div>
 
-<h2 id="om-custom-elements-custom">Om custom elements</h2>
+<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+
+<p>Denne komponent anvender shadow DOM. Det betyder, at komponenten genererer indkapslet HTML og styling, som ikke bør tilgås. Web Components med shadow DOM konfigureres gennem attributter og slots, når komponenten tillader indhold. Slots kan enten være navngivne, dvs. hvor attributten <code>slot="navn"</code> skal anvendes på det indhold, der tilføjes til webkomponenten, eller unavngivne.</p>
+
+<p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3>fds-tabs</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>breakpoint</td>
+      <td>Sæt breakpoint for, hvornår alle faneblade skal tilpasse udseendet til mindre skærme. Gyldige værdier er ‘xs’, ‘sm’, ‘md’, ‘lg’ og ‘xl’. Default er ‘md’.</td>
+    </tr>
+    <tr>
+      <td>default-tab</td>
+      <td>Angiv <code>tab-key</code> for det faneblad, der skal være valgt, når komponenten initialiseres. Hvis værdien ikke matcher et gyldigt <code>tab-key</code>, vælges det første faneblad. Ændringer efter initialisering har ingen effekt.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td><code>fds-tab</code>- og <code>fds-tab-panel</code>-elementer uden specifikt slot-navn.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>selectTab(tabKey)</td>
+      <td>Skift til fanebladet med attributten <code>tab-key="tabKey"</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fds-tab-changed</td>
+      <td>Udløses når der skiftes faneblad. <code>event.detail.selectedTab</code> indeholder <code>tab-key</code> for det valgte faneblad, og <code>event.detail.previousTab</code> indeholder <code>tab-key</code> for det tidligere valgte faneblad.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>fds-tab</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tab-key</td>
+      <td>Knyt et faneblad til et panel ved at angive samme værdi i tab-key.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td>Tekst for fanebladet og eventuelt ikon.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>fds-tab-panel</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tab-key</td>
+      <td>Knyt et faneblad til et panel ved at angive samme værdi i tab-key.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td>Indhold der skal vises, når fanebladet vælges.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="varianter-custom">Varianter</h2>
 
 <h3>Med ikoner</h3>
+
+<p>Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et <code>svg</code>-element med <code>class="icon-svg"</code> i <code>fds-tab</code>. Når der anvendes et ikon, skal fanebladets tekst sættes i et <code>span</code>-element.</p>
 
 <div class="show-code-in-box">
     
@@ -2258,95 +2411,6 @@ Ikoner skal altid understøttes af en label med fanebladets navn.</p>
         </fds-accordion>
     </div>
 </div>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3>fds-tabs</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>breakpoint</td>
-      <td>Sæt breakpoint for, hvornår alle faneblade skal tilpasse udseendet til mindre skærme. Gyldige værdier er ‘xs’, ‘sm’, ‘md’, ‘lg’ og ‘xl’. Default er ‘md’.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Funktioner</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Funktion</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>selectTab(tabKey)</td>
-      <td>Skift til fanebladet med attributten <code>tab-key="tabKey"</code>.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>fds-tab-changed</td>
-      <td>Udløses når der skiftes faneblad.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>fds-tab</h3>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>tab-key</td>
-      <td>Knyt et faneblad til et panel ved at angive samme værdi i tab-key.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>fds-panel</h3>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>tab-key</td>
-      <td>Knyt et faneblad til et panel ved at angive samme værdi i tab-key.</td>
-    </tr>
-  </tbody>
-</table>
 
                         </div>
             </section>
