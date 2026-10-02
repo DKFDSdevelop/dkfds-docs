@@ -574,11 +574,10 @@ Modal_Kode:
 - h2: Installation
 - h2: Modal som kræver handling
 
-Modal_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Modal_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 - h2: Referencer
 
 Overflowmenu_Kode:
