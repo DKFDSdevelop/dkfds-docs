@@ -1831,11 +1831,15 @@
                         <div id="web-component-section">
                             
 
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-toggle-switch/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-toggle-switch/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <div class="row">
     <div class="col-12 col-sm-7 col-md-5" role="group" aria-labelledby="toggle-switch-heading">
         <h2 class="h5 mb-4 mt-0" id="toggle-switch-heading">Indstillinger</h2>
@@ -1844,38 +1848,24 @@
     </div>
 </div>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-toggle-switch">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-1-toggle-tabpanel2" aria-selected="true" id="example-1-toggle-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-1-toggle-tabpanel3" aria-selected="false" id="example-1-toggle-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-toggle-tabpanel2" aria-labelledby="example-1-toggle-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+    <div class="code-in-tabs">
+        
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-sm-7 col-md-5&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis afsluttede sager&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;on&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis sager ældre end et år&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;off&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-toggle-tabpanel3" aria-labelledby="example-1-toggle-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-sm-7 col-md-5&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis afsluttede sager&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;on&quot;</span>&gt;</span>
@@ -1890,13 +1880,24 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        
+    </div>
 </div>
+
+<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+
+<p>Denne komponent anvender light DOM. Det betyder, at komponenten genererer HTML, der kan tilgås ligesom al anden HTML på siden. Du kan som udvikler vælge mellem at tage Web Component-koden, hvis du vil lade komponenten generere HTML’en, eller tage versionen med den genererede kode, hvis du har brug for at ændre i HTML’en først. Begge muligheder vises i fanebladene i komponentens eksempler.</p>
+
+<p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
+
+<p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
 
 <h2 id="konfiguration-custom">Konfiguration</h2>
 
@@ -1912,7 +1913,7 @@
   <tbody>
     <tr>
       <td>state</td>
-      <td>Afgør om toggle switch er slået til eller fra. Gyldige værdier er <code>on</code> og <code>off</code>.</td>
+      <td>Afgør om toggle switch er slået til eller fra. Gyldige værdier er <code>on</code> og <code>off</code>. Default er <code>off</code>.</td>
     </tr>
     <tr>
       <td>label</td>

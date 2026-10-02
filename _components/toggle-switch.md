@@ -60,18 +60,22 @@ Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på swi
 
 <!--split-->
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-toggle-switch" tabId="example-1-toggle" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-toggle-switch" subheading_tag="h2" collapsable=false %}
+
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+
+{% include custom-element-shared-text/intro-light-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
 ### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut        | Beskrivelse                                                                      |
-|-----------------|----------------------------------------------------------------------------------|
-| state           | Afgør om toggle switch er slået til eller fra. Gyldige værdier er `on` og `off`. |
-| label           | Label for toggle switch.                                                         |
-| disabled-switch | Gør komponentens knap inaktiv (sætter `disabled` på knappen).                    |
+| Attribut        | Beskrivelse                                                                                         |
+|-----------------|-----------------------------------------------------------------------------------------------------|
+| state           | Afgør om toggle switch er slået til eller fra. Gyldige værdier er `on` og `off`. Default er `off`.  |
+| label           | Label for toggle switch.                                                                            |
+| disabled-switch | Gør komponentens knap inaktiv (sætter `disabled` på knappen).                                       |
 
 ### Funktioner
 
