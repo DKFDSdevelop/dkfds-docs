@@ -421,11 +421,10 @@ Beskeder_Kode:
 - h2: Paragrafbredde
 - h2: Luk knap
 
-Beskeder_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Beskeder_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Broedkrumme_Kode:
 - h2: Installation
