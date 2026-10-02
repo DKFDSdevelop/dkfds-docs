@@ -199,7 +199,7 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Med ikoner
+### Med ikoner {#{% include create-id.html heading="Med ikoner" append="-custom" %}}
 
 Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et `svg`-element med `class="icon-svg"` i `fds-tab`. Når der anvendes et ikon, skal fanebladets tekst sættes i et `span`-element.
 
