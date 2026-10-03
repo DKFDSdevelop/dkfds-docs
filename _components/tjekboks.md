@@ -18,7 +18,7 @@ custom_element: "Ready"
 
 {% include code/preview-box.html component="checkbox-large" title="Eksempel på tjekbokse" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tjekboks" code="Tjekboks_Kode" custom="Tjekboks_Custom" %}
+{% include anchorlinks.html guidelines="Tjekboks" code="Tjekboks_Kode" custom="Tjekboks_Web_Component" %}
 
 <!--split-->
 
@@ -181,87 +181,64 @@ Det element som skal collapses/expandes skal have følgende:
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-example" subheading_tag="h2" collapsable=false %}
 
-Tjekbokse har to custom elementer tilknyttet: `<fds-checkbox>` og `<fds-checkbox-group>`. 
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Begge komponenter forventer, at de nødvendige HTML-elementer er til stede. Den enkelte checkbox kræver et input- og et label-element. Checkbox-gruppen kræver et fieldset, der omslutter gruppens legend og de enkelte checkboxes. Ved initialisering tilføjer custom elementet de nødvendige klasser, attributter og event listeners. 
-
-Hvis den forventede HTML mangler, forsøger komponenten at initialisere det, der er muligt, uden at flytte rundt på eksisterende elementer.
-
-### HTML-muligheder
-
-Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
-
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-checkbox>` med `<div class="fds-checkbox">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
-
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
-
-### Tjekbox med label lavet med custom element
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-example" tabId="example-1-acc" %}
-
-Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
-{% include containers-for-code-and-examples/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-checkbox-simple" %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Fejl
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-error" tabId="example-input-error" %}
-
-### Hjælpetekst
-
-#### Hjælpetekst til enkelte tjekbokse
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-help-text" tabId="example-checkbox-helptext" %}
-
-#### Tjekboksgruppe med hjælpetekst
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-group-help-text" tabId="example-checkbox-group-helptext" %}
-
-### Obligatoriske og frivillige tjekbokse
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-required" tabId="example-3-acc" %}
-
-### Skjult indhold (Collapse)
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-collapse" tabId="example-4-acc" %}
-
-### Deaktiveret
-
-#### Deaktiveret enkelte tjekbokse
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-disabled" tabId="example-5-acc" %}
-
-#### Deaktiveret tjekboksgruppe
-
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-checkbox-group-disabled" tabId="example-6-acc" %}
+{% include web-component-shared-text/intro-light-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+`fds-checkbox` kræver et `input`- og et `label`-element. `fds-checkbox-group` kræver et `fieldset`-element, der omslutter gruppens `legend` og de enkelte tjekbokse.
 
 ### fds-checkbox
 
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                           |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------|
-| show-required-status | Viser om tjekboksen er obligatorisk eller frivillig. Indsæt en tekst i attributten for at overskrive default-teksten. |
-| ready                | Kan bruges til at udskyde automatisk initialisering. Sæt ready="false" for at forhindre initialisering ved tilføjelse til DOM’en, og fjern attributten eller sæt ready="true" for at initialisere komponenten. |
+| Attribut             | Beskrivelse                                                                                                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om tjekboksen er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.                 |
+| ready                 | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
 
-#### Funktioner
+### fds-help-text
 
-{:.table .table--responsive-headers}
-| Funktion              | Beskrivelse                                                                                                     |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| init()                | Initialiserer komponenten manuelt, fx hvis komponenten har ready="false", eller hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|
+{% include web-component-shared-text/fds-help-text.html %}
 
-### fds-checkbox-group
+### fds-error-message
 
-#### Funktioner
+{% include web-component-shared-text/fds-error.html %}
 
-{:.table .table--responsive-headers}
-| Funktion              | Beskrivelse                                                                                                                         |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| init()                | Initialiserer komponenten manuelt, fx hvis indholdet indsættes senere. Metoden kan kaldes flere gange uden at komponenten bør fejle.|
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-error" heading_tag="h4" subheading_tag="h5" %}
+
+### Hjælpetekst
+
+#### Hjælpetekst til enkelte tjekbokse
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-help-text" heading_tag="h5" subheading_tag="h6" %}
+
+#### Tjekboksgruppe med hjælpetekst
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-group-help-text" heading_tag="h5" subheading_tag="h6" %}
+
+### Obligatoriske og frivillige tjekbokse
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-required" heading_tag="h4" subheading_tag="h5" %}
+
+### Skjult indhold (Collapse)
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-collapse" heading_tag="h4" subheading_tag="h5" %}
+
+### Deaktiveret
+
+#### Deaktiveret enkelte tjekbokse
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-disabled" heading_tag="h5" subheading_tag="h6" %}
+
+#### Deaktiveret tjekboksgruppe
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-group-disabled" heading_tag="h5" subheading_tag="h6" %}

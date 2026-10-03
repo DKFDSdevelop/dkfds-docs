@@ -645,11 +645,10 @@ Tjekboks_Kode:
 - h2: Hjælpetekst
 - h2: Skjult indhold (collapse)
 
-Tjekboks_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Tjekboks_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Toastbesked_Kode:
 - h2: Installation
