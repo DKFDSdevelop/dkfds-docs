@@ -449,8 +449,10 @@ Datofelter_Kode:
 - h2: Installation
 - h2: Fejlmeddelelse
 
-Datofelter_Custom:
-- h2: Om custom elements
+Datofelter_Web_Component:
+- h2: Om denne komponent
+- h2: Konfiguration
+- h2: Varianter
 
 Datovaelger_Kode:
 - h2: Installation
