@@ -64,7 +64,7 @@ Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på swi
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include custom-element-shared-text/intro-light-dom.html %}
+{% include web-component-shared-text/intro-light-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

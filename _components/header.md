@@ -213,7 +213,7 @@ Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvæl
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include custom-element-shared-text/intro-mixed-dom.html %}
+{% include web-component-shared-text/intro-mixed-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

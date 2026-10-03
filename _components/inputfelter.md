@@ -308,7 +308,7 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include custom-element-shared-text/intro-light-dom.html %}
+{% include web-component-shared-text/intro-light-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -324,42 +324,11 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 ### fds-help-text
 
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut | Beskrivelse                                                                                 |
-|----------|---------------------------------------------------------------------------------------------|
-| id       | ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.                    |
-| hidden   | Skjuler hjælpeteksten. Skal sættes til `true` eller være tom for at tage effekt. |
-
-#### Events
-
-{:.table .table--responsive-headers}
-| Event                        | Beskrivelse                                                                                                                           |
-|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| help-text-callback            | Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens `hidden`-attribut ændres.                       |
-| help-text-visibility-changed | Udløses på det omsluttende element, når `hidden`-attributten ændres. `event.detail.helptextId` indeholder hjælpetekstens ID, og `event.detail.isHidden` angiver, om den er skjult. |
+{% include web-component-shared-text/fds-help-text.html %}
 
 ### fds-error-message
 
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut  | Beskrivelse                                                                                                      |
-|-----------|--------------------------------------------------------------------------------------------------------------------|
-| id        | ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.                                        |
-| icon-text | Skærmlæsertekst for ikonet. Default er `Fejl`.                                                                   |
-| hidden    | Skjuler fejlbeskeden. Skal sættes til `true` eller være tom for at tage effekt.                     |
-| targets   | Bruges kun af `fds-date-input`. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma. |
-| message   | Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.                                |
-
-#### Events
-
-{:.table .table--responsive-headers}
-| Event                           | Beskrivelse                                                                                                                                                      |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| error-message-callback            | Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.                                                   |
-| error-message-visibility-changed | Udløses på det omsluttende element, når `hidden`-attributten ændres. `event.detail.errorId` indeholder fejlbeskedens ID, og `event.detail.isHidden` angiver, om den er skjult. |
+{% include web-component-shared-text/fds-error.html %}
 
 ### fds-input-affix
 
@@ -373,25 +342,7 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 ### fds-character-limit
 
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut                           | Beskrivelse                                                                                                          |
-|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| limit                               | Angiv det maksimale antal tegn, der kan indtastes.                                                                     |
-| limit-id                           | ID for elementet, der viser den maksimale grænse til skærmlæserbrugere. Hvis denne er udeladt, genereres et tilfældigt ID. |
-| one-character-remaining-text       | Overskriv teksten, der vises, når der er ét tegn tilbage. Default er `Du har {value} tegn tilbage`.                   |
-| several-characters-remaining-text  | Overskriv teksten, der vises, når der er flere tegn tilbage. Default er `Du har {value} tegn tilbage`.                |
-| one-character-too-many-text        | Overskriv teksten, der vises, når grænsen er overskredet med ét tegn. Default er `Du har {value} tegn for meget`.      |
-| several-characters-too-many-text   | Overskriv teksten, der vises, når grænsen er overskredet med flere tegn. Default er `Du har {value} tegn for meget`.  |
-| max-limit-text                     | Overskriv teksten, der annonceres til skærmlæserbrugere om den maksimale grænse. Default er `Du kan indtaste op til {value} tegn`. |
-
-#### Events
-
-{:.table .table--responsive-headers}
-| Event                      | Beskrivelse                                                                      |
-|------------------------------|-------------------------------------------------------------------------------------|
-| character-limit-callback   | Udløses på det omsluttende element, når en af komponentens attributter ændres. |
+{% include web-component-shared-text/fds-character-limit.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 

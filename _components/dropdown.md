@@ -112,19 +112,11 @@ Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HT
 
 ### Fejl
 
-{% include custom-element-shared-text/fds-error-intro-text.html %}
-
 {% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-select-error" tabId="example-2-sel" %}
-
-{% include custom-element-shared-text/fds-error-tables.html %}
 
 ### Hjælpetekst
 
-{% include custom-element-shared-text/fds-helptext-intro-text.html %}
-
 {% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-select-help" tabId="example-3-sel" %}
-
-{% include custom-element-shared-text/fds-help-text-tables.html %}
 
 ### Obligatoriske og frivillige dropdown
 

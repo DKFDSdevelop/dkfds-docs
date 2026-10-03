@@ -137,7 +137,7 @@ Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner 
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include custom-element-shared-text/intro-light-dom.html %}
+{% include web-component-shared-text/intro-light-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 

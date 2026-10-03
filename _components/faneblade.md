@@ -130,7 +130,7 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include custom-element-shared-text/intro-shadow-dom.html %}
+{% include web-component-shared-text/intro-shadow-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
