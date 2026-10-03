@@ -593,11 +593,10 @@ Radioknap_Kode:
 - h2: Hjælpetekst
 - h2: Skjult indhold (Collapse)
 
-Radioknap_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Radioknap_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Sprogvaelger_Kode:
 - h2: Installation
