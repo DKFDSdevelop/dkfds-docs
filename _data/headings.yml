@@ -502,6 +502,10 @@ Fejlmeddelelser_Kode:
 - h2: Vedhæft fil
 - h2: Referencer
 
+Fejlmeddelelser_Web_Component:
+- h2: Om denne komponent
+- h2: Varianter
+
 Fejlopsummering_Kode:
 - h2: Installation
 
