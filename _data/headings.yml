@@ -505,11 +505,10 @@ Fejlmeddelelser_Kode:
 Fejlopsummering_Kode:
 - h2: Installation
 
-Fejlopsummering_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Fejlopsummering_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Footer_Kode:
 - h2: Installation

@@ -1771,10 +1771,9 @@
         <li class="anchorlink-guidelines"><a href="#referencer">Referencer</a></li>
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
-        <li class="anchorlink-web-component"><a href="#om-custom-elements-custom">Om custom elements</a></li>
-        <li class="anchorlink-web-component"><a href="#eksempler-custom">Eksempler</a></li>
-        <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
         <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
+        <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
         
     </ul>
 </nav>
@@ -2056,83 +2055,211 @@
                         <div id="web-component-section">
                             
 
-<h2 id="om-custom-elements-custom">Om custom elements</h2>
-
-<p><code>fds-error-summary</code> kan anvendes på to måder:</p>
-
-<ul>
-  <li>uden attributten <code>auto</code>, hvor udvikleren selv er ansvarlig for at tilføje fejl til oversigten og styre, hvornår komponenten skal vises</li>
-  <li>med attributten <code>auto</code>, hvor komponenten automatisk samler alle synlige fejlmeddelelser på siden, som ligger i et understøttet inputelement, og selv viser eller skjuler oversigten afhængigt af, om der er fejl</li>
-</ul>
-
-<h3>HTML-muligheder</h3>
-
-<p>Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.</p>
-
-<p>Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.</p>
-
-<h2 id="eksempler-custom">Eksempler</h2>
-
-<h3>Fejlopsummering med custom element</h3>
-
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-error-summary/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-error-summary/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-error-summary heading-id="error-summary-id"></fds-error-summary>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-error-summary">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-1-errorsum-tabpanel2" aria-selected="true" id="example-1-errorsum-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-1-errorsum-tabpanel3" aria-selected="false" id="example-1-errorsum-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-errorsum-tabpanel2" aria-labelledby="example-1-errorsum-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-errorsum-tabpanel3" aria-labelledby="example-1-errorsum-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id&quot;</span>&gt;</span>
+    <div class="code-in-tabs">
+        
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-id&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-id&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        
+    </div>
 </div>
+
+<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+
+<p>Denne komponent anvender light DOM. Det betyder, at komponenten genererer HTML, der kan tilgås ligesom al anden HTML på siden. Du kan som udvikler vælge mellem at tage Web Component-koden, hvis du vil lade komponenten generere HTML’en, eller tage versionen med den genererede kode, hvis du har brug for at ændre i HTML’en først. Begge muligheder vises i fanebladene i komponentens eksempler.</p>
+
+<p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
+
+<p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3 id="fds-error-summary-custom">fds-error-summary</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading</td>
+      <td>Sæt en anden overskrift end standardoverskriften <code>"Der er problemer"</code>.</td>
+    </tr>
+    <tr>
+      <td>heading-level</td>
+      <td>Angiver hvilket overskriftsniveau der anvendes til overskriften. Gyldige værdier er <code>h1</code> til <code>h6</code>. Default er <code>h2</code>.</td>
+    </tr>
+    <tr>
+      <td>heading-id</td>
+      <td>ID for overskriftselementet. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+    </tr>
+    <tr>
+      <td>auto</td>
+      <td>Hold fejloversigten automatisk synkroniseret med <code>fds-error-message</code> i understøttede wrappers. Komponenten vises eller skjules automatisk afhængigt af, om der er fejl.</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>Skjuler fejloversigten. Sættes automatisk baseret på, om der er fejl. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="understoettede-wrappers-custom">Understøttede wrappers</h3>
+
+<p><code>fds-error-summary</code> samler fejlmeddelelser fra følgende komponenter:</p>
+
+<ul class="nobullet-list">
+  <li><code>fds-input</code></li>
+  <li><code>fds-checkbox</code></li>
+  <li><code>fds-checkbox-group</code></li>
+  <li><code>fds-radio-button-group</code></li>
+  <li><code>fds-date-input</code></li>
+  <li><code>fds-textarea</code></li>
+  <li><code>fds-select</code></li>
+  <li><code>fds-upload-file</code></li>
+  <li><code>fds-date-picker</code></li>
+</ul>
+
+<p>Fejlmeddelelsen skal være angivet som et <code>fds-error-message</code> element.</p>
+
+<p>Når der klikkes på et link i fejloversigten, flyttes fokus til det første fokusbare element i den wrapper, som fejlmeddelelsen tilhører (f.eks. <code>input</code>, <code>select</code>, <code>textarea</code> eller <code>button</code>).</p>
+
+<p>Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhørende fejlmeddelelse heller ikke er skjult.</p>
 
 <h2 id="varianter-custom">Varianter</h2>
 
-<h3>Auto</h3>
+<h3>Manuel tilføjelse af fejl</h3>
 
-<p>Med attributten <code>auto</code> opdateres fejloversigten automatisk ud fra synlige <code>fds-error-message</code> i understøttede wrappers. Hvis en fejl er standalone eller befinder sig i en ikke-understøttet parent wrapper, bliver den ikke automatisk føjet til fejloversigten.</p>
+<p>Når du ikke bruger <code>auto</code>-attributten, er du selv ansvarlig for at administrere fejlene og skal manuelt oprette strukturen med fejlene.</p>
 
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-error-summary-auto/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-error-summary-manual/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-error-summary heading-id="error-summary-manual-heading">
+    <nav>
+        <svg aria-label="Fejl" focusable="false">
+            <use href="#error"></use>
+        </svg>
+        <h2 id="error-summary-manual-heading">Der er problemer</h2>
+        <ul>
+            <li data-error-id="error77d50f12">
+                <a href="#input-wrapper-fornavn" class="function-link">Fornavn ikke indtastet</a>
+            </li>
+            <li data-error-id="error77d50f13">
+                <a href="#input-wrapper-efternavn" class="function-link">Efternavn ikke indtastet</a>
+            </li>
+        </ul>
+    </nav>
+</fds-error-summary>
+    </div>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-error-summary-manual">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#input-wrapper-fornavn&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f13&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#input-wrapper-efternavn&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#input-wrapper-fornavn&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f13&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#input-wrapper-efternavn&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
 </div>
-<div class="example-box">
-    <div>
+
+<h3>Automatisk synkronisering</h3>
+
+<p>Med <code>auto</code>-attributten opdateres fejloversigten automatisk baseret på synlige <code>fds-error-message</code> elementer i understøttede wrappers.</p>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-error-summary-auto/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-error-summary auto="true" heading-id="error-summary-id1"></fds-error-summary>
 
 <fds-input>
@@ -2147,20 +2274,15 @@
     <fds-error-message id="error77d50f13">Efternavn ikke indtastet</fds-error-message>
 </fds-input>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-error-summary-auto">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-2-errorsum-tabpanel2" aria-selected="true" id="example-2-errorsum-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-2-errorsum-tabpanel3" aria-selected="false" id="example-2-errorsum-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-2-errorsum-tabpanel2" aria-labelledby="example-2-errorsum-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-error-summary-auto">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Fornavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
@@ -2173,18 +2295,9 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-error2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text2&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error77d50f13&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-2-errorsum-tabpanel3" aria-labelledby="example-2-errorsum-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -2214,66 +2327,17 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Efternavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        </fds-accordion>
+    </div>
 </div>
 
-<h3>Understøttede wrappers</h3>
-
-<p><code>fds-error-summary</code> understøtter fejlmeddelelser i følgende wrappers:</p>
-
-<ul>
-  <li><code>fds-input</code></li>
-  <li><code>fds-checkbox</code></li>
-  <li><code>fds-checkbox-group</code></li>
-  <li><code>fds-radio-button-group</code></li>
-  <li><code>fds-date-input</code></li>
-  <li><code>fds-textarea</code></li>
-  <li><code>fds-select</code></li>
-  <li><code>fds-upload-file</code></li>
-  <li><code>fds-date-picker</code></li>
-</ul>
-
-<p>Fejlmeddelelsen skal være angivet som et <code>fds-error-message</code> inde i wrapperen.</p>
-
-<p>Når der klikkes på et link i fejloversigten, flyttes fokus til det første fokusbare element i den wrapper, som fejlmeddelelsen tilhører, fx et <code>input</code>, <code>select</code>, <code>textarea</code> eller <code>button</code>.</p>
-
-<p>Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhørende fejlmeddelelse heller ikke er skjult.</p>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3>Attributter</h3>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>heading</td>
-      <td>Sæt en anden overskrift end standardoverskriften <code>"Der er problemer"</code>.</td>
-    </tr>
-    <tr>
-      <td>heading-id</td>
-      <td>Sætter id på overskriftselementet, så fejlopsummeringen kan referere til overskriften via aria-labelledby.</td>
-    </tr>
-    <tr>
-      <td>heading-level</td>
-      <td>Angiver hvilket overskriftsniveau der anvendes til overskriften. Gyldige værdier er <code>h1</code> til <code>h6</code>. Standard er <code>h2</code>.</td>
-    </tr>
-    <tr>
-      <td>auto</td>
-      <td>Gør komponenten automatisk og holder fejloversigten synkroniseret med <code>fds-error-message</code> i understøttede wrappers.</td>
-    </tr>
-  </tbody>
-</table>
 
                         </div>
             </section>
