@@ -18,7 +18,7 @@ difference_warning: true
 
 {% include code/preview-box.html component="date-picker" title="Eksempel på datovælger" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Datovaelger" code="Datovaelger_Kode" custom="Datovaelger_Custom" %}
+{% include anchorlinks.html guidelines="Datovaelger" code="Datovaelger_Kode" custom="Datovaelger_Web_Component" %}
 
 <!--split-->
 
@@ -202,53 +202,107 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker" subheading_tag="h2" collapsable=false %}
 
-### HTML-muligheder
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+{% include web-component-shared-text/intro-mixed-dom.html %}
 
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+`fds-date-picker` kræver følgende struktur: Et `label`-element, en `div` indeholdende et `input`-element, samt en indre `div` med et `fds-date-picker-grid`-element.
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker" tabId="example-1-datep" overflowVisible="" %}
+### fds-date-picker
+
+`fds-date-picker` anvender light DOM.
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.               |
+| format                | Angiv det datoformat, der vises i inputfeltet. Gyldige værdier er `DD/MM/YYYY`, `DD-MM-YYYY`, `DD.MM.YYYY`, `DD MM YYYY` og `DD/MM-YYYY`. Default er `DD/MM/YYYY`.      |
+| text-open             | Skærmlæsertekst for knappen, der åbner datovælgeren. Default er `Åbn datovælger`.                                                                                         |
+| text-selecteddate     | Skærmlæsertekst for den valgte dato, tilføjet til knappens skærmlæsertekst. Skal indeholde `DAY`, `MONTH` og `YEAR`. Default er `valgt dato er DAY. MONTH YEAR`.         |
+| text-months           | Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er `januar februar marts april maj juni juli august september oktober november december`. |
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion | Beskrivelse                                 |
+|----------|------------------------------------------------|
+| open()   | Åbn datovælgeren.                           |
+| close()  | Luk datovælgeren.                           |
+| toggle() | Skift mellem at åbne og lukke datovælgeren. |
+
+### fds-date-picker-grid
+
+`fds-date-picker-grid` anvender shadow DOM. Bemærk, at `fds-date-picker-grid` som udgangspunkt bruges inden i `fds-date-picker` og ikke er tiltænkt at blive brugt alene.
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut               | Beskrivelse                                                                                                                                                        |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| min-date                | Angiv den tidligste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er dags dato.                                                                        |
+| max-date                | Angiv den seneste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er 10 år fra dags dato.                                                                |
+| selected-date           | Angiv den valgte dato. Angives i formatet `YYYY-MM-DD`.                                                                                                           |
+| default-date            | Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet `YYYY-MM-DD`. Ændringer efter initialisering har ingen effekt. |
+| start-date-id           | Angiv ID'et på en tilknyttet `fds-date-picker-grid`, der repræsenterer slutdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.           |
+| end-date-id             | Angiv ID'et på en tilknyttet `fds-date-picker-grid`, der repræsenterer startdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.          |
+| text-months             | Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er `januar februar marts april maj juni juli august september oktober november december`. |
+| text-days               | Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er `mandag tirsdag onsdag torsdag fredag lørdag søndag`.                   |
+| text-prevbutton         | Skærmlæsertekst for knappen, der viser den foregående måned.                                                                                                     |
+| text-nextbutton         | Skærmlæsertekst for knappen, der viser den næste måned.                                                                                                           |
+| text-date-announcement  | Skærmlæsertekst for hver dato i kalenderen. Skal indeholde `DAY`, `MONTH` og `YEAR`. Default er `DAY. MONTH YEAR`.                                               |
+| text-mindate            | Tilføjes til skærmlæserteksten for den tidligste valgbare dato. Default er `tidligste valgbare dato`.                                                           |
+| text-maxdate            | Tilføjes til skærmlæserteksten for den seneste valgbare dato. Default er `seneste valgbare dato`.                                                                |
+
+#### Events
+
+{:.table .table--responsive-headers}
+| Event        | Beskrivelse                                                        |
+|---------------|------------------------------------------------------------------------|
+| date-clicked  | Udløses når en dato i kalenderen klikkes eller vælges med tastaturet. |
+| date-selected | Udløses når den valgte dato ændres.                                 |
+
+### fds-help-text
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message
+
+{% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Fejl
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-error" tabId="example-2-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-error" heading_tag="h4" subheading_tag="h5" %}
 
 ### Hjælpetekst
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-helptext" tabId="example-3-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-helptext" heading_tag="h4" subheading_tag="h5" %}
 
 ### Begræns mulige datoer
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-minmax" tabId="example-4-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-minmax" heading_tag="h4" subheading_tag="h5" %}
 
 ### Fast værdi
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-default" tabId="example-5-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-default" heading_tag="h4" subheading_tag="h5" %}
 
 ### Datoformat
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-format" tabId="example-6-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-format" heading_tag="h4" subheading_tag="h5" %}
 
 ### Deaktiveret
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-disabled" tabId="example-7-datep" overflowVisible="" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-disabled" heading_tag="h4" subheading_tag="h5" %}
 
 ### Start- og slutdato
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-date-picker-start-end-dates" tabId="example-8-datep" overflowVisible="" %}
+`start-date-id` og `end-date-id` læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                                      |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.          |
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-start-end-dates" heading_tag="h4" subheading_tag="h5" %}
