@@ -1494,6 +1494,11 @@ Styling for examples
         padding: units(4);
     }
 
+    & + .show-code-in-tabs,
+    & + .show-code-in-box {
+        margin-top: units(5);
+    }
+
     .top-example {
         border-bottom: border('low-contrast');
         padding: units(7) units(5); // top and bottom | left and right
