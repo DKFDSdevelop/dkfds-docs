@@ -25,7 +25,7 @@ custom_element: "Ready"
 
 {% include code/preview-box.html component="text-area" title="Eksempel på tekstområde" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tekstomraade" code="Tekstomraade_Kode" custom="Tekstomraade_Custom" %}
+{% include anchorlinks.html guidelines="Tekstomraade" code="Tekstomraade_Kode" custom="Tekstomraade_Web_Component" %}
 
 <!--split-->
 
@@ -183,45 +183,53 @@ Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af s
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-example" subheading_tag="h2" collapsable=false %}
 
-### HTML-muligheder
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+{% include web-component-shared-text/intro-light-dom.html %}
 
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-textarea>` med `<div class="fds-textarea">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+### fds-textarea
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-example" tabId="example-1-sel" %}
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                                                 |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om tekstområdet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
+
+### fds-help-text
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message
+
+{% include web-component-shared-text/fds-error.html %}
+
+### fds-character-limit
+
+{% include web-component-shared-text/fds-character-limit.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Fejl
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-error" tabId="example-2-sel" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-error" heading_tag="h4" subheading_tag="h5" %}
 
 ### Hjælpetekst
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-helptext" tabId="example-3-sel" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-helptext" heading_tag="h4" subheading_tag="h5" %}
 
 ### Karakterbegrænsning
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-limit" tabId="example-input-limit" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-limit" heading_tag="h4" subheading_tag="h5" %}
 
-### Obligatoriske og frivillige inputfelter
+### Obligatoriske og frivillige tekstområder
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-required" tabId="example-4-sel" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required" heading_tag="h4" subheading_tag="h5" %}
 
 ### Deaktiveret
 
-{% include containers-for-code-and-examples/show-example-with-tabs.html example="fds-textarea-disabled" tabId="example-5-sel" %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                                      |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.          |
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-disabled" heading_tag="h4" subheading_tag="h5" %}

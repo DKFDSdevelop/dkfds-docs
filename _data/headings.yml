@@ -626,11 +626,10 @@ Tekstomraade_Kode:
 - h2: Karakterbegrænsning
 - h2: Deaktiveret
 
-Tekstomraade_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Tekstomraade_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 TilbageLink_Kode:
 - h2: Installation
