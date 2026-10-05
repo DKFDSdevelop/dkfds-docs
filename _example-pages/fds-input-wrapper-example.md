@@ -1,5 +1,5 @@
 --- 
 permalink: /eksempel/fds-input-wrapper-example/
-title: Eksempel på inputfelter lavet som custom element
+title: Eksempel på inputfelt
 ---
 {% include code-examples/fds-input-wrapper-example.html %}

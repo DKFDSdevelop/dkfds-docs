@@ -1,5 +1,5 @@
 --- 
 permalink: /eksempel/fds-checkbox-example/
-title: Eksempel på tjekbox lavet som custom element
+title: Eksempel på tjekboks
 ---
 {% include code-examples/fds-checkbox-example.html %}

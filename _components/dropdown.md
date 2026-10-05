@@ -11,15 +11,15 @@ title: Dropdown
 lead: Dropdown lader brugeren vælge én blandt flere muligheder i en udfoldet liste.
 description: Dropdown kan bruges i tilfælde, hvor brugeren skal vælge mellem 5 og 15 værdier på en begrænset plads.
 tags:
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="select" title="Eksempel på dropdown" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Dropdown" code="Dropdown_Kode" custom="Dropdown_Custom" %}
+{% include anchorlinks.html guidelines="Dropdown" code="Dropdown_Kode" custom="Dropdown_Web_Component" %}
 
 <!--split-->
 
@@ -96,49 +96,45 @@ Brug dropdown i begrænset omfang. Værdierne i en dropdown er ikke umiddelbart 
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select" subheading_tag="h2" collapsable=false %}
 
-### HTML-muligheder
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+{% include web-component-shared-text/intro-light-dom.html %}
 
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-select>` med `<div class="fds-select">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+### fds-select
 
-{% include code/show-example-with-tabs.html example="fds-select" tabId="example-1-sel" %}
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                                               |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om dropdown er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
+
+### fds-help-text
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message
+
+{% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Fejl
 
-{% include custom-element-shared-text/fds-error-intro-text.html %}
-
-{% include code/show-example-with-tabs.html example="fds-select-error" tabId="example-2-sel" %}
-
-{% include custom-element-shared-text/fds-error-tables.html %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-error" heading_tag="h4" subheading_tag="h5" %}
 
 ### Hjælpetekst
 
-{% include custom-element-shared-text/fds-helptext-intro-text.html %}
-
-{% include code/show-example-with-tabs.html example="fds-select-help" tabId="example-3-sel" %}
-
-{% include custom-element-shared-text/fds-help-text-tables.html %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-help" heading_tag="h4" subheading_tag="h5" %}
 
 ### Obligatoriske og frivillige dropdown
 
-{% include code/show-example-with-tabs.html example="fds-select-required" tabId="example-4-sel" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-required" heading_tag="h4" subheading_tag="h5" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-select-disabled" tabId="example-5-sel" %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                                      |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.          |
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-disabled" heading_tag="h4" subheading_tag="h5" %}

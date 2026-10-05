@@ -1451,6 +1451,17 @@ Styling for cards
 
 /*
 -----------------------------------------------------
+Styling for tabs
+-----------------------------------------------------
+*/
+
+.web-component-tab-badge {
+    background-color: color('black');
+}
+
+
+/*
+-----------------------------------------------------
 Styling for loading spinner examples
 -----------------------------------------------------
 */
@@ -1471,102 +1482,177 @@ Styling for loading spinner examples
 Styling for examples
 -----------------------------------------------------
 */
-.example-box {
-    border: 1px solid #8e8e8e;
-    padding: 16px 16px 8px 16px;
 
-    fds-accordion[content-id*="example-box-"] {
-        margin-bottom: 0;
-        margin-top: 28px;
+.show-code-in-tabs,
+.show-code-in-box {
+    border: border('low-contrast');
 
-        .accordion-button,
-        .accordion-content {
-            background-color: #FFFFFF !important;
-            padding-left: 3.6rem !important;
+    .open-in-new-window {
+        display: flex;
+        justify-content: flex-end;
+        border-bottom: border('low-contrast');
+        padding: units(4);
+    }
+
+    & + .show-code-in-tabs,
+    & + .show-code-in-box {
+        margin-top: units(5);
+    }
+
+    .top-example {
+        border-bottom: border('low-contrast');
+        padding: units(7) units(5); // top and bottom | left and right
+    }
+
+    .code-in-tabs, .code-in-box {
+        padding: 16px;
+
+        & > fds-accordion {
+            margin-bottom: 0;
+
+            h2, h3, h4, h5, h6 {
+                .accordion-button {
+                    background-color: color('white');
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    padding-right: units(2);
+                    padding-left: units(505, 'rem');
+                    width: auto;
+                    border-radius: border-radius('small');
+                    font-weight: font-weight("normal");
+                    text-decoration: underline;
+
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+
+            .accordion-content {
+                padding: units(6) 0 0 0;
+                background-color: color('transparent');
+                border-radius: border-radius('none');
+                overflow: visible;
+
+                @include media-breakpoint-up(md) {
+                    .copy-code-wrapper {
+                        top: units(6);
+                    }
+                }
+            }
         }
 
-        .accordion-button {
-            padding-top: 0.8rem;
-            padding-bottom: 0.8rem;
+        .code-content {
+            position: relative;
 
-            &::before {
-                left: 0;
+            pre {
+                overflow: visible; // Prevent pre tags from getting browser focus
+                margin: 0;
+            }
+
+            .copy-code-wrapper {
+                margin-top: units(3);
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+
+                .copy-code {
+                    padding-right: units(1);
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                --tabs-tablist-width: calc(100% - 8rem);
+
+                .copy-code-wrapper {
+                    margin-top: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .code-in-tabs .code-content {
+        fds-tab-panel {
+            --tab-panel-background-color: var(--color-black);
+            --tab-panel-border-color: var(--color-black);
+        }
+
+        @include media-breakpoint-up(md) {
+            .copy-code-wrapper {
+                min-height: 48px;
+            }
+        }
+    }
+
+    .code-in-box .code-content {
+        .code-container {
+            background-color: var(--color-black);
+            border: 1px solid var(--color-black);
+            width: 100%;
+            overflow: auto hidden;
+
+            &:focus {
+                outline: 3px solid var(--color-gray-600);
+                outline-offset: 1px;
+            }
+
+            .scroll-container {
+                width: fit-content;
+                min-width: 100%;
+                padding: 24px;
+                width: fit-content;
+                min-width: 100%;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            .copy-code-wrapper {
+                min-height: 28px;
             }
         }
     }
 }
 
-.tab-panel.code-tab {
-    overflow: hidden;
-    padding: 0 units(2) units(2) units(2);
-    background-color: color('black');
-    border-color: color('black');
+.show-code-in-tabs pre code,
+.show-code-in-box pre code {
+    color: color('gray-100');
 
-    .button-copy-container {
-        background-color: color('black');
-
-        button {
-            &:focus {
-                outline-color: color('gray-100');
-            }
-        }
+    .hljs-tag {
+        color: color('gray-300');
     }
 
-    .code-figure {
-        margin: 0;
-        overflow: auto;
+    .hljs-name {
+        color: color('data-blue-500');
+    }
 
-        pre {
-            margin: 0;
-            overflow: visible;
+    .hljs-string {
+        color: color('data-blue-400');
+    }
 
-            code {
-                overflow: hidden;
-                display: inline-block;
-                padding: units(2) units(4) units(3) units(4);
-                color: color('gray-100');
-            }
-        }
+    .hljs-attr {
+        color: color('data-yellow-red-500');
+    }
 
-        &:focus {
-            @include focus;
-            outline-color: color('gray-100');
-        }
+    .hljs-comment {
+        color: color('data-green-500');
+    }
 
-        .hljs-tag {
-            color: color('gray-300');
-        }
+    .hljs-symbol {
+        color: color('gray-300');
+    }
 
-        .hljs-name {
-            color: color('data-blue-500');
-        }
+    .hljs-keyword {
+        color: color('data-blue-400');
+    }
 
-        .hljs-string {
-            color: color('data-blue-400');
-        }
+    .hljs-literal {
+        color: color('data-pink-violet-400');
+    }
 
-        .hljs-attr {
-            color: color('data-yellow-red-500');
-        }
-
-        .hljs-comment {
-            color: color('data-green-500');
-        }
-
-        .hljs-symbol {
-            color: color('gray-300');
-        }
-
-        .hljs-keyword {
-            color: color('data-blue-400');
-        }
-
-        .hljs-literal {
-            color: color('data-pink-violet-400');
-        }
-
-        .hljs-title {
-            color: color('data-yellow-red-200');
-        }
+    .hljs-title {
+        color: color('data-yellow-red-200');
     }
 }

@@ -11,15 +11,15 @@ title: Header
 lead: Headeren identificerer portalen, den ansvarlige myndighed og brugeren, der er logget ind med NemLog-in. Den fungerer også til navigation og overordnet styring af selvbetjeningsløsningen.
 description: "Tydelige headers er med til at skabe en let navigation for brugeren og hjælper dermed brugeren med at finde vej."
 tags: 
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-image.html component="header-with-navigation" title="Eksempel på header" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Header" code="Header_Kode" custom="Header_Custom" %}
+{% include anchorlinks.html guidelines="Header" code="Header_Kode" custom="Header_Web_Component" %}
 
 <!--split-->
 
@@ -209,65 +209,65 @@ Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvæl
 
 <!--split-->
 
-## Eksempler {#{% include create-id.html heading="Varianter" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-default" subheading_tag="h2" collapsable=false %}
 
-{% include code/show-example-with-tabs.html example="fds-header-default" tabId="example-1-hea" %}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Brug `<div class="main-menu-inner">` i `<fds-main-menu>` i desktop-versionen. Udelad wrapper og klasse, når menuen placeres i en `<fds-drawer>`.
+{% include web-component-shared-text/intro-mixed-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-drawer-opener
+Bemærk: `<div class="header">` i eksemplet bør erstattes med et `<header>`-element i produktionsløsninger.
+
+### fds-portal-info {#{% include create-id.html heading="fds-portal-info" append="-custom" %}}
+
+`fds-portal-info` anvender shadow DOM.
 
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut    | Beskrivelse                                           |
-|-------------|-------------------------------------------------------|
-| drawer      | ID på den drawer, der skal åbnes ved tryk på knappen. |
-| button-text | Tekst på knappen.                                     |
+| Attribut   | Beskrivelse                                                                                                                                                               |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| breakpoint | Sæt den skærmbredde, hvor brugeroplysningerne vises i portallinjen. Angives som en CSS-værdi, f.eks. `992px`. Default er `992px`.                                         |
+| ready      | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
 
-### fds-drawer
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot           | Beskrivelse                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------------------|
+| user           | Brugeroplysninger.                                                                                  |
+| log-off-button | Log af-knap.                                                                                        |
+| logo           | Portalens logo. Anvendes ikke i mobilmenuen, hvor webkomponenten ligger i `fds-modal`.              |
+| drawer-opener  | Knap, der åbner mobilmenuen. Anvendes ikke i mobilmenuen, hvor webkomponenten ligger i `fds-modal`. |
+
+### fds-solution-info {#{% include create-id.html heading="fds-solution-info" append="-custom" %}}
+
+`fds-solution-info` anvender shadow DOM.
 
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut          | Beskrivelse                                                                                           |
-|-------------------|-------------------------------------------------------------------------------------------------------|
-| open              | Hvis til stede, vil menuen være åben.                                                                 |
-| heading           | Tekst der skal vises øverst i menuen. Default er 'Menu'.                                              |
-| close-button-text | Tekst på luk-knappen i menuen. Default er 'Luk'.                                                      |
-| ready             | Sæt til 'false' hvis initialisering af menuen skal ske manuelt i stedet for ved indlæsning af DOM'en. |
-| heading-id        | Sæt et specifikt id til titlen inde i menuen.                                                         |
+| Attribut | Beskrivelse                                                                                                                                                                 |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ready    | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
 
-### fds-main-menu
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot             | Beskrivelse                                                                                                                                               |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| solution-heading | Løsningens navn. Anvendes ikke i mobilmenuen, hvor webkomponenten ligger i `fds-modal`.                                                                   |
+| additional-info  | Yderligere oplysninger om løsningen.                                                                                                                      |
+| drawer-opener    | Knap, der åbner mobilmenuen. Kan bruges her, hvis `fds-portal-info` ikke anvendes. Anvendes ikke i mobilmenuen, hvor webkomponenten ligger i `fds-modal`. |
+
+### fds-main-menu {#{% include create-id.html heading="fds-main-menu" append="-custom" %}}
+
+`fds-main-menu` anvender light DOM. Brug `<div class="main-menu-inner">` inde i `fds-main-menu` til desktopmenuen. Udelad denne wrapper, når menuen placeres i mobilmenuens `fds-modal`.
 
 #### Funktioner
 
 {:.table .table--responsive-headers}
-| Funktion          | Beskrivelse                                                                |
-|-------------------|----------------------------------------------------------------------------|
-| rebuildMoreMenu() | Genbyg mere-menuen såfremt behovet opstår (kun muligt ved desktop-visning) |
-
-### fds-portal-info
-
-#### Slots
-
-{:.table .table--responsive-headers}
-| Slot           | Beskrivelse                                                                                                        |
-|----------------|--------------------------------------------------------------------------------------------------------------------|
-| user           | Brugeroplysninger. Placeres til venstre for log af-knappen.                                                        |
-| log-off-button | Log af-knap. VIl blive placeret i højre side af portallinjen.                                                      |
-| logo           | Logo. Placeres i venstre side af portallinjen.                                                                     |
-| drawer-opener  | Placeres samme sted som log af-knappen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |
-
-### fds-solution-info
-
-#### Slots
-
-{:.table .table--responsive-headers}
-| Slot           | Beskrivelse                                                                                                                                            |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| solution-heading | Løsningens navn. Vises i venstre side.                                                                                                               |
-| additional-info  | Information vist i højre side af løsningslinjen.                                                                                                     |
-| drawer-opener    | Bør kun anvendes, hvis det ikke er muligt at vise knappen i portallinjen. Brug hjælpeklasser til at styre ved hvilket breakpoint knappen skal vises. |
+| Funktion          | Beskrivelse                                                                  |
+|-------------------|------------------------------------------------------------------------------|
+| rebuildMoreMenu() | Gør det muligt at genbygge mere-menuen i desktopmenuen, hvis behovet opstår. |

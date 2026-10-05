@@ -7,6 +7,9 @@ const isDebugging = false;
 const demoSelectorId = 'themeselector';
 const VERSION = '11.3.0';
 
+const betaAlertId = 'web-components-beta-alert';
+const betaAlertCookieName = 'beta_message_closed';
+
 document.addEventListener("DOMContentLoaded", function () {
 
     debug('cookie', getThemeCookie());
@@ -40,7 +43,24 @@ document.addEventListener("DOMContentLoaded", function () {
     setHomepageIllustration();
 
     setCardImages();
+
+    initBetaAlert();
 });
+
+let initBetaAlert = function () {
+    let alertEl = document.getElementById(betaAlertId);
+    if (!alertEl) {
+        return;
+    }
+
+    if (getCookie(betaAlertCookieName) !== 'true') {
+        alertEl.removeAttribute('hidden');
+
+        alertEl.addEventListener('fds-alert-hidden', function () {
+            setCookie(betaAlertCookieName, 'true', 365);
+        });
+    }
+};
 
 let setHomepageIllustration = function () {
     if (document.body.classList.contains('page-forside')) {
@@ -67,7 +87,7 @@ let isThemeSetInUrl = function () {
             return;
         }
     }
-}
+};
 
 let setCookieIfMissing = function () {
     if (!isCookieSet()) {
@@ -133,7 +153,6 @@ let setStylesheet = function () {
     document.getElementsByTagName('head')[0].appendChild(newLink);
 };
 
-
 let showThemeAlert = function () {
     if (document.getElementById(themeAlertId) !== null) {
         new DKFDS.Alert(document.getElementById(themeAlertId)).show();
@@ -144,6 +163,7 @@ let setRandomThemeCookie = function () {
     let randomTheme = themes[Math.floor(Math.random() * themes.length)];
     setThemeCookie(randomTheme);
 };
+
 let setThemeCookie = function (theme) {
     if (themes.indexOf(theme) >= 0) {
         debug('setting cookie', theme);
@@ -176,7 +196,7 @@ let setCookie = function (name, value, daysToLive) {
         d.setTime(d.getTime() + (daysToLive * 24 * 60 * 60 * 1000));
         cookie += ";expires=" + d.toUTCString();
 
-        cookie += ';path=/';
+        cookie += ";path=/;SameSite=Strict;Secure";
         debug('Setting cookie', cookie);
         document.cookie = cookie;
     }
@@ -362,7 +382,7 @@ let setExampleLogo = function () {
             choiceCookieLogo.setAttribute('style', 'max-width: 110px;');
         }
     }
-}
+};
 
 let setDoDontImages = function () {
     let dodonts = document.querySelectorAll('.do-dont-container');
@@ -381,7 +401,6 @@ let setDoDontImages = function () {
         }
     }
 };
-
 
 let setCardImages = function () {
     if (document.body.classList.contains('page-komponenter')) {
@@ -404,7 +423,7 @@ let setCardImages = function () {
         let cards = document.querySelector('main').querySelectorAll('.card');
         rebuildCardImages(cards, '/assets/img/cards/Forside', 'png');
     }
-}
+};
 
 function rebuildCardImages(cards, imagepath, extension) {
     let cookie = getThemeCookie();
@@ -431,4 +450,4 @@ function rebuildCardImages(cards, imagepath, extension) {
             }
         }
     }
-}
+};

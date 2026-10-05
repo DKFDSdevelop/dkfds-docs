@@ -1,5 +1,5 @@
 --- 
-permalink: /eksempel/fds-radio-button-group-example/
-title: Eksempel på radioknapgruppe lavet som custom element
+permalink: /eksempel/fds-radio-button-group-simple/
+title: Eksempel på radioknapgruppe
 ---
-{% include code-examples/fds-radio-button-group-example.html %}
+{% include code-examples/fds-radio-button-group-simple.html %}

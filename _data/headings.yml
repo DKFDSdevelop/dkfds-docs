@@ -37,10 +37,11 @@ Frameworks:
 - h2: Kodefrihed under ansvar
 - h2: Eksempler på anvendelse
 
-Custom_elements:
-- h2: Om custom elements
-- h2: Forskellen på custom elements og web components
-- h2: Sådan kan du bruge custom elements
+Web_Components_i_beta_version:
+- h2: Hvorfor skifter vi til Web Components?
+- h2: Om Web Components
+- h2: Web Components som beta-version
+- h2: Vi har brug for din feedback
 
 Design_og_ressourcer:
 - h2: Grundprincipper
@@ -402,11 +403,10 @@ Accordions_Kode:
 - h2: Med fejl
 - h2: Med succesbeskeder
 
-Accordions_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: fds-accordion-group
-- h2: fds-accordion
+Accordions_Web_Component:
+- h2: Om denne komponent
+- h2: Konfiguration
+- h2: Varianter
 
 Anchorlinks_Kode:
 - h2: Installation
@@ -421,11 +421,10 @@ Beskeder_Kode:
 - h2: Paragrafbredde
 - h2: Luk knap
 
-Beskeder_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Beskeder_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Broedkrumme_Kode:
 - h2: Installation
@@ -441,17 +440,19 @@ Cards_Kode:
 Cookiemeddelelse_Kode:
 - h2: Installation
 
-Cookiemeddelelse_Custom:
-- h2: Om custom elements
-- h2: Eksempler
+Cookiemeddelelse_Web_Component:
+- h2: Om denne komponent
+- h2: Konfiguration
 - h2: Varianter
 
 Datofelter_Kode:
 - h2: Installation
 - h2: Fejlmeddelelse
 
-Datofelter_Custom:
-- h2: Om custom elements
+Datofelter_Web_Component:
+- h2: Om denne komponent
+- h2: Konfiguration
+- h2: Varianter
 
 Datovaelger_Kode:
 - h2: Installation
@@ -461,11 +462,10 @@ Datovaelger_Kode:
 - h2: Fejlmeddelelse
 - h2: Deaktiveret
 
-Datovaelger_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Datovaelger_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Detaljer_Kode:
 - h2: Installation
@@ -474,22 +474,20 @@ Dropdown_Kode:
 - h2: Installation
 - h2: Deaktiveret
 
-Dropdown_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Dropdown_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Faneblade_Kode:
 - h2: Installation
 - h2: Faneblade til navigation
 - h2: Faneblade med ikoner
 
-Faneblade_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Faneblade_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Fejlmeddelelser_Kode:
 - h2: Installation
@@ -504,14 +502,17 @@ Fejlmeddelelser_Kode:
 - h2: Vedhæft fil
 - h2: Referencer
 
+Fejlmeddelelser_Web_Component:
+- h2: Om denne komponent
+- h2: Varianter
+
 Fejlopsummering_Kode:
 - h2: Installation
 
-Fejlopsummering_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Fejlopsummering_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Footer_Kode:
 - h2: Installation
@@ -535,8 +536,8 @@ Header_Kode:
 - h2: Installation
 - h2: Referencer
 
-Header_Custom:
-- h2: Eksempler
+Header_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
 
 Inputfelter_Kode:
@@ -549,11 +550,10 @@ Inputfelter_Kode:
 - h2: Karakterbegrænsning
 - h2: Feltbredde
 
-Inputfelter_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Inputfelter_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Knapper_Kode:
 - h2: Installation
@@ -576,11 +576,10 @@ Modal_Kode:
 - h2: Installation
 - h2: Modal som kræver handling
 
-Modal_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Modal_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 - h2: Referencer
 
 Overflowmenu_Kode:
@@ -595,11 +594,10 @@ Radioknap_Kode:
 - h2: Hjælpetekst
 - h2: Skjult indhold (Collapse)
 
-Radioknap_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Radioknap_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Sprogvaelger_Kode:
 - h2: Installation
@@ -630,11 +628,10 @@ Tekstomraade_Kode:
 - h2: Karakterbegrænsning
 - h2: Deaktiveret
 
-Tekstomraade_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Tekstomraade_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 TilbageLink_Kode:
 - h2: Installation
@@ -647,11 +644,10 @@ Tjekboks_Kode:
 - h2: Hjælpetekst
 - h2: Skjult indhold (collapse)
 
-Tjekboks_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Tjekboks_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Toastbesked_Kode:
 - h2: Installation
@@ -673,11 +669,10 @@ Tooltip_Kode:
 - h2: Knap med hover-tooltip
 - h2: Referencer
 
-Tooltip_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Tooltip_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Trinindikator_Kode:
 - h2: Installation
@@ -686,20 +681,17 @@ Trinindikator_Kode:
 - h2: Trinindikator med fejl
 - h2: Simpel trinindikator
 
-Trinindikator_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+Trinindikator_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
 
 VedhaeftFil_Kode:
 - h2: Installation
 
-VedhaeftFil_Custom:
-- h2: Om custom elements
-- h2: Eksempler
-- h2: Varianter
+VedhaeftFil_Web_Component:
+- h2: Om denne komponent
 - h2: Konfiguration
+- h2: Varianter
 
 Venstremenu_Kode:
 - h2: Installation

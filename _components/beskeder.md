@@ -11,15 +11,15 @@ lead: Beskeder anvendes til at fremhæve aktuel information, som er vigtig for b
 description: Beskeder (Alerts) er farvede bokse, du kan bruge til at give brugeren vigtig og aktuel information om fx status, fejl, opdateringer, o.l.
 tags:
 - fejlbesked
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="alerts" title="Eksempel på beskeder" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Beskeder" code="Beskeder_Kode" custom="Beskeder_Custom" %}
+{% include anchorlinks.html guidelines="Beskeder" code="Beskeder_Kode" custom="Beskeder_Web_Component" %}
 
 <!--split-->
 
@@ -177,46 +177,59 @@ Defineres med klassen `alert--paragraph`.
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-variants" subheading_tag="h2" collapsable=false %}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include code/show-example-with-no-tabs.html example="fds-alert-variants" tabId="example-1-alert" %}
+{% include web-component-shared-text/intro-shadow-dom.html %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### fds-alert {#{% include create-id.html heading="fds-alert" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut    | Beskrivelse                                                                                                                                                             |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| variant     | Sæt beskedens type. Gyldige værdier er `info`, `success`, `warning` og `error`. Default er `info`.                                                                      |
+| icon-label  | Skift skærmlæserlabel for ikonet. Default afhænger af `variant` (f.eks. `Information` for `info`, `Fejl` for `error`).                                                  |
+| closable    | Sæt til `true` for at tilføje en luk-knap, der skjuler beskeden ved klik. Default er `false`.                                                                           |
+| close-label | Sæt teksten på luk-knappen, når den vises. Default er `Luk`.                                                                                                            |
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot    | Beskrivelse                                                                                                        |
+|---------|--------------------------------------------------------------------------------------------------------------------|
+| icon    | Tilføj et brugerdefineret ikon. Hvis slottet ikke anvendes, genereres der automatisk et ikon baseret på `variant`. |
+| heading | Tilføj en overskrift til beskeden.                                                                                 |
+| content | Tilføj beskedens indhold.                                                                                          |
+
+Bemærk: Når der anvendes et eget ikon, har attributten `icon-label` ingen effekt. Sæt i stedet `aria-label` direkte på ikonet.
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion | Beskrivelse        |
+|----------|---------------------|
+| show()   | Vis beskeden.       |
+| hide()   | Skjul beskeden.     |
+
+#### Events
+
+{:.table .table--responsive-headers}
+| Event            | Beskrivelse                   |
+|------------------|--------------------------------|
+| fds-alert-shown  | Udløses når beskeden vises.   |
+| fds-alert-hidden | Udløses når beskeden skjules. |
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Teksteksempler
 
-{% include code/show-example-with-no-tabs.html example="fds-alert-text-variants" tabId="example-2-alert" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-text-variants" heading_tag="h4" subheading_tag="h5" %}
 
 ### Besked med luk-knap
 
-{% include code/show-example-with-no-tabs.html example="fds-alert-close" tabId="example-3-alert" %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut    | Beskrivelse                                                                                                                                               |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| variant     |  |
-| icon-label  |  |
-| closable    |  |
-| close-label |  |
-
-### Funktioner
-
-{:.table .table--responsive-headers}
-| Funktion | Beskrivelse                                                       |
-|----------|-------------------------------------------------------------------|
-| show     |  |
-| hide     |  |
-
-### Events
-
-{:.table .table--responsive-headers}
-| Event            | Beskrivelse                       |
-|------------------|-----------------------------------|
-| fds-alert-shown  |  |
-| fds-alert-hidden |  |
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-close" heading_tag="h4" subheading_tag="h5" %}

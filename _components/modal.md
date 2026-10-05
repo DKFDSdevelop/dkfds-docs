@@ -20,15 +20,15 @@ tags:
 - popup
 - pop up
 - vindue
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="modal" title="Eksempel på modal" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" custom="Modal_Custom" %}
+{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" custom="Modal_Web_Component" %}
 
 <!--split-->
 
@@ -133,13 +133,83 @@ Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner 
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-modal-default" subheading_tag="h2" collapsable=false %}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include code/show-example-with-tabs.html example="fds-modal-default" tabId="example-1-modal" %}
+{% include web-component-shared-text/intro-light-dom.html %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+Bemærk, at modalkomponenten som standard altid kræver et `<dialog>`-element direkte efterfulgt af `<div class="scrollable-area">`, der indeholder en tom `<div class="modal-top"></div>` samt modalens øvrige indhold. Komponenten genererer ikke denne struktur selv, da strukturen afviger afhængigt af variant-attributten.
+
+### fds-modal {#{% include create-id.html heading="fds-modal" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut    | Beskrivelse                                                                                                                                                               |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ready       | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
+| heading     | Sæt modalens overskrift. Hvis overskriften ikke allerede findes i markup'en, genereres den automatisk.                                                                    |
+| heading-id  | Sæt ID for overskriftselementet. Bruges til at knytte overskriften til dialogen via `aria-labelledby`. Standardværdien er tilfældigt genereret.                           |
+| dismissible | Sæt til `false` for at forhindre, at modalen lukkes ved klik på baggrunden, med tilbage-knappen på mobiler eller med Escape. Default er `true`.                           |
+| variant     | Sæt modalens visningstype. Gyldige værdier er `default`, `bottom-sheet` og `drawer`. Default er `default`.                                                                |
+| close-text  | Sæt teksten på luk-knappen, når den genereres automatisk. Default er `Luk`.                                                                                               |
+
+`bottom-sheet` er dokumenteret under {% include links/component-guideline-link.html linktext="trinindikator" %}, og `drawer` er dokumenteret under {% include links/component-guideline-link.html linktext="header" %}.
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion           | Beskrivelse                                                                                      |
+|--------------------|---------------------------------------------------------------------------------------------------|
+| open()             | Åbn modalen.                                                                                      |
+| close(returnValue) | Luk modalen. `returnValue` er valgfri og sættes som dialogens `returnValue`.                    |
 
 Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for at åbne to modaler efter hinanden, skal forrige modal lukkes, før den nye åbnes.
+
+#### Events
+
+{:.table .table--responsive-headers}
+| Event           | Beskrivelse                                                                             |
+|-----------------|-----------------------------------------------------------------------------------------|
+| fds-modal-open  | Udløses når modalen åbnes.                                                              |
+| fds-modal-close | Udløses når modalen lukkes. `event.detail.returnValue` indeholder dialogens returværdi. |
+
+### fds-modal-opener {#{% include create-id.html heading="fds-modal-opener" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut | Beskrivelse                                                                                                                                                               |
+|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| modal-id | Sæt ID'et på den `fds-modal`, der skal åbnes.                                                                                                                             |
+| ready    | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
+
+#### Events
+
+{:.table .table--responsive-headers}
+| Event                  | Beskrivelse                                                                                                                 |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| fds-modal-opener-click | Udløses når der klikkes på elementet i `fds-modal-opener`. `event.detail.modalId` indeholder ID'et på den modal, der åbnes. |
+
+### fds-modal-closer {#{% include create-id.html heading="fds-modal-closer" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut     | Beskrivelse                                                                                                                                                                 |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| return-value | Sæt den returværdi, dialogen skal have, når den lukkes via dette element.                                                                                                  |
+| ready        | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
+
+#### Events
+
+{:.table .table--responsive-headers}
+| Event                  | Beskrivelse                                                                                                              |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| fds-modal-closer-click | Udløses når der klikkes på elementet i `fds-modal-closer`. `event.detail.returnValue` indeholder den angivne returværdi. |
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -147,27 +217,10 @@ Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for
 
 Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
 
-{% include code/show-example-with-tabs.html example="fds-modal-forced-action" tabId="example-2-modal" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-modal-forced-action" heading_tag="h4" subheading_tag="h5" %}
 
-Implementeringen af attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### fds-modal
-
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut     | Beskrivelse                                                                                                                                                                                                    |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| dismissible  | Hvis attributten er sat, er det ikke muligt at lukke modalen ved at trykke på baggrunden, bruge tilbage-knappen på mobiler eller trykke på Escape.                                                             |
-| bottom-sheet | Åben modalen med en animation fra bunden af skærmen. Bruges primært til {% include links/component-guideline-link.html linktext="trinindikator" %}.                                                            |
-| ready        | Kan bruges til at udskyde automatisk initialisering. Sæt ready="false" for at forhindre initialisering ved tilføjelse til DOM’en, og fjern attributten eller sæt ready="true" for at initialisere komponenten. |
+Bemærk: Attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
 
 ## Referencer {#{% include create-id.html heading="Referencer" append="-custom" %}}
 
-aria-labelledby i dialog: https://www.w3.org/WAI/WCAG22/Techniques/html/H102
-
-HTML Living Standard, 6.10.3 The CloseWatcher interface, cancel-eksempel: https://html.spec.whatwg.org/#example-CloseWatcher-cancel
-
-https://issues.chromium.org/issues/351867704
+{% include links/external-link.html linktext="HTML Living Standard, 6.10.3 The CloseWatcher interface, cancel-eksempel" %}

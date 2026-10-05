@@ -359,6 +359,16 @@
 
         
         <li>
+            <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">
+                <span>Web Components i beta-version</span>
+            </a>
+        </li>
+        
+
+ 
+
+        
+        <li>
             <a href="/kom-i-gang/implementering-kode/justering/">
                 <span>Justering af tema og stylesheets</span>
             </a>
@@ -411,16 +421,6 @@
         <li>
             <a href="/kom-i-gang/implementering-kode/frameworks/">
                 <span>Frameworks</span>
-            </a>
-        </li>
-        
-
- 
-
-        
-        <li>
-            <a href="/kom-i-gang/implementering-kode/custom-elements/">
-                <span>Custom elements</span>
             </a>
         </li>
         
@@ -1295,6 +1295,14 @@
     </fds-modal>
 </header>
 
+<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading">Web Components i beta-version</h2>
+    <div slot="content">
+        <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
+        <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
+    </div>
+</fds-alert>
+
 <div class="container page-container">
     <div class="row">
 
@@ -1704,6 +1712,11 @@
         </div>
     </div>
 <section id="section-/komponenter/datovaelger/">
+                    <fds-alert variant="warning" class="mb-6">
+                        <h2 slot="heading">Denne komponent er opdateret i udseende og funktion i Web Component-versionen</h2>
+                        <p slot="content">Komponenten er forbedret mht. bl.a. tilgængelighed. De fulde retningslinjer følger efter beta-releasen, men de overordnede ændringer kan ses i <span class="nowrap"><a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions?discussions_q=label:Beslutningslog" class="icon-link" target="_blank">beslutningsloggen på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</span></p>
+                    </fds-alert>
+                
 
                 <div class="subheading">
                     Komponenter
@@ -1722,8 +1735,8 @@
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
         </li><li>
-            <a href="#custom" id="custom-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Custom element</span></a>
-            <span id="custom" hidden=""></span>
+            <a href="#web-component" id="web-component-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span class="mr-3">Web Component</span><strong class="badge web-component-tab-badge">Beta</strong></a>
+            <span id="web-component" hidden=""></span>
         </li></ul>
 </nav>
 <div id="retningslinjer" hidden=""></div>
@@ -1766,10 +1779,9 @@
         <li class="anchorlink-code"><a href="#datoformat-kode">Datoformat</a></li>
         <li class="anchorlink-code"><a href="#fejlmeddelelse-kode">Fejlmeddelelse</a></li>
         <li class="anchorlink-code"><a href="#deaktiveret-kode">Deaktiveret</a></li>
-        <li class="anchorlink-custom"><a href="#om-custom-elements-custom">Om custom elements</a></li>
-        <li class="anchorlink-custom"><a href="#eksempler-custom">Eksempler</a></li>
-        <li class="anchorlink-custom"><a href="#varianter-custom">Varianter</a></li>
-        <li class="anchorlink-custom"><a href="#konfiguration-custom">Konfiguration</a></li>
+        <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
+        <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
         
     </ul>
 </nav>
@@ -2255,24 +2267,18 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
 
 
                         </div>
-                        <div id="custom-section">
+                        <div id="web-component-section">
                             
 
-<h2 id="om-custom-elements-custom">Om custom elements</h2>
-
-<h3>HTML-muligheder</h3>
-
-<p>Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.</p>
-
-<p>Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet.</p>
-
-<h2 id="eksempler-custom">Eksempler</h2>
-
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-date-picker>
     <label>Datovælger</label>
     <div>
@@ -2281,38 +2287,24 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </fds-date-picker>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-1-datep-tabpanel2" aria-selected="true" id="example-1-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-1-datep-tabpanel3" aria-selected="false" id="example-1-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-datep-tabpanel2" aria-labelledby="example-1-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+    <div class="code-in-tabs">
+        
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datovælger<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-default&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-1-datep-tabpanel3" aria-labelledby="example-1-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-default&quot;</span>&gt;</span>Datovælger<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-default&quot;</span>&gt;</span>
@@ -2333,25 +2325,297 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        
+    </div>
 </div>
+
+<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+
+<p>Denne komponent består af flere Web Components, hvoraf nogle anvender light DOM, og andre anvender shadow DOM. Light DOM-elementer genererer HTML, der kan tilgås ligesom al anden HTML på siden, mens shadow DOM-elementer genererer indkapslet HTML og styling, som ikke bør tilgås. Det fremgår af hvert elements egen sektion herunder, hvilken af de to typer der er tale om.</p>
+
+<p>For light DOM-elementer kan du som udvikler vælge mellem at tage Web Component-koden, hvis du vil lade komponenten generere HTML’en, eller tage versionen med den genererede kode, hvis du har brug for at ændre i HTML’en først. Begge muligheder vises i fanebladene i komponentens eksempler.</p>
+
+<p>Web Components med shadow DOM konfigureres gennem attributter og slots, når komponenten tillader indhold. Slots kan enten være navngivne, dvs. hvor attributten <code>slot="navn"</code> skal anvendes på det indhold, der tilføjes til webkomponenten, eller unavngivne.</p>
+
+<p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<p><code>fds-date-picker</code> kræver følgende struktur: Et <code>label</code>-element, en <code>div</code> indeholdende et <code>input</code>-element, samt en indre <code>div</code> med et <code>fds-date-picker-grid</code>-element.</p>
+
+<h3>fds-date-picker</h3>
+
+<p><code>fds-date-picker</code> anvender light DOM.</p>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>show-required-status</td>
+      <td>Viser om inputfeltet er obligatorisk eller frivilligt baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
+    </tr>
+    <tr>
+      <td>format</td>
+      <td>Angiv det datoformat, der vises i inputfeltet. Gyldige værdier er <code>DD/MM/YYYY</code>, <code>DD-MM-YYYY</code>, <code>DD.MM.YYYY</code>, <code>DD MM YYYY</code> og <code>DD/MM-YYYY</code>. Default er <code>DD/MM/YYYY</code>.</td>
+    </tr>
+    <tr>
+      <td>text-open</td>
+      <td>Skærmlæsertekst for knappen, der åbner datovælgeren. Default er <code>Åbn datovælger</code>.</td>
+    </tr>
+    <tr>
+      <td>text-selecteddate</td>
+      <td>Skærmlæsertekst for den valgte dato, tilføjet til knappens skærmlæsertekst. Skal indeholde <code>DAY</code>, <code>MONTH</code> og <code>YEAR</code>. Default er <code>valgt dato er DAY. MONTH YEAR</code>.</td>
+    </tr>
+    <tr>
+      <td>text-months</td>
+      <td>Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er <code>januar februar marts april maj juni juli august september oktober november december</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open()</td>
+      <td>Åbn datovælgeren.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Luk datovælgeren.</td>
+    </tr>
+    <tr>
+      <td>toggle()</td>
+      <td>Skift mellem at åbne og lukke datovælgeren.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>fds-date-picker-grid</h3>
+
+<p><code>fds-date-picker-grid</code> anvender shadow DOM. Bemærk, at <code>fds-date-picker-grid</code> som udgangspunkt bruges inden i <code>fds-date-picker</code> og ikke er tiltænkt at blive brugt alene.</p>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>min-date</td>
+      <td>Angiv den tidligste valgbare dato. Angives i formatet <code>YYYY-MM-DD</code>. Default er dags dato.</td>
+    </tr>
+    <tr>
+      <td>max-date</td>
+      <td>Angiv den seneste valgbare dato. Angives i formatet <code>YYYY-MM-DD</code>. Default er 10 år fra dags dato.</td>
+    </tr>
+    <tr>
+      <td>selected-date</td>
+      <td>Angiv den valgte dato. Angives i formatet <code>YYYY-MM-DD</code>.</td>
+    </tr>
+    <tr>
+      <td>default-date</td>
+      <td>Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet <code>YYYY-MM-DD</code>. Ændringer efter initialisering har ingen effekt.</td>
+    </tr>
+    <tr>
+      <td>start-date-id</td>
+      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer slutdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
+    </tr>
+    <tr>
+      <td>end-date-id</td>
+      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer startdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
+    </tr>
+    <tr>
+      <td>text-months</td>
+      <td>Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er <code>januar februar marts april maj juni juli august september oktober november december</code>.</td>
+    </tr>
+    <tr>
+      <td>text-days</td>
+      <td>Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er <code>mandag tirsdag onsdag torsdag fredag lørdag søndag</code>.</td>
+    </tr>
+    <tr>
+      <td>text-prevbutton</td>
+      <td>Skærmlæsertekst for knappen, der viser den foregående måned.</td>
+    </tr>
+    <tr>
+      <td>text-nextbutton</td>
+      <td>Skærmlæsertekst for knappen, der viser den næste måned.</td>
+    </tr>
+    <tr>
+      <td>text-date-announcement</td>
+      <td>Skærmlæsertekst for hver dato i kalenderen. Skal indeholde <code>DAY</code>, <code>MONTH</code> og <code>YEAR</code>. Default er <code>DAY. MONTH YEAR</code>.</td>
+    </tr>
+    <tr>
+      <td>text-mindate</td>
+      <td>Tilføjes til skærmlæserteksten for den tidligste valgbare dato. Default er <code>tidligste valgbare dato</code>.</td>
+    </tr>
+    <tr>
+      <td>text-maxdate</td>
+      <td>Tilføjes til skærmlæserteksten for den seneste valgbare dato. Default er <code>seneste valgbare dato</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>date-clicked</td>
+      <td>Udløses når en dato i kalenderen klikkes eller vælges med tastaturet.</td>
+    </tr>
+    <tr>
+      <td>date-selected</td>
+      <td>Udløses når den valgte dato ændres.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>fds-help-text</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>help-text-callback</td>
+            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
+        </tr>
+        <tr>
+            <td>help-text-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
+                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>fds-error-message</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>icon-text</td>
+            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+        <tr>
+            <td>targets</td>
+            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>error-message-callback</td>
+            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
+        </tr>
+        <tr>
+            <td>error-message-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
 
 <h2 id="varianter-custom">Varianter</h2>
 
 <h3>Fejl</h3>
 
-<p><code>&lt;fds-error-message&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code>, <code>&lt;fds-radio-button-group&gt;</code>, <code>&lt;fds-date-input&gt;</code>, <code>&lt;fds-upload-file&gt;</code>, <code>&lt;fds-date-picker&gt;</code> og <code>&lt;fds-textarea&gt;</code>. Dette custom-element tilføjer automatisk et fejlikon og strukturerer indholdet, inkluderer korrekte ARIA-attributter og skjulte tilstande samt underretter forælderkomponenten om ændringer i synlighed.</p>
-
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker-error/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker-error/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-date-picker>
     <label>Datovælger med fejl</label>
     <div>
@@ -2361,20 +2625,15 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     <fds-error-message id="error1">Dette er en fejl</fds-error-message>
 </fds-date-picker>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker-error">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-2-datep-tabpanel2" aria-selected="true" id="example-2-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-2-datep-tabpanel3" aria-selected="false" id="example-2-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-2-datep-tabpanel2" aria-labelledby="example-2-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-error">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datovælger med fejl<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-error&quot;</span>&gt;</span>
@@ -2382,18 +2641,9 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error1&quot;</span>&gt;</span>Dette er en fejl<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-2-datep-tabpanel3" aria-labelledby="example-2-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-error&quot;</span>&gt;</span>Datovælger med fejl<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-error&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;error1&quot;</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
@@ -2418,73 +2668,28 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;visible-message&quot;</span>&gt;</span>Dette er en fejl<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
-</div>
-
-<h4>Attributter til <code>&lt;fds-error-message&gt;</code></h4>
-
-<div class="table--responsive-scroll">
-  <table class="table table--responsive-headers">
-    <thead>
-      <tr>
-        <th>Attribut</th>
-        <th>Beskrivelse</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>id</td>
-        <td>Hvis ikke angivet, genereres der automatisk et id.</td>
-      </tr>
-      <tr>
-        <td>icon-text</td>
-        <td>Sæt en anden tekst på fejlikonet.</td>
-      </tr>
-      <tr>
-        <td>hidden</td>
-        <td>Styrer synligheden af fejlmeddelelsen.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h4>Events fra <code>&lt;fds-error-message&gt;</code></h4>
-
-<div class="table--responsive-scroll">
-  <table class="table table--responsive-headers">
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th>Beskrivelse</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>error-message-visibility-changed</td>
-        <td>Afsender en hændelse til forælderkomponenter, når synligheden ændres.</td>
-      </tr>
-      <tr>
-        <td>error-message-callback</td>
-        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
-      </tr>
-    </tbody>
-  </table>
+        </fds-accordion>
+    </div>
 </div>
 
 <h3>Hjælpetekst</h3>
 
-<p><code>&lt;fds-help-text&gt;</code> er et selvstændigt custom element, som kan anvendes sammen med <code>&lt;fds-input&gt;</code>, <code>&lt;fds-checkbox&gt;</code>, <code>&lt;fds-checkbox-group&gt;</code>, <code>&lt;fds-radio-button&gt;</code>, <code>&lt;fds-radio-button-group&gt;</code> <code>&lt;fds-date-input&gt;</code>, <code>&lt;fds-upload-file&gt;</code>, <code>&lt;fds-date-picker&gt;</code> og <code>&lt;fds-textarea&gt;</code>.</p>
-
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker-helptext/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker-helptext/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-date-picker>
     <label>Datovælger med hjælpetekst</label>
     <fds-help-text id="help1">Dette er en hjælpetekst</fds-help-text>
@@ -2494,20 +2699,15 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </fds-date-picker>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker-helptext">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-3-datep-tabpanel2" aria-selected="true" id="example-3-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-3-datep-tabpanel3" aria-selected="false" id="example-3-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-3-datep-tabpanel2" aria-labelledby="example-3-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-helptext">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datovælger med hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help1&quot;</span>&gt;</span>Dette er en hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2515,18 +2715,9 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-3-datep-tabpanel3" aria-labelledby="example-3-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-helptext&quot;</span>&gt;</span>Datovælger med hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span>&gt;</span>Dette er en hjælpetekst<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
@@ -2548,63 +2739,28 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
-</div>
-
-<h4>Attributter til <code>&lt;fds-help-text&gt;</code></h4>
-
-<div class="table--responsive-scroll">
-  <table class="table table--responsive-headers">
-    <thead>
-      <tr>
-        <th>Attribut</th>
-        <th>Beskrivelse</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>id</td>
-        <td>Hvis ikke angivet, genereres der automatisk et id.</td>
-      </tr>
-      <tr>
-        <td>hidden</td>
-        <td>Styrer synligheden af hjælpeteksten.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h4>Events fra <code>&lt;fds-help-text&gt;</code></h4>
-
-<div class="table--responsive-scroll">
-  <table class="table table--responsive-headers">
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th>Beskrivelse</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>help-text-callback</td>
-        <td>Afsender en hændelse til opdatering af forælderkomponenten.</td>
-      </tr>
-    </tbody>
-  </table>
+        </fds-accordion>
+    </div>
 </div>
 
 <h3>Begræns mulige datoer</h3>
 
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker-minmax/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker-minmax/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-date-picker>
     <label>Datovælger med begrænsede datoer</label>
     <div>
@@ -2613,38 +2769,24 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </fds-date-picker>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker-minmax">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-4-datep-tabpanel2" aria-selected="true" id="example-4-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-4-datep-tabpanel3" aria-selected="false" id="example-4-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-4-datep-tabpanel2" aria-labelledby="example-4-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-minmax">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datovælger med begrænsede datoer<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-minmax&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span> <span class="hljs-attr">min-date</span>=<span class="hljs-string">&quot;2000-02-02&quot;</span> <span class="hljs-attr">max-date</span>=<span class="hljs-string">&quot;2000-02-20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-4-datep-tabpanel3" aria-labelledby="example-4-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-minmax&quot;</span>&gt;</span>Datovælger med begrænsede datoer<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-minmax&quot;</span>&gt;</span>
@@ -2665,21 +2807,28 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        </fds-accordion>
+    </div>
 </div>
 
 <h3>Fast værdi</h3>
 
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker-default/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker-default/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-date-picker>
     <label>Datovælger med default dato</label>
     <div>
@@ -2688,38 +2837,24 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </fds-date-picker>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker-default">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-5-datep-tabpanel2" aria-selected="true" id="example-5-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-5-datep-tabpanel3" aria-selected="false" id="example-5-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-5-datep-tabpanel2" aria-labelledby="example-5-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-default">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datovælger med default dato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-defaultdate&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span> <span class="hljs-attr">default-date</span>=<span class="hljs-string">&quot;2028-09-05&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-5-datep-tabpanel3" aria-labelledby="example-5-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-defaultdate&quot;</span>&gt;</span>Datovælger med default dato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-defaultdate&quot;</span>&gt;</span>
@@ -2740,21 +2875,28 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        </fds-accordion>
+    </div>
 </div>
 
 <h3>Datoformat</h3>
 
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker-format/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker-format/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-date-picker format="DD-MM-YYYY">
     <label>Datovælger med nyt format</label>
     <fds-help-text id="help2">Format sat til dd-mm-yyyy</fds-help-text>
@@ -2764,20 +2906,15 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </fds-date-picker>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker-format">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-6-datep-tabpanel2" aria-selected="true" id="example-6-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-6-datep-tabpanel3" aria-selected="false" id="example-6-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-6-datep-tabpanel2" aria-labelledby="example-6-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;DD-MM-YYYY&quot;</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-format">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;DD-MM-YYYY&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datovælger med nyt format<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help2&quot;</span>&gt;</span>Format sat til dd-mm-yyyy<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2785,18 +2922,9 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-6-datep-tabpanel3" aria-labelledby="example-6-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;DD-MM-YYYY&quot;</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;DD-MM-YYYY&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-format&quot;</span>&gt;</span>Datovælger med nyt format<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-help-text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;help2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-text&quot;</span>&gt;</span>Format sat til dd-mm-yyyy<span class="hljs-tag">&lt;/<span class="hljs-name">fds-help-text</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
@@ -2818,21 +2946,28 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        </fds-accordion>
+    </div>
 </div>
 
 <h3>Deaktiveret</h3>
 
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker-disabled/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker-disabled/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <fds-date-picker>
     <label>Datovælger</label>
     <div>
@@ -2841,38 +2976,24 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </fds-date-picker>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker-disabled">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-7-datep-tabpanel2" aria-selected="true" id="example-7-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-7-datep-tabpanel3" aria-selected="false" id="example-7-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-7-datep-tabpanel2" aria-labelledby="example-7-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-disabled">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datovælger<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-disabled&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-7-datep-tabpanel3" aria-labelledby="example-7-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-disabled&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;disabled&quot;</span>&gt;</span>Datovælger<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-disabled&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
@@ -2893,21 +3014,30 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        </fds-accordion>
+    </div>
 </div>
 
 <h3>Start- og slutdato</h3>
 
-<div class="mt-3 mb-3">
-    <a href="/eksempel/fds-date-picker-start-end-dates/" class="small-text" target="_blank">Åbn i et nyt vindue</a>
-</div>
-<div class="example-box">
-    <div>
+<p><code>start-date-id</code> og <code>end-date-id</code> læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.</p>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-date-picker-start-end-dates/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
         <div class="d-flex">
     <fds-date-picker class="mr-4">
         <label>Startdato</label>
@@ -2925,20 +3055,15 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </fds-date-picker>
 </div>
     </div>
-    <fds-accordion heading="Se koden" content-id="example-box-fds-date-picker-start-end-dates">
-        <div class="tab-container">
-            <div class="tab-list" role="tablist">
-                <button class="tab-button" role="tab" aria-controls="example-8-datep-tabpanel2" aria-selected="true" id="example-8-datep-tab2"><span>Custom element</span></button>
-                <button class="tab-button" role="tab" aria-controls="example-8-datep-tabpanel3" aria-selected="false" id="example-8-datep-tab3"><span>Genereret HTML</span></button>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-8-datep-tabpanel2" aria-labelledby="example-8-datep-tab2">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-flex&quot;</span>&gt;</span>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-start-end-dates">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-flex&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mr-4&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Startdato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -2954,18 +3079,9 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-panel code-tab" role="tabpanel" id="example-8-datep-tabpanel3" aria-labelledby="example-8-datep-tab3" hidden="">
-                <div>
-                    <div class="component-code">
-                        <div class="button-copy-container">
-                            <button class="button button-tertiary button-copy">Kopiér kode</button>
-                        </div>
-                        <figure tabindex="0" class="code-figure">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-flex&quot;</span>&gt;</span>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-flex&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mr-4&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-startdate&quot;</span>&gt;</span>Startdato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
@@ -3009,32 +3125,17 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-                        </figure>
-                    </div>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        </div>
-    </fds-accordion>
+        </fds-accordion>
+    </div>
 </div>
 
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3>Attributter</h3>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>show-required-status</td>
-      <td>Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
-    </tr>
-  </tbody>
-</table>
 
                         </div>
             </section>
@@ -3104,7 +3205,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
 </fds-modal>
     <script src="/assets/js/theme.js?v=11.3.0"></script>
 <script src="/assets/js/styleguide.js?v=11.3.0"></script>
-<script src="/assets/js/dkfds.js?v=11.3.0"></script> <!-- Custom elements script -->
+<script src="/assets/js/dkfds.js?v=11.3.0"></script> <!-- Web component script -->
 
 
 <script src="/assets/js/docs-tabs.js"></script>

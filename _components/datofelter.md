@@ -11,15 +11,15 @@ title: Datofelter
 lead: Tre separate felter for dato, måned og år er den nemmeste måde for brugeren at indskrive en dato.
 description: Brug datofelter for datoer, der er velkendte for brugeren (fx fødselsdato).
 tags: 
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="date-input" title="Eksempel på datofelter" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Datofelter" code="Datofelter_Kode" custom="Datofelter_Custom" %}
+{% include anchorlinks.html guidelines="Datofelter" code="Datofelter_Kode" custom="Datofelter_Web_Component" %}
 
 <!--split-->
 
@@ -85,52 +85,49 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input" subheading_tag="h2" collapsable=false %}
 
-### HTML-muligheder
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+{% include web-component-shared-text/intro-light-dom.html %}
 
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-date-input>` med `<div class="fds-date-input">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+### fds-date-input
 
-{% include code/show-example-with-tabs.html example="fds-date-input" tabId="example-1-dat" %}
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om datofelterne er obligatoriske eller frivillige baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| legend               | Overskriv teksten i `fieldset`-elementets `legend`. Default er `Indtast dato`.                                            |
+| input-id             | Tilføj et fælles ID-suffiks til datofelterne. Hvert felt får ID'et `dag-/måned-/år-` efterfulgt af den angivne værdi.      |
+| input-readonly       | Sæt til `true` for at gøre alle datofelter read-only.                                                                     |
+| input-required       | Sæt til `true` for at gøre alle datofelter obligatoriske.                                                                 |
+
+### fds-help-text
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message
+
+{% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Fejl
 
-{% include custom-element-shared-text/fds-error-intro-text.html %}
-
-{% include code/show-example-with-tabs.html example="fds-date-input-error" tabId="example-2-dat" %}
-
-{% include custom-element-shared-text/fds-error-tables.html %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-error" heading_tag="h4" subheading_tag="h5" %}
 
 ### Hjælpetekst
 
-{% include custom-element-shared-text/fds-helptext-intro-text.html %}
-
-{% include code/show-example-with-tabs.html example="fds-date-input-help" tabId="example-3-dat" %}
-
-{% include custom-element-shared-text/fds-help-text-tables.html %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-help" heading_tag="h4" subheading_tag="h5" %}
 
 ### Obligatoriske og frivillige inputfelter
 
-{% include code/show-example-with-tabs.html example="fds-date-input-required" tabId="example-4-dat" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-required" heading_tag="h4" subheading_tag="h5" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-date-input-disabled" tabId="example-5-dat" %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                               |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------|
-| input-readonly       | Sætter `readonly` på datofelterne. Sæt til en anden værdi end `false`.                                                    |
-| input-required       | Sætter alle datofelter til 'påkrævet'.                                                                                    |
-| show-required-status | Viser om datofelterne er obligatoriske eller frivillige. Indsæt en tekst i attributten for at overskrive default-teksten. |
-| legend               | Generér og indsæt legend i `fieldset`. Bør ikke anvendes, hvis HTML'en på forhånd er genereret.                           |
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-disabled" heading_tag="h4" subheading_tag="h5" %}

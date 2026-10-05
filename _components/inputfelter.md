@@ -41,15 +41,15 @@ tags:
 - suffiks
 - sufix
 - sufiks
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="text-input" title="Eksempel på inputfelt" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" custom="Inputfelter_Custom" %}
+{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" custom="Inputfelter_Web_Component" %}
 
 <!--split-->
 
@@ -304,93 +304,82 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-example" subheading_tag="h2" collapsable=false %}
 
-### HTML-muligheder
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Som udgangspunkt bør man anvende custom element-koden, da denne kommer med JavaScript, der genererer både den nødvendige HTML og funktionalitet.
+{% include web-component-shared-text/intro-light-dom.html %}
 
-Hvis man ikke ønsker at benytte custom elements, kan man tage den genererede HTML i stedet. Erstat evt. `<fds-input>` med `<div class="fds-input">`. Bemærk, at man i så fald selv er ansvarlig for HTML og funktionalitet.
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+### fds-input
 
-### Inputfelt med label lavet med custom element
+#### Attributter
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-example" tabId="example-1-acc" %}
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                                               |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| input-maxwidth       | Angiver inputfeltets maksimale bredde. Angives som et tal (4, 8, 11, 27) eller en størrelsesværdi (xxs, xs, s, m, l, xl).                                 |
 
-Både ID og klasser kan undlades, hvormed elementet selv indsætter disse. Elementet kan derfor simplificeres til:
-{% include code/show-example-in-box.html path="output-files-from-build/highlighted-examples/" example="fds-input-wrapper-simple" %}
+### fds-help-text
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message
+
+{% include web-component-shared-text/fds-error.html %}
+
+### fds-input-affix
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut     | Beskrivelse                                        |
+|--------------|------------------------------------------------------|
+| input-prefix | Indsæt et præfiks-element (tekst før inputfeltet).  |
+| input-suffix | Indsæt et suffiks-element (tekst efter inputfeltet). |
+
+### fds-character-limit
+
+{% include web-component-shared-text/fds-character-limit.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
 ### Fejl
 
-{% include custom-element-shared-text/fds-error-intro-text.html %}
-
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-error" tabId="tab-example-input-error" %}
-
-{% include custom-element-shared-text/fds-error-tables.html %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" heading_tag="h4" subheading_tag="h5" %}
 
 ### Hjælpetekst
 
-{% include custom-element-shared-text/fds-helptext-intro-text.html %}
-
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-help-text" tabId="example-2-acc" %}
-
-{% include custom-element-shared-text/fds-help-text-tables.html %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-help-text" heading_tag="h4" subheading_tag="h5" %}
 
 ### Obligatoriske og frivillige inputfelter
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-required" tabId="example-3-acc" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-required" heading_tag="h4" subheading_tag="h5" %}
 
 ### Read-only
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-readonly" tabId="example-4-acc" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-readonly" heading_tag="h4" subheading_tag="h5" %}
 
 ### Deaktiveret
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-disabled" tabId="example-5-acc" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-disabled" heading_tag="h4" subheading_tag="h5" %}
 
 ### Præfiks og suffiks
 
-Præfiks og suffiks kræver, at man lægger inputfeltet i et custom element kaldet `<fds-input-affix>`. Dette element kan tage to attributter: `input-prefix` og `input-suffix`.
-
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-prefix" tabId="example-6-acc" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-prefix" heading_tag="h4" subheading_tag="h5" %}
 
 ### Karakterbegrænsning
 
-{% include custom-element-shared-text/fds-character-limit-intro-text.html %}
-
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-character-limit" tabId="example-input-limit" %}
-
-{% include custom-element-shared-text/fds-character-limit-tables.html %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-character-limit" heading_tag="h4" subheading_tag="h5" %}
 
 ### Feltbredde
 
 #### Input bredde med rem
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-remwidth" tabId="example-7-acc" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-remwidth" heading_tag="h5" subheading_tag="h6" %}
 
 #### Input bredde med tegn
 
-{% include code/show-example-with-tabs.html example="fds-input-wrapper-tegnwidth" tabId="example-8-acc" %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                                           |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt. Indsæt en tekst i attributten for at overskrive default-teksten.               |
-| input-prefix         | Indsæt et præfix-element (tekst før inputfeltet).                                                                                     |
-| input-suffix         | Indsæt et suffiks-element (tekst efter inputfeltet). Kræver at inputfeltet ligger i en `form-input-wrapper`.                          |
-| input-maxwidth       | Angiver inputfeltets maksimale bredde. Den kan sættes som et tal (4, 8, 11, 27), eller som en størrelsesværdi (xxs, xs, s, m, l, xl). |
-
-### Funktioner
-
-{:.table .table--responsive-headers}
-| Funktion              | Beskrivelse                                                                     |
-|-----------------------|---------------------------------------------------------------------------------|
-| updateIdReferences()  | Sikrer korrekt kobling mellem label, input og øvrige elementer. Kald ved behov. |
-| setClasses()          | Sætter de nødvendige klasser på inputfelt og label. Kald ved behov.             |
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-tegnwidth" heading_tag="h5" subheading_tag="h6" %}

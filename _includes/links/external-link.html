@@ -23,7 +23,8 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
         <a href="https://github.com/detfaellesdesignsystem/dkfds-components/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
     {%- when "opret et issue på github",
-             "oprette et issue på github" -%}
+             "oprette et issue på github",
+             "dele din feedback via github" -%}
         <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
     {%- when "zipfil på github", 
@@ -61,6 +62,9 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
 
     {%- when "beslutningslog for version 11.0.0" -%}
         <a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions/279" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
+
+    {%- when "beslutningsloggen på github" -%}
+        <a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions?discussions_q=label:Beslutningslog" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
     {%- when "github discussions" -%}
         <a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
@@ -392,6 +396,9 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
     {%- when "whatwg" -%}
         <a href="https://whatwg.org/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
+    {%- when "html living standard, 6.10.3 the closewatcher interface, cancel-eksempel" -%}
+        <a href="https://html.spec.whatwg.org/#example-CloseWatcher-cancel" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
+
     {%- when "inputfelter - uber’s base designsystem" -%}
         <a href="https://baseweb.design/components/input/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
@@ -534,6 +541,9 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
 
     {%- when "xlink:href er forældet" -%}
         <a href="https://svgwg.org/svg2-draft/linking.html#XLinkRefAttrs" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
+
+    {%- when "shadow dom og tilgængelighed" -%}
+        <a href="https://nolanlawson.com/2022/11/28/shadow-dom-and-accessibility-the-trouble-with-aria/" {{ attributes }}>{{ include.linktext }}{{ icon }}</a>
 
 
 

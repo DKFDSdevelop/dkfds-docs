@@ -11,15 +11,15 @@ title: Trinindikator
 lead: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."
 description: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."
 tags:
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="step-indicator" title="Eksempel på trinindikator" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Trinindikator" code="Trinindikator_Kode" custom="Trinindikator_Custom" %}
+{% include anchorlinks.html guidelines="Trinindikator" code="Trinindikator_Kode" custom="Trinindikator_Web_Component" %}
 
 <!--split-->
 
@@ -128,16 +128,12 @@ Tilføj klassen `sidenav-error` til de liste-elementer, der er fejl i og anvend 
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="step-indicator-default" subheading_tag="h2" collapsable=false %}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-Trinindikatoren skal vises i en modal ved mindre skærmstørrelser. Standard-breakpoint er `md`, hvor `d-md-block` skal sættes som klasse på `nav`-elementet og `d-md-none` skal sættes som klasse på `fds-modal` og `fds-modal-opener`.
-
-{% include code/show-example-with-tabs.html example="step-indicator-default" tabId="example-1-step" %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+Trinindikatoren anvender `fds-modal` med `variant="bottom-sheet"` på mindre skærme, men er ikke selv en Web Component. 
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-Se {% include links/component-guideline-link.html linktext="modal" %}.
+Se dokumentationen for {% include links/component-guideline-link.html linktext="modaler" %} for konfiguration af bottom-sheet-varianten. Bemærk, at trinindikatorer bruger `<div class="fixed-area">` og `<div class="scrollable-area">` i komponentens `<dialog>`.

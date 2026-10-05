@@ -18,8 +18,8 @@
 ================================================== -->
 
 
-<title>Eksempel på tjekbox gruppe med fejl | Det Fælles Designsystem</title>
-<meta property="og:title" content="Eksempel på tjekbox gruppe med fejl | Det Fælles Designsystem">
+<title>Eksempel på tjekboksgruppe med fejl | Det Fælles Designsystem</title>
+<meta property="og:title" content="Eksempel på tjekboksgruppe med fejl | Det Fælles Designsystem">
 
 
 
@@ -227,16 +227,22 @@
         <a href="#main-content" class="skipnav">Gå til sidens indhold</a>
     </header>
     <main class="container page-container" id="main-content">
-        <fds-checkbox-group group-label="Group label">
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox1-example" value="v1" id="chk95b7e42c" />
-        <label>Første tjekboks</label>
-    </fds-checkbox>
-    <fds-checkbox>
-        <input type="checkbox" name="checkbox2-example" value="v2" id="chkac82adda" />
-        <label>Anden tjekboks</label>
-    </fds-checkbox>
-    <fds-error-message id="error9c8e8ffc">Fejl text</fds-error-message>
+        <fds-checkbox-group>
+    <fieldset>
+        <legend class="form-label">Group label</legend>
+
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox1-example" value="v1" id="chk95b7e42c" />
+            <label>Første tjekboks</label>
+        </fds-checkbox>
+
+        <fds-checkbox>
+            <input type="checkbox" name="checkbox2-example" value="v2" id="chkac82adda" />
+            <label>Anden tjekboks</label>
+        </fds-checkbox>
+
+        <fds-error-message id="error9c8e8ffc">Vælg mindst én tjekboks</fds-error-message>
+    </fieldset>
 </fds-checkbox-group>
 
     </main>
@@ -260,7 +266,7 @@
 </fds-modal>
     <script src="/assets/js/theme.js?v=11.3.0"></script>
 <script src="/assets/js/styleguide.js?v=11.3.0"></script>
-<script src="/assets/js/dkfds.js?v=11.3.0"></script> <!-- Custom elements script -->
+<script src="/assets/js/dkfds.js?v=11.3.0"></script> <!-- Web component script -->
 
 
 </body>

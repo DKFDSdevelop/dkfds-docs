@@ -15,15 +15,15 @@ lead: Faneblade gør det muligt for brugerne at bladre imellem relaterede sektio
 description: Faneblade gør det muligt for brugerne at bladre imellem relaterede sektioner
   af indhold og kun få vist en sektion af gangen.
 tags:
-tabs: "Retningslinjer, kode, custom"
+tabs: "Retningslinjer, kode, web component"
 custom_element: "Ready"
 ---
 
-{% include tabs.html guidelines=true code=true custom=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="tabs" title="Eksempel på faneblade" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Faneblade" code="Faneblade_Kode" custom="Faneblade_Custom" %}
+{% include anchorlinks.html guidelines="Faneblade" code="Faneblade_Kode" custom="Faneblade_Web_Component" %}
 
 <!--split-->
 
@@ -126,17 +126,11 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 <!--split-->
 
-## Om custom elements {#{% include create-id.html heading="Om custom elements" append="-custom" %}}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-default" subheading_tag="h2" collapsable=false %}
 
-## Eksempler {#{% include create-id.html heading="Eksempler" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
-{% include code/show-example-with-no-tabs.html example="fds-tabs-default" tabId="example-1-modal" %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Med ikoner
-
-{% include code/show-example-with-no-tabs.html example="fds-tabs-icons" tabId="example-1-modal" %}
+{% include web-component-shared-text/intro-shadow-dom.html %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -145,9 +139,17 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut    | Beskrivelse                                                                                                                                               |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| breakpoint  | Sæt breakpoint for, hvornår alle faneblade skal tilpasse udseendet til mindre skærme. Gyldige værdier er 'xs', 'sm', 'md', 'lg' og 'xl'. Default er 'md'. |
+| Attribut    | Beskrivelse                                                                                                                                                                                                        |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| breakpoint  | Sæt breakpoint for, hvornår alle faneblade skal tilpasse udseendet til mindre skærme. Gyldige værdier er 'xs', 'sm', 'md', 'lg' og 'xl'. Default er 'md'.                                                          |
+| default-tab | Angiv `tab-key` for det faneblad, der skal være valgt, når komponenten initialiseres. Hvis værdien ikke matcher et gyldigt `tab-key`, vælges det første faneblad. Ændringer efter initialisering har ingen effekt. |
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot       | Beskrivelse                                                       |
+|------------|-------------------------------------------------------------------|
+| Unavngivet | `fds-tab`- og `fds-tab-panel`-elementer uden specifikt slot-navn. |
 
 #### Funktioner
 
@@ -159,20 +161,46 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 #### Events
 
 {:.table .table--responsive-headers}
-| Event           | Beskrivelse                       |
-|-----------------|-----------------------------------|
-| fds-tab-changed | Udløses når der skiftes faneblad. |
+| Event           | Beskrivelse                                                                                                                                                                                      |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| fds-tab-changed | Udløses når der skiftes faneblad. `event.detail.selectedTab` indeholder `tab-key` for det valgte faneblad, og `event.detail.previousTab` indeholder `tab-key` for det tidligere valgte faneblad. |
 
 ### fds-tab
 
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut    | Beskrivelse                                                        |
+|-------------|--------------------------------------------------------------------|
+| tab-key     | Knyt et faneblad til et panel ved at angive samme værdi i tab-key. |
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot       | Beskrivelse                             |
+|------------|-----------------------------------------|
+| Unavngivet | Tekst for fanebladet og eventuelt ikon. |
+
+### fds-tab-panel
+
+#### Attributter
+
 {:.table .table--responsive-headers}
 | Attribut    | Beskrivelse                                                    |
 |-------------|----------------------------------------------------------------|
 | tab-key | Knyt et faneblad til et panel ved at angive samme værdi i tab-key. |
 
-### fds-panel
+#### Slots
 
 {:.table .table--responsive-headers}
-| Attribut    | Beskrivelse                                                    |
-|-------------|----------------------------------------------------------------|
-| tab-key | Knyt et faneblad til et panel ved at angive samme værdi i tab-key. |
+| Slot       | Beskrivelse                                    |
+|------------|------------------------------------------------|
+| Unavngivet | Indhold der skal vises, når fanebladet vælges. |
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Med ikoner {#{% include create-id.html heading="Med ikoner" append="-custom" %}}
+
+Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et `svg`-element med `class="icon-svg"` i `fds-tab`. Når der anvendes et ikon, skal fanebladets tekst sættes i et `span`-element.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-icons" heading_tag="h4" subheading_tag="h5" %}

@@ -17,7 +17,7 @@
         <li class="anchorlink-code">{%- if setCodeAnchor -%}<span id="kode" hidden></span>{%- assign setCodeAnchor = false -%}{%- endif -%}<a href="#{% include create-id.html heading=heading.h2 append='-kode' %}">{{heading.h2}}</a></li>
         {% endfor %}
         {%- for heading in custom -%}
-        <li class="anchorlink-custom"><a href="#{% include create-id.html heading=heading.h2 append='-custom' %}">{{heading.h2}}</a></li>
+        <li class="anchorlink-web-component"><a href="#{% include create-id.html heading=heading.h2 append='-custom' %}">{{heading.h2}}</a></li>
         {% endfor %}
     </ul>
 </nav>

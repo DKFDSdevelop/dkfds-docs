@@ -11,6 +11,7 @@ function restoreCode(str) {
     return str.replaceAll('<span class="hljs-name">', '')
         .replaceAll('<span class="hljs-attr">', '')
         .replaceAll('<span class="hljs-string">', '')
+        .replaceAll('<span class="hljs-number">', '')
         .replaceAll('<span class="hljs-tag">', '')
         .replaceAll('<span class="hljs-comment">', '')
         .replaceAll('<span class="hljs-symbol">', '')
@@ -24,6 +25,7 @@ function restoreCode(str) {
         .replaceAll('<span class="hljs-property">', '')
         .replaceAll('<span class="hljs-variable language_">', '')
         .replaceAll('<span class="language-xml">', '')
+        .replaceAll('<span class="language-javascript">', '')
         .replaceAll('<span class="hljs-title class_">', '')
         .replaceAll('</span>', '')
         .replaceAll('&#x27;', '&#39;')
@@ -64,9 +66,6 @@ log(colors.white('Started example syntax highlighting...'));
 fs.readdirSync('_includes/code-examples/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/code-examples/'}/${file}`, 'utf8');
     let highlightedContent = highlightCode(content, 'xml');
-    if (file === 'blazor-component.html') {
-        highlightedContent = highlightCode(content, 'csharp');
-    }
     if (file.includes('react')) {
         highlightedContent = highlightCode(content, 'jsx');
     }
@@ -76,9 +75,6 @@ fs.readdirSync('_includes/code-examples/').forEach(file => {
 fs.readdirSync('_includes/output-files-from-build/code-examples-generated-html/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/output-files-from-build/code-examples-generated-html/'}/${file}`, 'utf8');
     let highlightedContent = highlightCode(content, 'xml');
-    if (file === 'blazor-component.html') {
-        highlightedContent = highlightCode(content, 'csharp');
-    }
     fs.writeFileSync(`${'_includes/output-files-from-build/highlighted-examples-generated-html/'}/${file}`, highlightedContent);
 });
 

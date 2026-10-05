@@ -19,7 +19,7 @@ var titles = require('./example-titles').default;
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildFile = ['examples/testfiles/custom-elements/*.njk'];
+var buildFile = ['examples/testfiles/web-components/*.njk'];
 
 var activeBuild = buildAll;
 
@@ -40,11 +40,9 @@ var testfiles = [
     "test-fds-textarea",
     "test-fds-error-summary-manual",
     "test-fds-error-summary-auto",
-    "test-fds-drawer",
     "test-fds-portal-info",
     "test-fds-solution-info",
     "test-fds-header-from-components",
-    "test-fds-header-hardcoded",
     "test-fds-dropdown-menu",
     "test-fds-tooltip-icon",
     "test-fds-tooltip",
