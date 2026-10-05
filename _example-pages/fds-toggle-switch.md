@@ -1,5 +1,5 @@
 --- 
 permalink: /eksempel/fds-toggle-switch/
-title: Eksempel på accordion lavet som custom element
+title: Eksempel på toggle switch
 ---
 {% include code-examples/fds-toggle-switch.html %}

@@ -1,5 +1,5 @@
 --- 
 permalink: /eksempel/fds-checkbox-help-text/
-title: Eksempel på enkelte tjekbox med hjælpetekst
+title: Eksempel på tjekboks med hjælpetekst
 ---
 {% include code-examples/fds-checkbox-help-text.html %}

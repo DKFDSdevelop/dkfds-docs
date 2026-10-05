@@ -1,5 +1,5 @@
 --- 
 permalink: /eksempel/fds-textarea-example/
-title: Eksempel på tekstområder lavet som custom element
+title: Eksempel på tekstområde
 ---
 {% include code-examples/fds-textarea-example.html %}

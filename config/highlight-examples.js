@@ -66,9 +66,6 @@ log(colors.white('Started example syntax highlighting...'));
 fs.readdirSync('_includes/code-examples/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/code-examples/'}/${file}`, 'utf8');
     let highlightedContent = highlightCode(content, 'xml');
-    if (file === 'blazor-component.html') {
-        highlightedContent = highlightCode(content, 'csharp');
-    }
     if (file.includes('react')) {
         highlightedContent = highlightCode(content, 'jsx');
     }
@@ -78,9 +75,6 @@ fs.readdirSync('_includes/code-examples/').forEach(file => {
 fs.readdirSync('_includes/output-files-from-build/code-examples-generated-html/').forEach(file => {
     const content = fs.readFileSync(`${'_includes/output-files-from-build/code-examples-generated-html/'}/${file}`, 'utf8');
     let highlightedContent = highlightCode(content, 'xml');
-    if (file === 'blazor-component.html') {
-        highlightedContent = highlightCode(content, 'csharp');
-    }
     fs.writeFileSync(`${'_includes/output-files-from-build/highlighted-examples-generated-html/'}/${file}`, highlightedContent);
 });
 

@@ -1,5 +1,5 @@
 --- 
 permalink: /eksempel/fds-textarea-limit/
-title: Eksempel på tekstområder med med karakterbegrænsning
+title: Eksempel på tekstområde med med karakterbegrænsning
 ---
 {% include code-examples/fds-textarea-limit.html %}

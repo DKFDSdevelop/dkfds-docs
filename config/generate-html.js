@@ -22,12 +22,6 @@ const document = window.document;
 const body = document.body;
 
 const SKIP_FILES = [
-    'blazor-app.html',
-    'blazor-component.html',
-    'fds-input-wrapper-simple.html',
-    'react-ref.html',
-    'react-wrapper.html',
-    'react-script.html',
     'fds-tabs-default',
     'fds-tabs-icons',
     'fds-alert-variants',

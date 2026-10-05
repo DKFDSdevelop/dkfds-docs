@@ -1,5 +1,5 @@
 --- 
 permalink: /eksempel/fds-accordion-group-example/
-title: Eksempel på accordion gruppe lavet som custom element
+title: Eksempel på accordiongruppe
 ---
 {% include code-examples/fds-accordion-group-example.html %}
