@@ -1656,3 +1656,20 @@ Styling for examples
         color: color('data-yellow-red-200');
     }
 }
+
+/*
+-----------------------------------------------------
+Styling for headings
+-----------------------------------------------------
+*/
+
+.heading-wrapper {
+    display: flex;
+    align-items: center;
+    gap: units(2);
+
+    h2, h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

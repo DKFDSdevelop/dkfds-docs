@@ -46,6 +46,68 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < preTags.length; i++) {
         preTags[i].setAttribute('tabindex', 0);
     }
+
+    // Add 'link' icon to all h2s and h3s
+    const headings = document.querySelectorAll('h2, h3');
+    const svgNS = 'http://www.w3.org/2000/svg';
+
+    headings.forEach(heading => {
+        const isInsideNav = heading.closest('nav');
+        const isInsideShowCodeInTabs = heading.closest('.show-code-in-tabs');
+        const isInsideShowCodeInBox = heading.closest('.show-code-in-box');
+
+        const isExcluded = isInsideNav || isInsideShowCodeInTabs || isInsideShowCodeInBox;
+
+        if (!isExcluded && heading.id) {
+            const wrapper = document.createElement('div');
+
+            let headingLevelClass = heading.tagName.toLowerCase();
+
+            if (heading.classList.contains('h2')) {
+                headingLevelClass = 'h2';
+            }
+            if (heading.classList.contains('h3')) {
+                headingLevelClass = 'h3';
+            }
+            if (heading.classList.contains('h4')) {
+                headingLevelClass = 'h4';
+            }
+            if (heading.classList.contains('h5')) {
+                headingLevelClass = 'h5';
+            }
+            if (heading.classList.contains('h6')) {
+                headingLevelClass = 'h6';
+            }
+
+            wrapper.className = 'heading-wrapper ' + headingLevelClass;
+
+            heading.parentNode.insertBefore(wrapper, heading);
+            wrapper.appendChild(heading);
+
+            const link = document.createElement('a');
+            link.className = 'button button-icon-only heading-link';
+            link.href = `#${heading.id}`;
+
+            const svg = document.createElementNS(svgNS, 'svg');
+            svg.setAttribute('class', 'icon-svg');
+            svg.setAttribute('focusable', 'false');
+            svg.setAttribute('aria-hidden', 'true');
+
+            const use = document.createElementNS(svgNS, 'use');
+            use.setAttribute('href', '#link');
+
+            svg.appendChild(use);
+
+            const srOnlySpan = document.createElement('span');
+            srOnlySpan.className = 'sr-only';
+            srOnlySpan.textContent = 'Link til dette afsnit';
+
+            link.appendChild(svg);
+            link.appendChild(srOnlySpan);
+
+            wrapper.appendChild(link);
+        }
+    });
 });
 
 /* Particularly Firefox has problems viewing the right part of the page when
@@ -96,13 +158,13 @@ $(document).ready(function () {
                 rejectedMessage.classList.add('d-none');
                 acceptBtn.classList.add('d-none');
                 rejectBtn.classList.remove('d-none');
-            } 
+            }
             else if (state === 'rejected') {
                 acceptedMessage.classList.add('d-none');
                 rejectedMessage.classList.remove('d-none');
                 acceptBtn.classList.remove('d-none');
                 rejectBtn.classList.add('d-none');
-            } 
+            }
             else if (state === 'no-decision') {
                 acceptedMessage.classList.add('d-none');
                 rejectedMessage.classList.add('d-none');
@@ -122,10 +184,10 @@ $(document).ready(function () {
         var currentCookieChoice = CookieMgr.readCookie('cookieOptOut');
         if (currentCookieChoice === 'y') {
             showState('accepted');
-        } 
+        }
         else if (currentCookieChoice === 'n') {
             showState('rejected');
-        } 
+        }
         else {
             showState('no-decision');
         }
