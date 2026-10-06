@@ -1462,7 +1462,7 @@
 
 <p>Det Fælles Designsystem tilbyder en række hjælpeklasser, hvis formål er at gøre det nemt at ændre fx størrelse eller placering af et element hurtigt.</p>
 
-<h3 class="h5 mb-0">Breakpoint</h3>
+<h3 class="h5 mb-0" id="breakpoint">Breakpoint</h3>
 
 <p>Flere af hjælpeklasserne har responsive muligheder, så man kan justere et element forskelligt afhængigt af skærmstørrelse. Disse klasser vil i de følgende afsnit have værdien <code>{breakpoint}</code> nævnt i deres format. For at gøre en hjælpeklasse responsiv, skal du erstatte <code>{breakpoint}</code> med en af nedenstående værdier.</p>
 
@@ -1482,7 +1482,7 @@
 
 <p>Format: <code>align-text-{retning}</code> og <code>align-text-{breakpoint}-{retning}</code></p>
 
-<h3 class="h5 mb-0">Retning</h3>
+<h3 class="h5 mb-0" id="tekstjustering-retning">Retning</h3>
 
 <ul>
   <li>Venstre: <code>left</code></li>
@@ -1490,7 +1490,7 @@
   <li>Højre: <code>right</code></li>
 </ul>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="tekstjustering-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;p class=&quot;align-text-right&quot;&gt; Højrejusteret tekst på alle skærme &lt;/p&gt;
 &lt;p class=&quot;align-text-md-center&quot;&gt; Centreret tekst på skærme over 768px &lt;/p&gt;</code></pre></figure>
@@ -1501,14 +1501,14 @@
 
 <p>Format: <code>{egenskab}{retning}-{størrelse}</code> og <code>{egenskab}{retning}-{breakpoint}-{størrelse}</code>.</p>
 
-<h3 class="h5 mb-0">Egenskab</h3>
+<h3 class="h5 mb-0" id="margin-padding-egenskab">Egenskab</h3>
 
 <ul>
   <li><span class="bold"><code>m</code></span> – for klasser som sætter margin</li>
   <li><span class="bold"><code>p</code></span> - for klasser som sætter padding</li>
 </ul>
 
-<h3 class="h5 mb-0">Retning</h3>
+<h3 class="h5 mb-0" id="margin-padding-retning">Retning</h3>
 
 <ul>
   <li><span class="bold"><code>t</code></span> – for klasser som sætter <code>margin-top</code> eller <code>padding-top</code></li>
@@ -1521,7 +1521,7 @@
 
 <p>Undlades retning sættes margin eller padding på alle 4 sider af elementet.</p>
 
-<h3 class="h5 mb-0">Størrelse</h3>
+<h3 class="h5 mb-0" id="margin-padding-stoerrelse">Størrelse</h3>
 
 <ul>
   <li><span class="bold"><code>0</code></span> – 0px</li>
@@ -1545,7 +1545,7 @@
 
 <p>Sass-variablen <code>$spacer</code> er som standard sat til 8px.</p>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="margin-padding-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;p class=&quot;mt-8&quot;&gt; Tekst med margin på 48px over elementet &lt;/p&gt;
 &lt;p class=&quot;p-0&quot;&gt; Padding på alle fire sider sat til 0px på elementet &lt;/p&gt;
@@ -1557,7 +1557,7 @@
 
 <p>Format: <code>d-{display}</code> og <code>d-{breakpoint}-{display}</code></p>
 
-<h3 class="h5 mb-0">Display</h3>
+<h3 class="h5 mb-0" id="display-display">Display</h3>
 
 <ul>
   <li><code>none</code></li>
@@ -1579,7 +1579,7 @@
 
 <p><code>print</code>-værdierne sætter udelukkende <code>display</code>-egenskaben i printformat.</p>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="display-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;p class=&quot;d-none&quot;&gt; Elementet er skjult &lt;/p&gt;
 &lt;p class=&quot;d-block d-print-none&quot;&gt; Elementet er synligt på skærme, men skjult hvis siden printes &lt;/p&gt;
@@ -1604,12 +1604,12 @@
   <li><code>column-reverse</code></li>
 </ul>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="flexbox-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;d-flex flex-row&quot;&gt; Flex-containerens elementer står vandret &lt;/div&gt;
 &lt;div class=&quot;d-flex flex-md-column&quot;&gt; Flex-containerens elementer står lodret på skærme over 768px &lt;/div&gt;</code></pre></figure>
 
-<h3>Ombrydning</h3>
+<h3 id="ombrydning">Ombrydning</h3>
 
 <p>Format: <code>flex-{ombrydning}</code> og <code>flex-{breakpoint}-{ombrydning}</code></p>
 
@@ -1621,12 +1621,12 @@
   <li><code>wrap-reverse</code></li>
 </ul>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="ombrydning-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;d-flex flex-nowrap&quot;&gt; Flex-containerens elementer står altid i én række &lt;/div&gt;
 &lt;div class=&quot;d-flex flex-md-wrap&quot;&gt; Flex-containerens elementer kan ombrydes på skærme over 768px &lt;/div&gt;</code></pre></figure>
 
-<h3>Vandret justering</h3>
+<h3 id="vandret-justering">Vandret justering</h3>
 
 <p><em>Bemærk: Eksemplerne tager udgangspunkt i, at <a href="#retning">retningen</a> er sat til <code>row</code>.</em></p>
 
@@ -1642,12 +1642,12 @@
   <li><code>around</code></li>
 </ul>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="vandret-justering-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;d-flex justify-content-start&quot;&gt; Flex-containerens elementer står til venstre &lt;/div&gt;
 &lt;div class=&quot;d-flex justify-content-md-center&quot;&gt; Flex-containerens elementer står i midten på skærme over 768px &lt;/div&gt;</code></pre></figure>
 
-<h3>Lodret justering af elementer</h3>
+<h3 id="lodret-justering-af-elementer">Lodret justering af elementer</h3>
 
 <p><em>Bemærk: Eksemplerne tager udgangspunkt i, at <a href="#retning">retningen</a> er sat til <code>row</code>.</em></p>
 
@@ -1663,12 +1663,12 @@
   <li><code>stretch</code></li>
 </ul>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="lodret-justering-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;d-flex align-items-start&quot;&gt; Flex-containerens elementer står øverst &lt;/div&gt;
 &lt;div class=&quot;d-flex align-items-md-end&quot;&gt; Flex-containerens elementer står nederst på skærme over 768px &lt;/div&gt;</code></pre></figure>
 
-<h3>Lodret justering af et enkelt element</h3>
+<h3 id="lodret-justering-af-et-enkelt-element">Lodret justering af et enkelt element</h3>
 
 <p>Format: <code>align-self-{justering}</code> og <code>align-self-{breakpoint}-{justering}</code></p>
 
@@ -1683,12 +1683,12 @@
   <li><code>stretch</code></li>
 </ul>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="lodret-justering-enkelt-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;d-flex&quot;&gt;&lt;div class=&quot;align-self-start&quot;&gt; Flex-containerens element står øverst &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;d-flex&quot;&gt;&lt;div class=&quot;align-self-md-end&quot;&gt; Flex-containerens element står nederst på skærme over 768px &lt;/div&gt;&lt;/div&gt;</code></pre></figure>
 
-<h3>Lodret justering af rækker af elementer</h3>
+<h3 id="lodret-justering-af-raekker-af-elementer">Lodret justering af rækker af elementer</h3>
 
 <p>Format: <code>align-content-{justering}</code> og <code>align-content-{breakpoint}-{justering}</code></p>
 
@@ -1703,7 +1703,7 @@
   <li><code>stretch</code></li>
 </ul>
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="lodret-justering-raekker-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;d-flex flex-wrap align-content-start&quot;&gt; Flex-containerens elementer står samlet øverst &lt;/div&gt;
 &lt;div class=&quot;d-flex flex-wrap align-content-md-end&quot;&gt; Flex-containerens elementer står samlet nederst på skærme over 768px &lt;/div&gt;</code></pre></figure>
@@ -1714,7 +1714,7 @@
 
 <p>Format: <code>w-percent-{bredde}</code> og <code>w-percent-{breakpoint}-{bredde}</code></p>
 
-<h3 class="h5 mb-0">Bredde</h3>
+<h3 class="h5 mb-0" id="bredde">Bredde</h3>
 
 <ul>
   <li>10%: <code>10</code></li>
@@ -1729,7 +1729,7 @@
   <li>100%: <code>100</code></li>
 </ul>
 
-<h3 class="h5">Eksempel</h3>
+<h3 class="h5" id="bredde-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;p class=&quot;w-percent-100&quot;&gt; Dette element har en bredde på 100% &lt;/p&gt;
 &lt;p class=&quot;w-percent-md-30&quot;&gt; Dette element har en bredde på 30% på skærme over 768px &lt;/p&gt;</code></pre></figure>
@@ -1740,7 +1740,7 @@
 
 <p>Format: <code>bg-{baggrund}</code></p>
 
-<h3 class="h5 mb-0">Baggrundsfarver</h3>
+<h3 class="h5 mb-0" id="baggrundsfarver-baggrundsfarver">Baggrundsfarver</h3>
 
 <ul>
   <li><code>normal</code></li>
@@ -1748,7 +1748,7 @@
   <li><code>modal</code></li>
 </ul>
 
-<h3 class="h5">Eksempel</h3>
+<h3 class="h5" id="baggrundsfarver-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;bg-normal&quot;&gt; Dette element har hvid baggrund &lt;/div&gt;
 &lt;div class=&quot;bg-alternative&quot;&gt; Dette element har lysegrå baggrund &lt;/div&gt;
@@ -1760,7 +1760,7 @@
 
 <p>Format: <code>position-{position}</code></p>
 
-<h3 class="h5 mb-0">Position</h3>
+<h3 class="h5 mb-0" id="position-position">Position</h3>
 
 <ul>
   <li><code>static</code></li>
@@ -1778,12 +1778,12 @@
   <li><code>sticky-top</code></li>
 </ul>
 
-<h3 class="h5">Eksempel</h3>
+<h3 class="h5" id="position-eksempel">Eksempel</h3>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;position-absolute&quot;&gt; Dette element har egenskaben &#39;position: absolute&#39; &lt;/div&gt;
 &lt;div class=&quot;fixed-top&quot;&gt; Dette element sidder i toppen af siden &lt;/div&gt;</code></pre></figure>
 
-<h3 class="h5">Undgå at skjule elementer med fokus</h3>
+<h3 class="h5" id="undgaa-at-skjule">Undgå at skjule elementer med fokus</h3>
 
 <p>Når en brugergrænsefladekomponent får fokus, skal noget af komponenten kunne ses, så brugeren kan se, hvad på skærmen der har fokus (WCAG 2.2, SC 2.4.11). Når du bruger position-værdierne <code>absolute</code>, <code>fixed</code> eller <code>sticky</code>, kan dit element lægge sig oven på andre elementer i brugergrænsefladen og dermed bryde WCAG-kriteriet.</p>
 

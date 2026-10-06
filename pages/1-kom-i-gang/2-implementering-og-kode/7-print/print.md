@@ -78,7 +78,7 @@ Man sparer både plads og blæk, når man skjuler elementer, der ikke er relevat
 
 Vi har udvalgt nogle eksempelløsninger, hvor du kan se eksempler på dette.
 
-### Knapper
+### Knapper {#{% include create-id.html heading="Knapper" %}}
 
 Knapper har ingen funktion på print, hvorfor vi anbefaler at man skjuler knappen.
 
@@ -90,7 +90,7 @@ Knapper har ingen funktion på print, hvorfor vi anbefaler at man skjuler knappe
 - {% include links/demo-link.html linktext="Trinformular til ansøgning: Kvittering" %}
 - {% include links/demo-link.html linktext="Sagsoversigt: Sagsnr. 123456789" %}
 
-### Header
+### Header {#{% include create-id.html heading="Header" %}}
 
 I headeren bør kun de højst nødvendige informationer vises. Menuen, links og knapper er ikke relevante, bliver derfor skjult.
 
@@ -104,7 +104,7 @@ Hvis du har kontaktinformationer stående både i headeren og footeren bør én 
 - {% include links/demo-link.html linktext="Formular til kontaktoplysninger: Oplysninger om dig" %}
 - {% include links/demo-link.html linktext="Trinformular til registrering: Vælg personer" %}
 
-### Footer
+### Footer {#{% include create-id.html heading="Footer" %}}
 
 Nogle elementer i footeren kan være relevante ved print, så som kontaktoplysninger, men andre, så som privatlivspolitik eller andre links, er ikke relevante, da de ikke virker på print. Derfor anbefaler vi at man skjuler dem.
 
@@ -119,7 +119,7 @@ Nogle elementer i footeren kan være relevante ved print, så som kontaktoplysni
 - {% include links/example-link.html linktext="Footer med logo" %}
 - {% include links/demo-link.html linktext="Formular til kontaktoplysninger: Oplysninger om dig" %}
 
-### Responsiv tabel
+### Responsiv tabel {#{% include create-id.html heading="Responsiv tabel" %}}
 
 I nogle tilfælde, hvis man bruger {% include links/component-guideline-link.html linktext="en responsiv tabel" %}, giver det mening at tabellen ikke er responsiv, når det kommer til print.
 

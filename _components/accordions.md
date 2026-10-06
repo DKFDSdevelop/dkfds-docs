@@ -28,11 +28,11 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Accordions er interaktive overskrifter, der anvendes til at skjule og vise det relaterede indhold.
 
-### Anvendes ikke til  
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Accordions erstatter ikke individuelle trin i en selvbetjeningsløsning eller sider på en hjemmeside.
 
@@ -44,7 +44,7 @@ Brug ikke accordions til at opdele et logisk flow eller en sekvens af handlinger
 
 Brug ikke accordions inde i andre accordions. Hvis du har brug for at gruppere accordions, anvend da almindelige overskrifter.
 
-### Vejledning  
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Accordions bliver fremvist i lodret rækkefølge med synlig overskrift. Ved at klikke på accordion folder beskrivelsen af indholdet sig ud. Klikker du igen, folder beskrivelsen sammen igen.
 
@@ -80,7 +80,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-guidel
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="accordion" copybutton=true %}
 
@@ -90,7 +90,7 @@ Husk at tilpasse koden, således at ikke kun indholdet passer, men også attribu
 
 Overskriften på en accordion skal angives som en heading. Sørg for at anvende det korrekte heading-niveau, som passer semantisk ind i konteksten på siden.
 
-### Javascript
+### Javascript {#{% include create-id.html heading="Javascript" append="-kode" %}}
 
 Accordion komponenten kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 

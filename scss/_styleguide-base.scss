@@ -1672,4 +1672,27 @@ Styling for headings
         margin-top: 0;
         margin-bottom: 0;
     }
+
+    .heading-link {
+        font-size: 1.6rem;
+        border-radius: border-radius('small');
+        color: var(--color-black);
+        padding: units(2);
+        opacity: 0;
+
+        &:focus {
+            opacity: 1;
+        }
+
+        .icon-svg {
+            fill: currentColor;
+            height: 2.4rem;
+            width: 2.4rem;
+            vertical-align: middle;
+        }
+    }
+
+    &:hover .heading-link {
+        opacity: 1;
+    }
 }

@@ -52,11 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const svgNS = 'http://www.w3.org/2000/svg';
 
     headings.forEach(heading => {
-        const isInsideNav = heading.closest('nav');
-        const isInsideShowCodeInTabs = heading.closest('.show-code-in-tabs');
-        const isInsideShowCodeInBox = heading.closest('.show-code-in-box');
-
-        const isExcluded = isInsideNav || isInsideShowCodeInTabs || isInsideShowCodeInBox;
+        const isExcluded = heading.closest('nav, .show-code-in-tabs, .show-code-in-box, .card, .layout-demo, .layout-mastertest, .layout-test-example, .layout-page-not-found');
 
         if (!isExcluded && heading.id) {
             const wrapper = document.createElement('div');
@@ -85,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             wrapper.appendChild(heading);
 
             const link = document.createElement('a');
-            link.className = 'button button-icon-only heading-link';
+            link.className = 'heading-link';
             link.href = `#${heading.id}`;
 
             const svg = document.createElementNS(svgNS, 'svg');
@@ -100,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const srOnlySpan = document.createElement('span');
             srOnlySpan.className = 'sr-only';
-            srOnlySpan.textContent = 'Link til dette afsnit';
+            srOnlySpan.textContent = 'Link til afsnittet ' + heading.textContent.trim();
 
             link.appendChild(svg);
             link.appendChild(srOnlySpan);
