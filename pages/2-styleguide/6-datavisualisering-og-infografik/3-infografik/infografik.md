@@ -33,7 +33,7 @@ Se flere generelle anbefalinger for {% include links/internal-link.html linktext
 
 At nedskalere infografik til tablet og mobil er ikke altid optimalt. Der kan med fordel arbejdes på at lave en responsiv infografik, der tilpasser sig de forskellige skærmstørrelser.
 
-### Eksempel på responsiv infografik
+### Eksempel på responsiv infografik {#{% include create-id.html heading="Eksempel på responsiv infografik" %}}
 
 {% include links/example-link.html linktext="Se eksemplet på en ny side" %}
 

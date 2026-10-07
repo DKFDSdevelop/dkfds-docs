@@ -42,5 +42,5 @@ lead: Nogle gange er der spørgsmål til FDS-teamet, der går igen. Før du tage
     </fds-accordion>
 </fds-accordion-group>
 
-<h2 class="h5 mt-7">Fik du ikke svar på dit spørgsmål?</h2>
+<h2 class="h5 mt-7" id="fik-du-ikke-svar">Fik du ikke svar på dit spørgsmål?</h2>
 Så kan du kontakte os ved at {% include links/internal-link.html linktext="sende en e-mail" %} eller {% include links/external-link.html linktext='oprette et issue på GitHub' %}.

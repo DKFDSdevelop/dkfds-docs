@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const svgNS = 'http://www.w3.org/2000/svg';
 
     headings.forEach(heading => {
-        const isExcluded = heading.closest('nav, .show-code-in-tabs, .show-code-in-box, .card, .layout-demo, .layout-mastertest, .layout-test-example, .layout-page-not-found, .alert, fds-alert, .footer, footer, fds-accordion, .accordion');
+        const isExcluded = heading.closest('nav, .show-code-in-tabs, .show-code-in-box, .card, .layout-demo, .layout-mastertest, .layout-test-example, .layout-page-not-found, .alert, fds-alert, .footer, footer, fds-accordion, .accordion, .page-tjekliste, .layout-princip-box, .component-preview, .component-example');
 
         if (!isExcluded && heading.id) {
             const wrapper = document.createElement('div');
