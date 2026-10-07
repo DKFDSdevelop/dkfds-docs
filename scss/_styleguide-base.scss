@@ -1510,7 +1510,11 @@ Styling for examples
         & > fds-accordion {
             margin-bottom: 0;
 
-            h2, h3, h4, h5, h6 {
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
                 .accordion-button {
                     background-color: color('white');
                     padding-top: 0;
@@ -1654,5 +1658,101 @@ Styling for examples
 
     .hljs-title {
         color: color('data-yellow-red-200');
+    }
+}
+
+/*
+-----------------------------------------------------
+Styling for headings
+-----------------------------------------------------
+*/
+
+.heading-wrapper {
+    display: block;
+    width: fit-content;
+
+    h2,
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        display: inline;
+        padding-right: units(6, 'rem');
+    }
+
+    .heading-link {
+        font-size: 1.6rem;
+        border-radius: border-radius('small');
+        color: var(--color-black);
+        display: inline-block;
+        vertical-align: bottom;
+        margin-left: -2.8rem;
+        opacity: 0;
+
+        &:focus {
+            opacity: 1;
+        }
+
+        .icon-svg {
+            fill: currentColor;
+            height: 2.4rem;
+            width: 2.4rem;
+            vertical-align: bottom;
+        }
+    }
+
+    h2,
+    .h2 {
+        & + .heading-link {
+            padding: units(2, 'rem');
+            margin-bottom: 0;
+        }
+    }
+
+    h3,
+    .h3 {
+        & + .heading-link {
+            padding: units(2, 'rem');
+            margin-bottom: -0.2rem;
+        }
+    }
+
+    &:hover .heading-link {
+        opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+        h2,
+        .h2 {
+            & + .heading-link {
+                padding: units(2, 'rem');
+                margin-bottom: 0.2rem;
+            }
+        }
+
+        h3,
+        .h3 {
+            & + .heading-link {
+                padding: units(2, 'rem');
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        h2,
+        .h2 {
+            & + .heading-link {
+                padding: units(2, 'rem');
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        h3,
+        .h3 {
+            & + .heading-link {
+                padding: units(2, 'rem');
+                margin-bottom: 0;
+            }
+        }
     }
 }

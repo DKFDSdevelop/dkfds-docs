@@ -23,7 +23,7 @@ tags:
 
 Det Fælles Designsystem tilbyder en række hjælpeklasser, hvis formål er at gøre det nemt at ændre fx størrelse eller placering af et element hurtigt.
 
-<h3 class="h5 mb-0">Breakpoint</h3>
+<h3 class="h5 mb-0" id="breakpoint">Breakpoint</h3>
 
 Flere af hjælpeklasserne har responsive muligheder, så man kan justere et element forskelligt afhængigt af skærmstørrelse. Disse klasser vil i de følgende afsnit have værdien `{breakpoint}` nævnt i deres format. For at gøre en hjælpeklasse responsiv, skal du erstatte `{breakpoint}` med en af nedenstående værdier.
 
@@ -41,13 +41,13 @@ Disse hjælpeklasser bruges til at styre, om en tekst skal være venstrejusteret
 
 Format: `align-text-{retning}` og `align-text-{breakpoint}-{retning}`
 
-<h3 class="h5 mb-0">Retning</h3>
+<h3 class="h5 mb-0" id="tekstjustering-retning">Retning</h3>
 
 - Venstre: `left`
 - Midten: `center`
 - Højre: `right`
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="tekstjustering-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <p class="align-text-right"> Højrejusteret tekst på alle skærme </p>
@@ -60,12 +60,12 @@ Disse hjælpeklasser bruges til at styre padding og margin på et element (inspi
 
 Format: `{egenskab}{retning}-{størrelse}` og `{egenskab}{retning}-{breakpoint}-{størrelse}`.
 
-<h3 class="h5 mb-0">Egenskab</h3>
+<h3 class="h5 mb-0" id="margin-padding-egenskab">Egenskab</h3>
 
 - <span class="bold">`m`</span> – for klasser som sætter margin
 - <span class="bold">`p`</span> - for klasser som sætter padding
 
-<h3 class="h5 mb-0">Retning</h3>
+<h3 class="h5 mb-0" id="margin-padding-retning">Retning</h3>
 
 - <span class="bold">`t`</span> – for klasser som sætter `margin-top` eller `padding-top`
 - <span class="bold">`b`</span> – for klasser som sætter `margin-bottom` eller `padding-bottom`
@@ -76,7 +76,7 @@ Format: `{egenskab}{retning}-{størrelse}` og `{egenskab}{retning}-{breakpoint}-
 
 Undlades retning sættes margin eller padding på alle 4 sider af elementet.
 
-<h3 class="h5 mb-0">Størrelse</h3>
+<h3 class="h5 mb-0" id="margin-padding-stoerrelse">Størrelse</h3>
 
 - <span class="bold">`0`</span> – 0px
 - <span class="bold">`1`</span> – `$spacer * 0.25`, hvilket som standard er 2px
@@ -98,7 +98,7 @@ Undlades retning sættes margin eller padding på alle 4 sider af elementet.
 
 Sass-variablen `$spacer` er som standard sat til 8px.
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="margin-padding-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <p class="mt-8"> Tekst med margin på 48px over elementet </p>
@@ -112,7 +112,7 @@ Disse hjælpeklasser bruges til at styre CSS-egenskaben `display` på et element
 
 Format: `d-{display}` og `d-{breakpoint}-{display}`
 
-<h3 class="h5 mb-0">Display</h3>
+<h3 class="h5 mb-0" id="display-display">Display</h3>
 
 - `none`
 - `inline`
@@ -132,7 +132,7 @@ Format: `d-{display}` og `d-{breakpoint}-{display}`
 
 `print`-værdierne sætter udelukkende `display`-egenskaben i printformat.
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="display-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <p class="d-none"> Elementet er skjult </p>
@@ -157,14 +157,14 @@ Format: `flex-{retning}` og `flex-{breakpoint}-{retning}`
 - `row-reverse`
 - `column-reverse`
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="flexbox-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="d-flex flex-row"> Flex-containerens elementer står vandret </div>
 <div class="d-flex flex-md-column"> Flex-containerens elementer står lodret på skærme over 768px </div>
 {% endhighlight %}
 
-### Ombrydning
+### Ombrydning {#{% include create-id.html heading="Ombrydning" %}}
 
 Format: `flex-{ombrydning}` og `flex-{breakpoint}-{ombrydning}`
 
@@ -174,14 +174,14 @@ Format: `flex-{ombrydning}` og `flex-{breakpoint}-{ombrydning}`
 - `nowrap`
 - `wrap-reverse`
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="ombrydning-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="d-flex flex-nowrap"> Flex-containerens elementer står altid i én række </div>
 <div class="d-flex flex-md-wrap"> Flex-containerens elementer kan ombrydes på skærme over 768px </div>
 {% endhighlight %}
 
-### Vandret justering
+### Vandret justering {#{% include create-id.html heading="Vandret justering" %}}
 
 <em>Bemærk: Eksemplerne tager udgangspunkt i, at <a href="#retning">retningen</a> er sat til `row`.</em>
 
@@ -195,14 +195,14 @@ Format: `justify-content-{justering}` og `justify-content-{breakpoint}-{justerin
 - `between`
 - `around`
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="vandret-justering-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="d-flex justify-content-start"> Flex-containerens elementer står til venstre </div>
 <div class="d-flex justify-content-md-center"> Flex-containerens elementer står i midten på skærme over 768px </div>
 {% endhighlight %}
 
-### Lodret justering af elementer
+### Lodret justering af elementer {#{% include create-id.html heading="Lodret justering af elementer" %}}
 
 <em>Bemærk: Eksemplerne tager udgangspunkt i, at <a href="#retning">retningen</a> er sat til `row`.</em>
 
@@ -216,14 +216,14 @@ Format: `align-items-{justering}` og `align-items-{breakpoint}-{justering}`
 - `baseline`
 - `stretch`
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="lodret-justering-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="d-flex align-items-start"> Flex-containerens elementer står øverst </div>
 <div class="d-flex align-items-md-end"> Flex-containerens elementer står nederst på skærme over 768px </div>
 {% endhighlight %}
 
-### Lodret justering af et enkelt element
+### Lodret justering af et enkelt element {#{% include create-id.html heading="Lodret justering af et enkelt element" %}}
 
 Format: `align-self-{justering}` og `align-self-{breakpoint}-{justering}`
 
@@ -236,14 +236,14 @@ Format: `align-self-{justering}` og `align-self-{breakpoint}-{justering}`
 - `baseline`
 - `stretch`
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="lodret-justering-enkelt-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="d-flex"><div class="align-self-start"> Flex-containerens element står øverst </div></div>
 <div class="d-flex"><div class="align-self-md-end"> Flex-containerens element står nederst på skærme over 768px </div></div>
 {% endhighlight %}
 
-### Lodret justering af rækker af elementer
+### Lodret justering af rækker af elementer {#{% include create-id.html heading="Lodret justering af rækker af elementer" %}}
 
 Format: `align-content-{justering}` og `align-content-{breakpoint}-{justering}`
 
@@ -256,7 +256,7 @@ Format: `align-content-{justering}` og `align-content-{breakpoint}-{justering}`
 - `around`
 - `stretch`
 
-<h3 class="h5 mb-0">Eksempel</h3>
+<h3 class="h5 mb-0" id="lodret-justering-raekker-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="d-flex flex-wrap align-content-start"> Flex-containerens elementer står samlet øverst </div>
@@ -269,7 +269,7 @@ Disse hjælpeklasser bruges til at styre bredden på et element.
 
 Format: `w-percent-{bredde}` og `w-percent-{breakpoint}-{bredde}`
 
-<h3 class="h5 mb-0">Bredde</h3>
+<h3 class="h5 mb-0" id="bredde">Bredde</h3>
 
 - 10%: `10`
 - 20%: `20`
@@ -282,7 +282,7 @@ Format: `w-percent-{bredde}` og `w-percent-{breakpoint}-{bredde}`
 - 90%: `90`
 - 100%: `100`
 
-<h3 class="h5">Eksempel</h3>
+<h3 class="h5" id="bredde-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <p class="w-percent-100"> Dette element har en bredde på 100% </p>
@@ -295,13 +295,13 @@ Disse hjælpeklasser bruges til at styre baggrundsfarven på et element.
 
 Format: `bg-{baggrund}`
 
-<h3 class="h5 mb-0">Baggrundsfarver</h3>
+<h3 class="h5 mb-0" id="baggrundsfarver-baggrundsfarver">Baggrundsfarver</h3>
 
 - `normal`
 - `alternative`
 - `modal`
 
-<h3 class="h5">Eksempel</h3>
+<h3 class="h5" id="baggrundsfarver-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="bg-normal"> Dette element har hvid baggrund </div>
@@ -315,7 +315,7 @@ Disse hjælpeklasser bruges til at sætte CSS-egenskaben `position` på et eleme
 
 Format: `position-{position}`
 
-<h3 class="h5 mb-0">Position</h3>
+<h3 class="h5 mb-0" id="position-position">Position</h3>
 
 - `static`
 - `relative`
@@ -329,14 +329,14 @@ Derudover findes der følgende hjælpeklasser til specifikt at placere et elemen
 - `fixed-bottom`
 - `sticky-top`
 
-<h3 class="h5">Eksempel</h3>
+<h3 class="h5" id="position-eksempel">Eksempel</h3>
 
 {% highlight html %}
 <div class="position-absolute"> Dette element har egenskaben 'position: absolute' </div>
 <div class="fixed-top"> Dette element sidder i toppen af siden </div>
 {% endhighlight %}
 
-<h3 class="h5">Undgå at skjule elementer med fokus</h3>
+<h3 class="h5" id="undgaa-at-skjule">Undgå at skjule elementer med fokus</h3>
 
 Når en brugergrænsefladekomponent får fokus, skal noget af komponenten kunne ses, så brugeren kan se, hvad på skærmen der har fokus (WCAG 2.2, SC 2.4.11). Når du bruger position-værdierne `absolute`, `fixed` eller `sticky`, kan dit element lægge sig oven på andre elementer i brugergrænsefladen og dermed bryde WCAG-kriteriet. 
 

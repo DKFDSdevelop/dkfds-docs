@@ -13,7 +13,7 @@ Det Fælles Designsystems komponenter og retningslinjer er udarbejdet på baggru
 
 Selvom alle komponenter i designsystemet er validerede, vil det være nødvendigt at inddrage brugerne i udviklingen af den enkelte løsning. 
 
-## Guide til gode brugeroplevelser
+## Guide til gode brugeroplevelser {#{% include create-id.html heading="Guide til gode brugeroplevelser" %}}
 
 Med Guide til gode brugeroplevelser fra Digitaliseringsstyrelsen får du adgang til viden og værktøjer om, hvorfor, hvordan og hvornår du kan inddrage brugerne i udviklingen af digitale løsninger.
 

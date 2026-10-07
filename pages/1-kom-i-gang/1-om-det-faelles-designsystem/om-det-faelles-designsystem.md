@@ -27,13 +27,13 @@ tags:
 - borger.dk
 ---
 
-## Det Fælles Designsystem er til selvbetjeningsløsninger
+## Det Fælles Designsystem er til selvbetjeningsløsninger {#{% include create-id.html heading="Det Fælles Designsystem er til selvbetjeningsløsninger" %}}
 
 Designsystemet er rettet mod selvbetjeningsløsninger, der tilgås via borger.dk eller Virk. Læs mere om {% include links/external-link.html linktext="krav til løsninger på Virk" classes="d-inline" %} eller {% include links/external-link.html linktext="tilslutning af selvbetjening til borger.dk" classes="d-inline" %}
 
 Alle er dog velkomne til at bruge designsystemet til at udvikle andre løsninger.
 
-## Fordele ved Det Fælles Designsystem
+## Fordele ved Det Fælles Designsystem {#{% include create-id.html heading="Fordele ved Det Fælles Designsystem" %}}
 
 Det Fælles Designsystem understøtter udviklingen af løsninger, der er simple, brugervenlige og tilgængelige. Ved at anvende designsystemet følger du internationalt anerkendte bedste praksisser, får en genvej til tilgængelige løsninger og sparer tid og ressourcer.
 

@@ -53,26 +53,26 @@ Større undersøgelser fra Danske Handicaporganisationer viser, at op til 30 pct
 
 ## Vejledning og værktøjer {#{% include create-id.html heading="Vejledning og værktøjer" %}}
 
-### Tilgængelige billeder på nettet 
+### Tilgængelige billeder på nettet {#{% include create-id.html heading="Tilgængelige billeder på nettet" %}}
 
 Denne guide er til dig, der vil sikre, at du har styr på webtilgængeligheden, når du håndterer billeder på et websted, i en mobilapplikation eller i et dokument. 
 
 {% include links/external-link.html linktext="Læs vejledningen om tilgængelige billeder på nettet" %}
 
-### Easy Checks 
+### Easy Checks {#{% include create-id.html heading="Easy Checks" %}}
 
 Få konkret hjælp til at vurdere tilgængeligheden af en webside med en række simple tests. 
 
 {% include links/external-link.html linktext="Lær hvordan du udfører Easy Checks" %}
 
-### Syv hyppige fejl og deres betydning 
+### Syv hyppige fejl og deres betydning {#{% include create-id.html heading="Syv hyppige fejl og deres betydning" %}}
 
 Få hjælp med at forstå syv hyppige webtilgængelighedsfejl, såsom kontraster, tekstforstørrelse og angivelse af sproget på siden. 
 
 {% include links/external-link.html linktext="Læs om de syv hyppige fejl og deres betydning" %}
 
 {:#eval}
-### Evalueringsværktøjer
+### Evalueringsværktøjer {#{% include create-id.html heading="Evalueringsværktøjer" %}}
 
 Der findes evalueringsværktøjer, der kan hjælpe dig med at sikre, at webindhold opfylder kravene til tilgængelighed. På W3Cs (Web Accessibility initiative) hjemmeside findes et eksempel på en liste over forskellige evalueringsværktøjer: {% include links/external-link.html linktext="Liste over evalueringsværktøjer til webtilgængelighed" %}.
 

@@ -66,6 +66,6 @@ Vi stiller designbiblioteket til rådighed for, at I kan komme hurtigt i gang me
     </div>
 </div>
 
-<h3>Hjælp os med at blive bedre</h3>
+<h3 id="hjaelp-os-med-at-blive-bedre">Hjælp os med at blive bedre</h3>
 
 Hvis du anvender vores designressourcer og finder fejl eller har idéer til forbedringer, så tøv ikke med at {% include links/internal-link.html linktext="kontakte os" %}.

@@ -28,7 +28,7 @@ Justering af stylesheets kræver, at man har hentet FDS' {% include links/intern
 
 Nedenstående eksempler tager udgangspunkt i at {% include links/external-link.html linktext="kompilere Sass-filer med kommandoer" classes="d-inline" %} og at FDS-koden er {% include links/internal-link.html linktext="hentet via NPM" %}.
 
-### Eksempel: Lav CSS-fil med neutralt tema
+### Eksempel: Lav CSS-fil med neutralt tema {#{% include create-id.html heading="Eksempel: Lav CSS-fil med neutralt tema" %}}
 
 Filen `dist/css/dkfds.css` indeholder det "neutrale" tema uden portalfarver eller andre tilpasninger. Følgende eksempel viser, hvordan man selv kan bygge en CSS-fil med det neutrale tema (dette eksempel udbygges i de øvrige afsnit).
 
@@ -46,7 +46,7 @@ sass main.scss:style.css
 
 Dette genererer en ny fil kaldet `style.css`, som svarer til `dist/css/dkfds.css`. Afhængigt af din version af Sass og eventuel processering, kan der dog være enkelte forskelle, fx brug af blanktegn. For en minified version af CSS-filen kan du i stedet køre kommandoen `sass --style=compressed main.scss:style.css`.
 
-### Eksempel: Tilføj styling
+### Eksempel: Tilføj styling {#{% include create-id.html heading="Tilføj styling" %}}
 
 Følgende eksempel viser, hvordan man kan tilføje sin egen styling til den endelige CSS-fil. I eksemplet tilføjes en klasse til det neutrale tema, der kan bruges til at farve en tekst blå.
 
@@ -71,7 +71,7 @@ Ovenstående eksempel anvender dog ikke en af designsystemets {% include links/i
 
 Byg herefter CSS-filen med `sass main.scss:style.css`.
 
-### Eksempel: Anvend andre værdier
+### Eksempel: Anvend andre værdier {#{% include create-id.html heading="Eksempel: Anvend andre værdier" %}}
 
 I mappen `dist/scss/variables` findes de variable, som kan tilpasses til dit projekt. I de følgende eksempler gennemgås nogle af de variable, som ofte overskrives.
 

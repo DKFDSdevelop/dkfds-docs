@@ -40,7 +40,7 @@ Modulet 'dkfds' er nu installeret i 'node_modules' mappen.
 
 Hent nyeste version som {% include links/external-link.html linktext="zipfil på GitHub" %}, og pak indholdet ud i dit projekt.
 
-### Inkludér  CSS
+### Inkludér CSS {#{% include create-id.html heading="Inkludér CSS" %}}
 
 #### Virk tema
 
@@ -59,7 +59,7 @@ Hent nyeste version som {% include links/external-link.html linktext="zipfil på
 Har du brug for dit eget tema? Så læs, hvordan du tilpasser koden under {% include links/internal-link.html linktext="Justering af tema og stylesheets" %}.
 
 {:#javascript}
-### Inkludér JavaScript
+### Inkludér JavaScript {#{% include create-id.html heading="Inkludér JavaScript" %}}
 
 JavaScript kan inkluderes med et script tag eller importeres ind i en eksisterende js fil.
 

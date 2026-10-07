@@ -1464,7 +1464,7 @@
 
 <p>Nedenstående eksempler tager udgangspunkt i at <a href="https://sass-lang.com/documentation/cli/dart-sass/" class="icon-link d-inline" target="_blank">kompilere Sass-filer med kommandoer<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> og at FDS-koden er <a href="/kom-i-gang/implementering-kode/hent-kodepakken/#hent-via-npm">hentet via NPM</a>.</p>
 
-<h3>Eksempel: Lav CSS-fil med neutralt tema</h3>
+<h3 id="eksempel:-lav-css-fil-med-neutralt-tema">Eksempel: Lav CSS-fil med neutralt tema</h3>
 
 <p>Filen <code>dist/css/dkfds.css</code> indeholder det “neutrale” tema uden portalfarver eller andre tilpasninger. Følgende eksempel viser, hvordan man selv kan bygge en CSS-fil med det neutrale tema (dette eksempel udbygges i de øvrige afsnit).</p>
 
@@ -1478,7 +1478,7 @@
 
 <p>Dette genererer en ny fil kaldet <code>style.css</code>, som svarer til <code>dist/css/dkfds.css</code>. Afhængigt af din version af Sass og eventuel processering, kan der dog være enkelte forskelle, fx brug af blanktegn. For en minified version af CSS-filen kan du i stedet køre kommandoen <code>sass --style=compressed main.scss:style.css</code>.</p>
 
-<h3>Eksempel: Tilføj styling</h3>
+<h3 id="tilfoej-styling">Eksempel: Tilføj styling</h3>
 
 <p>Følgende eksempel viser, hvordan man kan tilføje sin egen styling til den endelige CSS-fil. I eksemplet tilføjes en klasse til det neutrale tema, der kan bruges til at farve en tekst blå.</p>
 
@@ -1499,7 +1499,7 @@
 
 <p>Byg herefter CSS-filen med <code>sass main.scss:style.css</code>.</p>
 
-<h3>Eksempel: Anvend andre værdier</h3>
+<h3 id="eksempel:-anvend-andre-vaerdier">Eksempel: Anvend andre værdier</h3>
 
 <p>I mappen <code>dist/scss/variables</code> findes de variable, som kan tilpasses til dit projekt. I de følgende eksempler gennemgås nogle af de variable, som ofte overskrives.</p>
 
