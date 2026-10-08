@@ -98,13 +98,13 @@ Versionsnummeret skrives altid x.y.z (fx 2.1.3) og skal læses MAJOR (x), MINOR 
 - MINOR: Tilføjelser, ændringer og ny funktionalitet, der er bagud-kompatible.
 - PATCH: Bagud-kompatible fejlrettelser (bug fixes).
 
-### Release-proces
+### Release-proces {#{% include create-id.html heading="Release-proces" %}}
 
 Designsystemet er "levende" og skal holdes ajour, hvorfor langt de fleste bagud-kompatible ændringer og tilføjelser vil ske løbende. Fejlrettelser vil ske hurtigst muligt. Ikke bagud-kompatible ændringer vil samles op og blive releaset med lavere frekvens.
 
 Har du et nyt forslag til en feature eller et bug fix? Så må du meget gerne {% include links/external-link.html linktext="oprette et issue på GitHub" %}
 
-### Tidligere versioner af dokumentationen
+### Tidligere versioner af dokumentationen {#{% include create-id.html heading="Tidligere versioner af dokumentationen" %}}
 
 Har du brug for at se en version af dokumentationen på designsystem.dk, som stemmer overens med en tidligere release, så er du velkommen til at {% include links/internal-link.html linktext="kontakte os" %}.
 
@@ -197,7 +197,7 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 Se {% include links/external-link.html linktext="beslutningslog for version 11.0.0" %}.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/internal-link.html linktext="Farver" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-farver">{% include links/internal-link.html linktext="Farver" %}</h3>
 </div>
 - Ændret `success-light` fra `#EEFFE2` til `#DDF7CE`.
 - Ændret `gray-400` fra `#999999` til `#8E8E8E`.
@@ -206,7 +206,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 11.0
 - Ændret den primære farve i det neutrale tema fra `gray-500` til `gray-600`. De mørke nuancer af den primære farve er begge ændret til `black`.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/internal-link.html linktext="Ikoner" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-ikoner">{% include links/internal-link.html linktext="Ikoner" %}</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Fjernet klassen `icon-svg--inherit-color` og i stedet tilføjet `fill: currentColor` til ikonklassen `icon-svg`. Hvor ikoner tidligere som standard var sorte, arver de nu farven fra det element, de optræder i.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Opdateret filen 'all-svg-icons.svg' så ikonerne matcher dem i filen 'base-svg.njk'.
@@ -219,7 +219,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 11.0
 - <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet ikonet `file`.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Knapper" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-knapper">{% include links/component-guideline-link.html linktext="Knapper" %}</h3>
 </div>
 - <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet knapvariant til brug ved advarsler.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Visuelt løft af alle knapper inkl. {% include links/component-guideline-link.html linktext="Tilbage til toppen" %} og knappen i {% include links/component-guideline-link.html linktext="søgefeltet" %}. Læs de opdaterede {% include links/component-guideline-link.html linktext="retningslinjer for knapper" %} for korrekt anvendelse af knapperne.
@@ -230,7 +230,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 11.0
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Knapper med lange ord bliver nu ombrudt korrekt ved pladsmangel, hvis man placerer teksten i et `<span>`-element.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Øvrige redesignede komponenter</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-oevrige-komponenter">Øvrige redesignede komponenter</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Ny styling for {% include links/component-guideline-link.html linktext="accordions" %}. HTML for accordions med fejl er ændret.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> {% include links/component-guideline-link.html linktext="Cards" %} er ændret grundlæggende i både implementering, design og funktion.
@@ -243,7 +243,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 11.0
 - Mindre tilretninger af designet for {% include links/component-guideline-link.html linktext="detaljer" %}.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/internal-link.html linktext="Hjørner, streger og skygger" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-borders">{% include links/internal-link.html linktext="Hjørner, streger og skygger" %}</h3>
 </div>
 Retningslinjer for hjørner, streger og skygger er blevet ændret og alle komponenter er blevet tilpasset. De overordnede ændringer gennemgås nedenunder.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Ændret værdier for hjørner og tilføjet nye Sass-variable og -funktion til at sætte `border-radius`. De nye muligheder for hjørner er "Ingen runding", "Lille runding", "Mellem runding" og "Fuld runding".
@@ -260,7 +260,7 @@ Retningslinjer for hjørner, streger og skygger er blevet ændret og alle kompon
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Fjernet favikoner fra `img`-mappen. Se eventuelt {% include links/internal-link.html linktext="retningslinjer for favikon" %}.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Modaler" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-modaler">{% include links/component-guideline-link.html linktext="Modaler" %}</h3>
 </div>
 - Fjernet animationer for modaler.
 - Tilføjet mulighed for at lukke modaler, der ikke kræver handling, ved at trykke på den farvede baggrund bag modalen.
@@ -268,7 +268,7 @@ Retningslinjer for hjørner, streger og skygger er blevet ændret og alle kompon
 - Fokus ved visning af modaler er flyttet fra modalen til luk-knappen, da der var tilfælde, hvor modalen ikke blev annonceret i skærmlæsere.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Større ændringer på designsystem.dk</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-designsystem">Større ændringer på designsystem.dk</h3>
 </div>
 - Den sorte bundbjælke på selvbetjeningsløsningseksempler, som blev brugt til navigation tilbage til hovedsiden, er fjernet. Alle eksempler åbner i stedet i en ny fane.
 - Det nye card-design er anvendt på flere sider.
@@ -276,7 +276,7 @@ Retningslinjer for hjørner, streger og skygger er blevet ændret og alle kompon
 - Kodeeksemplerne på kodesiderne har fået syntaks-highlighting.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Øvrige</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-11-0-0-oevrige">Øvrige</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Rettet fejl, hvor den grå streg ved valgte {% include links/component-guideline-link.html linktext="radioknapper" %} og {% include links/component-guideline-link.html linktext="tjekbokse" %} med skjult indhold var forskudt, hvis der var en hjælpetekst.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Fjernet `aria-hidden` fra {% include links/component-guideline-link.html linktext="overflowmenuen" %}, {% include links/component-guideline-link.html linktext="sortering" %} og række 3 i {% include links/component-guideline-link.html linktext="headeren" %}. Stylingen er opdateret, så det nu er klassen `collapsed`, der afgør, om menuen er synlig. De steder, hvor man tidligere har sat `aria-hidden="true"` på `overflow-menu-inner`, skal man sikre sig, at man i stedet tilføjer klassen `collapsed`.
@@ -325,7 +325,7 @@ Retningslinjer for hjørner, streger og skygger er blevet ændret og alle kompon
 Se {% include links/external-link.html linktext="beslutningslog for version 10.2.0" %}.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Tooltips" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-2-0-tooltips">{% include links/component-guideline-link.html linktext="Tooltips" %}</h3>
 </div>
 - <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet {% include links/component-code-link.html linktext="tooltip-attributten" %} `data-force-visible`. Attributten kan bruges, når tooltippet placeres i et afgrænset element (fx modal eller tabel), som ellers ville afskære tooltippet.
 {% include links/github-link.html number="225" afternumber=" på GitHub" %}
@@ -337,7 +337,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 10.2
 - Det er ikke længere muligt at markere tekst på knapper med hover-tooltips, når man trykker ned på knappen, da mobilers "tekstmenu" kunne dække tooltippet.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Øvrige</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-2-0-oevrige">Øvrige</h3>
 </div>
 - Fjernet `user-select: text` fra knapper og pagineringsknapper.
 - Rettet fejl, hvor indhold i {% include links/component-guideline-link.html linktext="modaler" %} ikke altid kunne ses ved print.
@@ -359,7 +359,7 @@ Som noget nyt introducerer vi en beslutningslog, der fremover skal supplere den 
 Se {% include links/external-link.html linktext="beslutningslog for version 10.1.0" %}
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Paginering" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-1-0-paginering">{% include links/component-guideline-link.html linktext="Paginering" %}</h3>
 </div>
 - <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet {% include links/component-guideline-link.html linktext="paginering til tabeller" %}.
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Fjernet `role="presentation"` fra "..."-elementerne.
@@ -368,7 +368,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 10.1
 - Fjernet klassen `pagination__dropdown`, der ikke blev anvendt.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Tabeller" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-1-0-tabeller">{% include links/component-guideline-link.html linktext="Tabeller" %}</h3>
 </div>
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Flyttet knapperne i {% include links/component-guideline-link.html linktext="tabeller med valgbare rækker og funktionsknapper" %} ned under tabellen i HTML'en, så de ikke scroller horisontalt, hvis tabellen har mange kolonner.
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Tilføjet `tabindex` og synligt fokus til tabeller, så det er muligt at navigere til og scrolle brede tabeller med tastaturet.
@@ -379,7 +379,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 10.1
 - Rettet fejl, hvor tjekboksen i headeren for {% include links/component-guideline-link.html linktext="tabeller med valgbare rækker" %} ikke fik den korrekte status i JavaScripten.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Øvrige</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-1-0-oevrige">Øvrige</h3>
 </div>
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Rettet en stylingfejl, som opstod, når man anvendte inputfelter med {% include links/component-guideline-link.html linktext="prefix eller suffix" %}, som samtidigt var read-only eller disabled. Tilføj klassen `disabled` eller `readonly` til `form-input-wrapper` for at få den korrekte styling.
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Fjernet klassen `search-link`, der satte en alternativ styling tiltænkt overskrifter på søgeresultatsider. Der er nu ikke længere forskel på {% include links/internal-link.html linktext="linkoverskifter" %}, uanset om de anvendes i søgeresultateter eller ej. Hvis man anvender klassen i sin løsning, kan man blot fjerne den, da den ikke længere har nogen effekt.
@@ -428,7 +428,7 @@ Se {% include links/external-link.html linktext="beslutningslog for version 10.1
 Hvis du skal opgradere fra version 9 til version 10, så læs vores {% include links/external-link.html linktext="migreringsguide for v10.0.0" classes="d-inline" %} på GitHub først. Version 10 indeholder mange breaking changes, man som designer og udvikler skal forholde sig til, da der både er ændringer i grundlæggende komponenter som header og mobilmenu, samt omstrukturering af designsystemets kodefiler.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Header" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-header">{% include links/component-guideline-link.html linktext="Header" %}</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Headerens række 4 og række 5 er fjernet, mens de øvrige rækker i headeren har fået opdateret design og forbedret tilgængelighed. Se flere detaljer på headerkomponentens side.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Mobilmenuens design er opdateret.
@@ -438,14 +438,14 @@ Hvis du skal opgradere fra version 9 til version 10, så læs vores {% include l
 - Løsningstitlen behøver ikke længere være et link.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Faneblade" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-faneblade">{% include links/component-guideline-link.html linktext="Faneblade" %}</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Ny fanebladskomponent. Den tidligere fanebladskomponent understøttes ikke længere.
 - <strong class="badge badge-success badge-small mr-2">New</strong> Faneblade kan nu også anvendes til sidenavigation.
 - <strong class="badge badge-success badge-small mr-2">New</strong> Tilføjet mulighed for at indsætte ikoner i faneblade.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Tooltips" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-tooltips">{% include links/component-guideline-link.html linktext="Tooltips" %}</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Tooltips er ændret grundlæggende i opførsel, design, anvendelse og implementering.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Rettet fejl, hvor tooltips kunne sætte sig forkert, hvis brugeren zoomede eller ændrede browservinduets størrelse.
@@ -454,7 +454,7 @@ Hvis du skal opgradere fra version 9 til version 10, så læs vores {% include l
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> {% include links/component-guideline-link.html linktext="Tooltips på sprogvælgeren" %} er opdateret som følge af tooltipkomponentens ændringer.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Venstremenu" %} og {% include links/component-guideline-link.html linktext="trinindikator" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-venstremenu">{% include links/component-guideline-link.html linktext="Venstremenu" %} og {% include links/component-guideline-link.html linktext="trinindikator" %}</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> {% include links/component-guideline-link.html linktext="Anchorlinks" %} er fjernet fra venstremenuen.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> HTML og styling er opdateret i både trinindikator og venstremenu som følge af ændringerne i header og anchorlinks.
@@ -465,21 +465,21 @@ Hvis du skal opgradere fra version 9 til version 10, så læs vores {% include l
 {% include links/github-link.html number="204" afternumber=" på GitHub" %}
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Radioknapper" %} og {% include links/component-guideline-link.html linktext="tjekbokse" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-radioknapper">{% include links/component-guideline-link.html linktext="Radioknapper" %} og {% include links/component-guideline-link.html linktext="tjekbokse" %}</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Fjernet muligheden for at vælge mellem store (32 pixels) og små (20 pixels) radioknapper og tjekbokse. Den nye standardstørrelse er 24 pixels. Bemærk at HTML'en for {% include links/component-guideline-link.html linktext="tabeller med valgbare rækker" %} og tjekbokse skal opdateres.
 - Rettet fejl, hvor udseendet af inaktive radioknapper og tjekbokse kunne variere.
 - Rettet fejl, hvor skjult indhold i enten radioknapper eller tjekbokse kunne få forkert styling ved fejlbeskeder. 
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Accordions" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-accordions">{% include links/component-guideline-link.html linktext="Accordions" %}</h3>
 </div>
 - Ændret accordions `border-radius` (hjørner) fra 3px til 4px.
 - <strong class="badge badge-info badge-small mr-2">Change</strong> Rettet fejl, hvor tekst ikke altid blev ombrudt korrekt i accordions.
 - Fjernet forældet JavaScript fra accordions.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">{% include links/component-guideline-link.html linktext="Overflowmenu" %} og {% include links/component-guideline-link.html linktext="Sortering" %}</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-overflowmenu">{% include links/component-guideline-link.html linktext="Overflowmenu" %} og {% include links/component-guideline-link.html linktext="Sortering" %}</h3>
 </div>
 - Rettet fejl, hvor fokusmarkeringen kunne mangle delvist i overflowmenuen.
 - Rettet fejl, hvor links i overflowmenuen kunne sidde i den forkerte side.
@@ -488,7 +488,7 @@ Hvis du skal opgradere fra version 9 til version 10, så læs vores {% include l
 - Opdateret JavaScript for sortering, så kravene til HTML'en er mindre rigide. Fx er det nu tilladt at have et `span`-element inde i `button`-elementet.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Vedligehold</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-vedligehold">Vedligehold</h3>
 </div>
 Nedenstående ændringer har primært betydning, hvis man selv bygger kodefiler ud fra designsystemets filer, hvis man har ændret i de oprindelige filer eller anvender designsystemet på en anden måde end specificeret på dokumentationssiden.
 - Designsystemet anvender nu webpack i stedet for gulp til at bygge filer.
@@ -506,7 +506,7 @@ Nedenstående ændringer har primært betydning, hvis man selv bygger kodefiler 
 - Rettet fejl, hvor klassen `sr-only` risikerede at blive unødvendigt gentaget flere gange i ens stylesheet, hvis man anvendte SCSS-filerne.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Ændringer på designsystem.dk</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-designsystem">Ændringer på designsystem.dk</h3>
 </div>
 - Dokumentationssiden har fået en større omstrukturering, hvor flere sider er flyttet rundt.
 - Flere sider er blevet opdelt i to faner kaldet 'Retningslinjer' og 'Kode'. Man skal derfor ikke længere ind på to forskellige hovedmenupunkter for at finde hhv. kode og design.
@@ -516,7 +516,7 @@ Nedenstående ændringer har primært betydning, hvis man selv bygger kodefiler 
 - Ny side om {% include links/internal-link.html linktext="justering af tema og stylesheets" %}.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Øvrige</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-0-0-oevrige">Øvrige</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Fjernet klasser, der visuelt kunne få {% include links/internal-link.html linktext="links" %} til at fremstå inaktive.
 - <strong class="badge badge-success badge-small mr-2">New</strong> {% include links/component-guideline-link.html linktext="Anchorlinks" %} har fået sin egen komponent.

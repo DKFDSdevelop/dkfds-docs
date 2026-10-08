@@ -34,13 +34,13 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Modaler anvendes til at tvinge brugerens fokus på et specifikt, afgrænset indhold, hvor den interaktive respons og forståelse er centralt for brugerens videre anvendelse af løsningen. Det kunne fx være en godkendelse af en handling, behov for bekræftelse eller overførsel af rettigheder, som løsningen skal kunne udføre for at kunne fuldføre sin dialog med brugeren.
 
 Brug en modal, når du vil være sikker på, at brugeren ser en bestemt dialog og forholder sig til dens indhold.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 En modal kan ikke erstatte individuelle sider i en selvbetjeningsløsning eller hjemmeside.
 
@@ -52,7 +52,7 @@ Undgå modaler på mobile løsninger og visninger, da de ikke fungerer godt for 
 
 Undgå at have formularer inde i en modal. Særligt hvis det er en formular med mere end ét felt. I sådan et tilfælde bør man overveje at dele siden op, så indholdet strækker sig over flere sider.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Undgå at have flere åbne modaler på siden - det giver en dårligere brugeroplevelse og kan resultere i at brugeren mister fornemmelsen af, hvor de er på siden.
 
@@ -82,7 +82,7 @@ Se hvordan komponenten bruges i de forskellige {% include links/internal-link.ht
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="modal" copybutton=true %}
 
@@ -98,7 +98,7 @@ Modalen skal altid ligge i en `div` med klassen `fds-modal-container`, som skal 
 </body>
 {% endhighlight %}
 
-### JavaScript
+### JavaScript {#{% include create-id.html heading="JavaScript" append="-kode" %}}
 
 Modal komponenten kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 
@@ -213,7 +213,7 @@ Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Modal som kræver handling
+### Modal som kræver handling {#{% include create-id.html heading="Modal som kræver handling" append="-custom" %}}
 
 Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
 

@@ -52,7 +52,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const svgNS = 'http://www.w3.org/2000/svg';
 
     headings.forEach(heading => {
-        const isExcluded = heading.closest('nav, .show-code-in-tabs, .show-code-in-box, .card, .layout-demo, .layout-mastertest, .layout-test-example, .layout-page-not-found, .alert, fds-alert, .footer, footer, fds-accordion, .accordion, .page-tjekliste, .layout-princip-box, .component-preview, .component-example');
+        const excludedContainerSelectors = [
+            'nav',
+            'footer',
+            'header',
+            'fds-alert',
+            'fds-accordion',
+            'dialog',
+            '.show-code-in-tabs',
+            '.show-code-in-box',
+            '.card',
+            '.layout-demo',
+            '.layout-mastertest',
+            '.layout-test-example',
+            '.layout-page-not-found',
+            '.alert',
+            '.footer',
+            '.header',
+            '.accordion',
+            '.page-tjekliste',
+            '.layout-princip-box',
+            '.component-preview',
+            '.component-example',
+            '.do-dont-container'
+        ];
+
+        const isExcluded = heading.closest(excludedContainerSelectors.join(', '));
 
         if (!isExcluded && heading.id) {
             const wrapper = document.createElement('div');

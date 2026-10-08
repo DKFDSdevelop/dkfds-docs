@@ -25,11 +25,11 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Anvend kun dropdown, når det er absolut nødvendigt og kun i tilfælde, hvor brugeren skal vælge mellem 5 til 15 værdier på en begrænset plads.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Lister med færre værdier end 5.
 
@@ -39,7 +39,7 @@ Brug tjekbokse fremfor dropdown, hvis brugeren skal vælge mere end 1 værdi.
 
 Brug ikke dropdown til navigering mellem sider, som den ikke er velegnet til.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Dropdown kræver ekstra aftestning på målgruppen pga. de kognitive udfordringer, de kan afføde.
 
@@ -80,7 +80,7 @@ Bemærk, at deaktiverede dropdowns hverken har kontrastkrav eller kan få fokus 
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="select" copybutton=true %}
 
@@ -104,7 +104,7 @@ Brug dropdown i begrænset omfang. Værdierne i en dropdown er ikke umiddelbart 
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-select
+### fds-select {#{% include create-id.html heading="fds-select" append="-custom" %}}
 
 #### Attributter
 
@@ -113,28 +113,28 @@ Brug dropdown i begrænset omfang. Værdierne i en dropdown er ikke umiddelbart 
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | show-required-status | Viser om dropdown er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
 
-### fds-help-text
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Fejl
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-help" heading_tag="h4" subheading_tag="h5" %}
 
-### Obligatoriske og frivillige dropdown
+### Obligatoriske og frivillige dropdown {#{% include create-id.html heading="Obligatoriske og frivillige dropdown" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-required" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-disabled" heading_tag="h4" subheading_tag="h5" %}

@@ -31,7 +31,7 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Brug tekstområder til sammenhængende (mere end 2 linjer) men ustruktureret tekst og sætninger, der har karakter af prosa. Fx en baggrundsfortælling.
 
@@ -39,11 +39,11 @@ Anvendes når der er behov for yderligere sammenhængende information, hvis kara
 
 Anvendes når løsningen stiller et spørgsmål, der ikke kan besvares i et felt.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Brug ikke tekstområder til struktureret information, hvor datakonsistens har betydning.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Angiv tekstområdets højde, så det modsvarer den tekstmængde, du forventer, at brugeren skal indtaste.
 
@@ -96,7 +96,7 @@ ISO 9241-143: Forms (2012)
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="text-area" copybutton=true %}
   
@@ -119,7 +119,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 {% include code/syntax.html component="text-area-character-limit" link=true copybutton=true guidelines="/komponenter/tekstomraade/#karakterbegraensning" %}
 
-### Javascript
+### Javascript {#{% include create-id.html heading="Javascript" append="-kode" %}}
 
 Karakterbegrænsning kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med `init()`.
 
@@ -191,7 +191,7 @@ Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af s
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-textarea
+### fds-textarea {#{% include create-id.html heading="fds-textarea" append="-custom" %}}
 
 #### Attributter
 
@@ -200,36 +200,36 @@ Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af s
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | show-required-status | Viser om tekstområdet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
 
-### fds-help-text
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
-### fds-character-limit
+### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-custom" %}}
 
 {% include web-component-shared-text/fds-character-limit.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Fejl
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-helptext" heading_tag="h4" subheading_tag="h5" %}
 
-### Karakterbegrænsning
+### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-limit" heading_tag="h4" subheading_tag="h5" %}
 
-### Obligatoriske og frivillige tekstområder
+### Obligatoriske og frivillige tekstområder {#{% include create-id.html heading="Obligatoriske og frivillige tekstområder" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-disabled" heading_tag="h4" subheading_tag="h5" %}

@@ -25,15 +25,15 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Sætter brugeren i stand til at tilføje struktureret datoinformation.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Når der er specifikt udvalgte datoer at vælge imellem som fx ved bookninger og planlægning med specifikke åbne og lukkede datoer.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Placér felterne i den rækkefølge for datoform, der anvendes i Danmark, det vil sige dag, måned og år.
 
@@ -70,7 +70,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-guidel
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="date-input" copybutton=true %}
 
@@ -93,7 +93,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-date-input
+### fds-date-input {#{% include create-id.html heading="fds-date-input" append="-custom" %}}
 
 #### Attributter
 
@@ -106,28 +106,28 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 | input-readonly       | Sæt til `true` for at gøre alle datofelter read-only.                                                                     |
 | input-required       | Sæt til `true` for at gøre alle datofelter obligatoriske.                                                                 |
 
-### fds-help-text
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Fejl
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-help" heading_tag="h4" subheading_tag="h5" %}
 
-### Obligatoriske og frivillige inputfelter
+### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-required" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-disabled" heading_tag="h4" subheading_tag="h5" %}

@@ -29,19 +29,19 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Faneblade anvendes til at skifte mellem forskellige visninger af indhold inden for samme kontekst.
 
 Faneblade egner sig bedst som en avanceret funktionalitet for afgrænsede målgrupper.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Faneblade kan ikke erstatte individuelle sider i en selvbetjeningsløsning eller hjemmeside.
 
 Faneblade anvendes ikke til at opdele et logisk flow eller en sekvens af handlinger.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Faneblade anvendes i afgrænsede sektioner. Indholdet vises indrammet, så brugeren ikke er i tvivl om, hvor det starter og slutter. Det er muligt at anvende flere fanebladskomponenter på en side. 
 
@@ -88,15 +88,15 @@ Ikoner skal altid understøttes af en label med fanebladets navn.
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="tabs" copybutton=true %}
 
-### Tilgængelighed
+### Tilgængelighed {#{% include create-id.html heading="Tilgængelighed" append="-kode" %}}
 
 Husk at bruge rollerne `tablist`, `tab` og `tabpanel` for henholdsvis fanebladsbeholder, faneblad og fanebladindhold. Benyt `aria-selected`-attributten til at angive, hvilket faneblad er aktivt og `hidden` til de paneler, som skal være skjult.
 
-### JavaScript
+### JavaScript {#{% include create-id.html heading="JavaScript" append="-kode" %}}
 
 Fanebladskomponenten kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller manuelt initialisere komponenten således:
 
@@ -134,7 +134,7 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-tabs
+### fds-tabs {#{% include create-id.html heading="fds-tabs" append="-custom" %}}
 
 #### Attributter
 
@@ -165,7 +165,7 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | fds-tab-changed | Udløses når der skiftes faneblad. `event.detail.selectedTab` indeholder `tab-key` for det valgte faneblad, og `event.detail.previousTab` indeholder `tab-key` for det tidligere valgte faneblad. |
 
-### fds-tab
+### fds-tab {#{% include create-id.html heading="fds-tab" append="-custom" %}}
 
 #### Attributter
 
@@ -181,7 +181,7 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 |------------|-----------------------------------------|
 | Unavngivet | Tekst for fanebladet og eventuelt ikon. |
 
-### fds-tab-panel
+### fds-tab-panel {#{% include create-id.html heading="fds-tab-panel" append="-custom" %}}
 
 #### Attributter
 

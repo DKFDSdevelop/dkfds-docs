@@ -23,11 +23,11 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Vis en fejlopsummering når der er fejl i noget af det brugeren har indtastet, også hvis der kun er én fejl på siden.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Opsummeringen vises øverst på siden/trinnet under headeren, men over sidens/trinnets øverste overskrift. Fejlopsummeringen indeholder alle de {% include links/component-guideline-link.html linktext="fejlmeddelelser" %}, der måtte være på siden/trinnet, således at brugeren kan navigere direkte til de fejl og mangler, der skal rettes.
 
@@ -67,7 +67,7 @@ Sæt fejlopsummeringen øverst på siden. Hvis din side indeholder en brødkrumm
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="error-summary" copybutton=true %}
 
@@ -79,7 +79,7 @@ Hver fejl tilføjes til `<ul>` listen med et anchor link til feltet der er omtal
 
 {% include code/syntax.html component="error-summary-page" link=true copybutton=true guidelines="/komponenter/fejlopsummering/#placering" %}
 
-### Javascript
+### Javascript {#{% include create-id.html heading="Javascript" append="-kode" %}}
 
 Fejlopsummering kræver JavaScript samt attributten `data-module="error-summary"` for at fungere korrekt. Dermed vil et klik på et link i opsummeringen betyde, at brugeren scroller ned til feltet med fejl uden at scrolle forbi feltets label. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 
@@ -133,13 +133,13 @@ Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhø
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Manuel tilføjelse af fejl
+### Manuel tilføjelse af fejl {#{% include create-id.html heading="Manuel tilføjelse af fejl" append="-custom" %}}
 
 Når du ikke bruger `auto`-attributten, er du selv ansvarlig for at administrere fejlene og skal manuelt oprette strukturen med fejlene.
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary-manual" heading_tag="h4" subheading_tag="h5" %}
 
-### Automatisk synkronisering
+### Automatisk synkronisering {#{% include create-id.html heading="Automatisk synkronisering" append="-custom" %}}
 
 Med `auto`-attributten opdateres fejloversigten automatisk baseret på synlige `fds-error-message` elementer i understøttede wrappers.
 

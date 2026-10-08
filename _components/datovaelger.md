@@ -24,15 +24,15 @@ difference_warning: true
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Når der er specifikt udvalgte datoer at vælge imellem som fx ved bookninger og planlægning med åbne og lukkede datoer, og hvor det gavner brugeren at se hvilke ugedage forskellige datoer rammer.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Datoangivelser som er givet for brugeren, som fx en fødselsdato. Brug da komponenten {% include links/component-guideline-link.html linktext="datofelter" %}.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 {% include dos-donts-box.html component="datepicker-dos-donts" %}
 
@@ -70,11 +70,11 @@ Bemærk, at deaktiverede datovælgere hverken har kontrastkrav eller kan få fok
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="date-picker" copybutton=true %}
 
-### Javascript
+### Javascript {#{% include create-id.html heading="Javascript" append="-kode" %}}
 
 Datovælger-komponenten kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 
@@ -212,7 +212,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 `fds-date-picker` kræver følgende struktur: Et `label`-element, en `div` indeholdende et `input`-element, samt en indre `div` med et `fds-date-picker-grid`-element.
 
-### fds-date-picker
+### fds-date-picker {#{% include create-id.html heading="fds-date-picker" append="-custom" %}}
 
 `fds-date-picker` anvender light DOM.
 
@@ -236,7 +236,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 | close()  | Luk datovælgeren.                           |
 | toggle() | Skift mellem at åbne og lukke datovælgeren. |
 
-### fds-date-picker-grid
+### fds-date-picker-grid {#{% include create-id.html heading="fds-date-picker-grid" append="-custom" %}}
 
 `fds-date-picker-grid` anvender shadow DOM. Bemærk, at `fds-date-picker-grid` som udgangspunkt bruges inden i `fds-date-picker` og ikke er tiltænkt at blive brugt alene.
 
@@ -267,41 +267,41 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 | date-clicked  | Udløses når en dato i kalenderen klikkes eller vælges med tastaturet. |
 | date-selected | Udløses når den valgte dato ændres.                                 |
 
-### fds-help-text
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Fejl
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-helptext" heading_tag="h4" subheading_tag="h5" %}
 
-### Begræns mulige datoer
+### Begræns mulige datoer {#{% include create-id.html heading="Begræns mulige datoer" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-minmax" heading_tag="h4" subheading_tag="h5" %}
 
-### Fast værdi
+### Fast værdi {#{% include create-id.html heading="Fast værdi" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-default" heading_tag="h4" subheading_tag="h5" %}
 
-### Datoformat
+### Datoformat {#{% include create-id.html heading="Datoformat" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-format" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-### Start- og slutdato
+### Start- og slutdato {#{% include create-id.html heading="Start- og slutdato" append="-custom" %}}
 
 `start-date-id` og `end-date-id` læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.
 

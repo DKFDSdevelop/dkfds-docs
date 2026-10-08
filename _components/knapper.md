@@ -28,15 +28,15 @@ tabs: "Retningslinjer, kode"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Du kan bruge de forskellige typer af knapper til at kommunikere centrale og vigtige funktioner til brugerne, såsom “Næste” trin i en selvbetjeningsløsning, eller ”Gem”, ”Rediger”, ”Log ud” m.fl.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Brug ikke knapper til at navigere til andre sider. Der skal du i stedet anvende {% include links/internal-link.html linktext="links" %}.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Hierarkisk er der tre typer af knapper, Primær, Sekundær og Tertiær, der bruges til at fremhæve udvalgte handlinger.
 
@@ -117,7 +117,7 @@ Ikoner fungerer altid bedst i kombination med tekst. Anvend derfor altid {% inc
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="buttons" copybutton=true %}
 

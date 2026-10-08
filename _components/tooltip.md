@@ -23,17 +23,17 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Brug tooltips til præcisering af specifikke elementer i brugergrænsefladen. 
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Tooltips anvendes ikke til informationer, der er essentielle for at brugeren kan gennemføre løsningen. Hvis indholdet er vigtigt for brugerens succes, så placer indholdet på siden som brød- eller hjælpetekst i stedet for.
 
 Placér ikke interaktive elementer såsom knapper og links inde i tooltips.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Gør indholdet i tooltips så kort og koncist som muligt, da længere tekster er sværere at skimme og blokerer andet indhold på skærmen i højere grad. 
 
@@ -47,7 +47,7 @@ Vær opmærksom på, at tooltipteksten ikke kan ses på print. Hvis indholdet er
 
 {% include dos-donts-box.html component="tooltip-dos-donts" %}
 
-### Placering af tooltips
+### Placering af tooltips {#{% include create-id.html heading="Placering af tooltips" %}}
 
 Placering af tooltips er vigtigt, så de ikke skygger for det indhold på siden som de relaterer til. Placeres de forkert, kan brugeren blive nødt til at lukke og åbne tooltippet igen for at forstå sammenhængen.
 
@@ -111,7 +111,7 @@ Vær varsom med at anvende hover-tooltips på interaktive elementer såsom knapp
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="tooltip-helpicon" copybutton=true %}
 
@@ -191,7 +191,7 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-tooltip-icon
+### fds-tooltip-icon {#{% include create-id.html heading="fds-tooltip-icon" append="-custom" %}}
 
 #### Attributter
 
@@ -212,7 +212,7 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 | close()  | Luk tooltippet.                               |
 | toggle() | Skift mellem at åbne og lukke tooltippet.     |
 
-### fds-tooltip
+### fds-tooltip {#{% include create-id.html heading="fds-tooltip" append="-custom" %}}
 
 `fds-tooltip` skal indeholde præcis ét element, som fungerer som trigger for tooltippet.
 
@@ -237,30 +237,30 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Placering
+### Placering {#{% include create-id.html heading="Placering" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-placement" heading_tag="h4" subheading_tag="h5" %}
 
-### Radioknap med tooltip
+### Radioknap med tooltip {#{% include create-id.html heading="Radioknap med tooltip" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-radio-buttons" heading_tag="h4" subheading_tag="h5" %}
 
-### Tjekboks med tooltip
+### Tjekboks med tooltip {#{% include create-id.html heading="Tjekboks med tooltip" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-checkbox" heading_tag="h4" subheading_tag="h5" %}
 
-### Inputfelt med tooltip
+### Inputfelt med tooltip {#{% include create-id.html heading="Inputfelt med tooltip" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-input-field" heading_tag="h4" subheading_tag="h5" %}
 
-### Brødtekst med tooltip
+### Brødtekst med tooltip {#{% include create-id.html heading="Brødtekst med tooltip" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-text" heading_tag="h4" subheading_tag="h5" %}
 
-### Ikoner med hover-tooltip
+### Ikoner med hover-tooltip {#{% include create-id.html heading="Ikoner med hover-tooltip" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-hover" heading_tag="h4" subheading_tag="h5" %}
 
-### Knap med hover-tooltip
+### Knap med hover-tooltip {#{% include create-id.html heading="Knap med hover-tooltip" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-hover-button" heading_tag="h4" subheading_tag="h5" %}

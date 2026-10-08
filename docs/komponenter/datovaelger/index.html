@@ -1792,15 +1792,15 @@
 
 <h2 id="saadan-bruges-komponenten">Sådan bruges komponenten</h2>
 
-<h3>Anvendes til</h3>
+<h3 id="anvendes-til">Anvendes til</h3>
 
 <p>Når der er specifikt udvalgte datoer at vælge imellem som fx ved bookninger og planlægning med åbne og lukkede datoer, og hvor det gavner brugeren at se hvilke ugedage forskellige datoer rammer.</p>
 
-<h3>Anvendes ikke til</h3>
+<h3 id="anvendes-ikke-til">Anvendes ikke til</h3>
 
 <p>Datoangivelser som er givet for brugeren, som fx en fødselsdato. Brug da komponenten <a href="/komponenter/datofelter/">datofelter</a>.</p>
 
-<h3>Vejledning</h3>
+<h3 id="vejledning">Vejledning</h3>
 
 <div class=" component-preview-datepicker-dos-donts">
     <div class="component-example">
@@ -1972,7 +1972,7 @@
 
 <h2 id="installation-kode">Installation</h2>
 
-<h3>HTML Struktur</h3>
+<h3 id="html-struktur-kode">HTML Struktur</h3>
 
 <div class="component-preview component-preview-code  component-code-date-picker">
     
@@ -2000,7 +2000,7 @@
     
 </div>
 
-<h3>Javascript</h3>
+<h3 id="javascript-kode">Javascript</h3>
 
 <p>Datovælger-komponenten kræver JavaScript for at fungere. Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten manuelt med nedenstående:</p>
 
@@ -2350,7 +2350,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
 
 <p><code>fds-date-picker</code> kræver følgende struktur: Et <code>label</code>-element, en <code>div</code> indeholdende et <code>input</code>-element, samt en indre <code>div</code> med et <code>fds-date-picker-grid</code>-element.</p>
 
-<h3>fds-date-picker</h3>
+<h3 id="fds-date-picker-custom">fds-date-picker</h3>
 
 <p><code>fds-date-picker</code> anvender light DOM.</p>
 
@@ -2412,7 +2412,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
   </tbody>
 </table>
 
-<h3>fds-date-picker-grid</h3>
+<h3 id="fds-date-picker-grid-custom">fds-date-picker-grid</h3>
 
 <p><code>fds-date-picker-grid</code> anvender shadow DOM. Bemærk, at <code>fds-date-picker-grid</code> som udgangspunkt bruges inden i <code>fds-date-picker</code> og ikke er tiltænkt at blive brugt alene.</p>
 
@@ -2502,7 +2502,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
   </tbody>
 </table>
 
-<h3>fds-help-text</h3>
+<h3 id="fds-help-text-custom">fds-help-text</h3>
 
 <h4>Attributter</h4>
 
@@ -2547,7 +2547,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </tbody>
 </table>
 
-<h3>fds-error-message</h3>
+<h3 id="fds-error-message-custom">fds-error-message</h3>
 
 <h4>Attributter</h4>
 
@@ -2605,7 +2605,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
 
 <h2 id="varianter-custom">Varianter</h2>
 
-<h3>Fejl</h3>
+<h3 id="fejl-custom">Fejl</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2679,7 +2679,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3>Hjælpetekst</h3>
+<h3 id="hjaelpetekst-custom">Hjælpetekst</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2750,7 +2750,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3>Begræns mulige datoer</h3>
+<h3 id="begraens-mulige-datoer-custom">Begræns mulige datoer</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2818,7 +2818,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3>Fast værdi</h3>
+<h3 id="fast-vaerdi-custom">Fast værdi</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2886,7 +2886,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3>Datoformat</h3>
+<h3 id="datoformat-custom">Datoformat</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2957,7 +2957,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3>Deaktiveret</h3>
+<h3 id="deaktiveret-custom">Deaktiveret</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -3025,7 +3025,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3>Start- og slutdato</h3>
+<h3 id="start--og-slutdato-custom">Start- og slutdato</h3>
 
 <p><code>start-date-id</code> og <code>end-date-id</code> læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.</p>
 

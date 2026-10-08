@@ -25,7 +25,7 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Brug headeren til at give brugeren et “ankerpunkt”, der er ens på tværs af trin og undersider i selvbetjeningsløsningen.
 
@@ -33,13 +33,13 @@ Brug headeren til at kommunikere portal, NemLog-in-oplysninger, ansvarlig myndig
 
 En eventuel overordnet navigation (topnavigation) skal også placeres i headeren, så brugeren altid kan navigere rundt i selvbetjeningsløsningen.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Anvend ikke headeren andre steder i løsningen end i toppen af siden.
 
 Brug ikke topnavigationen som faneblade, anvend da {% include links/component-guideline-link.html linktext="faneblade" %}. 
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Tag et kig på {% include links/internal-link.html linktext="eksemplerne på selvbetjeningsløsninger" %} for at se, hvordan komponenten passer ind i en komplet løsning.
 
@@ -64,7 +64,7 @@ Navigation (topnavigation) i løsningen og søgefelt.
 
 ## Varianter {#{% include create-id.html heading="Varianter" %}}
 
-### Simpel header
+### Simpel header {#{% include create-id.html heading="Simpel header" %}}
 
 {% include code/preview-image.html component="header-simple" %}
 
@@ -82,7 +82,7 @@ På små skærme foldes indhold vedr. log ind-information, ansvarlig myndighed o
 
 Menupunkter der ikke er plads til i sidens bredde samles i en “Mere”-menu, der vises som overflow-menu.
 
-### Header med sprogvælger
+### Header med sprogvælger {#{% include create-id.html heading="Header med sprogvælger" %}}
 
 Hvis din selvbetjeningsløsning skal være tilgængelig på flere sprog, placeres sprogvælgeren både som overflow-menu øverst i række 1 og i sidens footer (se {% include links/component-guideline-link.html linktext="sprogvælger" %}). Nedenstående eksempel viser udelukkende sprogvælgerens header-variant.
 
@@ -181,7 +181,7 @@ Anden del skal indsættes i mobilmenuen, igen <em>før</em> række 1 (portalinfo
 
 {% include code/syntax.html component="switch-language-mobile" copybutton=true %}
 
-### JavaScript
+### JavaScript {#{% include create-id.html heading="JavaScript" %}}
 
 Headeren kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt.
 
