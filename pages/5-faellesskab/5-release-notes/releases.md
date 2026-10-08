@@ -252,7 +252,7 @@ Retningslinjer for hjørner, streger og skygger er blevet ændret og alle kompon
 - Ændret tykkelse og farve på fokusstreger.
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Fjernet indhold</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="fjernet-indhold">Fjernet indhold</h3>
 </div>
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Fjernet migreringsfilerne introduceret i version 10.0.0.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Adskillige Sass-variable er enten slettet, tilføjet eller ændret som følge af de grundlæggende designændringer.
@@ -301,7 +301,7 @@ Retningslinjer for hjørner, streger og skygger er blevet ændret og alle kompon
 <div><span class="small-text mt-0 d-block">13-02-2025</span></div>
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Fejlrettelser</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-2-1-Fejlrettelser">Fejlrettelser</h3>
 </div>
 - Rettet fejl, hvor menuknappen ikke altid fik fokus, når man brugte Escape-tasten til at lukke {% include links/component-code-link.html linktext="mobilmenuen" %}.
 - Rettet fejl, hvor {% include links/component-guideline-link.html linktext="headernavigationen" %} ikke altid blev opdateret efter `DKFDS.Navigation().init()` (fejlrettelse accepteret fra pull request på GitHub).
@@ -310,7 +310,7 @@ Retningslinjer for hjørner, streger og skygger er blevet ændret og alle kompon
 {% include links/github-link.html number="266" afternumber=" på GitHub" %}
 
 <div class="d-flex align-items-center mt-5 mb-4">
-  <h3 class="h4 mt-0 mb-0 mr-3">Ændringer på designsystem.dk</h3>
+  <h3 class="h4 mt-0 mb-0 mr-3" id="version-10-2-1-aendringer">Ændringer på designsystem.dk</h3>
 </div>
 - Fjernet kravværktøjet og i stedet tilføjet siderne {% include links/internal-link.html linktext="Om Det Fælles Designsystem" %} og {% include links/internal-link.html linktext="Brugerinddragelse" %}.
 - Fjernet roadmap. Anvend i stedet {% include links/external-link.html linktext="GitHub Discussions" %} for information om, hvilke større opgaver FDS-teamet arbejder på til kommende releases.

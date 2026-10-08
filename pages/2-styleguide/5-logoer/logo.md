@@ -39,11 +39,11 @@ Skal din løsning på Virk skal der være et Virk logo i headeren.
 - Højde: max 4.8rem (48px)
 - Bredde: max 4 kolonner
 
-### Tilgængelighed {#{% include create-id.html heading="Tilgængelighed" %}}
+### Tilgængelighed {#{% include create-id.html heading="Tilgængelighed portallogo" %}}
 
 - Giv logoet en alt-tekst, der beskriver at brugeren går til forsiden af borger.dk eller Virk: “[Indsæt portal] forside”.
 
-### Brugervenlighed {#{% include create-id.html heading="Brugervenlighed" %}}
+### Brugervenlighed {#{% include create-id.html heading="Brugervenlighed portallogo" %}}
 
 - Portal-logoet går til portalens forside
 - Sørg for at advare brugeren om at denne forlader selvbetjeningsløsningen, hvis der klikkes på logoet, og få brugeren til at bekræfte, at det er den handling, der ønskes.
@@ -70,11 +70,11 @@ Gør kun brug af muligheden for at placere et myndighedslogo i footeren, hvis de
 - Højde: max 3.2rem (32px)
 - Bredde: max 4 kolonner
 
-### Tilgængelighed {#{% include create-id.html heading="Tilgængelighed" %}}
+### Tilgængelighed {#{% include create-id.html heading="Tilgængelighed myndighedslogo" %}}
 
 Giv logoet en alt-tekst, der beskriver at brugeren åbner myndighedens forside: “[Indsæt myndighed] forside”.
 
-### Brugervenlighed {#{% include create-id.html heading="Brugervenlighed" %}}
+### Brugervenlighed {#{% include create-id.html heading="Brugervenlighed myndighedslogo" %}}
 
 - Logoet i {% include links/component-guideline-link.html linktext="footeren" %} går til myndighedens forside
 - Sørg for at advare brugeren om at denne forlader selvbetjeningsløsningen, hvis der klikkes på logoet, og få brugeren til at bekræfte, at det er den handling, der ønskes.

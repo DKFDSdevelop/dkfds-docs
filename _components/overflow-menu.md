@@ -64,15 +64,15 @@ Overvej om det er nødvendigt med dette ekstra navigationselement.
 
 {% include code/preview-box.html component="sort" title="Eksempel på sorteringsfunktion med overflow menu" link=true code="/komponenter/overflowmenu/#sortering-kode" %}
 
-### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
+### Anvendes til {#{% include create-id.html heading="Sortering Anvendes til" %}}
 
 Sortering med overflow menu anvendes til at sortere indhold af forskellig karakter.
 
-### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
+### Anvendes ikke til {#{% include create-id.html heading="Sortering Anvendes ikke til" %}}
 
 Sortering med overflow menu anbefales ikke til tabeller med mange sorterbare kolonner. Her foretrækkes i stedet sorteringsikoner i tabellens kolonner som vist på siden Tabeller.
 
-### Vejledning {#{% include create-id.html heading="Vejledning" %}}
+### Vejledning {#{% include create-id.html heading="Sortering Vejledning" %}}
 
 Indhold kan sorteres alfabetisk, efter tal eller efter dato.
 
@@ -150,7 +150,7 @@ Overflow menu skjuler indhold for brugeren og bør anvendes i begrænset omfang.
 
 {% include code/syntax.html component="sort" link=true copybutton=true guidelines="/komponenter/overflowmenu/#sortering" %}
 
-### JavaScript {#{% include create-id.html heading="JavaScript" append="-kode" %}}
+### JavaScript {#{% include create-id.html heading="Sortering JavaScript" append="-kode" %}}
 
 Overflow menu med sorteringsfunktion kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 
