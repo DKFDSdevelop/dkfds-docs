@@ -25,7 +25,7 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Radioknapper giver brugeren mulighed for at vælge en enkelt værdi ud fra en synlig liste.
 
@@ -33,7 +33,7 @@ Når brugeren skal have overblik over sine mulige valg.
 
 Når listen over mulige valg kan være på en mobilvisning.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Når brugeren skal kunne vælge mere end én værdi ud fra en synlig liste. Her skal du i stedet bruge tjekbokse.
 
@@ -41,7 +41,7 @@ Du bør overveje at anvende en dropdown, hvis antallet af mulige værdier er for
 
 Når brugeren skal kunne undlade at vælge en værdi.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Brugeren skal kunne tappe eller klikke på radioknappen eller dens label for at vælge dens værdi. Den fravælges, når en anden radioknap vælges.
 
@@ -117,7 +117,7 @@ Hold det enkelt. Hvis du har behov for at eksponere større mængder af ekstra f
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="radiobutton" copybutton=true %}
 
@@ -129,7 +129,7 @@ Giv hver radioknap sit eget id og angiv samme værdi til det tilhørende label.
 
 Radioknappernes design er ændret i forhold til standardvisningen for at gøre dem tydeligere og øge deres visuelle respons til brugerens interaktion.
 
-### JavaScript
+### JavaScript {#{% include create-id.html heading="JavaScript" append="-kode" %}}
 
 Radioknapper med skjult indhold kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 
@@ -184,7 +184,7 @@ Det element som skal collapses/expandes skal have følgende:
 
 `fds-radio-button` kræver et `input`- og et `label`-element. `fds-radio-button-group` kræver et `fieldset`-element, der omslutter gruppens `legend` og de enkelte radioknapper.
 
-### fds-radio-button
+### fds-radio-button {#{% include create-id.html heading="fds-radio-button" append="-custom" %}}
 
 #### Attributter
 
@@ -207,21 +207,21 @@ Det element som skal collapses/expandes skal have følgende:
 |--------------|---------------------------------------------------------------------------------------------------|
 | radio-changed | Udløses når radioknappens valgte tilstand ændres. `event.detail.checked` angiver, om den er valgt. |
 
-### fds-help-text
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Fejl
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
 
 #### Hjælpetekst til enkelte radioknap
 
@@ -231,10 +231,10 @@ Det element som skal collapses/expandes skal have følgende:
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-helptext" heading_tag="h5" subheading_tag="h6" %}
 
-### Skjult indhold (Collapse)
+### Skjult indhold (Collapse) {#{% include create-id.html heading="Skjult indhold (Collapse)" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-collapse" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret radioknapgruppe
+### Deaktiveret radioknapgruppe {#{% include create-id.html heading="Deaktiveret radioknapgruppe" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-disabled" heading_tag="h4" subheading_tag="h5" %}

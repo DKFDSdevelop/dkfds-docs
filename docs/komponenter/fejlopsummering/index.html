@@ -1792,11 +1792,11 @@
 
 <h2 id="saadan-bruges-komponenten">Sådan bruges komponenten</h2>
 
-<h3>Anvendes til</h3>
+<h3 id="anvendes-til">Anvendes til</h3>
 
 <p>Vis en fejlopsummering når der er fejl i noget af det brugeren har indtastet, også hvis der kun er én fejl på siden.</p>
 
-<h3>Vejledning</h3>
+<h3 id="vejledning">Vejledning</h3>
 
 <p>Opsummeringen vises øverst på siden/trinnet under headeren, men over sidens/trinnets øverste overskrift. Fejlopsummeringen indeholder alle de <a href="/komponenter/fejlmeddelelser/">fejlmeddelelser</a>, der måtte være på siden/trinnet, således at brugeren kan navigere direkte til de fejl og mangler, der skal rettes.</p>
 
@@ -1874,7 +1874,7 @@
 
 <h2 id="installation-kode">Installation</h2>
 
-<h3>HTML Struktur</h3>
+<h3 id="html-struktur-kode">HTML Struktur</h3>
 
 <div class="component-preview component-preview-code  component-code-error-summary">
     
@@ -2052,7 +2052,7 @@
     
 </div>
 
-<h3>Javascript</h3>
+<h3 id="javascript-kode">Javascript</h3>
 
 <p>Fejlopsummering kræver JavaScript samt attributten <code>data-module="error-summary"</code> for at fungere korrekt. Dermed vil et klik på et link i opsummeringen betyde, at brugeren scroller ned til feltet med fejl uden at scrolle forbi feltets label. Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten manuelt med nedenstående:</p>
 
@@ -2172,7 +2172,7 @@
 
 <h2 id="varianter-custom">Varianter</h2>
 
-<h3>Manuel tilføjelse af fejl</h3>
+<h3 id="manuel-tilfoejelse-af-fejl-custom">Manuel tilføjelse af fejl</h3>
 
 <p>Når du ikke bruger <code>auto</code>-attributten, er du selv ansvarlig for at administrere fejlene og skal manuelt oprette strukturen med fejlene.</p>
 
@@ -2190,7 +2190,7 @@
         <svg aria-label="Fejl" focusable="false">
             <use href="#error"></use>
         </svg>
-        <h2 id="error-summary-manual-heading">Der er problemer</h2>
+        <h4 id="error-summary-manual-heading">Der er problemer</h4>
         <ul>
             <li data-error-id="error77d50f12">
                 <a href="javascript:void(0);" class="function-link">Fornavn ikke indtastet</a>
@@ -2215,7 +2215,7 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:void(0);&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -2233,7 +2233,7 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-manual-heading&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:void(0);&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -2255,7 +2255,7 @@
     </div>
 </div>
 
-<h3>Automatisk synkronisering</h3>
+<h3 id="automatisk-synkronisering-custom">Automatisk synkronisering</h3>
 
 <p>Med <code>auto</code>-attributten opdateres fejloversigten automatisk baseret på synlige <code>fds-error-message</code> elementer i understøttede wrappers.</p>
 
@@ -2268,7 +2268,7 @@
         </a>
     </div>
     <div class="top-example">
-        <fds-error-summary auto="true" heading-id="error-summary-id1"></fds-error-summary>
+        <fds-error-summary auto="true" heading-id="error-summary-id1" heading-level="h4"></fds-error-summary>
 
 <fds-input>
     <label>Fornavn</label>
@@ -2290,7 +2290,7 @@
                     <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
 
                     <fds-tab-panel tab-key="web-component">
-                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span>
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-summary</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Fornavn<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
@@ -2305,10 +2305,10 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
                     </fds-tab-panel>
                     <fds-tab-panel tab-key="generated-html">
-                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-error-summary</span> <span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span> <span class="hljs-attr">heading-level</span>=<span class="hljs-string">&quot;h4&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Fejl&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#error&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;error-summary-id1&quot;</span>&gt;</span>Der er problemer<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-error-id</span>=<span class="hljs-string">&quot;error77d50f12&quot;</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;function-link&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#input-wrapper-error1&quot;</span>&gt;</span>Fornavn ikke indtastet<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>

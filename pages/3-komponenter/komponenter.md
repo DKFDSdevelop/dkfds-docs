@@ -286,7 +286,7 @@ tags:
     </li>
 </ul>
 
-## Hvis du mangler en komponent
+## Hvis du mangler en komponent {#{% include create-id.html heading="Hvis du mangler en komponent" %}}
 
 Vi stræber efter, at Det Fælles Designsystem skal imødekomme de gængse behov for selvbetjeningsløsninger på borger.dk og Virk. Det kan selvfølgelig ske, at netop din løsning har brug for en komponenttype, som (endnu) ikke findes i designsystemet. I så fald kan det være nødvendigt at udvikle komponenten selv.
 

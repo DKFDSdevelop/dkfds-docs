@@ -24,13 +24,13 @@ difference_warning: true
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Brug komponenten til at lade brugeren vælge og overføre en fil fra sin egen computer, tablet eller mobil.
 
 Du bør kun bruge vedhæftet fil, hvis det er strengt nødvendigt for din løsning.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Sørg for at brugeren får en positiv respons, når filen er overført.
 
@@ -57,7 +57,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-guidel
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="file-input" copybutton=true %}
 
@@ -82,7 +82,7 @@ Du bør anvende ovenstående kriterier til en skræddersyet løsning for denne t
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-upload-file
+### fds-upload-file {#{% include create-id.html heading="fds-upload-file" append="-custom" %}}
 
 #### Attributter
 
@@ -115,7 +115,7 @@ Du bør anvende ovenstående kriterier til en skræddersyet løsning for denne t
 | files-added   | Udløses når en eller flere filer tilføjes. `event.detail` indeholder et array af de tilføjede filer. |
 | files-removed | Udløses når en fil fjernes. `event.detail` indeholder den fjernede fil.                          |
 
-### fds-file-item
+### fds-file-item {#{% include create-id.html heading="fds-file-item" append="-custom" %}}
 
 `fds-file-item` oprettes automatisk af `fds-upload-file` for hver valgt fil og er ikke tiltænkt at blive oprettet manuelt.
 
@@ -126,21 +126,21 @@ Du bør anvende ovenstående kriterier til en skræddersyet løsning for denne t
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | remove-text | Definerer teksten på fjern-knappen for den enkelte fil. Sættes automatisk af `fds-upload-file`, når dennes `remove-text`-attribut ændres.  |
 
-### fds-help-text
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Hjælpetekst
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-helptext" heading_tag="h4" subheading_tag="h5" %}
 
-### Fejl
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
 
 For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som anden parameter i `addError()`. Når en fejl knyttes til en fil, vises fejlbeskeden direkte under den pågældende fil i fillisten, og filen markeres visuelt som ugyldig. Hvis fil-ID'et ikke angives, vises fejlen som en generel fejl for hele komponenten.
 
@@ -148,6 +148,6 @@ For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som 
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-file-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-disabled" heading_tag="h4" subheading_tag="h5" %}

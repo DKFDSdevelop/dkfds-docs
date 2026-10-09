@@ -28,19 +28,19 @@ tabs: "Retningslinjer, kode"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Overflow menuer anvendes i tilfælde, hvor brugeren skal tilbydes ekstra funktionalitet på begrænset plads.
 
 Overflow menuer er velegnede til funktioner som fx profilhåndtering o.l.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Overflow menu anvendes ikke til primær navigation.
 
 Overflow menu bør ikke have mindre end 3 punkter og mere end 7-10 punkter.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Indholdet af en overflow menu bør være handlingsanvisende i et klart sprog.
 
@@ -64,15 +64,15 @@ Overvej om det er nødvendigt med dette ekstra navigationselement.
 
 {% include code/preview-box.html component="sort" title="Eksempel på sorteringsfunktion med overflow menu" link=true code="/komponenter/overflowmenu/#sortering-kode" %}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Sortering Anvendes til" %}}
 
 Sortering med overflow menu anvendes til at sortere indhold af forskellig karakter.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Sortering Anvendes ikke til" %}}
 
 Sortering med overflow menu anbefales ikke til tabeller med mange sorterbare kolonner. Her foretrækkes i stedet sorteringsikoner i tabellens kolonner som vist på siden Tabeller.
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Sortering Vejledning" %}}
 
 Indhold kan sorteres alfabetisk, efter tal eller efter dato.
 
@@ -100,7 +100,7 @@ Sorteringsmenuen vises venstrestillet lige over det indhold, der sorteres.
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="overflow-menu" copybutton=true %}
 
@@ -124,7 +124,7 @@ Initialiser collapse/expand javascript med at placere følgende på button eleme
 
 Elementet som skal collapses/expandes skal have et matchende id `id="overflow1"` (placeres på `.overflow-menu-inner`)
 
-### JavaScript
+### JavaScript {#{% include create-id.html heading="JavaScript" append="-kode" %}}
 
 Collapse komponenten kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 
@@ -140,7 +140,7 @@ new DKFDS.Dropdown(document.getElementById('OVERFLOW-BUTTON-ID')).init();
 | fds.dropdown.open  | `button.js-dropdown` | Når en overflow menu bliver foldet ud, bliver eventet `fds.dropdown.open` udløst på knappen  |
 | fds.dropdown.close | `button.js-dropdown` | Når en overflow menu bliver foldet ind, bliver eventet `fds.dropdown.close` udløst på knappe |
 
-### Tilgængelighed
+### Tilgængelighed {#{% include create-id.html heading="Tilgængelighed" append="-kode" %}}
 
 Overflow menu skal kunne aktiveres og håndteres fra tastatur.
 
@@ -150,7 +150,7 @@ Overflow menu skjuler indhold for brugeren og bør anvendes i begrænset omfang.
 
 {% include code/syntax.html component="sort" link=true copybutton=true guidelines="/komponenter/overflowmenu/#sortering" %}
 
-### JavaScript
+### JavaScript {#{% include create-id.html heading="Sortering JavaScript" append="-kode" %}}
 
 Overflow menu med sorteringsfunktion kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med nedenstående:
 

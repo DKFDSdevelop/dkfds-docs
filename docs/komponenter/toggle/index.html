@@ -1770,15 +1770,15 @@
 
 <h2 id="saadan-bruges-komponenten">Sådan bruges komponenten</h2>
 
-<h3>Anvendes til</h3>
+<h3 id="anvendes-til">Anvendes til</h3>
 
 <p>En toggle switch bruges til at slå en enkelt mulighed til eller fra med det samme. Brugerens valg træder altid i kraft, så snart der trykkes på switchen.</p>
 
-<h3>Anvendes ikke til</h3>
+<h3 id="anvendes-ikke-til">Anvendes ikke til</h3>
 
 <p>En toggle switch anvendes ikke, hvis valget først træder i kraft efter klik på fx en gem-knap. Vælg i stedet radioknapper eller tjekbokse i de tilfælde.</p>
 
-<h3>Vejledning</h3>
+<h3 id="vejledning">Vejledning</h3>
 
 <p>Sørg for at brugen af toggle switch implementeres konsekvent i en løsning.</p>
 
@@ -1791,7 +1791,7 @@
 
 <h2 id="installation-kode">Installation</h2>
 
-<h3>HTML Struktur</h3>
+<h3 id="html-struktur-kode">HTML Struktur</h3>
 
 <div class="component-preview component-preview-code  component-code-toggle">
     
@@ -1826,7 +1826,7 @@
 
 <p>Brug <code>role="group"</code> for grupper af toggle switches og angiv en passende <code>aria-labelledby</code> (APG, Switch Pattern).</p>
 
-<h3>Javascript</h3>
+<h3 id="javascript-kode">Javascript</h3>
 
 <p>Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på switchen, skal man derfor selv - udover at implementere den ønskede funktionalitet - sørge for at skifte værdien i attributten <code>aria-checked</code> til <code>true</code>/<code>false</code>.</p>
 
@@ -1850,7 +1850,7 @@
     <div class="top-example">
         <div class="row">
     <div class="col-12 col-sm-7 col-md-5" role="group" aria-labelledby="toggle-switch-heading">
-        <h2 class="h5 mb-4 mt-0" id="toggle-switch-heading">Indstillinger</h2>
+        <h2 class="h5 mb-4 mt-0" id="toggle-switch-heading-settings">Indstillinger</h2>
         <fds-toggle-switch label="Vis afsluttede sager" state="on"></fds-toggle-switch>
         <fds-toggle-switch label="Vis sager ældre end et år" state="off"></fds-toggle-switch>
     </div>
@@ -1866,7 +1866,7 @@
                     <fds-tab-panel tab-key="web-component">
                         <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-sm-7 col-md-5&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading-settings&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis afsluttede sager&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;on&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis sager ældre end et år&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;off&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -1875,7 +1875,7 @@
                     <fds-tab-panel tab-key="generated-html">
                         <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-sm-7 col-md-5&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h5 mb-4 mt-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-switch-heading-settings&quot;</span>&gt;</span>Indstillinger<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis afsluttede sager&quot;</span> <span class="hljs-attr">state</span>=<span class="hljs-string">&quot;on&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;switch&quot;</span> <span class="hljs-attr">aria-checked</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Vis afsluttede sager<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -1909,7 +1909,7 @@
 
 <h2 id="konfiguration-custom">Konfiguration</h2>
 
-<h3>Attributter</h3>
+<h3 id="attributter-custom">Attributter</h3>
 
 <table class="table table--responsive-headers">
   <thead>
@@ -1934,7 +1934,7 @@
   </tbody>
 </table>
 
-<h3>Funktioner</h3>
+<h3 id="funktioner-custom">Funktioner</h3>
 
 <table class="table table--responsive-headers">
   <thead>
@@ -1959,7 +1959,7 @@
   </tbody>
 </table>
 
-<h3>Events</h3>
+<h3 id="events-custom">Events</h3>
 
 <table class="table table--responsive-headers">
   <thead>

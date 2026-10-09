@@ -55,7 +55,7 @@ custom_element: "Ready"
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
 
-### Anvendes til
+### Anvendes til {#{% include create-id.html heading="Anvendes til" %}}
 
 Brug til input af information i form af bogstaver og tal eller en kombination af begge.
 
@@ -63,11 +63,11 @@ Brug inputfelter når det er nemmere for brugeren at skrive information end at v
 
 Brug når brugeren skal kunne copy paste information ind i en formular.
 
-### Anvendes ikke til
+### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 Når brugeren skal vælge ud fra et prædefineret sæt af værdier (fx nogle få bestemte datoer) eller hvis der er strenge krav til datakonsistens, oftest i en løsning uden klientside validering (hvis brugerens input-format kan skabe fejl på serversiden).
 
-### Vejledning
+### Vejledning {#{% include create-id.html heading="Vejledning" %}}
 
 Brug primært formularelementer, når der er behov for, at brugeren kan tilføje information, som ikke kan vælges ud fra prædefinerede værdier, eller som løsningen ikke automatisk kan forudse ud fra brugerens andre indtastninger.
 
@@ -184,11 +184,11 @@ Stop ikke indtastningen, når brugeren overskrider antallet af tegn. Vis i stede
 
 ## Installation {#{% include create-id.html heading="Installation" append="-kode" %}}
 
-### HTML Struktur
+### HTML Struktur {#{% include create-id.html heading="HTML Struktur" append="-kode" %}}
 
 {% include code/syntax.html component="text-input" copybutton=true %}
 
-### Brug attributten “autocomplete”
+### Brug attributten “autocomplete” {#{% include create-id.html heading="Brug attributten autocomplete" append="-kode" %}}
 
 Brug `autocomplete` på inputfelter for at gøre det hurtigere for brugeren at udfylde formularen samt for at overholde reglerne for tilgængelighed ({% include links/external-link.html linktext="W3C (WCAG 2.1): Understanding SC 1.3.5: Identify Input Purpose (Level AA)" %}).
 
@@ -224,7 +224,7 @@ Hvis de fleste felter i en selvbetjeningsløsning er påkrævede, noterer man "(
 
 Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af skærmlæsere til at give info og status på indtastningen til brugeren.
 
-### JavaScript
+### JavaScript {#{% include create-id.html heading="JavaScript" append="-kode" %}}
 
 Karakterbegrænsning kræver JavaScript for at fungere. Man kan enten gøre brug af `DKFDS.init()` eller initiere komponenten manuelt med `init()`.
 
@@ -291,7 +291,7 @@ Inputfelter har en standard bredde på 32rem. For at ændre bredden bruges neden
 - `input-width-l` har en bredde på 40rem
 - `input-width-xl` har en bredde på 48rem
 
-### Bredde med tegn
+### Bredde med tegn {#{% include create-id.html heading="Bredde med tegn" append="-kode" %}}
 
 For at styre bredden på inputfelter efter tegn, skal der i stedet bruges nedenstående klasser:
 
@@ -312,7 +312,7 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
-### fds-input
+### fds-input {#{% include create-id.html heading="fds-input" append="-custom" %}}
 
 #### Attributter
 
@@ -322,15 +322,15 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 | show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
 | input-maxwidth       | Angiver inputfeltets maksimale bredde. Angives som et tal (4, 8, 11, 27) eller en størrelsesværdi (xxs, xs, s, m, l, xl).                                 |
 
-### fds-help-text
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
-### fds-input-affix
+### fds-input-affix {#{% include create-id.html heading="fds-input-affix" append="-custom" %}}
 
 #### Attributter
 
@@ -340,41 +340,41 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 | input-prefix | Indsæt et præfiks-element (tekst før inputfeltet).  |
 | input-suffix | Indsæt et suffiks-element (tekst efter inputfeltet). |
 
-### fds-character-limit
+### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-custom" %}}
 
 {% include web-component-shared-text/fds-character-limit.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
-### Fejl
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-help-text" heading_tag="h4" subheading_tag="h5" %}
 
-### Obligatoriske og frivillige inputfelter
+### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-required" heading_tag="h4" subheading_tag="h5" %}
 
-### Read-only
+### Read-only {#{% include create-id.html heading="Read-only" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-readonly" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-### Præfiks og suffiks
+### Præfiks og suffiks {#{% include create-id.html heading="Præfiks og suffiks" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-prefix" heading_tag="h4" subheading_tag="h5" %}
 
-### Karakterbegrænsning
+### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-custom" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-character-limit" heading_tag="h4" subheading_tag="h5" %}
 
-### Feltbredde
+### Feltbredde {#{% include create-id.html heading="Feltbredde" append="-custom" %}}
 
 #### Input bredde med rem
 
