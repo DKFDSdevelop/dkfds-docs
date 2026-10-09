@@ -16,11 +16,11 @@
 ================================================== -->
 
 
-<title>Eksempler | Det Fælles Designsystem</title>
-<meta property="og:title" content="Eksempler | Det Fælles Designsystem">
+<title>Multiselect | Det Fælles Designsystem</title>
+<meta property="og:title" content="Multiselect | Det Fælles Designsystem">
 
-<meta name="description" content="Eksempler på løsninger, der gør brug af Det Fælles Designsystem">
-<meta property="og:description" content="Eksempler på løsninger, der gør brug af Det Fælles Designsystem">
+<meta name="description" content="Multiselect gør det muligt for brugeren at vælge flere elementer i samme dropdown.">
+<meta property="og:description" content="Multiselect gør det muligt for brugeren at vælge flere elementer i samme dropdown.">
 
 
 
@@ -65,7 +65,7 @@
 </noscript>
 
   </head>
-  <body class="page-eksempler layout-styleguide">
+  <body class="page-multiselect layout-styleguide">
     <div class="hide-base-svg">
     <svg xmlns="http://www.w3.org/2000/svg">
         <symbol id="accessibility-new" viewBox="0 -960 960 960"><path d="M480-720q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720ZM360-80v-520q-60-5-122-15t-118-25l20-80q78 21 166 30.5t174 9.5q86 0 174-9.5T820-720l20 80q-56 15-118 25t-122 15v520h-80v-240h-80v240h-80Z"/></symbol>
@@ -261,7 +261,7 @@
     
   
 <li>
-            <a href="/komponenter/">
+            <a href="/komponenter/" aria-current="true">
                 <span>Komponenter</span>
             </a>
         </li>
@@ -269,7 +269,7 @@
     
   
 <li>
-            <a href="/eksempler/" aria-current="page">
+            <a href="/eksempler/">
                 <span>Eksempler</span>
             </a>
         </li>
@@ -706,7 +706,7 @@
 
         
         <li>
-            <fds-dropdown-menu expanded="false">
+            <fds-dropdown-menu expanded="true">
                 <button><span>Komponenter</span></button>
                 <div>
                     <ul>
@@ -940,7 +940,7 @@
 
         
         <li>
-            <a href="/komponenter/multiselect/">
+            <a href="/komponenter/multiselect/" aria-current="page">
                 <span>Multiselect</span>
             </a>
         </li>
@@ -1127,12 +1127,12 @@
 
         
         <li>
-            <fds-dropdown-menu expanded="true">
+            <fds-dropdown-menu expanded="false">
                 <button><span>Eksempler</span></button>
                 <div>
                     <ul>
                         <li>
-                            <a href="/eksempler/" aria-current="page">
+                            <a href="/eksempler/">
                                 <span>Eksempler <span class="helptext d-inline">(overblik)</span></span>
                             </a>
                         </li>
@@ -1321,8 +1321,19 @@
         
         <ul>
             <li>
-                <a href="/eksempler/selvbetjeningsloesninger/" >
-                    <span>Selvbetjeningsløsninger
+                <a href="/komponenter/accordions/" >
+                    <span>Accordions
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/anchorlinks/" >
+                    <span>Anchorlinks
                         
                         
                     </span>
@@ -1330,19 +1341,379 @@
 
             </li>
             <li>
-                <a href="/eksempler/patterns/" >
-                    <span>Patterns
+                <a href="/komponenter/badges/" >
+                    <span>Badges
                         
                         
                     </span>
                 </a>
 
-                
+            </li>
+            <li>
+                <a href="/komponenter/beskeder/" >
+                    <span>Beskeder
+                         <span class="d-inline" lang="en">(Alerts)</span>
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
 
             </li>
             <li>
-                <a href="/eksempler/templates/" >
-                    <span>Templates
+                <a href="/komponenter/broedkrumme/" >
+                    <span>Brødkrumme
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/cards/" >
+                    <span>Cards
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/cookiemeddelelse/" >
+                    <span>Cookiemeddelelse
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/datofelter/" >
+                    <span>Datofelter
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/datovaelger/" >
+                    <span>Datovælger
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/detaljer/" >
+                    <span>Detaljer
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/dropdown/" >
+                    <span>Dropdown
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/faneblade/" >
+                    <span>Faneblade
+                         <span class="d-inline" lang="en">(Tabs)</span>
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/fejlmeddelelser/" >
+                    <span>Fejlmeddelelser
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/fejlopsummering/" >
+                    <span>Fejlopsummering
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/footer/" >
+                    <span>Footer
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/funktionslink/" >
+                    <span>Funktionslink
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/skip-link/" >
+                    <span>Gå til sidens indhold (Skip-link)
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/header/" >
+                    <span>Header
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/inputfelter/" >
+                    <span>Inputfelter
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/knapper/" >
+                    <span>Knapper
+                         <span class="d-inline" lang="en">(Buttons)</span>
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/spinner/" >
+                    <span>Loading spinner
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/modal/" >
+                    <span>Modal
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/multiselect/"  aria-current="page" >
+                    <span>Multiselect
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/overflowmenu/" >
+                    <span>Overflow menu
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/paginering/" >
+                    <span>Paginering
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/radioknap/" >
+                    <span>Radioknap
+                         <span class="d-inline" lang="en">(Radio button)</span>
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/sprogvaelger/" >
+                    <span>Sprogvælger
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/search/" >
+                    <span>Søgefelt
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/tables/" >
+                    <span>Tabeller
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/tags/" >
+                    <span>Tags
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/tekstomraade/" >
+                    <span>Tekstområde
+                         <span class="d-inline" lang="en">(Textarea)</span>
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/tilbage-link/" >
+                    <span>Tilbage-link
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/tilbage-til-top/" >
+                    <span>Tilbage til toppen
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/tjekboks/" >
+                    <span>Tjekboks
+                         <span class="d-inline" lang="en">(Checkbox)</span>
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/toastbesked/" >
+                    <span>Toastbesked
+                        
+                        
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/toggle/" >
+                    <span>Toggle switch
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/tooltip/" >
+                    <span>Tooltip
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/trinindikator/" >
+                    <span>Trinindikator
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/fil-upload/" >
+                    <span>Vedhæft fil
+                        
+                         <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
+                            <use href="#check"></use>
+                        </svg>
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="/komponenter/venstremenu/" >
+                    <span>Venstremenu
                         
                         
                     </span>
@@ -1361,60 +1732,69 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/eksempler/">
+<section id="section-/komponenter/multiselect/">
 
                 <div class="subheading">
-                    
+                    Komponenter
                 </div>
 
                 
                 
-                <h1 id="eksempler">Eksempler</h1>
+                <h1 id="tjekboks-checkbox" class="d-flex align-items-center">Multiselect <strong class="badge ml-305">Beta</strong></h1>
                 
 
                 
-                <p class="font-lead">Eksemplerne viser, hvordan forskellige typer af selvbetjeningsløsninger kan sættes op i layout og flow.</p>
-                <p>Du bør bestræbe dig på at følge standarderne for opsummerings- og kvitteringssider, så disse bliver konsistente på tværs af selvbetjeningsløsninger.</p>
-
-<ul class="card-row mt-5">
-    <li>
-        <a class="card long mb-4" href="/eksempler/selvbetjeningsloesninger/">
-    <div class="card-content">
-        <h2 class="card-heading">Selvbetjenings&shy;løsninger</h2>
-        <p>Eksempler på hele formular-flows/selvbetjeningsløsninger, som er bygget med Det Fælles Designsystem.</p>
+                <p class="font-lead">Multiselect gør det muligt for brugeren at vælge flere elementer i samme dropdown.</p>
+                
+<div class="show-code-in-box">
+    
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-multiselect/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
     </div>
-    <svg class="icon-svg card-icon" focusable="false" aria-hidden="true">
-        <use href="#arrow-forward"></use>
-    </svg>
-</a>
-    </li>
-    <li>
-        <a class="card long mb-4" href="/eksempler/patterns/">
-    <div class="card-content">
-        <h2 class="card-heading">Patterns</h2>
-        <p>Patterns er designløsninger til specifikke brugerfokuserede opgaver, fx angivelse af telefonnummer og inputfelter med hentede data.</p>
+    <div class="top-example">
+        <fds-multiselect></fds-multiselect>
     </div>
-    <svg class="icon-svg card-icon" focusable="false" aria-hidden="true">
-        <use href="#arrow-forward"></use>
-    </svg>
-</a>
-    </li>
-    <li>
-        <a class="card long mb-4" href="/eksempler/templates/">
-    <div class="card-content">
-        <h2 class="card-heading">Templates</h2>
-        <p>Eksempler på specifikke sidetyper, som er bygget med Det Fælles Designsystem, fx dashboard, opsummering og kvittering.</p>
+    
+    <div class="code-in-box">
+        
+            <div class="code-content">
+                <h2 class="h4 mt-0">Web Component</h2>
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect</span>&gt;</span></code></pre>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        
     </div>
-    <svg class="icon-svg card-icon" focusable="false" aria-hidden="true">
-        <use href="#arrow-forward"></use>
-    </svg>
-</a>
-    </li>
-</ul>
+</div>
 
-<h2 id="designsystemet-er-bygget-med-sig-selv">Designsystemet er bygget med sig selv</h2>
+<nav class="anchorbox" aria-labelledby="anchorlinks">
+    <h2 class="anchortitle" id="anchorlinks">Indhold på siden</h2>
+    <ul class="anchorlist">
+        
+        <li class="anchorlink-guidelines"><a href="#saadan-bruges-komponenten">Sådan bruges komponenten</a></li>
+        
+        
+    </ul>
+</nav>
 
-<p>Du kan bruge designsystem.dk som eksempel, da det er bygget med sig selv og overholder sine egne regler.</p>
+<!--split-->
+
+<h2 id="saadan-bruges-komponenten">Sådan bruges komponenten</h2>
+
+<h3 id="anvendes-til">Anvendes til</h3>
+
+<h3 id="anvendes-ikke-til">Anvendes ikke til</h3>
+
+<h3 id="vejledning">Vejledning</h3>
 
             </section>
         </main>
