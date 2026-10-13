@@ -9050,6 +9050,10 @@ const fds_multiselect_styling_styles = `
         color: #1a1a1a;
     }
 
+    .field {
+        position: relative;
+    }
+
     .opener {
         appearance: none;
         display: flex;
@@ -9074,8 +9078,41 @@ const fds_multiselect_styling_styles = `
         outline: 3px solid #454545;
         outline-offset: 1px;
     }
+
+    .popup {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        max-width: 32rem;
+        z-index: 10;
+        background-color: white;
+        border: 1px solid #8E8E8E;
+        border-radius: 8px;
+        margin-top: 4px;
+    }
+
+    .listbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .option {
+        padding: calc(8px - 1px) calc(16px - 1px);
+        cursor: pointer;
+    }
+
+    .option[aria-selected="true"] {
+        background-color: #C6DBEF;
+    }
+
+    .option[data-active] {
+        outline: 2px solid #454545;
+        outline-offset: -2px;
+    }
 `;
 ;// ./src/js/custom-elements/multiselect/fds-multiselect.js
+
 
 const fds_multiselect_sheet = new CSSStyleSheet();
 fds_multiselect_sheet.replaceSync(fds_multiselect_styling_styles);
@@ -9083,26 +9120,262 @@ class FDSMultiselect extends HTMLElement {
   // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
 
   #initialized = false;
+  #optionElements = (() => new Map())();
+  #optionChips = (() => new Map())();
+
+  // #endregion
+
+  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
+
+  #handleOpenerClick = () => {
+    this.toggle();
+  };
+  #handleLabelClick = event => {
+    event.preventDefault();
+    this.shadowRoot.querySelector('.opener').focus();
+  };
+  #handlePopupMouseDown = event => {
+    event.preventDefault();
+  };
+  #handleListboxClick = event => {
+    const shadowOption = event.target.closest('.option');
+    if (!shadowOption) return;
+    this.#setActiveShadowOption(shadowOption);
+    const sourceOption = this.#findSourceForShadow(shadowOption);
+    if (sourceOption) {
+      sourceOption.toggle();
+    }
+  };
+  #handleOptionChange = event => {
+    const sourceOption = event.target;
+    const isSelected = sourceOption.getAttribute('data-selected') === 'true';
+    isSelected ? this.#addChip(sourceOption) : this.#removeChip(sourceOption);
+    const shadowOption = this.#optionElements.get(sourceOption);
+    if (shadowOption) {
+      shadowOption.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+    }
+    this.#updateOpenerText();
+  };
+  #handleChipClick = event => {
+    const chip = event.target.closest('.chip');
+    if (!chip) return;
+    const sourceOption = this.#findSourceForChip(chip);
+    if (sourceOption) {
+      sourceOption.deselect();
+    }
+  };
+  #handleOpenerKeyDown = event => {
+    const opener = this.shadowRoot.querySelector('.opener');
+    const isOpen = opener.getAttribute('aria-expanded') === 'true';
+    const shadowOptions = Array.from(this.shadowRoot.querySelectorAll('.option'));
+    switch (event.key) {
+      case 'ArrowDown':
+        event.preventDefault();
+        if (!isOpen) {
+          this.open();
+        } else {
+          const active = this.#getActiveShadowOption();
+          const currentIndex = active ? shadowOptions.indexOf(active) : -1;
+          let index = currentIndex + 1;
+          if (index > shadowOptions.length - 1) {
+            index = shadowOptions.length - 1;
+          }
+          this.#setActiveShadowOption(shadowOptions[index]);
+        }
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        if (!isOpen) {
+          this.open();
+        } else {
+          const active = this.#getActiveShadowOption();
+          const currentIndex = active ? shadowOptions.indexOf(active) : -1;
+          let index = currentIndex - 1;
+          if (index < 0) {
+            index = 0;
+          }
+          this.#setActiveShadowOption(shadowOptions[index]);
+        }
+        break;
+      case 'Home':
+        if (!isOpen) return;
+        event.preventDefault();
+        this.#setActiveShadowOption(shadowOptions[0]);
+        break;
+      case 'End':
+        if (!isOpen) return;
+        event.preventDefault();
+        this.#setActiveShadowOption(shadowOptions[shadowOptions.length - 1]);
+        break;
+      case 'Enter':
+      case ' ':
+        {
+          if (!isOpen) return;
+          event.preventDefault();
+          const active = this.#getActiveShadowOption();
+          if (active) {
+            const sourceOption = this.#findSourceForShadow(active);
+            if (sourceOption) {
+              sourceOption.toggle();
+            }
+          }
+          break;
+        }
+      case 'Escape':
+        if (!isOpen) return;
+        event.preventDefault();
+        this.close();
+        break;
+    }
+  };
 
   // #endregion
 
   // #region - PRIVATE METHODS ----------------------------------------------------------------------------
 
+  #findSourceForShadow(shadowOption) {
+    for (const [source, shadow] of this.#optionElements) {
+      if (shadow === shadowOption) {
+        return source;
+      }
+    }
+    return null;
+  }
+  #findSourceForChip(chip) {
+    for (const [source, chipEl] of this.#optionChips) {
+      if (chipEl === chip) {
+        return source;
+      }
+    }
+    return null;
+  }
+  #getActiveShadowOption() {
+    const opener = this.shadowRoot.querySelector('.opener');
+    const activeId = opener.getAttribute('aria-activedescendant');
+    if (!activeId) return null;
+    return this.shadowRoot.getElementById(activeId);
+  }
+  #setActiveShadowOption(shadowOption) {
+    if (!shadowOption) return;
+    const opener = this.shadowRoot.querySelector('.opener');
+    const previous = this.#getActiveShadowOption();
+    if (previous) {
+      previous.removeAttribute('data-active');
+    }
+    shadowOption.setAttribute('data-active', '');
+    opener.setAttribute('aria-activedescendant', shadowOption.id);
+    shadowOption.scrollIntoView({
+      block: 'nearest'
+    });
+  }
+  #addChip(sourceOption) {
+    if (this.#optionChips.has(sourceOption)) return;
+    const chip = document.createElement('button');
+    chip.classList.add('chip');
+    chip.setAttribute('type', 'button');
+    chip.textContent = sourceOption.textContent.trim();
+    const container = this.shadowRoot.querySelector('.chips');
+    container.appendChild(chip);
+    this.#optionChips.set(sourceOption, chip);
+  }
+  #removeChip(sourceOption) {
+    const chip = this.#optionChips.get(sourceOption);
+    if (!chip) return;
+    chip.remove();
+    this.#optionChips.delete(sourceOption);
+  }
+  #updateOpenerText() {
+    const openerText = this.shadowRoot.querySelector('.opener-text');
+    const chips = this.shadowRoot.querySelectorAll('.chip');
+    if (chips.length === 0) {
+      openerText.textContent = 'Vælg en eller flere';
+      return;
+    }
+    const labels = [];
+    for (const chip of chips) {
+      labels.push(chip.textContent.trim());
+    }
+    openerText.textContent = labels.join(', ');
+  }
+  #buildOptions() {
+    const listbox = this.shadowRoot.querySelector('.listbox');
+    const optionsToBuild = this.querySelectorAll('fds-multiselect-option');
+    for (const sourceOption of optionsToBuild) {
+      const shadowOption = document.createElement('div');
+      shadowOption.classList.add('option');
+      shadowOption.id = generateAndVerifyUniqueId('fds-multiselect-option-shadow');
+      shadowOption.setAttribute('role', 'option');
+      shadowOption.setAttribute('tabindex', '-1');
+      shadowOption.setAttribute('aria-selected', sourceOption.getAttribute('data-selected') === 'true' ? 'true' : 'false');
+      shadowOption.textContent = sourceOption.textContent.trim();
+      listbox.appendChild(shadowOption);
+      this.#optionElements.set(sourceOption, shadowOption);
+      if (sourceOption.getAttribute('data-selected') === 'true') {
+        this.#addChip(sourceOption);
+      }
+    }
+  }
   #setupHTML() {
     if (this.shadowRoot.querySelector('.opener')) return;
-    const label = document.createElement('span');
+    const label = document.createElement('label');
+    label.id = 'multiselect-label';
     label.classList.add('opener-label');
-    label.id = 'opener-label';
+    label.setAttribute('for', 'opener');
     label.textContent = 'Vælg frugter';
     const opener = document.createElement('button');
+    opener.id = 'opener';
     opener.classList.add('opener');
     opener.setAttribute('type', 'button');
     opener.setAttribute('role', 'combobox');
     opener.setAttribute('aria-haspopup', 'listbox');
     opener.setAttribute('aria-expanded', 'false');
-    opener.setAttribute('aria-labelledby', 'opener-label');
-    opener.textContent = 'Vælg en eller flere';
-    this.shadowRoot.append(label, opener);
+    opener.setAttribute('aria-controls', 'listbox');
+    opener.setAttribute('aria-activedescendant', '');
+    const openerText = document.createElement('span');
+    openerText.classList.add('opener-text');
+    openerText.textContent = 'Vælg en eller flere';
+    opener.appendChild(openerText);
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.hidden = true;
+    const listbox = document.createElement('div');
+    listbox.id = 'listbox';
+    listbox.classList.add('listbox');
+    listbox.setAttribute('role', 'listbox');
+    listbox.setAttribute('aria-multiselectable', 'true');
+    listbox.setAttribute('aria-labelledby', label.id);
+    popup.append(listbox);
+    const field = document.createElement('div');
+    field.classList.add('field');
+    field.append(opener, popup);
+    const chips = document.createElement('div');
+    chips.classList.add('chips');
+    this.shadowRoot.append(label, field, chips);
+  }
+  #addEventListeners() {
+    this.shadowRoot.querySelector('.opener').addEventListener('click', this.#handleOpenerClick);
+    this.shadowRoot.querySelector('.opener').addEventListener('keydown', this.#handleOpenerKeyDown);
+    this.shadowRoot.querySelector('.opener-label').addEventListener('click', this.#handleLabelClick);
+    this.shadowRoot.querySelector('.popup').addEventListener('mousedown', this.#handlePopupMouseDown);
+    this.shadowRoot.querySelector('.listbox').addEventListener('click', this.#handleListboxClick);
+    this.shadowRoot.querySelector('.chips').addEventListener('click', this.#handleChipClick);
+    this.addEventListener('fds-multiselect-option-change', this.#handleOptionChange);
+  }
+  #removeEventListeners() {
+    this.shadowRoot.querySelector('.opener').removeEventListener('click', this.#handleOpenerClick);
+    this.shadowRoot.querySelector('.opener').removeEventListener('keydown', this.#handleOpenerKeyDown);
+    this.shadowRoot.querySelector('.opener-label').removeEventListener('click', this.#handleLabelClick);
+    this.shadowRoot.querySelector('.popup').removeEventListener('mousedown', this.#handlePopupMouseDown);
+    this.shadowRoot.querySelector('.listbox').removeEventListener('click', this.#handleListboxClick);
+    this.shadowRoot.querySelector('.chips').removeEventListener('click', this.#handleChipClick);
+    this.removeEventListener('fds-multiselect-option-change', this.#handleOptionChange);
+  }
+  #init() {
+    this.#setupHTML();
+    this.#buildOptions();
+    this.#addEventListeners();
+    this.#updateOpenerText();
+    this.#initialized = true;
   }
 
   // #endregion
@@ -9121,10 +9394,36 @@ class FDSMultiselect extends HTMLElement {
 
   // #region - PUBLIC METHODS -----------------------------------------------------------------------------
 
-  init() {
-    if (this.#initialized) return;
-    this.#setupHTML();
-    this.#initialized = true;
+  open() {
+    if (!this.#initialized) return;
+    const opener = this.shadowRoot.querySelector('.opener');
+    const popup = this.shadowRoot.querySelector('.popup');
+    opener.setAttribute('aria-expanded', 'true');
+    popup.hidden = false;
+    if (!this.#getActiveShadowOption()) {
+      const shadowOptions = this.shadowRoot.querySelectorAll('.option');
+      if (shadowOptions.length > 0) {
+        this.#setActiveShadowOption(shadowOptions[0]);
+      }
+    }
+  }
+  close() {
+    if (!this.#initialized) return;
+    const opener = this.shadowRoot.querySelector('.opener');
+    const popup = this.shadowRoot.querySelector('.popup');
+    opener.setAttribute('aria-expanded', 'false');
+    popup.hidden = true;
+    const active = this.#getActiveShadowOption();
+    if (active) {
+      active.removeAttribute('data-active');
+    }
+    opener.setAttribute('aria-activedescendant', '');
+  }
+  toggle() {
+    if (!this.#initialized) return;
+    const opener = this.shadowRoot.querySelector('.opener');
+    const isOpen = opener.getAttribute('aria-expanded') === 'true';
+    isOpen ? this.close() : this.open();
   }
 
   // #endregion
@@ -9132,7 +9431,7 @@ class FDSMultiselect extends HTMLElement {
   // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
 
   connectedCallback() {
-    this.init();
+    this.#init();
   }
 
   // #endregion
@@ -9140,16 +9439,8 @@ class FDSMultiselect extends HTMLElement {
   // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
 
   disconnectedCallback() {
+    this.#removeEventListeners();
     this.#initialized = false;
-  }
-
-  // #endregion
-
-  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
-
-  attributeChangedCallback(attribute, oldValue, newValue) {
-    if (!this.#initialized) return;
-    if (oldValue === newValue) return;
   }
 
   // #endregion
@@ -9164,103 +9455,53 @@ function registerMultiselect() {
 
 const fds_multiselect_option_styles = `
     :host {
-        display: block;
+        display: none;
     }
 `;
 const fds_multiselect_option_sheet = new CSSStyleSheet();
 fds_multiselect_option_sheet.replaceSync(fds_multiselect_option_styles);
 class FDSMultiselectOption extends HTMLElement {
-  // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
-
-  static observedAttributes = ['attr', 'ready'];
-
-  // #endregion
-
   // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
 
-  get attr() {
-    return this.getAttribute('attr');
+  get value() {
+    return this.getAttribute('value') ?? this.textContent.trim();
   }
-  set attr(value) {
-    value == null ? this.removeAttribute('attr') : this.setAttribute('attr', value);
-  }
-  get ready() {
-    return this.getAttribute('ready') !== 'false';
-  }
-  set ready(value) {
-    this.setAttribute('ready', value ? 'true' : 'false');
+  set value(value) {
+    value == null ? this.removeAttribute('value') : this.setAttribute('value', value);
   }
 
   // #endregion
 
   // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
 
-  #initialized = false;
-  #mutationObserver = null;
-
-  // #endregion
-
-  // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
-
-  #handleClick = event => {
-    console.log('Click event:', event);
-  };
-  #handleKeyDown = event => {
-    console.log('KeyDown event:', event);
-  };
-  #handleMutations = records => {
-    for (const {
-      attributeName,
-      target,
-      addedNodes,
-      removedNodes
-    } of records) {
-      console.log('attributeName', attributeName);
-      console.log('target', target);
-      console.log('addedNodes', addedNodes);
-      console.log('removedNodes', removedNodes);
-    }
-  };
+  #selected = false;
 
   // #endregion
 
   // #region - PRIVATE METHODS ----------------------------------------------------------------------------
 
   #setupHTML() {
-    // --- Slot ---
-    if (!this.shadowRoot.querySelector('slot[name="element-slot"]')) {
-      const slot = document.createElement('slot');
-      slot.name = 'element-slot';
-      this.shadowRoot.appendChild(slot);
-    }
-
-    // --- Button ---
-    let button = this.shadowRoot.querySelector('button');
-    if (!button) {
-      button = document.createElement('button');
-      this.shadowRoot.appendChild(button);
-    }
-    button.textContent = 'Click me';
+    if (this.id) return;
+    this.id = generateAndVerifyUniqueId('fds-multiselect-option');
   }
-  #addEventListeners() {
-    this.shadowRoot.querySelector('button').addEventListener('click', this.#handleClick);
-    this.shadowRoot.querySelector('button').addEventListener('keydown', this.#handleKeyDown);
+  #isDefaultSelected() {
+    const attr = this.getAttribute('default-selected');
+    if (attr === null) return false;
+    return attr.toLowerCase() !== 'false';
   }
-  #removeEventListeners() {
-    this.shadowRoot.querySelector('button').removeEventListener('click', this.#handleClick);
-    this.shadowRoot.querySelector('button').removeEventListener('keydown', this.#handleKeyDown);
+  #updateSelected(isSelected) {
+    if (this.#selected === isSelected) return;
+    this.#selected = isSelected;
+    this.setAttribute('data-selected', isSelected ? 'true' : 'false');
+    this.dispatchEvent(new CustomEvent('fds-multiselect-option-change', {
+      bubbles: true,
+      composed: true
+    }));
   }
-  #connectMutationObserver() {
-    let config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : mutationObserverConfig;
-    if (this.#mutationObserver) return;
-    this.#mutationObserver = new MutationObserver(this.#handleMutations);
-    this.#mutationObserver.observe(this, config);
-  }
-  #disconnectMutationObserver() {
-    if (this.#mutationObserver) {
-      this.#mutationObserver.disconnect();
-      this.#mutationObserver = null;
-    }
+  #init() {
+    this.#setupHTML();
+    this.#selected = this.#isDefaultSelected();
+    this.#updateSelected(this.#selected);
   }
 
   // #endregion
@@ -9279,11 +9520,14 @@ class FDSMultiselectOption extends HTMLElement {
 
   // #region - PUBLIC METHODS -----------------------------------------------------------------------------
 
-  init() {
-    this.#setupHTML();
-    this.#addEventListeners();
-    this.#connectMutationObserver();
-    this.#initialized = true;
+  select() {
+    this.#updateSelected(true);
+  }
+  deselect() {
+    this.#updateSelected(false);
+  }
+  toggle() {
+    this.#updateSelected(!this.#selected);
   }
 
   // #endregion
@@ -9291,40 +9535,7 @@ class FDSMultiselectOption extends HTMLElement {
   // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
 
   connectedCallback() {
-    // The 'ready' attribute can be used to defer initialization.
-    // Omit the attribute or set it to anything other than 'false' to initialize immediately.
-    if (this.getAttribute('ready') === 'false') return;
-    this.init();
-  }
-
-  // #endregion
-
-  // #region - REMOVED FROM DOCUMENT ----------------------------------------------------------------------
-
-  disconnectedCallback() {
-    this.#removeEventListeners();
-    this.#disconnectMutationObserver();
-    this.#initialized = false;
-  }
-
-  // #endregion
-
-  // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
-
-  attributeChangedCallback(attribute, oldValue, newValue) {
-    if (attribute === 'ready') {
-      if (!this.#initialized && this.isConnected && newValue !== 'false') {
-        this.init();
-      }
-      return;
-    }
-    if (!this.#initialized) return;
-    if (oldValue === newValue) return;
-    switch (attribute) {
-      case 'attr':
-        console.log('attr changed to', newValue);
-        break;
-    }
+    this.#init();
   }
 
   // #endregion

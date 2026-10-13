@@ -51,6 +51,8 @@ var testfiles = [
     "test-fds-modal",
     "test-fds-step-indicator",
     "test-fds-tabs",
+    "test-fds-alert",
+    "test-fds-multiselect",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",

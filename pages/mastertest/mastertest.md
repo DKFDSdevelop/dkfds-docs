@@ -43,6 +43,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-step-indicator" description="Trinindikator" %}
 {% include test/preview-test.html filename="test-fds-tabs" description="Faneblade" %}
 {% include test/preview-test.html filename="test-fds-alert" description="Beskeder" %}
+{% include test/preview-test.html filename="test-fds-multiselect" description="Multiselect" %}
 
 {:.h3}
 ## HTML-elementer
