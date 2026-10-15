@@ -21,6 +21,28 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <h2 class="h3 mt-0">Nogle valgmuligheder sat som default</h2>
+        </div>
+        <div class="col-12">
+            <fds-multiselect label="Hunde">
+                <fds-multiselect-option default-selected="true">Hyrde- og kvæghunde</fds-multiselect-option>
+                <fds-multiselect-option>Pinscher, Schnauzer, Molosser og Sennenhunde</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Terriere</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Gravhunde</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Spidshunde</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Drivende jagt- og schweisshunde</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Stående jagthunde</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Apporterende jagthunde</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Selskabshunde</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Mynder</fds-multiselect-option>
+                <fds-multiselect-option default-selected="true">Blandingshunde</fds-multiselect-option>
+                <fds-multiselect-option>Heeler</fds-multiselect-option>
+            </fds-multiselect>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <h2 class="h3 mt-0">Mange valgmuligheder</h2>
         </div>
         <div class="col-12">
@@ -81,7 +103,8 @@
             <h2 class="h3 mt-0">Ny placeholder og gruppetekst</h2>
         </div>
         <div class="col-12">
-            <fds-multiselect label="Frugter" placeholder="Vælg noget" sr-group-text="Du burde kun kunne høre denne besked, hvis mindst én frugt er valgt.">
+            <fds-multiselect label="Frugter" placeholder="Vælg noget"
+                sr-group-text="Du burde kun kunne høre denne besked, hvis mindst én frugt er valgt.">
                 <fds-multiselect-option>Banan</fds-multiselect-option>
                 <fds-multiselect-option>Æble</fds-multiselect-option>
                 <fds-multiselect-option>Appelsin</fds-multiselect-option>
@@ -94,8 +117,9 @@
             <h2 class="h3 mt-0">Korte og lange options</h2>
         </div>
         <div class="col-12">
-            <fds-multiselect label="Lange options">
-                <fds-multiselect-option>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</fds-multiselect-option>
+            <fds-multiselect label="Sedutperspiciatisundeomnisistenatuserrorsitvoluptatemaccusantiumdoloremquelaudantium" placeholder="Sedutperspiciatisundeomnisistenatuserrorsitvoluptatemaccusantiumdoloremquelaudantium">
+                <fds-multiselect-option>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                    laudantium</fds-multiselect-option>
                 <fds-multiselect-option>Sed ut perspiciatis unde</fds-multiselect-option>
                 <fds-multiselect-option>Omnis iste natus</fds-multiselect-option>
                 <fds-multiselect-option>Sedutperspiciatisundeomnisistenatuserrorsitvoluptatemaccusantiumdoloremquelaudantium</fds-multiselect-option>
@@ -106,19 +130,72 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Nogle valgmuligheder sat som default</h2>
+            <h2 class="h3 mt-0">Multiselect i en form</h2>
+            <p>Test værdier submitted i en formular. En default select og select[multiple] er tilføjet formularen til sammenligning.</p>
         </div>
         <div class="col-12">
-            <fds-multiselect label="Frugter">
-                <fds-multiselect-option default-selected="true">Æble</fds-multiselect-option>
-                <fds-multiselect-option>Pære</fds-multiselect-option>
-                <fds-multiselect-option>Banan</fds-multiselect-option>
-                <fds-multiselect-option default-selected="true">Mango</fds-multiselect-option>
-                <fds-multiselect-option>Appelsin</fds-multiselect-option>
-                <fds-multiselect-option default-selected="true">Vandmelon</fds-multiselect-option>
-                <fds-multiselect-option>Blåbær</fds-multiselect-option>
-                <fds-multiselect-option>Jordbær</fds-multiselect-option>
-            </fds-multiselect>
+            <form method="GET" action="" style="background-color: #DCDCDC; padding: 16px;">
+                <div class="mb-6">
+                    <label for="colors" class="d-block">Vælg flere farver</label>
+                    <select id="colors" name="colors" multiple style="width: 100%; max-width: 200px;">
+                        <option value="red">Rød</option>
+                        <option value="green">Grøn</option>
+                        <option value="blue">Blå</option>
+                        <option value="yellow">Gul</option>
+                        <option value="purple">Lilla</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="single-color" class="d-block">Vælg én farve</label>
+                    <select id="single-color" name="single-color" style="width: 100%; max-width: 200px;">
+                        <option>Pink</option>
+                        <option>Hvid</option>
+                        <option>Sort</option>
+                    </select>
+                </div>
+                <fds-multiselect label="Frugter" name="fruits" class="mb-6">
+                    <fds-multiselect-option>Banan</fds-multiselect-option>
+                    <fds-multiselect-option>Æble</fds-multiselect-option>
+                    <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                    <fds-multiselect-option value="specialfruit">Mango</fds-multiselect-option>
+                </fds-multiselect>
+                <button class="button button-secondary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <fds-modal-opener modal-id="modal-example">
+                <button class="button button-secondary">Multiselect inde i modal</button>
+            </fds-modal-opener>
+            <fds-modal id="modal-example" heading="Modal med multiselect">
+                <dialog>
+                    <div class="scrollable-area">
+                        <div class="modal-top"></div>
+                        <fds-multiselect label="Frugter">
+                            <fds-multiselect-option>Æble</fds-multiselect-option>
+                            <fds-multiselect-option>Pære</fds-multiselect-option>
+                            <fds-multiselect-option>Banan</fds-multiselect-option>
+                            <fds-multiselect-option>Mango</fds-multiselect-option>
+                            <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                            <fds-multiselect-option>Vandmelon</fds-multiselect-option>
+                            <fds-multiselect-option>Blåbær</fds-multiselect-option>
+                            <fds-multiselect-option>Jordbær</fds-multiselect-option>
+                            <fds-multiselect-option>Kirsebær</fds-multiselect-option>
+                            <fds-multiselect-option>Hindbær</fds-multiselect-option>
+                            <fds-multiselect-option>Brombær</fds-multiselect-option>
+                            <fds-multiselect-option>Fersken</fds-multiselect-option>
+                            <fds-multiselect-option>Nektarin</fds-multiselect-option>
+                            <fds-multiselect-option>Kiwi</fds-multiselect-option>
+                            <fds-multiselect-option>Ananas</fds-multiselect-option>
+                        </fds-multiselect>
+                        <fds-modal-closer>
+                            <button class="button button-primary" type="button">OK</button>
+                        </fds-modal-closer>
+                    </div>
+                </dialog>
+            </fds-modal>
         </div>
     </div>
 
