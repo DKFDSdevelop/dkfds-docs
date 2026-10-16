@@ -172,6 +172,8 @@ Det element som skal collapses/expandes skal have følgende:
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-example" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
@@ -179,6 +181,30 @@ Det element som skal collapses/expandes skal have følgende:
 {% include web-component-shared-text/intro-light-dom.html %}
 
 `fds-radio-button` er ikke beregnet til at blive brugt alene, men kun inden for en `fds-radio-button-group`.
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-error" heading_tag="h4" subheading_tag="h5" %}
+
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+
+#### Hjælpetekst til enkelte radioknap
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-helptext" heading_tag="h5" subheading_tag="h6" %}
+
+#### Radioknapgruppe med hjælpetekst
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-helptext" heading_tag="h5" subheading_tag="h6" %}
+
+### Skjult indhold (Collapse) {#{% include create-id.html heading="Skjult indhold (Collapse)" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-collapse" heading_tag="h4" subheading_tag="h5" %}
+
+### Deaktiveret radioknapgruppe {#{% include create-id.html heading="Deaktiveret radioknapgruppe" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-disabled" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -214,27 +240,3 @@ Det element som skal collapses/expandes skal have følgende:
 ### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-error" heading_tag="h4" subheading_tag="h5" %}
-
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
-
-#### Hjælpetekst til enkelte radioknap
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-helptext" heading_tag="h5" subheading_tag="h6" %}
-
-#### Radioknapgruppe med hjælpetekst
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-helptext" heading_tag="h5" subheading_tag="h6" %}
-
-### Skjult indhold (Collapse) {#{% include create-id.html heading="Skjult indhold (Collapse)" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-collapse" heading_tag="h4" subheading_tag="h5" %}
-
-### Deaktiveret radioknapgruppe {#{% include create-id.html heading="Deaktiveret radioknapgruppe" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-disabled" heading_tag="h4" subheading_tag="h5" %}

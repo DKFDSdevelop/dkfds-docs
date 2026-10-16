@@ -181,33 +181,13 @@ Det element som skal collapses/expandes skal have følgende:
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-example" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-`fds-checkbox` kræver et `input`- og et `label`-element. `fds-checkbox-group` kræver et `fieldset`-element, der omslutter gruppens `legend` og de enkelte tjekbokse.
-
-### fds-checkbox {#{% include create-id.html heading="fds-checkbox" append="-custom" %}}
-
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                                                                                 |
-|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| show-required-status | Viser om tjekboksen er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.                 |
-| ready                 | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
-
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
-
-{% include web-component-shared-text/fds-help-text.html %}
-
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
-
-{% include web-component-shared-text/fds-error.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -242,3 +222,25 @@ Det element som skal collapses/expandes skal have følgende:
 #### Deaktiveret tjekboksgruppe
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-group-disabled" heading_tag="h5" subheading_tag="h6" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+`fds-checkbox` kræver et `input`- og et `label`-element. `fds-checkbox-group` kræver et `fieldset`-element, der omslutter gruppens `legend` og de enkelte tjekbokse.
+
+### fds-checkbox {#{% include create-id.html heading="fds-checkbox" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om tjekboksen er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.                 |
+| ready                 | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
+
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+
+{% include web-component-shared-text/fds-error.html %}

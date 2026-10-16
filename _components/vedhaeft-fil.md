@@ -74,11 +74,31 @@ Du bør anvende ovenstående kriterier til en skræddersyet løsning for denne t
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-example" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-helptext" heading_tag="h4" subheading_tag="h5" %}
+
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+
+For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som anden parameter i `addError()`. Når en fejl knyttes til en fil, vises fejlbeskeden direkte under den pågældende fil i fillisten, og filen markeres visuelt som ugyldig. Hvis fil-ID'et ikke angives, vises fejlen som en generel fejl for hele komponenten.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-error" heading_tag="h4" subheading_tag="h5" %}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-file-error" heading_tag="h4" subheading_tag="h5" %}
+
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-disabled" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -133,21 +153,3 @@ Du bør anvende ovenstående kriterier til en skræddersyet løsning for denne t
 ### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-helptext" heading_tag="h4" subheading_tag="h5" %}
-
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
-
-For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som anden parameter i `addError()`. Når en fejl knyttes til en fil, vises fejlbeskeden direkte under den pågældende fil i fillisten, og filen markeres visuelt som ugyldig. Hvis fil-ID'et ikke angives, vises fejlen som en generel fejl for hele komponenten.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-error" heading_tag="h4" subheading_tag="h5" %}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-file-error" heading_tag="h4" subheading_tag="h5" %}
-
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-disabled" heading_tag="h4" subheading_tag="h5" %}

@@ -128,6 +128,8 @@ Tilføj klassen `sidenav-error` til de liste-elementer, der er fejl i og anvend 
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="step-indicator-default" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}

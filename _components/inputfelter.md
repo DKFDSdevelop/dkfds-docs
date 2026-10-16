@@ -304,45 +304,13 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-example" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
-
-### fds-input {#{% include create-id.html heading="fds-input" append="-custom" %}}
-
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut             | Beskrivelse                                                                                                                                               |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
-| input-maxwidth       | Angiver inputfeltets maksimale bredde. Angives som et tal (4, 8, 11, 27) eller en størrelsesværdi (xxs, xs, s, m, l, xl).                                 |
-
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
-
-{% include web-component-shared-text/fds-help-text.html %}
-
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
-
-{% include web-component-shared-text/fds-error.html %}
-
-### fds-input-affix {#{% include create-id.html heading="fds-input-affix" append="-custom" %}}
-
-#### Attributter
-
-{:.table .table--responsive-headers}
-| Attribut     | Beskrivelse                                        |
-|--------------|------------------------------------------------------|
-| input-prefix | Indsæt et præfiks-element (tekst før inputfeltet).  |
-| input-suffix | Indsæt et suffiks-element (tekst efter inputfeltet). |
-
-### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-custom" %}}
-
-{% include web-component-shared-text/fds-character-limit.html %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
 
@@ -395,3 +363,37 @@ Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller fr
 #### Input bredde med tegn
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-tegnwidth" heading_tag="h5" subheading_tag="h6" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### fds-input {#{% include create-id.html heading="fds-input" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                                               |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| input-maxwidth       | Angiver inputfeltets maksimale bredde. Angives som et tal (4, 8, 11, 27) eller en størrelsesværdi (xxs, xs, s, m, l, xl).                                 |
+
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+
+{% include web-component-shared-text/fds-error.html %}
+
+### fds-input-affix {#{% include create-id.html heading="fds-input-affix" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut     | Beskrivelse                                        |
+|--------------|------------------------------------------------------|
+| input-prefix | Indsæt et præfiks-element (tekst før inputfeltet).  |
+| input-suffix | Indsæt et suffiks-element (tekst efter inputfeltet). |
+
+### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-custom" %}}
+
+{% include web-component-shared-text/fds-character-limit.html %}

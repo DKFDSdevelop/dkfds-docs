@@ -228,7 +228,6 @@ Cards:
 
 Cookiemeddelelse:
 - h2: Sådan bruges komponenten
-- h2: Varianter
 - h2: Referencer
 
 Datofelter:
@@ -406,9 +405,10 @@ Accordions_Kode:
 - h2: Med succesbeskeder
 
 Accordions_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Anchorlinks_Kode:
 - h2: Installation
@@ -424,9 +424,10 @@ Beskeder_Kode:
 - h2: Luk knap
 
 Beskeder_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Broedkrumme_Kode:
 - h2: Installation
@@ -443,18 +444,20 @@ Cookiemeddelelse_Kode:
 - h2: Installation
 
 Cookiemeddelelse_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Datofelter_Kode:
 - h2: Installation
 - h2: Fejlmeddelelse
 
 Datofelter_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Datovaelger_Kode:
 - h2: Installation
@@ -465,9 +468,10 @@ Datovaelger_Kode:
 - h2: Deaktiveret
 
 Datovaelger_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Detaljer_Kode:
 - h2: Installation
@@ -477,9 +481,10 @@ Dropdown_Kode:
 - h2: Deaktiveret
 
 Dropdown_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Faneblade_Kode:
 - h2: Installation
@@ -487,9 +492,10 @@ Faneblade_Kode:
 - h2: Faneblade med ikoner
 
 Faneblade_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Fejlmeddelelser_Kode:
 - h2: Installation
@@ -505,6 +511,7 @@ Fejlmeddelelser_Kode:
 - h2: Referencer
 
 Fejlmeddelelser_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
 - h2: Varianter
 
@@ -512,9 +519,10 @@ Fejlopsummering_Kode:
 - h2: Installation
 
 Fejlopsummering_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Footer_Kode:
 - h2: Installation
@@ -539,6 +547,7 @@ Header_Kode:
 - h2: Referencer
 
 Header_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
 - h2: Konfiguration
 
@@ -553,9 +562,10 @@ Inputfelter_Kode:
 - h2: Feltbredde
 
 Inputfelter_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Knapper_Kode:
 - h2: Installation
@@ -579,9 +589,10 @@ Modal_Kode:
 - h2: Modal som kræver handling
 
 Modal_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 - h2: Referencer
 
 Overflowmenu_Kode:
@@ -597,9 +608,10 @@ Radioknap_Kode:
 - h2: Skjult indhold (Collapse)
 
 Radioknap_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Sprogvaelger_Kode:
 - h2: Installation
@@ -631,9 +643,10 @@ Tekstomraade_Kode:
 - h2: Deaktiveret
 
 Tekstomraade_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 TilbageLink_Kode:
 - h2: Installation
@@ -647,9 +660,10 @@ Tjekboks_Kode:
 - h2: Skjult indhold (collapse)
 
 Tjekboks_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Toastbesked_Kode:
 - h2: Installation
@@ -672,9 +686,10 @@ Tooltip_Kode:
 - h2: Referencer
 
 Tooltip_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Trinindikator_Kode:
 - h2: Installation
@@ -684,6 +699,7 @@ Trinindikator_Kode:
 - h2: Simpel trinindikator
 
 Trinindikator_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
 - h2: Konfiguration
 
@@ -691,9 +707,10 @@ VedhaeftFil_Kode:
 - h2: Installation
 
 VedhaeftFil_Web_Component:
+- h2: Web Component-koden er i beta
 - h2: Om denne komponent
-- h2: Konfiguration
 - h2: Varianter
+- h2: Konfiguration
 
 Venstremenu_Kode:
 - h2: Installation

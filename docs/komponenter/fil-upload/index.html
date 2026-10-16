@@ -1794,9 +1794,10 @@
         <li class="anchorlink-guidelines"><a href="#se-komponenten-i-eksempelloesninger">Se komponenten i eksempelløsninger</a></li>
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -1907,6 +1908,10 @@
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-upload-file-example/" class="function-link" target="_blank">
@@ -1964,223 +1969,6 @@
 <p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3 id="fds-upload-file-custom">fds-upload-file</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>dropzone-prefix</td>
-      <td>Definerer den indledende tekst i dropzone-området før linkteksten. Default er <code>Træk dine filer herhen eller</code>.</td>
-    </tr>
-    <tr>
-      <td>dropzone-link</td>
-      <td>Definerer teksten for det klikbare link i dropzone-området. Default er <code>vælg filer</code>.</td>
-    </tr>
-    <tr>
-      <td>dropzone-suffix</td>
-      <td>Definerer teksten der vises efter linkteksten i dropzone-området. Attributten er tom som standard, men kan bruges til at tilføje yderligere instruktioner eller information.</td>
-    </tr>
-    <tr>
-      <td>file-list-header</td>
-      <td>Definerer overskriften der vises over listen af valgte filer. Default er <code>Valgte filer</code>.</td>
-    </tr>
-    <tr>
-      <td>file-list-more</td>
-      <td>Definerer teksten på knappen til at vælge flere filer. Denne knap vises kun, når det native <code>multiple</code>-attribut er sat på <code>input</code>-elementet. Default er <code>Vælg flere filer</code>.</td>
-    </tr>
-    <tr>
-      <td>remove-text</td>
-      <td>Definerer teksten på fjern-knappen for hver fil i listen. Default er <code>Fjern</code>.</td>
-    </tr>
-    <tr>
-      <td>heading-level</td>
-      <td>Angiv overskriftsniveauet for filliste-overskriften. Gyldige værdier er <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code> og <code>h6</code>. Default er <code>h5</code>.</td>
-    </tr>
-    <tr>
-      <td>show-required-status</td>
-      <td>Viser om feltet er obligatorisk eller frivilligt baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Funktioner</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Funktion</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>getFiles()</td>
-      <td>Returnerer et array med alle valgte filer og deres tilknyttede ID’er. Hver fil returneres som et objekt med egenskaberne <code>id</code> og <code>file</code>.</td>
-    </tr>
-    <tr>
-      <td>addError(message, fileId)</td>
-      <td>Tilføjer en fejlbesked til komponenten. <code>fileId</code> er valgfri. Angives den, knyttes fejlen til den specifikke fil. Returnerer fejlelementet.</td>
-    </tr>
-    <tr>
-      <td>removeError(errorElement)</td>
-      <td>Fjerner det angivne fejlelement fra komponenten.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>files-added</td>
-      <td>Udløses når en eller flere filer tilføjes. <code>event.detail</code> indeholder et array af de tilføjede filer.</td>
-    </tr>
-    <tr>
-      <td>files-removed</td>
-      <td>Udløses når en fil fjernes. <code>event.detail</code> indeholder den fjernede fil.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="fds-file-item-custom">fds-file-item</h3>
-
-<p><code>fds-file-item</code> oprettes automatisk af <code>fds-upload-file</code> for hver valgt fil og er ikke tiltænkt at blive oprettet manuelt.</p>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>remove-text</td>
-      <td>Definerer teksten på fjern-knappen for den enkelte fil. Sættes automatisk af <code>fds-upload-file</code>, når dennes <code>remove-text</code>-attribut ændres.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="fds-help-text-custom">fds-help-text</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Attribut</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-        </tr>
-        <tr>
-            <td>hidden</td>
-            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Event</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>help-text-callback</td>
-            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
-        </tr>
-        <tr>
-            <td>help-text-visibility-changed</td>
-            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
-                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3 id="fds-error-message-custom">fds-error-message</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Attribut</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-        </tr>
-        <tr>
-            <td>icon-text</td>
-            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
-        </tr>
-        <tr>
-            <td>hidden</td>
-            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
-        </tr>
-        <tr>
-            <td>targets</td>
-            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
-        </tr>
-        <tr>
-            <td>message</td>
-            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Event</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>error-message-callback</td>
-            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
-        </tr>
-        <tr>
-            <td>error-message-visibility-changed</td>
-            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
-        </tr>
-    </tbody>
-</table>
 
 <h2 id="varianter-custom">Varianter</h2>
 
@@ -2431,6 +2219,222 @@
     </div>
 </div>
 
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3 id="fds-upload-file-custom">fds-upload-file</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dropzone-prefix</td>
+      <td>Definerer den indledende tekst i dropzone-området før linkteksten. Default er <code>Træk dine filer herhen eller</code>.</td>
+    </tr>
+    <tr>
+      <td>dropzone-link</td>
+      <td>Definerer teksten for det klikbare link i dropzone-området. Default er <code>vælg filer</code>.</td>
+    </tr>
+    <tr>
+      <td>dropzone-suffix</td>
+      <td>Definerer teksten der vises efter linkteksten i dropzone-området. Attributten er tom som standard, men kan bruges til at tilføje yderligere instruktioner eller information.</td>
+    </tr>
+    <tr>
+      <td>file-list-header</td>
+      <td>Definerer overskriften der vises over listen af valgte filer. Default er <code>Valgte filer</code>.</td>
+    </tr>
+    <tr>
+      <td>file-list-more</td>
+      <td>Definerer teksten på knappen til at vælge flere filer. Denne knap vises kun, når det native <code>multiple</code>-attribut er sat på <code>input</code>-elementet. Default er <code>Vælg flere filer</code>.</td>
+    </tr>
+    <tr>
+      <td>remove-text</td>
+      <td>Definerer teksten på fjern-knappen for hver fil i listen. Default er <code>Fjern</code>.</td>
+    </tr>
+    <tr>
+      <td>heading-level</td>
+      <td>Angiv overskriftsniveauet for filliste-overskriften. Gyldige værdier er <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code> og <code>h6</code>. Default er <code>h5</code>.</td>
+    </tr>
+    <tr>
+      <td>show-required-status</td>
+      <td>Viser om feltet er obligatorisk eller frivilligt baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>getFiles()</td>
+      <td>Returnerer et array med alle valgte filer og deres tilknyttede ID’er. Hver fil returneres som et objekt med egenskaberne <code>id</code> og <code>file</code>.</td>
+    </tr>
+    <tr>
+      <td>addError(message, fileId)</td>
+      <td>Tilføjer en fejlbesked til komponenten. <code>fileId</code> er valgfri. Angives den, knyttes fejlen til den specifikke fil. Returnerer fejlelementet.</td>
+    </tr>
+    <tr>
+      <td>removeError(errorElement)</td>
+      <td>Fjerner det angivne fejlelement fra komponenten.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>files-added</td>
+      <td>Udløses når en eller flere filer tilføjes. <code>event.detail</code> indeholder et array af de tilføjede filer.</td>
+    </tr>
+    <tr>
+      <td>files-removed</td>
+      <td>Udløses når en fil fjernes. <code>event.detail</code> indeholder den fjernede fil.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-file-item-custom">fds-file-item</h3>
+
+<p><code>fds-file-item</code> oprettes automatisk af <code>fds-upload-file</code> for hver valgt fil og er ikke tiltænkt at blive oprettet manuelt.</p>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>remove-text</td>
+      <td>Definerer teksten på fjern-knappen for den enkelte fil. Sættes automatisk af <code>fds-upload-file</code>, når dennes <code>remove-text</code>-attribut ændres.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-help-text-custom">fds-help-text</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>help-text-callback</td>
+            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
+        </tr>
+        <tr>
+            <td>help-text-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
+                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="fds-error-message-custom">fds-error-message</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>icon-text</td>
+            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+        <tr>
+            <td>targets</td>
+            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>error-message-callback</td>
+            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
+        </tr>
+        <tr>
+            <td>error-message-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
 
                         </div>
             </section>

@@ -1802,9 +1802,10 @@
         <li class="anchorlink-guidelines"><a href="#referencer">Referencer</a></li>
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2086,6 +2087,10 @@
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-error-summary/" class="function-link" target="_blank">
@@ -2133,65 +2138,6 @@
 <p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3 id="fds-error-summary-custom">fds-error-summary</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>heading</td>
-      <td>Sæt en anden overskrift end standardoverskriften <code>"Der er problemer"</code>.</td>
-    </tr>
-    <tr>
-      <td>heading-level</td>
-      <td>Angiver hvilket overskriftsniveau der anvendes til overskriften. Gyldige værdier er <code>h1</code> til <code>h6</code>. Default er <code>h2</code>.</td>
-    </tr>
-    <tr>
-      <td>heading-id</td>
-      <td>ID for overskriftselementet. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-    </tr>
-    <tr>
-      <td>auto</td>
-      <td>Hold fejloversigten automatisk synkroniseret med <code>fds-error-message</code> i understøttede wrappers. Komponenten vises eller skjules automatisk afhængigt af, om der er fejl.</td>
-    </tr>
-    <tr>
-      <td>hidden</td>
-      <td>Skjuler fejloversigten. Sættes automatisk baseret på, om der er fejl. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="understoettede-wrappers-custom">Understøttede wrappers</h3>
-
-<p><code>fds-error-summary</code> samler fejlmeddelelser fra følgende komponenter:</p>
-
-<ul class="nobullet-list">
-  <li><code>fds-input</code></li>
-  <li><code>fds-checkbox</code></li>
-  <li><code>fds-checkbox-group</code></li>
-  <li><code>fds-radio-button-group</code></li>
-  <li><code>fds-date-input</code></li>
-  <li><code>fds-textarea</code></li>
-  <li><code>fds-select</code></li>
-  <li><code>fds-upload-file</code></li>
-  <li><code>fds-date-picker</code></li>
-</ul>
-
-<p>Fejlmeddelelsen skal være angivet som et <code>fds-error-message</code> element.</p>
-
-<p>Når der klikkes på et link i fejloversigten, flyttes fokus til det første fokusbare element i den wrapper, som fejlmeddelelsen tilhører (f.eks. <code>input</code>, <code>select</code>, <code>textarea</code> eller <code>button</code>).</p>
-
-<p>Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhørende fejlmeddelelse heller ikke er skjult.</p>
 
 <h2 id="varianter-custom">Varianter</h2>
 
@@ -2369,6 +2315,64 @@
     </div>
 </div>
 
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3 id="fds-error-summary-custom">fds-error-summary</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading</td>
+      <td>Sæt en anden overskrift end standardoverskriften <code>"Der er problemer"</code>.</td>
+    </tr>
+    <tr>
+      <td>heading-level</td>
+      <td>Angiver hvilket overskriftsniveau der anvendes til overskriften. Gyldige værdier er <code>h1</code> til <code>h6</code>. Default er <code>h2</code>.</td>
+    </tr>
+    <tr>
+      <td>heading-id</td>
+      <td>ID for overskriftselementet. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+    </tr>
+    <tr>
+      <td>auto</td>
+      <td>Hold fejloversigten automatisk synkroniseret med <code>fds-error-message</code> i understøttede wrappers. Komponenten vises eller skjules automatisk afhængigt af, om der er fejl.</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>Skjuler fejloversigten. Sættes automatisk baseret på, om der er fejl. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="understoettede-wrappers-custom">Understøttede wrappers</h3>
+
+<p><code>fds-error-summary</code> samler fejlmeddelelser fra følgende komponenter:</p>
+
+<ul class="nobullet-list">
+  <li><code>fds-input</code></li>
+  <li><code>fds-checkbox</code></li>
+  <li><code>fds-checkbox-group</code></li>
+  <li><code>fds-radio-button-group</code></li>
+  <li><code>fds-date-input</code></li>
+  <li><code>fds-textarea</code></li>
+  <li><code>fds-select</code></li>
+  <li><code>fds-upload-file</code></li>
+  <li><code>fds-date-picker</code></li>
+</ul>
+
+<p>Fejlmeddelelsen skal være angivet som et <code>fds-error-message</code> element.</p>
+
+<p>Når der klikkes på et link i fejloversigten, flyttes fokus til det første fokusbare element i den wrapper, som fejlmeddelelsen tilhører (f.eks. <code>input</code>, <code>select</code>, <code>textarea</code> eller <code>button</code>).</p>
+
+<p>Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhørende fejlmeddelelse heller ikke er skjult.</p>
 
                         </div>
             </section>

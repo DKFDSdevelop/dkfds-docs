@@ -133,11 +133,23 @@ Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner 
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-modal-default" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Modal som kræver handling {#{% include create-id.html heading="Modal som kræver handling" append="-custom" %}}
+
+Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-modal-forced-action" heading_tag="h4" subheading_tag="h5" %}
+
+Bemærk: Attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -210,16 +222,6 @@ Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for
 | Event                  | Beskrivelse                                                                                                              |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | fds-modal-closer-click | Udløses når der klikkes på elementet i `fds-modal-closer`. `event.detail.returnValue` indeholder den angivne returværdi. |
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Modal som kræver handling {#{% include create-id.html heading="Modal som kræver handling" append="-custom" %}}
-
-Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-modal-forced-action" heading_tag="h4" subheading_tag="h5" %}
-
-Bemærk: Attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
 
 ## Referencer {#{% include create-id.html heading="Referencer" append="-custom" %}}
 

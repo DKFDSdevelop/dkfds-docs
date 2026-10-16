@@ -177,11 +177,23 @@ Defineres med klassen `alert--paragraph`.
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-variants" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-shadow-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Teksteksempler {#{% include create-id.html heading="Teksteksempler" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-text-variants" heading_tag="h4" subheading_tag="h5" %}
+
+### Besked med luk-knap {#{% include create-id.html heading="Besked med luk-knap" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-close" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -223,13 +235,3 @@ Bemærk: Når der anvendes et eget ikon, har attributten `icon-label` ingen effe
 |------------------|--------------------------------|
 | fds-alert-shown  | Udløses når beskeden vises.   |
 | fds-alert-hidden | Udløses når beskeden skjules. |
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Teksteksempler {#{% include create-id.html heading="Teksteksempler" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-text-variants" heading_tag="h4" subheading_tag="h5" %}
-
-### Besked med luk-knap {#{% include create-id.html heading="Besked med luk-knap" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-close" heading_tag="h4" subheading_tag="h5" %}

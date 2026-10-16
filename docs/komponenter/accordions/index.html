@@ -1843,9 +1843,10 @@
         <li class="anchorlink-code"><a href="#aabn-luk-alle-kode">Åbn/luk alle</a></li>
         <li class="anchorlink-code"><a href="#med-fejl-kode">Med fejl</a></li>
         <li class="anchorlink-code"><a href="#med-succesbeskeder-kode">Med succesbeskeder</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2559,6 +2560,10 @@
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-accordion-default/" class="function-link" target="_blank">
@@ -2683,158 +2688,6 @@
 <p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3 id="fds-accordion-custom">fds-accordion</h3>
-
-<h4>Attributter</h4>
-
-<div class="table--responsive-scroll">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Attribut</th>
-        <th scope="col">Beskrivelse</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>heading</td>
-        <td>Overskriften i accordionen.</td>
-      </tr>
-      <tr>
-        <td>heading-level</td>
-        <td>Overskriftsniveauet i accordionen (overskrives, når heading-level i <code>fds-accordion-group</code> er sat). Standardværdi er <code>"h3"</code>.</td>
-      </tr>
-      <tr>
-        <td>expanded</td>
-        <td>Sæt til <code>"true"</code>, hvis accordionen skal være åben, når siden indlæses. Standardværdi er <code>"false"</code>.</td>
-      </tr>
-      <tr>
-        <td>content-id</td>
-        <td>Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret.</td>
-      </tr>
-      <tr>
-        <td>has-error</td>
-        <td>Sæt til <code>"true"</code> for at give accordionen en rød kant. Sørg for altid at give en passende fejlbesked, når denne attribut bruges.</td>
-      </tr>
-      <tr>
-        <td>variant-text<br />variant-icon</td>
-        <td>Sæt en tilhørende besked og ikon på accordionen. Sørg altid for at anvende begge attributter samtidigt. Anbefalinger til kombinationer:<br />
-        <ul>
-          <li><code>variant-text="Information"</code> og <code>variant-icon="info"</code></li>
-          <li><code>variant-text="Succes"</code> og <code>variant-icon="success"</code></li>
-          <li><code>variant-text="Advarsel"</code> og <code>variant-icon="warning"</code></li>
-          <li><code>variant-text="Fejl"</code> og <code>variant-icon="error"</code> og <code>has-error="true"</code></li>
-        </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>ready</td>
-        <td>Sæt til <code>"false"</code> for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end <code>"false"</code>, for at initialisere komponenten med det samme.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h4>Funktioner</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Funktion</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>expandAccordion()</td>
-      <td>Fold en accordion ud.</td>
-    </tr>
-    <tr>
-      <td>collapseAccordion()</td>
-      <td>Fold en accordion sammen.</td>
-    </tr>
-    <tr>
-      <td>toggleAccordion()</td>
-      <td>Hvis en accordion er foldet ud, så foldes den sammen. Er den foldet sammen, foldes den ud.</td>
-    </tr>
-    <tr>
-      <td>isExpanded()</td>
-      <td>Returnerer <code>true</code>, hvis accordionen er foldet ud, og <code>false</code>, hvis den er foldet sammen.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>fds-accordion-expanded</td>
-      <td>Udløses når accordionen foldes ud.</td>
-    </tr>
-    <tr>
-      <td>fds-accordion-collapsed</td>
-      <td>Udløses når accordionen foldes sammen.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="fds-accordion-group-custom">fds-accordion-group</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>heading-level</td>
-      <td>Sæt overskriftsniveau for alle accordions i gruppen.</td>
-    </tr>
-    <tr>
-      <td>has-bulk-button</td>
-      <td>Sæt til <code>true</code> for at tilføje en knap til gruppen, der åbner/lukker alle accordions.</td>
-    </tr>
-    <tr>
-      <td>open-all-text</td>
-      <td>Erstat teksten på åbn/luk-knappen, når ikke alle accordions er foldet ud. Standardværdi er <code>"Åbn alle"</code>.</td>
-    </tr>
-    <tr>
-      <td>close-all-text</td>
-      <td>Erstat teksten på åbn/luk-knappen, når alle accordions er foldet ud. Standardværdi er <code>"Luk alle"</code>.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Funktioner</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Funktion</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>toggleAllAccordions()</td>
-      <td>Hvis alle accordions er foldet ud, foldes de sammen. Hvis mindst én accordion er foldet sammen, foldes alle ud.</td>
-    </tr>
-  </tbody>
-</table>
 
 <h2 id="varianter-custom">Varianter</h2>
 
@@ -3220,6 +3073,158 @@
         </fds-accordion>
     </div>
 </div>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3 id="fds-accordion-custom">fds-accordion</h3>
+
+<h4>Attributter</h4>
+
+<div class="table--responsive-scroll">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribut</th>
+        <th scope="col">Beskrivelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>heading</td>
+        <td>Overskriften i accordionen.</td>
+      </tr>
+      <tr>
+        <td>heading-level</td>
+        <td>Overskriftsniveauet i accordionen (overskrives, når heading-level i <code>fds-accordion-group</code> er sat). Standardværdi er <code>"h3"</code>.</td>
+      </tr>
+      <tr>
+        <td>expanded</td>
+        <td>Sæt til <code>"true"</code>, hvis accordionen skal være åben, når siden indlæses. Standardværdi er <code>"false"</code>.</td>
+      </tr>
+      <tr>
+        <td>content-id</td>
+        <td>Sæt ID for content-elementet i accordionen. Standardværdien er tilfældigt genereret.</td>
+      </tr>
+      <tr>
+        <td>has-error</td>
+        <td>Sæt til <code>"true"</code> for at give accordionen en rød kant. Sørg for altid at give en passende fejlbesked, når denne attribut bruges.</td>
+      </tr>
+      <tr>
+        <td>variant-text<br />variant-icon</td>
+        <td>Sæt en tilhørende besked og ikon på accordionen. Sørg altid for at anvende begge attributter samtidigt. Anbefalinger til kombinationer:<br />
+        <ul>
+          <li><code>variant-text="Information"</code> og <code>variant-icon="info"</code></li>
+          <li><code>variant-text="Succes"</code> og <code>variant-icon="success"</code></li>
+          <li><code>variant-text="Advarsel"</code> og <code>variant-icon="warning"</code></li>
+          <li><code>variant-text="Fejl"</code> og <code>variant-icon="error"</code> og <code>has-error="true"</code></li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>ready</td>
+        <td>Sæt til <code>"false"</code> for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end <code>"false"</code>, for at initialisere komponenten med det samme.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>expandAccordion()</td>
+      <td>Fold en accordion ud.</td>
+    </tr>
+    <tr>
+      <td>collapseAccordion()</td>
+      <td>Fold en accordion sammen.</td>
+    </tr>
+    <tr>
+      <td>toggleAccordion()</td>
+      <td>Hvis en accordion er foldet ud, så foldes den sammen. Er den foldet sammen, foldes den ud.</td>
+    </tr>
+    <tr>
+      <td>isExpanded()</td>
+      <td>Returnerer <code>true</code>, hvis accordionen er foldet ud, og <code>false</code>, hvis den er foldet sammen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fds-accordion-expanded</td>
+      <td>Udløses når accordionen foldes ud.</td>
+    </tr>
+    <tr>
+      <td>fds-accordion-collapsed</td>
+      <td>Udløses når accordionen foldes sammen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-accordion-group-custom">fds-accordion-group</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heading-level</td>
+      <td>Sæt overskriftsniveau for alle accordions i gruppen.</td>
+    </tr>
+    <tr>
+      <td>has-bulk-button</td>
+      <td>Sæt til <code>true</code> for at tilføje en knap til gruppen, der åbner/lukker alle accordions.</td>
+    </tr>
+    <tr>
+      <td>open-all-text</td>
+      <td>Erstat teksten på åbn/luk-knappen, når ikke alle accordions er foldet ud. Standardværdi er <code>"Åbn alle"</code>.</td>
+    </tr>
+    <tr>
+      <td>close-all-text</td>
+      <td>Erstat teksten på åbn/luk-knappen, når alle accordions er foldet ud. Standardværdi er <code>"Luk alle"</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>toggleAllAccordions()</td>
+      <td>Hvis alle accordions er foldet ud, foldes de sammen. Hvis mindst én accordion er foldet sammen, foldes alle ud.</td>
+    </tr>
+  </tbody>
+</table>
 
                         </div>
             </section>

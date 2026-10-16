@@ -133,11 +133,27 @@ new DKFDS.Accordion(document.getElementById('ACCORDION-UL-GROUP-ID'), {
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-default" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Åbn/luk alle {#{% include create-id.html heading="Åbn/luk alle" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-group-example" heading_tag="h4" subheading_tag="h5" %}
+
+### Med succesbeskeder {#{% include create-id.html heading="Med succesbeskeder" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-success" heading_tag="h4" subheading_tag="h5" %}
+
+### Med fejl {#{% include create-id.html heading="Med fejl" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-error" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -229,17 +245,3 @@ new DKFDS.Accordion(document.getElementById('ACCORDION-UL-GROUP-ID'), {
 | Funktion              | Beskrivelse                                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
 | toggleAllAccordions() | Hvis alle accordions er foldet ud, foldes de sammen. Hvis mindst én accordion er foldet sammen, foldes alle ud. |
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Åbn/luk alle {#{% include create-id.html heading="Åbn/luk alle" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-group-example" heading_tag="h4" subheading_tag="h5" %}
-
-### Med succesbeskeder {#{% include create-id.html heading="Med succesbeskeder" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-success" heading_tag="h4" subheading_tag="h5" %}
-
-### Med fejl {#{% include create-id.html heading="Med fejl" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-error" heading_tag="h4" subheading_tag="h5" %}
