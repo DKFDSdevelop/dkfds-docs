@@ -42,6 +42,8 @@ layout: default
                 <h1 id="tekstområde-textarea">Tekstområde <span class="d-inline" lang="en">(Textarea)</span></h1>
                 {% elsif page.title == "Tjekboks" %}
                 <h1 id="tjekboks-checkbox">Tjekboks <span class="d-inline" lang="en">(Checkbox)</span></h1>
+                {% elsif page.title == "Multiselect" %}
+                <h1 id="tjekboks-checkbox" class="d-flex align-items-center">Multiselect <strong class="badge ml-305">Beta</strong></h1>
                 {% else %}
                 <h1 id="{{ page.title | slugify }}">{{ page.title }}</h1>
                 {% endif %}
