@@ -356,7 +356,19 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 ### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-required" heading_tag="h4" subheading_tag="h5" %}
+#### Felt markeret obligatorisk
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-required" heading_tag="h5" subheading_tag="h6" %}
+
+#### Felt markeret frivilligt
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-optional" heading_tag="h5" subheading_tag="h6" %}
+
+#### Ændret tekst
+
+Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller frivilligt. Dette kan fx være nødvendigt i løsninger på andre sprog end dansk.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-required-changed" heading_tag="h5" subheading_tag="h6" %}
 
 ### Read-only {#{% include create-id.html heading="Read-only" append="-custom" %}}
 

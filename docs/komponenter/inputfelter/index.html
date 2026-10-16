@@ -3163,9 +3163,11 @@ form_limit.charactersLeft();</code></pre></figure>
 
 <h3 id="obligatoriske-og-frivillige-inputfelter-custom">Obligatoriske og frivillige inputfelter</h3>
 
+<h4>Felt markeret obligatorisk</h4>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
-        <a href="/eksempel/fds-input-wrapper-required/" class="function-link" target="_blank">
+        <a href="/eksempel/fds-input-required/" class="function-link" target="_blank">
             <svg class="icon-svg" focusable="false" aria-hidden="true">
                 <use href="#open-in-new"></use>
             </svg>Åbn eksempel i nyt vindue
@@ -3174,26 +3176,11 @@ form_limit.charactersLeft();</code></pre></figure>
     <div class="top-example">
         <fds-input show-required-status="">
     <label>Label</label>
-    <input type="text" id="input-wrapper-mandatory1" name="input-wrapper-mandatory1" required="" />
-</fds-input>
-
-<fds-input show-required-status="">
-    <label>Label</label>
-    <input type="text" id="input-wrapper-optional1" name="input-wrapper-optional1" />
-</fds-input>
-
-<fds-input show-required-status="Dette felt skal udfyldes">
-    <label>Label</label>
-    <input type="text" id="input-wrapper-mandatory2" name="input-wrapper-mandatory2" required="" />
-</fds-input>
-
-<fds-input show-required-status="Ikke nødvendigt">
-    <label>Label</label>
-    <input type="text" id="input-wrapper-optional2" name="input-wrapper-optional2" />
+    <input type="text" id="input-wrapper-required1" name="input-wrapper-required1" required="" />
 </fds-input>
     </div>
     <div class="code-in-tabs">
-        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-input-wrapper-required">
+        <fds-accordion heading="Vis kode" heading-level="h5" content-id="example-box-fds-input-required">
             <div class="code-content">
                 <fds-tabs>
                     <fds-tab tab-key="web-component">Web Component</fds-tab>
@@ -3202,44 +3189,108 @@ form_limit.charactersLeft();</code></pre></figure>
                     <fds-tab-panel tab-key="web-component">
                         <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Dette felt skal udfyldes&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Ikke nødvendigt&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-required1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-required1&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
                     </fds-tab-panel>
                     <fds-tab-panel tab-key="generated-html">
                         <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*skal udfyldes)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-required1&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*skal udfyldes)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory1&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-required1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-required1&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
+
+<h4>Felt markeret frivilligt</h4>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-input-optional/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-input show-required-status="">
+    <label>Label</label>
+    <input type="text" id="input-wrapper-optional1" name="input-wrapper-optional1" />
+</fds-input>
+    </div>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h5" content-id="example-box-fds-input-optional">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (frivilligt)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional1&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Dette felt skal udfyldes&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*Dette felt skal udfyldes)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
+
+<h4>Ændret tekst</h4>
+
+<p>Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller frivilligt. Dette kan fx være nødvendigt i løsninger på andre sprog end dansk.</p>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-input-required-changed/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-input show-required-status="required">
+    <label>Label</label>
+    <input type="text" id="input-wrapper-required2" name="input-wrapper-required2" required="" />
+</fds-input>
+    </div>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h5" content-id="example-box-fds-input-required-changed">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-required2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-required2&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-required2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*required)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-mandatory2&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-input</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;Ikke nødvendigt&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (Ikke nødvendigt)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-optional2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-wrapper-required2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-wrapper-required2&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-input</span>&gt;</span></code></pre>
                     </fds-tab-panel>
                 </fds-tabs>
