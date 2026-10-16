@@ -304,11 +304,65 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-example" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" heading_tag="h4" subheading_tag="h5" %}
+
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-help-text" heading_tag="h4" subheading_tag="h5" %}
+
+### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
+
+#### Felt markeret obligatorisk
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-required" heading_tag="h5" subheading_tag="h6" %}
+
+#### Felt markeret frivilligt
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-optional" heading_tag="h5" subheading_tag="h6" %}
+
+#### Ændret tekst
+
+Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller frivilligt. Dette kan fx være nødvendigt i løsninger på andre sprog end dansk.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-required-changed" heading_tag="h5" subheading_tag="h6" %}
+
+### Read-only {#{% include create-id.html heading="Read-only" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-readonly" heading_tag="h4" subheading_tag="h5" %}
+
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-disabled" heading_tag="h4" subheading_tag="h5" %}
+
+### Præfiks og suffiks {#{% include create-id.html heading="Præfiks og suffiks" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-prefix" heading_tag="h4" subheading_tag="h5" %}
+
+### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-character-limit" heading_tag="h4" subheading_tag="h5" %}
+
+### Feltbredde {#{% include create-id.html heading="Feltbredde" append="-custom" %}}
+
+#### Input bredde med rem
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-remwidth" heading_tag="h5" subheading_tag="h6" %}
+
+#### Input bredde med tegn
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-tegnwidth" heading_tag="h5" subheading_tag="h6" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -343,43 +397,3 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 ### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-custom" %}}
 
 {% include web-component-shared-text/fds-character-limit.html %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" heading_tag="h4" subheading_tag="h5" %}
-
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-help-text" heading_tag="h4" subheading_tag="h5" %}
-
-### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-required" heading_tag="h4" subheading_tag="h5" %}
-
-### Read-only {#{% include create-id.html heading="Read-only" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-readonly" heading_tag="h4" subheading_tag="h5" %}
-
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-disabled" heading_tag="h4" subheading_tag="h5" %}
-
-### Præfiks og suffiks {#{% include create-id.html heading="Præfiks og suffiks" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-prefix" heading_tag="h4" subheading_tag="h5" %}
-
-### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-character-limit" heading_tag="h4" subheading_tag="h5" %}
-
-### Feltbredde {#{% include create-id.html heading="Feltbredde" append="-custom" %}}
-
-#### Input bredde med rem
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-remwidth" heading_tag="h5" subheading_tag="h6" %}
-
-#### Input bredde med tegn
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-tegnwidth" heading_tag="h5" subheading_tag="h6" %}

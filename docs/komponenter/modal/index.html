@@ -1305,8 +1305,8 @@
     </fds-modal>
 </header>
 
-<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
-    <h2 slot="heading">Web Components i beta-version</h2>
+<fds-alert role="region" aria-labelledby="beta-alert-heading" id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading" id="beta-alert-heading">Web Components i beta-version</h2>
     <div slot="content">
         <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
         <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
@@ -1723,7 +1723,8 @@
         </ul></nav>
 </aside>
 
-        <main class="col-12 col-lg-9" id="main-content">    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
+        <main class="col-12 col-lg-9" id="main-content">
+            <!--    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
         <svg class="icon-svg alert-icon" aria-label="Advarsel" focusable="false"><use href="#warning"></use></svg>
         <div class="alert-body">
             <h2 class="alert-heading pr-7">Vælg et tema</h2><button class="alert-close"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="#close"></use></svg>Luk</button>
@@ -1732,7 +1733,8 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/komponenter/modal/">
+-->
+            <section id="section-/komponenter/modal/">
 
                 <div class="subheading">
                     Komponenter
@@ -1818,9 +1820,10 @@
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
         <li class="anchorlink-code"><a href="#modal-som-kraever-handling-kode">Modal som kræver handling</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#referencer-custom">Referencer</a></li>
         
     </ul>
@@ -2128,6 +2131,10 @@ modal.init();</code></pre></figure>
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-modal-default/" class="function-link" target="_blank">
@@ -2244,6 +2251,113 @@ modal.init();</code></pre></figure>
 <p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
+
+<h2 id="varianter-custom">Varianter</h2>
+
+<h3 id="modal-som-kraever-handling-custom">Modal som kræver handling</h3>
+
+<p>Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun <code>fds-modal-closer</code> på de knapper, som kan bruges til at foretage et valg.</p>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-modal-forced-action/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-modal-opener modal-id="not-dismissble-example">
+    <button class="button button-secondary">Åbn modal</button>
+</fds-modal-opener>
+<fds-modal id="not-dismissble-example" heading="Lorem ipsum" heading-id="not-dismissble-example-heading" dismissible="false">
+    <dialog>
+        <div class="scrollable-area">
+            <div class="modal-top"></div>
+            <p class="mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu
+                lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
+            <p>Cras eleifend elementum finibus. Mauris ac magna quis orci dapibus suscipit. Vestibulum accumsan turpis diam, ut pretium quam
+                sollicitudin sed. Pellentesque posuere eget tortor quis imperdiet. Pellentesque gravida, enim vel porttitor sagittis, libero neque
+                efficitur justo, nec gravida orci risus consequat lacus.</p>
+            <div class="button-group">
+                <fds-modal-closer class="button-wrapper">
+                    <button class="button button-primary" type="button">Primær knap</button>
+                </fds-modal-closer>
+                <fds-modal-closer class="button-wrapper">
+                    <button class="button button-secondary" type="button">Sekundær knap</button>
+                </fds-modal-closer>
+            </div>
+        </div>
+    </dialog>
+</fds-modal>
+    </div>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-modal-forced-action">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;scrollable-area&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-top&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu
+                lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Cras eleifend elementum finibus. Mauris ac magna quis orci dapibus suscipit. Vestibulum accumsan turpis diam, ut pretium quam
+                sollicitudin sed. Pellentesque posuere eget tortor quis imperdiet. Pellentesque gravida, enim vel porttitor sagittis, libero neque
+                efficitur justo, nec gravida orci risus consequat lacus.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Primær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Sekundær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">closedby</span>=<span class="hljs-string">&quot;none&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;scrollable-area&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-top&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;top-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span>&gt;</span>Lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Cras eleifend elementum finibus. Mauris ac magna quis orci dapibus suscipit. Vestibulum accumsan turpis diam, ut pretium quam sollicitudin sed. Pellentesque posuere eget tortor quis imperdiet. Pellentesque gravida, enim vel porttitor sagittis, libero neque efficitur justo, nec gravida orci risus consequat lacus.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Primær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Sekundær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span></code></pre>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
+
+<p>Bemærk: Attributten <code>dismissible</code> sætter både attributten <code>closedby</code> og en event listener for <code>cancel</code> grundet forskellig browsersupport og -opførsel (HTML Living Standard).</p>
 
 <h2 id="konfiguration-custom">Konfiguration</h2>
 
@@ -2413,113 +2527,6 @@ modal.init();</code></pre></figure>
     </tr>
   </tbody>
 </table>
-
-<h2 id="varianter-custom">Varianter</h2>
-
-<h3 id="modal-som-kraever-handling-custom">Modal som kræver handling</h3>
-
-<p>Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun <code>fds-modal-closer</code> på de knapper, som kan bruges til at foretage et valg.</p>
-
-<div class="show-code-in-tabs">
-    <div class="open-in-new-window">
-        <a href="/eksempel/fds-modal-forced-action/" class="function-link" target="_blank">
-            <svg class="icon-svg" focusable="false" aria-hidden="true">
-                <use href="#open-in-new"></use>
-            </svg>Åbn eksempel i nyt vindue
-        </a>
-    </div>
-    <div class="top-example">
-        <fds-modal-opener modal-id="not-dismissble-example">
-    <button class="button button-secondary">Åbn modal</button>
-</fds-modal-opener>
-<fds-modal id="not-dismissble-example" heading="Lorem ipsum" heading-id="not-dismissble-example-heading" dismissible="false">
-    <dialog>
-        <div class="scrollable-area">
-            <div class="modal-top"></div>
-            <p class="mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu
-                lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.</p>
-            <p>Cras eleifend elementum finibus. Mauris ac magna quis orci dapibus suscipit. Vestibulum accumsan turpis diam, ut pretium quam
-                sollicitudin sed. Pellentesque posuere eget tortor quis imperdiet. Pellentesque gravida, enim vel porttitor sagittis, libero neque
-                efficitur justo, nec gravida orci risus consequat lacus.</p>
-            <div class="button-group">
-                <fds-modal-closer class="button-wrapper">
-                    <button class="button button-primary" type="button">Primær knap</button>
-                </fds-modal-closer>
-                <fds-modal-closer class="button-wrapper">
-                    <button class="button button-secondary" type="button">Sekundær knap</button>
-                </fds-modal-closer>
-            </div>
-        </div>
-    </dialog>
-</fds-modal>
-    </div>
-    <div class="code-in-tabs">
-        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-modal-forced-action">
-            <div class="code-content">
-                <fds-tabs>
-                    <fds-tab tab-key="web-component">Web Component</fds-tab>
-                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
-
-                    <fds-tab-panel tab-key="web-component">
-                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;scrollable-area&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-top&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu
-                lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Cras eleifend elementum finibus. Mauris ac magna quis orci dapibus suscipit. Vestibulum accumsan turpis diam, ut pretium quam
-                sollicitudin sed. Pellentesque posuere eget tortor quis imperdiet. Pellentesque gravida, enim vel porttitor sagittis, libero neque
-                efficitur justo, nec gravida orci risus consequat lacus.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Primær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Sekundær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span></code></pre>
-                    </fds-tab-panel>
-                    <fds-tab-panel tab-key="generated-html">
-                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-opener</span> <span class="hljs-attr">modal-id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>Åbn modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-opener</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-modal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example&quot;</span> <span class="hljs-attr">heading</span>=<span class="hljs-string">&quot;Lorem ipsum&quot;</span> <span class="hljs-attr">heading-id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">dismissible</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">dialog</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span> <span class="hljs-attr">closedby</span>=<span class="hljs-string">&quot;none&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;scrollable-area&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-top&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;top-heading&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;not-dismissble-example-heading&quot;</span>&gt;</span>Lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales turpis nec tincidunt dictum. Aliquam hendrerit nunc nec arcu lobortis fringilla. Sed nulla lectus, mollis eget rhoncus sed, porta eu ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Cras eleifend elementum finibus. Mauris ac magna quis orci dapibus suscipit. Vestibulum accumsan turpis diam, ut pretium quam sollicitudin sed. Pellentesque posuere eget tortor quis imperdiet. Pellentesque gravida, enim vel porttitor sagittis, libero neque efficitur justo, nec gravida orci risus consequat lacus.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Primær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">fds-modal-closer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button-wrapper&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-secondary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Sekundær knap<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal-closer</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-modal</span>&gt;</span></code></pre>
-                    </fds-tab-panel>
-                </fds-tabs>
-                
-                <div class="copy-code-wrapper">
-                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
-                </div>
-            </div>
-        </fds-accordion>
-    </div>
-</div>
-
-<p>Bemærk: Attributten <code>dismissible</code> sætter både attributten <code>closedby</code> og en event listener for <code>cancel</code> grundet forskellig browsersupport og -opførsel (HTML Living Standard).</p>
 
 <h2 id="referencer-custom">Referencer</h2>
 

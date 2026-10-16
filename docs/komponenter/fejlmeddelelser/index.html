@@ -1305,8 +1305,8 @@
     </fds-modal>
 </header>
 
-<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
-    <h2 slot="heading">Web Components i beta-version</h2>
+<fds-alert role="region" aria-labelledby="beta-alert-heading" id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading" id="beta-alert-heading">Web Components i beta-version</h2>
     <div slot="content">
         <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
         <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
@@ -1723,7 +1723,8 @@
         </ul></nav>
 </aside>
 
-        <main class="col-12 col-lg-9" id="main-content">    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
+        <main class="col-12 col-lg-9" id="main-content">
+            <!--    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
         <svg class="icon-svg alert-icon" aria-label="Advarsel" focusable="false"><use href="#warning"></use></svg>
         <div class="alert-body">
             <h2 class="alert-heading pr-7">Vælg et tema</h2><button class="alert-close"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="#close"></use></svg>Luk</button>
@@ -1732,12 +1733,8 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/komponenter/fejlmeddelelser/">
-                    <fds-alert variant="warning" class="mb-6">
-                        <h2 slot="heading">Denne komponent er opdateret i Web Component-versionen</h2>
-                        <p slot="content">Komponenten har fået nyt udseende og funktionalitet samt forbedret tilgængelighed. De nye retningslinjer kan ses i <span class="nowrap"><a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions?discussions_q=label:Beslutningslog" class="icon-link" target="_blank">beslutningsloggen på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</span></p>
-                    </fds-alert>
-                
+-->
+            <section id="section-/komponenter/fejlmeddelelser/">
 
                 <div class="subheading">
                     Komponenter
@@ -1750,6 +1747,11 @@
 
                 
                 <p class="font-lead">Fejlmeddelelser hjælper brugeren til at udfylde enkelte formularelementer korrekt.</p>
+                
+                    <fds-alert variant="warning" class="mt-6">
+                        <h2 slot="heading">Denne komponent er opdateret i Web Component-versionen</h2>
+                        <p slot="content">Komponenten har fået nyt udseende og funktionalitet samt forbedret tilgængelighed. De nye retningslinjer kan ses i <span class="nowrap"><a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions?discussions_q=label:Beslutningslog" class="icon-link" target="_blank">beslutningsloggen på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</span></p>
+                    </fds-alert>
                 <nav class="tab-container mb-7" aria-label="Undersider">
     <ul class="tab-list"><li>
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
@@ -1810,6 +1812,7 @@
         <li class="anchorlink-code"><a href="#tjekboks-kode">Tjekboks</a></li>
         <li class="anchorlink-code"><a href="#vedhaeft-fil-kode">Vedhæft fil</a></li>
         <li class="anchorlink-code"><a href="#referencer-kode">Referencer</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
         
@@ -3135,6 +3138,10 @@ Fx “Du kan kun vælge op til 10 filer på samme tid”.</p>
                         </div>
                         <div id="web-component-section">
                             
+
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
 
 <h2 id="om-denne-komponent-custom">Om denne komponent</h2>
 

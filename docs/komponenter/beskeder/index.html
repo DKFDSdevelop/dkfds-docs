@@ -1305,8 +1305,8 @@
     </fds-modal>
 </header>
 
-<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
-    <h2 slot="heading">Web Components i beta-version</h2>
+<fds-alert role="region" aria-labelledby="beta-alert-heading" id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading" id="beta-alert-heading">Web Components i beta-version</h2>
     <div slot="content">
         <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
         <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
@@ -1723,7 +1723,8 @@
         </ul></nav>
 </aside>
 
-        <main class="col-12 col-lg-9" id="main-content">    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
+        <main class="col-12 col-lg-9" id="main-content">
+            <!--    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
         <svg class="icon-svg alert-icon" aria-label="Advarsel" focusable="false"><use href="#warning"></use></svg>
         <div class="alert-body">
             <h2 class="alert-heading pr-7">Vælg et tema</h2><button class="alert-close"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="#close"></use></svg>Luk</button>
@@ -1732,7 +1733,8 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/komponenter/beskeder/">
+-->
+            <section id="section-/komponenter/beskeder/">
 
                 <div class="subheading">
                     Komponenter
@@ -1823,9 +1825,10 @@
         <li class="anchorlink-code"><a href="#farver-kode">Farver</a></li>
         <li class="anchorlink-code"><a href="#paragrafbredde-kode">Paragrafbredde</a></li>
         <li class="anchorlink-code"><a href="#luk-knap-kode">Luk knap</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2328,6 +2331,10 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-box">
     
     <div class="open-in-new-window">
@@ -2399,6 +2406,100 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
 <p>Denne komponent anvender shadow DOM. Det betyder, at komponenten genererer indkapslet HTML og styling, som ikke bør tilgås. Web Components med shadow DOM konfigureres gennem attributter og slots, når komponenten tillader indhold. Slots kan enten være navngivne, dvs. hvor attributten <code>slot="navn"</code> skal anvendes på det indhold, der tilføjes til webkomponenten, eller unavngivne.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
+
+<h2 id="varianter-custom">Varianter</h2>
+
+<h3 id="teksteksempler-custom">Teksteksempler</h3>
+
+<div class="show-code-in-box">
+    
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-alert-text-variants/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-alert>
+    <strong slot="heading">Informativ besked - kun overskrift</strong>
+</fds-alert>
+
+<fds-alert>
+    <p slot="content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+</fds-alert>
+
+<fds-alert class="paragraph">
+    <h4 slot="heading">Informativ besked - tekstafsnit</h4>
+    <p slot="content">Dette eksempel viser, hvordan en besked ser ud, når dens bredde er blevet begrænset. Bredden svarer til længden på en paragraf og denne type beskeder er derfor mere velegnet, hvis du vil vise beskeden midt i en tekst.</p>
+</fds-alert>
+    </div>
+    
+    <div class="code-in-box">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-alert-text-variants">
+            <div class="code-content">
+                <h5 class="h4 mt-0">Web Component</h5>
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;heading&quot;</span>&gt;</span>Informativ besked - kun overskrift<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;paragraph&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;heading&quot;</span>&gt;</span>Informativ besked - tekstafsnit<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>Dette eksempel viser, hvordan en besked ser ud, når dens bredde er blevet begrænset. Bredden svarer til længden på en paragraf og denne type beskeder er derfor mere velegnet, hvis du vil vise beskeden midt i en tekst.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span></code></pre>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
+
+<h3 id="besked-med-luk-knap-custom">Besked med luk-knap</h3>
+
+<div class="show-code-in-box">
+    
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-alert-close/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-alert closable="">
+    <h4 slot="heading">Besked med luk</h4>
+    <p slot="content">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.</p>
+</fds-alert>
+    </div>
+    
+    <div class="code-in-box">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-alert-close">
+            <div class="code-content">
+                <h5 class="h4 mt-0">Web Component</h5>
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span> <span class="hljs-attr">closable</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;heading&quot;</span>&gt;</span>Besked med luk<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span></code></pre>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
 
 <h2 id="konfiguration-custom">Konfiguration</h2>
 
@@ -2501,100 +2602,6 @@ Man kan enten gøre brug af <code>DKFDS.init()</code> eller initiere komponenten
     </tr>
   </tbody>
 </table>
-
-<h2 id="varianter-custom">Varianter</h2>
-
-<h3 id="teksteksempler-custom">Teksteksempler</h3>
-
-<div class="show-code-in-box">
-    
-    <div class="open-in-new-window">
-        <a href="/eksempel/fds-alert-text-variants/" class="function-link" target="_blank">
-            <svg class="icon-svg" focusable="false" aria-hidden="true">
-                <use href="#open-in-new"></use>
-            </svg>Åbn eksempel i nyt vindue
-        </a>
-    </div>
-    <div class="top-example">
-        <fds-alert>
-    <strong slot="heading">Informativ besked - kun overskrift</strong>
-</fds-alert>
-
-<fds-alert>
-    <p slot="content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-</fds-alert>
-
-<fds-alert class="paragraph">
-    <h4 slot="heading">Informativ besked - tekstafsnit</h4>
-    <p slot="content">Dette eksempel viser, hvordan en besked ser ud, når dens bredde er blevet begrænset. Bredden svarer til længden på en paragraf og denne type beskeder er derfor mere velegnet, hvis du vil vise beskeden midt i en tekst.</p>
-</fds-alert>
-    </div>
-    
-    <div class="code-in-box">
-        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-alert-text-variants">
-            <div class="code-content">
-                <h5 class="h4 mt-0">Web Component</h5>
-                <div class="code-container" tabindex="0">
-                    <div class="scroll-container">
-                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;heading&quot;</span>&gt;</span>Informativ besked - kun overskrift<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;paragraph&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;heading&quot;</span>&gt;</span>Informativ besked - tekstafsnit<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>Dette eksempel viser, hvordan en besked ser ud, når dens bredde er blevet begrænset. Bredden svarer til længden på en paragraf og denne type beskeder er derfor mere velegnet, hvis du vil vise beskeden midt i en tekst.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span></code></pre>
-                    </div>
-                </div>
-                <div class="copy-code-wrapper">
-                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
-                </div>
-            </div>
-        </fds-accordion>
-    </div>
-</div>
-
-<h3 id="besked-med-luk-knap-custom">Besked med luk-knap</h3>
-
-<div class="show-code-in-box">
-    
-    <div class="open-in-new-window">
-        <a href="/eksempel/fds-alert-close/" class="function-link" target="_blank">
-            <svg class="icon-svg" focusable="false" aria-hidden="true">
-                <use href="#open-in-new"></use>
-            </svg>Åbn eksempel i nyt vindue
-        </a>
-    </div>
-    <div class="top-example">
-        <fds-alert closable="">
-    <h4 slot="heading">Besked med luk</h4>
-    <p slot="content">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.</p>
-</fds-alert>
-    </div>
-    
-    <div class="code-in-box">
-        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-alert-close">
-            <div class="code-content">
-                <h5 class="h4 mt-0">Web Component</h5>
-                <div class="code-container" tabindex="0">
-                    <div class="scroll-container">
-                        <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-alert</span> <span class="hljs-attr">closable</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;heading&quot;</span>&gt;</span>Besked med luk<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-alert</span>&gt;</span></code></pre>
-                    </div>
-                </div>
-                <div class="copy-code-wrapper">
-                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
-                </div>
-            </div>
-        </fds-accordion>
-    </div>
-</div>
 
                         </div>
             </section>

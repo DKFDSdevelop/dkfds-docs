@@ -1305,8 +1305,8 @@
     </fds-modal>
 </header>
 
-<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
-    <h2 slot="heading">Web Components i beta-version</h2>
+<fds-alert role="region" aria-labelledby="beta-alert-heading" id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading" id="beta-alert-heading">Web Components i beta-version</h2>
     <div slot="content">
         <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
         <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
@@ -1723,7 +1723,8 @@
         </ul></nav>
 </aside>
 
-        <main class="col-12 col-lg-9" id="main-content">    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
+        <main class="col-12 col-lg-9" id="main-content">
+            <!--    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
         <svg class="icon-svg alert-icon" aria-label="Advarsel" focusable="false"><use href="#warning"></use></svg>
         <div class="alert-body">
             <h2 class="alert-heading pr-7">Vælg et tema</h2><button class="alert-close"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="#close"></use></svg>Luk</button>
@@ -1732,7 +1733,8 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/komponenter/dropdown/">
+-->
+            <section id="section-/komponenter/dropdown/">
 
                 <div class="subheading">
                     Komponenter
@@ -1798,9 +1800,10 @@
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
         <li class="anchorlink-code"><a href="#deaktiveret-kode">Deaktiveret</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2037,6 +2040,10 @@
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-select/" class="function-link" target="_blank">
@@ -2102,128 +2109,6 @@
 <p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3 id="fds-select-custom">fds-select</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>show-required-status</td>
-      <td>Viser om dropdown er obligatorisk eller frivillig baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="fds-help-text-custom">fds-help-text</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Attribut</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-        </tr>
-        <tr>
-            <td>hidden</td>
-            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Event</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>help-text-callback</td>
-            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
-        </tr>
-        <tr>
-            <td>help-text-visibility-changed</td>
-            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
-                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3 id="fds-error-message-custom">fds-error-message</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Attribut</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-        </tr>
-        <tr>
-            <td>icon-text</td>
-            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
-        </tr>
-        <tr>
-            <td>hidden</td>
-            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
-        </tr>
-        <tr>
-            <td>targets</td>
-            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
-        </tr>
-        <tr>
-            <td>message</td>
-            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Event</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>error-message-callback</td>
-            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
-        </tr>
-        <tr>
-            <td>error-message-visibility-changed</td>
-            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
-        </tr>
-    </tbody>
-</table>
 
 <h2 id="varianter-custom">Varianter</h2>
 
@@ -2567,6 +2452,127 @@
     </div>
 </div>
 
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3 id="fds-select-custom">fds-select</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>show-required-status</td>
+      <td>Viser om dropdown er obligatorisk eller frivillig baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-help-text-custom">fds-help-text</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>help-text-callback</td>
+            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
+        </tr>
+        <tr>
+            <td>help-text-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
+                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="fds-error-message-custom">fds-error-message</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>icon-text</td>
+            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+        <tr>
+            <td>targets</td>
+            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>error-message-callback</td>
+            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
+        </tr>
+        <tr>
+            <td>error-message-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
 
                         </div>
             </section>

@@ -290,6 +290,8 @@ Sørg for at rette værdierne i følgende attributter, så de svarer til din lø
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 Fejlmeddelelse er en "mikrokomponent", der udelukkende anvendes sammen med andre udvalgte webkomponenter. De kompatible komponenter er listet nedenunder.

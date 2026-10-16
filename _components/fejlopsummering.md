@@ -89,11 +89,27 @@ new DKFDS.ErrorSummary(document.getElementById('ALERT-ID')).init();
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Manuel tilføjelse af fejl {#{% include create-id.html heading="Manuel tilføjelse af fejl" append="-custom" %}}
+
+Når du ikke bruger `auto`-attributten, er du selv ansvarlig for at administrere fejlene og skal manuelt oprette strukturen med fejlene.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary-manual" heading_tag="h4" subheading_tag="h5" %}
+
+### Automatisk synkronisering {#{% include create-id.html heading="Automatisk synkronisering" append="-custom" %}}
+
+Med `auto`-attributten opdateres fejloversigten automatisk baseret på synlige `fds-error-message` elementer i understøttede wrappers.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary-auto" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -130,17 +146,3 @@ Fejlmeddelelsen skal være angivet som et `fds-error-message` element.
 Når der klikkes på et link i fejloversigten, flyttes fokus til det første fokusbare element i den wrapper, som fejlmeddelelsen tilhører (f.eks. `input`, `select`, `textarea` eller `button`).
 
 Komponenten viser kun fejl fra wrappers, som ikke er skjulte, og hvor den tilhørende fejlmeddelelse heller ikke er skjult.
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Manuel tilføjelse af fejl {#{% include create-id.html heading="Manuel tilføjelse af fejl" append="-custom" %}}
-
-Når du ikke bruger `auto`-attributten, er du selv ansvarlig for at administrere fejlene og skal manuelt oprette strukturen med fejlene.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary-manual" heading_tag="h4" subheading_tag="h5" %}
-
-### Automatisk synkronisering {#{% include create-id.html heading="Automatisk synkronisering" append="-custom" %}}
-
-Med `auto`-attributten opdateres fejloversigten automatisk baseret på synlige `fds-error-message` elementer i understøttede wrappers.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary-auto" heading_tag="h4" subheading_tag="h5" %}

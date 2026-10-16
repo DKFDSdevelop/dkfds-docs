@@ -202,11 +202,45 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-mixed-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-error" heading_tag="h4" subheading_tag="h5" %}
+
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-helptext" heading_tag="h4" subheading_tag="h5" %}
+
+### Begræns mulige datoer {#{% include create-id.html heading="Begræns mulige datoer" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-minmax" heading_tag="h4" subheading_tag="h5" %}
+
+### Fast værdi {#{% include create-id.html heading="Fast værdi" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-default" heading_tag="h4" subheading_tag="h5" %}
+
+### Datoformat {#{% include create-id.html heading="Datoformat" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-format" heading_tag="h4" subheading_tag="h5" %}
+
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-disabled" heading_tag="h4" subheading_tag="h5" %}
+
+### Start- og slutdato {#{% include create-id.html heading="Start- og slutdato" append="-custom" %}}
+
+`start-date-id` og `end-date-id` læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-start-end-dates" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -274,35 +308,3 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 ### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-error" heading_tag="h4" subheading_tag="h5" %}
-
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-helptext" heading_tag="h4" subheading_tag="h5" %}
-
-### Begræns mulige datoer {#{% include create-id.html heading="Begræns mulige datoer" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-minmax" heading_tag="h4" subheading_tag="h5" %}
-
-### Fast værdi {#{% include create-id.html heading="Fast værdi" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-default" heading_tag="h4" subheading_tag="h5" %}
-
-### Datoformat {#{% include create-id.html heading="Datoformat" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-format" heading_tag="h4" subheading_tag="h5" %}
-
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-disabled" heading_tag="h4" subheading_tag="h5" %}
-
-### Start- og slutdato {#{% include create-id.html heading="Start- og slutdato" append="-custom" %}}
-
-`start-date-id` og `end-date-id` læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-start-end-dates" heading_tag="h4" subheading_tag="h5" %}

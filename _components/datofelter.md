@@ -85,11 +85,31 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-error" heading_tag="h4" subheading_tag="h5" %}
+
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-help" heading_tag="h4" subheading_tag="h5" %}
+
+### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-required" heading_tag="h4" subheading_tag="h5" %}
+
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-disabled" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -113,21 +133,3 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 ### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
 
 {% include web-component-shared-text/fds-error.html %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-error" heading_tag="h4" subheading_tag="h5" %}
-
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-help" heading_tag="h4" subheading_tag="h5" %}
-
-### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-required" heading_tag="h4" subheading_tag="h5" %}
-
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-disabled" heading_tag="h4" subheading_tag="h5" %}

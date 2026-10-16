@@ -1305,8 +1305,8 @@
     </fds-modal>
 </header>
 
-<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
-    <h2 slot="heading">Web Components i beta-version</h2>
+<fds-alert role="region" aria-labelledby="beta-alert-heading" id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading" id="beta-alert-heading">Web Components i beta-version</h2>
     <div slot="content">
         <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
         <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
@@ -1723,7 +1723,8 @@
         </ul></nav>
 </aside>
 
-        <main class="col-12 col-lg-9" id="main-content">    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
+        <main class="col-12 col-lg-9" id="main-content">
+            <!--    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
         <svg class="icon-svg alert-icon" aria-label="Advarsel" focusable="false"><use href="#warning"></use></svg>
         <div class="alert-body">
             <h2 class="alert-heading pr-7">Vælg et tema</h2><button class="alert-close"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="#close"></use></svg>Luk</button>
@@ -1732,7 +1733,8 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/komponenter/trinindikator/">
+-->
+            <section id="section-/komponenter/trinindikator/">
 
                 <div class="subheading">
                     Komponenter
@@ -1870,6 +1872,7 @@
         <li class="anchorlink-code"><a href="#ekstra-information-kode">Ekstra information</a></li>
         <li class="anchorlink-code"><a href="#trinindikator-med-fejl-kode">Trinindikator med fejl</a></li>
         <li class="anchorlink-code"><a href="#simpel-trinindikator-kode">Simpel trinindikator</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
         <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
@@ -2816,6 +2819,10 @@
                         </div>
                         <div id="web-component-section">
                             
+
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">

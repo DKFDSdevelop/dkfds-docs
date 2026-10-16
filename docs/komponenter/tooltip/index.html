@@ -1305,8 +1305,8 @@
     </fds-modal>
 </header>
 
-<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
-    <h2 slot="heading">Web Components i beta-version</h2>
+<fds-alert role="region" aria-labelledby="beta-alert-heading" id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading" id="beta-alert-heading">Web Components i beta-version</h2>
     <div slot="content">
         <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
         <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
@@ -1723,7 +1723,8 @@
         </ul></nav>
 </aside>
 
-        <main class="col-12 col-lg-9" id="main-content">    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
+        <main class="col-12 col-lg-9" id="main-content">
+            <!--    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
         <svg class="icon-svg alert-icon" aria-label="Advarsel" focusable="false"><use href="#warning"></use></svg>
         <div class="alert-body">
             <h2 class="alert-heading pr-7">Vælg et tema</h2><button class="alert-close"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="#close"></use></svg>Luk</button>
@@ -1732,7 +1733,8 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/komponenter/tooltip/">
+-->
+            <section id="section-/komponenter/tooltip/">
 
                 <div class="subheading">
                     Komponenter
@@ -1795,9 +1797,10 @@
         <li class="anchorlink-code"><a href="#ikoner-med-hover-tooltip-kode">Ikoner med hover-tooltip</a></li>
         <li class="anchorlink-code"><a href="#knap-med-hover-tooltip-kode">Knap med hover-tooltip</a></li>
         <li class="anchorlink-code"><a href="#referencer-kode">Referencer</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2489,6 +2492,10 @@
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-tooltip-icon-default/" class="function-link" target="_blank">
@@ -2540,122 +2547,6 @@
 <p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<h3 id="fds-tooltip-icon-custom">fds-tooltip-icon</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>tooltip-text</td>
-      <td>Teksten der skal vises i tooltippet.</td>
-    </tr>
-    <tr>
-      <td>sr-label</td>
-      <td>Skærmlæsertekst til ikonet.</td>
-    </tr>
-    <tr>
-      <td>placement</td>
-      <td>Accepterer værdierne <code>below</code> og <code>above</code>. Default er <code>above</code>.</td>
-    </tr>
-    <tr>
-      <td>tooltip-id</td>
-      <td>ID der skal bruges til tooltippet. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Funktioner</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Funktion</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>open()</td>
-      <td>Åbn tooltippet.</td>
-    </tr>
-    <tr>
-      <td>close()</td>
-      <td>Luk tooltippet.</td>
-    </tr>
-    <tr>
-      <td>toggle()</td>
-      <td>Skift mellem at åbne og lukke tooltippet.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="fds-tooltip-custom">fds-tooltip</h3>
-
-<p><code>fds-tooltip</code> skal indeholde præcis ét element, som fungerer som trigger for tooltippet.</p>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>tooltip-text</td>
-      <td>Teksten der skal vises i tooltippet.</td>
-    </tr>
-    <tr>
-      <td>placement</td>
-      <td>Accepterer værdierne <code>below</code> og <code>above</code>. Default er <code>above</code>.</td>
-    </tr>
-    <tr>
-      <td>purpose</td>
-      <td>Accepterer værdierne <code>hint</code> og <code>label</code>. Default er <code>hint</code>. <code>label</code> gør tooltippet til et tilgængeligt navn for trigger-elementet.</td>
-    </tr>
-    <tr>
-      <td>tooltip-id</td>
-      <td>ID der skal bruges til tooltippet. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Funktioner</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Funktion</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>open()</td>
-      <td>Åbn tooltippet.</td>
-    </tr>
-    <tr>
-      <td>close()</td>
-      <td>Luk tooltippet.</td>
-    </tr>
-    <tr>
-      <td>toggle()</td>
-      <td>Skift mellem at åbne og lukke tooltippet.</td>
-    </tr>
-  </tbody>
-</table>
 
 <h2 id="varianter-custom">Varianter</h2>
 
@@ -3075,6 +2966,122 @@
         </fds-accordion>
     </div>
 </div>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3 id="fds-tooltip-icon-custom">fds-tooltip-icon</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tooltip-text</td>
+      <td>Teksten der skal vises i tooltippet.</td>
+    </tr>
+    <tr>
+      <td>sr-label</td>
+      <td>Skærmlæsertekst til ikonet.</td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td>Accepterer værdierne <code>below</code> og <code>above</code>. Default er <code>above</code>.</td>
+    </tr>
+    <tr>
+      <td>tooltip-id</td>
+      <td>ID der skal bruges til tooltippet. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open()</td>
+      <td>Åbn tooltippet.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Luk tooltippet.</td>
+    </tr>
+    <tr>
+      <td>toggle()</td>
+      <td>Skift mellem at åbne og lukke tooltippet.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-tooltip-custom">fds-tooltip</h3>
+
+<p><code>fds-tooltip</code> skal indeholde præcis ét element, som fungerer som trigger for tooltippet.</p>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tooltip-text</td>
+      <td>Teksten der skal vises i tooltippet.</td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td>Accepterer værdierne <code>below</code> og <code>above</code>. Default er <code>above</code>.</td>
+    </tr>
+    <tr>
+      <td>purpose</td>
+      <td>Accepterer værdierne <code>hint</code> og <code>label</code>. Default er <code>hint</code>. <code>label</code> gør tooltippet til et tilgængeligt navn for trigger-elementet.</td>
+    </tr>
+    <tr>
+      <td>tooltip-id</td>
+      <td>ID der skal bruges til tooltippet. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open()</td>
+      <td>Åbn tooltippet.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Luk tooltippet.</td>
+    </tr>
+    <tr>
+      <td>toggle()</td>
+      <td>Skift mellem at åbne og lukke tooltippet.</td>
+    </tr>
+  </tbody>
+</table>
 
                         </div>
             </section>

@@ -60,7 +60,7 @@ Alle knapper har en “disabled” tilstand, men vi anbefaler ikke at benytte de
 
 ## Varianter {#{% include create-id.html heading="Varianter" %}}
 
-### Primærknap i fuld bredde på små skærme {#{% include create-id.html heading="fuld bredde" %}}
+### Primærknap i fuld bredde på små skærme {#{% include create-id.html heading="Primærknap i fuld bredde på små skærme" %}}
 
 På små skærme med kun én central handling kan primærknapper indsættes på siden med fuld bredde. Benyt kun denne variant til primærknapper og kun til små skærmstørrelser (breakpoint mobil).
 
@@ -143,7 +143,7 @@ Tilføj klassen `button-secondary` til knappen.
 
 Tilføj klassen `button-tertiary` til knappen.
 
-## Primærknap i fuld bredde på små skærme {#{% include create-id.html heading="fuld bredde" append="-kode" %}}
+## Primærknap i fuld bredde på små skærme {#{% include create-id.html heading="Primærknap i fuld bredde på små skærme" append="-kode" %}}
 
 {% include code/syntax.html component="buttons-full-width" link=true copybutton=true guidelines="/komponenter/knapper/#fuld-bredde" %}
 

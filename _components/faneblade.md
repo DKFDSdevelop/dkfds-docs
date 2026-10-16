@@ -126,11 +126,21 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-default" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-shadow-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Med ikoner {#{% include create-id.html heading="Med ikoner" append="-custom" %}}
+
+Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et `svg`-element med `class="icon-svg"` i `fds-tab`. Når der anvendes et ikon, skal fanebladets tekst sættes i et `span`-element.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-icons" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -196,11 +206,3 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 | Slot       | Beskrivelse                                    |
 |------------|------------------------------------------------|
 | Unavngivet | Indhold der skal vises, når fanebladet vælges. |
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Med ikoner {#{% include create-id.html heading="Med ikoner" append="-custom" %}}
-
-Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et `svg`-element med `class="icon-svg"` i `fds-tab`. Når der anvendes et ikon, skal fanebladets tekst sættes i et `span`-element.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-icons" heading_tag="h4" subheading_tag="h5" %}

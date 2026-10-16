@@ -66,11 +66,19 @@ Cookies brugt til statistik må ikke sættes, før man aktivt har accepteret det
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="cookie-default" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 Cookiemeddelelsen anvender `fds-modal`, men er ikke selv en Web Component.
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Flere end to typer cookies {#{% include create-id.html heading="Flere end to typer cookies" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="cookie-many-options" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -79,9 +87,3 @@ Se dokumentationen for {% include links/component-guideline-link.html linktext="
 Bemærk, at cookiemeddelelser bruger `dismissible="false"` for at tvinge brugeren til at træffe et valg. `<dialog>` skal indeholde `<div class="scrollable-area has-fade">` samt `<div class="fixed-area">` for at holde knapperne synlige.
 
 Hvis cookiemeddelelsen indeholder et logo, er det op til løsningen selv at sætte en passende højde og bredde for dette. Giv logoet en passende alt-tekst, så det også er muligt for skærmlæserbrugere at vide, hvem der står bag selvbetjeningsløsningen.
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Flere end to typer cookies {#{% include create-id.html heading="Flere end to typer cookies" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="cookie-many-options" heading_tag="h4" subheading_tag="h5" %}

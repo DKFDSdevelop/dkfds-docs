@@ -183,11 +183,35 @@ Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af s
 
 <!--split-->
 
+{% include web-component-shared-text/web-components-beta.html %}
+
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-example" subheading_tag="h2" collapsable=false %}
 
 ## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-error" heading_tag="h4" subheading_tag="h5" %}
+
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-helptext" heading_tag="h4" subheading_tag="h5" %}
+
+### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-limit" heading_tag="h4" subheading_tag="h5" %}
+
+### Obligatoriske og frivillige tekstområder {#{% include create-id.html heading="Obligatoriske og frivillige tekstområder" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required" heading_tag="h4" subheading_tag="h5" %}
+
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-disabled" heading_tag="h4" subheading_tag="h5" %}
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
@@ -211,25 +235,3 @@ Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af s
 ### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-custom" %}}
 
 {% include web-component-shared-text/fds-character-limit.html %}
-
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
-
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-error" heading_tag="h4" subheading_tag="h5" %}
-
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-helptext" heading_tag="h4" subheading_tag="h5" %}
-
-### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-limit" heading_tag="h4" subheading_tag="h5" %}
-
-### Obligatoriske og frivillige tekstområder {#{% include create-id.html heading="Obligatoriske og frivillige tekstområder" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required" heading_tag="h4" subheading_tag="h5" %}
-
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-disabled" heading_tag="h4" subheading_tag="h5" %}

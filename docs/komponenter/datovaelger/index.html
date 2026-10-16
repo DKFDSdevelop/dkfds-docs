@@ -1305,8 +1305,8 @@
     </fds-modal>
 </header>
 
-<fds-alert id="web-components-beta-alert" class="container mb-0" closable hidden>
-    <h2 slot="heading">Web Components i beta-version</h2>
+<fds-alert role="region" aria-labelledby="beta-alert-heading" id="web-components-beta-alert" class="container mb-0" closable hidden>
+    <h2 slot="heading" id="beta-alert-heading">Web Components i beta-version</h2>
     <div slot="content">
         <p>Udvalgte komponenter i designsystemet er nu også tilgængelige som Web Components. Beta-versionen er klar til afprøvning og vi vil meget gerne høre din feedback og erfaringer.</p>
         <p class="mb-0">Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a></p>
@@ -1723,7 +1723,8 @@
         </ul></nav>
 </aside>
 
-        <main class="col-12 col-lg-9" id="main-content">    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
+        <main class="col-12 col-lg-9" id="main-content">
+            <!--    <div class="alert alert-warning has-close d-none mt-4" id="themeAlert">
         <svg class="icon-svg alert-icon" aria-label="Advarsel" focusable="false"><use href="#warning"></use></svg>
         <div class="alert-body">
             <h2 class="alert-heading pr-7">Vælg et tema</h2><button class="alert-close"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="#close"></use></svg>Luk</button>
@@ -1732,12 +1733,8 @@
             <button class="button button-primary" id="virkThemeBtn">Virk tema</button>
         </div>
     </div>
-<section id="section-/komponenter/datovaelger/">
-                    <fds-alert variant="warning" class="mb-6">
-                        <h2 slot="heading">Denne komponent er opdateret i Web Component-versionen</h2>
-                        <p slot="content">Komponenten har fået nyt udseende og funktionalitet samt forbedret tilgængelighed. De nye retningslinjer kan ses i <span class="nowrap"><a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions?discussions_q=label:Beslutningslog" class="icon-link" target="_blank">beslutningsloggen på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</span></p>
-                    </fds-alert>
-                
+-->
+            <section id="section-/komponenter/datovaelger/">
 
                 <div class="subheading">
                     Komponenter
@@ -1750,6 +1747,11 @@
 
                 
                 <p class="font-lead">Ét felt med knap, hvor man kan vælge en dato.</p>
+                
+                    <fds-alert variant="warning" class="mt-6">
+                        <h2 slot="heading">Denne komponent er opdateret i Web Component-versionen</h2>
+                        <p slot="content">Komponenten har fået nyt udseende og funktionalitet samt forbedret tilgængelighed. De nye retningslinjer kan ses i <span class="nowrap"><a href="https://github.com/detfaellesdesignsystem/dkfds-components/discussions?discussions_q=label:Beslutningslog" class="icon-link" target="_blank">beslutningsloggen på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</span></p>
+                    </fds-alert>
                 <nav class="tab-container mb-7" aria-label="Undersider">
     <ul class="tab-list"><li>
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
@@ -1800,9 +1802,10 @@
         <li class="anchorlink-code"><a href="#datoformat-kode">Datoformat</a></li>
         <li class="anchorlink-code"><a href="#fejlmeddelelse-kode">Fejlmeddelelse</a></li>
         <li class="anchorlink-code"><a href="#deaktiveret-kode">Deaktiveret</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2291,6 +2294,10 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
                         <div id="web-component-section">
                             
 
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-date-picker/" class="function-link" target="_blank">
@@ -2366,263 +2373,6 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
 <p>Web Components med shadow DOM konfigureres gennem attributter og slots, når komponenten tillader indhold. Slots kan enten være navngivne, dvs. hvor attributten <code>slot="navn"</code> skal anvendes på det indhold, der tilføjes til webkomponenten, eller unavngivne.</p>
 
 <p>Læs mere på <a href="/kom-i-gang/implementering-kode/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
-
-<p><code>fds-date-picker</code> kræver følgende struktur: Et <code>label</code>-element, en <code>div</code> indeholdende et <code>input</code>-element, samt en indre <code>div</code> med et <code>fds-date-picker-grid</code>-element.</p>
-
-<h3 id="fds-date-picker-custom">fds-date-picker</h3>
-
-<p><code>fds-date-picker</code> anvender light DOM.</p>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>show-required-status</td>
-      <td>Viser om inputfeltet er obligatorisk eller frivilligt baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
-    </tr>
-    <tr>
-      <td>format</td>
-      <td>Angiv det datoformat, der vises i inputfeltet. Gyldige værdier er <code>DD/MM/YYYY</code>, <code>DD-MM-YYYY</code>, <code>DD.MM.YYYY</code>, <code>DD MM YYYY</code> og <code>DD/MM-YYYY</code>. Default er <code>DD/MM/YYYY</code>.</td>
-    </tr>
-    <tr>
-      <td>text-open</td>
-      <td>Skærmlæsertekst for knappen, der åbner datovælgeren. Default er <code>Åbn datovælger</code>.</td>
-    </tr>
-    <tr>
-      <td>text-selecteddate</td>
-      <td>Skærmlæsertekst for den valgte dato, tilføjet til knappens skærmlæsertekst. Skal indeholde <code>DAY</code>, <code>MONTH</code> og <code>YEAR</code>. Default er <code>valgt dato er DAY. MONTH YEAR</code>.</td>
-    </tr>
-    <tr>
-      <td>text-months</td>
-      <td>Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er <code>januar februar marts april maj juni juli august september oktober november december</code>.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Funktioner</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Funktion</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>open()</td>
-      <td>Åbn datovælgeren.</td>
-    </tr>
-    <tr>
-      <td>close()</td>
-      <td>Luk datovælgeren.</td>
-    </tr>
-    <tr>
-      <td>toggle()</td>
-      <td>Skift mellem at åbne og lukke datovælgeren.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="fds-date-picker-grid-custom">fds-date-picker-grid</h3>
-
-<p><code>fds-date-picker-grid</code> anvender shadow DOM. Bemærk, at <code>fds-date-picker-grid</code> som udgangspunkt bruges inden i <code>fds-date-picker</code> og ikke er tiltænkt at blive brugt alene.</p>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>min-date</td>
-      <td>Angiv den tidligste valgbare dato. Angives i formatet <code>YYYY-MM-DD</code>. Default er dags dato.</td>
-    </tr>
-    <tr>
-      <td>max-date</td>
-      <td>Angiv den seneste valgbare dato. Angives i formatet <code>YYYY-MM-DD</code>. Default er 10 år fra dags dato.</td>
-    </tr>
-    <tr>
-      <td>selected-date</td>
-      <td>Angiv den valgte dato. Angives i formatet <code>YYYY-MM-DD</code>.</td>
-    </tr>
-    <tr>
-      <td>default-date</td>
-      <td>Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet <code>YYYY-MM-DD</code>. Ændringer efter initialisering har ingen effekt.</td>
-    </tr>
-    <tr>
-      <td>start-date-id</td>
-      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer slutdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
-    </tr>
-    <tr>
-      <td>end-date-id</td>
-      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer startdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
-    </tr>
-    <tr>
-      <td>text-months</td>
-      <td>Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er <code>januar februar marts april maj juni juli august september oktober november december</code>.</td>
-    </tr>
-    <tr>
-      <td>text-days</td>
-      <td>Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er <code>mandag tirsdag onsdag torsdag fredag lørdag søndag</code>.</td>
-    </tr>
-    <tr>
-      <td>text-prevbutton</td>
-      <td>Skærmlæsertekst for knappen, der viser den foregående måned.</td>
-    </tr>
-    <tr>
-      <td>text-nextbutton</td>
-      <td>Skærmlæsertekst for knappen, der viser den næste måned.</td>
-    </tr>
-    <tr>
-      <td>text-date-announcement</td>
-      <td>Skærmlæsertekst for hver dato i kalenderen. Skal indeholde <code>DAY</code>, <code>MONTH</code> og <code>YEAR</code>. Default er <code>DAY. MONTH YEAR</code>.</td>
-    </tr>
-    <tr>
-      <td>text-mindate</td>
-      <td>Tilføjes til skærmlæserteksten for den tidligste valgbare dato. Default er <code>tidligste valgbare dato</code>.</td>
-    </tr>
-    <tr>
-      <td>text-maxdate</td>
-      <td>Tilføjes til skærmlæserteksten for den seneste valgbare dato. Default er <code>seneste valgbare dato</code>.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>date-clicked</td>
-      <td>Udløses når en dato i kalenderen klikkes eller vælges med tastaturet.</td>
-    </tr>
-    <tr>
-      <td>date-selected</td>
-      <td>Udløses når den valgte dato ændres.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="fds-help-text-custom">fds-help-text</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Attribut</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-        </tr>
-        <tr>
-            <td>hidden</td>
-            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Event</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>help-text-callback</td>
-            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
-        </tr>
-        <tr>
-            <td>help-text-visibility-changed</td>
-            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
-                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3 id="fds-error-message-custom">fds-error-message</h3>
-
-<h4>Attributter</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Attribut</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
-        </tr>
-        <tr>
-            <td>icon-text</td>
-            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
-        </tr>
-        <tr>
-            <td>hidden</td>
-            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
-        </tr>
-        <tr>
-            <td>targets</td>
-            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
-        </tr>
-        <tr>
-            <td>message</td>
-            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h4>Events</h4>
-
-<table class="table table--responsive-headers">
-    <thead>
-        <tr>
-            <th>Event</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>error-message-callback</td>
-            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
-        </tr>
-        <tr>
-            <td>error-message-visibility-changed</td>
-            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
-        </tr>
-    </tbody>
-</table>
 
 <h2 id="varianter-custom">Varianter</h2>
 
@@ -3157,6 +2907,262 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<p><code>fds-date-picker</code> kræver følgende struktur: Et <code>label</code>-element, en <code>div</code> indeholdende et <code>input</code>-element, samt en indre <code>div</code> med et <code>fds-date-picker-grid</code>-element.</p>
+
+<h3 id="fds-date-picker-custom">fds-date-picker</h3>
+
+<p><code>fds-date-picker</code> anvender light DOM.</p>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>show-required-status</td>
+      <td>Viser om inputfeltet er obligatorisk eller frivilligt baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
+    </tr>
+    <tr>
+      <td>format</td>
+      <td>Angiv det datoformat, der vises i inputfeltet. Gyldige værdier er <code>DD/MM/YYYY</code>, <code>DD-MM-YYYY</code>, <code>DD.MM.YYYY</code>, <code>DD MM YYYY</code> og <code>DD/MM-YYYY</code>. Default er <code>DD/MM/YYYY</code>.</td>
+    </tr>
+    <tr>
+      <td>text-open</td>
+      <td>Skærmlæsertekst for knappen, der åbner datovælgeren. Default er <code>Åbn datovælger</code>.</td>
+    </tr>
+    <tr>
+      <td>text-selecteddate</td>
+      <td>Skærmlæsertekst for den valgte dato, tilføjet til knappens skærmlæsertekst. Skal indeholde <code>DAY</code>, <code>MONTH</code> og <code>YEAR</code>. Default er <code>valgt dato er DAY. MONTH YEAR</code>.</td>
+    </tr>
+    <tr>
+      <td>text-months</td>
+      <td>Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er <code>januar februar marts april maj juni juli august september oktober november december</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open()</td>
+      <td>Åbn datovælgeren.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Luk datovælgeren.</td>
+    </tr>
+    <tr>
+      <td>toggle()</td>
+      <td>Skift mellem at åbne og lukke datovælgeren.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-date-picker-grid-custom">fds-date-picker-grid</h3>
+
+<p><code>fds-date-picker-grid</code> anvender shadow DOM. Bemærk, at <code>fds-date-picker-grid</code> som udgangspunkt bruges inden i <code>fds-date-picker</code> og ikke er tiltænkt at blive brugt alene.</p>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>min-date</td>
+      <td>Angiv den tidligste valgbare dato. Angives i formatet <code>YYYY-MM-DD</code>. Default er dags dato.</td>
+    </tr>
+    <tr>
+      <td>max-date</td>
+      <td>Angiv den seneste valgbare dato. Angives i formatet <code>YYYY-MM-DD</code>. Default er 10 år fra dags dato.</td>
+    </tr>
+    <tr>
+      <td>selected-date</td>
+      <td>Angiv den valgte dato. Angives i formatet <code>YYYY-MM-DD</code>.</td>
+    </tr>
+    <tr>
+      <td>default-date</td>
+      <td>Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet <code>YYYY-MM-DD</code>. Ændringer efter initialisering har ingen effekt.</td>
+    </tr>
+    <tr>
+      <td>start-date-id</td>
+      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer slutdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
+    </tr>
+    <tr>
+      <td>end-date-id</td>
+      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer startdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
+    </tr>
+    <tr>
+      <td>text-months</td>
+      <td>Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er <code>januar februar marts april maj juni juli august september oktober november december</code>.</td>
+    </tr>
+    <tr>
+      <td>text-days</td>
+      <td>Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er <code>mandag tirsdag onsdag torsdag fredag lørdag søndag</code>.</td>
+    </tr>
+    <tr>
+      <td>text-prevbutton</td>
+      <td>Skærmlæsertekst for knappen, der viser den foregående måned.</td>
+    </tr>
+    <tr>
+      <td>text-nextbutton</td>
+      <td>Skærmlæsertekst for knappen, der viser den næste måned.</td>
+    </tr>
+    <tr>
+      <td>text-date-announcement</td>
+      <td>Skærmlæsertekst for hver dato i kalenderen. Skal indeholde <code>DAY</code>, <code>MONTH</code> og <code>YEAR</code>. Default er <code>DAY. MONTH YEAR</code>.</td>
+    </tr>
+    <tr>
+      <td>text-mindate</td>
+      <td>Tilføjes til skærmlæserteksten for den tidligste valgbare dato. Default er <code>tidligste valgbare dato</code>.</td>
+    </tr>
+    <tr>
+      <td>text-maxdate</td>
+      <td>Tilføjes til skærmlæserteksten for den seneste valgbare dato. Default er <code>seneste valgbare dato</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>date-clicked</td>
+      <td>Udløses når en dato i kalenderen klikkes eller vælges med tastaturet.</td>
+    </tr>
+    <tr>
+      <td>date-selected</td>
+      <td>Udløses når den valgte dato ændres.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-help-text-custom">fds-help-text</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>help-text-callback</td>
+            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
+        </tr>
+        <tr>
+            <td>help-text-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
+                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="fds-error-message-custom">fds-error-message</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>icon-text</td>
+            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+        <tr>
+            <td>targets</td>
+            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>error-message-callback</td>
+            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
+        </tr>
+        <tr>
+            <td>error-message-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
 
                         </div>
             </section>
