@@ -10,7 +10,6 @@ lead: Komponenten lader brugeren tilføje og indsende en fil.
 description: "Brug fil upload til at lade brugeren vælge en fil fra sin egen computer, tablet eller mobil."
 tags:
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 difference_warning: true
 ---
 

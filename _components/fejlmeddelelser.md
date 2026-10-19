@@ -23,7 +23,6 @@ tags:
 - fejlmeddellelser
 - fejlmedellelser
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 difference_warning: true
 ---
 

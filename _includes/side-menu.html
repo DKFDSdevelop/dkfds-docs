@@ -29,9 +29,6 @@
                 <a href="{{ _page.url | relative_url }}" {% if _current %} aria-current="page" {% endif %}>
                     <span>{{ _page.title | smartify }}
                         {% if _page.title_en %} <span class="d-inline" lang="en">({{ _page.title_en | smartify }})</span>{% endif %}
-                        {% if _page.custom_element %} <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
-                            <use href="#check"></use>
-                        </svg>{% endif %}
                     </span>
                 </a>
 
@@ -64,9 +61,6 @@
                         <a href="{{ _subpage.url | relative_url }}" {% if _current %} aria-current="page" {% endif %}>
                             <span>{{ _subpage.title | smartify }}
                                 {%- if _subpage.title_en -%} <span class="d-inline" lang="en">({{ _subpage.title_en | smartify }})</span>{%- endif -%}
-                                {%- if _subpage.custom_element -%} <svg class="icon-svg mb-1" focusable="false" aria-hidden="true">
-                                    <use href="#check"></use>
-                                </svg>{%- endif -%}
                             </span>
                         </a>
                     </li>

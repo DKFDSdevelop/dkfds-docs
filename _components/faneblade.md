@@ -16,7 +16,6 @@ description: Faneblade gør det muligt for brugerne at bladre imellem relaterede
   af indhold og kun få vist en sektion af gangen.
 tags:
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}

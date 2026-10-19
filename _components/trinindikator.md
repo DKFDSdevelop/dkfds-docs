@@ -12,7 +12,6 @@ lead: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en l�
 description: "En trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning."
 tags:
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}

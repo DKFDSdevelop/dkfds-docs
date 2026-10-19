@@ -8,7 +8,6 @@ lead: "Multiselect gør det muligt for brugeren at vælge flere elementer i samm
 description: "Multiselect gør det muligt for brugeren at vælge flere elementer i samme dropdown."
 tags:
 - "multiselect"
-custom_element: "Ready"
 ---
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect" subheading_tag="h2" collapsable=false %}

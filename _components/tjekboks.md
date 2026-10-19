@@ -11,7 +11,6 @@ lead: Tjekbokse lader brugeren vælge en eller flere muligheder.
 description: "Tjekbokse giver brugeren mulighed for at vælge en eller flere værdier ud fra en synlig liste."
 tags:
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}

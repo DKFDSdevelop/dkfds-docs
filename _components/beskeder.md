@@ -12,7 +12,6 @@ description: Beskeder (Alerts) er farvede bokse, du kan bruge til at give bruger
 tags:
 - fejlbesked
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}
