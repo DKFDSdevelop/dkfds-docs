@@ -1,11 +1,11 @@
 ---
-permalink: "/kom-i-gang/implementering-kode/web-components-i-beta-version/"
+permalink: "/kom-i-gang/implementering-kode/kom-i-gang-med-web-components/"
 parentlink: "/kom-i-gang/implementering-kode/"
 redirect_from:
 layout: styleguide
 category: kom_i_gang_menu
 subcategory: Kom i gang
-title: Web Components i beta-version
+title: Kom i gang med Web Components
 description: "Vi omskriver designsystemets kode til Web Components. Det gør komponenterne mere robuste, lettere at vedligeholde og nemmere at bruge på tværs af forskellige frameworks."
 lead: "Vi er i gang med en større teknisk ændring af designsystemet: Vi skifter den underliggende kodebase fra en ældre JavaScript-arkitektur baseret på constructor functions til Web Components. Læs mere i de følgende afsnit om, hvad ændringen betyder i praksis, og hvordan du kan hjælpe os med at gøre koden bedre."
 tags:

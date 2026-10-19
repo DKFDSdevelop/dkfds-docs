@@ -12,6 +12,7 @@ main_menu:
 
 kom_i_gang_menu:
   - href: /kom-i-gang/om-designsystemet/
+  - href: /kom-i-gang/web-components-i-beta-version/
   - href: /kom-i-gang/implementering-kode/
     submenu: 'implementering_kode_submenu'
   - href: /kom-i-gang/designressourcer/
@@ -22,7 +23,7 @@ kom_i_gang_menu:
 
 implementering_kode_submenu:
   - href: /kom-i-gang/implementering-kode/hent-kodepakken/
-  - href: /kom-i-gang/implementering-kode/web-components-i-beta-version/
+  - href: /kom-i-gang/implementering-kode/kom-i-gang-med-web-components/
   - href: /kom-i-gang/implementering-kode/justering/
   - href: /kom-i-gang/implementering-kode/hjaelpeklasser/
   - href: /kom-i-gang/implementering-kode/browserunderstoettelse/

@@ -18,6 +18,13 @@ tags:
     </li>
     <li>
         {% include cards/navcard-long.html headingLevel="h2"
+        href="/kom-i-gang/web-components-i-beta-version/"
+        heading="Web Components i beta-version" 
+        content="Vi omskriver designsystemets kode til Web Components. Det gør komponenterne mere robuste, lettere at vedligeholde og nemmere at bruge på tværs af forskellige frameworks." 
+        %}
+    </li>
+    <li>
+        {% include cards/navcard-long.html headingLevel="h2"
         href="/kom-i-gang/implementering-kode/"
         heading="Implementering og kode" 
         content="Det grundlæggende, du skal vide, for at anvende designsystemets kode samt information om plugins og teknisk opsætning af sider til print." 
