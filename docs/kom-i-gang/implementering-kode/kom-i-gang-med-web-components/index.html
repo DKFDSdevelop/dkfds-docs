@@ -19,8 +19,8 @@
 <title>Kom i gang med Web Components | Det Fælles Designsystem</title>
 <meta property="og:title" content="Kom i gang med Web Components | Det Fælles Designsystem">
 
-<meta name="description" content="Vi omskriver designsystemets kode til Web Components. Det gør komponenterne mere robuste, lettere at vedligeholde og nemmere at bruge på tværs af forskellige frameworks.">
-<meta property="og:description" content="Vi omskriver designsystemets kode til Web Components. Det gør komponenterne mere robuste, lettere at vedligeholde og nemmere at bruge på tværs af forskellige frameworks.">
+<meta name="description" content="Kom hurtigt i gang med Web Components.">
+<meta property="og:description" content="Kom hurtigt i gang med Web Components.">
 
 
 
@@ -1472,13 +1472,12 @@
                 
 
                 
-                <p class="font-lead">Vi er i gang med en større teknisk ændring af designsystemet: Vi skifter den underliggende kodebase fra en ældre JavaScript-arkitektur baseret på constructor functions til Web Components. Læs mere i de følgende afsnit om, hvad ændringen betyder i praksis, og hvordan du kan hjælpe os med at gøre koden bedre.</p>
+                <p class="font-lead">Følg guiden herunder, og kom hurtigt i gang med Web Components</p>
                 <nav class="anchorbox" aria-labelledby="anchorlinks">
     <h2 class="anchortitle" id="anchorlinks">Indhold på siden</h2>
     <ul class="anchorlist">
-        <li><a href="#hvorfor-skifter-vi-til-web-components">Hvorfor skifter vi til Web Components?</a></li>
-        <li><a href="#om-web-components">Om Web Components</a></li>
-        <li><a href="#web-components-som-beta-version">Web Components som beta-version</a></li>
+        <li><a href="#saadan-anvender-du-komponenterne">Sådan anvender du komponenterne</a></li>
+        <li><a href="#baggrund-for-opbygning-af-web-components">Baggrund for opbygning af Web Components</a></li>
         <li><a href="#vi-har-brug-for-din-feedback">Vi har brug for din feedback</a></li>
         
         
@@ -1486,33 +1485,17 @@
     </ul>
 </nav>
 
-<h2 id="hvorfor-skifter-vi-til-web-components">Hvorfor skifter vi til Web Components?</h2>
+<h2 id="saadan-anvender-du-komponenterne">Sådan anvender du komponenterne</h2>
 
-<p>Designsystemet bliver i dag brugt på tværs af mange forskellige projekter og teams og dermed også på tværs af forskellige frontend-frameworks. Med den tidligere JavaScript-arkitektur har det krævet ekstra arbejde at integrere komponenterne korrekt i frameworks, uanset om det er Vue, Angular, React eller noget helt fjerde. Web Components er stadig ren Vanilla JS ligesom den tidligere kode, men bruger en mere moderne tilgang, hvor formålet er at gøre det lettere at bruge komponenterne as-is, også i frameworks, og lettere at opgradere til nye versioner, da mere af HTML’en ligger i selve elementet.</p>
+<p>TO DO</p>
 
-<h2 id="om-web-components">Om Web Components</h2>
+<h2 id="baggrund-for-opbygning-af-web-components">Baggrund for opbygning af Web Components</h2>
 
 <p>Da designsystemet bruges forskelligt fra projekt til projekt, har vi lagt vægt på, at komponenterne skal være fleksible at arbejde med. Derfor er de fleste af vores Web Components i første beta-version bygget uden Shadow DOM. Shadow DOM er en teknik, der isolerer en komponents interne HTML og styling fra resten af siden og beskytter den mod at blive påvirket af for eksempel scripts eller frameworks’ opdateringer af siden. Dog giver det også mindre fleksibilitet for udviklere, fordi det ikke er muligt at få kontrol over al HTML. Det står i modsætning til Light DOM, hvor komponentens HTML indgår direkte i sidens almindelige DOM-struktur.</p>
 
 <p>Brugen af Shadow DOM eller Light DOM i FDS er blevet vurderet fra komponent til komponent, og valget fremgår af hver komponents dokumentation. Denne vurdering kan ændre sig, i takt med at vi bliver klogere på behov og udfordringer. Vi er samtidig opmærksomme på, at Shadow DOM i visse situationer kan give tilgængelighedsudfordringer, hvorfor vi er forsigtige med, hvor og hvordan vi anvender det. Omvendt kan Shadow DOM gøre en komponent mere robust at bruge i frameworks. Både fleksibilitet, tilgængelighed og robusthed spiller derfor ind, når vi vurderer, hvilken tilgang der giver mest mening for den enkelte komponent.</p>
 
 <p>Læs mere om <a href="https://nolanlawson.com/2022/11/28/shadow-dom-and-accessibility-the-trouble-with-aria/" class="icon-link" target="_blank">Shadow DOM og tilgængelighed<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a>.</p>
-
-<h2 id="web-components-som-beta-version">Web Components som beta-version</h2>
-
-<p>Vi udgiver i første omgang en række udvalgte komponenter som Web Components. Det er bevidst et begrænset udvalg, fordi vi er i en betafase, hvor formålet er at teste tilgangen i praksis, samle erfaringer og rette eventuelle problemer, inden vi udruller det til resten af designsystemet.
-Betakomponenterne kan bruges side om side med den tidligere kode. Vær dog opmærksom på, at koden til Web Components ligger i nye stylesheets og scripts, som skal tilføjes særskilt.</p>
-
-<p>Det betyder også, at:</p>
-<ul>
-  <li>De udvalgte komponenter, der nu er tilgængelige, kan ændre sig, efterhånden som vi justerer dem baseret på feedback. Der kan forekomme breaking changes i denne periode, så vi anbefaler, at du holder øje med versionsnumre og release notes, hvis du tager komponenterne i brug allerede nu.</li>
-  <li>Dokumentationen bliver løbende opdateret i takt med, at vi lærer mere.</li>
-  <li>Der udvides løbende med flere komponenter.</li>
-</ul>
-
-<p>Vær også opmærksom på, om dit framework kræver særlig konfiguration eller andre ændringer, når du tager Web Components i brug.</p>
-
-<p>Du kan <a href="/kom-i-gang/implementering-kode/hent-kodepakken/">hente kodepakken</a> via NPM.</p>
 
 <h2 id="vi-har-brug-for-din-feedback">Vi har brug for din feedback</h2>
 
