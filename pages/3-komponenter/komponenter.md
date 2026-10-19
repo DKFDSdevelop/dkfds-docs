@@ -167,118 +167,125 @@ tags:
     </li>
     <li class="col-12 col-sm-6 col-md-4">
         {% include cards/navcard-short.html headingLevel="h2" hrefNumber=22
+        id="card-multiselect"  
+        heading="Multiselect" 
+        content="Multiselect gør det muligt for brugeren at vælge flere elementer i samme dropdown." 
+        %}
+    </li>
+    <li class="col-12 col-sm-6 col-md-4">
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=23
         id="card-overflow-menu"  
         heading="Overflow menu" 
         content="Overflow menuer viser og skjuler en liste af links eller funktioner." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=23
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=24
         id="card-paginering"  
         heading="Paginering" 
         content="Paginering bruges til at navigere mellem indhold, der er opdelt på flere sider." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=24
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=25
         id="card-radioknap"  
         heading="Radioknap" 
         content="Radioknapper lader brugeren vælge én blandt flere muligheder." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=25
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=26
         id="card-sprogvaelger"  
         heading="Sprogvælger" 
         content="Sprogvælgeren lader brugeren vælge et andet sprog end løsningens standardsprog." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=26
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=27
         id="card-soegefelt"  
         heading="Søgefelt" 
         content="Søgefeltet lader brugeren søge efter bestemt indhold på siden eller i løsningen." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=27
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=28
         id="card-tabeller"  
         heading="Tabeller" 
         content="Tabeller er en systematisk opstilling af data i kolonner og rækker." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=28
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=29
         id="card-tags"  
         heading="Tags" 
         content="Et tag er en mindre knap, som angiver metainformation om indhold." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=29
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=30
         id="card-tekstomraade"  
         heading="Tekstområde" 
         content="Tekstområder lader brugeren indtaste en længere tekst på flere linjer." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=30
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=31
         id="card-tilbage-link"  
         heading="Tilbage-link" 
         content="Tilbage-linket lader brugeren gå tilbage til forrige trin eller side i en selvbetjeningsløsning." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=31
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=32
         id="card-tilbage-til-toppen"  
         heading="Tilbage til toppen" 
         content="Tilbage til toppen-knappen lader brugeren navigere nemt til toppen af en lang side." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=32
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=33
         id="card-tjekboks"  
         heading="Tjekboks" 
         content="Tjekbokse lader brugeren vælge en eller flere muligheder." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=33
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=34
         id="card-toastbesked"  
         heading="Toastbesked" 
         content="Toastbeskeder viser aktuel information og dukker op i det øjeblik, de bliver relevante." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=34
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=35
         id="card-toggle-switch"  
         heading="Toggle switch" 
         content="En toggle switch er en digital tænd/sluk-knap, hvis effekt træder i kraft med det samme." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=35
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=36
         id="card-tooltip"  
         heading="Tooltip" 
         content="Tooltips giver brugeren kort, forklarende information om specifikke elementer på siden." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=36
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=37
         id="card-trinindikator"  
         heading="Trinindikator" 
         content="Trinindikator fører brugeren igennem en kendt sekvens af trin i en løsning." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=37
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=38
         id="card-vedhaeft-fil"  
         heading="Vedhæft fil" 
         content="Komponenten lader brugeren tilføje og indsende en fil." 
         %}
     </li>
     <li class="col-12 col-sm-6 col-md-4">
-        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=38
+        {% include cards/navcard-short.html headingLevel="h2" hrefNumber=39
         id="card-venstremenu"  
         heading="Venstremenu" 
         content="Venstremenuen strukturerer et navigationshierarki med op til tre niveauer i en vertikal liste." 
