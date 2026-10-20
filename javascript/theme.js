@@ -148,7 +148,7 @@ let setStylesheet = function () {
     var newLink = document.createElement('link');
     newLink.type = 'text/css';
     newLink.rel = 'stylesheet';
-    newLink.href = '/assets/style/new_' + themeStylesheets[indexOfTheme] + '.css' + '?v=' + VERSION;
+    newLink.href = '/assets/style/' + themeStylesheets[indexOfTheme] + '_web_components.css' + '?v=' + VERSION;
 
     document.getElementsByTagName('head')[0].appendChild(newLink);
 };

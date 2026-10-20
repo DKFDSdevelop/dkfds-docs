@@ -20,7 +20,56 @@ tags:
 
 ## Sådan anvender du komponenterne {#{% include create-id.html heading="Sådan anvender du komponenterne" %}}
 
-TO DO
+### Hent kodepakken fra npm {#{% include create-id.html heading="Hent kodepakken fra npm" %}}
+
+Koden til Web Components ligger i samme dkfds-pakke som de tidligere komponenter og kan derfor hentes på lignende vis:
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="web-component-installation" only_code=true %}
+
+`dist`-mappen har fået en ny undermappe kaldet `web-components`, hvor både de byggede stylesheets og JavaScript-filer ligger. Derudover er der i `package.json` oprettet en ny eksportmulighed.
+
+### Indlæsning af Web Components {#{% include create-id.html heading="Indlæsning af Web Components" %}}
+
+Web Components kan indlæses på to måder beskrevet i nedenstående afsnit. Bemærk, at der udover nedenstående metoder kan være framework-specifikke behov for konfiguration, fx `compilerOptions.isCustomElement` i frameworket Vue. Konsultér dokumentationen for dit framework for at se mere om anvendelse af Web Components.
+
+#### Almindeligt script tag
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="web-component-script" only_code=true %}
+
+Når scriptet indlæses, registreres alle Web Components automatisk. Der kræves ikke yderligere kode, for at komponenterne virker. Nye Web Components skal ikke initialiseres, når de tilføjes, da dette klares automatisk af komponenten selv.
+
+Hvis du ønsker at køre eksporterede funktioner ved brug af almindeligt script, skal du anvende variablen `DKFDSWebComponents`, eksempelvis `DKFDSWebComponents.registerCustomElements()`.
+
+#### Bundler
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="web-component-import" only_code=true %}
+
+Brug `import`, hvis dit projekt bruger en bundler til at samle din JavaScript-kode (fx Vite eller Webpack). Bemærk, at importen i sig selv ofte vil være nok til at registrere alle komponenter. Hvis du på trods af dette stadig ønsker at registrere komponenterne manuelt, kan du benytte `import { registerCustomElements } from 'dkfds/dkfds-web-components';` og køre funktionen `registerCustomElements()`. Det er ikke muligt at bruge native `<script type="module">` med en direkte import i browseren uden en bundler.
+
+### CSS {#{% include create-id.html heading="CSS" %}}
+
+Indlæs altid både det tidligere stylesheet og det nye til Web Components. Disse er endnu ikke fuldt uafhængige af hinanden.
+
+### Eksempel på simpel HTML-side {#{% include create-id.html heading="Eksempel på simpel HTML-side" %}}
+
+Følgende eksempel indsætter en toggle switch og aktiverer den med en funktion tilhørende komponenten. Du kan se mulige funktioner og events under dokumentationen af hver komponent.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="web-component-example" only_code=true %}
+
+### Eksporterede funktioner {#{% include create-id.html heading="Eksporterede funktioner" %}}
+
+Modulet `dkfds/dkfds-web-components` eksporterer, udover selve auto-registreringen, også en separat funktion for hver komponent (f.eks. registerToggleSwitch, registerAlert, osv.), hvis man ønsker at kalde dem direkte. Det er sikkert at kalde disse funktioner flere gange, selvom dette bør være unødvendigt.
+
+### Kendte begrænsninger i beta-versionen {#{% include create-id.html heading="Kendte begrænsninger i beta-versionen" %}}
+
+- Ingen understøttelse af server-side rendering (SSR)
+- Ingen TypeScript-typedeklarationer
+
+Følgende kan tilføjes i en .d.ts-fil for at undgå TypeScript-advarsler (uden at give egentlig typeunderstøttelse):
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="web-component-typescript" only_code=true %}
+
+Hvis begrænsningerne giver dig udfordringer med at anvende koden, vil vi meget gerne have denne feedback.
 
 ## Baggrund for opbygning af Web Components {#{% include create-id.html heading="Baggrund for opbygning af Web Components" %}}
 

@@ -27,6 +27,7 @@ function restoreCode(str) {
         .replaceAll('<span class="language-xml">', '')
         .replaceAll('<span class="language-javascript">', '')
         .replaceAll('<span class="hljs-title class_">', '')
+        .replaceAll('<span class="hljs-meta">', '')
         .replaceAll('</span>', '')
         .replaceAll('&#x27;', '&#39;')
         .replaceAll('&lt;', '<')

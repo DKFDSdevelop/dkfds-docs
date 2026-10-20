@@ -13,7 +13,7 @@ title: Test
 {% include test/preview-test.html filename="test-empty-page" description="Tom side til automatiske tests" %}
 
 {:.h3}
-## Custom elements
+## Web components
 
 {% include test/preview-test.html filename="test-fds-help-text" description="Hjælpetekst" %}
 {% include test/preview-test.html filename="test-fds-error-message" description="Fejlmeddelelser" %}

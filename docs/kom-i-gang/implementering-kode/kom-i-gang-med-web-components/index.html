@@ -1479,7 +1479,176 @@
 
 <h2 id="saadan-anvender-du-komponenterne">Sådan anvender du komponenterne</h2>
 
-<p>TO DO</p>
+<h3 id="hent-kodepakken-fra-npm">Hent kodepakken fra npm</h3>
+
+<p>Koden til Web Components ligger i samme dkfds-pakke som de tidligere komponenter og kan derfor hentes på lignende vis:</p>
+
+<div class="show-code-in-box">
+    
+    <div class="code-in-box">
+        
+            <div class="code-content only-code">
+                
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <figure aria-label="kode">
+                            <pre><code class="language-html" data-lang="html">npm install --save dkfds</code></pre>
+                        </figure>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<p><code>dist</code>-mappen har fået en ny undermappe kaldet <code>web-components</code>, hvor både de byggede stylesheets og JavaScript-filer ligger. Derudover er der i <code>package.json</code> oprettet en ny eksportmulighed.</p>
+
+<h3 id="indlaesning-af-web-components">Indlæsning af Web Components</h3>
+
+<p>Web Components kan indlæses på to måder beskrevet i nedenstående afsnit. Bemærk, at der udover nedenstående metoder kan være framework-specifikke behov for konfiguration, fx <code>compilerOptions.isCustomElement</code> i frameworket Vue. Konsultér dokumentationen for dit framework for at se mere om anvendelse af Web Components.</p>
+
+<h4>Almindeligt script tag</h4>
+
+<div class="show-code-in-box">
+    
+    <div class="code-in-box">
+        
+            <div class="code-content only-code">
+                
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <figure aria-label="kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;.../dist/web-components/dkfds.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+                        </figure>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<p>Når scriptet indlæses, registreres alle Web Components automatisk. Der kræves ikke yderligere kode, for at komponenterne virker. Nye Web Components skal ikke initialiseres, når de tilføjes, da dette klares automatisk af komponenten selv.</p>
+
+<p>Hvis du ønsker at køre eksporterede funktioner ved brug af almindeligt script, skal du anvende variablen <code>DKFDSWebComponents</code>, eksempelvis <code>DKFDSWebComponents.registerCustomElements()</code>.</p>
+
+<h4>Bundler</h4>
+
+<div class="show-code-in-box">
+    
+    <div class="code-in-box">
+        
+            <div class="code-content only-code">
+                
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <figure aria-label="kode">
+                            <pre><code class="language-html" data-lang="html">import &#39;dkfds/dkfds-web-components&#39;;</code></pre>
+                        </figure>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<p>Brug <code>import</code>, hvis dit projekt bruger en bundler til at samle din JavaScript-kode (fx Vite eller Webpack). Bemærk, at importen i sig selv ofte vil være nok til at registrere alle komponenter. Hvis du på trods af dette stadig ønsker at registrere komponenterne manuelt, kan du benytte <code>import { registerCustomElements } from 'dkfds/dkfds-web-components';</code> og køre funktionen <code>registerCustomElements()</code>. Det er ikke muligt at bruge native <code>&lt;script type="module"&gt;</code> med en direkte import i browseren uden en bundler.</p>
+
+<h3 id="css">CSS</h3>
+
+<p>Indlæs altid både det tidligere stylesheet og det nye til Web Components. Disse er endnu ikke fuldt uafhængige af hinanden.</p>
+
+<h3 id="eksempel-paa-simpel-html-side">Eksempel på simpel HTML-side</h3>
+
+<p>Følgende eksempel indsætter en toggle switch og aktiverer den med en funktion tilhørende komponenten. Du kan se mulige funktioner og events under dokumentationen af hver komponent.</p>
+
+<div class="show-code-in-box">
+    
+    <div class="code-in-box">
+        
+            <div class="code-content only-code">
+                
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <figure aria-label="kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;dist/css/dkfds.css&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;dist/web-components/dkfds.css&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;dist/web-components/dkfds.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-toggle-switch</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Vis sager ældre end et år&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-toggle-switch</span>&gt;</span>
+    ...
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#39;DOMContentLoaded&#39;</span>, <span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#39;fds-toggle-switch&#39;</span>).<span class="hljs-title function_">toggle</span>();
+        });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+                        </figure>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<h3 id="eksporterede-funktioner">Eksporterede funktioner</h3>
+
+<p>Modulet <code>dkfds/dkfds-web-components</code> eksporterer, udover selve auto-registreringen, også en separat funktion for hver komponent (f.eks. registerToggleSwitch, registerAlert, osv.), hvis man ønsker at kalde dem direkte. Det er sikkert at kalde disse funktioner flere gange, selvom dette bør være unødvendigt.</p>
+
+<h3 id="kendte-begraensninger-i-beta-versionen">Kendte begrænsninger i beta-versionen</h3>
+
+<ul>
+  <li>Ingen understøttelse af server-side rendering (SSR)</li>
+  <li>Ingen TypeScript-typedeklarationer</li>
+</ul>
+
+<p>Følgende kan tilføjes i en .d.ts-fil for at undgå TypeScript-advarsler (uden at give egentlig typeunderstøttelse):</p>
+
+<div class="show-code-in-box">
+    
+    <div class="code-in-box">
+        
+            <div class="code-content only-code">
+                
+                <div class="code-container" tabindex="0">
+                    <div class="scroll-container">
+                        <figure aria-label="kode">
+                            <pre><code class="language-html" data-lang="html">declare module &#39;dkfds&#39;;
+declare module &#39;dkfds/dkfds-web-components&#39;;</code></pre>
+                        </figure>
+                    </div>
+                </div>
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<p>Hvis begrænsningerne giver dig udfordringer med at anvende koden, vil vi meget gerne have denne feedback.</p>
 
 <h2 id="baggrund-for-opbygning-af-web-components">Baggrund for opbygning af Web Components</h2>
 
