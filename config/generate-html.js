@@ -47,7 +47,7 @@ global.ResizeObserver = class ResizeObserver {
     disconnect() {}
 };
 
-const DKFDS = require('dkfds/new-dkfds');
+const DKFDS = require('dkfds/dkfds-web-components');
 
 DKFDS.registerAccordion();
 DKFDS.registerAccordionGroup();
