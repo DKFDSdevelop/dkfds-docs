@@ -5,6 +5,16 @@ Hent_kodepakken:
 - h2: Hent via GitHub (zip)
 - h2: Vejledning til integration på borger.dk og Virk
 
+Web_Components_i_beta_version:
+- h2: Hvorfor skifter vi til Web Components?
+- h2: Web Components som beta-version
+- h2: Vi har brug for din feedback
+
+Kom_i_gang_med_Web_Components:
+- h2: Sådan anvender du komponenterne
+- h2: Baggrund for opbygning af Web Components
+- h2: Vi har brug for din feedback
+
 Justering_af_tema_og_stylesheets:
 - h2: Før du tilpasser koden
 - h2: Justér stylesheets med Sass
@@ -35,12 +45,6 @@ Print:
 Frameworks:
 - h2: JavaScript
 - h2: Kodefrihed under ansvar
-
-Web_Components_i_beta_version:
-- h2: Hvorfor skifter vi til Web Components?
-- h2: Om Web Components
-- h2: Web Components som beta-version
-- h2: Vi har brug for din feedback
 
 Design_og_ressourcer:
 - h2: Grundprincipper

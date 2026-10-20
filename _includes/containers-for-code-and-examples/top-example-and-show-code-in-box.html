@@ -18,7 +18,9 @@
                 <{{ include.subheading_tag | default: "h2" }} class="h4 mt-0">Web Component</{{ include.subheading_tag | default: "h2" }}>
                 <div class="code-container" tabindex="0">
                     <div class="scroll-container">
-                        <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
+                        <figure aria-label="Web Component, kode">
+                            <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
+                        </figure>
                     </div>
                 </div>
                 <div class="copy-code-wrapper">

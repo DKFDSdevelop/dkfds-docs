@@ -12,7 +12,6 @@ description: Cookiemeddelelsen vises midt på siden, og blokerer indhold indtil 
   har taget stilling til brug af cookies.
 tags:
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 difference_warning: true
 ---
 

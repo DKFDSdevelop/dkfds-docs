@@ -10,7 +10,6 @@ lead: Fejlopsummeringer bruges til at give overblik over fejl eller mangler, der
 description: 
 tags: 
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}

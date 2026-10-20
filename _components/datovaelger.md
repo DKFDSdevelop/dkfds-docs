@@ -10,7 +10,6 @@ lead: Ét felt med knap, hvor man kan vælge en dato.
 description: Brug datovælger til at vælge en bestemt dato i nærmeste fortid eller fremtid
 tags:
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 difference_warning: true
 ---
 

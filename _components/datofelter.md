@@ -12,7 +12,6 @@ lead: Tre separate felter for dato, måned og år er den nemmeste måde for brug
 description: Brug datofelter for datoer, der er velkendte for brugeren (fx fødselsdato).
 tags: 
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}

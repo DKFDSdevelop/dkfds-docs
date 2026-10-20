@@ -12,7 +12,6 @@ lead: Dropdown lader brugeren vælge én blandt flere muligheder i en udfoldet l
 description: Dropdown kan bruges i tilfælde, hvor brugeren skal vælge mellem 5 og 15 værdier på en begrænset plads.
 tags:
 tabs: "Retningslinjer, kode, web component"
-custom_element: "Ready"
 ---
 
 {% include tabs.html guidelines=true code=true web_component=true %}
