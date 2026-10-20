@@ -121,6 +121,8 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Attributten `hidden="false"` på et element vil ikke længere skjule elementet.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Stylingen, der satte max-bredde for lister, er ændret. For nogle lister kan der være opstået behov for manuelt at tilføje klassen `paragraph` for at sætte en max-bredde på 66 tegn.
 - <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Opdateret stylingen for knapper i en {% include links/component-guideline-link.html linktext="knapgruppe" %}, så kun direkte børn af `button-group` styles.
+- <strong class="badge badge-warning badge-small mr-2">Breaking change</strong> Opdateret sass-pakken til version 1.105.2, hvilket har medført ændringer i flere scss-filer.
+{% include links/github-link.html number="292" afternumber=" på GitHub" %}
 - Modalevents `fds.modal.hidden` og `fds.modal.shown` er blevet ændret til at boble op i DOM'en (`bubbles: true`), så det ikke længere er nødvendigt at sætte event listeners direkte på en modal.
 - Modaler lukkes nu ved `keydown` i stedet for `keyup`.
 - Visse font-formater i stylingen er blevet fjernet.
