@@ -1576,6 +1576,14 @@ Styling for examples
                 }
             }
         }
+
+        .only-code {
+            padding-top: units(7, 'rem');
+
+            figure {
+                margin: 0;
+            }
+        }
     }
 
     .code-in-tabs .code-content {
