@@ -18,10 +18,14 @@
                     <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
 
                     <fds-tab-panel tab-key="web-component">
-                        <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples/{{ include.example }}.html %}</code></pre>
+                        </figure>
                     </fds-tab-panel>
                     <fds-tab-panel tab-key="generated-html">
-                        <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples-generated-html/{{ include.example }}.html %}</code></pre>
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html">{% include output-files-from-build/highlighted-examples-generated-html/{{ include.example }}.html %}</code></pre>
+                        </figure>
                     </fds-tab-panel>
                 </fds-tabs>
                 
