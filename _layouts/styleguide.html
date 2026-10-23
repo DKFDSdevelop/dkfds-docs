@@ -74,6 +74,15 @@ layout: default
                         <div id="web-component-section">
                             {{ pageContent[3] }}
                         </div>
+                    {%- elsif page.tabs == "Retningslinjer, web component" -%}
+                        {%- assign pageContent = content | split: site.excerpt_separator -%}
+                        {{ pageContent[0] }}
+                        <div id="guidelines-section">
+                            {{ pageContent[1] }}
+                        </div>
+                        <div id="web-component-section">
+                            {{ pageContent[2] }}
+                        </div>
                     {%- else -%}
                         {{ content }}
                     {%- endif %}

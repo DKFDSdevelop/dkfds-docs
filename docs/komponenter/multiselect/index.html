@@ -1677,8 +1677,17 @@
 
                 
                 <p class="font-lead">Multiselect gør det muligt for brugeren at vælge flere elementer i samme dropdown.</p>
-                
-<div class="show-code-in-box">
+                <nav class="tab-container mb-7" aria-label="Undersider">
+    <ul class="tab-list"><li>
+            <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
+        </li><li>
+            <a href="#web-component" id="web-component-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span class="mr-3">Web Component</span><strong class="badge web-component-tab-badge">Beta</strong></a>
+            <span id="web-component" hidden=""></span>
+        </li></ul>
+</nav>
+<div id="retningslinjer" hidden=""></div>
+
+<div class="show-code-in-box intro-example">
     
     <div class="open-in-new-window">
         <a href="/eksempel/fds-multiselect/" class="function-link" target="_blank">
@@ -1688,36 +1697,50 @@
         </a>
     </div>
     <div class="top-example">
-        <fds-multiselect label="Frugter">
-    <fds-multiselect-option>Æble</fds-multiselect-option>
-    <fds-multiselect-option>Pære</fds-multiselect-option>
-    <fds-multiselect-option>Banan</fds-multiselect-option>
-    <fds-multiselect-option>Mango</fds-multiselect-option>
-    <fds-multiselect-option>Appelsin</fds-multiselect-option>
-    <fds-multiselect-option>Vandmelon</fds-multiselect-option>
-    <fds-multiselect-option>Blåbær</fds-multiselect-option>
-    <fds-multiselect-option>Jordbær</fds-multiselect-option>
-    <fds-multiselect-option>Kirsebær</fds-multiselect-option>
+        <fds-multiselect>
+    <label>Frugter</label>
+    <fds-multiselect-opener></fds-multiselect-opener>
+
+    <fds-multiselect-dialog>
+        <fds-multiselect-options>
+            <fds-multiselect-option>Æble</fds-multiselect-option>
+            <fds-multiselect-option>Pære</fds-multiselect-option>
+            <fds-multiselect-option>Banan</fds-multiselect-option>
+            <fds-multiselect-option>Mango</fds-multiselect-option>
+            <fds-multiselect-option>Appelsin</fds-multiselect-option>
+            <fds-multiselect-option>Vandmelon</fds-multiselect-option>
+            <fds-multiselect-option>Blåbær</fds-multiselect-option>
+            <fds-multiselect-option>Jordbær</fds-multiselect-option>
+            <fds-multiselect-option>Kirsebær</fds-multiselect-option>
+        </fds-multiselect-options>
+    </fds-multiselect-dialog>
 </fds-multiselect>
     </div>
     
     <div class="code-in-box">
-        
+        <fds-accordion heading="Vis kode" heading-level="h2" content-id="example-box-fds-multiselect">
             <div class="code-content">
                 <h2 class="h4 mt-0">Web Component</h2>
                 <div class="code-container" tabindex="0">
                     <div class="scroll-container">
                         <figure aria-label="Web Component, kode">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Frugter&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Æble<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Pære<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Banan<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Mango<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Appelsin<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Vandmelon<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Blåbær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Jordbær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Kirsebær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Frugter<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-opener</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-opener</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-dialog</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-options</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Æble<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Pære<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Banan<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Mango<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Appelsin<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Vandmelon<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Blåbær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Jordbær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Kirsebær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-options</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-dialog</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect</span>&gt;</span></code></pre>
                         </figure>
                     </div>
@@ -1726,7 +1749,7 @@
                     <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
                 </div>
             </div>
-        
+        </fds-accordion>
     </div>
 </div>
 
@@ -1736,11 +1759,14 @@
         
         <li class="anchorlink-guidelines"><a href="#saadan-bruges-komponenten">Sådan bruges komponenten</a></li>
         
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
         
     </ul>
 </nav>
 
-<!--split-->
+
+                        <div id="guidelines-section">
+                            
 
 <h2 id="saadan-bruges-komponenten">Sådan bruges komponenten</h2>
 
@@ -1750,6 +1776,17 @@
 
 <h3 id="vejledning">Vejledning</h3>
 
+
+                        </div>
+                        <div id="web-component-section">
+                            
+
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
+
+                        </div>
             </section>
         </main>
 
@@ -1819,6 +1856,8 @@
 <script src="/assets/js/styleguide.js?v=11.3.0"></script>
 <script src="/assets/js/dkfds.js?v=11.3.0"></script> <!-- Web component script -->
 
+
+<script src="/assets/js/docs-tabs.js"></script>
 
   </body>
 </html>

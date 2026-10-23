@@ -1,5 +1,5 @@
 {% if include.example and include.example != '' %}
-<div class="show-code-in-box">
+<div class="show-code-in-box{% if include.classes %} {{ include.classes }}{% endif %}">
     {% if include.only_code != true %}
     <div class="open-in-new-window">
         <a href="/eksempel/{{ include.example }}/" class="function-link" target="_blank">
