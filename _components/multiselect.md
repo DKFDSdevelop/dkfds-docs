@@ -8,11 +8,14 @@ lead: "Multiselect gør det muligt for brugeren at vælge flere elementer i samm
 description: "Multiselect gør det muligt for brugeren at vælge flere elementer i samme dropdown."
 tags:
 - "multiselect"
+tabs: "Retningslinjer, web component"
 ---
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect" subheading_tag="h2" collapsable=false %}
+{% include tabs.html guidelines=true web_component=true %}
 
-{% include anchorlinks.html guidelines="Multiselect" %}
+{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect" subheading_tag="h2" classes="intro-example" %}
+
+{% include anchorlinks.html guidelines="Multiselect" custom="Multiselect_Web_Component" %}
 
 <!--split-->
 
@@ -23,3 +26,8 @@ tags:
 ### Anvendes ikke til {#{% include create-id.html heading="Anvendes ikke til" %}}
 
 ### Vejledning {#{% include create-id.html heading="Vejledning" %}}
+
+<!--split-->
+
+{% include web-component-shared-text/web-components-beta.html %}
+

@@ -142,7 +142,7 @@
         </div>
         <div class="col-12">
             <fds-multiselect
-                sr-group-text="Du burde kun kunne høre denne besked, hvis mindst én frugt er valgt.">
+                sr-tags-label="Du burde kun kunne høre denne besked, hvis mindst én frugt er valgt.">
                 <label>Frugter</label>
                 <fds-multiselect-opener placeholder="Vælg noget"></fds-multiselect-opener>
 
@@ -212,7 +212,7 @@
                         <option>Sort</option>
                     </select>
                 </div>
-                <fds-multiselect class="mb-6" name="fruits">
+                <fds-multiselect class="mb-6" name="fruits" show-required-status>
                     <label>Frugter</label>
                     <fds-multiselect-opener></fds-multiselect-opener>
 
@@ -223,6 +223,21 @@
                             <fds-multiselect-option>Appelsin</fds-multiselect-option>
                             <fds-multiselect-option
                                 value="specialfruit">Mango</fds-multiselect-option>
+                        </fds-multiselect-options>
+                    </fds-multiselect-dialog>
+                </fds-multiselect>
+
+                <fds-multiselect class="mb-6" name="required-fruits" aria-required="true"
+                    show-required-status>
+                    <label>Flere frugter</label>
+                    <fds-multiselect-opener></fds-multiselect-opener>
+
+                    <fds-multiselect-dialog>
+                        <fds-multiselect-options>
+                            <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                            <fds-multiselect-option>Vandmelon</fds-multiselect-option>
+                            <fds-multiselect-option>Blåbær</fds-multiselect-option>
+                            <fds-multiselect-option>Jordbær</fds-multiselect-option>
                         </fds-multiselect-options>
                     </fds-multiselect-dialog>
                 </fds-multiselect>
