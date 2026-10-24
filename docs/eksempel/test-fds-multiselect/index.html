@@ -357,12 +357,12 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Ingen label</h2>
+            <h2 class="h3 mt-0">Ny placeholder og gruppetekst</h2>
         </div>
         <div class="col-12">
-            <p>Tjek konsollen for advarsel om manglende label</p>
-            <fds-multiselect>
-                <fds-multiselect-opener></fds-multiselect-opener>
+            <fds-multiselect sr-tags-label="Du burde kun kunne høre denne besked, hvis mindst én frugt er valgt.">
+                <label>Frugter</label>
+                <fds-multiselect-opener placeholder="Vælg noget"></fds-multiselect-opener>
 
                 <fds-multiselect-dialog>
                     <fds-multiselect-options>
@@ -377,12 +377,13 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Ny placeholder og gruppetekst</h2>
+            <h2 class="h3 mt-0">Hjælpetekst</h2>
         </div>
         <div class="col-12">
-            <fds-multiselect sr-tags-label="Du burde kun kunne høre denne besked, hvis mindst én frugt er valgt.">
+            <fds-multiselect>
                 <label>Frugter</label>
-                <fds-multiselect-opener placeholder="Vælg noget"></fds-multiselect-opener>
+                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
+                <fds-multiselect-opener></fds-multiselect-opener>
 
                 <fds-multiselect-dialog>
                     <fds-multiselect-options>
@@ -461,7 +462,7 @@
                     </fds-multiselect-dialog>
                 </fds-multiselect>
 
-                <fds-multiselect class="mb-6" name="required-fruits" aria-required="true" show-required-status="">
+                <fds-multiselect class="mb-6" name="required-fruits" required="" show-required-status="">
                     <label>Flere frugter</label>
                     <fds-multiselect-opener></fds-multiselect-opener>
 
@@ -475,8 +476,46 @@
                     </fds-multiselect-dialog>
                 </fds-multiselect>
 
+                <fds-multiselect class="mb-6" name="disabled-fruits" disabled="">
+                    <label>Inaktive frugter</label>
+                    <fds-multiselect-opener></fds-multiselect-opener>
+
+                    <fds-multiselect-dialog>
+                        <fds-multiselect-options>
+                            <fds-multiselect-option default-selected="true">Kirsebær</fds-multiselect-option>
+                            <fds-multiselect-option>Hindbær</fds-multiselect-option>
+                            <fds-multiselect-option default-selected="true">Brombær</fds-multiselect-option>
+                            <fds-multiselect-option>Fersken</fds-multiselect-option>
+                        </fds-multiselect-options>
+                    </fds-multiselect-dialog>
+                </fds-multiselect>
+
                 <button class="button button-secondary" type="submit">Submit</button>
             </form>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Multiselect i et fieldset</h2>
+        </div>
+        <div class="col-12">
+            <fieldset>
+                <legend>Multiselect i fieldset</legend>
+                <fds-multiselect class="mb-6" name="fruits">
+                    <label>Frugter</label>
+                    <fds-multiselect-opener></fds-multiselect-opener>
+
+                    <fds-multiselect-dialog>
+                        <fds-multiselect-options>
+                            <fds-multiselect-option>Banan</fds-multiselect-option>
+                            <fds-multiselect-option>Æble</fds-multiselect-option>
+                            <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                            <fds-multiselect-option>Mango</fds-multiselect-option>
+                        </fds-multiselect-options>
+                    </fds-multiselect-dialog>
+                </fds-multiselect>
+            </fieldset>
         </div>
     </div>
 
