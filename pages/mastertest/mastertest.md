@@ -44,6 +44,7 @@ title: Test
 {% include test/preview-test.html filename="test-fds-tabs" description="Faneblade" %}
 {% include test/preview-test.html filename="test-fds-alert" description="Beskeder" %}
 {% include test/preview-test.html filename="test-fds-multiselect" description="Multiselect" %}
+{% include test/preview-test.html filename="test-fds-cookie-message" description="Cookiemeddelelse" %}
 
 {:.h3}
 ## HTML-elementer
