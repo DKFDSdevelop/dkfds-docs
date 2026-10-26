@@ -52,6 +52,13 @@ layout: default
                     </fds-alert>
                 {% endif %}
 
+                {%- if page.web_compponent_warning != null and page.web_compponent_warning != "" %}
+                    <fds-alert variant="warning" class="mt-6">
+                        <h2 slot="heading">Denne komponent findes udelukkende som Web Component</h2>
+                        <p slot="content">Læs om baggrunden for komponenten i <span class="nowrap">{% include links/external-link.html linktext="beslutningsloggen på GitHub" %}.</span></p>
+                    </fds-alert>
+                {% endif %}
+
                 {%- if page.tabs -%}
                     {%- if page.tabs == "Retningslinjer, kode" -%}
                         {%- assign pageContent = content | split: site.excerpt_separator -%}
