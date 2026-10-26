@@ -86,3 +86,5 @@ Se dokumentationen for {% include links/component-guideline-link.html linktext="
 Bemærk, at cookiemeddelelser bruger `dismissible="false"` for at tvinge brugeren til at træffe et valg. `<dialog>` skal indeholde `<div class="scrollable-area has-fade">` samt `<div class="fixed-area">` for at holde knapperne synlige.
 
 Hvis cookiemeddelelsen indeholder et logo, er det op til løsningen selv at sætte en passende højde og bredde for dette. Giv logoet en passende alt-tekst, så det også er muligt for skærmlæserbrugere at vide, hvem der står bag selvbetjeningsløsningen.
+
+Husk at teste din cookiemeddelelse, så du sikrer dig, at din styling ikke skjuler elementer eller fokusstreger under de fikserede knapper.

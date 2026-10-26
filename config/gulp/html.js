@@ -53,6 +53,7 @@ var testfiles = [
     "test-fds-tabs",
     "test-fds-alert",
     "test-fds-multiselect",
+    "test-fds-cookie-message",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",
