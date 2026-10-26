@@ -86,3 +86,107 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
+### fds-multiselect {#{% include create-id.html heading="fds-multiselect" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut             | Beskrivelse                                                                                                                                              |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                 | Navnet på feltet, som anvendes ved formularindsendelse.                                                                                                  |
+| sr-tags-label        | Angiver en skærmlæser-specifik label for gruppen af valgte muligheder (tags). Hvis intet er angivet, bruges "Valgte muligheder for `label`".              |
+| show-required-status | Viser om multiselect er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
+| required             | Gør feltet obligatorisk ved formularindsendelse.                                                                                                         |
+| disabled             | Deaktiverer multiselect-komponenten.                                                                                                                     |
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot       | Beskrivelse                                                                                                                   |
+|------------|-------------------------------------------------------------------------------------------------------------------------------|
+| Unavngivet | `label`-element samt `fds-multiselect-opener`-, `fds-multiselect-dialog`-, `fds-help-text`- og `fds-error-message`-elementer. |
+
+### fds-multiselect-opener {#{% include create-id.html heading="fds-multiselect-opener" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut    | Beskrivelse                                                                             |
+|-------------|------------------------------------------------------------------------------------------|
+| placeholder | Angiver den tekst, der vises, når ingen muligheder er valgt. Default er "Vælg en eller flere". |
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion | Beskrivelse                              |
+|----------|-------------------------------------------|
+| open()   | Åbner dialogen med valgmuligheder.         |
+| close()  | Lukker dialogen med valgmuligheder.        |
+| toggle() | Skifter mellem åben og lukket tilstand.    |
+
+#### Events
+
+{:.table .table--responsive-headers}
+| Event                            | Beskrivelse                              |
+|-----------------------------------|-------------------------------------------|
+| fds-multiselect-opener-expanded  | Udløses når dialogen åbnes.               |
+| fds-multiselect-opener-collapsed | Udløses når dialogen lukkes.              |
+
+### fds-multiselect-dialog {#{% include create-id.html heading="fds-multiselect-dialog" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut   | Beskrivelse                                                                                               |
+|------------|------------------------------------------------------------------------------------------------------------|
+| sr-heading | Angiver en skærmlæser-specifik overskrift for dialogen. Default er "Vælg en eller flere muligheder".       |
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot       | Beskrivelse                              |
+|------------|--------------------------------------------|
+| Unavngivet | `fds-multiselect-options`-elementet.        |
+
+### fds-multiselect-options {#{% include create-id.html heading="fds-multiselect-options" append="-custom" %}}
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot       | Beskrivelse                                                                |
+|------------|------------------------------------------------------------------------------|
+| Unavngivet | `fds-multiselect-select-all`- og `fds-multiselect-option`-elementer.         |
+
+### fds-multiselect-option {#{% include create-id.html heading="fds-multiselect-option" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut         | Beskrivelse                                                                                           |
+|-------------------|--------------------------------------------------------------------------------------------------------|
+| value            | Angiver værdien for valgmuligheden. Hvis ikke angivet, bruges tekstindholdet som værdi.                    |
+| default-selected | Markerer valgmuligheden som valgt, når komponenten initialiseres, og ved nulstilling af formularen.        |
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot       | Beskrivelse               |
+|------------|-----------------------------|
+| Unavngivet | Tekst for valgmuligheden.      |
+
+### fds-multiselect-select-all {#{% include create-id.html heading="fds-multiselect-select-all" append="-custom" %}}
+
+#### Slots
+
+{:.table .table--responsive-headers}
+| Slot       | Beskrivelse        |
+|------------|----------------------|
+| Unavngivet | Tekst for "vælg alle"-muligheden. |
+
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+
+{% include web-component-shared-text/fds-help-text.html %}
+
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+
+{% include web-component-shared-text/fds-error.html %}

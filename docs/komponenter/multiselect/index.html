@@ -2196,6 +2196,337 @@
 
 <h2 id="konfiguration-custom">Konfiguration</h2>
 
+<h3 id="fds-multiselect-custom">fds-multiselect</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>Navnet på feltet, som anvendes ved formularindsendelse.</td>
+    </tr>
+    <tr>
+      <td>sr-tags-label</td>
+      <td>Angiver en skærmlæser-specifik label for gruppen af valgte muligheder (tags). Hvis intet er angivet, bruges “Valgte muligheder for <code>label</code>”.</td>
+    </tr>
+    <tr>
+      <td>show-required-status</td>
+      <td>Viser om multiselect er obligatorisk eller frivillig baseret på <code>required</code>-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>Gør feltet obligatorisk ved formularindsendelse.</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Deaktiverer multiselect-komponenten.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td><code>label</code>-element samt <code>fds-multiselect-opener</code>-, <code>fds-multiselect-dialog</code>-, <code>fds-help-text</code>- og <code>fds-error-message</code>-elementer.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-multiselect-opener-custom">fds-multiselect-opener</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>placeholder</td>
+      <td>Angiver den tekst, der vises, når ingen muligheder er valgt. Default er “Vælg en eller flere”.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open()</td>
+      <td>Åbner dialogen med valgmuligheder.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Lukker dialogen med valgmuligheder.</td>
+    </tr>
+    <tr>
+      <td>toggle()</td>
+      <td>Skifter mellem åben og lukket tilstand.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fds-multiselect-opener-expanded</td>
+      <td>Udløses når dialogen åbnes.</td>
+    </tr>
+    <tr>
+      <td>fds-multiselect-opener-collapsed</td>
+      <td>Udløses når dialogen lukkes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-multiselect-dialog-custom">fds-multiselect-dialog</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sr-heading</td>
+      <td>Angiver en skærmlæser-specifik overskrift for dialogen. Default er “Vælg en eller flere muligheder”.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td><code>fds-multiselect-options</code>-elementet.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-multiselect-options-custom">fds-multiselect-options</h3>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td><code>fds-multiselect-select-all</code>- og <code>fds-multiselect-option</code>-elementer.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-multiselect-option-custom">fds-multiselect-option</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value</td>
+      <td>Angiver værdien for valgmuligheden. Hvis ikke angivet, bruges tekstindholdet som værdi.</td>
+    </tr>
+    <tr>
+      <td>default-selected</td>
+      <td>Markerer valgmuligheden som valgt, når komponenten initialiseres, og ved nulstilling af formularen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td>Tekst for valgmuligheden.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-multiselect-select-all-custom">fds-multiselect-select-all</h3>
+
+<h4>Slots</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unavngivet</td>
+      <td>Tekst for “vælg alle”-muligheden.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fds-help-text-custom">fds-help-text</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for hjælpeteksten. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler hjælpeteksten. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>help-text-callback</td>
+            <td>Udløses på det omsluttende element, når hjælpeteksten tilføjes, fjernes, eller dens <code>hidden</code>-attribut ændres.</td>
+        </tr>
+        <tr>
+            <td>help-text-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.helptextId</code> indeholder
+                hjælpetekstens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="fds-error-message-custom">fds-error-message</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Attribut</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>ID for fejlbeskeden. Hvis denne er udeladt, genereres et tilfældigt ID.</td>
+        </tr>
+        <tr>
+            <td>icon-text</td>
+            <td>Skærmlæsertekst for ikonet. Default er <code>Fejl</code>.</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Skjuler fejlbeskeden. Skal sættes til <code>true</code> eller være tom for at tage effekt.</td>
+        </tr>
+        <tr>
+            <td>targets</td>
+            <td>Bruges kun af <code>fds-date-input</code>. Angiv ID'er eller navne på de inputfelter, fejlbeskeden er relateret til, separeret med komma.</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>Teksten der skal vises i fejlbeskeden. Kan også angives som indhold i elementet.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>error-message-callback</td>
+            <td>Udløses på det omsluttende element, når fejlbeskeden tilføjes, fjernes, eller en af dens attributter ændres.</td>
+        </tr>
+        <tr>
+            <td>error-message-visibility-changed</td>
+            <td>Udløses på det omsluttende element, når <code>hidden</code>-attributten ændres. <code>event.detail.errorId</code> indeholder fejlbeskedens ID, og <code>event.detail.isHidden</code> angiver, om den er skjult.</td>
+        </tr>
+    </tbody>
+</table>
 
                         </div>
             </section>
