@@ -140,6 +140,10 @@ Brug både instrukser og beskrivelser, men brug dem konsekvent. Fx brug en instr
 
 {% include code/preview-box.html component="text-input-character-limit-error" title="Eksempel på inputfelt med karakterbegrænsning med fejlmeddelelse" code="/komponenter/fejlmeddelelser/#inputfelt-med-karakterbegraensning-kode" %}
 
+### Multiselect {#{% include create-id.html heading="Multiselect" %}}
+
+{% include code/preview-box.html component="multiselect-error" title="Eksempel på Multiselect med fejlmeddelelse" code="/komponenter/fejlmeddelelser/#multiselect-kode" %}
+
 ### Radioknapper {#{% include create-id.html heading="Radioknapper" %}}
 
 {% include code/preview-box.html component="error-message-radio" title="Eksempel på radioknapper med fejlmeddelelse" code="/komponenter/fejlmeddelelser/#radioknapper-kode" %}
@@ -253,6 +257,10 @@ Fejlmeddelelsen vises også i {% include links/component-code-link.html linktext
 ### Inputfelt med karakterbegrænsning {#{% include create-id.html heading="Inputfelt med karakterbegrænsning" append="-kode" %}}
 
 {% include code/syntax.html component="text-input-character-limit-error" link=true copybutton=true guidelines="/komponenter/fejlmeddelelser/#inputfelt-med-karakterbegraensning" %}
+
+## Multiselect {#{% include create-id.html heading="Multiselect" append="-kode" %}}
+
+{% include code/syntax.html component="multiselect-error" link=true copybutton=true guidelines="/komponenter/fejlmeddelelser/#multiselect" %}
 
 ## Radioknapper {#{% include create-id.html heading="Radioknapper" append="-kode" %}}
 

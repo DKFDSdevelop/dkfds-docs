@@ -312,6 +312,8 @@ Modal:
 
 Multiselect:
 - h2: Sådan bruges komponenten
+- h2: Varianter
+- h2: Referencer
 
 Overflowmenu:
 - h2: Sådan bruges komponenten
@@ -601,6 +603,9 @@ Modal_Web_Component:
 
 Multiselect_Web_Component:
 - h2: Web Component-koden er i beta
+- h2: Om denne komponent
+- h2: Varianter
+- h2: Konfiguration
 
 Overflowmenu_Kode:
 - h2: Installation

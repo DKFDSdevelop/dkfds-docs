@@ -2145,6 +2145,50 @@
     
 </div>
 
+<h3 id="multiselect">Multiselect</h3>
+
+<div class="component-preview  component-preview-multiselect-error">
+    
+    <div class="component-link px-4 py-4">
+        
+        <a href="/eksempel/multiselect-error/" class="small-text" target="_blank">Åbn dette eksempel i et nyt vindue<span class="sr-only">: multiselect-error</span></a>
+        
+    </div>
+    
+    
+    <div class="sr-only">Eksempel på Multiselect med fejlmeddelelse</div>
+    
+    <div class="component-example px-4 py-4">
+        
+        <fds-multiselect>
+    <label>Frugter</label>
+    <fds-multiselect-opener></fds-multiselect-opener>
+
+    <fds-multiselect-dialog>
+        <fds-multiselect-options>
+            <fds-multiselect-option>Æble</fds-multiselect-option>
+            <fds-multiselect-option>Pære</fds-multiselect-option>
+            <fds-multiselect-option>Banan</fds-multiselect-option>
+            <fds-multiselect-option>Mango</fds-multiselect-option>
+            <fds-multiselect-option>Appelsin</fds-multiselect-option>
+            <fds-multiselect-option>Vandmelon</fds-multiselect-option>
+            <fds-multiselect-option>Blåbær</fds-multiselect-option>
+            <fds-multiselect-option>Jordbær</fds-multiselect-option>
+            <fds-multiselect-option>Kirsebær</fds-multiselect-option>
+        </fds-multiselect-options>
+    </fds-multiselect-dialog>
+
+    <fds-error-message>Dette er en fejl</fds-error-message>
+</fds-multiselect>
+        
+    </div>
+    
+    <div class="component-code-link px-4 py-4">
+        <a href="/komponenter/fejlmeddelelser/#multiselect-kode" class="small-text">Gå til eksemplets kode<span class="sr-only">: multiselect-error</span></a>
+    </div>
+    
+</div>
+
 <h3 id="radioknapper">Radioknapper</h3>
 
 <div class="component-preview  component-preview-error-message-radio">
@@ -2796,6 +2840,56 @@ Fx “Du kan kun vælge op til 10 filer på samme tid”.</p>
     
     <div class="component-guidelines-link px-4 py-4">
         <a href="/komponenter/fejlmeddelelser/#inputfelt-med-karakterbegraensning" class="small-text">Gå til eksemplets retningslinjer</a>
+    </div>
+    
+</div>
+
+<h2 id="multiselect-kode">Multiselect</h2>
+
+<div class="component-preview component-preview-code  component-code-multiselect-error">
+    
+    <div class="component-link px-4 py-4">
+        
+        <a href="/eksempel/multiselect-error/" class="small-text" target="_blank">Vis dette eksempel i et nyt vindue<span class="sr-only">: multiselect-error</span></a>
+        
+    </div>
+    
+    
+    <div class="sr-only">Kodeeksempel</div>
+    
+    <div class="component-code">
+        
+        <div class="button-copy-container">
+            <button class="button button-secondary button-copy">Kopiér kode</button>
+        </div>
+        
+        
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Frugter<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-opener</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-opener</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-dialog</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-options</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Æble<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Pære<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Banan<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Mango<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Appelsin<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Vandmelon<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Blåbær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Jordbær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">fds-multiselect-option</span>&gt;</span>Kirsebær<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-options</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect-dialog</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">fds-error-message</span>&gt;</span>Dette er en fejl<span class="hljs-tag">&lt;/<span class="hljs-name">fds-error-message</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-multiselect</span>&gt;</span></code></pre></figure>
+
+
+    </div>
+    
+    <div class="component-guidelines-link px-4 py-4">
+        <a href="/komponenter/fejlmeddelelser/#multiselect" class="small-text">Gå til eksemplets retningslinjer</a>
     </div>
     
 </div>

@@ -68,6 +68,37 @@
 
     <div class="row mb-905">
         <div class="col-12">
+            <h2 class="h3 mt-0">Nogle valgmuligheder sat som default og vælg alle-tjekboks
+            </h2>
+        </div>
+        <div class="col-12">
+            <fds-multiselect>
+                <label>Frugter</label>
+                <fds-multiselect-opener></fds-multiselect-opener>
+
+                <fds-multiselect-dialog>
+                    <fds-multiselect-options>
+                        <fds-multiselect-select-all>Vælg alle</fds-multiselect-select-all>
+                        <fds-multiselect-option>Æble</fds-multiselect-option>
+                        <fds-multiselect-option
+                            default-selected="true">Pære</fds-multiselect-option>
+                        <fds-multiselect-option>Banan</fds-multiselect-option>
+                        <fds-multiselect-option>Mango</fds-multiselect-option>
+                        <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                        <fds-multiselect-option>Vandmelon</fds-multiselect-option>
+                        <fds-multiselect-option>Blåbær</fds-multiselect-option>
+                        <fds-multiselect-option
+                            default-selected="true">Jordbær</fds-multiselect-option>
+                        <fds-multiselect-option>Kirsebær</fds-multiselect-option>
+                        <fds-multiselect-option>Hindbær</fds-multiselect-option>
+                    </fds-multiselect-options>
+                </fds-multiselect-dialog>
+            </fds-multiselect>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
             <h2 class="h3 mt-0">Mange valgmuligheder</h2>
         </div>
         <div class="col-12">
@@ -77,6 +108,7 @@
 
                 <fds-multiselect-dialog>
                     <fds-multiselect-options>
+                        <fds-multiselect-select-all>Vælg alle</fds-multiselect-select-all>
                         <fds-multiselect-option>Æble</fds-multiselect-option>
                         <fds-multiselect-option>Pære</fds-multiselect-option>
                         <fds-multiselect-option>Banan</fds-multiselect-option>
@@ -118,18 +150,48 @@
 
     <div class="row mb-905">
         <div class="col-12">
-            <h2 class="h3 mt-0">Ingen label</h2>
+            <h2 class="h3 mt-0">Advarsel om flere vælg alle-knapper</h2>
         </div>
         <div class="col-12">
-            <p>Tjek konsollen for advarsel om manglende label</p>
             <fds-multiselect>
+                <label>Frugter</label>
                 <fds-multiselect-opener></fds-multiselect-opener>
 
                 <fds-multiselect-dialog>
                     <fds-multiselect-options>
+                        <fds-multiselect-select-all>Vælg alle</fds-multiselect-select-all>
+                        <fds-multiselect-select-all>Vælg alle
+                            igen</fds-multiselect-select-all>
                         <fds-multiselect-option>Banan</fds-multiselect-option>
                         <fds-multiselect-option>Æble</fds-multiselect-option>
                         <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                    </fds-multiselect-options>
+                </fds-multiselect-dialog>
+            </fds-multiselect>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Dynamisk tilføj/fjern options</h2>
+        </div>
+        <div class="col-12">
+            <div>
+                <button type="button" id="add-option">Tilføj mulighed</button>
+                <button type="button" id="remove-option">Fjern mulighed</button>
+                <button type="button" id="toggle-select-all">Toggle "Vælg Alle"</button>
+            </div>
+
+            <fds-multiselect>
+                <label>Muligheder</label>
+                <fds-multiselect-opener></fds-multiselect-opener>
+
+                <fds-multiselect-dialog>
+                    <fds-multiselect-options id="test-options">
+                        <fds-multiselect-select-all>Vælg Alle</fds-multiselect-select-all>
+                        <fds-multiselect-option>Mulighed 1</fds-multiselect-option>
+                        <fds-multiselect-option>Mulighed 2</fds-multiselect-option>
+                        <fds-multiselect-option>Mulighed 3</fds-multiselect-option>
                     </fds-multiselect-options>
                 </fds-multiselect-dialog>
             </fds-multiselect>
@@ -153,6 +215,74 @@
                         <fds-multiselect-option>Appelsin</fds-multiselect-option>
                     </fds-multiselect-options>
                 </fds-multiselect-dialog>
+            </fds-multiselect>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Hjælpetekst</h2>
+        </div>
+        <div class="col-12">
+            <fds-multiselect>
+                <label>Frugter</label>
+                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
+                <fds-multiselect-opener></fds-multiselect-opener>
+
+                <fds-multiselect-dialog>
+                    <fds-multiselect-options>
+                        <fds-multiselect-option>Banan</fds-multiselect-option>
+                        <fds-multiselect-option>Æble</fds-multiselect-option>
+                        <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                    </fds-multiselect-options>
+                </fds-multiselect-dialog>
+            </fds-multiselect>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Fejlbesked</h2>
+        </div>
+        <div class="col-12">
+            <fds-multiselect>
+                <label>Frugter</label>
+                <fds-multiselect-opener></fds-multiselect-opener>
+
+                <fds-multiselect-dialog>
+                    <fds-multiselect-options>
+                        <fds-multiselect-option>Banan</fds-multiselect-option>
+                        <fds-multiselect-option>Æble</fds-multiselect-option>
+                        <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                    </fds-multiselect-options>
+                </fds-multiselect-dialog>
+
+                <fds-error-message>Dette er en fejl</fds-error-message>
+            </fds-multiselect>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Hjælpetekst og fejlbesked</h2>
+        </div>
+        <div class="col-12">
+            <fds-multiselect>
+                <label>Frugter</label>
+                <fds-help-text>Dette er en hjælpetekst</fds-help-text>
+                <fds-help-text>Dette er endnu en hjælpetekst</fds-help-text>
+                <fds-multiselect-opener></fds-multiselect-opener>
+
+                <fds-multiselect-dialog>
+                    <fds-multiselect-options>
+                        <fds-multiselect-option>Banan</fds-multiselect-option>
+                        <fds-multiselect-option>Æble</fds-multiselect-option>
+                        <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                    </fds-multiselect-options>
+                </fds-multiselect-dialog>
+
+                <fds-error-message>Dette er en fejl</fds-error-message>
+                <fds-error-message>Dette er endnu en fejl</fds-error-message>
             </fds-multiselect>
         </div>
     </div>
@@ -227,7 +357,7 @@
                     </fds-multiselect-dialog>
                 </fds-multiselect>
 
-                <fds-multiselect class="mb-6" name="required-fruits" aria-required="true"
+                <fds-multiselect class="mb-6" name="required-fruits" required
                     show-required-status>
                     <label>Flere frugter</label>
                     <fds-multiselect-opener></fds-multiselect-opener>
@@ -242,8 +372,48 @@
                     </fds-multiselect-dialog>
                 </fds-multiselect>
 
+                <fds-multiselect class="mb-6" name="disabled-fruits" disabled>
+                    <label>Inaktive frugter</label>
+                    <fds-multiselect-opener></fds-multiselect-opener>
+
+                    <fds-multiselect-dialog>
+                        <fds-multiselect-options>
+                            <fds-multiselect-option
+                                default-selected="true">Kirsebær</fds-multiselect-option>
+                            <fds-multiselect-option>Hindbær</fds-multiselect-option>
+                            <fds-multiselect-option
+                                default-selected="true">Brombær</fds-multiselect-option>
+                            <fds-multiselect-option>Fersken</fds-multiselect-option>
+                        </fds-multiselect-options>
+                    </fds-multiselect-dialog>
+                </fds-multiselect>
+
                 <button class="button button-secondary" type="submit">Submit</button>
             </form>
+        </div>
+    </div>
+
+    <div class="row mb-905">
+        <div class="col-12">
+            <h2 class="h3 mt-0">Multiselect i et fieldset</h2>
+        </div>
+        <div class="col-12">
+            <fieldset>
+                <legend>Multiselect i fieldset</legend>
+                <fds-multiselect class="mb-6" name="fruits">
+                    <label>Frugter</label>
+                    <fds-multiselect-opener></fds-multiselect-opener>
+
+                    <fds-multiselect-dialog>
+                        <fds-multiselect-options>
+                            <fds-multiselect-option>Banan</fds-multiselect-option>
+                            <fds-multiselect-option>Æble</fds-multiselect-option>
+                            <fds-multiselect-option>Appelsin</fds-multiselect-option>
+                            <fds-multiselect-option>Mango</fds-multiselect-option>
+                        </fds-multiselect-options>
+                    </fds-multiselect-dialog>
+                </fds-multiselect>
+            </fieldset>
         </div>
     </div>
 
@@ -291,3 +461,30 @@
     </div>
 
 </main>
+
+<script>
+    const options = document.querySelector('#test-options');
+    let nextOptionNumber = 4;
+    document.querySelector('#add-option').addEventListener('click', () => {
+        const option = document.createElement('fds-multiselect-option');
+        const optionNumber = nextOptionNumber++;
+        option.textContent = `Mulighed ${optionNumber}`;
+        if (optionNumber % 3 === 0) {
+            option.setAttribute('default-selected', '');
+        }
+        options.appendChild(option);
+    });
+    document.querySelector('#remove-option').addEventListener('click', () => {
+        options.querySelector('fds-multiselect-option')?.remove();
+    });
+    document.querySelector('#toggle-select-all').addEventListener('click', () => {
+        const selectAll = options.querySelector('fds-multiselect-select-all');
+        if (selectAll) {
+            selectAll.remove();
+        } else {
+            const newSelectAll = document.createElement('fds-multiselect-select-all');
+            newSelectAll.textContent = 'Vælg Alle';
+            options.prepend(newSelectAll);
+        }
+    });
+</script>
