@@ -198,6 +198,7 @@ new DKFDS.DropdownSort(document.getElementById('OVERFLOW-MENU-CONTAINER')).init(
 | variant       | Sæt til `"sort"` for at bruge komponenten som sorteringsmenu. Må ikke ændres efter initialisering. |
 | default-value | Bruges til sorteringsmenuer. Sæt til `data-value` for den mulighed, der skal vælges fra start. Udelades attributten, eller findes værdien ikke, vælges den første mulighed. |
 | data-value    | Sættes på hver knap i en sorteringsmenu. Værdien bruges af `default-value` og `selectSortValue()`. |
+| id            | Angiver dropdown-komponentens ID. Hvis sat, bruges ID'et som grundlag for panelets ID.  |
 
 #### Funktioner
 

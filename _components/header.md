@@ -280,6 +280,13 @@ Bemærk: `<div class="header">` i eksemplet bør erstattes med et `<header>`-ele
 
 `fds-main-menu` anvender light DOM. Brug `<div class="main-menu-inner">` inde i `fds-main-menu` til desktopmenuen. Udelad denne wrapper, når menuen placeres i mobilmenuens `fds-modal`.
 
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut | Beskrivelse |
+|--------------|-------------|
+| more-menu-id | Angiver ID'et for hovedmenuens “Mere”-menu. ID'et skal være unikt på siden. Kan udelades, hvis man ønsker at ID'et skal genereres automatisk. |
+
 #### Funktioner
 
 {:.table .table--responsive-headers}
