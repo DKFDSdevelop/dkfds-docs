@@ -34,7 +34,8 @@ title: Test
 {% include test/preview-test.html filename="test-fds-portal-info" description="Portalinfo" %}
 {% include test/preview-test.html filename="test-fds-solution-info" description="Løsningsinfo" %}
 {% include test/preview-test.html filename="test-fds-header-from-components" description="Header lavet med komponenter" %}
-{% include test/preview-test.html filename="test-fds-dropdown-menu" description="Submenu til navigation" %}
+{% include test/preview-test.html filename="test-fds-dropdown-menu" description="Overflowmenu (inkl. varianter)" %}
+{% include test/preview-test.html filename="test-fds-dropdown-menu-placement" description="Placering af overflowmenu" %}
 {% include test/preview-test.html filename="test-fds-tooltip-icon" description="Tooltip-ikon" %}
 {% include test/preview-test.html filename="test-fds-tooltip" description="Tooltip" %}
 {% include test/preview-test.html filename="test-fds-side-menu" description="Venstremenu" %}

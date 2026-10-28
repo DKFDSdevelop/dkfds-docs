@@ -27,13 +27,11 @@ Designsystemet bliver i dag brugt på tværs af mange forskellige projekter og t
 Vi udgiver i første omgang en række udvalgte komponenter som Web Components. Det er bevidst et begrænset udvalg, fordi vi er i en betafase, hvor formålet er at teste tilgangen i praksis, samle erfaringer og rette eventuelle problemer, inden vi udruller det til resten af designsystemet. Betakomponenterne kan bruges side om side med den tidligere kode. Vær dog opmærksom på, at koden til Web Components ligger i nye stylesheets og scripts, som skal tilføjes særskilt. Se siden {% include links/internal-link.html linktext="Kom i gang med Web Components" %}.
 
 For alle komponenter gælder, at:
-- De udvalgte komponenter er testede, tilgængelige og opbygget så fleksibelt som muligt. Hvis vi undervejs får feedback der bliver implementeret, kan enkelte komponenter ændrer sig. Vi vil informere om eventuelle ændringer i release notes.
+- De udvalgte komponenter er testede, tilgængelige og opbygget så fleksibelt som muligt. Hvis vi undervejs får feedback der bliver implementeret, kan enkelte komponenter ændre sig. Vi vil informere om eventuelle ændringer i release notes.
 - Dokumentationen bliver løbende opdateret i takt med, at vi lærer mere.
 - Designsystemet udvides løbende med flere komponenter.
 
 Vær også opmærksom på, om dit framework kræver særlig konfiguration eller andre ændringer, når du tager Web Components i brug.
-
-Du kan {% include links/internal-link.html linktext="hente kodepakken" %} via NPM.
 
 <details class="details">
     <summary class="details-summary">Liste over komponenter med Web Component-kode</summary>
@@ -52,12 +50,10 @@ Du kan {% include links/internal-link.html linktext="hente kodepakken" %} via NP
             <li>{% include links/component-web-component-link.html linktext="Inputfelter" %}</li>
             <li>{% include links/component-web-component-link.html linktext="Modal" %}</li>
             <li>{% include links/component-web-component-link.html linktext="Multiselect" %}</li>
-            <li>Overflow menu</li>
+            <li>{% include links/component-web-component-link.html linktext="Overflow menu" %}</li>
             <li>{% include links/component-web-component-link.html linktext="Radioknap" %}</li>
             <li>{% include links/component-web-component-link.html linktext="Tekstområde" %}</li>
-            <li>Tilbage til toppen</li>
             <li>{% include links/component-web-component-link.html linktext="Tjekboks" %}</li>
-            <li>Toastbesked</li>
             <li>{% include links/component-web-component-link.html linktext="Toggle switch" %}</li>
             <li>{% include links/component-web-component-link.html linktext="Tooltip" %}</li>
             <li>{% include links/component-web-component-link.html linktext="Trinindikator" %}</li>

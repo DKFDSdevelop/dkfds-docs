@@ -1682,6 +1682,9 @@
             <a href="#retningslinjer" id="guidelines-tab" class="tab-button" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="M480-80q-26 0-47-12.5T400-126q-33 0-56.5-23.5T320-206v-142q-59-39-94.5-103T190-590q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 77-35.5 140T640-348v142q0 33-23.5 56.5T560-126q-12 21-33 33.5T480-80Zm-80-126h160v-36H400v36Zm0-76h160v-38H400v38Zm-8-118h58v-108l-88-88 42-42 76 76 76-76 42 42-88 88v108h58q54-26 88-76.5T690-590q0-88-61-149t-149-61q-88 0-149 61t-61 149q0 63 34 113.5t88 76.5Zm88-162Zm0-38Z"></path></svg><span>Retningslinjer</span></a>
         </li><li>
             <a href="#kode" id="code-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span>Kode</span></a>
+        </li><li>
+            <a href="#web-component" id="web-component-tab" class="tab-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" class="icon-svg" focusable="false" aria-hidden="true"><path d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg><span class="mr-3">Web Component</span><strong class="badge web-component-tab-badge">Beta</strong></a>
+            <span id="web-component" hidden=""></span>
         </li></ul>
 </nav>
 <div id="retningslinjer" hidden=""></div>
@@ -1728,6 +1731,10 @@
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
         <li class="anchorlink-code"><a href="#sortering-kode">Sortering</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
+        <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
+        <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2075,6 +2082,301 @@
       <td>fds.dropdown.selected</td>
       <td><code>button.js-dropdown</code></td>
       <td>Når en værdi bliver valgt</td>
+    </tr>
+  </tbody>
+</table>
+
+
+                        </div>
+                        <div id="web-component-section">
+                            
+
+<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+
+<p>Læs mere om <a href="/kom-i-gang/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-dropdown-menu/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-dropdown-menu>
+    <button>
+        <span>Overflow menu <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#more-vert"></use></svg></span>
+    </button>
+    <div id="default-overflow-menu-example">
+        <ul>
+            <li><button>Mulighed 1</button></li>
+            <li><button>Mulighed 2</button></li>
+            <li><a href="#">Mulighed 3 er et link</a></li>
+            <li><button>Mulighed 4 er en længere tekst</button></li>
+        </ul>
+    </div>
+</fds-dropdown-menu>
+    </div>
+    <div class="code-in-tabs">
+        
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-dropdown-menu</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Overflow menu <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#more-vert&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default-overflow-menu-example&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Mulighed 1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Mulighed 2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#39;#&#39;</span>&gt;</span>Mulighed 3 er et link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Mulighed 4 er en længere tekst<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-dropdown-menu</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-dropdown-menu</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;default-overflow-menu-example&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Overflow menu <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#more-vert&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default-overflow-menu-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-menu collapsed&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Mulighed 1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Mulighed 2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Mulighed 3 er et link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Mulighed 4 er en længere tekst<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-dropdown-menu</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+
+<p>Denne komponent anvender light DOM. Det betyder, at komponenten genererer HTML, der kan tilgås ligesom al anden HTML på siden. Du kan som udvikler vælge mellem at tage Web Component-koden, hvis du vil lade komponenten generere HTML’en, eller tage versionen med den genererede kode, hvis du har brug for at ændre i HTML’en først. Begge muligheder vises i fanebladene i komponentens eksempler.</p>
+
+<p>Uanset hvilken kode du tager, vil komponenten stadig aktivere den nødvendige JavaScript. Bemærk, at udvalgte light DOM-komponenter har en <code>ready</code>-attribut, du som udvikler kan bruge, hvis du i dit framework har behov for at udskyde initialisering af komponenten.</p>
+
+<p>Læs mere på <a href="/kom-i-gang/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
+
+<h2 id="varianter-custom">Varianter</h2>
+
+<h3 id="sortering-custom">Sortering</h3>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-dropdown-menu-sort/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-dropdown-menu variant="sort" default-value="newfirst">
+    <button>
+        <span>
+            <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#sort-default"></use></svg>
+            <span>Sortér:</span><span class="selected-value"></span>
+        </span>
+    </button>
+    <div id="default-sorting-menu-example">
+        <ul>
+            <li><button data-value="newfirst">Nyeste først</button></li>
+            <li><button data-value="oldfirst">Ældste først</button></li>
+            <li><button data-value="affaldstype-asc">Affaldstype (A-Å)</button></li>
+            <li><button data-value="affaldstype-desc">Affaldstype (Å-A)</button></li>
+        </ul>
+    </div>
+</fds-dropdown-menu>
+    </div>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-dropdown-menu-sort">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-dropdown-menu</span> <span class="hljs-attr">variant</span>=<span class="hljs-string">&quot;sort&quot;</span> <span class="hljs-attr">default-value</span>=<span class="hljs-string">&quot;newfirst&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#sort-default&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Sortér:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;selected-value&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default-sorting-menu-example&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;newfirst&quot;</span>&gt;</span>Nyeste først<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;oldfirst&quot;</span>&gt;</span>Ældste først<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;affaldstype-asc&quot;</span>&gt;</span>Affaldstype (A-Å)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;affaldstype-desc&quot;</span>&gt;</span>Affaldstype (Å-A)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-dropdown-menu</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-dropdown-menu</span> <span class="hljs-attr">variant</span>=<span class="hljs-string">&quot;sort&quot;</span> <span class="hljs-attr">default-value</span>=<span class="hljs-string">&quot;newfirst&quot;</span> <span class="hljs-attr">expanded</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">data-selected-value</span>=<span class="hljs-string">&quot;newfirst&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-button&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;default-sorting-menu-example&quot;</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#sort-default&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Sortér:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;selected-value&quot;</span>&gt;</span>Nyeste først<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default-sorting-menu-example&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-menu collapsed&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;newfirst&quot;</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Nyeste først<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;oldfirst&quot;</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Ældste først<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;affaldstype-asc&quot;</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Affaldstype (A-Å)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-value</span>=<span class="hljs-string">&quot;affaldstype-desc&quot;</span> <span class="hljs-attr">data-menu-item</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Affaldstype (Å-A)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-dropdown-menu</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
+
+<h2 id="konfiguration-custom">Konfiguration</h2>
+
+<h3 id="fds-dropdown-menu-custom">fds-dropdown-menu</h3>
+
+<h4>Attributter</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ready</td>
+      <td>Sæt til <code>"false"</code> for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end <code>"false"</code>, for at initialisere komponenten med det samme.</td>
+    </tr>
+    <tr>
+      <td>expanded</td>
+      <td>Sæt til <code>"true"</code> for at vise menuen fra start. Udelades attributten, starter menuen lukket.</td>
+    </tr>
+    <tr>
+      <td>direction</td>
+      <td>Sæt til <code>"left"</code> for at lade en overflowmenu åbne mod venstre. Udelades attributten, åbner den mod højre.</td>
+    </tr>
+    <tr>
+      <td>variant</td>
+      <td>Sæt til <code>"sort"</code> for at bruge komponenten som sorteringsmenu. Må ikke ændres efter initialisering.</td>
+    </tr>
+    <tr>
+      <td>default-value</td>
+      <td>Bruges til sorteringsmenuer. Sæt til <code>data-value</code> for den mulighed, der skal vælges fra start. Udelades attributten, eller findes værdien ikke, vælges den første mulighed.</td>
+    </tr>
+    <tr>
+      <td>data-value</td>
+      <td>Sættes på hver knap i en sorteringsmenu. Værdien bruges af <code>default-value</code> og <code>selectSortValue()</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Funktioner</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Funktion</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>init()</td>
+      <td>Initialiser komponenten, når initialiseringen er udskudt med <code>ready="false"</code>.</td>
+    </tr>
+    <tr>
+      <td>open()</td>
+      <td>Åbn menuen.</td>
+    </tr>
+    <tr>
+      <td>close()</td>
+      <td>Luk menuen.</td>
+    </tr>
+    <tr>
+      <td>toggle()</td>
+      <td>Skift mellem åben og lukket menu.</td>
+    </tr>
+    <tr>
+      <td>selectSortValue(value, dispatch)</td>
+      <td>Vælg en mulighed i en sorteringsmenu ud fra dens <code>data-value</code>. <code>dispatch</code> er valgfri og er som standard <code>true</code>. Sæt den til <code>false</code> for ikke at udløse event.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Events</h4>
+
+<table class="table table--responsive-headers">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Beskrivelse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fds-dropdown-menu-opened</td>
+      <td>Udløses, når menuen åbnes.</td>
+    </tr>
+    <tr>
+      <td>fds-dropdown-menu-closed</td>
+      <td>Udløses, når menuen lukkes.</td>
+    </tr>
+    <tr>
+      <td>fds-sort-menu-changed</td>
+      <td>Udløses, når valget i en sorteringsmenu ændres. <code>event.detail</code> indeholder <code>value</code> og <code>previousValue</code>.</td>
     </tr>
   </tbody>
 </table>

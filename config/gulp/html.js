@@ -44,6 +44,7 @@ var testfiles = [
     "test-fds-solution-info",
     "test-fds-header-from-components",
     "test-fds-dropdown-menu",
+    "test-fds-dropdown-menu-placement",
     "test-fds-tooltip-icon",
     "test-fds-tooltip",
     "test-fds-side-menu",
