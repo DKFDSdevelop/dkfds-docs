@@ -6238,7 +6238,18 @@ function registerSolutionInfo() {
 class FDSDropdownMenu extends HTMLElement {
   // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
 
-  static observedAttributes = ['expanded'];
+  static observedAttributes = ['expanded', 'ready'];
+
+  // #endregion
+
+  // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
+
+  get ready() {
+    return this.getAttribute('ready') !== 'false';
+  }
+  set ready(value) {
+    this.setAttribute('ready', value ? 'true' : 'false');
+  }
 
   // #endregion
 
@@ -6281,6 +6292,9 @@ class FDSDropdownMenu extends HTMLElement {
     if (!this.contains(event.target)) {
       this.close();
     }
+  };
+  #handleResize = () => {
+    this.#positionMenu();
   };
 
   // #endregion
@@ -6337,7 +6351,27 @@ class FDSDropdownMenu extends HTMLElement {
 
     // Don't close the dropdown when something non-clickable inside it is clicked (like a subtitle)
     if (!this.#isDrawerSubmenu()) {
-      this.querySelector(':scope > .dropdown-menu').setAttribute('tabindex', '-1');
+      this.querySelector(':scope > .dropdown-menu')?.setAttribute('tabindex', '-1');
+    }
+  }
+
+  // Ensure the dropdown doesn't cross the viewport's left or right side.
+  #positionMenu() {
+    const menu = this.querySelector(':scope > .dropdown-menu');
+    if (!menu) return;
+    menu.style.removeProperty('max-width');
+    menu.style.removeProperty('left');
+    menu.style.removeProperty('right');
+    const rect = menu.getBoundingClientRect();
+    const viewportWidth = window.visualViewport?.width ?? document.documentElement.clientWidth;
+    if (menu.offsetWidth > viewportWidth) {
+      menu.style.maxWidth = `${viewportWidth}px`;
+    } else if (rect.left < 0) {
+      menu.style.left = '0px';
+      menu.style.right = 'auto';
+    } else if (rect.left + menu.offsetWidth > viewportWidth) {
+      menu.style.left = 'auto';
+      menu.style.right = '0px';
     }
   }
   #updateExpanded(value) {
@@ -6346,7 +6380,8 @@ class FDSDropdownMenu extends HTMLElement {
     if (value === 'false') {
       dropdownButton?.setAttribute('aria-expanded', 'false');
       menu?.classList.add('collapsed');
-      menu.removeAttribute('style');
+      menu?.removeAttribute('style');
+      window.removeEventListener('resize', this.#handleResize);
       if (!this.#isDrawerSubmenu()) {
         document.removeEventListener('mousedown', this.#handleOutsideClick, false);
       }
@@ -6360,15 +6395,8 @@ class FDSDropdownMenu extends HTMLElement {
 
       /* Check if the dropdown is within the screen borders */
 
-      const rect = menu.getBoundingClientRect();
-      const viewportWidth = window.visualViewport?.width ?? document.documentElement.clientWidth;
-      if (menu.offsetWidth > viewportWidth) {
-        menu.style.maxWidth = `${viewportWidth}px`;
-      } else if (rect.left < 0) {
-        menu.style.left = '0px';
-      } else if (rect.left + menu.offsetWidth > viewportWidth) {
-        menu.style.right = '0px';
-      }
+      this.#positionMenu();
+      window.addEventListener('resize', this.#handleResize);
 
       /* Dispatch event */
 
@@ -6380,7 +6408,7 @@ class FDSDropdownMenu extends HTMLElement {
     if (!this.#isDrawerSubmenu()) {
       this.addEventListener('focusout', this.#handleFocusOut, false);
       this.addEventListener('keydown', this.#handleKeydown, false);
-      this.querySelector('.dropdown-menu').addEventListener('click', this.#handleMenuItemClick, false);
+      this.querySelector(':scope > .dropdown-menu')?.addEventListener('click', this.#handleMenuItemClick, false);
     }
   }
   #removeEventListeners() {
@@ -6388,7 +6416,7 @@ class FDSDropdownMenu extends HTMLElement {
     if (!this.#isDrawerSubmenu()) {
       this.removeEventListener('focusout', this.#handleFocusOut, false);
       this.removeEventListener('keydown', this.#handleKeydown, false);
-      this.querySelector('.dropdown-menu').removeEventListener('click', this.#handleMenuItemClick, false);
+      this.querySelector(':scope > .dropdown-menu')?.removeEventListener('click', this.#handleMenuItemClick, false);
     }
   }
 
@@ -6396,6 +6424,11 @@ class FDSDropdownMenu extends HTMLElement {
 
   // #region - PUBLIC METHODS -----------------------------------------------------------------------------
 
+  init() {
+    this.#setupHTML();
+    this.#addEventListeners();
+    this.#initialized = true;
+  }
   toggle() {
     this.getAttribute('expanded') === 'false' ? this.setAttribute('expanded', 'true') : this.setAttribute('expanded', 'false');
   }
@@ -6411,9 +6444,8 @@ class FDSDropdownMenu extends HTMLElement {
   // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
 
   connectedCallback() {
-    this.#setupHTML();
-    this.#addEventListeners();
-    this.#initialized = true;
+    if (this.getAttribute('ready') === 'false') return;
+    this.init();
   }
 
   // #endregion
@@ -6422,6 +6454,7 @@ class FDSDropdownMenu extends HTMLElement {
 
   disconnectedCallback() {
     this.#removeEventListeners();
+    window.removeEventListener('resize', this.#handleResize);
     if (!this.#isDrawerSubmenu()) {
       document.removeEventListener('mousedown', this.#handleOutsideClick, false);
     }
@@ -6433,6 +6466,12 @@ class FDSDropdownMenu extends HTMLElement {
   // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
 
   attributeChangedCallback(attribute, oldValue, newValue) {
+    if (attribute === 'ready') {
+      if (!this.#initialized && this.isConnected && newValue !== 'false') {
+        this.init();
+      }
+      return;
+    }
     if (!this.#initialized) return;
     if (oldValue === newValue) return;
     switch (attribute) {
