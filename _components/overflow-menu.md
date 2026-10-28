@@ -15,14 +15,14 @@ tags:
 - overflowmenu
 - sorter
 - sortering
-tabs: "Retningslinjer, kode"
+tabs: "Retningslinjer, kode, web component"
 ---
 
-{% include tabs.html guidelines=true code=true %}
+{% include tabs.html guidelines=true code=true web_component=true %}
 
 {% include code/preview-box.html component="overflow-menu" title="Eksempel på overflow menu" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Overflowmenu" code="Overflowmenu_Kode" %}
+{% include anchorlinks.html guidelines="Overflowmenu" code="Overflowmenu_Kode" custom="Overflowmenu_Web_Component" %}
 
 <!--split-->
 
@@ -166,3 +166,7 @@ new DKFDS.DropdownSort(document.getElementById('OVERFLOW-MENU-CONTAINER')).init(
 | fds.dropdown.open  | `button.js-dropdown` | Når en overflow menu bliver foldet ud, bliver eventet `fds.dropdown.open` udløst på knappen  |
 | fds.dropdown.close | `button.js-dropdown` | Når en overflow menu bliver foldet ind, bliver eventet `fds.dropdown.close` udløst på knappe |
 | fds.dropdown.selected | `button.js-dropdown` | Når en værdi bliver valgt |
+
+<!--split-->
+
+{% include web-component-shared-text/web-components-beta.html %}
