@@ -216,6 +216,20 @@ Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvæl
 
 {% include web-component-shared-text/intro-mixed-dom.html %}
 
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Simpel header {#{% include create-id.html heading="Simpel header" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-simple" heading_tag="h4" subheading_tag="h5" %}
+
+### Header med navigation og søgefelt {#{% include create-id.html heading="Header med navigation og søgefelt" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-navigation" heading_tag="h4" subheading_tag="h5" %}
+
+### Header med sprogvælger {#{% include create-id.html heading="Header med sprogvælger" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-language" heading_tag="h4" subheading_tag="h5" %}
+
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
 Bemærk: `<div class="header">` i eksemplet bør erstattes med et `<header>`-element i produktionsløsninger.
