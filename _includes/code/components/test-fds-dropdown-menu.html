@@ -1,5 +1,27 @@
 <header class="header">
-    <!-- Custom elements navigation menu -->
+
+    <!-- Language switcher -->
+    <div class="language-switcher-header">
+        <div class="container">
+            <fds-dropdown-menu expanded="false">
+                <button>
+                    <span><svg class="icon-svg" focusable="false" aria-hidden="true">
+                            <use href="#language"></use>
+                        </svg>Dansk</span>
+                </button>
+                <div>
+                    <ul>
+                        <li><a href="?lang=da" lang="da" aria-current="true">Dansk</a></li>
+                        <li><a href="?lang=en-GB" lang="en-GB">English</a></li>
+                        <li><a href="?lang=de" lang="de">Deutsch</a></li>
+                        <li><a href="?lang=pl" lang="pl">Polski</a></li>
+                    </ul>
+                </div>
+            </fds-dropdown-menu>
+        </div>
+    </div>
+
+    <!-- Web components navigation menu -->
     <fds-main-menu>
         <div class="main-menu-inner">
             <nav aria-label="Hovedmenu">
@@ -135,8 +157,9 @@
         <div class="col-12">
             <fds-dropdown-menu expanded="false">
                 <button>
-                    <span>Overflow menu
-                        <svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#more-vert"></use></svg></span>
+                    <span>Overflow menu <svg class="icon-svg" focusable="false" aria-hidden="true">
+                            <use href="#more-vert"></use>
+                        </svg></span>
                 </button>
                 <div>
                     <ul>
