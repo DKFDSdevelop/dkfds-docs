@@ -170,3 +170,51 @@ new DKFDS.DropdownSort(document.getElementById('OVERFLOW-MENU-CONTAINER')).init(
 <!--split-->
 
 {% include web-component-shared-text/web-components-beta.html %}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-dropdown-menu" subheading_tag="h2" collapsable=false %}
+
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+
+{% include web-component-shared-text/intro-light-dom.html %}
+
+## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+
+### Sortering {#{% include create-id.html heading="Sortering" append="-custom" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-dropdown-menu-sort" heading_tag="h4" subheading_tag="h5" %}
+
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+
+### fds-dropdown-menu {#{% include create-id.html heading="fds-dropdown-menu" append="-custom" %}}
+
+#### Attributter
+
+{:.table .table--responsive-headers}
+| Attribut | Beskrivelse |
+|----------|-------------|
+| ready         | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
+| expanded      | Sæt til `"true"` for at vise menuen fra start. Udelades attributten, starter menuen lukket. |
+| direction     | Sæt til `"left"` for at lade en overflowmenu åbne mod venstre. Udelades attributten, åbner den mod højre. |
+| variant       | Sæt til `"sort"` for at bruge komponenten som sorteringsmenu. Må ikke ændres efter initialisering. |
+| default-value | Bruges til sorteringsmenuer. Sæt til `data-value` for den mulighed, der skal vælges fra start. Udelades attributten, eller findes værdien ikke, vælges den første mulighed. |
+| data-value    | Sættes på hver knap i en sorteringsmenu. Værdien bruges af `default-value` og `selectSortValue()`. |
+
+#### Funktioner
+
+{:.table .table--responsive-headers}
+| Funktion | Beskrivelse |
+|----------|-------------|
+| init()                           | Initialiser komponenten, når initialiseringen er udskudt med `ready="false"`. |
+| open()                           | Åbn menuen. |
+| close()                          | Luk menuen. |
+| toggle()                         | Skift mellem åben og lukket menu. |
+| selectSortValue(value, dispatch) | Vælg en mulighed i en sorteringsmenu ud fra dens `data-value`. `dispatch` er valgfri og er som standard `true`. Sæt den til `false` for ikke at udløse event. |
+
+#### Events
+
+{:.table .table--responsive-headers}
+| Event | Beskrivelse |
+|-------|-------------|
+| fds-dropdown-menu-opened | Udløses, når menuen åbnes. |
+| fds-dropdown-menu-closed | Udløses, når menuen lukkes. |
+| fds-sort-menu-changed    | Udløses, når valget i en sorteringsmenu ændres. `event.detail` indeholder `value` og `previousValue`. |
