@@ -14,7 +14,7 @@ web_compponent_warning: true
 
 {% include tabs.html guidelines=true web_component=true %}
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect" subheading_tag="h2" classes="intro-example" %}
+{% include code/preview-box.html component="multiselect" title="Eksempel på multiselect" classes="intro-example" %}
 
 {% include anchorlinks.html guidelines="Multiselect" custom="Multiselect_Web_Component" %}
 
@@ -48,7 +48,7 @@ Læs mere om korrekt brug af {% include links/component-guideline-link.html link
 
 Når der vises en fejlmeddelelse, vis da også {% include links/component-guideline-link.html linktext="fejlopsummering" %}.
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect-error" subheading_tag="h4" %}
+{% include code/preview-box.html component="multiselect-error" title="Eksempel på multiselect med fejlmeddelelse" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" %}}
 
@@ -56,7 +56,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-guidel
 
 Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vil vælge alle eller størstedelen af mulighederne i listen. De fleste multiselect vil ikke behøve denne funktion.
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect-select-all" subheading_tag="h4" %}
+{% include code/preview-box.html component="multiselect-select-all" title="Eksempel på multiselect med vælg alle" %}
 
 ## Referencer {#{% include create-id.html heading="Referencer" %}}
 
