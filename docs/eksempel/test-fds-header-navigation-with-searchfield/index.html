@@ -269,41 +269,24 @@
     </fds-solution-info>
 
     <fds-main-menu>
-        <div class="main-menu-inner">
-            <nav aria-label="Hovedmenu">
+        <div class="main-menu-inner d-block d-lg-flex">
+            <nav aria-label="Hovedmenu" class="d-none d-lg-block">
                 <ul>
-                    <li><a href="#"><span>Første menupunkt</span></a></li>
-                    <li>
-                        <fds-dropdown-menu expanded="false">
-                            <button><span>Andet menupunkt</span></button>
-                            <div>
-                                <ul>
-                                    <li><a href="#"><span>Undermenu 2.1</span></a></li>
-                                    <li><a href="#"><span>Undermenu 2.2</span></a></li>
-                                    <li><a href="#"><span>Undermenu 2.3</span></a></li>
-                                    <li><a href="#"><span>Undermenu 2.4</span></a></li>
-                                </ul>
-                            </div>
-                        </fds-dropdown-menu>
-                    </li>
-                    <li><a href="#"><span>Tredje menupunkt</span></a></li>
-                    <li><a href="#"><span>Fjerde menupunkt</span></a></li>
-                    <li>
-                        <fds-dropdown-menu expanded="false">
-                            <button><span>Femte menupunkt</span></button>
-                            <div>
-                                <ul>
-                                    <li><a href="#"><span>Undermenu 5.1</span></a></li>
-                                    <li><a href="#" aria-current="page"><span>Undermenu 5.2
-                                                med flere undermenuer kun synlige på
-                                                mobil</span></a></li>
-                                    <li><a href="#"><span>Undermenu 5.3</span></a></li>
-                                </ul>
-                            </div>
-                        </fds-dropdown-menu>
-                    </li>
+                    <li><a href="javascript:void(0);"><span>Første menupunkt</span></a></li>
+                    <li><a href="javascript:void(0);"><span>Andet menupunkt</span></a></li>
+                    <li><a href="javascript:void(0);"><span>Tredje menupunkt</span></a></li>
+                    <li><a href="javascript:void(0);"><span>Fjerde menupunkt</span></a></li>
+                    <li><a href="javascript:void(0);"><span>Femte menupunkt</span></a></li>
+                    <li><a href="javascript:void(0);"><span>Sjette menupunkt</span></a></li>
                 </ul>
             </nav>
+
+            <div class="search-form">
+                <div class="form-group search">
+                    <input class="form-input" id="header-search" name="header-search" type="search" aria-label="Søg efter indhold" />
+                    <button class="button button-search">Søg</button>
+                </div>
+            </div>
         </div>
     </fds-main-menu>
 
@@ -311,6 +294,25 @@
         <dialog>
             <div class="scrollable-area">
                 <div class="modal-top"></div>
+
+                <fds-main-menu>
+                    <nav aria-label="Eksemplets mobilmenu">
+                        <ul>
+                            <li><a href="javascript:void(0);"><span>Første
+                                        menupunkt</span></a></li>
+                            <li><a href="javascript:void(0);"><span>Andet menupunkt</span></a>
+                            </li>
+                            <li><a href="javascript:void(0);"><span>Tredje
+                                        menupunkt</span></a></li>
+                            <li><a href="javascript:void(0);"><span>Fjerde
+                                        menupunkt</span></a></li>
+                            <li><a href="javascript:void(0);"><span>Femte menupunkt</span></a>
+                            </li>
+                            <li><a href="javascript:void(0);"><span>Sjette
+                                        menupunkt</span></a></li>
+                        </ul>
+                    </nav>
+                </fds-main-menu>
 
                 <fds-solution-info>
                     <p slot="additional-info">
@@ -335,7 +337,7 @@
 <main class="container page-container" id="main-content">
     <div class="row mb-905">
         <div class="col-12">
-            <h1 class="h2 mt-0">Header lavet med web components og custom elements</h1>
+            <h1 class="h2 mt-0">test-fds-header-navigation-with-searchfield</h1>
         </div>
     </div>
 </main>

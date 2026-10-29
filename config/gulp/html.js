@@ -19,7 +19,7 @@ var titles = require('./example-titles').default;
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildFile = ['examples/testfiles/web-components/*.njk'];
+var buildFile = ['examples/testfiles/web-components/*.njk', 'examples/testfiles/web-components-header/*.njk'];
 
 var activeBuild = buildAll;
 
