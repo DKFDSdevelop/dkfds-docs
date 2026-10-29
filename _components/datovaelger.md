@@ -235,12 +235,6 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-### Start- og slutdato {#{% include create-id.html heading="Start- og slutdato" append="-custom" %}}
-
-`start-date-id` og `end-date-id` læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-start-end-dates" heading_tag="h4" subheading_tag="h5" %}
-
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
 
 `fds-date-picker` kræver følgende struktur: Et `label`-element, en `div` indeholdende et `input`-element, samt en indre `div` med et `fds-date-picker-grid`-element.
@@ -282,8 +276,6 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 | max-date                | Angiv den seneste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er 10 år fra dags dato.                                                                |
 | selected-date           | Angiv den valgte dato. Angives i formatet `YYYY-MM-DD`.                                                                                                           |
 | default-date            | Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet `YYYY-MM-DD`. Ændringer efter initialisering har ingen effekt. |
-| start-date-id           | Angiv ID'et på en tilknyttet `fds-date-picker-grid`, der repræsenterer slutdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.           |
-| end-date-id             | Angiv ID'et på en tilknyttet `fds-date-picker-grid`, der repræsenterer startdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.          |
 | text-months             | Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er `januar februar marts april maj juni juli august september oktober november december`. |
 | text-days               | Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er `mandag tirsdag onsdag torsdag fredag lørdag søndag`.                   |
 | text-prevbutton         | Skærmlæsertekst for knappen, der viser den foregående måned.                                                                                                     |
