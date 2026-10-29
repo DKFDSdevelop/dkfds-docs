@@ -19,7 +19,7 @@ difference_warning: true
 
 {% include code/preview-image.html component="cookie-message" title="Eksempel på cookiemeddelelse" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Cookiemeddelelse" code="Cookiemeddelelse_Kode" classes="hide-code" custom="Cookiemeddelelse_Web_Component" %}
+{% include anchorlinks.html guidelines="Cookiemeddelelse" code="Cookiemeddelelse_Kode" classes="hide-code" webcomponent="Cookiemeddelelse_Web_Component" %}
 
 <!--split-->
 
@@ -69,17 +69,17 @@ Cookies brugt til statistik må ikke sættes, før man aktivt har accepteret det
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="cookie-default" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 Cookiemeddelelsen anvender `fds-modal`, men er ikke selv en Web Component.
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Flere end to typer cookies {#{% include create-id.html heading="Flere end to typer cookies" append="-custom" %}}
+### Flere end to typer cookies {#{% include create-id.html heading="Flere end to typer cookies" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="cookie-many-options" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 Se dokumentationen for {% include links/component-guideline-link.html linktext="modaler" %} for konfiguration. 
 

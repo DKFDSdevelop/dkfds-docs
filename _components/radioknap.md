@@ -18,7 +18,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="radiobutton" title="Eksempel på radioknapper" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Radioknap" code="Radioknap_Kode" custom="Radioknap_Web_Component" %}
+{% include anchorlinks.html guidelines="Radioknap" code="Radioknap_Kode" webcomponent="Radioknap_Web_Component" %}
 
 <!--split-->
 
@@ -175,19 +175,19 @@ Det element som skal collapses/expandes skal have følgende:
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-example" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
 `fds-radio-button` er ikke beregnet til at blive brugt alene, men kun inden for en `fds-radio-button-group`.
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+### Fejl {#{% include create-id.html heading="Fejl" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-webcomponent" %}}
 
 #### Hjælpetekst til enkelte radioknap
 
@@ -197,19 +197,19 @@ Det element som skal collapses/expandes skal have følgende:
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-helptext" heading_tag="h5" subheading_tag="h6" %}
 
-### Skjult indhold (Collapse) {#{% include create-id.html heading="Skjult indhold (Collapse)" append="-custom" %}}
+### Skjult indhold (Collapse) {#{% include create-id.html heading="Skjult indhold (Collapse)" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-collapse" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret radioknapgruppe {#{% include create-id.html heading="Deaktiveret radioknapgruppe" append="-custom" %}}
+### Deaktiveret radioknapgruppe {#{% include create-id.html heading="Deaktiveret radioknapgruppe" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 `fds-radio-button` kræver et `input`- og et `label`-element. `fds-radio-button-group` kræver et `fieldset`-element, der omslutter gruppens `legend` og de enkelte radioknapper.
 
-### fds-radio-button {#{% include create-id.html heading="fds-radio-button" append="-custom" %}}
+### fds-radio-button {#{% include create-id.html heading="fds-radio-button" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -232,10 +232,10 @@ Det element som skal collapses/expandes skal have følgende:
 |--------------|---------------------------------------------------------------------------------------------------|
 | radio-changed | Udløses når radioknappens valgte tilstand ændres. `event.detail.checked` angiver, om den er valgt. |
 
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-error.html %}

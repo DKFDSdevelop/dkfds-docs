@@ -18,7 +18,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-image.html component="header-with-navigation" title="Eksempel på header" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Header" code="Header_Kode" custom="Header_Web_Component" %}
+{% include anchorlinks.html guidelines="Header" code="Header_Kode" webcomponent="Header_Web_Component" %}
 
 <!--split-->
 
@@ -212,29 +212,29 @@ Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvæl
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-default" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-mixed-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Simpel header {#{% include create-id.html heading="Simpel header" append="-custom" %}}
+### Simpel header {#{% include create-id.html heading="Simpel header" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-simple" heading_tag="h4" subheading_tag="h5" %}
 
-### Header med navigation og søgefelt {#{% include create-id.html heading="Header med navigation og søgefelt" append="-custom" %}}
+### Header med navigation og søgefelt {#{% include create-id.html heading="Header med navigation og søgefelt" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-navigation" heading_tag="h4" subheading_tag="h5" %}
 
-### Header med sprogvælger {#{% include create-id.html heading="Header med sprogvælger" append="-custom" %}}
+### Header med sprogvælger {#{% include create-id.html heading="Header med sprogvælger" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-header-language" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 Bemærk: `<div class="header">` i eksemplet bør erstattes med et `<header>`-element i produktionsløsninger.
 
-### fds-portal-info {#{% include create-id.html heading="fds-portal-info" append="-custom" %}}
+### fds-portal-info {#{% include create-id.html heading="fds-portal-info" append="-webcomponent" %}}
 
 `fds-portal-info` anvender shadow DOM.
 
@@ -256,7 +256,7 @@ Bemærk: `<div class="header">` i eksemplet bør erstattes med et `<header>`-ele
 | logo           | Portalens logo. Anvendes ikke i mobilmenuen, hvor webkomponenten ligger i `fds-modal`.              |
 | drawer-opener  | Knap, der åbner mobilmenuen. Anvendes ikke i mobilmenuen, hvor webkomponenten ligger i `fds-modal`. |
 
-### fds-solution-info {#{% include create-id.html heading="fds-solution-info" append="-custom" %}}
+### fds-solution-info {#{% include create-id.html heading="fds-solution-info" append="-webcomponent" %}}
 
 `fds-solution-info` anvender shadow DOM.
 
@@ -276,7 +276,7 @@ Bemærk: `<div class="header">` i eksemplet bør erstattes med et `<header>`-ele
 | additional-info  | Yderligere oplysninger om løsningen.                                                                                                                      |
 | drawer-opener    | Knap, der åbner mobilmenuen. Kan bruges her, hvis `fds-portal-info` ikke anvendes. Anvendes ikke i mobilmenuen, hvor webkomponenten ligger i `fds-modal`. |
 
-### fds-main-menu {#{% include create-id.html heading="fds-main-menu" append="-custom" %}}
+### fds-main-menu {#{% include create-id.html heading="fds-main-menu" append="-webcomponent" %}}
 
 `fds-main-menu` anvender light DOM. Brug `<div class="main-menu-inner">` inde i `fds-main-menu` til desktopmenuen. Udelad denne wrapper, når menuen placeres i mobilmenuens `fds-modal`.
 

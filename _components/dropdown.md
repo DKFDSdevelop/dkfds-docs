@@ -18,7 +18,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="select" title="Eksempel på dropdown" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Dropdown" code="Dropdown_Kode" custom="Dropdown_Web_Component" %}
+{% include anchorlinks.html guidelines="Dropdown" code="Dropdown_Kode" webcomponent="Dropdown_Web_Component" %}
 
 <!--split-->
 
@@ -99,31 +99,31 @@ Brug dropdown i begrænset omfang. Værdierne i en dropdown er ikke umiddelbart 
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+### Fejl {#{% include create-id.html heading="Fejl" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-help" heading_tag="h4" subheading_tag="h5" %}
 
-### Obligatoriske og frivillige dropdown {#{% include create-id.html heading="Obligatoriske og frivillige dropdown" append="-custom" %}}
+### Obligatoriske og frivillige dropdown {#{% include create-id.html heading="Obligatoriske og frivillige dropdown" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-required" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-select {#{% include create-id.html heading="fds-select" append="-custom" %}}
+### fds-select {#{% include create-id.html heading="fds-select" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -132,10 +132,10 @@ Brug dropdown i begrænset omfang. Værdierne i en dropdown er ikke umiddelbart 
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | show-required-status | Viser om dropdown er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
 
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-error.html %}

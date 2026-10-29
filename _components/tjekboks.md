@@ -17,7 +17,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="checkbox-large" title="Eksempel på tjekbokse" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tjekboks" code="Tjekboks_Kode" custom="Tjekboks_Web_Component" %}
+{% include anchorlinks.html guidelines="Tjekboks" code="Tjekboks_Kode" webcomponent="Tjekboks_Web_Component" %}
 
 <!--split-->
 
@@ -184,17 +184,17 @@ Det element som skal collapses/expandes skal have følgende:
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-example" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+### Fejl {#{% include create-id.html heading="Fejl" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-webcomponent" %}}
 
 #### Hjælpetekst til enkelte tjekbokse
 
@@ -204,15 +204,15 @@ Det element som skal collapses/expandes skal have følgende:
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-group-help-text" heading_tag="h5" subheading_tag="h6" %}
 
-### Obligatoriske og frivillige tjekbokse {#{% include create-id.html heading="Obligatoriske og frivillige tjekbokse" append="-custom" %}}
+### Obligatoriske og frivillige tjekbokse {#{% include create-id.html heading="Obligatoriske og frivillige tjekbokse" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-required" heading_tag="h4" subheading_tag="h5" %}
 
-### Skjult indhold (Collapse) {#{% include create-id.html heading="Skjult indhold (Collapse)" append="-custom" %}}
+### Skjult indhold (Collapse) {#{% include create-id.html heading="Skjult indhold (Collapse)" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-collapse" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-webcomponent" %}}
 
 #### Deaktiveret enkelte tjekbokse
 
@@ -222,11 +222,11 @@ Det element som skal collapses/expandes skal have følgende:
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-group-disabled" heading_tag="h5" subheading_tag="h6" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 `fds-checkbox` kræver et `input`- og et `label`-element. `fds-checkbox-group` kræver et `fieldset`-element, der omslutter gruppens `legend` og de enkelte tjekbokse.
 
-### fds-checkbox {#{% include create-id.html heading="fds-checkbox" append="-custom" %}}
+### fds-checkbox {#{% include create-id.html heading="fds-checkbox" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -236,10 +236,10 @@ Det element som skal collapses/expandes skal have følgende:
 | show-required-status | Viser om tjekboksen er obligatorisk eller frivillig baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten.                 |
 | ready                 | Sæt til `"false"` for at udskyde initialisering af komponenten. Udelad attributten, eller sæt den til andet end `"false"`, for at initialisere komponenten med det samme. |
 
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-error.html %}

@@ -17,7 +17,7 @@ difference_warning: true
 
 {% include code/preview-box.html component="file-input" title="Eksempel på vedhæft fil" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="VedhaeftFil" code="VedhaeftFil_Kode" custom="VedhaeftFil_Web_Component" classes="hide-code" %}
+{% include anchorlinks.html guidelines="VedhaeftFil" code="VedhaeftFil_Kode" webcomponent="VedhaeftFil_Web_Component" classes="hide-code" %}
 
 <!--split-->
 
@@ -77,17 +77,17 @@ Du bør anvende ovenstående kriterier til en skræddersyet løsning for denne t
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-example" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-helptext" heading_tag="h4" subheading_tag="h5" %}
 
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+### Fejl {#{% include create-id.html heading="Fejl" append="-webcomponent" %}}
 
 For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som anden parameter i `addError()`. Når en fejl knyttes til en fil, vises fejlbeskeden direkte under den pågældende fil i fillisten, og filen markeres visuelt som ugyldig. Hvis fil-ID'et ikke angives, vises fejlen som en generel fejl for hele komponenten.
 
@@ -95,13 +95,13 @@ For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som 
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-file-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-upload-file {#{% include create-id.html heading="fds-upload-file" append="-custom" %}}
+### fds-upload-file {#{% include create-id.html heading="fds-upload-file" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -134,7 +134,7 @@ For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som 
 | files-added   | Udløses når en eller flere filer tilføjes. `event.detail` indeholder et array af de tilføjede filer. |
 | files-removed | Udløses når en fil fjernes. `event.detail` indeholder den fjernede fil.                          |
 
-### fds-file-item {#{% include create-id.html heading="fds-file-item" append="-custom" %}}
+### fds-file-item {#{% include create-id.html heading="fds-file-item" append="-webcomponent" %}}
 
 `fds-file-item` oprettes automatisk af `fds-upload-file` for hver valgt fil og er ikke tiltænkt at blive oprettet manuelt.
 
@@ -145,10 +145,10 @@ For at tilknytte en fejlbesked til en specifik fil skal du angive filens ID som 
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | remove-text | Definerer teksten på fjern-knappen for den enkelte fil. Sættes automatisk af `fds-upload-file`, når dennes `remove-text`-attribut ændres.  |
 
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-error.html %}

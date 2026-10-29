@@ -21,7 +21,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="accordion" title="Eksempel på accordion" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Accordions" code="Accordions_Kode" custom="Accordions_Web_Component" %}
+{% include anchorlinks.html guidelines="Accordions" code="Accordions_Kode" webcomponent="Accordions_Web_Component" %}
 
 <!--split-->
 
@@ -136,27 +136,27 @@ new DKFDS.Accordion(document.getElementById('ACCORDION-UL-GROUP-ID'), {
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-default" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Åbn/luk alle {#{% include create-id.html heading="Åbn/luk alle" append="-custom" %}}
+### Åbn/luk alle {#{% include create-id.html heading="Åbn/luk alle" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-group-example" heading_tag="h4" subheading_tag="h5" %}
 
-### Med succesbeskeder {#{% include create-id.html heading="Med succesbeskeder" append="-custom" %}}
+### Med succesbeskeder {#{% include create-id.html heading="Med succesbeskeder" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-success" heading_tag="h4" subheading_tag="h5" %}
 
-### Med fejl {#{% include create-id.html heading="Med fejl" append="-custom" %}}
+### Med fejl {#{% include create-id.html heading="Med fejl" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-error" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-accordion {#{% include create-id.html heading="fds-accordion" append="-custom" %}}
+### fds-accordion {#{% include create-id.html heading="fds-accordion" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -226,7 +226,7 @@ new DKFDS.Accordion(document.getElementById('ACCORDION-UL-GROUP-ID'), {
 | fds-accordion-expanded  | Udløses når accordionen foldes ud.     |
 | fds-accordion-collapsed | Udløses når accordionen foldes sammen. |
 
-### fds-accordion-group {#{% include create-id.html heading="fds-accordion-group" append="-custom" %}}
+### fds-accordion-group {#{% include create-id.html heading="fds-accordion-group" append="-webcomponent" %}}
 
 #### Attributter
 

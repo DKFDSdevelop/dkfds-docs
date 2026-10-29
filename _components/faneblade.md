@@ -22,7 +22,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="tabs" title="Eksempel på faneblade" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Faneblade" code="Faneblade_Kode" custom="Faneblade_Web_Component" %}
+{% include anchorlinks.html guidelines="Faneblade" code="Faneblade_Kode" webcomponent="Faneblade_Web_Component" %}
 
 <!--split-->
 
@@ -129,21 +129,21 @@ Bemærk, at der ikke medfølger JavaScript til faneblade til navigation. Hvis ma
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-default" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-shadow-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Med ikoner {#{% include create-id.html heading="Med ikoner" append="-custom" %}}
+### Med ikoner {#{% include create-id.html heading="Med ikoner" append="-webcomponent" %}}
 
 Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et `svg`-element med `class="icon-svg"` i `fds-tab`. Når der anvendes et ikon, skal fanebladets tekst sættes i et `span`-element.
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-tabs-icons" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-tabs {#{% include create-id.html heading="fds-tabs" append="-custom" %}}
+### fds-tabs {#{% include create-id.html heading="fds-tabs" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -174,7 +174,7 @@ Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et `svg`-element m
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | fds-tab-changed | Udløses når der skiftes faneblad. `event.detail.selectedTab` indeholder `tab-key` for det valgte faneblad, og `event.detail.previousTab` indeholder `tab-key` for det tidligere valgte faneblad. |
 
-### fds-tab {#{% include create-id.html heading="fds-tab" append="-custom" %}}
+### fds-tab {#{% include create-id.html heading="fds-tab" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -190,7 +190,7 @@ Hvis du vil anvende et ikon i fanebladet, tilføjes dette som et `svg`-element m
 |------------|-----------------------------------------|
 | Unavngivet | Tekst for fanebladet og eventuelt ikon. |
 
-### fds-tab-panel {#{% include create-id.html heading="fds-tab-panel" append="-custom" %}}
+### fds-tab-panel {#{% include create-id.html heading="fds-tab-panel" append="-webcomponent" %}}
 
 #### Attributter
 

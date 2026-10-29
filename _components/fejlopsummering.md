@@ -16,7 +16,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="error-summary" title="Eksempel på fejlopsummering" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Fejlopsummering" code="Fejlopsummering_Kode" custom="Fejlopsummering_Web_Component" classes="hide-code" %}
+{% include anchorlinks.html guidelines="Fejlopsummering" code="Fejlopsummering_Kode" webcomponent="Fejlopsummering_Web_Component" classes="hide-code" %}
 
 <!--split-->
 
@@ -92,27 +92,27 @@ new DKFDS.ErrorSummary(document.getElementById('ALERT-ID')).init();
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Manuel tilføjelse af fejl {#{% include create-id.html heading="Manuel tilføjelse af fejl" append="-custom" %}}
+### Manuel tilføjelse af fejl {#{% include create-id.html heading="Manuel tilføjelse af fejl" append="-webcomponent" %}}
 
 Når du ikke bruger `auto`-attributten, er du selv ansvarlig for at administrere fejlene og skal manuelt oprette strukturen med fejlene.
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary-manual" heading_tag="h4" subheading_tag="h5" %}
 
-### Automatisk synkronisering {#{% include create-id.html heading="Automatisk synkronisering" append="-custom" %}}
+### Automatisk synkronisering {#{% include create-id.html heading="Automatisk synkronisering" append="-webcomponent" %}}
 
 Med `auto`-attributten opdateres fejloversigten automatisk baseret på synlige `fds-error-message` elementer i understøttede wrappers.
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-error-summary-auto" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-error-summary {#{% include create-id.html heading="fds-error-summary" append="-custom" %}}
+### fds-error-summary {#{% include create-id.html heading="fds-error-summary" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -125,7 +125,7 @@ Med `auto`-attributten opdateres fejloversigten automatisk baseret på synlige `
 | auto          | Hold fejloversigten automatisk synkroniseret med `fds-error-message` i understøttede wrappers. Komponenten vises eller skjules automatisk afhængigt af, om der er fejl.                      |
 | hidden        | Skjuler fejloversigten. Sættes automatisk baseret på, om der er fejl. Skal sættes til `true` eller være tom for at tage effekt.                                                                  |
 
-### Understøttede wrappers {#{% include create-id.html heading="Understøttede wrappers" append="-custom" %}}
+### Understøttede wrappers {#{% include create-id.html heading="Understøttede wrappers" append="-webcomponent" %}}
 
 `fds-error-summary` samler fejlmeddelelser fra følgende komponenter:
 
