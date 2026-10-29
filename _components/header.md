@@ -232,7 +232,7 @@ Bemærk, at man selv er ansvarlig for JavaScript og funktionalitet til sprogvæl
 
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-Bemærk: `<div class="header">` i eksemplet bør erstattes med et `<header>`-element i produktionsløsninger.
+Bemærk: `<div class="header">` i eksemplerne ovenover bør erstattes med et ægte `<header>`-element i produktionsløsninger.
 
 ### fds-portal-info {#{% include create-id.html heading="fds-portal-info" append="-webcomponent" %}}
 
