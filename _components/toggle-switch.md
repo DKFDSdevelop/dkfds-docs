@@ -19,6 +19,8 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="toggle" title="Eksempel på toggle" classes="intro-example" %}
 
+{% include anchorlinks.html custom="ToggleSwitch_Web_Component" %}
+
 <!--split-->
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
