@@ -30,7 +30,7 @@ difference_warning: true
 
 {% include code/preview-box.html component="error-message" title="Eksempel på fejlmeddelelse" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Fejlmeddelelser" code="Fejlmeddelelser_Kode" custom="Fejlmeddelelser_Web_Component" %}
+{% include anchorlinks.html guidelines="Fejlmeddelelser" code="Fejlmeddelelser_Kode" webcomponent="Fejlmeddelelser_Web_Component" %}
 
 <!--split-->
 
@@ -299,45 +299,45 @@ Sørg for at rette værdierne i følgende attributter, så de svarer til din lø
 
 {% include web-component-shared-text/web-components-beta.html %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 Fejlmeddelelse er en "mikrokomponent", der udelukkende anvendes sammen med andre udvalgte webkomponenter. De kompatible komponenter er listet nedenunder.
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Accordions {#{% include create-id.html heading="Accordions" append="-custom" %}}
+### Accordions {#{% include create-id.html heading="Accordions" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-accordion-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Datofelter {#{% include create-id.html heading="Datofelter" append="-custom" %}}
+### Datofelter {#{% include create-id.html heading="Datofelter" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-input-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Datovælger {#{% include create-id.html heading="Datovælger" append="-custom" %}}
+### Datovælger {#{% include create-id.html heading="Datovælger" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Dropdown {#{% include create-id.html heading="Dropdown" append="-custom" %}}
+### Dropdown {#{% include create-id.html heading="Dropdown" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-select-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Inputfelt {#{% include create-id.html heading="Inputfelt" append="-custom" %}}
+### Inputfelt {#{% include create-id.html heading="Inputfelt" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Radioknapper {#{% include create-id.html heading="Radioknapper" append="-custom" %}}
+### Radioknapper {#{% include create-id.html heading="Radioknapper" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-radio-button-group-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Tekstområde {#{% include create-id.html heading="Tekstområde" append="-custom" %}}
+### Tekstområde {#{% include create-id.html heading="Tekstområde" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Tjekboks {#{% include create-id.html heading="Tjekboks" append="-custom" %}}
+### Tjekboks {#{% include create-id.html heading="Tjekboks" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-checkbox-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Vedhæft fil {#{% include create-id.html heading="Vedhæft fil" append="-custom" %}}
+### Vedhæft fil {#{% include create-id.html heading="Vedhæft fil" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-upload-file-error" heading_tag="h4" subheading_tag="h5" %}
 

@@ -1708,19 +1708,22 @@ Styling for headings
         }
     }
 
-    h2,
-    .h2 {
+    h2, .h2 {
         & + .heading-link {
             padding: units(2, 'rem');
             margin-bottom: 0;
         }
     }
 
-    h3,
-    .h3 {
+    h3, .h3 {
         & + .heading-link {
             padding: units(2, 'rem');
-            margin-bottom: -0.2rem;
+            margin-bottom: 0;
+
+            .icon-svg {
+                height: 2rem;
+                width: 2rem;
+            }
         }
     }
 
@@ -1729,34 +1732,35 @@ Styling for headings
     }
 
     @media (min-width: 768px) {
-        h2,
-        .h2 {
+        h2, .h2 {
             & + .heading-link {
                 padding: units(2, 'rem');
                 margin-bottom: 0.2rem;
             }
         }
 
-        h3,
-        .h3 {
+        h3, .h3 {
             & + .heading-link {
                 padding: units(2, 'rem');
                 margin-bottom: 0;
+
+                .icon-svg {
+                    height: 2.4rem;
+                    width: 2.4rem;
+                }
             }
         }
     }
 
     @media (min-width: 992px) {
-        h2,
-        .h2 {
+        h2, .h2 {
             & + .heading-link {
                 padding: units(2, 'rem');
                 margin-bottom: 0.4rem;
             }
         }
 
-        h3,
-        .h3 {
+        h3, .h3 {
             & + .heading-link {
                 padding: units(2, 'rem');
                 margin-bottom: 0;

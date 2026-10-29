@@ -27,7 +27,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="modal" title="Eksempel på modal" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" custom="Modal_Web_Component" %}
+{% include anchorlinks.html guidelines="Modal" code="Modal_Kode" webcomponent="Modal_Web_Component" %}
 
 <!--split-->
 
@@ -136,13 +136,13 @@ Tilføj attributten `data-modal-forced-action` for at deaktivere luk funktioner 
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-modal-default" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Modal som kræver handling {#{% include create-id.html heading="Modal som kræver handling" append="-custom" %}}
+### Modal som kræver handling {#{% include create-id.html heading="Modal som kræver handling" append="-webcomponent" %}}
 
 Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik på baggrunden. Undlad at sætte en luk-knap i øverste højre hjørne og brug kun `fds-modal-closer` på de knapper, som kan bruges til at foretage et valg.
 
@@ -150,11 +150,11 @@ Modaler, som kræver handling, kan ikke lukkes med Escape-tasten eller ved klik 
 
 Bemærk: Attributten `dismissible` sætter både attributten `closedby` og en event listener for `cancel` grundet forskellig browsersupport og -opførsel (HTML Living Standard).
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 Bemærk, at modalkomponenten som standard altid kræver et `<dialog>`-element direkte efterfulgt af `<div class="scrollable-area">`, der indeholder en tom `<div class="modal-top"></div>` samt modalens øvrige indhold. Komponenten genererer ikke denne struktur selv, da strukturen afviger afhængigt af variant-attributten.
 
-### fds-modal {#{% include create-id.html heading="fds-modal" append="-custom" %}}
+### fds-modal {#{% include create-id.html heading="fds-modal" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -188,7 +188,7 @@ Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for
 | fds-modal-open  | Udløses når modalen åbnes.                                                              |
 | fds-modal-close | Udløses når modalen lukkes. `event.detail.returnValue` indeholder dialogens returværdi. |
 
-### fds-modal-opener {#{% include create-id.html heading="fds-modal-opener" append="-custom" %}}
+### fds-modal-opener {#{% include create-id.html heading="fds-modal-opener" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -205,7 +205,7 @@ Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | fds-modal-opener-click | Udløses når der klikkes på elementet i `fds-modal-opener`. `event.detail.modalId` indeholder ID'et på den modal, der åbnes. |
 
-### fds-modal-closer {#{% include create-id.html heading="fds-modal-closer" append="-custom" %}}
+### fds-modal-closer {#{% include create-id.html heading="fds-modal-closer" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -222,6 +222,6 @@ Bemærk, at der altid kun bør være én åben modal ad gangen. Har man brug for
 |------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | fds-modal-closer-click | Udløses når der klikkes på elementet i `fds-modal-closer`. `event.detail.returnValue` indeholder den angivne returværdi. |
 
-## Referencer {#{% include create-id.html heading="Referencer" append="-custom" %}}
+## Referencer {#{% include create-id.html heading="Referencer" append="-webcomponent" %}}
 
 {% include links/external-link.html linktext="HTML Living Standard, 6.10.3 The CloseWatcher interface, cancel-eksempel" %}

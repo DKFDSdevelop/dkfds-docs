@@ -18,7 +18,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="step-indicator" title="Eksempel på trinindikator" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Trinindikator" code="Trinindikator_Kode" custom="Trinindikator_Web_Component" %}
+{% include anchorlinks.html guidelines="Trinindikator" code="Trinindikator_Kode" webcomponent="Trinindikator_Web_Component" %}
 
 <!--split-->
 
@@ -131,10 +131,10 @@ Tilføj klassen `sidenav-error` til de liste-elementer, der er fejl i og anvend 
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="step-indicator-default" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 Trinindikatoren anvender `fds-modal` med `variant="bottom-sheet"` på mindre skærme, men er ikke selv en Web Component. 
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 Se dokumentationen for {% include links/component-guideline-link.html linktext="modaler" %} for konfiguration af bottom-sheet-varianten. Bemærk, at trinindikatorer bruger `<div class="fixed-area">` og `<div class="scrollable-area">` i komponentens `<dialog>`.

@@ -31,9 +31,6 @@ title: Test
 {% include test/preview-test.html filename="test-fds-textarea" description="Tekstområde" %}
 {% include test/preview-test.html filename="test-fds-error-summary-manual" description="Fejlopsummering - manual indsættelse fejl" %}
 {% include test/preview-test.html filename="test-fds-error-summary-auto" description="Fejlopsummering - automatisk opsamling af fejl" %}
-{% include test/preview-test.html filename="test-fds-portal-info" description="Portalinfo" %}
-{% include test/preview-test.html filename="test-fds-solution-info" description="Løsningsinfo" %}
-{% include test/preview-test.html filename="test-fds-header-from-components" description="Header lavet med komponenter" %}
 {% include test/preview-test.html filename="test-fds-dropdown-menu" description="Overflowmenu (inkl. varianter)" %}
 {% include test/preview-test.html filename="test-fds-dropdown-menu-placement" description="Placering af overflowmenu" %}
 {% include test/preview-test.html filename="test-fds-tooltip-icon" description="Tooltip-ikon" %}
@@ -46,6 +43,24 @@ title: Test
 {% include test/preview-test.html filename="test-fds-alert" description="Beskeder" %}
 {% include test/preview-test.html filename="test-fds-multiselect" description="Multiselect" %}
 {% include test/preview-test.html filename="test-fds-cookie-message" description="Cookiemeddelelse" %}
+
+{:.h3}
+## Header bygget med web components
+
+{% include test/preview-test.html filename="test-fds-header-portal-only" description="Portalrække" %}
+{% include test/preview-test.html filename="test-fds-header-solution-only" description="Løsningsrække" %}
+{% include test/preview-test.html filename="test-fds-header-portal-and-solution" description="Portalrække og løsningsrække" %}
+{% include test/preview-test.html filename="test-fds-header-solution-and-navigation" description="Løsningsrække og navigation" %}
+{% include test/preview-test.html filename="test-fds-header-three-simple-rows" description="Portalrække, løsningsrække og simpel navigation" %}
+{% include test/preview-test.html filename="test-fds-header-navigation-with-only-searchfield" description="Ingen navigation, kun søgefelt" %}
+{% include test/preview-test.html filename="test-fds-header-navigation-with-searchfield" description="Simpel navigation med søgefelt" %}
+{% include test/preview-test.html filename="test-fds-header-dropdown-navigation" description="Navigation med flere dropdownmenuer" %}
+{% include test/preview-test.html filename="test-fds-header-navigation-many-items" description="Navigation med mange elementer" %}
+{% include test/preview-test.html filename="test-fds-header-language-switcher" description="Sprogvælger" %}
+{% include test/preview-test.html filename="test-fds-header-long-sentences" description="Header med mange ord" %}
+{% include test/preview-test.html filename="test-fds-header-long-strings" description="Header med lange, ubrudte tekststrenge" %}
+{% include test/preview-test.html filename="test-fds-header-mobile-helptext" description="Hjælpetekst i mobilmenuen" %}
+{% include test/preview-test.html filename="test-fds-header-breadcrumb-function-links" description="Brødkrumme og funktionslinks under headeren" %}
 
 {:.h3}
 ## HTML-elementer

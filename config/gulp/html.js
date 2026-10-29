@@ -19,7 +19,7 @@ var titles = require('./example-titles').default;
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildFile = ['examples/testfiles/web-components/*.njk'];
+var buildFile = ['examples/testfiles/web-components/*.njk', 'examples/testfiles/web-components-header/*.njk'];
 
 var activeBuild = buildAll;
 
@@ -40,9 +40,6 @@ var testfiles = [
     "test-fds-textarea",
     "test-fds-error-summary-manual",
     "test-fds-error-summary-auto",
-    "test-fds-portal-info",
-    "test-fds-solution-info",
-    "test-fds-header-from-components",
     "test-fds-dropdown-menu",
     "test-fds-dropdown-menu-placement",
     "test-fds-tooltip-icon",
@@ -55,6 +52,20 @@ var testfiles = [
     "test-fds-alert",
     "test-fds-multiselect",
     "test-fds-cookie-message",
+    "test-fds-header-portal-only",
+    "test-fds-header-solution-only",
+    "test-fds-header-portal-and-solution",
+    "test-fds-header-solution-and-navigation",
+    "test-fds-header-three-simple-rows",
+    "test-fds-header-navigation-with-only-searchfield",
+    "test-fds-header-navigation-with-searchfield",
+    "test-fds-header-dropdown-navigation",
+    "test-fds-header-navigation-many-items",
+    "test-fds-header-language-switcher",
+    "test-fds-header-long-sentences",
+    "test-fds-header-long-strings",
+    "test-fds-header-mobile-helptext",
+    "test-fds-header-breadcrumb-function-links",
     "test-html-elements",
     "test-headings-no-sections",
     "test-headings-with-sections",

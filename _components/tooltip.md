@@ -16,7 +16,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="tooltip-helpicon" title="Eksempel på ikon med tooltip" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Tooltip" code="Tooltip_Kode" custom="Tooltip_Web_Component" %}
+{% include anchorlinks.html guidelines="Tooltip" code="Tooltip_Kode" webcomponent="Tooltip_Web_Component" %}
 
 <!--split-->
 
@@ -186,43 +186,43 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-default" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Placering {#{% include create-id.html heading="Placering" append="-custom" %}}
+### Placering {#{% include create-id.html heading="Placering" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-placement" heading_tag="h4" subheading_tag="h5" %}
 
-### Radioknap med tooltip {#{% include create-id.html heading="Radioknap med tooltip" append="-custom" %}}
+### Radioknap med tooltip {#{% include create-id.html heading="Radioknap med tooltip" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-radio-buttons" heading_tag="h4" subheading_tag="h5" %}
 
-### Tjekboks med tooltip {#{% include create-id.html heading="Tjekboks med tooltip" append="-custom" %}}
+### Tjekboks med tooltip {#{% include create-id.html heading="Tjekboks med tooltip" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-checkbox" heading_tag="h4" subheading_tag="h5" %}
 
-### Inputfelt med tooltip {#{% include create-id.html heading="Inputfelt med tooltip" append="-custom" %}}
+### Inputfelt med tooltip {#{% include create-id.html heading="Inputfelt med tooltip" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-input-field" heading_tag="h4" subheading_tag="h5" %}
 
-### Brødtekst med tooltip {#{% include create-id.html heading="Brødtekst med tooltip" append="-custom" %}}
+### Brødtekst med tooltip {#{% include create-id.html heading="Brødtekst med tooltip" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-icon-text" heading_tag="h4" subheading_tag="h5" %}
 
-### Ikoner med hover-tooltip {#{% include create-id.html heading="Ikoner med hover-tooltip" append="-custom" %}}
+### Ikoner med hover-tooltip {#{% include create-id.html heading="Ikoner med hover-tooltip" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-hover" heading_tag="h4" subheading_tag="h5" %}
 
-### Knap med hover-tooltip {#{% include create-id.html heading="Knap med hover-tooltip" append="-custom" %}}
+### Knap med hover-tooltip {#{% include create-id.html heading="Knap med hover-tooltip" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-tooltip-hover-button" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-tooltip-icon {#{% include create-id.html heading="fds-tooltip-icon" append="-custom" %}}
+### fds-tooltip-icon {#{% include create-id.html heading="fds-tooltip-icon" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -243,7 +243,7 @@ Brug klassen `tooltip-is-label` på `tooltip-target` ved klikbare ikoner uden te
 | close()  | Luk tooltippet.                               |
 | toggle() | Skift mellem at åbne og lukke tooltippet.     |
 
-### fds-tooltip {#{% include create-id.html heading="fds-tooltip" append="-custom" %}}
+### fds-tooltip {#{% include create-id.html heading="fds-tooltip" append="-webcomponent" %}}
 
 `fds-tooltip` skal indeholde præcis ét element, som fungerer som trigger for tooltippet.
 

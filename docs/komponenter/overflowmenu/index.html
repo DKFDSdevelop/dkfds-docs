@@ -1731,10 +1731,10 @@
         
         <li class="anchorlink-code"><span id="kode" hidden=""></span><a href="#installation-kode">Installation</a></li>
         <li class="anchorlink-code"><a href="#sortering-kode">Sortering</a></li>
-        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
-        <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-webcomponent">Web Component-koden er i beta</a></li>
+        <li class="anchorlink-web-component"><a href="#om-denne-komponent-webcomponent">Om denne komponent</a></li>
+        <li class="anchorlink-web-component"><a href="#varianter-webcomponent">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-webcomponent">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2091,7 +2091,7 @@
                         <div id="web-component-section">
                             
 
-<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+<h2 id="web-component-koden-er-i-beta-webcomponent">Web Component-koden er i beta</h2>
 
 <p>Læs mere om <a href="/kom-i-gang/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
 
@@ -2178,7 +2178,7 @@
     </div>
 </div>
 
-<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+<h2 id="om-denne-komponent-webcomponent">Om denne komponent</h2>
 
 <p>Denne komponent anvender light DOM. Det betyder, at komponenten genererer HTML, der kan tilgås ligesom al anden HTML på siden. Du kan som udvikler vælge mellem at tage Web Component-koden, hvis du vil lade komponenten generere HTML’en, eller tage versionen med den genererede kode, hvis du har brug for at ændre i HTML’en først. Begge muligheder vises i fanebladene i komponentens eksempler.</p>
 
@@ -2186,9 +2186,9 @@
 
 <p>Læs mere på <a href="/kom-i-gang/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
 
-<h2 id="varianter-custom">Varianter</h2>
+<h2 id="varianter-webcomponent">Varianter</h2>
 
-<h3 id="sortering-custom">Sortering</h3>
+<h3 id="sortering-webcomponent">Sortering</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2282,9 +2282,9 @@
     </div>
 </div>
 
-<h2 id="konfiguration-custom">Konfiguration</h2>
+<h2 id="konfiguration-webcomponent">Konfiguration</h2>
 
-<h3 id="fds-dropdown-menu-custom">fds-dropdown-menu</h3>
+<h3 id="fds-dropdown-menu-webcomponent">fds-dropdown-menu</h3>
 
 <h4>Attributter</h4>
 
@@ -2319,6 +2319,10 @@
     <tr>
       <td>data-value</td>
       <td>Sættes på hver knap i en sorteringsmenu. Værdien bruges af <code>default-value</code> og <code>selectSortValue()</code>.</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Angiver dropdown-komponentens ID. Hvis sat, bruges ID’et som grundlag for panelets ID.</td>
     </tr>
   </tbody>
 </table>

@@ -17,7 +17,7 @@ difference_warning: true
 
 {% include code/preview-box.html component="date-picker" title="Eksempel på datovælger" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Datovaelger" code="Datovaelger_Kode" custom="Datovaelger_Web_Component" %}
+{% include anchorlinks.html guidelines="Datovaelger" code="Datovaelger_Kode" webcomponent="Datovaelger_Web_Component" %}
 
 <!--split-->
 
@@ -205,47 +205,41 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-mixed-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+### Fejl {#{% include create-id.html heading="Fejl" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-helptext" heading_tag="h4" subheading_tag="h5" %}
 
-### Begræns mulige datoer {#{% include create-id.html heading="Begræns mulige datoer" append="-custom" %}}
+### Begræns mulige datoer {#{% include create-id.html heading="Begræns mulige datoer" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-minmax" heading_tag="h4" subheading_tag="h5" %}
 
-### Fast værdi {#{% include create-id.html heading="Fast værdi" append="-custom" %}}
+### Fast værdi {#{% include create-id.html heading="Fast værdi" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-default" heading_tag="h4" subheading_tag="h5" %}
 
-### Datoformat {#{% include create-id.html heading="Datoformat" append="-custom" %}}
+### Datoformat {#{% include create-id.html heading="Datoformat" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-format" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-### Start- og slutdato {#{% include create-id.html heading="Start- og slutdato" append="-custom" %}}
-
-`start-date-id` og `end-date-id` læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.
-
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-start-end-dates" heading_tag="h4" subheading_tag="h5" %}
-
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 `fds-date-picker` kræver følgende struktur: Et `label`-element, en `div` indeholdende et `input`-element, samt en indre `div` med et `fds-date-picker-grid`-element.
 
-### fds-date-picker {#{% include create-id.html heading="fds-date-picker" append="-custom" %}}
+### fds-date-picker {#{% include create-id.html heading="fds-date-picker" append="-webcomponent" %}}
 
 `fds-date-picker` anvender light DOM.
 
@@ -269,7 +263,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 | close()  | Luk datovælgeren.                           |
 | toggle() | Skift mellem at åbne og lukke datovælgeren. |
 
-### fds-date-picker-grid {#{% include create-id.html heading="fds-date-picker-grid" append="-custom" %}}
+### fds-date-picker-grid {#{% include create-id.html heading="fds-date-picker-grid" append="-webcomponent" %}}
 
 `fds-date-picker-grid` anvender shadow DOM. Bemærk, at `fds-date-picker-grid` som udgangspunkt bruges inden i `fds-date-picker` og ikke er tiltænkt at blive brugt alene.
 
@@ -282,8 +276,6 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 | max-date                | Angiv den seneste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er 10 år fra dags dato.                                                                |
 | selected-date           | Angiv den valgte dato. Angives i formatet `YYYY-MM-DD`.                                                                                                           |
 | default-date            | Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet `YYYY-MM-DD`. Ændringer efter initialisering har ingen effekt. |
-| start-date-id           | Angiv ID'et på en tilknyttet `fds-date-picker-grid`, der repræsenterer slutdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.           |
-| end-date-id             | Angiv ID'et på en tilknyttet `fds-date-picker-grid`, der repræsenterer startdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.          |
 | text-months             | Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er `januar februar marts april maj juni juli august september oktober november december`. |
 | text-days               | Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er `mandag tirsdag onsdag torsdag fredag lørdag søndag`.                   |
 | text-prevbutton         | Skærmlæsertekst for knappen, der viser den foregående måned.                                                                                                     |
@@ -300,10 +292,10 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 | date-clicked  | Udløses når en dato i kalenderen klikkes eller vælges med tastaturet. |
 | date-selected | Udløses når den valgte dato ændres.                                 |
 
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-error.html %}

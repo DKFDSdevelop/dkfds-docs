@@ -48,7 +48,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="text-input" title="Eksempel på inputfelt" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" custom="Inputfelter_Web_Component" %}
+{% include anchorlinks.html guidelines="Inputfelter" code="Inputfelter_Kode" webcomponent="Inputfelter_Web_Component" %}
 
 <!--split-->
 
@@ -307,21 +307,21 @@ For at tilføje flere inputbredder, der er styret af tegn, skal der tilføjes kl
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-example" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Fejl {#{% include create-id.html heading="Fejl" append="-custom" %}}
+### Fejl {#{% include create-id.html heading="Fejl" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-error" heading_tag="h4" subheading_tag="h5" %}
 
-### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-custom" %}}
+### Hjælpetekst {#{% include create-id.html heading="Hjælpetekst" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-help-text" heading_tag="h4" subheading_tag="h5" %}
 
-### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-custom" %}}
+### Obligatoriske og frivillige inputfelter {#{% include create-id.html heading="Obligatoriske og frivillige inputfelter" append="-webcomponent" %}}
 
 #### Felt markeret obligatorisk
 
@@ -337,23 +337,23 @@ Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller fr
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-required-changed" heading_tag="h5" subheading_tag="h6" %}
 
-### Read-only {#{% include create-id.html heading="Read-only" append="-custom" %}}
+### Read-only {#{% include create-id.html heading="Read-only" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-readonly" heading_tag="h4" subheading_tag="h5" %}
 
-### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
+### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-disabled" heading_tag="h4" subheading_tag="h5" %}
 
-### Præfiks og suffiks {#{% include create-id.html heading="Præfiks og suffiks" append="-custom" %}}
+### Præfiks og suffiks {#{% include create-id.html heading="Præfiks og suffiks" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-prefix" heading_tag="h4" subheading_tag="h5" %}
 
-### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-custom" %}}
+### Karakterbegrænsning {#{% include create-id.html heading="Karakterbegrænsning" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-character-limit" heading_tag="h4" subheading_tag="h5" %}
 
-### Feltbredde {#{% include create-id.html heading="Feltbredde" append="-custom" %}}
+### Feltbredde {#{% include create-id.html heading="Feltbredde" append="-webcomponent" %}}
 
 #### Input bredde med rem
 
@@ -363,9 +363,9 @@ Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller fr
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-input-wrapper-tegnwidth" heading_tag="h5" subheading_tag="h6" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-input {#{% include create-id.html heading="fds-input" append="-custom" %}}
+### fds-input {#{% include create-id.html heading="fds-input" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -375,15 +375,15 @@ Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller fr
 | show-required-status | Viser om inputfeltet er obligatorisk eller frivilligt baseret på `required`-attributten. Indsæt en tekst i attributten for at overskrive default-teksten. |
 | input-maxwidth       | Angiver inputfeltets maksimale bredde. Angives som et tal (4, 8, 11, 27) eller en størrelsesværdi (xxs, xs, s, m, l, xl).                                 |
 
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-error.html %}
 
-### fds-input-affix {#{% include create-id.html heading="fds-input-affix" append="-custom" %}}
+### fds-input-affix {#{% include create-id.html heading="fds-input-affix" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -393,6 +393,6 @@ Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller fr
 | input-prefix | Indsæt et præfiks-element (tekst før inputfeltet).  |
 | input-suffix | Indsæt et suffiks-element (tekst efter inputfeltet). |
 
-### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-custom" %}}
+### fds-character-limit {#{% include create-id.html heading="fds-character-limit" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-character-limit.html %}

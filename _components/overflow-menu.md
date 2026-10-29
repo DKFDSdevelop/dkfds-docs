@@ -22,7 +22,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="overflow-menu" title="Eksempel på overflow menu" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Overflowmenu" code="Overflowmenu_Kode" custom="Overflowmenu_Web_Component" %}
+{% include anchorlinks.html guidelines="Overflowmenu" code="Overflowmenu_Kode" webcomponent="Overflowmenu_Web_Component" %}
 
 <!--split-->
 
@@ -173,19 +173,19 @@ new DKFDS.DropdownSort(document.getElementById('OVERFLOW-MENU-CONTAINER')).init(
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-dropdown-menu" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Sortering {#{% include create-id.html heading="Sortering" append="-custom" %}}
+### Sortering {#{% include create-id.html heading="Sortering" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-dropdown-menu-sort" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-dropdown-menu {#{% include create-id.html heading="fds-dropdown-menu" append="-custom" %}}
+### fds-dropdown-menu {#{% include create-id.html heading="fds-dropdown-menu" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -198,6 +198,7 @@ new DKFDS.DropdownSort(document.getElementById('OVERFLOW-MENU-CONTAINER')).init(
 | variant       | Sæt til `"sort"` for at bruge komponenten som sorteringsmenu. Må ikke ændres efter initialisering. |
 | default-value | Bruges til sorteringsmenuer. Sæt til `data-value` for den mulighed, der skal vælges fra start. Udelades attributten, eller findes værdien ikke, vælges den første mulighed. |
 | data-value    | Sættes på hver knap i en sorteringsmenu. Værdien bruges af `default-value` og `selectSortValue()`. |
+| id            | Angiver dropdown-komponentens ID. Hvis sat, bruges ID'et som grundlag for panelets ID.  |
 
 #### Funktioner
 

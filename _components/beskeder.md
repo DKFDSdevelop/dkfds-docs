@@ -18,7 +18,7 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="alerts" title="Eksempel på beskeder" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Beskeder" code="Beskeder_Kode" custom="Beskeder_Web_Component" %}
+{% include anchorlinks.html guidelines="Beskeder" code="Beskeder_Kode" webcomponent="Beskeder_Web_Component" %}
 
 <!--split-->
 
@@ -180,23 +180,23 @@ Defineres med klassen `alert--paragraph`.
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-variants" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-shadow-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Teksteksempler {#{% include create-id.html heading="Teksteksempler" append="-custom" %}}
+### Teksteksempler {#{% include create-id.html heading="Teksteksempler" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-text-variants" heading_tag="h4" subheading_tag="h5" %}
 
-### Besked med luk-knap {#{% include create-id.html heading="Besked med luk-knap" append="-custom" %}}
+### Besked med luk-knap {#{% include create-id.html heading="Besked med luk-knap" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-alert-close" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-alert {#{% include create-id.html heading="fds-alert" append="-custom" %}}
+### fds-alert {#{% include create-id.html heading="fds-alert" append="-webcomponent" %}}
 
 #### Attributter
 

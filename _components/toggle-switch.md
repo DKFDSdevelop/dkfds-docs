@@ -19,6 +19,8 @@ tabs: "Retningslinjer, kode, web component"
 
 {% include code/preview-box.html component="toggle" title="Eksempel på toggle" classes="intro-example" %}
 
+{% include anchorlinks.html guidelines="ToggleSwitch" code="ToggleSwitch_Kode" webcomponent="ToggleSwitch_Web_Component" classes="hide-guidelines hide-code" %}
+
 <!--split-->
 
 ## Sådan bruges komponenten {#{% include create-id.html heading="Sådan bruges komponenten" %}}
@@ -63,13 +65,13 @@ Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på swi
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-toggle-switch" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-light-dom.html %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### Attributter {#{% include create-id.html heading="Attributter" append="-custom" %}}
+### Attributter {#{% include create-id.html heading="Attributter" append="-webcomponent" %}}
 
 {:.table .table--responsive-headers}
 | Attribut        | Beskrivelse                                                                                         |
@@ -78,7 +80,7 @@ Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på swi
 | label           | Label for toggle switch.                                                                            |
 | disabled-switch | Gør komponentens knap inaktiv (sætter `disabled` på knappen).                                       |
 
-### Funktioner {#{% include create-id.html heading="Funktioner" append="-custom" %}}
+### Funktioner {#{% include create-id.html heading="Funktioner" append="-webcomponent" %}}
 
 {:.table .table--responsive-headers}
 | Funktion | Beskrivelse                                      |
@@ -87,7 +89,7 @@ Der medfølger ikke funktionalitet med denne komponent. Når der trykkes på swi
 | off()    | Slå toggle switch fra.                           |
 | toggle() | Skift mellem at slå toggle switch til eller fra. |
 
-### Events {#{% include create-id.html heading="Events" append="-custom" %}}
+### Events {#{% include create-id.html heading="Events" append="-webcomponent" %}}
 
 {:.table .table--responsive-headers}
 | Event          | Beskrivelse                         |

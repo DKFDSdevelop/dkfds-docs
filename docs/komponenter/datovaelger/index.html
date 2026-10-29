@@ -1732,10 +1732,10 @@
         <li class="anchorlink-code"><a href="#datoformat-kode">Datoformat</a></li>
         <li class="anchorlink-code"><a href="#fejlmeddelelse-kode">Fejlmeddelelse</a></li>
         <li class="anchorlink-code"><a href="#deaktiveret-kode">Deaktiveret</a></li>
-        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-custom">Web Component-koden er i beta</a></li>
-        <li class="anchorlink-web-component"><a href="#om-denne-komponent-custom">Om denne komponent</a></li>
-        <li class="anchorlink-web-component"><a href="#varianter-custom">Varianter</a></li>
-        <li class="anchorlink-web-component"><a href="#konfiguration-custom">Konfiguration</a></li>
+        <li class="anchorlink-web-component"><a href="#web-component-koden-er-i-beta-webcomponent">Web Component-koden er i beta</a></li>
+        <li class="anchorlink-web-component"><a href="#om-denne-komponent-webcomponent">Om denne komponent</a></li>
+        <li class="anchorlink-web-component"><a href="#varianter-webcomponent">Varianter</a></li>
+        <li class="anchorlink-web-component"><a href="#konfiguration-webcomponent">Konfiguration</a></li>
         
     </ul>
 </nav>
@@ -2224,7 +2224,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
                         <div id="web-component-section">
                             
 
-<h2 id="web-component-koden-er-i-beta-custom">Web Component-koden er i beta</h2>
+<h2 id="web-component-koden-er-i-beta-webcomponent">Web Component-koden er i beta</h2>
 
 <p>Læs mere om <a href="/kom-i-gang/web-components-i-beta-version/">Web Components i beta-version</a>. Hvis du har forslag til forbedringer eller kommentarer, kan du <a href="https://github.com/detfaellesdesignsystem/dkfds-components/issues" class="icon-link" target="_blank">oprette et issue på GitHub<svg class="icon-svg" focusable="false" tabindex="-1" aria-label="(åbner i nyt vindue)"><use href="#open-in-new"></use></svg></a> eller <a href="mailto:fds@erst.dk">sende en e-mail</a> til FDS-teamet.</p>
 
@@ -2298,7 +2298,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h2 id="om-denne-komponent-custom">Om denne komponent</h2>
+<h2 id="om-denne-komponent-webcomponent">Om denne komponent</h2>
 
 <p>Denne komponent består af flere Web Components, hvoraf nogle anvender light DOM, og andre anvender shadow DOM. Light DOM-elementer genererer HTML, der kan tilgås ligesom al anden HTML på siden, mens shadow DOM-elementer genererer indkapslet HTML og styling, som ikke bør tilgås. Det fremgår af hvert elements egen sektion herunder, hvilken af de to typer der er tale om.</p>
 
@@ -2308,9 +2308,9 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
 
 <p>Læs mere på <a href="/kom-i-gang/web-components-i-beta-version/">Web Components i beta-version</a> om komponenternes anvendelse af light DOM og shadow DOM samt vores ønsker til feedback.</p>
 
-<h2 id="varianter-custom">Varianter</h2>
+<h2 id="varianter-webcomponent">Varianter</h2>
 
-<h3 id="fejl-custom">Fejl</h3>
+<h3 id="fejl-webcomponent">Fejl</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2388,7 +2388,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3 id="hjaelpetekst-custom">Hjælpetekst</h3>
+<h3 id="hjaelpetekst-webcomponent">Hjælpetekst</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2463,7 +2463,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3 id="begraens-mulige-datoer-custom">Begræns mulige datoer</h3>
+<h3 id="begraens-mulige-datoer-webcomponent">Begræns mulige datoer</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2535,7 +2535,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3 id="fast-vaerdi-custom">Fast værdi</h3>
+<h3 id="fast-vaerdi-webcomponent">Fast værdi</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2607,7 +2607,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3 id="datoformat-custom">Datoformat</h3>
+<h3 id="datoformat-webcomponent">Datoformat</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2682,7 +2682,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3 id="deaktiveret-custom">Deaktiveret</h3>
+<h3 id="deaktiveret-webcomponent">Deaktiveret</h3>
 
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
@@ -2754,126 +2754,11 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </div>
 </div>
 
-<h3 id="start--og-slutdato-custom">Start- og slutdato</h3>
-
-<p><code>start-date-id</code> og <code>end-date-id</code> læses kun ved initialisering. Ændringer af disse attributter efter initialisering har ingen effekt.</p>
-
-<div class="show-code-in-tabs">
-    <div class="open-in-new-window">
-        <a href="/eksempel/fds-date-picker-start-end-dates/" class="function-link" target="_blank">
-            <svg class="icon-svg" focusable="false" aria-hidden="true">
-                <use href="#open-in-new"></use>
-            </svg>Åbn eksempel i nyt vindue
-        </a>
-    </div>
-    <div class="top-example">
-        <div class="d-flex">
-    <fds-date-picker class="mr-4">
-        <label>Startdato</label>
-        <div>
-            <input type="text" name="input-text" id="ce-datepicker-example-startdate" />
-            <div><fds-date-picker-grid id="startdate-date-picker" start-date-id="start-end-example1"></fds-date-picker-grid></div>
-        </div>
-    </fds-date-picker>
-    <fds-date-picker class="mt-0">
-        <label>Slutdato</label>
-        <div>
-            <input type="text" name="input-text" id="ce-datepicker-example-enddate" />
-            <div><fds-date-picker-grid id="enddate-date-picker" end-date-id="start-end-example1"></fds-date-picker-grid></div>
-        </div>
-    </fds-date-picker>
-</div>
-    </div>
-    <div class="code-in-tabs">
-        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-date-picker-start-end-dates">
-            <div class="code-content">
-                <fds-tabs>
-                    <fds-tab tab-key="web-component">Web Component</fds-tab>
-                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
-
-                    <fds-tab-panel tab-key="web-component">
-                        <figure aria-label="Kode">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-flex&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mr-4&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Startdato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-startdate&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;startdate-date-picker&quot;</span> <span class="hljs-attr">start-date-id</span>=<span class="hljs-string">&quot;start-end-example1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Slutdato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-enddate&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;enddate-date-picker&quot;</span> <span class="hljs-attr">end-date-id</span>=<span class="hljs-string">&quot;start-end-example1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-                        </figure>
-                    </fds-tab-panel>
-                    <fds-tab-panel tab-key="generated-html">
-                        <figure aria-label="Kode">
-                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-flex&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mr-4&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-startdate&quot;</span>&gt;</span>Startdato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-startdate&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;dialog&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-icon-only date-button&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Åbn datovælger&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ce-date-picker d-none&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;dialog&quot;</span> <span class="hljs-attr">aria-modal</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;startdate-date-picker&quot;</span> <span class="hljs-attr">start-date-id</span>=<span class="hljs-string">&quot;start-end-example1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;close-button function-link&quot;</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>Luk
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mt-0&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;ce-datepicker-example-enddate&quot;</span>&gt;</span>Slutdato<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-wrapper&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ce-datepicker-example-enddate&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;dialog&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-icon-only date-button&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Åbn datovælger&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ce-date-picker d-none&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;dialog&quot;</span> <span class="hljs-attr">aria-modal</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">fds-date-picker-grid</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;enddate-date-picker&quot;</span> <span class="hljs-attr">end-date-id</span>=<span class="hljs-string">&quot;start-end-example1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker-grid</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;close-button function-link&quot;</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 -960 960 960&quot;</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-svg&quot;</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>Luk
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">fds-date-picker</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-                        </figure>
-                    </fds-tab-panel>
-                </fds-tabs>
-                
-                <div class="copy-code-wrapper">
-                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
-                </div>
-            </div>
-        </fds-accordion>
-    </div>
-</div>
-
-<h2 id="konfiguration-custom">Konfiguration</h2>
+<h2 id="konfiguration-webcomponent">Konfiguration</h2>
 
 <p><code>fds-date-picker</code> kræver følgende struktur: Et <code>label</code>-element, en <code>div</code> indeholdende et <code>input</code>-element, samt en indre <code>div</code> med et <code>fds-date-picker-grid</code>-element.</p>
 
-<h3 id="fds-date-picker-custom">fds-date-picker</h3>
+<h3 id="fds-date-picker-webcomponent">fds-date-picker</h3>
 
 <p><code>fds-date-picker</code> anvender light DOM.</p>
 
@@ -2935,7 +2820,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
   </tbody>
 </table>
 
-<h3 id="fds-date-picker-grid-custom">fds-date-picker-grid</h3>
+<h3 id="fds-date-picker-grid-webcomponent">fds-date-picker-grid</h3>
 
 <p><code>fds-date-picker-grid</code> anvender shadow DOM. Bemærk, at <code>fds-date-picker-grid</code> som udgangspunkt bruges inden i <code>fds-date-picker</code> og ikke er tiltænkt at blive brugt alene.</p>
 
@@ -2964,14 +2849,6 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     <tr>
       <td>default-date</td>
       <td>Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet <code>YYYY-MM-DD</code>. Ændringer efter initialisering har ingen effekt.</td>
-    </tr>
-    <tr>
-      <td>start-date-id</td>
-      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer slutdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
-    </tr>
-    <tr>
-      <td>end-date-id</td>
-      <td>Angiv ID’et på en tilknyttet <code>fds-date-picker-grid</code>, der repræsenterer startdatoen i et datointerval. Ændringer efter initialisering har ingen effekt.</td>
     </tr>
     <tr>
       <td>text-months</td>
@@ -3025,7 +2902,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
   </tbody>
 </table>
 
-<h3 id="fds-help-text-custom">fds-help-text</h3>
+<h3 id="fds-help-text-webcomponent">fds-help-text</h3>
 
 <h4>Attributter</h4>
 
@@ -3070,7 +2947,7 @@ DKFDS.datePicker.on(document.body);</code></pre></figure>
     </tbody>
 </table>
 
-<h3 id="fds-error-message-custom">fds-error-message</h3>
+<h3 id="fds-error-message-webcomponent">fds-error-message</h3>
 
 <h4>Attributter</h4>
 

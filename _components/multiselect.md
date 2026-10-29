@@ -14,9 +14,9 @@ web_compponent_warning: true
 
 {% include tabs.html guidelines=true web_component=true %}
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect" subheading_tag="h2" classes="intro-example" %}
+{% include code/preview-box.html component="multiselect" title="Eksempel på multiselect" classes="intro-example" %}
 
-{% include anchorlinks.html guidelines="Multiselect" custom="Multiselect_Web_Component" %}
+{% include anchorlinks.html guidelines="Multiselect" webcomponent="Multiselect_Web_Component" %}
 
 <!--split-->
 
@@ -48,7 +48,7 @@ Læs mere om korrekt brug af {% include links/component-guideline-link.html link
 
 Når der vises en fejlmeddelelse, vis da også {% include links/component-guideline-link.html linktext="fejlopsummering" %}.
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect-error" subheading_tag="h4" %}
+{% include code/preview-box.html component="multiselect-error" title="Eksempel på multiselect med fejlmeddelelse" %}
 
 ## Varianter {#{% include create-id.html heading="Varianter" %}}
 
@@ -56,7 +56,7 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-guidel
 
 Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vil vælge alle eller størstedelen af mulighederne i listen. De fleste multiselect vil ikke behøve denne funktion.
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect-select-all" subheading_tag="h4" %}
+{% include code/preview-box.html component="multiselect-select-all" title="Eksempel på multiselect med vælg alle" %}
 
 ## Referencer {#{% include create-id.html heading="Referencer" %}}
 
@@ -70,23 +70,23 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect" subheading_tag="h2" collapsable=false %}
 
-## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-custom" %}}
+## Om denne komponent {#{% include create-id.html heading="Om denne komponent" append="-webcomponent" %}}
 
 {% include web-component-shared-text/intro-shadow-dom.html %}
 
-## Varianter {#{% include create-id.html heading="Varianter" append="-custom" %}}
+## Varianter {#{% include create-id.html heading="Varianter" append="-webcomponent" %}}
 
-### Multiselect med "vælg alle" {#{% include create-id.html heading="Multiselect med vælg alle" append="-custom" %}}
+### Multiselect med "vælg alle" {#{% include create-id.html heading="Multiselect med vælg alle" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect-select-all" heading_tag="h4" subheading_tag="h5" %}
 
-### Fejlmeddelelse {#{% include create-id.html heading="Fejlmeddelelse" append="-custom" %}}
+### Fejlmeddelelse {#{% include create-id.html heading="Fejlmeddelelse" append="-webcomponent" %}}
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="fds-multiselect-error" heading_tag="h4" subheading_tag="h5" %}
 
-## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-custom" %}}
+## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
-### fds-multiselect {#{% include create-id.html heading="fds-multiselect" append="-custom" %}}
+### fds-multiselect {#{% include create-id.html heading="fds-multiselect" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -106,7 +106,7 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 |------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Unavngivet | `label`-element samt `fds-multiselect-opener`-, `fds-multiselect-dialog`-, `fds-help-text`- og `fds-error-message`-elementer. |
 
-### fds-multiselect-opener {#{% include create-id.html heading="fds-multiselect-opener" append="-custom" %}}
+### fds-multiselect-opener {#{% include create-id.html heading="fds-multiselect-opener" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -132,7 +132,7 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 | fds-multiselect-opener-expanded  | Udløses når dialogen åbnes.               |
 | fds-multiselect-opener-collapsed | Udløses når dialogen lukkes.              |
 
-### fds-multiselect-dialog {#{% include create-id.html heading="fds-multiselect-dialog" append="-custom" %}}
+### fds-multiselect-dialog {#{% include create-id.html heading="fds-multiselect-dialog" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -148,7 +148,7 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 |------------|--------------------------------------------|
 | Unavngivet | `fds-multiselect-options`-elementet.        |
 
-### fds-multiselect-options {#{% include create-id.html heading="fds-multiselect-options" append="-custom" %}}
+### fds-multiselect-options {#{% include create-id.html heading="fds-multiselect-options" append="-webcomponent" %}}
 
 #### Slots
 
@@ -157,7 +157,7 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 |------------|------------------------------------------------------------------------------|
 | Unavngivet | `fds-multiselect-select-all`- og `fds-multiselect-option`-elementer.         |
 
-### fds-multiselect-option {#{% include create-id.html heading="fds-multiselect-option" append="-custom" %}}
+### fds-multiselect-option {#{% include create-id.html heading="fds-multiselect-option" append="-webcomponent" %}}
 
 #### Attributter
 
@@ -174,7 +174,7 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 |------------|-----------------------------|
 | Unavngivet | Tekst for valgmuligheden.      |
 
-### fds-multiselect-select-all {#{% include create-id.html heading="fds-multiselect-select-all" append="-custom" %}}
+### fds-multiselect-select-all {#{% include create-id.html heading="fds-multiselect-select-all" append="-webcomponent" %}}
 
 #### Slots
 
@@ -183,10 +183,10 @@ Tilbyd funktionen “vælg alle”, når det er sandsynligt, at mange brugere vi
 |------------|----------------------|
 | Unavngivet | Tekst for "vælg alle"-muligheden. |
 
-### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-custom" %}}
+### fds-help-text {#{% include create-id.html heading="fds-help-text" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-help-text.html %}
 
-### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-custom" %}}
+### fds-error-message {#{% include create-id.html heading="fds-error-message" append="-webcomponent" %}}
 
 {% include web-component-shared-text/fds-error.html %}
