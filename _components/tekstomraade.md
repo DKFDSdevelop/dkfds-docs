@@ -206,7 +206,19 @@ Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af s
 
 ### Obligatoriske og frivillige tekstområder {#{% include create-id.html heading="Obligatoriske og frivillige tekstområder" append="-custom" %}}
 
-{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required" heading_tag="h4" subheading_tag="h5" %}
+#### Felt markeret obligatorisk
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required" heading_tag="h5" subheading_tag="h6" %}
+
+#### Felt markeret frivilligt
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-optional" heading_tag="h5" subheading_tag="h6" %}
+
+#### Ændret tekst
+
+Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller frivilligt. Dette kan fx være nødvendigt i løsninger på andre sprog end dansk.
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required-changed" heading_tag="h5" subheading_tag="h6" %}
 
 ### Deaktiveret {#{% include create-id.html heading="Deaktiveret" append="-custom" %}}
 

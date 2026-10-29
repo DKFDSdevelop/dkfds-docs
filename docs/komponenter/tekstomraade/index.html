@@ -2320,6 +2320,8 @@ form_limit.charactersLeft();</code></pre></figure>
 
 <h3 id="obligatoriske-og-frivillige-tekstomraader-custom">Obligatoriske og frivillige tekstområder</h3>
 
+<h4>Felt markeret obligatorisk</h4>
+
 <div class="show-code-in-tabs">
     <div class="open-in-new-window">
         <a href="/eksempel/fds-textarea-required/" class="function-link" target="_blank">
@@ -2330,29 +2332,12 @@ form_limit.charactersLeft();</code></pre></figure>
     </div>
     <div class="top-example">
         <fds-textarea show-required-status="">
-    <label>Obligatorisk tekstområde</label>
-    <textarea id="input-textarea1" name="input-textarea" rows="5" required=""></textarea>
+    <label>Label</label>
+    <textarea id="5695ee72" name="5695ee72" rows="5" required=""></textarea>
 </fds-textarea>
-
-<fds-textarea show-required-status="">
-    <label>Frivilligt tekstområde</label>
-    <textarea id="input-textarea2" name="input-textarea" rows="5"></textarea>
-</fds-textarea>
-
-<fds-textarea show-required-status="required">
-    <label>Obligatorisk tekstområde</label>
-    <textarea id="input-textarea3" name="input-textarea" rows="5" required=""></textarea>
-</fds-textarea>
-
-<fds-textarea show-required-status="optional">
-    <label>Frivilligt tekstområde</label>
-    <textarea id="input-textarea4" name="input-textarea" rows="5"></textarea>
-</fds-textarea>
-
-
     </div>
     <div class="code-in-tabs">
-        <fds-accordion heading="Vis kode" heading-level="h4" content-id="example-box-fds-textarea-required">
+        <fds-accordion heading="Vis kode" heading-level="h5" content-id="example-box-fds-textarea-required">
             <div class="code-content">
                 <fds-tabs>
                     <fds-tab tab-key="web-component">Web Component</fds-tab>
@@ -2361,49 +2346,119 @@ form_limit.charactersLeft();</code></pre></figure>
                     <fds-tab-panel tab-key="web-component">
                         <figure aria-label="Kode">
                             <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Obligatorisk tekstområde<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Frivilligt tekstområde<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Obligatorisk tekstområde<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea3&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;optional&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Frivilligt tekstområde<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea4&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span>
-
-</code></pre>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;5695ee72&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;5695ee72&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span></code></pre>
                         </figure>
                     </fds-tab-panel>
                     <fds-tab-panel tab-key="generated-html">
                         <figure aria-label="Kode">
                             <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-textarea1&quot;</span>&gt;</span>Obligatorisk tekstområde<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*skal udfyldes)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;5695ee72&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*skal udfyldes)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-textarea2&quot;</span>&gt;</span>Frivilligt tekstområde<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (frivilligt)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;5695ee72&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;5695ee72&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
+
+<h4>Felt markeret frivilligt</h4>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-textarea-optional/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-textarea show-required-status="">
+    <label>Label</label>
+    <textarea id="732e3ad2" name="732e3ad2" rows="5"></textarea>
+</fds-textarea>
+    </div>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h5" content-id="example-box-fds-textarea-optional">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;732e3ad2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;732e3ad2&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;732e3ad2&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (frivilligt)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-textarea3&quot;</span>&gt;</span>Obligatorisk tekstområde<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*required)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;732e3ad2&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;732e3ad2&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                </fds-tabs>
+                
+                <div class="copy-code-wrapper">
+                    <button class="function-link copy-code" aria-label="Kopiér kode"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#copy"></use></svg>Kopiér</button>
+                </div>
+            </div>
+        </fds-accordion>
+    </div>
+</div>
+
+<h4>Ændret tekst</h4>
+
+<p>Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller frivilligt. Dette kan fx være nødvendigt i løsninger på andre sprog end dansk.</p>
+
+<div class="show-code-in-tabs">
+    <div class="open-in-new-window">
+        <a href="/eksempel/fds-textarea-required-changed/" class="function-link" target="_blank">
+            <svg class="icon-svg" focusable="false" aria-hidden="true">
+                <use href="#open-in-new"></use>
+            </svg>Åbn eksempel i nyt vindue
+        </a>
+    </div>
+    <div class="top-example">
+        <fds-textarea show-required-status="required">
+    <label>Label</label>
+    <textarea id="74576ebc" name="74576ebc" rows="5" required=""></textarea>
+</fds-textarea>
+    </div>
+    <div class="code-in-tabs">
+        <fds-accordion heading="Vis kode" heading-level="h5" content-id="example-box-fds-textarea-required-changed">
+            <div class="code-content">
+                <fds-tabs>
+                    <fds-tab tab-key="web-component">Web Component</fds-tab>
+                    <fds-tab tab-key="generated-html">Genereret HTML</fds-tab>
+
+                    <fds-tab-panel tab-key="web-component">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;74576ebc&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;74576ebc&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span></code></pre>
+                        </figure>
+                    </fds-tab-panel>
+                    <fds-tab-panel tab-key="generated-html">
+                        <figure aria-label="Kode">
+                            <pre><code class="language-html" data-lang="html"><span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;74576ebc&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (*required)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea3&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">fds-textarea</span> <span class="hljs-attr">show-required-status</span>=<span class="hljs-string">&quot;optional&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;input-textarea4&quot;</span>&gt;</span>Frivilligt tekstområde<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weight-normal&quot;</span>&gt;</span> (optional)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input-textarea4&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;input-textarea&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;74576ebc&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;74576ebc&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">required</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fds-textarea</span>&gt;</span></code></pre>
                         </figure>
                     </fds-tab-panel>
