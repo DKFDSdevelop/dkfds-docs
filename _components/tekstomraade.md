@@ -52,7 +52,7 @@ Vis kun fejlmeddelelser, når brugeren har indtastet en ugyldig værdi.
 
 Fejlmeddelelser skal være meningsfulde og hjælpsomme.
 
-Placér fejlmeddelelser mellem label og felt, og markér feltet med rødt.
+Placér fejlmeddelelser mellem label og tekstområde, og markér tekstområdet med rødt.
 
 {% include dos-donts-box.html component="textarea-dos-donts" %}
 
@@ -73,7 +73,7 @@ Karakterbegrænsning sætter et maksimalt antal af tegn, som brugeren kan indtas
 
 Vis altid antallet af tegn, der er til rådighed i tekstområdet, inden brugeren begynder at skrive.
 
-Stop ikke indtastningen, når brugeren overskrider antallet af tegn. Vis i stedet løbende med rød tekst under feltet, hvor mange tegn der er overskredet med.
+Stop ikke indtastningen, når brugeren overskrider antallet af tegn. Vis i stedet løbende med rød tekst under tekstområdet, hvor mange tegn der er overskredet med.
 
 {% include code/preview-box.html component="text-area-character-limit" title="Eksempel på tekstområde med karakterbegrænsning" code="/komponenter/tekstomraade/#karakterbegraensning-kode" %}
 
@@ -139,15 +139,15 @@ Karakterbegrænsning kræver JavaScript for at fungere. Man kan enten gøre brug
       </tr>
       <tr>
         <td>charactersLeft()</td>
-        <td>Returnerer det antal tegn, der lige nu kan indtastes i inputfeltet. Tallet er negativt, hvis antallet af tegn er overskredet.</td>
+        <td>Returnerer det antal tegn, der lige nu kan indtastes i tekstområdet. Tallet er negativt, hvis antallet af tegn er overskredet.</td>
       </tr>
       <tr>
         <td>updateMessages()</td>
-        <td>Fremtvinger en opdatering af beskederne med antal tegn tilbage. Dette kan være nyttigt, hvis eksempelvis værdien i inputfeltet ændres programmatisk.</td>
+        <td>Fremtvinger en opdatering af beskederne med antal tegn tilbage. Dette kan være nyttigt, hvis eksempelvis værdien i tekstområdet ændres programmatisk.</td>
       </tr>
       <tr>
         <td>silentUpdateMessages()</td>
-        <td>Fungerer på samme måde som <code>updateMessages()</code>, bortset fra at ændringen ikke læses højt i skærmlæsere. Anvend kun, når ændringer i feltet er meningsforstyrrende for skærmlæserbrugere.</td>
+        <td>Fungerer på samme måde som <code>updateMessages()</code>, bortset fra at ændringen ikke læses højt i skærmlæsere. Anvend kun, når ændringer i tekstområdet er meningsforstyrrende for skærmlæserbrugere.</td>
       </tr>
     </tbody>
   </table>
@@ -206,17 +206,17 @@ Husk at medtage de to beskeder skjult med klassen `sr-only`. Disse anvendes af s
 
 ### Obligatoriske og frivillige tekstområder {#{% include create-id.html heading="Obligatoriske og frivillige tekstområder" append="-webcomponent" %}}
 
-#### Felt markeret obligatorisk
+#### Tekstområde markeret obligatorisk
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required" heading_tag="h5" subheading_tag="h6" %}
 
-#### Felt markeret frivilligt
+#### Tekstområde markeret frivilligt
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-optional" heading_tag="h5" subheading_tag="h6" %}
 
 #### Ændret tekst
 
-Det er muligt at ændre teksten, der markerer feltet enten obligatorisk eller frivilligt. Dette kan fx være nødvendigt i løsninger på andre sprog end dansk.
+Det er muligt at ændre teksten, der markerer tekstområdet enten obligatorisk eller frivilligt. Dette kan fx være nødvendigt i løsninger på andre sprog end dansk.
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-textarea-required-changed" heading_tag="h5" subheading_tag="h6" %}
 
