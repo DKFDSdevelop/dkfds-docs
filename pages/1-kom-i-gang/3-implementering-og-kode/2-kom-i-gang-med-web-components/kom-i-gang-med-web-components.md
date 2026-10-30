@@ -52,7 +52,7 @@ Indlæs altid både det tidligere stylesheet og det nye til Web Components. Diss
 
 ### Eksempel på simpel HTML-side {#{% include create-id.html heading="Eksempel på simpel HTML-side" %}}
 
-Følgende eksempel indsætter en toggle switch, sætter dens label med en attribut og aktiverer den visuelt for brugeren med en funktion tilhørende komponenten. Du kan se mulige funktioner og events under dokumentationen af hver komponent.
+Følgende eksempel indsætter en toggle switch, sætter dens label med en attribut og aktiverer den visuelt for brugeren med en funktion tilhørende komponenten. Du kan se mulige attributter, funktioner og events under dokumentationen af hver komponent.
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-box.html example="web-component-example" only_code=true %}
 
