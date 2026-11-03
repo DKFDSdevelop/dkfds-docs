@@ -127,6 +127,14 @@ function languageSwitcher() {
         }
     }
     else if (document.getElementsByTagName('body')[0].classList.contains('page-header') || document.getElementsByTagName('body')[0].classList.contains('layout-show-example-new-page-header-variant')) {
+        // On the header page, the links should do nothing when clicked
+        if (document.getElementsByTagName('body')[0].classList.contains('page-header')) {
+            const links = document.querySelectorAll('.language-switcher-header a, .language-switcher-mobile a');
+            for (const link of links) {
+                link.setAttribute('href', 'javascript:void(0);');
+            }
+        }
+
         const lang = window.location.search.replace('?lang=', '');
         const headerUl = document.querySelector('.language-switcher-header ul');
         const mobileUl = document.querySelector('.language-switcher-mobile ul');
