@@ -26,7 +26,7 @@ tags:
 
 ## Hent via NPM {#{% include create-id.html heading="Hent via NPM" %}}
 
-Vi anbefaler som udgangspunkt, at kodepakken hentes via NPM, hvor kodepakken går under navnet {% include links/external-link.html linktext="DKFDS" %}. 
+Vi anbefaler som udgangspunkt, at kodepakken hentes via NPM, hvor kodepakken går under navnet {% include links/external-link.html linktext="@dkfds/components" %}. Bemærk, at før version 12.0.0 hed kodepakken {% include links/external-link.html linktext="dkfds" %}.
 
 Navigér til roden af dit projekt i en kommandoprompt og installer DKFDS med følgende kommando:
 
