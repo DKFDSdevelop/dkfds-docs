@@ -31,10 +31,10 @@ Vi anbefaler som udgangspunkt, at kodepakken hentes via NPM, hvor kodepakken gå
 Navigér til roden af dit projekt i en kommandoprompt og installer DKFDS med følgende kommando:
 
 {% highlight shell %}
-npm install --save dkfds
+npm install --save @dkfds/components
 {% endhighlight %}
 
-Modulet 'dkfds' er nu installeret i 'node_modules' mappen.
+Modulet '@dkfds/components' er nu installeret i 'node_modules' mappen.
 
 ## Hent via GitHub (zip) {#{% include create-id.html heading="Hent via GitHub (zip)" %}}
 
@@ -73,7 +73,7 @@ Indsæt følgende script tag før`</body>`
 #### Importer modulet i en .js fil
 
 {% highlight javascript %}
-import * as DKFDS from "dkfds";
+import * as DKFDS from "@dkfds/components";
 {% endhighlight %}
 
 #### Init
