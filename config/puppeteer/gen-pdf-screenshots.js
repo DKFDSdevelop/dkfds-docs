@@ -3,6 +3,17 @@ const puppeteer = require('puppeteer');
 var root = 'https://designsystem.dk/';
 var targetRootDir = 'pdf/';
 var screenshotsDir = 'screenshots/';
+
+// Hides the cookie modal by adding the "hidden" attribute
+async function hideCookieModal(page) {
+    await page.evaluate(() => {
+        var modal = document.getElementById('fds-cookie-message');
+        if (modal !== null) {
+            modal.setAttribute('hidden', '');
+        }
+    });
+}
+
 var pdfUrls = [
     '',
     'kom-i-gang/',
@@ -228,6 +239,8 @@ var exampleUrls = [
         await page.setViewport({ width: resWidth, height: resHeight });
         await page.evaluate(() => matchMedia('screen').matches);
 
+        await hideCookieModal(page);
+
         await page.evaluate(() => {
             var buttons = document.querySelectorAll('.accordion-button');
             for (var i = 0; i < buttons.length; i++) {
@@ -239,11 +252,6 @@ var exampleUrls = [
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].setAttribute('aria-expanded', false);
                 document.getElementById(buttons[i].getAttribute('aria-controls')).setAttribute('aria-hidden', true);
-            }
-
-            let cookieMessage = document.getElementById('cookiePrompt');
-            if (cookieMessage !== null) {
-                cookieMessage.parentNode.style.display = 'none';
             }
         });
 
@@ -270,14 +278,11 @@ var exampleUrls = [
         await page.setViewport({ width: resWidth, height: resHeight });
         await page.evaluate(() => matchMedia('screen').matches);
 
+        await hideCookieModal(page);
+
+        // Scroll down to bottom to avoid the example footer blocking content.
+        // '5000' can be increased if the bottom wasn't reached.
         await page.evaluate(() => {
-            // Remove cookie message
-            let cookieMessage = document.getElementById('cookiePrompt');
-            if (cookieMessage !== null) {
-                cookieMessage.parentNode.style.display = 'none';
-            }
-            // Scroll down to bottom to avoid the example footer blocking content.
-            // '5000' can be increased if the bottom wasn't reached.
             window.scrollBy(0, 5000);
         });
 
@@ -295,6 +300,9 @@ var exampleUrls = [
         await page.goto(root + pdfUrls[i], { waitUntil: 'load' });
         await page.setViewport({ width: resWidth, height: resHeight });
         await page.evaluate(() => matchMedia('screen').matches);
+
+        await hideCookieModal(page);
+
         await page.evaluate(() => {
             var buttons = document.querySelectorAll('.accordion-button');
             for (var i = 0; i < buttons.length; i++) {
@@ -307,18 +315,14 @@ var exampleUrls = [
                 buttons[i].setAttribute('aria-expanded', false);
                 document.getElementById(buttons[i].getAttribute('aria-controls')).setAttribute('aria-hidden', true);
             }
-
-            let cookieMessage = document.getElementById('cookiePrompt');
-            if (cookieMessage !== null) {
-                cookieMessage.parentNode.style.display = 'none';
-            }
         });
 
         var filename = pdfUrls[i];
         if (pdfUrls[i] != '') {
             filename = filename.replace(/\//g, '-').replace(/#/g, '');
             filename = filename.substring(0, filename.length - 1);
-        } else {
+        } 
+        else {
             filename = 'frontpage';
         }
         var pngFileName = targetRootDir + screenshotsDir + (i + 1) + '-' + filename + '.png';
