@@ -84,6 +84,8 @@ tags:
 - 11.1.0
 - 11.2.0
 - 11.3.0
+- 12.0.0
+- 12.1.0
 ---
 
 {% include anchorlinks.html headings="Releases" %}
@@ -107,6 +109,16 @@ Har du et nyt forslag til en feature eller et bug fix? Så må du meget gerne {%
 ### Tidligere versioner af dokumentationen {#{% include create-id.html heading="Tidligere versioner af dokumentationen" %}}
 
 Har du brug for at se en version af dokumentationen på designsystem.dk, som stemmer overens med en tidligere release, så er du velkommen til at {% include links/internal-link.html linktext="kontakte os" %}.
+
+
+
+## Version 12.1.0 {#{% include create-id.html heading="Version 12.1.0" %}}
+{:.mb-0}
+
+<div><span class="small-text mt-0 d-block">xx-xx-xxxx</span></div>
+
+- Ændret farven på myndighedsnavnet i {% include links/component-web-component-link.html linktext="headeren" %} (kun Web Component-versionen).
+- Tilføjet enkelte custom properties.
 
 
 

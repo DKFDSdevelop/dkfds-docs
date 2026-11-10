@@ -36,7 +36,8 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
     {%- when "fejlopsummering" -%}
         <a href="/komponenter/fejlopsummering/#web-component">{{ include.linktext }}</a>
 
-    {%- when "header" -%}
+    {%- when "header", 
+             "headeren" -%}
         <a href="/komponenter/header/#web-component">{{ include.linktext }}</a>
 
     {%- when "inputfelter" -%}
