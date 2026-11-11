@@ -118,6 +118,7 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 <div><span class="small-text mt-0 d-block">xx-xx-xxxx</span></div>
 
 - Ændret farven på myndighedsnavnet i {% include links/component-web-component-link.html linktext="headeren" %} (kun Web Component-versionen).
+- Justeret placeringen af chevron-ikonet i {% include links/component-web-component-link.html linktext="dropdown" %} (kun Web Component-versionen).
 - Tilføjet enkelte custom properties.
 
 
