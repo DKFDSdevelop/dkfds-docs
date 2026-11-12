@@ -21,7 +21,8 @@ EXAMPLE: HOW TO USE IN MARKDOWN FILES
     {%- when "datofelter" -%}
         <a href="/komponenter/datofelter/#web-component">{{ include.linktext }}</a>
 
-    {%- when "datovælger" -%}
+    {%- when "datovælger",
+             "datovælgeren" -%}
         <a href="/komponenter/datovaelger/#web-component">{{ include.linktext }}</a>
 
     {%- when "dropdown" -%}
