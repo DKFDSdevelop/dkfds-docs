@@ -117,6 +117,7 @@ Har du brug for at se en version af dokumentationen på designsystem.dk, som ste
 
 <div><span class="small-text mt-0 d-block">xx-xx-xxxx</span></div>
 
+- <strong class="badge badge-info badge-small mr-2">Change</strong> Tilføjet mulighed for at sætte start- og slutdatoer i {% include links/component-web-component-link.html linktext="datovælgeren" %} (kun Web Component-versionen).
 - Ændret farven på myndighedsnavnet i {% include links/component-web-component-link.html linktext="headeren" %} (kun Web Component-versionen).
 - Justeret placeringen af chevron-ikonet i {% include links/component-web-component-link.html linktext="dropdown" %} (kun Web Component-versionen).
 - Rettet grafisk fejl, hvor den grå kant på knappen i {% include links/component-web-component-link.html linktext="datovælgeren" %} kunne overlappe den røde kant, når der blev vist en fejlmeddelelse (kun Web Component-versionen).
