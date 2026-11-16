@@ -235,6 +235,10 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 
 {% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-disabled" heading_tag="h4" subheading_tag="h5" %}
 
+### Start- og slutdato {#{% include create-id.html heading="Start- og slutdato" append="-webcomponent" %}}
+
+{% include containers-for-code-and-examples/top-example-and-show-code-in-tabs.html example="fds-date-picker-start-end-dates" heading_tag="h4" subheading_tag="h5" %}
+
 ## Konfiguration {#{% include create-id.html heading="Konfiguration" append="-webcomponent" %}}
 
 `fds-date-picker` kræver følgende struktur: Et `label`-element, en `div` indeholdende et `input`-element, samt en indre `div` med et `fds-date-picker-grid`-element.
@@ -270,19 +274,21 @@ Når der vises en fejlmeddelelse, vis da også {% include links/component-code-l
 #### Attributter
 
 {:.table .table--responsive-headers}
-| Attribut               | Beskrivelse                                                                                                                                                        |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| min-date                | Angiv den tidligste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er dags dato.                                                                        |
-| max-date                | Angiv den seneste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er 10 år fra dags dato.                                                                |
-| selected-date           | Angiv den valgte dato. Angives i formatet `YYYY-MM-DD`.                                                                                                           |
-| default-date            | Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet `YYYY-MM-DD`. Ændringer efter initialisering har ingen effekt. |
-| text-months             | Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er `januar februar marts april maj juni juli august september oktober november december`. |
-| text-days               | Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er `mandag tirsdag onsdag torsdag fredag lørdag søndag`.                   |
-| text-prevbutton         | Skærmlæsertekst for knappen, der viser den foregående måned.                                                                                                     |
-| text-nextbutton         | Skærmlæsertekst for knappen, der viser den næste måned.                                                                                                           |
-| text-date-announcement  | Skærmlæsertekst for hver dato i kalenderen. Skal indeholde `DAY`, `MONTH` og `YEAR`. Default er `DAY. MONTH YEAR`.                                               |
-| text-mindate            | Tilføjes til skærmlæserteksten for den tidligste valgbare dato. Default er `tidligste valgbare dato`.                                                           |
-| text-maxdate            | Tilføjes til skærmlæserteksten for den seneste valgbare dato. Default er `seneste valgbare dato`.                                                                |
+| Attribut                | Beskrivelse                                                                                                                                                                            |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| min-date                | Angiv den tidligste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er dags dato.                                                                                              |
+| max-date                | Angiv den seneste valgbare dato. Angives i formatet `YYYY-MM-DD`. Default er 10 år fra dags dato.                                                                                      |
+| selected-date           | Angiv den valgte dato. Angives i formatet `YYYY-MM-DD`.                                                                                                                                |
+| default-date            | Angiv den dato, kalenderen skal vise ved initialisering, hvis ingen dato er valgt. Angives i formatet `YYYY-MM-DD`. Ændringer efter initialisering har ingen effekt.                   |
+| text-months             | Overskriv navnene på årets 12 måneder. Angives som 12 ord separeret med mellemrum. Default er `januar februar marts april maj juni juli august september oktober november december`.   |
+| text-days               | Overskriv navnene på ugens 7 dage. Angives som 7 ord separeret med mellemrum. Default er `mandag tirsdag onsdag torsdag fredag lørdag søndag`.                                         |
+| text-prevbutton         | Skærmlæsertekst for knappen, der viser den foregående måned.                                                                                                                           |
+| text-nextbutton         | Skærmlæsertekst for knappen, der viser den næste måned.                                                                                                                                |
+| text-date-announcement  | Skærmlæsertekst for hver dato i kalenderen. Skal indeholde `DAY`, `MONTH` og `YEAR`. Default er `DAY. MONTH YEAR`.                                                                     |
+| text-mindate            | Tilføjes til skærmlæserteksten for den tidligste valgbare dato. Default er `tidligste valgbare dato`.                                                                                  |
+| text-maxdate            | Tilføjes til skærmlæserteksten for den seneste valgbare dato. Default er `seneste valgbare dato`.                                                                                      |
+| start-date-id           | Hvis der findes et grid med attributten `end-date-id`, der har samme værdi som `start-date-id`, så vil datoer automatisk blive disablet afhængigt af valgt slutdato i det andet grid.  |
+| end-date-id             | Hvis der findes et grid med attributten `start-date-id`, der har samme værdi som `end-date-id`, så vil datoer automatisk blive disablet afhængigt af valgt startdato i det andet grid. |
 
 #### Events
 

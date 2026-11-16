@@ -48,6 +48,11 @@ global.ResizeObserver = class ResizeObserver {
     disconnect() {}
 };
 
+// Mock CSS.supports since jsdom doesn't support it
+global.CSS = {
+    supports: () => false
+};
+
 const DKFDS = require('@dkfds/components/dkfds-web-components');
 
 DKFDS.registerAccordion();
