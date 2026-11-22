@@ -43,6 +43,11 @@ title: Test
 {% include test/preview-test.html filename="test-fds-cookie-message" description="Cookiemeddelelse" %}
 
 {:.h3}
+## Tilbage til toppen bygget med web components
+
+{% include test/preview-test.html filename="test-fds-back-to-top" description="Tilbage til toppen" %}
+
+{:.h3}
 ## Header bygget med web components
 
 {% include test/preview-test.html filename="test-fds-header-portal-only" description="Portalrække" %}

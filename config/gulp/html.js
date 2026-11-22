@@ -19,7 +19,7 @@ var titles = require('./example-titles').default;
 var buildAll = ['examples/**/**/*.njk', 'examples/**/**/**/*.njk'];
 var buildTestOnly = ['examples/testfiles/**/*.njk'];
 var buildExamples = ['examples/examples/**/*.njk'];
-var buildFile = ['examples/testfiles/web-components/*.njk', 'examples/testfiles/web-components-header/*.njk'];
+var buildFile = ['examples/testfiles/web-components/*.njk', 'examples/testfiles/web-components-back-top-top/*.njk', 'examples/testfiles/web-components-header/*.njk'];
 
 var activeBuild = buildAll;
 
@@ -50,6 +50,7 @@ var testfiles = [
     "test-fds-alert",
     "test-fds-multiselect",
     "test-fds-cookie-message",
+    "test-fds-back-to-top",
     "test-fds-header-portal-only",
     "test-fds-header-solution-only",
     "test-fds-header-portal-and-solution",
