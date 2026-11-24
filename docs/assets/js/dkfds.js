@@ -8384,23 +8384,23 @@ function registerAlert() {
 class FDSBackToTop extends HTMLElement {
   // #region - ATTRIBUTES (can invoke attributeChangedCallback()) -----------------------------------------
 
-  static observedAttributes = ['attr', 'ready'];
+  static observedAttributes = ['button-text', 'sr-text'];
 
   // #endregion
 
   // #region - GETTERS AND SETTERS ------------------------------------------------------------------------
 
-  get attr() {
-    return this.getAttribute('attr');
+  get buttonText() {
+    return this.getAttribute('button-text');
   }
-  set attr(value) {
-    value == null ? this.removeAttribute('attr') : this.setAttribute('attr', value);
+  set buttonText(value) {
+    value == null ? this.removeAttribute('button-text') : this.setAttribute('button-text', value);
   }
-  get ready() {
-    return this.getAttribute('ready') !== 'false';
+  get srText() {
+    return this.getAttribute('sr-text');
   }
-  set ready(value) {
-    this.setAttribute('ready', value ? 'true' : 'false');
+  set srText(value) {
+    value == null ? this.removeAttribute('sr-text') : this.setAttribute('sr-text', value);
   }
 
   // #endregion
@@ -8408,30 +8408,16 @@ class FDSBackToTop extends HTMLElement {
   // #region - PRIVATE INSTANCE FIELDS --------------------------------------------------------------------
 
   #initialized = false;
-  #mutationObserver = null;
 
   // #endregion
 
   // #region - PRIVATE EVENT HANDLERS ---------------------------------------------------------------------
 
-  #handleClick = event => {
-    console.log('Click event:', event);
-  };
-  #handleKeyDown = event => {
-    console.log('KeyDown event:', event);
-  };
-  #handleMutations = records => {
-    for (const {
-      attributeName,
-      target,
-      addedNodes,
-      removedNodes
-    } of records) {
-      console.log('attributeName', attributeName);
-      console.log('target', target);
-      console.log('addedNodes', addedNodes);
-      console.log('removedNodes', removedNodes);
-    }
+  #handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   // #endregion
@@ -8439,34 +8425,58 @@ class FDSBackToTop extends HTMLElement {
   // #region - PRIVATE METHODS ----------------------------------------------------------------------------
 
   #setupHTML() {
-    // --- Button ---
-    let button = this.querySelector(':scope > button');
-    if (!button) {
-      button = document.createElement('button');
-      this.appendChild(button);
+    const triggers = this.querySelectorAll(':scope > a, :scope > button');
+    if (triggers.length > 1) {
+      console.warn('fds-back-to-top: More than one trigger was found. Only the first one will be used.');
     }
-    button.textContent = 'Click me';
+    const trigger = triggers[0] ?? document.createElement('button');
+
+    // Ensure type="button" on buttons
+    if (trigger instanceof HTMLButtonElement) {
+      trigger.setAttribute('type', 'button');
+    }
+
+    // Icon
+    let icon = trigger.querySelector(':scope > svg.icon-svg');
+    if (!icon) {
+      icon = createSvgIcon('M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z');
+      trigger.appendChild(icon);
+    }
+
+    // Screen-reader-only text
+    let srSpan = trigger.querySelector(':scope > span.sr-only');
+    if (!srSpan) {
+      srSpan = document.createElement('span');
+      srSpan.className = 'sr-only';
+      trigger.appendChild(srSpan);
+    }
+    srSpan.textContent = this.srText ?? 'Til toppen af siden';
+
+    // Visible text (hidden below md breakpoint)
+    let textSpan = trigger.querySelector(':scope > span.d-none');
+    if (!textSpan) {
+      textSpan = document.createElement('span');
+      textSpan.className = 'd-none d-md-inline-block';
+      textSpan.setAttribute('aria-hidden', 'true');
+      trigger.appendChild(textSpan);
+    }
+    textSpan.textContent = this.buttonText ?? 'Til toppen';
+
+    // Add the trigger if not already present
+    if (!trigger.isConnected) {
+      this.appendChild(trigger);
+    }
   }
   #addEventListeners() {
-    const button = this.querySelector(':scope > button');
-    button?.addEventListener('click', this.#handleClick);
-    button?.addEventListener('keydown', this.#handleKeyDown);
+    const trigger = this.querySelector(':scope > a, :scope > button');
+    if (trigger instanceof HTMLButtonElement) {
+      trigger.addEventListener('click', this.#handleClick);
+    }
   }
   #removeEventListeners() {
-    const button = this.querySelector(':scope > button');
-    button?.removeEventListener('click', this.#handleClick);
-    button?.removeEventListener('keydown', this.#handleKeyDown);
-  }
-  #connectMutationObserver() {
-    let config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : mutationObserverConfig;
-    if (this.#mutationObserver) return;
-    this.#mutationObserver = new MutationObserver(this.#handleMutations);
-    this.#mutationObserver.observe(this, config);
-  }
-  #disconnectMutationObserver() {
-    if (this.#mutationObserver) {
-      this.#mutationObserver.disconnect();
-      this.#mutationObserver = null;
+    const trigger = this.querySelector(':scope > a, :scope > button');
+    if (trigger instanceof HTMLButtonElement) {
+      trigger.removeEventListener('click', this.#handleClick);
     }
   }
 
@@ -8478,7 +8488,6 @@ class FDSBackToTop extends HTMLElement {
     if (this.#initialized) return;
     this.#setupHTML();
     this.#addEventListeners();
-    this.#connectMutationObserver(); // Connected after setup so our own DOM changes aren't observed
     this.#initialized = true;
   }
 
@@ -8487,9 +8496,6 @@ class FDSBackToTop extends HTMLElement {
   // #region - ADDED TO DOCUMENT --------------------------------------------------------------------------
 
   connectedCallback() {
-    // The 'ready' attribute can be used to defer initialization, e.g. until child content is available.
-    // Omit the attribute or set it to anything other than 'false' to initialize immediately.
-    if (this.getAttribute('ready') === 'false') return;
     this.init();
   }
 
@@ -8499,7 +8505,6 @@ class FDSBackToTop extends HTMLElement {
 
   disconnectedCallback() {
     this.#removeEventListeners();
-    this.#disconnectMutationObserver();
     this.#initialized = false;
   }
 
@@ -8508,17 +8513,20 @@ class FDSBackToTop extends HTMLElement {
   // #region - ATTRIBUTE(S) CHANGED -----------------------------------------------------------------------
 
   attributeChangedCallback(attribute, oldValue, newValue) {
-    if (attribute === 'ready') {
-      if (!this.#initialized && this.isConnected && newValue !== 'false') {
-        this.init();
-      }
-      return;
-    }
     if (!this.#initialized) return;
     if (oldValue === newValue) return;
     switch (attribute) {
-      case 'attr':
-        console.log('attr changed to', newValue);
+      case 'button-text':
+        const textSpan = this.querySelector(':scope > a span.d-none, :scope > button span.d-none');
+        if (textSpan) {
+          textSpan.textContent = newValue ?? 'Til toppen';
+        }
+        break;
+      case 'sr-text':
+        const srSpan = this.querySelector(':scope > a span.sr-only, :scope > button span.sr-only');
+        if (srSpan) {
+          srSpan.textContent = newValue ?? 'Til toppen af siden';
+        }
         break;
     }
   }

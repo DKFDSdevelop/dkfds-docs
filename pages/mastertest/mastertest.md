@@ -46,6 +46,7 @@ title: Test
 ## Tilbage til toppen bygget med web components
 
 {% include test/preview-test.html filename="test-fds-back-to-top" description="Tilbage til toppen" %}
+{% include test/preview-test.html filename="test-fds-back-to-top-footer-default" description="Tilbage til toppen i footer" %}
 
 {:.h3}
 ## Header bygget med web components
