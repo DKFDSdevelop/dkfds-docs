@@ -52,6 +52,7 @@ var testfiles = [
     "test-fds-cookie-message",
     "test-fds-back-to-top",
     "test-fds-back-to-top-footer-default",
+    "test-fds-back-to-top-scroll-length",
     "test-fds-header-portal-only",
     "test-fds-header-solution-only",
     "test-fds-header-portal-and-solution",
