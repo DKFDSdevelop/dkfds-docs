@@ -43,6 +43,8 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector('.test-footer').setAttribute('style', 'z-index: 8;');
+        document.querySelector('.test-footer').setAttribute('style',
+            'position: static;');
+        document.querySelector('body').setAttribute('style', 'margin-bottom: 0;');
     });
 </script>

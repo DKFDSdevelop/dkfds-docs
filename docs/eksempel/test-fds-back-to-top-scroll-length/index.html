@@ -217,6 +217,7 @@
     </svg>
 </div>
     <div class="test-header d-flex align-items-center">
+    <fds-back-to-top-landing></fds-back-to-top-landing>
     <div class="container">
         <button type="button" class="function-link" data-module="modal" data-target="test-warning" aria-haspopup="dialog"><svg class="icon-svg" focusable="false" aria-hidden="true"><use href="#info"></use></svg>Denne side er kun til test</button>
     </div>
@@ -282,7 +283,9 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector('.test-footer').setAttribute('style', 'z-index: 8;');
+        document.querySelector('.test-footer').setAttribute('style',
+            'position: static;');
+        document.querySelector('body').setAttribute('style', 'margin-bottom: 0;');
     });
 </script>
 
